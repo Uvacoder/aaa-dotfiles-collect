@@ -126,7 +126,7 @@ echo "---------------------------------------------------------"
 echo "$(tput setaf 2)FRIDAY: install old versions.$(tput sgr 0)"
 
 old_packages=(
-  "wget http://usa.maintain.se/Cocktail11HSE.dmg"
+  "wget http://usa.maintain.se/Cocktail12ME.dmg"
   "wget https://dl.devmate.com/com.macpaw.CleanMyMac3/CleanMyMac3.dmg"
   "wget https://sipapp.io/updates/v1/sip-1.2.dmg"
 )
