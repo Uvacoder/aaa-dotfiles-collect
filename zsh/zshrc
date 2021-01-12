@@ -149,8 +149,6 @@ alias gps="git push && git status --short"
 alias gnah='git reset --hard && git clean -df'
 alias gaac='rm -rf dist && git add . && git commit -m'
 alias gsync='git pull && git push'
-# push to umbler
-alias gpu="git push umbler"
 
 # bitbucket
 alias bit='dig a bitbucket.org'

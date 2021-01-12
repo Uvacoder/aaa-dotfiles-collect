@@ -13,6 +13,7 @@
   "suggest.maxCompleteItemCount": 32,
   "suggest.noselect": false,
   "suggest.timeout": 300,
+  "diagnostic.displayByAle": true,
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",

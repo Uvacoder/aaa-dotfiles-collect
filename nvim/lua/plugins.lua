@@ -103,6 +103,13 @@ return require('packer').startup({
       'neoclide/coc.nvim', branch = 'release',
       config = function() require('plugins/_coc') end
     }
+
+    use {
+      'dense-analysis/ale',
+      config = function() require('plugins/_ale') end
+    }
+
+    -- Plugin to insert or delete brackets, parens, quotes in pair
     use 'jiangmiao/auto-pairs'
 
     -- Better whitespace highlighting for Vim
