@@ -3,13 +3,15 @@
 ### 1 - Clonar github repo
 ``` git clone https://github.com/sldobri/dotfiles.git ~/.dotfiles ```
 
-### 2 - Remove old files/folders
-``` rm -rf ~/.config
+### 2 - Remove old linked files/folders
+``` 
+ rm -rf ~/.config
  rm ~/.zshrc
  rm ~/.wgetrc
  rm ~/.gitconfig
  rm ~/.global_ignore
- rm ~/.gitignore_global ```
+ rm ~/.gitignore_global 
+```
 
 ### 3 - Make config fold
 ``` mkdir ~/.config ```
