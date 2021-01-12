@@ -3,6 +3,12 @@ export ZSH="/Users/sldobri/.oh-my-zsh"
 export ZSH_CUSTOM="$ZSH/custom"
 export NODE_ENV="development"
 
+export LANG=en_US.UTF-8
+# Set default editor to nvim
+export EDITOR='nvim'
+# Enabled true color support for terminals
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/opt/node@15/bin:$PATH"
@@ -12,14 +18,6 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="`npm global bin`:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
-
-export LANG=en_US.UTF-8
-# Set default editor to nvim
-export EDITOR='nvim'
-# Enabled true color support for terminals
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-
 
 DISABLE_LS_COLORS="true"
 HIST_STAMPS="yyyy-mm-dd"
@@ -48,6 +46,12 @@ alias cpu='top -o cpu'   # CPU
 alias mem='top -o rsize' # Memory
 alias te='tree'
 
+# Editors
+alias v=nvim
+alias vi="nvim"
+# alias s='subl'
+
+alias c='code --disable-gpu'
 # PS
 alias psa="ps aux"
 alias psg="ps aux | grep "
@@ -83,12 +87,6 @@ alias sz='source $HOME/.zshrc'
 alias zsh='nvim $HOME/.dotfiles/zsh/zshrc'
 alias ohmyzsh="nvim $HOME/.oh-my-zsh"
 alias zshup="upgrade_oh_my_zsh"
-
-# Editors
-alias v=nvim
-alias vi="nvim"
-alias s='subl'
-alias c='code --disable-gpu'
 
 # moving
 alias ..='cd ..'
