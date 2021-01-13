@@ -1,6 +1,6 @@
 vim.cmd[[ filetype plugin indent on ]]
 
-vim.g.mapleader = ' '
+-- vim.g.mapleader = ','
 vim.g.syntax_on = true
 vim.g.vue_pre_processors = {}
 

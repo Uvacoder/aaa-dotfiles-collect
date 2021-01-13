@@ -32,6 +32,12 @@ return require('packer').startup({
     --   config = function() require('plugins/_treesitter') end
     -- }
 
+    -- Lua Development for Neovim
+    use {
+      'tjdevries/nlua.nvim',
+      requires = 'CurtisFenner/luafmt'
+    }
+
     -- The fastest Neovim colorizer.
     use {
       'norcalli/nvim-colorizer.lua',

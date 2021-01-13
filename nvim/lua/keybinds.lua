@@ -8,10 +8,10 @@ vim.api.nvim_set_keymap('n', '<C-h>', ':%s///<left><left>', {noremap = true, exp
 vim.api.nvim_set_keymap('n', '<Esc><Esc><Esc>', ':nohlsearch<CR><Esc>', options)
 
 -- move lines
-vim.cmd[[ vnoremap <S-J> :m '>+1<CR>gv=gv ]]
-vim.cmd[[ vnoremap <S-K> :m '<-2<CR>gv=gv ]]
-vim.cmd[[ vnoremap <S-L> >gv ]]
-vim.cmd[[ vnoremap <S-H> <gv ]]
+vim.api.nvim_set_keymap('v', '<S-K>', ":m '<-2<CR>gv=gv", options)
+vim.api.nvim_set_keymap('v', '<S-J>', ":m '>+1<CR>gv=gv", options)
+vim.api.nvim_set_keymap('v', '<S-L>', '>gv', options)
+vim.api.nvim_set_keymap('v', '<S-H>', '<gv', options)
 
 -- Better indenting
 vim.api.nvim_set_keymap('v', '<TAB>', '>gv', options)

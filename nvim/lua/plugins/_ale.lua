@@ -1,8 +1,8 @@
 vim.g.ale_linter_aliases = {
-  vue = { 'vue', 'javascript' }
+ vue = { 'vue', 'javascript' }
 }
 vim.g.ale_linters = { vue = {'eslint', 'vls'}}
-vim.g.ale_fixers = {'prettier', 'eslint'}
+vim.g.ale_fixers = {'prettier', 'eslint', 'luafmt'}
 vim.g.ale_fix_on_save = 1
 vim.g.ale_sign_error = ' '
 vim.g.ale_sign_warning = ' '
