@@ -12,9 +12,7 @@ return require('packer').startup({
   function()
 
     -- Packer can manage itself as an optional plugin
-    use {
-      'wbthomason/packer.nvim', opt = true
-    }
+    use { 'wbthomason/packer.nvim', opt = true }
 
     -- themes
     use {
@@ -125,9 +123,7 @@ return require('packer').startup({
     }
 
     -- Multiple cursors plugin for vim/neovim
-    use {
-      'mg979/vim-visual-multi', branch = 'master'
-    }
+    use { 'mg979/vim-visual-multi', branch = 'master' }
 
     -- vim-snipmate default snippets.
     use 'honza/vim-snippets'
