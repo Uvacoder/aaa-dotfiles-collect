@@ -15,24 +15,36 @@ return require('packer').startup({
     use { 'wbthomason/packer.nvim', opt = true }
 
     -- themes
+    -- use {
+    --   'pineapplegiant/spaceduck',
+    --   config = function() require('plugins/_fixcolors') end,
+    --   requires = 'sheerun/vim-polyglot'
+    -- }
+    -- use {
+    --   'kyazdani42/nvim-palenight.lua',
+    --   config = function() require('plugins/_fixcolors') end,
+    --   requires = 'sheerun/vim-polyglot'
+    -- }
+    -- use {
+    --   'glepnir/zephyr-nvim',
+    --   config = function() require('plugins/_fixcolors') end,
+    --   requires = 'sheerun/vim-polyglot'
+    -- }
     use {
-      'pineapplegiant/spaceduck',
+      'mhartington/oceanic-next',
       config = function() require('plugins/_fixcolors') end,
       requires = 'sheerun/vim-polyglot'
     }
-    use 'kyazdani42/nvim-palenight.lua'
-    use 'glepnir/zephyr-nvim'
-    use 'mhartington/oceanic-next'
 
     -- Nvim Treesitter configurations and abstraction layer
-    -- use {
-    --   'nvim-treesitter/nvim-treesitter',
-    --   config = function() require('plugins/_treesitter') end
-    -- }
+    use {
+      'nvim-treesitter/nvim-treesitter',
+      config = function() require('plugins/_treesitter') end
+    }
 
     -- Lua Development for Neovim
     use {
-      'tjdevries/nlua.nvim',
+      'tjdevries/nlua.nvim', 
       requires = 'CurtisFenner/luafmt'
     }
 

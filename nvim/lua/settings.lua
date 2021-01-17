@@ -10,13 +10,13 @@ if vim.fn.has('termguicolors') == 1 then
 end
 
 vim.o.background = 'dark'
-vim.g.colors_name = 'spaceduck'
+
+-- vim.g.colors_name = 'spaceduck'
 -- vim.g.colors_name = 'palenight'
 -- vim.g.colors_name = 'zephyr'
--- vim.g.colors_name = 'OceanicNext'
+vim.g.colors_name = 'OceanicNext'
 
 vim.g.my_colors = {
-  -- bg = '#1C1936',
   bg = '#343d46',
   grey = '#D8DDE9',
   yellow = '#FECA5C',

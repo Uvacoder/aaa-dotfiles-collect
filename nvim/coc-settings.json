@@ -56,13 +56,13 @@
   "diagnostic.signPriority": 20,
   "diagnostic.enableHighlightLineNumber": true,
   "diagnostic.virtualText": true,
+  "tailwindCSS.cssLanguages": ["css", "vue", "postcss"],
+  "tailwindCSS.htmlLanguages": ["html", "vue"],
+  "tailwindCSS.jsLanguages": ["javascript"],
+  "tailwindCSS.headwind.removeDuplicates": true,
+  "tailwindCSS.headwind.runOnSave": true,
+  /* "vetur.completion.autoImport": false, */
   /* "eslint.autoFixOnSave": true, */
   /* "prettier.eslintIntegration": true, */
   /* "prettier.formatterPriority": -1, */
-  "tailwindCSS.headwind.removeDuplicates": true,
-  "tailwindCSS.headwind.runOnSave": true,
-  "tailwindCSS.cssLanguages": ["css", "vue", "postcss"],
-  "tailwindCSS.htmlLanguages": ["html", "vue"],
-  "tailwindCSS.jsLanguages": ["javascript"]
-  /* "vetur.completion.autoImport": false, */
 }
