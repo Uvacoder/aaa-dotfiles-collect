@@ -1,4 +1,4 @@
-local map = require("utils/map").map
+local map = require("helpers").map
 
 vim.g.nvim_tree_width = 40
 vim.g.nvim_tree_auto_close = 1
@@ -34,5 +34,5 @@ vim.g.nvim_tree_icons = {
   },
 }
 
-map('n', '<C-e>', ':NvimTreeToggle<CR>', {})
-map('n', '<leader>r', ':NvimTreeRefresh<CR>', {})
+map('n', '<C-e>', ':NvimTreeToggle<CR>')
+map('n', '<leader>r', ':NvimTreeRefresh<CR>')

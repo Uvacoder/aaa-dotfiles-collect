@@ -1,8 +1,15 @@
 local fn = vim.fn
 local api = vim.api
 local cmd = vim.cmd
+local g = vim.g
 
-local install_path = vim.fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+g.python3_host_prog = '/usr/local/bin/python3'
+g.node_host_prog = '/usr/local/lib/node_modules/neovim/bin/cli.js'
+-- g.loaded_perl_provider = 0
+-- g.loaded_python_provider = 0
+-- g.loaded_ruby_provider = 0
+
+local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
   api.nvim_command('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
@@ -125,7 +132,10 @@ return require('packer').startup({
     use { 'mg979/vim-visual-multi', branch = 'master' }
 
     -- A solid language pack for Vim.
-    use { 'sheerun/vim-polyglot' }
+    use {
+      'sheerun/vim-polyglot',
+      config = function() require('plugins/_vimpolyglot') end
+    }
 
     -- vim-snipmate default snippets.
     use 'honza/vim-snippets'

@@ -1,4 +1,4 @@
-local map = require("utils/map").map
+local map = require("helpers").map
 
 require('FTerm').setup({
   dimensions  = {
@@ -9,6 +9,6 @@ require('FTerm').setup({
   }
 })
 
-map('n', '<C-t>', ':FTermToggle<CR>', {})
-map('t', '<C-t>', '<C-\\><C-n>:FTermToggle<CR>', {})
-map('t', '<C-q>', '<C-\\><C-n>:FTermClose<CR>', {})
+map('n', '<C-t>', ':FTermToggle<CR>')
+map('t', '<C-t>', '<C-\\><C-n>:FTermToggle<CR>')
+map('t', '<C-q>', '<C-\\><C-n>:FTermClose<CR>')

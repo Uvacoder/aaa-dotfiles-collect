@@ -1,19 +1,14 @@
-local g = vim.g
-local o = vim.o
-local fn = vim.fn
-local api = vim.api
-local cmd = vim.cmd
-local map = require("utils/map").map
+local map = require("helpers").map
 
-g.coc_global_extensions = { 'coc-snippets', 'coc-tailwindcss' }
+vim.g.coc_global_extensions = { 'coc-snippets', 'coc-tailwindcss' }
 
 -- Use tab for trigger completion with characters ahead and navigate.
 -- NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 -- other plugin before putting this into your config.
 -- Source: https://github.com/nanotee/nvim-lua-guide#vlua
 function _G.check_back_space()
-  local col = fn.col('.') - 1
-  if col == 0 or fn.getline('.'):sub(col, col):match('%s') then
+  local col = vim.fn.col('.') - 1
+  if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
     return true
   else
     return false
@@ -26,20 +21,20 @@ map('i', '<S-TAB>', 'pumvisible() ? "<C-P>" : "<C-H>"', { expr = true })
 
 -- Use gh to show documentation in preview window.
 function show_docs()
-  local cw = fn.expand('<cword>')
-  if fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
-    cmd('h '..cw)
-  elseif api.nvim_eval('coc#rpc#ready()') then
-    fn.CocActionAsync('doHover')
+  local cw = vim.fn.expand('<cword>')
+  if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
+    vim.cmd('h '..cw)
+  elseif vim.api.nvim_eval('coc#rpc#ready()') then
+    vim.fn.CocActionAsync('doHover')
   else
-    cmd('!'..vim.o.keywordprg..' '..cw)
+    vim.cmd('!'..vim.o.keywordprg..' '..cw)
   end
 end
 
-map('n', 'K', '<CMD>lua show_docs()<CR>', {})
+map('n', 'K', '<CMD>lua show_docs()<CR>')
 
 -- Use <c-space> to trigger completion.
-map('i', '<C-SPACE>', 'coc#refresh()', { expr = true })
+map('i', '<C-Space>', 'coc#refresh()', { expr = true })
 
 -- Make <CR> auto-select the first completion item and notify coc.nvim to
 -- format on enter, <cr> could be remapped by other vim plugin
@@ -99,21 +94,21 @@ map('x', '<C-S>', '<Plug>(coc-range-select)', { noremap = false })
 
 -- Mappings for CoCList
 -- Show all diagnostics.
--- map('n', '\\a', ':CocList diagnostics<CR>', {})
+-- map('n', '\\a', ':CocList diagnostics<CR>')
 -- Manage extensions.
--- map('n', '\\e', ':CocList extensions<CR>', {})
+-- map('n', '\\e', ':CocList extensions<CR>')
 -- Show commands.
--- map('n', '\\c', ':CocList commands<CR>', {})
+-- map('n', '\\c', ':CocList commands<CR>')
 -- Find symbol of current document.
--- map('n', '<Space>o', ':CocList outline<CR>', {})
+-- map('n', '<Space>o', ':CocList outline<CR>')
 -- Search workspace symbols.
--- map('n', '\\s', ':CocList -I symbols<CR>', {})
+-- map('n', '\\s', ':CocList -I symbols<CR>')
 -- Do default action for next item.
--- map('n', '\\j', ':CocNext<CR>', {})
+-- map('n', '\\j', ':CocNext<CR>')
 -- Do default action for previous item.
--- map('n', '\\k', ':CocPrev<CR>', {})
+-- map('n', '\\k', ':CocPrev<CR>')
 -- Resume latest coc list.
--- map('n', '\\p', ':CocListResume<CR>', {})
+-- map('n', '\\p', ':CocListResume<CR>')
 
-cmd(' autocmd CursorHold * silent call CocActionAsync("highlight") ')
-cmd(' autocmd User CocJumpPlaceholder call CocActionAsync("showSignatureHelp") ')
+vim.cmd(' autocmd CursorHold * silent call CocActionAsync("highlight") ')
+vim.cmd(' autocmd User CocJumpPlaceholder call CocActionAsync("showSignatureHelp") ')

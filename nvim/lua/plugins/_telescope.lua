@@ -1,4 +1,4 @@
-local map = require("utils/map").map
+local map = require("helpers").map
 
 local actions = require('telescope.actions')
 

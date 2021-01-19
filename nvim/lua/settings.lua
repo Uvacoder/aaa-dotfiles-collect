@@ -1,121 +1,76 @@
-local wo = vim.wo
-local o = vim.o
-local bo = vim.bo
-local g = vim.g
-local fn = vim.fn
+local opt = require('helpers').opt
 
--- main
-o.encoding = 'UTF-8'
+local shiftwidth = 2
 
-g.syntax_on = true
-g.vue_pre_processors = {}
+opt('wo', 'number', true)
+opt('wo', 'relativenumber', true)
+opt('wo', 'signcolumn', 'yes')
+opt('wo', 'wrap', false)
 
-g.my_colors = {
-  bg = '#000000',
-  grey = '#D8DDE9',
-  yellow = '#FECA5C',
-  orange = '#FF8B4B',
-  red = '#F84B5E',
-  magenta = '#CC8CC4',
-  blue = '#6197CE',
-  cyan = '#4AB6B5',
-  green = '#8FCC95',
-  black = '#343d46'
-}
+opt('bo', 'expandtab', true)
+opt('bo', 'shiftwidth', shiftwidth)
+opt('bo', 'softtabstop', shiftwidth)
+opt('bo', 'autoindent', true)
+opt('bo', 'textwidth', 300)
+opt('bo', 'formatoptions', 'qrn1')
 
-o.compatible = false
+opt('o', 'encoding', 'UTF-8')
+opt('o', 'background', 'dark')
+opt('o', 'compatible', false)
+opt('o', 'hidden', true)
+opt('o', 'updatetime', 100)
+opt('o', 'ttyfast', true)
+opt('o', 'scrolloff', 8)
+opt('o', 'showcmd', false)
+opt('o', 'showmode', false)
+opt('o', 'wildmenu', true)
+opt('o', 'number', true)
+opt('o', 'relativenumber', true)
+opt('o', 'wrap', false)
+opt('o', 'expandtab', true)
+opt('o', 'shiftwidth', shiftwidth)
+opt('o', 'softtabstop', shiftwidth)
+opt('o', 'autoindent', true)
+opt('o', 'clipboard', 'unnamedplus')
+opt('o', 'hlsearch', true)
+opt('o', 'incsearch', true)
+opt('o', 'ignorecase', true)
+opt('o', 'smartcase', true)
+opt('o', 'autoread', true)
+opt('o', 'swapfile', false)
+opt('o', 'backup', false)
+opt('o', 'writebackup', false)
+opt('o', 'cursorline', true)
+opt('o', 'shortmess', 'c')
+opt('o', 'listchars', 'eol:↲,tab:»\\ ,trail:•')
+opt('o', 'showbreak', '↳\\ ')
+opt('o', 'foldenable', true)
+opt('o', 'foldcolumn', '1')
+opt('o', 'foldlevelstart', 99)
+opt('o', 'completeopt', 'menuone,noinsert,noselect')
+opt('o', 'undofile', true)
+opt('o', 'shell', '/usr/local/bin/zsh')
+opt('o', 'inccommand', 'split')
+opt('o', 'wildignorecase', true)
+opt('o', 'wildcharm', 26)
+opt('o', 'wildmenu', true)
+opt('o', 'wildmode', 'longest:full,full')
+opt('o', 'errorformat', vim.o.errorformat .. ',%f')
 
-o.hidden = true
-o.timeoutlen = 500
-o.updatetime = 100
-o.ttyfast = true
-o.scrolloff = 8
+local undodir = vim.fn.expand(vim.fn.stdpath('data') .. '/undodir//')
+if vim.fn.isdirectory(undodir) == 0 then
+  vim.fn.mkdir(undodir, 'p')
+end
+opt('o', 'undodir', undodir)
 
-o.showcmd = false
-o.showmode = false
-o.wildmenu = true
-
-wo.number = true
-o.number = true
-wo.relativenumber = true
-o.relativenumber = true
-wo.signcolumn = 'yes'
-
-wo.wrap = false
-o.wrap = false
-
-o.expandtab = true
-bo.expandtab = true
-o.shiftwidth = 2
-bo.shiftwidth = 2
--- when 'sts' is negative, the value of 'shiftwidth' is used.
-o.softtabstop = -1
-bo.softtabstop = -1
-o.autoindent = true
-bo.autoindent = true
-
-o.clipboard = 'unnamedplus'
-
-bo.textwidth = 300
-bo.formatoptions = 'qrn1'
-
-o.hlsearch = true
-o.incsearch = true
-o.ignorecase = true
-o.smartcase = true
-
-o.autoread = true
-o.swapfile = false
-
-o.backup = false
-o.writebackup = false
-o.cursorline = true
-
-o.shortmess = o.shortmess .. 'iac'
-o.listchars = 'eol:↲,tab:»\\ ,trail:•'
-o.showbreak = '↳'
-o.foldenable = true
-o.foldcolumn = '1'
-o.foldlevelstart = 99
-o.completeopt = 'menuone,noinsert,noselect'
--- undo
-o.undofile = true
-o.undodir = fn.expand(fn.stdpath('data') .. '/undodir//')
-if fn.isdirectory(o.undodir) == 0 then fn.mkdir(o.undodir, 'p') end
-
-o.shell = '/usr/local/bin/zsh'
-
--- interactive substitute
--- o.inccommand = 'split'
-
-local wildignored = {
-  'tags',
-  '*/__pycache__/*',
-  'build/*',
-  'build.?/*',
-  '*/node_modules/*',
-  '*/env/*',
-  '*.png',
-  '*.jpg',
-  '*.jpeg',
-  '*/migrations/*',
-  '*/.git/*'
-}
-
+local wildignored = { '*/node_modules/*', '*.png', '*.jpg', '*.jpeg', '*/.git/*' }
 local wildignore = ''
 for i=1,#wildignored do
   wildignore = wildignore .. wildignored[i] .. ','
 end
+opt('o', 'wildignore', wildignore)
 
-o.wildignore = wildignore
-o.wildignorecase = true
---wildcharm requires integer for the character, 26 is ascii code for 'c-z'
-o.wildcharm=26
-o.wildmenu=true
-o.wildmode='longest:full,full'
+if vim.fn.has('termguicolors') == 1 then
+  opt('o', 'termguicolors', true)
+end
 
--- For highlighting yanked region
--- cmd[[ au TextYankPost * silent! lua highlight.on_yank({ higroup = 'HighlightedyankRegion', timeout = 120 }) ]]
-
--- for searching files with location list
-o.errorformat = o.errorformat .. ',%f'
