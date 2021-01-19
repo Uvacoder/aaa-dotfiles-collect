@@ -15,7 +15,8 @@ require('plugins')
 
 -- vim.g.colors_name = 'spaceduck'
 -- vim.g.colors_name = 'palenight'
-vim.g.colors_name = 'OceanicNext'
+-- vim.g.colors_name = 'OceanicNext'
+vim.g.colors_name = 'onebuddy'
 
 require('settings')
 require('autocmd')

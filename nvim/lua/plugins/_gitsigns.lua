@@ -1,5 +1,4 @@
-local api = vim.api
-local colors = vim.g.my_colors
+local color = vim.g.my_colors
 
 require('gitsigns').setup({
   signs = {
@@ -12,8 +11,8 @@ require('gitsigns').setup({
   sign_priority = 5,
 })
 
-api.nvim_command('hi DiffAdd guibg=NONE guifg='..colors.green)
-api.nvim_command('hi DiffChange guibg=NONE guifg='..colors.orange)
-api.nvim_command('hi DiffDelete guibg=NONE guifg='..colors.red)
+vim.api.nvim_command('hi DiffAdd guibg=NONE guifg='..color.green)
+vim.api.nvim_command('hi DiffChange guibg=NONE guifg='..color.yellow)
+vim.api.nvim_command('hi DiffDelete guibg=NONE guifg='..color.red)
 
 

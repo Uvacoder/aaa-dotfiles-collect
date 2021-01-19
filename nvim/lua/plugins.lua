@@ -1,23 +1,15 @@
-local fn = vim.fn
-local api = vim.api
-local cmd = vim.cmd
-local g = vim.g
+vim.g.python3_host_prog = '/usr/local/bin/python3'
+vim.g.node_host_prog = '/usr/local/lib/node_modules/neovim/bin/cli.js'
 
-g.python3_host_prog = '/usr/local/bin/python3'
-g.node_host_prog = '/usr/local/lib/node_modules/neovim/bin/cli.js'
--- g.loaded_perl_provider = 0
--- g.loaded_python_provider = 0
--- g.loaded_ruby_provider = 0
+local install_path = vim.fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
-local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
-
-if fn.empty(fn.glob(install_path)) > 0 then
-  api.nvim_command('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  vim.api.nvim_command('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
 end
 
-cmd('packadd packer.nvim')
+vim.cmd('packadd packer.nvim')
 
-cmd('autocmd BufWritePost plugins.lua PackerCompile')
+vim.cmd('autocmd BufWritePost plugins.lua PackerCompile')
 
 return require('packer').startup({
   function()
@@ -29,6 +21,11 @@ return require('packer').startup({
     use 'pineapplegiant/spaceduck'
     use 'kyazdani42/nvim-palenight.lua'
     use 'mhartington/oceanic-next'
+    use {
+      'Th3Whit3Wolf/onebuddy',
+      config = function() require('plugins/_fixcolors') end,
+      requires= 'tjdevries/colorbuddy.vim'
+    }
 
     -- Nvim Treesitter configurations and abstraction layer
     use {

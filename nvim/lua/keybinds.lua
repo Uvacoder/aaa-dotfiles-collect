@@ -23,4 +23,4 @@ map('v', '<TAB>', '>gv')
 map('v', '<S-TAB>', '<gv')
 
 --  Quick window switching
-
+map('n', '<Leader>w', '<C-w><C-w>')
