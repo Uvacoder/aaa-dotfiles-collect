@@ -10,17 +10,18 @@ try
 
 lua << END
 local plugins = {
+  ["indent-guides.nvim"] = {
+    config = { "\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26plugins/_indentguides\frequire\0" },
+    loaded = false,
+    only_sequence = false,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/opt/indent-guides.nvim"
+  },
   ["packer.nvim"] = {
     loaded = false,
     only_sequence = false,
     only_setup = false,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/opt/packer.nvim"
-  },
-  ["telescope-fzy-native.nvim"] = {
-    loaded = false,
-    only_sequence = false,
-    only_setup = false,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/opt/telescope-fzy-native.nvim"
   }
 }
 
@@ -153,28 +154,26 @@ end
 
 -- Pre-load configuration
 -- Post-load configuration
--- Config for: nvim-colorizer.lua
-loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins/_colorizer\frequire\0")()
--- Config for: nvim-treesitter
-loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_treesitter\frequire\0")()
--- Config for: gitsigns.nvim
-loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_gitsigns\frequire\0")()
--- Config for: vim-better-whitespace
-loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_whitespace\frequire\0")()
--- Config for: nvim-tree.lua
-loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18plugins/_tree\frequire\0")()
--- Config for: galaxyline.nvim
-loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_galaxyline\frequire\0")()
 -- Config for: FTerm.nvim
 loadstring("\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19plugins/_fterm\frequire\0")()
 -- Config for: telescope.nvim
 loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins/_telescope\frequire\0")()
--- Config for: oceanic-next
-loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins/_fixcolors\frequire\0")()
 -- Config for: ale
 loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_ale\frequire\0")()
+-- Config for: gitsigns.nvim
+loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_gitsigns\frequire\0")()
+-- Config for: nvim-colorizer.lua
+loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins/_colorizer\frequire\0")()
+-- Config for: nvim-treesitter
+loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_treesitter\frequire\0")()
 -- Config for: coc.nvim
 loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_coc\frequire\0")()
+-- Config for: vim-better-whitespace
+loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_whitespace\frequire\0")()
+-- Config for: nvim-tree.lua
+loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_nvimtree\frequire\0")()
+-- Config for: galaxyline.nvim
+loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_galaxyline\frequire\0")()
 -- Conditional loads
 -- Load plugins in order defined by `after`
 END

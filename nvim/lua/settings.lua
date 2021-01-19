@@ -1,23 +1,17 @@
-vim.cmd[[ filetype plugin indent on ]]
+local wo = vim.wo
+local o = vim.o
+local bo = vim.bo
+local g = vim.g
+local fn = vim.fn
 
--- vim.g.mapleader = ','
-vim.g.syntax_on = true
-vim.g.vue_pre_processors = {}
+-- main
+o.encoding = 'UTF-8'
 
-if vim.fn.has('termguicolors') == 1 then
-  vim.o.termguicolors = true
-  vim.o.guicursor = 'n-v-c-sm:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20'
-end
+g.syntax_on = true
+g.vue_pre_processors = {}
 
-vim.o.background = 'dark'
-
--- vim.g.colors_name = 'spaceduck'
--- vim.g.colors_name = 'palenight'
--- vim.g.colors_name = 'zephyr'
-vim.g.colors_name = 'OceanicNext'
-
-vim.g.my_colors = {
-  bg = '#343d46',
+g.my_colors = {
+  bg = '#000000',
   grey = '#D8DDE9',
   yellow = '#FECA5C',
   orange = '#FF8B4B',
@@ -26,74 +20,73 @@ vim.g.my_colors = {
   blue = '#6197CE',
   cyan = '#4AB6B5',
   green = '#8FCC95',
-  black = '#000000'
+  black = '#343d46'
 }
 
-vim.o.compatible = false
-vim.o.encoding = 'UTF-8'
+o.compatible = false
 
-vim.o.hidden = true
-vim.o.timeoutlen = 500
-vim.o.updatetime = 100
-vim.o.ttyfast = true
-vim.o.scrolloff = 8
+o.hidden = true
+o.timeoutlen = 500
+o.updatetime = 100
+o.ttyfast = true
+o.scrolloff = 8
 
-vim.o.showcmd = false
-vim.o.showmode = false
-vim.o.wildmenu = true
+o.showcmd = false
+o.showmode = false
+o.wildmenu = true
 
-vim.wo.number = true
-vim.o.number = true
-vim.wo.relativenumber = true
-vim.o.relativenumber = true
-vim.wo.signcolumn = 'yes'
+wo.number = true
+o.number = true
+wo.relativenumber = true
+o.relativenumber = true
+wo.signcolumn = 'yes'
 
-vim.wo.wrap = false
-vim.o.wrap = false
+wo.wrap = false
+o.wrap = false
 
-vim.o.expandtab = true
-vim.bo.expandtab = true
-vim.o.shiftwidth = 2
-vim.bo.shiftwidth = 2
+o.expandtab = true
+bo.expandtab = true
+o.shiftwidth = 2
+bo.shiftwidth = 2
 -- when 'sts' is negative, the value of 'shiftwidth' is used.
-vim.o.softtabstop = -1
-vim.bo.softtabstop = -1
-vim.o.autoindent = true
-vim.bo.autoindent = true
+o.softtabstop = -1
+bo.softtabstop = -1
+o.autoindent = true
+bo.autoindent = true
 
-vim.o.clipboard = 'unnamedplus'
+o.clipboard = 'unnamedplus'
 
-vim.bo.textwidth = 300
-vim.bo.formatoptions = 'qrn1'
+bo.textwidth = 300
+bo.formatoptions = 'qrn1'
 
-vim.o.hlsearch = true
-vim.o.incsearch = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
+o.hlsearch = true
+o.incsearch = true
+o.ignorecase = true
+o.smartcase = true
 
-vim.o.autoread = true
-vim.o.swapfile = false
+o.autoread = true
+o.swapfile = false
 
-vim.o.backup = false
-vim.o.writebackup = false
-vim.o.cursorline = true
+o.backup = false
+o.writebackup = false
+o.cursorline = true
 
-vim.o.shortmess = vim.o.shortmess .. 'aIc'
-vim.o.listchars = 'eol:↲,tab:»\\ ,trail:•'
-vim.o.showbreak = '╰─➤'
-vim.o.foldenable = true
-vim.o.foldcolumn = '1'
-vim.o.foldlevelstart = 99
-vim.o.completeopt = 'menu,menuone,noinsert,noselect'
+o.shortmess = o.shortmess .. 'iac'
+o.listchars = 'eol:↲,tab:»\\ ,trail:•'
+o.showbreak = '↳'
+o.foldenable = true
+o.foldcolumn = '1'
+o.foldlevelstart = 99
+o.completeopt = 'menuone,noinsert,noselect'
 -- undo
-vim.o.undofile = true
-vim.o.undodir = vim.fn.expand(vim.fn.stdpath('data') .. '/undodir//')
-if vim.fn.isdirectory(vim.o.undodir) == 0 then vim.fn.mkdir(vim.o.undodir, 'p') end
+o.undofile = true
+o.undodir = fn.expand(fn.stdpath('data') .. '/undodir//')
+if fn.isdirectory(o.undodir) == 0 then fn.mkdir(o.undodir, 'p') end
 
-vim.o.shell = '/usr/local/bin/zsh'
+o.shell = '/usr/local/bin/zsh'
 
 -- interactive substitute
-vim.o.inccommand = 'split'
+-- o.inccommand = 'split'
 
 local wildignored = {
   'tags',
@@ -114,15 +107,15 @@ for i=1,#wildignored do
   wildignore = wildignore .. wildignored[i] .. ','
 end
 
-vim.o.wildignore = wildignore
-vim.o.wildignorecase = true
+o.wildignore = wildignore
+o.wildignorecase = true
 --wildcharm requires integer for the character, 26 is ascii code for 'c-z'
-vim.o.wildcharm=26
-vim.o.wildmenu=true
-vim.o.wildmode='longest:full,full'
+o.wildcharm=26
+o.wildmenu=true
+o.wildmode='longest:full,full'
 
 -- For highlighting yanked region
--- vim.cmd[[ au TextYankPost * silent! lua vim.highlight.on_yank({ higroup = 'HighlightedyankRegion', timeout = 120 }) ]]
+-- cmd[[ au TextYankPost * silent! lua highlight.on_yank({ higroup = 'HighlightedyankRegion', timeout = 120 }) ]]
 
 -- for searching files with location list
-vim.o.errorformat = vim.o.errorformat .. ',%f'
+o.errorformat = o.errorformat .. ',%f'

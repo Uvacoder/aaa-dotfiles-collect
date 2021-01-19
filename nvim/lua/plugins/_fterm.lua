@@ -1,3 +1,5 @@
+local map = require("utils/map").map
+
 require('FTerm').setup({
   dimensions  = {
     height = 0.8,
@@ -7,6 +9,6 @@ require('FTerm').setup({
   }
 })
 
-vim.fn.nvim_set_keymap('n', '<C-t>', ':FTermToggle<CR>', { noremap = true, silent = true })
-vim.fn.nvim_set_keymap('t', '<C-t>', '<C-\\><C-n>:FTermToggle<CR>', { noremap = true, silent = true })
-vim.fn.nvim_set_keymap('t', '<C-q>', '<C-\\><C-n>:FTermClose<CR>', { noremap = true, silent = true })
+map('n', '<C-t>', ':FTermToggle<CR>', {})
+map('t', '<C-t>', '<C-\\><C-n>:FTermToggle<CR>', {})
+map('t', '<C-q>', '<C-\\><C-n>:FTermClose<CR>', {})

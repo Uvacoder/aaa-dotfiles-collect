@@ -1,6 +1,7 @@
 require('providers')
-
-require('settings')
+require('colors')
 require('plugins')
+require('themes')
+require('settings')
 require('autocmd')
 require('keybinds')

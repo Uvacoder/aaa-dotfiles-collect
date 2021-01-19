@@ -1,3 +1,5 @@
+local map = require("utils/map").map
+
 local actions = require('telescope.actions')
 
 require'telescope'.setup{
@@ -56,9 +58,9 @@ require'telescope'.setup{
 }
 
 -- depends on `nvim-telescope/telescope-fzy-native.nvim`
-vim.cmd[[packadd telescope-fzy-native.nvim]]
+-- vim.cmd[[packadd telescope-fzy-native.nvim]]
 require('telescope').load_extension('fzy_native') -- superfast sorter
 
-vim.api.nvim_set_keymap('n', '<C-p>', ':Telescope find_files<cr>', { noremap = true, silent = true, expr = false })
-vim.api.nvim_set_keymap('n', '<C-g>', ':Telescope live_grep<cr>', { noremap = true, silent = true, expr = false })
-vim.api.nvim_set_keymap('n', '<C-b>', ':Telescope buffers<cr>', { noremap = true, silent = true, expr = false })
+map('n', '<C-p>', ':Telescope find_files<cr>', {})
+map('n', '<C-g>', ':Telescope live_grep<cr>', {})
+map('n', '<C-b>', ':Telescope buffers<cr>', {})

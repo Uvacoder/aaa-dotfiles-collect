@@ -1,5 +1,6 @@
+local map = require("utils/map").map
+
 vim.g.nvim_tree_width = 40
-vim.g.nvim_tree_auto_open = 1
 vim.g.nvim_tree_auto_close = 1
 vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_hide_dotfiles = 1
@@ -22,6 +23,16 @@ vim.g.nvim_tree_ignore = {
   '.cache',
   '.DS_Store'
 }
+vim.g.nvim_tree_icons = {
+  default = '',
+  git = {
+    unstaged = "M",
+    staged = "A",
+    unmerged = "═",
+    renamed = "R",
+    untracked = "U"
+  },
+}
 
-vim.api.nvim_set_keymap('n', '<C-e>', ':NvimTreeToggle<CR>', {noremap = true, silent = true, expr = false})
-vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', {noremap = true, silent = true, expr = false})
+map('n', '<C-e>', ':NvimTreeToggle<CR>', {})
+map('n', '<leader>r', ':NvimTreeRefresh<CR>', {})

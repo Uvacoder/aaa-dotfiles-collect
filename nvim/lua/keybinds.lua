@@ -1,29 +1,31 @@
-local options = {noremap = true, silent = true, expr = false}
+local map = require("utils/map").map
 
-vim.api.nvim_set_keymap('i', '<C-c>', '<esc>', options)
-vim.api.nvim_set_keymap('n', '<C-q>', ':wq!<CR>', options)
+map('n', '<C-q>', ':wq!<CR>', {})
+map('i', '<C-c>', '<esc>', {})
 
 -- search and replace
-vim.api.nvim_set_keymap('n', '<C-h>', ':%s///<left><left>', {noremap = true, expr = false})
-vim.api.nvim_set_keymap('n', '<Esc><Esc><Esc>', ':nohlsearch<CR><Esc>', options)
+map('n', '<Leader>h', ':%s///<left><left>', {silent = false})
+map('n', '<leader>s', ':%s//gcI<Left><Left><Left><Left>', {silent = false})
+map('v', '<leader>s', ':s//gcI<Left><Left><Left><Left>', {silent = false})
+map('n', '<Esc><Esc>', ':nohlsearch<CR><Esc>', {})
 
 -- move lines
-vim.api.nvim_set_keymap('v', '<S-K>', ":m '<-2<CR>gv=gv", options)
-vim.api.nvim_set_keymap('v', '<S-J>', ":m '>+1<CR>gv=gv", options)
-vim.api.nvim_set_keymap('v', '<S-L>', '>gv', options)
-vim.api.nvim_set_keymap('v', '<S-H>', '<gv', options)
+map('v', '<S-K>', ":m '<-2<CR>gv=gv", {})
+map('v', '<S-J>', ":m '>+1<CR>gv=gv", {})
+map('v', '<S-L>', '>gv', {})
+map('v', '<S-H>', '<gv', {})
 
 -- Better indenting
-vim.api.nvim_set_keymap('v', '<TAB>', '>gv', options)
-vim.api.nvim_set_keymap('v', '<S-TAB>', '<gv', options)
+map('v', '<TAB>', '>gv', {})
+map('v', '<S-TAB>', '<gv', {})
 
 --  Quick window switching
-vim.api.nvim_set_keymap('n', '<leader>j', '<C-w><C-j>', options)
-vim.api.nvim_set_keymap('n', '<leader>k', '<C-w><C-k>', options)
-vim.api.nvim_set_keymap('n', '<leader>l', '<C-w><C-l>', options)
-vim.api.nvim_set_keymap('n', '<leader>h', '<C-w><C-h>', options)
+map('n', '<Leader>j', '<C-w><C-j>', {})
+map('n', '<Leader>k', '<C-w><C-k>', {})
+map('n', '<Leader>l', '<C-w><C-l>', {})
+map('n', '<Leader>h', '<C-w><C-h>', {})
 
 -- Use operator pending mode to visually select the whole buffer
 -- e.g. dA = delete buffer ALL, yA = copy whole buffer ALL
-vim.api.nvim_set_keymap('o', 'A', ':<C-U>normal! ggVG<CR>', options)
+map('o', 'A', ':<C-U>normal! ggVG<CR>', {})
 

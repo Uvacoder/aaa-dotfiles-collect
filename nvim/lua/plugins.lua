@@ -1,12 +1,16 @@
+local fn = vim.fn
+local api = vim.api
+local cmd = vim.cmd
+
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.api.nvim_command('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+if fn.empty(fn.glob(install_path)) > 0 then
+  api.nvim_command('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
 end
 
-vim.cmd [[packadd packer.nvim]]
+cmd('packadd packer.nvim')
 
-vim.cmd [[ autocmd BufWritePost plugins.lua PackerCompile ]]
+cmd('autocmd BufWritePost plugins.lua PackerCompile')
 
 return require('packer').startup({
   function()
@@ -15,26 +19,9 @@ return require('packer').startup({
     use { 'wbthomason/packer.nvim', opt = true }
 
     -- themes
-    -- use {
-    --   'pineapplegiant/spaceduck',
-    --   config = function() require('plugins/_fixcolors') end,
-    --   requires = 'sheerun/vim-polyglot'
-    -- }
-    -- use {
-    --   'kyazdani42/nvim-palenight.lua',
-    --   config = function() require('plugins/_fixcolors') end,
-    --   requires = 'sheerun/vim-polyglot'
-    -- }
-    -- use {
-    --   'glepnir/zephyr-nvim',
-    --   config = function() require('plugins/_fixcolors') end,
-    --   requires = 'sheerun/vim-polyglot'
-    -- }
-    use {
-      'mhartington/oceanic-next',
-      config = function() require('plugins/_fixcolors') end,
-      requires = 'sheerun/vim-polyglot'
-    }
+    use 'pineapplegiant/spaceduck'
+    use 'kyazdani42/nvim-palenight.lua'
+    use 'mhartington/oceanic-next'
 
     -- Nvim Treesitter configurations and abstraction layer
     use {
@@ -44,7 +31,7 @@ return require('packer').startup({
 
     -- Lua Development for Neovim
     use {
-      'tjdevries/nlua.nvim', 
+      'tjdevries/nlua.nvim',
       requires = 'CurtisFenner/luafmt'
     }
 
@@ -60,7 +47,7 @@ return require('packer').startup({
     -- A file explorer tree for neovim written in lua
     use {
       'kyazdani42/nvim-tree.lua',
-      config = function() require('plugins/_tree') end
+      config = function() require('plugins/_nvimtree') end
     }
 
     -- A neovim lua plugin to help easily manage multiple terminal windows
@@ -78,7 +65,7 @@ return require('packer').startup({
 
     -- faster sorter algo for telescope
     use {
-      'nvim-telescope/telescope-fzy-native.nvim', opt = true,
+      'nvim-telescope/telescope-fzy-native.nvim',
       requires = 'nvim-telescope/telescope.nvim'
     }
 
@@ -97,10 +84,10 @@ return require('packer').startup({
     }
 
     -- NeoVim Indent Guides
-    -- use {
-    --   'glepnir/indent-guides.nvim', opt = true,
-    --   config = function() require('plugins/_indentguides') end
-    -- }
+    use {
+      'glepnir/indent-guides.nvim', opt = true,
+      config = function() require('plugins/_indentguides') end
+    }
 
     -- The missing motion for Vim
     use 'justinmk/vim-sneak'
@@ -136,6 +123,9 @@ return require('packer').startup({
 
     -- Multiple cursors plugin for vim/neovim
     use { 'mg979/vim-visual-multi', branch = 'master' }
+
+    -- A solid language pack for Vim.
+    use { 'sheerun/vim-polyglot' }
 
     -- vim-snipmate default snippets.
     use 'honza/vim-snippets'
