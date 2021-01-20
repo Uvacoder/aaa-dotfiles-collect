@@ -11,8 +11,7 @@ require('gitsigns').setup({
   sign_priority = 5,
 })
 
-vim.api.nvim_command('hi DiffAdd guibg=NONE guifg='..color.green)
-vim.api.nvim_command('hi DiffChange guibg=NONE guifg='..color.yellow)
-vim.api.nvim_command('hi DiffDelete guibg=NONE guifg='..color.red)
-
+vim.api.nvim_command('hi! DiffAdd guibg=' .. color.bg .. ' guifg=' .. color.green)
+vim.api.nvim_command('hi! DiffChange guibg=' .. color.bg .. ' guifg=' .. color.yellow)
+vim.api.nvim_command('hi! DiffDelete guibg=' .. color.bg .. ' guifg=' .. color.red)
 

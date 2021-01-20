@@ -6,6 +6,7 @@ opt('wo', 'number', true)
 opt('wo', 'relativenumber', true)
 opt('wo', 'signcolumn', 'yes')
 opt('wo', 'wrap', false)
+opt('wo', 'list', true)
 
 opt('bo', 'shiftwidth', shiftwidth)
 opt('bo', 'softtabstop', shiftwidth)
@@ -23,6 +24,7 @@ opt('o', 'number', true)
 opt('o', 'relativenumber', true)
 opt('o', 'wrap', false)
 opt('o', 'expandtab', true)
+opt('o', 'joinspaces', false)
 opt('o', 'shiftwidth', shiftwidth)
 opt('o', 'softtabstop', shiftwidth)
 opt('o', 'clipboard', 'unnamedplus')
@@ -39,12 +41,11 @@ opt('o', 'shell', '/usr/local/bin/zsh')
 opt('o', 'errorformat', vim.o.errorformat .. ',%f')
 opt('o', 'shortmess', vim.o.shortmess .. 'c')
 opt('o', 'undofile', true)
+opt('o', 'undodir', vim.fn.expand(vim.fn.stdpath('data') .. '/undodir//'))
 
-local undodir = vim.fn.expand(vim.fn.stdpath('data') .. '/undodir//')
-if vim.fn.isdirectory(undodir) == 0 then
-  vim.fn.mkdir(undodir, 'p')
+if vim.fn.isdirectory(vim.o.undodir) == 0 then
+  vim.fn.mkdir(vim.o.undodir, 'p')
 end
-opt('o', 'undodir', undodir)
 
 if vim.fn.has('termguicolors') == 1 then
   opt('o', 'termguicolors', true)

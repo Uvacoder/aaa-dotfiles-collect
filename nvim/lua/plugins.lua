@@ -20,20 +20,19 @@ return require('packer').startup({
     use {
       'nvim-treesitter/nvim-treesitter',
       config = function()
-        require('nvim-treesitter.configs').setup({highlight = {enable = true}})
+        require('nvim-treesitter.configs').setup(
+          {highlight = {enable = true, use_languagetree = true}},
+          {indent = {enable = true}}
+        )
       end
     }
 
     -- themes
     use {
-      -- 'pineapplegiant/spaceduck',
-      -- 'kyazdani42/nvim-palenight.lua',
       'mhartington/oceanic-next',
       config = function()
-        -- vim.cmd('colorscheme spaceduck')
-        -- vim.cmd('colorscheme palenight')
-        vim.cmd('colorscheme OceanicNext')
         require('plugins/_fixcolors')
+        vim.cmd('colorscheme OceanicNext')
       end
     }
 
@@ -41,7 +40,9 @@ return require('packer').startup({
     use {
       'norcalli/nvim-colorizer.lua',
       config = function()
-        require('colorizer').setup({'*'}, {names = false})
+        require('colorizer').setup(
+          {'*'},
+          {names = false})
       end
     }
 

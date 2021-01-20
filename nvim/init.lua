@@ -9,9 +9,11 @@ vim.g.my_colors = {
   white   = '#D8DDE9',
   grey    = '#343d46',
   black   = '#000000',
+  bg      = '#0b1015',
+  status  = '#000000',
 }
 
-require('settings')
 require('plugins')
+require('settings')
 require('autocmd')
 require('keybinds')

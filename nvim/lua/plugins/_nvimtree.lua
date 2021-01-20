@@ -15,7 +15,9 @@ vim.g.nvim_tree_ignore = {
   '.cache',
   '.DS_Store'
 }
-
+vim.g.nvim_tree_icons = {
+   default = '',
+ }
 vim.g.nvim_tree_bindings = {
   preview = { '<Tab>' }
 }
