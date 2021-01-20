@@ -59,7 +59,7 @@ require'telescope'.setup{
 
 -- depends on `nvim-telescope/telescope-fzy-native.nvim`
 -- vim.cmd[[packadd telescope-fzy-native.nvim]]
-require('telescope').load_extension('fzy_native') -- superfast sorter
+-- require('telescope').load_extension('fzy_native') -- superfast sorter
 
 map('n', '<C-p>', ':Telescope find_files<cr>', {})
 map('n', '<C-g>', ':Telescope live_grep<cr>', {})

@@ -8,7 +8,6 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 vim.cmd('packadd packer.nvim')
-
 vim.cmd('autocmd BufWritePost plugins.lua PackerCompile')
 
 return require('packer').startup({
@@ -17,32 +16,33 @@ return require('packer').startup({
     -- Packer can manage itself as an optional plugin
     use { 'wbthomason/packer.nvim', opt = true }
 
-    -- themes
-    use 'pineapplegiant/spaceduck'
-    use 'kyazdani42/nvim-palenight.lua'
-    use 'mhartington/oceanic-next'
-    use {
-      'Th3Whit3Wolf/onebuddy',
-      config = function() require('plugins/_fixcolors') end,
-      requires= 'tjdevries/colorbuddy.vim'
-    }
-
     -- Nvim Treesitter configurations and abstraction layer
     use {
       'nvim-treesitter/nvim-treesitter',
-      config = function() require('plugins/_treesitter') end
+      config = function()
+        require('nvim-treesitter.configs').setup({highlight = {enable = true}})
+      end
     }
 
-    -- Lua Development for Neovim
+    -- themes
     use {
-      'tjdevries/nlua.nvim',
-      requires = 'CurtisFenner/luafmt'
+      -- 'pineapplegiant/spaceduck',
+      -- 'kyazdani42/nvim-palenight.lua',
+      'mhartington/oceanic-next',
+      config = function()
+        -- vim.cmd('colorscheme spaceduck')
+        -- vim.cmd('colorscheme palenight')
+        vim.cmd('colorscheme OceanicNext')
+        require('plugins/_fixcolors')
+      end
     }
 
     -- The fastest Neovim colorizer.
     use {
       'norcalli/nvim-colorizer.lua',
-      config = function() require('plugins/_colorizer') end
+      config = function()
+        require('colorizer').setup({'*'}, {names = false})
+      end
     }
 
     -- lua `fork` of vim-web-devicons for neovim
@@ -51,46 +51,46 @@ return require('packer').startup({
     -- A file explorer tree for neovim written in lua
     use {
       'kyazdani42/nvim-tree.lua',
-      config = function() require('plugins/_nvimtree') end
+      config = function()
+        require('plugins/_nvimtree')
+      end
     }
 
     -- A neovim lua plugin to help easily manage multiple terminal windows
     use {
       'numtostr/FTerm.nvim',
-      config = function() require('plugins/_fterm') end
+      config = function()
+        require('plugins/_fterm')
+      end
     }
 
     -- Find, Filter, Preview, Pick. All lua, all the time.
     use {
       'nvim-telescope/telescope.nvim',
-      config = function() require('plugins/_telescope') end,
-      requires = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim' }
-    }
-
-    -- faster sorter algo for telescope
-    use {
-      'nvim-telescope/telescope-fzy-native.nvim',
-      requires = 'nvim-telescope/telescope.nvim'
+      config = function()
+        require('plugins/_telescope')
+      end,
+      requires = {
+        'nvim-lua/popup.nvim',
+        'nvim-lua/plenary.nvim'
+      }
     }
 
     -- show git stuff in signcolumn
     use {
       'lewis6991/gitsigns.nvim',
-      config = function() require('plugins/_gitsigns') end,
-      requires = 'nvim-lua/plenary.nvim'
+      config = function()
+        require('plugins/_gitsigns')
+      end
     }
 
     -- neovim statusline plugin written in lua
     use {
-      'glepnir/galaxyline.nvim', branch = 'main',
-      config = function() require('plugins/_galaxyline') end,
-      requires = { 'kyazdani42/nvim-web-devicons','lewis6991/gitsigns.nvim' }
-    }
-
-    -- NeoVim Indent Guides
-    use {
-      'glepnir/indent-guides.nvim', opt = true,
-      config = function() require('plugins/_indentguides') end
+      'glepnir/galaxyline.nvim',
+      branch = 'main',
+      config = function()
+        require('plugins/_galaxyline')
+      end
     }
 
     -- The missing motion for Vim
@@ -102,18 +102,21 @@ return require('packer').startup({
     --  For commmenting stuff out
     use 'tomtom/tcomment_vim'
 
-    -- A Git wrapper so awesome, it should be illegal
-    use 'tpope/vim-fugitive'
-
     --  Intellisense and completion engine
     use {
-      'neoclide/coc.nvim', branch = 'release',
-      config = function() require('plugins/_coc') end
+      'neoclide/coc.nvim',
+      branch = 'release',
+      config = function()
+        require('plugins/_coc')
+      end
     }
 
+    -- Check syntax in Vim asynchronously and fix files
     use {
       'dense-analysis/ale',
-      config = function() require('plugins/_ale') end
+      config = function()
+        require('plugins/_ale')
+      end
     }
 
     -- Plugin to insert or delete brackets, parens, quotes in pair
@@ -122,16 +125,23 @@ return require('packer').startup({
     -- Better whitespace highlighting for Vim
     use {
       'ntpeters/vim-better-whitespace',
-      config = function() require('plugins/_whitespace') end
+      config = function()
+        require('plugins/_whitespace')
+      end
     }
 
     -- Multiple cursors plugin for vim/neovim
-    use { 'mg979/vim-visual-multi', branch = 'master' }
+    use {
+      'mg979/vim-visual-multi',
+      branch = 'master'
+    }
 
     -- A solid language pack for Vim.
     use {
       'sheerun/vim-polyglot',
-      config = function() require('plugins/_vimpolyglot') end
+      config = function()
+        vim.g.vue_pre_processors = {}
+      end
     }
 
     -- vim-snipmate default snippets.
