@@ -11,7 +11,6 @@ opt('wo', 'list', true)
 opt('bo', 'shiftwidth', shiftwidth)
 opt('bo', 'softtabstop', shiftwidth)
 opt('bo', 'autoindent', true)
-opt('bo', 'formatoptions', 'qrn1')
 
 opt('o', 'encoding', 'UTF-8')
 opt('o', 'background', 'dark')

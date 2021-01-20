@@ -1,10 +1,19 @@
 local map = require("helpers").map
 
--- Use operator pending mode to visually select the whole buffer
--- e.g. dA = delete buffer ALL, yA = copy whole buffer ALL
-map('o', 'A', ':<C-U>normal! ggVG<CR>')
+-- reload
+-- map('n', '<Leader><CR>', ':so ~/.config/nvim/init.lua<CR>')
 
+-- buffers navigation
+map('n', '<Space>', '<PageDown>')
+map('n', '-', '<PageUp>')
+
+-- select all
+map('n', '<Leader>a', 'ggVG')
+
+--
 map('t', 'jj', '<ESC>', {noremap = false})
+map('n', '<C-s>', ':w<CR>')
+map('i', '<C-s>', ':w<CR>')
 map('i', '<C-c>', '<esc>')
 map('n', '<C-q>', ':wq!<CR>')
 

@@ -20,10 +20,7 @@ return require('packer').startup({
     use {
       'nvim-treesitter/nvim-treesitter',
       config = function()
-        require('nvim-treesitter.configs').setup(
-          {highlight = {enable = true, use_languagetree = true}},
-          {indent = {enable = true}}
-        )
+        require('plugins/_treesitter')
       end
     }
 
@@ -31,8 +28,8 @@ return require('packer').startup({
     use {
       'mhartington/oceanic-next',
       config = function()
-        require('plugins/_fixcolors')
         vim.cmd('colorscheme OceanicNext')
+        require('plugins/_fixcolors')
       end
     }
 
@@ -53,7 +50,7 @@ return require('packer').startup({
     use {
       'kyazdani42/nvim-tree.lua',
       config = function()
-        require('plugins/_nvimtree')
+        require('plugins/_tree')
       end
     }
 
@@ -141,7 +138,7 @@ return require('packer').startup({
     use {
       'sheerun/vim-polyglot',
       config = function()
-        vim.g.vue_pre_processors = {}
+        require('plugins/_polyglot')
       end
     }
 
