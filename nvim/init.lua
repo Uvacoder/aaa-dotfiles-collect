@@ -7,10 +7,10 @@ vim.g.my_colors = {
   cyan    = '#4AB6B5',
   green   = '#8FCC95',
   white   = '#D8DDE9',
-  grey    = '#343d46',
-  black   = '#000000',
-  bg      = '#0b1015',
-  status  = '#000000'
+  grey    = '#A7ACBA',
+  black   = '#0b1015',
+  bg      = '#0F101B',
+  status  = '#1A1F2C'
 }
 
 require('plugins')

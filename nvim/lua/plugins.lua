@@ -26,9 +26,13 @@ return require('packer').startup({
 
     -- themes
     use {
-      'mhartington/oceanic-next',
+      'sainnhe/edge',
+      -- 'mhartington/oceanic-next',
       config = function()
-        vim.cmd('colorscheme OceanicNext')
+        vim.g.edge_style = 'neon'
+        vim.g.edge_enable_italic = 1
+        vim.cmd('colorscheme edge')
+        -- vim.cmd('colorscheme OceanicNext')
         require('plugins/_fixcolors')
       end
     }

@@ -67,8 +67,6 @@ alias xatcr='xattr -cr '
 alias ydl='cd /Volumes/Pendrive/Downloads && youtube-dl'
 # reset dns
 alias dns:r='networksetup -setairportpower en0 off && sudo killall -HUP mDNSResponder && echo macOS DNS Cache Reset && networksetup -setairportpower en0 on'
-# listen evangelizar fm
-alias eva='open "http://evanam.crossradio.com.br:8002/stream/1;"'
 # edit dotfiles
 alias dot="cd $HOME/.dotfiles"
 # diversos
@@ -105,6 +103,7 @@ alias ptu='cd /Volumes/Sites/pousada_do_tucunare_2020 && clear'
 alias per='cd /Volumes/Sites/psicologa_erica_rover_2020 && clear'
 alias sen='cd /Volumes/Sites/santos_e_nascimento_2020 && clear'
 alias avp='cd /Volumes/Sites/arte_visual_propag_2021 && clear'
+alias zzz='cd /Volumes/Sites/blog && clear'
 # alias cds='cd /Volumes/Sites/car-dealership-2020 && clear'
 # alias cda='cd /Volumes/WS/car-dealership-api-2020 && clear'
 # alias cdd='cd /Volumes/WS/car-dealership-adm-2020 && clear'
