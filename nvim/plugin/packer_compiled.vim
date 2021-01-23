@@ -9,6 +9,16 @@ endif
 try
 
 lua << END
+  local package_path_str = "/Users/sldobri/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/sldobri/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/sldobri/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/sldobri/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+  local install_cpath_pattern = "/Users/sldobri/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+  if not string.find(package.path, package_path_str, 1, true) then
+    package.path = package.path .. ';' .. package_path_str
+  end
+
+  if not string.find(package.cpath, install_cpath_pattern, 1, true) then
+    package.cpath = package.cpath .. ';' .. install_cpath_pattern
+  end
+
 local plugins = {
   ["packer.nvim"] = {
     loaded = false,
@@ -147,6 +157,20 @@ end
 
 -- Pre-load configuration
 -- Post-load configuration
+-- Config for: oceanic-next
+loadstring("\27LJ\2\n¼\1\0\0\3\0\b\0\0166\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0006\0\0\0009\0\4\0'\2\5\0B\0\2\0016\0\6\0'\2\a\0B\0\2\1K\0\1\0\23plugins/_fixcolors\frequire\28colorscheme OceanicNext\bcmd!oceanic_next_terminal_italic\31oceanic_next_terminal_bold\6g\bvim\0")()
+-- Config for: telescope.nvim
+loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins/_telescope\frequire\0")()
+-- Config for: vim-better-whitespace
+loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_whitespace\frequire\0")()
+-- Config for: nvim-colorizer.lua
+loadstring("\27LJ\2\nO\0\0\4\0\5\0\b6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0B\0\3\1K\0\1\0\1\0\1\nnames\1\1\2\0\0\6*\nsetup\14colorizer\frequire\0")()
+-- Config for: coc.nvim
+loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_coc\frequire\0")()
+-- Config for: gitsigns.nvim
+loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_gitsigns\frequire\0")()
+-- Config for: vim-polyglot
+loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_polyglot\frequire\0")()
 -- Config for: ale
 loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_ale\frequire\0")()
 -- Config for: nvim-tree.lua
@@ -155,22 +179,8 @@ loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18plugins/_tr
 loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_treesitter\frequire\0")()
 -- Config for: FTerm.nvim
 loadstring("\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19plugins/_fterm\frequire\0")()
--- Config for: edge
-loadstring("\27LJ\2\n \1\0\0\3\0\t\0\0166\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\4\0006\0\0\0009\0\5\0'\2\6\0B\0\2\0016\0\a\0'\2\b\0B\0\2\1K\0\1\0\23plugins/_fixcolors\frequire\21colorscheme edge\bcmd\23edge_enable_italic\tneon\15edge_style\6g\bvim\0")()
--- Config for: telescope.nvim
-loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins/_telescope\frequire\0")()
--- Config for: coc.nvim
-loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_coc\frequire\0")()
 -- Config for: galaxyline.nvim
 loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_galaxyline\frequire\0")()
--- Config for: nvim-colorizer.lua
-loadstring("\27LJ\2\nO\0\0\4\0\5\0\b6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0B\0\3\1K\0\1\0\1\0\1\nnames\1\1\2\0\0\6*\nsetup\14colorizer\frequire\0")()
--- Config for: vim-polyglot
-loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_polyglot\frequire\0")()
--- Config for: vim-better-whitespace
-loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_whitespace\frequire\0")()
--- Config for: gitsigns.nvim
-loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_gitsigns\frequire\0")()
 -- Conditional loads
 -- Load plugins in order defined by `after`
 END
