@@ -4,3 +4,6 @@
 -- Auto save files when focus is lost
 -- vim.cmd("au FocusLost * :wa")
 -- vim.cmd("au FocusLost * silent! wa")
+--
+vim.cmd('autocmd BufEnter * set cursorline')
+vim.cmd('autocmd BufLeave * set nocursorline')

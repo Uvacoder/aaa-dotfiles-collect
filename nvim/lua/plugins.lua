@@ -26,15 +26,15 @@ return require('packer').startup({
 
     -- themes
     use {
-      -- 'sainnhe/edge',
-      'mhartington/oceanic-next',
+      'pineapplegiant/spaceduck', branch = 'main',
+      -- 'larsbs/vimterial_dark',
+      -- 'mhartington/oceanic-next',
       config = function()
-        -- vim.g.edge_style = 'neon'
-        -- vim.g.edge_enable_italic = 1
-        -- vim.cmd('colorscheme edge')
-        vim.g.oceanic_next_terminal_bold = 1
-        vim.g.oceanic_next_terminal_italic = 1
-        vim.cmd('colorscheme OceanicNext')
+        vim.cmd('colorscheme spaceduck')
+        -- vim.cmd('colorscheme vimterial_dark')
+        -- vim.g.oceanic_next_terminal_bold = 1
+        -- vim.g.oceanic_next_terminal_italic = 1
+        -- vim.cmd('colorscheme OceanicNext')
         require('plugins/_fixcolors')
       end
     }

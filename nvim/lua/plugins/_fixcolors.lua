@@ -8,8 +8,8 @@ vim.api.nvim_command('hi SignColumn guibg=' .. color.bg)
 vim.api.nvim_command('hi EndOfBuffer guibg=' .. color.bg .. ' guifg=' .. color.bg)
 vim.api.nvim_command('hi FoldColumn guibg=' .. color.bg)
 vim.api.nvim_command('hi LineNr guibg=' .. color.bg)
-vim.api.nvim_command('hi VertSplit guifg=' .. color.bg .. ' guibg=' .. color.grey)
-vim.api.nvim_command('hi CursorLineNR guibg=' .. color.bg)
+vim.api.nvim_command('hi VertSplit guifg=' .. color.bg .. ' guibg=' .. color.bg)
+-- vim.api.nvim_command('hi CursorLineNR guibg=' .. color.bg)
 
 
 vim.api.nvim_command('hi IncSearch guibg=' .. color.yellow .. ' guifg=' .. color.black)

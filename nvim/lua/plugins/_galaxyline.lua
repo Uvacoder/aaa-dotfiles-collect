@@ -12,9 +12,9 @@ local mode = {
 local m_color = {
   n = color.blue,
   i = color.green,
-  v = color.magenta,
-  [''] = color.magenta,
-  V = color.magenta,
+  v = color.purple,
+  [''] = color.purple,
+  V = color.purple,
   c = color.red,
   no = color.magenta,
   s = color.orange,
@@ -178,7 +178,7 @@ gls.right[2] = {
     provider = 'LineColumn',
     separator = '  ',
     separator_highlight = {color.grey, color.status},
-    highlight = {color.grey, color.status},
+    highlight = {color.purple, color.status},
   },
 }
 

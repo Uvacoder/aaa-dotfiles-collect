@@ -47,5 +47,7 @@ if vim.fn.isdirectory(vim.o.undodir) == 0 then
 end
 
 if vim.fn.has('termguicolors') == 1 then
+  vim.cmd('let &t_8f = "\\<Esc>[38;2;%lu;%lu;%lum"')
+  vim.cmd('let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum"')
   opt('o', 'termguicolors', true)
 end
