@@ -21,16 +21,19 @@ return require('packer').startup({
       'nvim-treesitter/nvim-treesitter',
       config = function()
         require('plugins/_treesitter')
-      end
+      end,
+      requires = 'p00f/nvim-ts-rainbow'
     }
 
     -- themes
     use {
-      'pineapplegiant/spaceduck', branch = 'main',
+      'glepnir/zephyr-nvim',
+      -- 'pineapplegiant/spaceduck', branch = 'main',
       -- 'larsbs/vimterial_dark',
       -- 'mhartington/oceanic-next',
       config = function()
-        vim.cmd('colorscheme spaceduck')
+        require('zephyr')
+        -- vim.cmd('colorscheme spaceduck')
         -- vim.cmd('colorscheme vimterial_dark')
         -- vim.g.oceanic_next_terminal_bold = 1
         -- vim.g.oceanic_next_terminal_italic = 1
@@ -151,5 +154,11 @@ return require('packer').startup({
     -- vim-snipmate default snippets.
     use 'honza/vim-snippets'
 
+    use {
+      'glepnir/indent-guides.nvim',
+      config = function ()
+        require('plugins/_indentguides')
+      end
+    }
   end
 })

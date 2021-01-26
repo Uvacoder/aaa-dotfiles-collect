@@ -1,4 +1,4 @@
-local color = vim.g.my_colors
+local color = vim.g.custom.colors
 local mode = {
   c = "🅒",
   i = "🅘",
@@ -47,17 +47,17 @@ gls.left[1] = {
   ViMode = {
     provider = function()
       vim.api.nvim_command('hi GalaxyViMode guifg='..m_color[vim.fn.mode()])
-      vim.api.nvim_command('hi GalaxyViMode guibg='..color.status)
+      vim.api.nvim_command('hi GalaxyViMode guibg='..color.ui.statusline)
       return mode[vim.fn.mode()]
     end,
    separator = '  ',
     separator_highlight = {color.yellow,function()
       if not buffer_not_empty() then
-        return color.status
+        return color.ui.statusline
       end
-      return color.status
+      return color.ui.statusline
     end},
-    highlight = {color.yellow, color.status,'bold'},
+    highlight = {color.yellow, color.ui.statusline,'bold'},
   },
 }
 
@@ -65,7 +65,7 @@ gls.left[2] ={
   FileIcon = {
     provider = 'FileIcon',
     condition = buffer_not_empty,
-    highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color, color.status},
+    highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color, color.ui.statusline},
   },
 }
 
@@ -74,8 +74,8 @@ gls.left[3] = {
     provider = {'FileName'},
     condition = buffer_not_empty,
     separator = ' ',
-    separator_highlight = {color.grey, color.status},
-    highlight = {color.white, color.status}
+    separator_highlight = {color.grey, color.ui.statusline},
+    highlight = {color.white, color.ui.statusline}
   }
 }
 
@@ -83,7 +83,7 @@ gls.left[4] = {
   GitIcon = {
     provider = function() return '  ' end,
     condition = buffer_not_empty,
-    highlight = {color.red, color.status},
+    highlight = {color.red, color.ui.statusline},
   }
 }
 
@@ -92,8 +92,8 @@ gls.left[5] = {
     provider = 'GitBranch',
     condition = buffer_not_empty,
     separator = '  ',
-    separator_highlight = {color.grey, color.status},
-    highlight = {color.white, color.status},
+    separator_highlight = {color.grey, color.ui.statusline},
+    highlight = {color.white, color.ui.statusline},
   }
 }
 
@@ -110,7 +110,7 @@ gls.left[6] = {
     provider = 'DiffAdd',
     condition = checkwidth,
     icon = ' ',
-    highlight = {color.green, color.status},
+    highlight = {color.green, color.ui.statusline},
   }
 }
 
@@ -119,7 +119,7 @@ gls.left[7] = {
     provider = 'DiffModified',
     condition = checkwidth,
     icon = ' ',
-    highlight = {color.yellow, color.status},
+    highlight = {color.yellow, color.ui.statusline},
   }
 }
 
@@ -128,7 +128,7 @@ gls.left[8] = {
     provider = 'DiffRemove',
     condition = checkwidth,
     icon = ' ',
-    highlight = {color.red, color.status},
+    highlight = {color.red, color.ui.statusline},
   }
 }
 
@@ -136,8 +136,8 @@ gls.left[9] = {
   LeftEnd = {
     provider = function() return '  ' end,
     separator = '  ',
-    separator_highlight = {color.grey, color.status},
-    highlight = {color.grey, color.status}
+    separator_highlight = {color.grey, color.ui.statusline},
+    highlight = {color.grey, color.ui.statusline}
   }
 }
 
@@ -145,14 +145,14 @@ gls.left[10] = {
   DiagnosticError = {
     provider = 'DiagnosticError',
     icon = '  ',
-    highlight = {color.red, color.status}
+    highlight = {color.red, color.ui.statusline}
   }
 }
 
 gls.left[11] = {
   Space = {
     provider = function () return ' ' end,
-    highlight = {color.red, color.status}
+    highlight = {color.red, color.ui.statusline}
   }
 }
 
@@ -160,7 +160,7 @@ gls.left[12] = {
   DiagnosticWarn = {
     provider = 'DiagnosticWarn',
     icon = '  ',
-    highlight = {color.blue, color.status},
+    highlight = {color.blue, color.ui.statusline},
   }
 }
 
@@ -168,8 +168,8 @@ gls.right[1]= {
   FileFormat = {
     provider = 'FileFormat',
     -- separator = ' ',
-    -- separator_highlight = {color.grey, color.status},
-    highlight = {color.grey, color.status},
+    -- separator_highlight = {color.grey, color.ui.statusline},
+    highlight = {color.grey, color.ui.statusline},
   }
 }
 
@@ -177,8 +177,8 @@ gls.right[2] = {
   LineInfo = {
     provider = 'LineColumn',
     separator = '  ',
-    separator_highlight = {color.grey, color.status},
-    highlight = {color.purple, color.status},
+    separator_highlight = {color.grey, color.ui.statusline},
+    highlight = {color.purple, color.ui.statusline},
   },
 }
 
@@ -186,8 +186,8 @@ gls.right[3] = {
   PerCent = {
     provider = 'LinePercent',
     separator = ' ',
-    separator_highlight = {color.grey, color.status},
-    highlight = {color.grey, color.status},
+    separator_highlight = {color.grey, color.ui.statusline},
+    highlight = {color.grey, color.ui.statusline},
   }
 }
 
@@ -195,8 +195,8 @@ gls.short_line_left[1] = {
   BufferType = {
     provider = 'FileTypeName',
     separator = ' ',
-    separator_highlight = {color.grey, color.status},
-    highlight = {color.white, color.status}
+    separator_highlight = {color.grey, color.ui.statusline},
+    highlight = {color.white, color.ui.statusline}
   }
 }
 
@@ -204,7 +204,7 @@ gls.short_line_right[1] = {
   BufferIcon = {
     provider= 'BufferIcon',
     separator = ' ',
-    separator_highlight = {color.grey, color.status},
-    highlight = {color.white, color.status}
+    separator_highlight = {color.grey, color.ui.statusline},
+    highlight = {color.white, color.ui.statusline}
   }
 }

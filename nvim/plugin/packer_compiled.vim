@@ -19,18 +19,169 @@ lua << END
     package.cpath = package.cpath .. ';' .. install_cpath_pattern
   end
 
-local plugins = {
+_G.packer_plugins = {
+  ["FTerm.nvim"] = {
+    config = { "\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19plugins/_fterm\frequire\0" },
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/FTerm.nvim"
+  },
+  ale = {
+    config = { "\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_ale\frequire\0" },
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/ale"
+  },
+  ["auto-pairs"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/auto-pairs"
+  },
+  ["coc.nvim"] = {
+    config = { "\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_coc\frequire\0" },
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/coc.nvim"
+  },
+  ["galaxyline.nvim"] = {
+    config = { "\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_galaxyline\frequire\0" },
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
+  },
+  ["gitsigns.nvim"] = {
+    config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_gitsigns\frequire\0" },
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
+  ["indent-guides.nvim"] = {
+    config = { "\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26plugins/_indentguides\frequire\0" },
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/indent-guides.nvim"
+  },
+  ["nvim-colorizer.lua"] = {
+    config = { "\27LJ\2\nO\0\0\4\0\5\0\b6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0B\0\3\1K\0\1\0\1\0\1\nnames\1\1\2\0\0\6*\nsetup\14colorizer\frequire\0" },
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
+  },
+  ["nvim-tree.lua"] = {
+    config = { "\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18plugins/_tree\frequire\0" },
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+  },
+  ["nvim-treesitter"] = {
+    config = { "\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_treesitter\frequire\0" },
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = false,
     only_sequence = false,
     only_setup = false,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  ["popup.nvim"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/popup.nvim"
+  },
+  tcomment_vim = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/tcomment_vim"
+  },
+  ["telescope.nvim"] = {
+    config = { "\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins/_telescope\frequire\0" },
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  undotree = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/undotree"
+  },
+  ["vim-better-whitespace"] = {
+    config = { "\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_whitespace\frequire\0" },
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-better-whitespace"
+  },
+  ["vim-polyglot"] = {
+    config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_polyglot\frequire\0" },
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-polyglot"
+  },
+  ["vim-sneak"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-sneak"
+  },
+  ["vim-snippets"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-snippets"
+  },
+  ["vim-visual-multi"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-visual-multi"
+  },
+  ["zephyr-nvim"] = {
+    config = { "\27LJ\2\nE\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0016\0\0\0'\2\2\0B\0\2\1K\0\1\0\23plugins/_fixcolors\vzephyr\frequire\0" },
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/zephyr-nvim"
   }
 }
 
 local function handle_bufread(names)
   for _, name in ipairs(names) do
-    local path = plugins[name].path
+    local path = packer_plugins[name].path
     for _, dir in ipairs({ 'ftdetect', 'ftplugin', 'after/ftdetect', 'after/ftplugin' }) do
       if #vim.fn.finddir(dir, path) > 0 then
         vim.cmd('doautocmd BufRead')
@@ -42,7 +193,7 @@ end
 
 local packer_load = nil
 local function handle_after(name, before)
-  local plugin = plugins[name]
+  local plugin = packer_plugins[name]
   plugin.load_after[before] = nil
   if next(plugin.load_after) == nil then
     packer_load({name}, {})
@@ -52,7 +203,7 @@ end
 packer_load = function(names, cause)
   local some_unloaded = false
   for _, name in ipairs(names) do
-    if not plugins[name].loaded then
+    if not packer_plugins[name].loaded then
       some_unloaded = true
       break
     end
@@ -64,14 +215,14 @@ packer_load = function(names, cause)
   local del_cmds = {}
   local del_maps = {}
   for _, name in ipairs(names) do
-    if plugins[name].commands then
-      for _, cmd in ipairs(plugins[name].commands) do
+    if packer_plugins[name].commands then
+      for _, cmd in ipairs(packer_plugins[name].commands) do
         del_cmds[cmd] = true
       end
     end
 
-    if plugins[name].keys then
-      for _, key in ipairs(plugins[name].keys) do
+    if packer_plugins[name].keys then
+      for _, key in ipairs(packer_plugins[name].keys) do
         del_maps[key] = true
       end
     end
@@ -86,22 +237,22 @@ packer_load = function(names, cause)
   end
 
   for _, name in ipairs(names) do
-    if not plugins[name].loaded then
+    if not packer_plugins[name].loaded then
       vim.cmd('packadd ' .. name)
-      if plugins[name].config then
-        for _i, config_line in ipairs(plugins[name].config) do
+      if packer_plugins[name].config then
+        for _i, config_line in ipairs(packer_plugins[name].config) do
           loadstring(config_line)()
         end
       end
 
-      if plugins[name].after then
-        for _, after_name in ipairs(plugins[name].after) do
+      if packer_plugins[name].after then
+        for _, after_name in ipairs(packer_plugins[name].after) do
           handle_after(after_name, name)
           vim.cmd('redraw')
         end
       end
 
-      plugins[name].loaded = true
+      packer_plugins[name].loaded = true
     end
   end
 
@@ -157,30 +308,32 @@ end
 
 -- Pre-load configuration
 -- Post-load configuration
+-- Config for: indent-guides.nvim
+loadstring("\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26plugins/_indentguides\frequire\0")()
 -- Config for: vim-better-whitespace
 loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_whitespace\frequire\0")()
--- Config for: nvim-treesitter
-loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_treesitter\frequire\0")()
--- Config for: coc.nvim
-loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_coc\frequire\0")()
--- Config for: gitsigns.nvim
-loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_gitsigns\frequire\0")()
--- Config for: FTerm.nvim
-loadstring("\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19plugins/_fterm\frequire\0")()
--- Config for: spaceduck
-loadstring("\27LJ\2\n`\0\0\3\0\5\0\b6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0'\2\4\0B\0\2\1K\0\1\0\23plugins/_fixcolors\frequire\26colorscheme spaceduck\bcmd\bvim\0")()
--- Config for: galaxyline.nvim
-loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_galaxyline\frequire\0")()
--- Config for: telescope.nvim
-loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins/_telescope\frequire\0")()
--- Config for: ale
-loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_ale\frequire\0")()
 -- Config for: nvim-colorizer.lua
 loadstring("\27LJ\2\nO\0\0\4\0\5\0\b6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0B\0\3\1K\0\1\0\1\0\1\nnames\1\1\2\0\0\6*\nsetup\14colorizer\frequire\0")()
 -- Config for: vim-polyglot
 loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_polyglot\frequire\0")()
+-- Config for: gitsigns.nvim
+loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_gitsigns\frequire\0")()
+-- Config for: nvim-treesitter
+loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_treesitter\frequire\0")()
 -- Config for: nvim-tree.lua
 loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18plugins/_tree\frequire\0")()
+-- Config for: galaxyline.nvim
+loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_galaxyline\frequire\0")()
+-- Config for: FTerm.nvim
+loadstring("\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19plugins/_fterm\frequire\0")()
+-- Config for: coc.nvim
+loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_coc\frequire\0")()
+-- Config for: ale
+loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_ale\frequire\0")()
+-- Config for: zephyr-nvim
+loadstring("\27LJ\2\nE\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0016\0\0\0'\2\2\0B\0\2\1K\0\1\0\23plugins/_fixcolors\vzephyr\frequire\0")()
+-- Config for: telescope.nvim
+loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins/_telescope\frequire\0")()
 -- Conditional loads
 -- Load plugins in order defined by `after`
 END
