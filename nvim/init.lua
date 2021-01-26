@@ -20,8 +20,8 @@ vim.g.custom = {
       statusline = '#1A1F2C',
       cursorline = '#1A1F2C',
       identguides = {
-        even = { fg = '#2E323A', bg ='#34383F' },
-        odd  = { fg = '#34383F', bg ='#2E323A' }
+        even = { fg = '#1A1F2C', bg ='#2E323A' },
+        odd  = { fg = '#2E323A', bg ='#1A1F2C' }
       }
     }
   }
