@@ -4,8 +4,8 @@ require('nvim-treesitter.configs').setup({
   indent = {enable = true},
   rainbow = {enable = true},
   disable = {
-    'c', 'c_sharp', 'clojure', 'cpp', 'dart', 'erlang', 'fennel', 'Godot', 'go',
-    'java', 'julia', 'kotlin', 'nix', 'ocaml', 'ocaml_interface', 'ocamllex',
-    'php', 'rst', 'ruby', 'rust', 'sparql', 'teal', 'toml', 'turtle', 'verilog'
+   'c', 'c_sharp', 'clojure', 'cpp', 'dart', 'erlang', 'fennel', 'Godot', 'go',
+   'java', 'julia', 'kotlin', 'nix', 'ocaml', 'ocaml_interface', 'ocamllex',
+   'php', 'rst', 'ruby', 'rust', 'sparql', 'teal', 'toml', 'turtle', 'verilog'
   },
 })

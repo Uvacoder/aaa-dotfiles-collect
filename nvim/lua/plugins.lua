@@ -8,7 +8,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 vim.cmd('packadd packer.nvim')
-vim.cmd('autocmd BufWritePost plugins.lua PackerCompile')
+--vim.cmd('autocmd BufWritePost plugins.lua PackerCompile')
 
 return require('packer').startup({
   function()
@@ -109,7 +109,7 @@ return require('packer').startup({
     --  For commmenting stuff out
     use 'tomtom/tcomment_vim'
 
-    --  Intellisense and completion engine
+     -- Intellisense and completion engine
     use {
       'neoclide/coc.nvim',
       branch = 'release',
@@ -117,6 +117,18 @@ return require('packer').startup({
         require('plugins/_coc')
       end
     }
+
+      -- use {
+      --   'prabirshrestha/vim-lsp',
+      --   config = function()
+      --     require('plugins/_lsp')
+      --   end,
+      --   requires = {
+      --     'mattn/vim-lsp-settings',
+      --     'prabirshrestha/asyncomplete.vim',
+      --     'prabirshrestha/asyncomplete-lsp.vim'
+      --   }
+      -- }
 
     -- Check syntax in Vim asynchronously and fix files
     use {

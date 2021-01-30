@@ -17,11 +17,11 @@ vim.g.custom = {
     black   = '#0b1015',
     ui = {
       bg         = '#0F101B',
-      statusline = '#1A1F2C',
+      statusline = '#000000',
       cursorline = '#1A1F2C',
       identguides = {
-        even = { fg = '#1A1F2C', bg ='#2E323A' },
-        odd  = { fg = '#2E323A', bg ='#1A1F2C' }
+        even = { fg = '#1A1F3A', bg ='#000000' },
+        odd  = { fg = '#000000', bg ='#1A1F3A' }
       }
     }
   }
