@@ -1,5 +1,3 @@
-local map = require("helpers").map
-
 require('FTerm').setup({
   dimensions  = {
     height = 0.8,
@@ -9,6 +7,8 @@ require('FTerm').setup({
   }
 })
 
-map('n', '<C-t>', ':FTermToggle<CR>')
-map('t', '<C-t>', '<C-\\><C-n>:FTermToggle<CR>')
-map('t', '<C-q>', '<C-\\><C-n>:FTermClose<CR>')
+local keymap = require("astronauta.keymap")
+
+keymap.nnoremap{'<C-t>', ':FTermToggle<CR>'}
+keymap.tnoremap{'<C-t>', '<C-\\><C-n>:FTermToggle<CR>'}
+keymap.tnoremap{'<C-q>', '<C-\\><C-n>:FTermClose<CR>'}

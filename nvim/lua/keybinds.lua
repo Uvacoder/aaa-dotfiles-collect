@@ -1,3 +1,5 @@
+local keymap  = require("astronauta.keymap")
+
 local map = require("helpers").map
 
 -- reload

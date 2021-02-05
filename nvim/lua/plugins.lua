@@ -16,6 +16,9 @@ return require('packer').startup({
     -- Packer can manage itself as an optional plugin
     use { 'wbthomason/packer.nvim', opt = true }
 
+    -- You now feel at home traveling to the moon.
+    use 'tjdevries/astronauta.nvim'
+
     -- Nvim Treesitter configurations and abstraction layer
     use {
       'nvim-treesitter/nvim-treesitter',

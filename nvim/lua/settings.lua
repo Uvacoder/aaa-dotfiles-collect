@@ -1,4 +1,8 @@
-local opt = require('helpers').opt
+function opt(scope, key, value)
+  local scopes = {o = vim.o, bo = vim.bo, wo = vim.wo}
+  scopes[scope][key] = value
+  if scope ~= 'o' then scopes['o'][key] = value end
+end
 
 local shiftwidth = 2
 

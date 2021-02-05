@@ -11,7 +11,7 @@ local mode = {
 
 local m_color = {
   n = color.blue,
-  i = color.green,
+  i = color.yellow,
   v = color.purple,
   [''] = color.purple,
   V = color.purple,
