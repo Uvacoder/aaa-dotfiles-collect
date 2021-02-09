@@ -3,6 +3,7 @@ vim.g.custom = {
   options = {
     invert_vertsplit = false
   },
+
   colors = {
     yellow  = '#ffc600',
     orange  = '#FF8B4B',

@@ -109,10 +109,10 @@ return require('packer').startup({
     }
 
     -- Better whitespace highlighting for Vim
-    use {
-      'ntpeters/vim-better-whitespace',
-      config = function() require('plugins/_whitespace') end
-    }
+    -- use {
+    --   'ntpeters/vim-better-whitespace',
+    --   config = function() require('plugins/_whitespace') end
+    -- }
 
     -- Multiple cursors plugin for vim/neovim
     use {
@@ -139,11 +139,11 @@ return require('packer').startup({
     -- neovim statusline plugin written in lua
     -- A minimalist statusline for n/vim.
     use {
-      'doums/barow',
-      config = function() require('plugins/_barow') end,
-      requires = {'doums/barowGit', 'doums/barowLSP'}
-      -- 'glepnir/galaxyline.nvim', branch = 'main',
-      -- config = function() require('plugins/_galaxyline') end
+      -- 'doums/barow',
+      -- config = function() require('plugins/_barow') end,
+      -- requires = {'doums/barowGit', 'doums/barowLSP'}
+      'glepnir/galaxyline.nvim', branch = 'main',
+      config = function() require('plugins/_galaxyline') end
     }
 
   end

@@ -2,17 +2,17 @@ local g = vim.g
 
 g.barow = {
   modes = {
-    normal = {'n', 'BarowNormal'},
-    insert = {'i', 'BarowInsert'},
-    replace = {'r', 'BarowReplace'},
-    visual = {'v', 'BarowVisual'},
-    v_line = {'l', 'BarowVisual'},
-    v_block = {'b', 'BarowVisual'},
-    select = {'s', 'BarowVisual'},
-    command = {'c', 'BarowCommand'},
+    normal = {'N', 'BarowNormal'},
+    insert = {'I', 'BarowInsert'},
+    replace = {'R', 'BarowReplace'},
+    visual = {'V', 'BarowVisual'},
+    v_line = {'L', 'BarowVisual'},
+    v_block = {'B', 'BarowVisual'},
+    select = {'S', 'BarowVisual'},
+    command = {'C', 'BarowCommand'},
     shell_ex = {'!', 'BarowCommand'},
-    terminal = {'t', 'BarowTerminal'},
-    prompt = {'p', 'BarowNormal'},
+    terminal = {'T', 'BarowTerminal'},
+    prompt = {'P', 'BarowNormal'},
     inactive = {' ', 'BarowModeNC'}
   },
   statusline = {'Barow', 'BarowNC'},
