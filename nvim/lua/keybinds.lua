@@ -16,7 +16,7 @@ map('n', '<Leader>a', 'ggVG')
 map('t', 'jj', '<ESC>', {noremap = false})
 map('n', '<C-s>', ':w<CR>')
 map('i', '<C-s>', ':w<CR>')
-map('i', '<C-c>', '<esc>')
+-- map('i', '<C-c>', '<esc>')
 map('n', '<C-q>', ':wq!<CR>')
 
 -- search and replace

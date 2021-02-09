@@ -1,58 +1,58 @@
-function opt(scope, key, value)
-  local scopes = {o = vim.o, bo = vim.bo, wo = vim.wo}
-  scopes[scope][key] = value
-  if scope ~= 'o' then scopes['o'][key] = value end
-end
+local o = vim.o
+local bo = vim.bo
+local wo = vim.wo
+local cmd = vim.cmd
+local fn = vim.fn
 
 local shiftwidth = 2
 
-opt('wo', 'number', true)
-opt('wo', 'relativenumber', true)
-opt('wo', 'signcolumn', 'yes')
-opt('wo', 'wrap', false)
-opt('wo', 'list', true)
+wo.number = true
+wo.relativenumber = true
+wo.signcolumn = 'yes'
+wo.wrap = false
+wo.list = true
 
-opt('bo', 'shiftwidth', shiftwidth)
-opt('bo', 'softtabstop', shiftwidth)
-opt('bo', 'autoindent', true)
+bo.shiftwidth = shiftwidth
+bo.softtabstop = shiftwidth
+bo.autoindent = true
 
-opt('o', 'encoding', 'UTF-8')
-opt('o', 'background', 'dark')
-opt('o', 'compatible', false)
-opt('o', 'hidden', true)
-opt('o', 'updatetime', 100)
-opt('o', 'showcmd', false)
-opt('o', 'showmode', false)
-opt('o', 'number', true)
-opt('o', 'relativenumber', true)
-opt('o', 'wrap', false)
-opt('o', 'expandtab', true)
-opt('o', 'joinspaces', false)
-opt('o', 'shiftwidth', shiftwidth)
-opt('o', 'softtabstop', shiftwidth)
-opt('o', 'clipboard', 'unnamedplus')
-opt('o', 'hlsearch', true)
-opt('o', 'incsearch', true)
-opt('o', 'ignorecase', true)
-opt('o', 'smartcase', true)
-opt('o', 'autoread', true)
-opt('o', 'autowrite', true)
-opt('o', 'swapfile', false)
-opt('o', 'backup', false)
-opt('o', 'writebackup', false)
-opt('o', 'completeopt', 'menuone,noinsert,noselect,preview')
-opt('o', 'shell', '/usr/local/bin/zsh')
-opt('o', 'errorformat', vim.o.errorformat .. ',%f')
-opt('o', 'shortmess', vim.o.shortmess .. 'c')
-opt('o', 'undofile', true)
-opt('o', 'undodir', vim.fn.expand(vim.fn.stdpath('data') .. '/undodir//'))
+o.encoding = 'UTF-8'
+o.background = 'dark'
+o.compatible = false
+o.hidden = true
+o.updatetime = 100
+o.showcmd = false
+o.showmode = false
+o.number = true
+o.relativenumber = true
+o.wrap = false
+o.expandtab = true
+o.joinspaces = false
+o.shiftwidth = shiftwidth
+o.softtabstop = shiftwidth
+o.clipboard = 'unnamedplus'
+o.hlsearch = true
+o.incsearch = true
+o.ignorecase = true
+o.smartcase = true
+o.autoread = true
+o.autowrite = true
+o.swapfile = false
+o.backup = false
+o.writebackup = false
+o.completeopt = 'menuone,noinsert,noselect,preview'
+o.shell = '/usr/local/bin/zsh'
+o.errorformat = '%A%f:%l:%c:%m,%-G%.%#'
+o.shortmess = 'c'
+o.undofile = true
+o.undodir = fn.expand(fn.stdpath('data') .. '/undodir//')
 
-if vim.fn.isdirectory(vim.o.undodir) == 0 then
-  vim.fn.mkdir(vim.o.undodir, 'p')
+if fn.isdirectory(o.undodir) == 0 then
+  fn.mkdir(o.undodir, 'p')
 end
 
-if vim.fn.has('termguicolors') == 1 then
-  vim.cmd('let &t_8f = "\\<Esc>[38;2;%lu;%lu;%lum"')
-  vim.cmd('let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum"')
-  opt('o', 'termguicolors', true)
+if fn.has('termguicolors') == 1 then
+  cmd('let &t_8f = "\\<Esc>[38;2;%lu;%lu;%lum"')
+  cmd('let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum"')
+  o.termguicolors = true
 end

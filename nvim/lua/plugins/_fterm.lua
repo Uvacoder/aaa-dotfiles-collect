@@ -1,3 +1,5 @@
+local keymap = require("astronauta.keymap")
+
 require('FTerm').setup({
   dimensions  = {
     height = 0.8,
@@ -6,8 +8,6 @@ require('FTerm').setup({
     col = 0.5
   }
 })
-
-local keymap = require("astronauta.keymap")
 
 keymap.nnoremap{'<C-t>', ':FTermToggle<CR>'}
 keymap.tnoremap{'<C-t>', '<C-\\><C-n>:FTermToggle<CR>'}

@@ -29,13 +29,15 @@ return require('packer').startup({
     -- themes
     use {
       -- 'glepnir/zephyr-nvim',
-        'GlennLeo/cobalt2',
+      -- 'GlennLeo/cobalt2',
+      'Th3Whit3Wolf/one-nvim',
       -- 'pineapplegiant/spaceduck', branch = 'main',
       -- 'larsbs/vimterial_dark',
       -- 'mhartington/oceanic-next',
       config = function()
         -- require('zephyr')
-        vim.cmd('colorscheme cobalt2')
+        -- vim.cmd('colorscheme cobalt2')
+        vim.cmd('colorscheme one-nvim')
         -- vim.cmd('colorscheme spaceduck')
         -- vim.cmd('colorscheme vimterial_dark')
         -- vim.g.oceanic_next_terminal_bold = 1
@@ -79,12 +81,6 @@ return require('packer').startup({
       config = function() require('plugins/_gitsigns') end
     }
 
-    -- neovim statusline plugin written in lua
-    use {
-      'glepnir/galaxyline.nvim', branch = 'main',
-      config = function() require('plugins/_galaxyline') end
-    }
-
     -- The missing motion for Vim
     use 'justinmk/vim-sneak'
 
@@ -100,26 +96,17 @@ return require('packer').startup({
       config = function() require('plugins/_coc') end
     }
 
-      -- use {
-      --   'prabirshrestha/vim-lsp',
-      --   config = function()
-      --     require('plugins/_lsp')
-      --   end,
-      --   requires = {
-      --     'mattn/vim-lsp-settings',
-      --     'prabirshrestha/asyncomplete.vim',
-      --     'prabirshrestha/asyncomplete-lsp.vim'
-      --   }
-      -- }
-
     -- Check syntax in Vim asynchronously and fix files
     use {
       'dense-analysis/ale',
       config = function() require('plugins/_ale') end
     }
 
-    -- Plugin to insert or delete brackets, parens, quotes in pair
-    use 'jiangmiao/auto-pairs'
+    -- autopairs for neovim written by lua
+    use {
+      'windwp/nvim-autopairs',
+      config = function() require('nvim-autopairs').setup() end
+    }
 
     -- Better whitespace highlighting for Vim
     use {
@@ -145,6 +132,19 @@ return require('packer').startup({
     --   'glepnir/indent-guides.nvim',
     --   config = function () require('plugins/_indentguides') end
     -- }
+
+    -- magit for neovim
+    use 'TimUntersberger/neogit'
+
+    -- neovim statusline plugin written in lua
+    -- A minimalist statusline for n/vim.
+    use {
+      'doums/barow',
+      config = function() require('plugins/_barow') end,
+      requires = {'doums/barowGit', 'doums/barowLSP'}
+      -- 'glepnir/galaxyline.nvim', branch = 'main',
+      -- config = function() require('plugins/_galaxyline') end
+    }
 
   end
 })
