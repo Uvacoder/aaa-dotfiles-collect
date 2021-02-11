@@ -12,7 +12,6 @@ map('n', '-', '<PageUp>')
 -- select all
 map('n', '<Leader>a', 'ggVG')
 
---
 map('t', 'jj', '<ESC>', {noremap = false})
 map('n', '<C-s>', ':w<CR>')
 map('i', '<C-s>', ':w<CR>')

@@ -11,11 +11,8 @@ if g.custom.actived then
   api.nvim_command('hi! LineNr guibg='..color.ui.bg)
   api.nvim_command('hi! IncSearch guibg='..color.yellow..' guifg='..color.black)
 
--- hi Error    ctermfg=204 ctermbg=NONE guifg=#ff5f87 guibg=NONE
--- hi Warning  ctermfg=178 ctermbg=NONE guifg=#D7AF00 guibg=NONE
--- hi ALEError ctermfg=204 guifg=#ff5f87 ctermbg=52 guibg=#5f0000 cterm=undercurl gui=undercurl
--- hi link ALEErrorSign    Error
--- hi link ALEWarningSign  Warning
+  api.nvim_command('hi! Error guifg='..color.red..' guibg='..color.ui.bg)
+  api.nvim_command('hi! Warning guifg='..color.yellow..' guibg='..color.ui.bg)
 
   api.nvim_command('hi! CursorLine guibg='..color.ui.cursorline)
 
@@ -37,4 +34,8 @@ end
 api.nvim_command('hi! String cterm=italic gui=italic')
 api.nvim_command('hi! Comment cterm=italic gui=italic')
 
-api.nvim_command('hi! link CursorLineNR CursorLine')
+api.nvim_command('hi! link CursorLineNR    CursorLine')
+api.nvim_command('hi! link ALEErrorSign    Error')
+api.nvim_command('hi! link ALEWarningSign  Warning')
+
+-- hi ALEError ctermfg=204 guifg=#ff5f87 ctermbg=52 guibg=#5f0000 cterm=undercurl gui=undercurl

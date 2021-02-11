@@ -30,18 +30,17 @@ return require('packer').startup({
     use {
       -- 'glepnir/zephyr-nvim',
       -- 'GlennLeo/cobalt2',
-      'Th3Whit3Wolf/one-nvim',
+      'ayu-theme/ayu-vim',
+      -- 'Th3Whit3Wolf/one-nvim',
       -- 'pineapplegiant/spaceduck', branch = 'main',
-      -- 'larsbs/vimterial_dark',
       -- 'mhartington/oceanic-next',
       config = function()
         -- require('zephyr')
         -- vim.cmd('colorscheme cobalt2')
-        vim.cmd('colorscheme one-nvim')
+        vim.g.ayucolor="dark"
+        vim.cmd('colorscheme ayu')
+        -- vim.cmd('colorscheme one-nvim')
         -- vim.cmd('colorscheme spaceduck')
-        -- vim.cmd('colorscheme vimterial_dark')
-        -- vim.g.oceanic_next_terminal_bold = 1
-        -- vim.g.oceanic_next_terminal_italic = 1
         -- vim.cmd('colorscheme OceanicNext')
         require('plugins/_fixcolors')
       end
@@ -87,8 +86,11 @@ return require('packer').startup({
     -- The undo history visualizer for VIM
     use 'mbbill/undotree'
 
-    --  For commmenting stuff out
-    use 'tomtom/tcomment_vim'
+    --  A comment toggler for Neovim, written in Lua
+    use {
+      "terrortylor/nvim-comment",
+      config = function() require('plugins/_comment') end
+    }
 
      -- Intellisense and completion engine
     use {
@@ -107,12 +109,6 @@ return require('packer').startup({
       'windwp/nvim-autopairs',
       config = function() require('nvim-autopairs').setup() end
     }
-
-    -- Better whitespace highlighting for Vim
-    -- use {
-    --   'ntpeters/vim-better-whitespace',
-    --   config = function() require('plugins/_whitespace') end
-    -- }
 
     -- Multiple cursors plugin for vim/neovim
     use {
