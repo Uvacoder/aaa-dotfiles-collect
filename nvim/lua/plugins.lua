@@ -86,11 +86,14 @@ return require('packer').startup({
     -- The undo history visualizer for VIM
     use 'mbbill/undotree'
 
+    -- For commmenting stuff out
+    use 'tomtom/tcomment_vim'
+    
     --  A comment toggler for Neovim, written in Lua
-    use {
-      "terrortylor/nvim-comment",
-      config = function() require('plugins/_comment') end
-    }
+    -- use {
+    --   "terrortylor/nvim-comment",
+    --   config = function() require('nvim_comment').setup() end
+    -- }
 
      -- Intellisense and completion engine
     use {
@@ -130,7 +133,7 @@ return require('packer').startup({
     -- }
 
     -- magit for neovim
-    use 'TimUntersberger/neogit'
+    -- use 'TimUntersberger/neogit'
 
     -- neovim statusline plugin written in lua
     -- A minimalist statusline for n/vim.
