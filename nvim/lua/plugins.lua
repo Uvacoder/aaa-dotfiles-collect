@@ -16,9 +16,6 @@ return require('packer').startup({
     -- Packer can manage itself as an optional plugin
     use { 'wbthomason/packer.nvim', opt = true }
 
-    -- You now feel at home traveling to the moon.
-    use 'tjdevries/astronauta.nvim'
-
     -- Nvim Treesitter configurations and abstraction layer
     use {
       'nvim-treesitter/nvim-treesitter',
@@ -28,19 +25,13 @@ return require('packer').startup({
 
     -- themes
     use {
-      -- 'glepnir/zephyr-nvim',
-      -- 'GlennLeo/cobalt2',
-      'ayu-theme/ayu-vim',
-      -- 'Th3Whit3Wolf/one-nvim',
-      -- 'pineapplegiant/spaceduck', branch = 'main',
+      'GlennLeo/cobalt2',
+      -- 'ayu-theme/ayu-vim',
       -- 'mhartington/oceanic-next',
       config = function()
-        -- require('zephyr')
-        -- vim.cmd('colorscheme cobalt2')
-        vim.g.ayucolor="dark"
-        vim.cmd('colorscheme ayu')
-        -- vim.cmd('colorscheme one-nvim')
-        -- vim.cmd('colorscheme spaceduck')
+        vim.cmd('colorscheme cobalt2')
+        -- vim.g.ayucolor="dark"
+        -- vim.cmd('colorscheme ayu')
         -- vim.cmd('colorscheme OceanicNext')
         require('plugins/_fixcolors')
       end
@@ -61,39 +52,21 @@ return require('packer').startup({
       config = function() require('plugins/_tree') end
     }
 
-    -- A neovim lua plugin to help easily manage multiple terminal windows
-    use {
-      'numtostr/FTerm.nvim',
-      config = function() require('plugins/_fterm') end
-    }
-
-    -- Find, Filter, Preview, Pick. All lua, all the time.
     use {
       'nvim-telescope/telescope.nvim',
       config = function() require('plugins/_telescope') end,
-      requires = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim' }
+      requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
     }
 
     -- show git stuff in signcolumn
     use {
       'lewis6991/gitsigns.nvim',
-      config = function() require('plugins/_gitsigns') end
+      config = function() require('plugins/_gitsigns') end,
+      requires = 'nvim-lua/plenary.nvim'
     }
-
-    -- The missing motion for Vim
-    use 'justinmk/vim-sneak'
-
-    -- The undo history visualizer for VIM
-    use 'mbbill/undotree'
 
     -- For commmenting stuff out
     use 'tomtom/tcomment_vim'
-    
-    --  A comment toggler for Neovim, written in Lua
-    -- use {
-    --   "terrortylor/nvim-comment",
-    --   config = function() require('nvim_comment').setup() end
-    -- }
 
      -- Intellisense and completion engine
     use {
@@ -127,20 +100,8 @@ return require('packer').startup({
     -- vim-snipmate default snippets.
     use 'honza/vim-snippets'
 
-    -- use {
-    --   'glepnir/indent-guides.nvim',
-    --   config = function () require('plugins/_indentguides') end
-    -- }
-
-    -- magit for neovim
-    -- use 'TimUntersberger/neogit'
-
     -- neovim statusline plugin written in lua
-    -- A minimalist statusline for n/vim.
     use {
-      -- 'doums/barow',
-      -- config = function() require('plugins/_barow') end,
-      -- requires = {'doums/barowGit', 'doums/barowLSP'}
       'glepnir/galaxyline.nvim', branch = 'main',
       config = function() require('plugins/_galaxyline') end
     }

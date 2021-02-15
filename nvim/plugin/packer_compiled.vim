@@ -32,24 +32,15 @@ local function try_loadstring(s, component, name)
 end
 
 _G.packer_plugins = {
-  ["FTerm.nvim"] = {
-    config = { "\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19plugins/_fterm\frequire\0" },
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/FTerm.nvim"
-  },
   ale = {
     config = { "\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_ale\frequire\0" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/ale"
   },
-  ["astronauta.nvim"] = {
+  cobalt2 = {
+    config = { "\27LJ\2\n^\0\0\3\0\5\0\b6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0'\2\4\0B\0\2\1K\0\1\0\23plugins/_fixcolors\frequire\24colorscheme cobalt2\bcmd\bvim\0" },
     loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/astronauta.nvim"
-  },
-  ["ayu-vim"] = {
-    config = { "\27LJ\2\nz\0\0\3\0\b\0\f6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\4\0'\2\5\0B\0\2\0016\0\6\0'\2\a\0B\0\2\1K\0\1\0\23plugins/_fixcolors\frequire\20colorscheme ayu\bcmd\tdark\rayucolor\6g\bvim\0" },
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/ayu-vim"
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/cobalt2"
   },
   ["coc.nvim"] = {
     config = { "\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_coc\frequire\0" },
@@ -96,6 +87,7 @@ _G.packer_plugins = {
   },
   ["packer.nvim"] = {
     loaded = false,
+    needs_bufread = false,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/opt/packer.nvim"
   },
   ["plenary.nvim"] = {
@@ -115,18 +107,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
-  undotree = {
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/undotree"
-  },
   ["vim-polyglot"] = {
     config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_polyglot\frequire\0" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-polyglot"
-  },
-  ["vim-sneak"] = {
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-sneak"
   },
   ["vim-snippets"] = {
     loaded = true,
@@ -138,30 +122,28 @@ _G.packer_plugins = {
   }
 }
 
--- Config for: nvim-tree.lua
-try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18plugins/_tree\frequire\0", "config", "nvim-tree.lua")
--- Config for: nvim-autopairs
-try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
--- Config for: FTerm.nvim
-try_loadstring("\27LJ\2\n.\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\19plugins/_fterm\frequire\0", "config", "FTerm.nvim")
--- Config for: ale
-try_loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_ale\frequire\0", "config", "ale")
--- Config for: ayu-vim
-try_loadstring("\27LJ\2\nz\0\0\3\0\b\0\f6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\4\0'\2\5\0B\0\2\0016\0\6\0'\2\a\0B\0\2\1K\0\1\0\23plugins/_fixcolors\frequire\20colorscheme ayu\bcmd\tdark\rayucolor\6g\bvim\0", "config", "ayu-vim")
 -- Config for: telescope.nvim
 try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins/_telescope\frequire\0", "config", "telescope.nvim")
+-- Config for: ale
+try_loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_ale\frequire\0", "config", "ale")
+-- Config for: cobalt2
+try_loadstring("\27LJ\2\n^\0\0\3\0\5\0\b6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0'\2\4\0B\0\2\1K\0\1\0\23plugins/_fixcolors\frequire\24colorscheme cobalt2\bcmd\bvim\0", "config", "cobalt2")
+-- Config for: gitsigns.nvim
+try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_gitsigns\frequire\0", "config", "gitsigns.nvim")
 -- Config for: nvim-colorizer.lua
 try_loadstring("\27LJ\2\nO\0\0\4\0\5\0\b6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0B\0\3\1K\0\1\0\1\0\1\nnames\1\1\2\0\0\6*\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
--- Config for: vim-polyglot
-try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_polyglot\frequire\0", "config", "vim-polyglot")
--- Config for: coc.nvim
-try_loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_coc\frequire\0", "config", "coc.nvim")
+-- Config for: nvim-autopairs
+try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 -- Config for: galaxyline.nvim
 try_loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_galaxyline\frequire\0", "config", "galaxyline.nvim")
 -- Config for: nvim-treesitter
 try_loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/_treesitter\frequire\0", "config", "nvim-treesitter")
--- Config for: gitsigns.nvim
-try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_gitsigns\frequire\0", "config", "gitsigns.nvim")
+-- Config for: coc.nvim
+try_loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17plugins/_coc\frequire\0", "config", "coc.nvim")
+-- Config for: vim-polyglot
+try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins/_polyglot\frequire\0", "config", "vim-polyglot")
+-- Config for: nvim-tree.lua
+try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18plugins/_tree\frequire\0", "config", "nvim-tree.lua")
 END
 
 catch

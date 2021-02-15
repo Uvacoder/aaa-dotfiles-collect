@@ -1,5 +1,5 @@
 vim.g.custom = {
-  actived = true,
+  actived = false,
   options = {
     invert_vertsplit = false
   },
@@ -20,15 +20,11 @@ vim.g.custom = {
       bg         = '#0D1117',
       -- bg         = '#0F101B',
       statusline = '#12171C',
-      cursorline = '#12171C',
-      identguides = {
-        even = { fg = '#1A1F3A', bg ='#122738' },
-        odd  = { fg = '#122738', bg ='#1A1F3A' }
-      }
+      cursorline = '#12171C'
     }
   }
 }
 require('plugins')
-require('settings')
+require('options')
 require('autocmd')
-require('keybinds')
+require('mappings')

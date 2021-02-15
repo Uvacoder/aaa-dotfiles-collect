@@ -45,14 +45,14 @@ o.shell = '/usr/local/bin/zsh'
 o.errorformat = '%A%f:%l:%c:%m,%-G%.%#'
 o.shortmess = 'c'
 o.undofile = true
-o.undodir = fn.expand(fn.stdpath('data') .. '/undodir//')
+o.undodir = vim.fn.expand(vim.fn.stdpath('data') .. '/undodir//')
 
-if fn.isdirectory(o.undodir) == 0 then
-  fn.mkdir(o.undodir, 'p')
+if vim.fn.isdirectory(o.undodir) == 0 then
+  vim.fn.mkdir(o.undodir, 'p')
 end
 
-if fn.has('termguicolors') == 1 then
-  cmd('let &t_8f = "\\<Esc>[38;2;%lu;%lu;%lum"')
+if vim.fn.has('termguicolors') == 1 then
+  vim.cmd('let &t_8f = "\\<Esc>[38;2;%lu;%lu;%lum"')
   cmd('let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum"')
   o.termguicolors = true
 end

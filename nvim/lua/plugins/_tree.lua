@@ -1,3 +1,5 @@
+local keymap = vim.api.nvim_set_keymap
+
 vim.g.nvim_tree_width = 40
 vim.g.nvim_tree_auto_close = 1
 vim.g.nvim_tree_quit_on_open = 1
@@ -14,14 +16,7 @@ vim.g.nvim_tree_ignore = {
   '.cache',
   '.DS_Store'
 }
-vim.g.nvim_tree_icons = {
-   default = '',
- }
-vim.g.nvim_tree_bindings = {
-  preview = { '<Tab>' }
-}
+vim.g.nvim_tree_icons = {default = ''}
+vim.g.nvim_tree_bindings = {preview = {'<Tab>'}}
 
-local keymap = require("astronauta.keymap")
-
-keymap.nnoremap{'<C-e>', ':NvimTreeToggle<CR>'}
-keymap.nnoremap{'<leader>r', ':NvimTreeRefresh<CR>'}
+keymap('n', '<C-e>', ':NvimTreeToggle<CR>', {noremap = true, silent =true})
