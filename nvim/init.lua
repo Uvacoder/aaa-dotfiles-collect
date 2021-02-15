@@ -17,11 +17,12 @@ vim.g.custom = {
     grey    = '#A7ACBA',
     black   = '#0b1015',
     ui = {
-      bg         = '#0D1117',
-      -- bg         = '#0F101B',
+      bg         = '#133349',
       statusline = '#194563',
+      cursorline = '#194563',
+      -- bg         = '#0F101B',
       -- statusline = '#12171C',
-      cursorline = '#12171C'
+      -- cursorline = '#12171C'
     }
   }
 }

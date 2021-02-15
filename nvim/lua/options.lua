@@ -23,6 +23,7 @@ o.hidden = true
 o.updatetime = 100
 o.showcmd = false
 o.showmode = false
+o.cursorline = true
 o.number = true
 o.relativenumber = true
 o.wrap = false
@@ -43,7 +44,7 @@ o.writebackup = false
 o.completeopt = 'menuone,noinsert,noselect,preview'
 o.shell = '/usr/local/bin/zsh'
 o.errorformat = '%A%f:%l:%c:%m,%-G%.%#'
-o.shortmess = 'c'
+o.shortmess = 'aoOTIcF'
 o.undofile = true
 o.undodir = vim.fn.expand(vim.fn.stdpath('data') .. '/undodir//')
 

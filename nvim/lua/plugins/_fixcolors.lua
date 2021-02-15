@@ -14,8 +14,6 @@ if g.custom.actived then
   api.nvim_command('hi! Error guifg='..color.red..' guibg='..color.ui.bg)
   api.nvim_command('hi! Warning guifg='..color.yellow..' guibg='..color.ui.bg)
 
-  api.nvim_command('hi! CursorLine guibg='..color.ui.cursorline)
-
   if option.invert_vertsplit then
     api.nvim_command('hi! VertSplit guibg='..color.ui.statusline..' guifg='..color.ui.bg)
   else
@@ -30,6 +28,8 @@ else
   api.nvim_command('hi! DiffChange guifg='..color.yellow..' guibg=NONE')
   api.nvim_command('hi! DiffDelete guifg='..color.red..' guibg=NONE')
 end
+
+api.nvim_command('hi! CursorLine guibg='..color.ui.cursorline)
 
 api.nvim_command('hi! String cterm=italic gui=italic')
 api.nvim_command('hi! Comment cterm=italic gui=italic')
