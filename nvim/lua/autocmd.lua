@@ -1,8 +1,5 @@
 local cmd = vim.cmd
 
-cmd('autocmd BufEnter * set cursorline')
-cmd('autocmd BufLeave * set nocursorline')
-
 cmd(':command! WQ wq')
 cmd(':command! WQ wq')
 cmd(':command! Wq wq')

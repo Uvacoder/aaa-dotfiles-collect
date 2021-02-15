@@ -7,20 +7,7 @@ require'telescope'.setup{
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
     scroll_strategy = 'cycle',
     selection_strategy = 'reset',
-    -- layout_strategy = 'flex',
-    -- borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-    -- layout_defaults = {
-    --   horizontal = {
-    --     width_padding = 0.1,
-    --     height_padding = 0.1,
-    --     preview_width = 0.6
-    --   },
-    --   vertical = {
-    --     width_padding = 0.05,
-    --     height_padding = 1,
-    --     preview_height = 0.5
-    --   }
-    -- }
+    layout_strategy = 'flex'
   }
 }
 

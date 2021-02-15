@@ -19,7 +19,8 @@ vim.g.custom = {
     ui = {
       bg         = '#0D1117',
       -- bg         = '#0F101B',
-      statusline = '#12171C',
+      statusline = '#194563',
+      -- statusline = '#12171C',
       cursorline = '#12171C'
     }
   }

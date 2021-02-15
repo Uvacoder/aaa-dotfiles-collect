@@ -1,12 +1,12 @@
 local color = vim.g.custom.colors
 local mode = {
-  c = "🅒",
-  i = "🅘",
-  n = "🅝",
-  r = "🅡",
-  s = "🅢",
-  t = "🅣",
-  v = "🅥"
+  c = "C",
+  i = "I",
+  n = "N",
+  r = "R",
+  s = "S",
+  t = "T",
+  v = "V"
 }
 
 local m_color = {
@@ -44,6 +44,13 @@ local buffer_not_empty = function()
 end
 
 gls.left[1] = {
+  RainbowRed = {
+    provider = function() return '▊' end,
+    highlight = {color.ui.statusline,color.ui.statusline}
+  },
+}
+
+gls.left[2] = {
   ViMode = {
     provider = function()
       vim.api.nvim_command('hi GalaxyViMode guifg='..m_color[vim.fn.mode()])
@@ -61,7 +68,7 @@ gls.left[1] = {
   },
 }
 
-gls.left[2] ={
+gls.left[3] ={
   FileIcon = {
     provider = 'FileIcon',
     condition = buffer_not_empty,
@@ -69,7 +76,7 @@ gls.left[2] ={
   },
 }
 
-gls.left[3] = {
+gls.left[4] = {
   FileName = {
     provider = {'FileName'},
     condition = buffer_not_empty,
@@ -79,15 +86,15 @@ gls.left[3] = {
   }
 }
 
-gls.left[4] = {
+gls.left[5] = {
   GitIcon = {
-    provider = function() return '  ' end,
+    provider = function() return '  ' end,
     condition = buffer_not_empty,
     highlight = {color.red, color.ui.statusline},
   }
 }
 
-gls.left[5] = {
+gls.left[6] = {
   GitBranch = {
     provider = 'GitBranch',
     condition = buffer_not_empty,
@@ -105,7 +112,7 @@ local checkwidth = function()
   return false
 end
 
-gls.left[6] = {
+gls.left[7] = {
   DiffAdd = {
     provider = 'DiffAdd',
     condition = checkwidth,
@@ -114,7 +121,7 @@ gls.left[6] = {
   }
 }
 
-gls.left[7] = {
+gls.left[8] = {
   DiffModified = {
     provider = 'DiffModified',
     condition = checkwidth,
@@ -123,7 +130,7 @@ gls.left[7] = {
   }
 }
 
-gls.left[8] = {
+gls.left[9] = {
   DiffRemove = {
     provider = 'DiffRemove',
     condition = checkwidth,
@@ -132,7 +139,7 @@ gls.left[8] = {
   }
 }
 
-gls.left[9] = {
+gls.left[10] = {
   LeftEnd = {
     provider = function() return '  ' end,
     separator = '  ',
@@ -141,7 +148,7 @@ gls.left[9] = {
   }
 }
 
-gls.left[10] = {
+gls.left[11] = {
   DiagnosticError = {
     provider = 'DiagnosticError',
     icon = '  ',
@@ -149,14 +156,14 @@ gls.left[10] = {
   }
 }
 
-gls.left[11] = {
+gls.left[12] = {
   Space = {
     provider = function () return ' ' end,
     highlight = {color.red, color.ui.statusline}
   }
 }
 
-gls.left[12] = {
+gls.left[13] = {
   DiagnosticWarn = {
     provider = 'DiagnosticWarn',
     icon = '  ',
