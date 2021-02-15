@@ -25,13 +25,13 @@ return require('packer').startup({
 
     -- themes
     use {
-      'GlennLeo/cobalt2',
-      -- 'ayu-theme/ayu-vim',
+      -- 'GlennLeo/cobalt2',
+      'ayu-theme/ayu-vim',
       -- 'mhartington/oceanic-next',
       config = function()
-        vim.cmd('colorscheme cobalt2')
-        -- vim.g.ayucolor="dark"
-        -- vim.cmd('colorscheme ayu')
+        -- vim.cmd('colorscheme cobalt2')
+        vim.g.ayucolor="mirage"
+        vim.cmd('colorscheme ayu')
         -- vim.cmd('colorscheme OceanicNext')
         require('plugins/_fixcolors')
       end
