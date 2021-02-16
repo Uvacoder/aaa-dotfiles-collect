@@ -25,13 +25,15 @@ return require('packer').startup({
 
     -- themes
     use {
+      'Rigellute/shades-of-purple.vim',
       -- 'GlennLeo/cobalt2',
-      'ayu-theme/ayu-vim',
+      -- 'ayu-theme/ayu-vim',
       -- 'mhartington/oceanic-next',
       config = function()
+        vim.cmd('colorscheme shades_of_purple')
         -- vim.cmd('colorscheme cobalt2')
-        vim.g.ayucolor="mirage"
-        vim.cmd('colorscheme ayu')
+        -- vim.g.ayucolor="mirage"
+        -- vim.cmd('colorscheme ayu')
         -- vim.cmd('colorscheme OceanicNext')
         require('plugins/_fixcolors')
       end
