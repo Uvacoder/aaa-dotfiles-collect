@@ -16,7 +16,7 @@ keymap('i', '<C-c>', '<esc>', options)
 keymap('n', '<C-q>', '!<CR>', options)
 
 -- search and replace
-keymap('n', '<C-h>', ':%s///<left><left>', {noremap = true, expr = false, silent = false})
+keymap('n', '<C-h>', ':%s///gcI<Left><Left><Left><Left><Left>', {noremap = true, expr = false, silent = false})
 keymap('n', '<Esc><Esc><Esc>', ':nohlsearch<CR><Esc>', options)
 
 -- move lines:
