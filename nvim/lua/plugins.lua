@@ -19,30 +19,40 @@ return require('packer').startup({
     -- Nvim Treesitter configurations and abstraction layer
     use {
       'nvim-treesitter/nvim-treesitter',
-      config = function() require('plugins/_treesitter') end,
+      config = function() 
+        require('nvim-treesitter.configs').setup({
+          highlight = {enable = true},
+          rainbow = {enable = true}
+        })
+      end,
       requires = 'p00f/nvim-ts-rainbow'
     }
 
     -- themes
     use {
-      'Rigellute/shades-of-purple.vim',
+      -- 'Rigellute/shades-of-purple.vim',
       -- 'GlennLeo/cobalt2',
-      -- 'ayu-theme/ayu-vim',
+      'ayu-theme/ayu-vim',
       -- 'mhartington/oceanic-next',
       config = function()
-        vim.cmd('colorscheme shades_of_purple')
+        -- vim.cmd('colorscheme shades_of_purple')
         -- vim.cmd('colorscheme cobalt2')
-        -- vim.g.ayucolor="mirage"
-        -- vim.cmd('colorscheme ayu')
+        vim.g.ayucolor="mirage"
+        vim.cmd('colorscheme ayu')
         -- vim.cmd('colorscheme OceanicNext')
-        require('plugins/_fixcolors')
+        require('fixcolors')
       end
     }
 
     -- The fastest Neovim colorizer.
     use {
       'norcalli/nvim-colorizer.lua',
-      config = function() require('colorizer').setup({'*'}, {names = false}) end
+      config = function()
+        require('colorizer').setup(
+          {'*'},
+          {names = false}
+        )
+      end
     }
 
     -- lua `fork` of vim-web-devicons for neovim
@@ -51,20 +61,51 @@ return require('packer').startup({
     -- A file explorer tree for neovim written in lua
     use {
       'kyazdani42/nvim-tree.lua',
-      config = function() require('plugins/_tree') end
+      config = function()
+        vim.g.nvim_tree_width = 40
+        vim.g.nvim_tree_auto_close = 1
+        vim.g.nvim_tree_quit_on_open = 1
+        vim.g.nvim_tree_hide_dotfiles = 1
+        vim.g.nvim_tree_follow = 1
+        vim.g.nvim_tree_git_hl = 1
+        vim.g.nvim_tree_ignore = { 'plugin', 'jsconfig.json', 'package-lock.json', 'node_modules' }
+        vim.g.nvim_tree_icons = {default = ''}
+        vim.g.nvim_tree_bindings = {preview = {'<Tab>'}}
+      end
     }
 
     use {
       'nvim-telescope/telescope.nvim',
-      config = function() require('plugins/_telescope') end,
+      config = function() 
+        require'telescope'.setup{
+          defaults = {
+            file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
+            grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
+            qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
+            scroll_strategy = 'cycle',
+            selection_strategy = 'reset',
+            layout_strategy = 'flex'
+          }
+        }
+      end,
       requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
     }
 
     -- show git stuff in signcolumn
     use {
       'lewis6991/gitsigns.nvim',
-      config = function() require('plugins/_gitsigns') end,
-      requires = 'nvim-lua/plenary.nvim'
+      config = function() 
+        require('gitsigns').setup({
+          signs = {
+            add = {hl = 'DiffAdd' , text = '▋', numhl='GitSignsAddNr'},
+            change = {hl = 'DiffChange', text = '▋', numhl='GitSignsChangeNr'},
+            delete = {hl = 'DiffDelete', text = '▋', numhl='GitSignsDeleteNr'},
+            topdelete = {hl = 'DiffDelete', text = '▋', numhl='GitSignsDeleteNr'},
+            changedelete = {hl = 'DiffChange', text = '▋', numhl='GitSignsChangeNr'},
+          },
+          sign_priority = 5,
+        })
+      end
     }
 
     -- For commmenting stuff out
@@ -73,30 +114,47 @@ return require('packer').startup({
      -- Intellisense and completion engine
     use {
       'neoclide/coc.nvim', branch = 'release',
-      config = function() require('plugins/_coc') end
+      config = function() 
+        vim.g.coc_global_extensions = { 'coc-vetur', 'coc-tailwindcss' }
+        -- vim.g.coc_global_extensions = { 'coc-eslint', 'coc-prettier', 'coc-snippets', 'coc-tailwindcss' }
+      end
     }
 
     -- Check syntax in Vim asynchronously and fix files
-    use {
-      'dense-analysis/ale',
-      config = function() require('plugins/_ale') end
-    }
+    -- use {
+    --   'dense-analysis/ale',
+    --   config = function() 
+    --     vim.g.ale_disable_lsp = 1
+    --     vim.g.ale_sign_column_always = 1
+    --     vim.g.ale_linter_aliases = { vue = { 'vue', 'javascript' }}
+    --     vim.g.ale_linters = { vue = {'eslint', 'vls'}}
+    --     vim.g.ale_fixers = {'prettier', 'eslint', 'luafmt', 'remove_trailing_lines', 'trim_whitespace'}
+    --     vim.g.ale_fix_on_save = 1
+    --     vim.g.ale_sign_error = ' '
+    --     vim.g.ale_sign_warning = ' '
+    --     vim.g.ale_echo_msg_error_str = 'E'
+    --     vim.g.ale_echo_msg_warning_str = 'W'
+    --     vim.g.ale_echo_msg_format = '[%severity%][%linter%] %s'
+    --   end
+    -- }
 
     -- autopairs for neovim written by lua
     use {
       'windwp/nvim-autopairs',
-      config = function() require('nvim-autopairs').setup() end
+      config = function()
+        require('nvim-autopairs').setup() 
+      end
     }
 
     -- Multiple cursors plugin for vim/neovim
-    use {
-      'mg979/vim-visual-multi', branch = 'master'
-    }
+    use { 'mg979/vim-visual-multi', branch = 'master' }
 
     -- A solid language pack for Vim.
     use {
       'sheerun/vim-polyglot',
-      config = function() require('plugins/_polyglot') end
+      config = function() 
+        vim.g.vue_pre_processors = {}
+      end
     }
 
     -- vim-snipmate default snippets.
@@ -105,7 +163,9 @@ return require('packer').startup({
     -- neovim statusline plugin written in lua
     use {
       'glepnir/galaxyline.nvim', branch = 'main',
-      config = function() require('plugins/_galaxyline') end
+      config = function()
+        require('statusline')
+      end
     }
 
   end

@@ -1,6 +1,29 @@
 local keymap = vim.api.nvim_set_keymap
 local options = {noremap = true, silent = true}
 
+keymap('n', '<C-e>', ':NvimTreeToggle<CR>', options)
+keymap('n', '<C-p>', ':Telescope find_files<cr>', options)
+keymap('n', '<C-g>', ':Telescope live_grep<cr>', options)
+keymap('n', '<C-b>', ':Telescope buffers<cr>', options)
+
+function _G.check_back_space()
+  local col = vim.fn.col('.') - 1
+  if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+    return true
+  else
+    return false
+  end
+end
+
+keymap('i', '<TAB>', 'pumvisible() ? "<C-N>" : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', { noremap = true, silent = true, expr = true })
+keymap('i', '<S-TAB>', 'pumvisible() ? "<C-P>" : "<C-H>"', { noremap = true, silent = true, expr = true })
+
+-- Use <c-space> to trigger completion.
+keymap('i', '<C-SPACE>', 'coc#refresh()', { noremap = true, silent = true, expr = true })
+
+-- Make <CR> auto-select the first completion item and notify coc.nvim to
+keymap('i', '<CR>', 'pumvisible() ? coc#_select_confirm() : "<C-G>u<CR><C-R>=coc#on_enter()<CR>"', { noremap = true, silent = true, expr = true })
+
 -- buffers navigation
 keymap('n', '<Space>', '<PageDown>', options)
 keymap('n', '-', '<PageUp>', options)
