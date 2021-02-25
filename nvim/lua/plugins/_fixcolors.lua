@@ -29,7 +29,7 @@ api.nvim_command('hi! CursorLine guibg='..ui.cursorline)
 api.nvim_command('hi! link CursorLineNR    CursorLine')
 api.nvim_command('hi! link ALEErrorSign    Error')
 api.nvim_command('hi! link ALEWarningSign  Warning')
--- api.nvim_command('hi! String cterm=italic  gui=italic')
+api.nvim_command('hi! String cterm=italic  gui=italic')
 api.nvim_command('hi! Comment cterm=italic gui=italic')
 
 -- hi ALEError ctermfg=204 guifg=#ff5f87 ctermbg=52 guibg=#5f0000 cterm=undercurl gui=undercurl

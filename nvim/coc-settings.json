@@ -3,6 +3,7 @@
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.hoverTarget": "float",
   "coc.preferences.formatOnSaveFiletypes": [
+    "javascriptreact",
     "javascript",
     "postcss",
     "json",
@@ -18,12 +19,7 @@
   "suggest.maxCompleteItemCount": 32,
   "suggest.noselect": false,
   "suggest.timeout": 500,
-  /* "eslint.filetypes": ["javascript", "vue", "json", "css", "html"],  */
-  /* "eslint.autoFix": true, */
-  /* "eslint.autoFixOnSave": true, */
-  /* "prettier.eslintIntegration": true, */
-  /* "prettier.formatterPriority": -1, */
-  /* "diagnostic.displayByAle": true, */
+  "diagnostic.displayByAle": true,
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
@@ -36,6 +32,9 @@
   "tailwindCSS.htmlLanguages": ["html", "vue"],
   "tailwindCSS.jsLanguages": ["javascript"],
   "tailwindCSS.headwind.removeDuplicates": true,
-  "tailwindCSS.headwind.runOnSave": true,
-  "vetur.completion.autoImport": false
+  "tailwindCSS.headwind.runOnSave": true
+  /* "vetur.completion.autoImport": false, */
+  /* "eslint.autoFixOnSave": true, */
+  /* "prettier.eslintIntegration": true, */
+  /* "prettier.formatterPriority": -1, */
 }
