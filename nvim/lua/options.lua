@@ -1,59 +1,53 @@
-local o = vim.o
-local bo = vim.bo
-local wo = vim.wo
-local cmd = vim.cmd
-local fn = vim.fn
-
 local shiftwidth = 2
 
-wo.number = true
-wo.relativenumber = true
-wo.signcolumn = 'yes'
-wo.wrap = false
-wo.list = true
+vim.wo.number = true
+vim.wo.relativenumber = true
+vim.wo.signcolumn = "yes"
+vim.wo.wrap = false
+vim.wo.list = true
 
-bo.shiftwidth = shiftwidth
-bo.softtabstop = shiftwidth
-bo.autoindent = true
+vim.bo.shiftwidth = shiftwidth
+vim.bo.softtabstop = shiftwidth
+vim.bo.autoindent = true
 
-o.encoding = 'UTF-8'
-o.background = 'dark'
-o.compatible = false
-o.hidden = true
-o.updatetime = 100
-o.showcmd = false
-o.showmode = false
-o.cursorline = true
-o.number = true
-o.relativenumber = true
-o.wrap = false
-o.expandtab = true
-o.joinspaces = false
-o.shiftwidth = shiftwidth
-o.softtabstop = shiftwidth
-o.clipboard = 'unnamedplus'
-o.hlsearch = true
-o.incsearch = true
-o.ignorecase = true
-o.smartcase = true
-o.autoread = true
-o.autowrite = true
-o.swapfile = false
-o.backup = false
-o.writebackup = false
-o.completeopt = 'menuone,noinsert,noselect,preview'
-o.shell = '/usr/local/bin/zsh'
-o.errorformat = '%A%f:%l:%c:%m,%-G%.%#'
-o.shortmess = 'aoOTIcF'
-o.undofile = true
-o.undodir = vim.fn.expand(vim.fn.stdpath('data') .. '/undodir//')
+vim.o.encoding = "UTF-8"
+vim.o.background = "dark"
+vim.o.compatible = false
+vim.o.hidden = true
+vim.o.updatetime = 100
+vim.o.showcmd = false
+vim.o.showmode = false
+vim.o.cursorline = true
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.wrap = false
+vim.o.expandtab = true
+vim.o.joinspaces = false
+vim.o.shiftwidth = shiftwidth
+vim.o.softtabstop = shiftwidth
+vim.o.clipboard = "unnamedplus"
+vim.o.hlsearch = true
+vim.o.incsearch = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.autoread = true
+vim.o.autowrite = true
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.writebackup = false
+vim.o.completeopt = "menuone,noinsert,noselect,preview"
+vim.o.shell = "/usr/local/bin/zsh"
+vim.o.errorformat = "%A%f:%l:%c:%m,%-G%.%#"
+vim.o.shortmess = "aoOTIcF"
+vim.o.undofile = true
+vim.o.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")
 
-if vim.fn.isdirectory(o.undodir) == 0 then
-  vim.fn.mkdir(o.undodir, 'p')
+if vim.fn.isdirectory(vim.o.undodir) == 0 then
+  vim.fn.mkdir(vim.o.undodir, "p")
 end
 
-if vim.fn.has('termguicolors') == 1 then
-  vim.cmd('let &t_8f = "\\<Esc>[38;2;%lu;%lu;%lum"')
-  cmd('let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum"')
-  o.termguicolors = true
+if vim.fn.has("termguicolors") == 1 then
+  vim.cmd("let &t_8f = '\\<Esc>[38;2;%lu;%lu;%lum'")
+  vim.cmd("let &t_8b = '\\<Esc>[48;2;%lu;%lu;%lum'")
+  vim.o.termguicolors = true
 end

@@ -32,9 +32,9 @@
   "tailwindCSS.htmlLanguages": ["html", "vue"],
   "tailwindCSS.jsLanguages": ["javascript"],
   "tailwindCSS.headwind.removeDuplicates": true,
-  "tailwindCSS.headwind.runOnSave": true
-  /* "vetur.completion.autoImport": false, */
-  /* "eslint.autoFixOnSave": true, */
-  /* "prettier.eslintIntegration": true, */
-  /* "prettier.formatterPriority": -1, */
+  "tailwindCSS.headwind.runOnSave": true,
+  "vetur.completion.autoImport": false,
+  "eslint.autoFixOnSave": true,
+  "prettier.eslintIntegration": true,
+  "prettier.formatterPriority": -1
 }
