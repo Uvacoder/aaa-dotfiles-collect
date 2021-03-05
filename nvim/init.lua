@@ -1,5 +1,5 @@
 vim.g.config = {
-  _remove_bg = true,
+  _remove_bg = false,
   _status = {
     added    = "#5ccc96",
     modified = "#ffc600",

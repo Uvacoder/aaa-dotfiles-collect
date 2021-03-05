@@ -37,10 +37,9 @@ return require("packer").startup({
 
     -- themes
     use {
-      "ayu-theme/ayu-vim",
+      'mhartington/oceanic-next',
       config = function()
-        vim.g.ayucolor="mirage"
-        vim.cmd('colorscheme ayu')
+        vim.cmd('colorscheme OceanicNext')
         require("theme")
       end
     }
@@ -179,7 +178,7 @@ return require("packer").startup({
       config = function()
         local lualine = require('lualine')
         lualine.options = {
-          theme = 'ayu_dark',
+          theme = 'oceanicnext',
           section_separators = {'', ''},
           component_separators = {'', ''},
           icons_enabled = false,
