@@ -44,6 +44,8 @@ return require("packer").startup({
       end
     }
 
+    -- use { 'tjdevries/nlua.nvim' }
+
     -- The fastest Neovim colorizer.
     use {
       "norcalli/nvim-colorizer.lua",
@@ -135,11 +137,12 @@ return require("packer").startup({
     -- Check syntax in Vim asynchronously and fix files
     use {
       "dense-analysis/ale",
+      ft = {'sh', 'zsh', 'bash', 'lua', 'vue', 'html', 'css', 'js', 'vim', 'txt'},
       config = function()
         vim.g.ale_disable_lsp = 1
         vim.g.ale_sign_column_always = 1
-        vim.g.ale_linter_aliases = { vue = { "vue", "javascript" }}
-        vim.g.ale_linters = { vue = {"eslint", "vls"}}
+        vim.g.ale_linter_aliases = {vue = {"vue", "javascript"}}
+        vim.g.ale_linters = {vue = {"eslint", "vls"}}
         vim.g.ale_fixers = {"prettier", "eslint", "luafmt", "remove_trailing_lines", "trim_whitespace"}
         vim.g.ale_fix_on_save = 1
         vim.g.ale_sign_error = " "
@@ -147,6 +150,7 @@ return require("packer").startup({
         vim.g.ale_echo_msg_error_str = "E"
         vim.g.ale_echo_msg_warning_str = "W"
         vim.g.ale_echo_msg_format = "[%severity%][%linter%] %s"
+        vim.g.ale_lua_luafmt_options = "{'--indent-count', 4, '--stdin'}"
       end
     }
 
@@ -178,9 +182,11 @@ return require("packer").startup({
       config = function()
         local lualine = require('lualine')
         lualine.options = {
-          theme = 'oceanicnext',
-          section_separators = {'', ''},
-          component_separators = {'', ''},
+          theme = 'ayu_dark',
+          -- theme = 'oceanicnext',
+          section_separators = {'', ''},
+          component_separators = {'|', '|'},
+
           icons_enabled = false,
         }
         lualine.sections = {
