@@ -38,7 +38,11 @@ vim.o.writebackup = false
 vim.o.completeopt = "menuone,noinsert,noselect,preview"
 vim.o.shell = "/usr/local/bin/zsh"
 vim.o.errorformat = "%A%f:%l:%c:%m,%-G%.%#"
-vim.o.shortmess = "aoOTIcF"
+vim.o.shortmess = "csa"
+vim.o.fillchars = "vert:│" -- make vertical split sign better
+vim.o.foldmethod = "marker" -- foldmethod using marker
+vim.o.inccommand = "split" -- incrementally show result of command
+-- vim.o.listchars = "eol:↲"
 vim.o.undofile = true
 vim.o.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")
 

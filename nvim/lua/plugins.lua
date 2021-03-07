@@ -96,10 +96,17 @@ return require("packer").startup({
             scroll_strategy = "cycle",
             selection_strategy = "reset",
             layout_strategy = "flex"
+          },
+          extensions = {
+            fzy_native = {
+              override_generic_sorter = false,
+              override_file_sorter = true,
+            }
           }
         }
+        require('telescope').load_extension('fzy_native')
       end,
-      requires = {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}
+      requires = {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-fzy-native.nvim"}
     }
 
     -- show git stuff in signcolumn
@@ -121,7 +128,18 @@ return require("packer").startup({
     }
 
     -- For commmenting stuff out
-    use "tomtom/tcomment_vim"
+    -- use "tomtom/tcomment_vim"
+    use {
+      'b3nj5m1n/kommentary',
+      config = function()
+        vim.g.kommentary_create_default_mappings = false
+        require("kommentary.config").configure_language("default", {
+          prefer_single_line_comments = true,
+          use_consistent_indentation = true,
+          ignore_whitespace = true,
+        })
+      end
+    }
 
      -- Intellisense and completion engine
     use {

@@ -1,7 +1,7 @@
 vim.g._config = {
   remove_bg = true,
   colors = {
-    bg = "NONE"
+    bg = "#000000"
   },
   status = {
     added    = "#5ccc96",

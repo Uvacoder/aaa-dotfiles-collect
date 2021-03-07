@@ -21,6 +21,10 @@ keymap('n', '<C-b>', ':Telescope buffers<cr>', options)
 
 keymap('n', '<C-e>', ':NvimTreeToggle<CR>', options)
 
+keymap("n", "gcc", "<Plug>kommentary_line_default", {})
+keymap("n", "gc", "<Plug>kommentary_motion_default", {})
+keymap("v", "gc", "<Plug>kommentary_visual_default<C-c>", {})
+
 -- buffers navigation
 keymap('n', '<Space>', '<PageDown>', options)
 keymap('n', '-', '<PageUp>', options)
