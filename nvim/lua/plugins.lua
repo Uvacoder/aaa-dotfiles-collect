@@ -39,12 +39,12 @@ return require("packer").startup({
     use {
       'mhartington/oceanic-next',
       config = function()
+        vim.g.oceanic_next_terminal_bold = 1
+        vim.g.oceanic_next_terminal_italic = 1
         vim.cmd('colorscheme OceanicNext')
-        require("theme")
+        require('fixcolors')
       end
     }
-
-    -- use { 'tjdevries/nlua.nvim' }
 
     -- The fastest Neovim colorizer.
     use {
@@ -58,7 +58,7 @@ return require("packer").startup({
     }
 
     -- lua `fork` of vim-web-devicons for neovim
-    use "kyazdani42/nvim-web-devicons"
+    -- use "kyazdani42/nvim-web-devicons"
 
     -- A file explorer tree for neovim written in lua
     use {
@@ -71,7 +71,7 @@ return require("packer").startup({
         vim.g.nvim_tree_indent_markers = 1
         vim.g.nvim_tree_follow = 1
         vim.g.nvim_tree_git_hl = 1
-        vim.g.nvim_tree_icons = { default = "" }
+        -- vim.g.nvim_tree_icons = { default = "" }
         vim.g.nvim_tree_ignore = {
           "plugin",
           "jsconfig.json",

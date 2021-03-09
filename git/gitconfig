@@ -1,7 +1,7 @@
 [core]
 	excludesfile = /Users/sldobri/.gitignore_global
   filemode = false
-[difftool "sourcetree"]
+[difftool "nvim"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
 [mergetool "sourcetree"]

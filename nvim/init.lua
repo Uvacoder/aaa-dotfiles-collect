@@ -1,7 +1,7 @@
 vim.g._config = {
   remove_bg = true,
   colors = {
-    bg = "#000000"
+    bg = "NONE"
   },
   status = {
     added    = "#5ccc96",
@@ -10,7 +10,7 @@ vim.g._config = {
   }
 }
 
-require('plugins')
 require('options')
+require('plugins')
 require('autocmd')
 require('mappings')

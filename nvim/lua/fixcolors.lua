@@ -27,5 +27,6 @@ execute("hi! link    EndOfBuffer     Normal")
 execute("hi! link    CursorLineNR    CursorLine")
 execute("hi! link    ALEErrorSign    Error")
 execute("hi! link    ALEWarningSign  Warning")
+
 execute("hi! String  gui=italic")
 execute("hi! Comment gui=italic")
