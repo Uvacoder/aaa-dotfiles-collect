@@ -25,6 +25,9 @@ keymap("n", "gcc", "<Plug>kommentary_line_default", {})
 keymap("n", "gc", "<Plug>kommentary_motion_default", {})
 keymap("v", "gc", "<Plug>kommentary_visual_default<C-c>", {})
 
+-- Line highlighting
+keymap('n', '<leader>hl', ':set cursorline!<CR>', options)
+
 -- buffers navigation
 keymap('n', '<Space>', '<PageDown>', options)
 keymap('n', '-', '<PageUp>', options)
