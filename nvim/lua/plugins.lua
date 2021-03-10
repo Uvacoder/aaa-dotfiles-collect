@@ -37,11 +37,18 @@ return require("packer").startup({
 
     -- themes
     use {
-      'mhartington/oceanic-next',
+        --  'mhartington/oceanic-next',
+        'sainnhe/gruvbox-material',
       config = function()
-        vim.g.oceanic_next_terminal_bold = 1
-        vim.g.oceanic_next_terminal_italic = 1
-        vim.cmd('colorscheme OceanicNext')
+        -- vim.g.oceanic_next_terminal_bold = 1
+        -- vim.g.oceanic_next_terminal_italic = 1
+        -- vim.cmd('colorscheme OceanicNext')
+        vim.g.gruvbox_material_background = 'hard'
+        vim.g.gruvbox_material_enable_italic = 1
+        vim.g.gruvbox_material_enable_bold = 1
+        vim.g.gruvbox_material_visual = 'reverse'
+        vim.g.gruvbox_material_menu_selection_background = 'orange'
+        vim.cmd('colorscheme gruvbox-material')
         require('fixcolors')
       end
     }
@@ -200,7 +207,8 @@ return require("packer").startup({
       config = function()
         local lualine = require('lualine')
         lualine.options = {
-          theme = 'ayu_dark',
+          theme = 'gruvbox_material',
+          -- theme = 'ayu_dark',
           -- theme = 'oceanicnext',
           section_separators = {'', ''},
           component_separators = {'|', '|'},
