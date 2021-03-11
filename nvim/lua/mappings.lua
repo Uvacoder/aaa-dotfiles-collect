@@ -37,10 +37,9 @@ keymap('n', '<Leader>sa', 'ggVG', options)
 
 keymap('t', 'jj', '<ESC>', options)
 keymap('n', '<C-s>', ':w<CR>', options)
-keymap('i', '<C-s>', ':w<CR>', options)
+keymap('i', '<C-s>', '<esc>:w<CR>', options)
 keymap('n', '<C-q>', '!<CR>', options)
 keymap('i', '<C-c>', '<esc>', options)
-keymap('n', '<C-q>', '!<CR>', options)
 
 -- search and replace
 keymap('n', '<C-h>', ':%s///gcI<Left><Left><Left><Left><Left>', {noremap = true, expr = false, silent = false})
