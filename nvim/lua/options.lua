@@ -38,11 +38,32 @@ vim.o.writebackup = false
 vim.o.completeopt = "menuone,noinsert,noselect,preview"
 vim.o.shell = "/usr/local/bin/zsh"
 vim.o.errorformat = "%A%f:%l:%c:%m,%-G%.%#"
-vim.o.shortmess = "csa"
+vim.o.shortmess = vim.o.shortmess .. 'aIcs'
+-- vim.o.listchars = 'eol:↲,tab:»\\ ,trail:•'
+vim.o.listchars = 'tab:»\\ ,trail:•'
+vim.o.showbreak = '╰─➤'
 vim.o.fillchars = "vert:│" -- make vertical split sign better
 vim.o.foldmethod = "marker" -- foldmethod using marker
 vim.o.inccommand = "split" -- incrementally show result of command
--- vim.o.listchars = "eol:↲"
+local wildignored = {
+  'tags',
+  '*/__pycache__/*',
+  'build/*',
+  'build.?/*',
+  '*/node_modules/*',
+  '*/env/*',
+  '*.png',
+  '*.jpg',
+  '*.jpeg',
+  '*/migrations/*',
+  '*/.git/*'
+}
+local wildignore = ''
+for i=1,#wildignored do
+  wildignore = wildignore .. wildignored[i] .. ','
+end
+vim.o.wildignore = wildignore
+vim.o.wildignorecase = true
 vim.o.undofile = true
 vim.o.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")
 

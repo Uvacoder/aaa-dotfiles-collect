@@ -43,6 +43,7 @@ return require("packer").startup({
         -- vim.g.oceanic_next_terminal_bold = 1
         -- vim.g.oceanic_next_terminal_italic = 1
         -- vim.cmd('colorscheme OceanicNext')
+        -- vim.g.gruvbox_material_palette = 'mix' -- original, mix, material
         vim.g.gruvbox_material_background = 'hard'
         vim.g.gruvbox_material_enable_italic = 1
         vim.g.gruvbox_material_enable_bold = 1
@@ -135,18 +136,7 @@ return require("packer").startup({
     }
 
     -- For commmenting stuff out
-    -- use "tomtom/tcomment_vim"
-    use {
-      'b3nj5m1n/kommentary',
-      config = function()
-        vim.g.kommentary_create_default_mappings = false
-        require("kommentary.config").configure_language("default", {
-          prefer_single_line_comments = true,
-          use_consistent_indentation = true,
-          ignore_whitespace = true,
-        })
-      end
-    }
+    use "tomtom/tcomment_vim"
 
      -- Intellisense and completion engine
     use {

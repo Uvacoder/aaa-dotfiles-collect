@@ -53,11 +53,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/gruvbox-material"
   },
-  kommentary = {
-    config = { "\27LJ\2\n‰\1\0\0\4\0\b\0\f6\0\0\0009\0\1\0+\1\1\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0'\2\6\0005\3\a\0B\0\3\1K\0\1\0\1\0\3\22ignore_whitespace\2\31use_consistent_indentation\2 prefer_single_line_comments\2\fdefault\23configure_language\22kommentary.config\frequire'kommentary_create_default_mappings\6g\bvim\0" },
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/kommentary"
-  },
   ["lualine.nvim"] = {
     config = { "\27LJ\2\nΩ\4\0\0\5\0\31\0.6\0\0\0'\2\1\0B\0\2\0025\1\3\0005\2\4\0=\2\5\0015\2\6\0=\2\a\1=\1\2\0005\1\n\0005\2\t\0=\2\v\0015\2\f\0005\3\r\0005\4\14\0=\4\15\3>\3\2\2=\2\16\0015\2\17\0005\3\18\0>\3\2\2=\2\19\0015\2\20\0=\2\21\0015\2\22\0=\2\23\0015\2\24\0=\2\25\1=\1\b\0005\1\27\0004\2\0\0=\2\v\0014\2\0\0=\2\16\0015\2\28\0=\2\19\0015\2\29\0=\2\21\0014\2\0\0=\2\23\0014\2\0\0=\2\25\1=\1\26\0009\1\30\0B\1\1\1K\0\1\0\vstatus\1\2\0\0\rlocation\1\2\0\0\rfilename\1\0\0\22inactive_sections\14lualine_z\1\2\0\0\rlocation\14lualine_y\1\2\0\0\rprogress\14lualine_x\1\4\0\0\rencoding\15fileformat\rfiletype\14lualine_c\1\2\0\0\tdiff\1\2\0\0\vbranch\14lualine_b\fsources\1\3\0\0\bcoc\bale\1\2\0\0\16diagnostics\1\2\0\0\rfilename\14lualine_a\1\0\0\1\2\0\0\tmode\rsections\25component_separators\1\3\0\0\6|\6|\23section_separators\1\3\0\0\5\5\1\0\2\18icons_enabled\1\ntheme\21gruvbox_material\foptions\flualine\frequire\0" },
     loaded = true,
@@ -100,12 +95,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
+  tcomment_vim = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/tcomment_vim"
+  },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
   },
   ["telescope.nvim"] = {
-    config = { "\27LJ\2\n‹\3\0\0\a\0\19\0%6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\6\0006\4\0\0'\6\3\0B\4\2\0029\4\4\0049\4\5\4=\4\a\0036\4\0\0'\6\3\0B\4\2\0029\4\b\0049\4\5\4=\4\t\0036\4\0\0'\6\3\0B\4\2\0029\4\n\0049\4\5\4=\4\v\3=\3\r\0025\3\15\0005\4\14\0=\4\16\3=\3\17\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\18\0'\2\16\0B\0\2\1K\0\1\0\19load_extension\15extensions\15fzy_native\1\0\0\1\0\2\25override_file_sorter\2\28override_generic_sorter\1\rdefaults\1\0\0\21qflist_previewer\22vim_buffer_qflist\19grep_previewer\23vim_buffer_vimgrep\19file_previewer\1\0\3\20scroll_strategy\ncycle\20layout_strategy\tflex\23selection_strategy\nreset\bnew\19vim_buffer_cat\25telescope.previewers\nsetup\14telescope\frequire\0" },
+    config = { "\27LJ\2\n‹\3\0\0\a\0\19\0%6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\6\0006\4\0\0'\6\3\0B\4\2\0029\4\4\0049\4\5\4=\4\a\0036\4\0\0'\6\3\0B\4\2\0029\4\b\0049\4\5\4=\4\t\0036\4\0\0'\6\3\0B\4\2\0029\4\n\0049\4\5\4=\4\v\3=\3\r\0025\3\15\0005\4\14\0=\4\16\3=\3\17\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\18\0'\2\16\0B\0\2\1K\0\1\0\19load_extension\15extensions\15fzy_native\1\0\0\1\0\2\25override_file_sorter\2\28override_generic_sorter\1\rdefaults\1\0\0\21qflist_previewer\22vim_buffer_qflist\19grep_previewer\23vim_buffer_vimgrep\19file_previewer\1\0\3\20layout_strategy\tflex\23selection_strategy\nreset\20scroll_strategy\ncycle\bnew\19vim_buffer_cat\25telescope.previewers\nsetup\14telescope\frequire\0" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
@@ -124,41 +123,39 @@ _G.packer_plugins = {
   }
 }
 
--- Config for: nvim-treesitter
-try_loadstring("\27LJ\2\n˘\2\0\0\4\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\n\0=\3\v\2B\0\2\1K\0\1\0\fdisable\1\26\0\0\6c\fc_sharp\fclojure\bcpp\tdart\verlang\vfennel\nGodot\ago\tjava\njulia\vkotlin\bnix\nocaml\20ocaml_interface\rocamllex\bphp\brst\truby\trust\vsparql\tteal\ttoml\vturtle\fverilog\frainbow\1\0\1\venable\2\vindent\1\0\1\venable\2\14highlight\1\0\2\21use_languagetree\2\venable\2\1\0\1\21ensure_installed\15maintained\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
--- Config for: vim-polyglot
-try_loadstring("\27LJ\2\n4\0\0\2\0\3\0\0056\0\0\0009\0\1\0004\1\0\0=\1\2\0K\0\1\0\23vue_pre_processors\6g\bvim\0", "config", "vim-polyglot")
--- Config for: nvim-autopairs
-try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
--- Config for: kommentary
-try_loadstring("\27LJ\2\n‰\1\0\0\4\0\b\0\f6\0\0\0009\0\1\0+\1\1\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0'\2\6\0005\3\a\0B\0\3\1K\0\1\0\1\0\3\22ignore_whitespace\2\31use_consistent_indentation\2 prefer_single_line_comments\2\fdefault\23configure_language\22kommentary.config\frequire'kommentary_create_default_mappings\6g\bvim\0", "config", "kommentary")
 -- Config for: coc.nvim
 try_loadstring("\27LJ\2\nX\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\3\0\0\17coc-snippets\20coc-tailwindcss\26coc_global_extensions\6g\bvim\0", "config", "coc.nvim")
--- Config for: nvim-tree.lua
-try_loadstring("\27LJ\2\nÖ\3\0\0\2\0\v\0!6\0\0\0009\0\1\0)\1(\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0006\0\0\0009\0\1\0)\1\1\0=\1\4\0006\0\0\0009\0\1\0)\1\1\0=\1\5\0006\0\0\0009\0\1\0)\1\1\0=\1\6\0006\0\0\0009\0\1\0)\1\1\0=\1\a\0006\0\0\0009\0\1\0)\1\1\0=\1\b\0006\0\0\0009\0\1\0005\1\n\0=\1\t\0K\0\1\0\1\t\0\0\vplugin\18jsconfig.json\22package-lock.json\t.git\n.nuxt\17node_modules\v.cache\14.DS_Store\21nvim_tree_ignore\21nvim_tree_git_hl\21nvim_tree_follow\29nvim_tree_indent_markers\28nvim_tree_hide_dotfiles\27nvim_tree_quit_on_open\25nvim_tree_auto_close\20nvim_tree_width\6g\bvim\0", "config", "nvim-tree.lua")
--- Config for: gitsigns.nvim
-try_loadstring("\27LJ\2\nû\3\0\0\5\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\14\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\15\2B\0\2\1K\0\1\0\nsigns\1\0\1\18sign_priority\3\5\17changedelete\1\0\3\nnumhl\21GitSignsChangeNr\ttext\b‚ñã\ahl\15DiffChange\14topdelete\1\0\3\nnumhl\21GitSignsDeleteNr\ttext\b‚ñã\ahl\15DiffDelete\vdelete\1\0\3\nnumhl\21GitSignsDeleteNr\ttext\b‚ñã\ahl\15DiffDelete\vchange\1\0\3\nnumhl\21GitSignsChangeNr\ttext\b‚ñã\ahl\15DiffChange\badd\1\0\0\1\0\3\nnumhl\18GitSignsAddNr\ttext\b‚ñã\ahl\fDiffAdd\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 -- Config for: nvim-colorizer.lua
 try_loadstring("\27LJ\2\nO\0\0\4\0\5\0\b6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0B\0\3\1K\0\1\0\1\0\1\nnames\1\1\2\0\0\6*\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
--- Config for: telescope.nvim
-try_loadstring("\27LJ\2\n‹\3\0\0\a\0\19\0%6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\6\0006\4\0\0'\6\3\0B\4\2\0029\4\4\0049\4\5\4=\4\a\0036\4\0\0'\6\3\0B\4\2\0029\4\b\0049\4\5\4=\4\t\0036\4\0\0'\6\3\0B\4\2\0029\4\n\0049\4\5\4=\4\v\3=\3\r\0025\3\15\0005\4\14\0=\4\16\3=\3\17\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\18\0'\2\16\0B\0\2\1K\0\1\0\19load_extension\15extensions\15fzy_native\1\0\0\1\0\2\25override_file_sorter\2\28override_generic_sorter\1\rdefaults\1\0\0\21qflist_previewer\22vim_buffer_qflist\19grep_previewer\23vim_buffer_vimgrep\19file_previewer\1\0\3\20scroll_strategy\ncycle\20layout_strategy\tflex\23selection_strategy\nreset\bnew\19vim_buffer_cat\25telescope.previewers\nsetup\14telescope\frequire\0", "config", "telescope.nvim")
+-- Config for: nvim-treesitter
+try_loadstring("\27LJ\2\n˘\2\0\0\4\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\n\0=\3\v\2B\0\2\1K\0\1\0\fdisable\1\26\0\0\6c\fc_sharp\fclojure\bcpp\tdart\verlang\vfennel\nGodot\ago\tjava\njulia\vkotlin\bnix\nocaml\20ocaml_interface\rocamllex\bphp\brst\truby\trust\vsparql\tteal\ttoml\vturtle\fverilog\frainbow\1\0\1\venable\2\vindent\1\0\1\venable\2\14highlight\1\0\2\21use_languagetree\2\venable\2\1\0\1\21ensure_installed\15maintained\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
+-- Config for: nvim-tree.lua
+try_loadstring("\27LJ\2\nÖ\3\0\0\2\0\v\0!6\0\0\0009\0\1\0)\1(\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0006\0\0\0009\0\1\0)\1\1\0=\1\4\0006\0\0\0009\0\1\0)\1\1\0=\1\5\0006\0\0\0009\0\1\0)\1\1\0=\1\6\0006\0\0\0009\0\1\0)\1\1\0=\1\a\0006\0\0\0009\0\1\0)\1\1\0=\1\b\0006\0\0\0009\0\1\0005\1\n\0=\1\t\0K\0\1\0\1\t\0\0\vplugin\18jsconfig.json\22package-lock.json\t.git\n.nuxt\17node_modules\v.cache\14.DS_Store\21nvim_tree_ignore\21nvim_tree_git_hl\21nvim_tree_follow\29nvim_tree_indent_markers\28nvim_tree_hide_dotfiles\27nvim_tree_quit_on_open\25nvim_tree_auto_close\20nvim_tree_width\6g\bvim\0", "config", "nvim-tree.lua")
 -- Config for: lualine.nvim
 try_loadstring("\27LJ\2\nΩ\4\0\0\5\0\31\0.6\0\0\0'\2\1\0B\0\2\0025\1\3\0005\2\4\0=\2\5\0015\2\6\0=\2\a\1=\1\2\0005\1\n\0005\2\t\0=\2\v\0015\2\f\0005\3\r\0005\4\14\0=\4\15\3>\3\2\2=\2\16\0015\2\17\0005\3\18\0>\3\2\2=\2\19\0015\2\20\0=\2\21\0015\2\22\0=\2\23\0015\2\24\0=\2\25\1=\1\b\0005\1\27\0004\2\0\0=\2\v\0014\2\0\0=\2\16\0015\2\28\0=\2\19\0015\2\29\0=\2\21\0014\2\0\0=\2\23\0014\2\0\0=\2\25\1=\1\26\0009\1\30\0B\1\1\1K\0\1\0\vstatus\1\2\0\0\rlocation\1\2\0\0\rfilename\1\0\0\22inactive_sections\14lualine_z\1\2\0\0\rlocation\14lualine_y\1\2\0\0\rprogress\14lualine_x\1\4\0\0\rencoding\15fileformat\rfiletype\14lualine_c\1\2\0\0\tdiff\1\2\0\0\vbranch\14lualine_b\fsources\1\3\0\0\bcoc\bale\1\2\0\0\16diagnostics\1\2\0\0\rfilename\14lualine_a\1\0\0\1\2\0\0\tmode\rsections\25component_separators\1\3\0\0\6|\6|\23section_separators\1\3\0\0\5\5\1\0\2\18icons_enabled\1\ntheme\21gruvbox_material\foptions\flualine\frequire\0", "config", "lualine.nvim")
+-- Config for: gitsigns.nvim
+try_loadstring("\27LJ\2\nû\3\0\0\5\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\14\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\15\2B\0\2\1K\0\1\0\nsigns\1\0\1\18sign_priority\3\5\17changedelete\1\0\3\nnumhl\21GitSignsChangeNr\ttext\b‚ñã\ahl\15DiffChange\14topdelete\1\0\3\nnumhl\21GitSignsDeleteNr\ttext\b‚ñã\ahl\15DiffDelete\vdelete\1\0\3\nnumhl\21GitSignsDeleteNr\ttext\b‚ñã\ahl\15DiffDelete\vchange\1\0\3\nnumhl\21GitSignsChangeNr\ttext\b‚ñã\ahl\15DiffChange\badd\1\0\0\1\0\3\nnumhl\18GitSignsAddNr\ttext\b‚ñã\ahl\fDiffAdd\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+-- Config for: telescope.nvim
+try_loadstring("\27LJ\2\n‹\3\0\0\a\0\19\0%6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\6\0006\4\0\0'\6\3\0B\4\2\0029\4\4\0049\4\5\4=\4\a\0036\4\0\0'\6\3\0B\4\2\0029\4\b\0049\4\5\4=\4\t\0036\4\0\0'\6\3\0B\4\2\0029\4\n\0049\4\5\4=\4\v\3=\3\r\0025\3\15\0005\4\14\0=\4\16\3=\3\17\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\18\0'\2\16\0B\0\2\1K\0\1\0\19load_extension\15extensions\15fzy_native\1\0\0\1\0\2\25override_file_sorter\2\28override_generic_sorter\1\rdefaults\1\0\0\21qflist_previewer\22vim_buffer_qflist\19grep_previewer\23vim_buffer_vimgrep\19file_previewer\1\0\3\20layout_strategy\tflex\23selection_strategy\nreset\20scroll_strategy\ncycle\bnew\19vim_buffer_cat\25telescope.previewers\nsetup\14telescope\frequire\0", "config", "telescope.nvim")
 -- Config for: gruvbox-material
 try_loadstring("\27LJ\2\nﬂ\2\0\0\3\0\14\0\0286\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\4\0006\0\0\0009\0\1\0)\1\1\0=\1\5\0006\0\0\0009\0\1\0'\1\a\0=\1\6\0006\0\0\0009\0\1\0'\1\t\0=\1\b\0006\0\0\0009\0\n\0'\2\v\0B\0\2\0016\0\f\0'\2\r\0B\0\2\1K\0\1\0\14fixcolors\frequire!colorscheme gruvbox-material\bcmd\vorange/gruvbox_material_menu_selection_background\freverse\28gruvbox_material_visual!gruvbox_material_enable_bold#gruvbox_material_enable_italic\thard gruvbox_material_background\6g\bvim\0", "config", "gruvbox-material")
+-- Config for: nvim-autopairs
+try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+-- Config for: vim-polyglot
+try_loadstring("\27LJ\2\n4\0\0\2\0\3\0\0056\0\0\0009\0\1\0004\1\0\0=\1\2\0K\0\1\0\23vue_pre_processors\6g\bvim\0", "config", "vim-polyglot")
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
-vim.cmd [[au FileType lua ++once lua require("packer.load")({'ale'}, { ft = "lua" }, _G.packer_plugins)]]
+vim.cmd [[au FileType html ++once lua require("packer.load")({'ale'}, { ft = "html" }, _G.packer_plugins)]]
 vim.cmd [[au FileType css ++once lua require("packer.load")({'ale'}, { ft = "css" }, _G.packer_plugins)]]
+vim.cmd [[au FileType js ++once lua require("packer.load")({'ale'}, { ft = "js" }, _G.packer_plugins)]]
+vim.cmd [[au FileType txt ++once lua require("packer.load")({'ale'}, { ft = "txt" }, _G.packer_plugins)]]
+vim.cmd [[au FileType vim ++once lua require("packer.load")({'ale'}, { ft = "vim" }, _G.packer_plugins)]]
+vim.cmd [[au FileType lua ++once lua require("packer.load")({'ale'}, { ft = "lua" }, _G.packer_plugins)]]
+vim.cmd [[au FileType sh ++once lua require("packer.load")({'ale'}, { ft = "sh" }, _G.packer_plugins)]]
 vim.cmd [[au FileType zsh ++once lua require("packer.load")({'ale'}, { ft = "zsh" }, _G.packer_plugins)]]
 vim.cmd [[au FileType bash ++once lua require("packer.load")({'ale'}, { ft = "bash" }, _G.packer_plugins)]]
 vim.cmd [[au FileType vue ++once lua require("packer.load")({'ale'}, { ft = "vue" }, _G.packer_plugins)]]
-vim.cmd [[au FileType html ++once lua require("packer.load")({'ale'}, { ft = "html" }, _G.packer_plugins)]]
-vim.cmd [[au FileType txt ++once lua require("packer.load")({'ale'}, { ft = "txt" }, _G.packer_plugins)]]
-vim.cmd [[au FileType js ++once lua require("packer.load")({'ale'}, { ft = "js" }, _G.packer_plugins)]]
-vim.cmd [[au FileType sh ++once lua require("packer.load")({'ale'}, { ft = "sh" }, _G.packer_plugins)]]
-vim.cmd [[au FileType vim ++once lua require("packer.load")({'ale'}, { ft = "vim" }, _G.packer_plugins)]]
 vim.cmd("augroup END")
 END
 

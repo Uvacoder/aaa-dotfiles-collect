@@ -20,10 +20,7 @@ keymap('n', '<C-g>', ':Telescope live_grep<cr>', options)
 keymap('n', '<C-b>', ':Telescope buffers<cr>', options)
 
 keymap('n', '<C-e>', ':NvimTreeToggle<CR>', options)
-
-keymap("n", "gcc", "<Plug>kommentary_line_default", {})
-keymap("n", "gc", "<Plug>kommentary_motion_default", {})
-keymap("v", "gc", "<Plug>kommentary_visual_default<C-c>", {})
+keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', options)
 
 -- Line highlighting
 keymap('n', '<leader>hl', ':set cursorline!<CR>', options)
