@@ -1,3 +1,9 @@
+-- Disable netrw.
+vim.g.loaded_netrw  = 1
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrwSettings = 1
+vim.g.loaded_netrwFileHandlers = 1
+
 vim.g.python3_host_prog = "/usr/local/bin/python3"
 vim.g.node_host_prog = "/usr/local/lib/node_modules/neovim/bin/cli.js"
 
@@ -20,36 +26,23 @@ return require("packer").startup({
     use {
       "nvim-treesitter/nvim-treesitter",
       config = function()
-        require("nvim-treesitter.configs").setup({
+        require'nvim-treesitter.configs'.setup {
           ensure_installed = "maintained",
-          highlight = {enable = true, use_languagetree = true},
+          highlight = {enable = true},
           indent = {enable = true},
-          rainbow = {enable = true},
-          disable = {
-           "c", "c_sharp", "clojure", "cpp", "dart", "erlang", "fennel", "Godot", "go",
-           "java", "julia", "kotlin", "nix", "ocaml", "ocaml_interface", "ocamllex",
-           "php", "rst", "ruby", "rust", "sparql", "teal", "toml", "turtle", "verilog"
-          },
-        })
+          rainbow = {enable = true}
+        }
       end,
       requires = "p00f/nvim-ts-rainbow"
     }
 
     -- themes
     use {
-        --  'mhartington/oceanic-next',
-        'sainnhe/gruvbox-material',
+      'mhartington/oceanic-next',
       config = function()
-        -- vim.g.oceanic_next_terminal_bold = 1
-        -- vim.g.oceanic_next_terminal_italic = 1
-        -- vim.cmd('colorscheme OceanicNext')
-        -- vim.g.gruvbox_material_palette = 'mix' -- original, mix, material
-        vim.g.gruvbox_material_background = 'hard'
-        vim.g.gruvbox_material_enable_italic = 1
-        vim.g.gruvbox_material_enable_bold = 1
-        vim.g.gruvbox_material_visual = 'reverse'
-        vim.g.gruvbox_material_menu_selection_background = 'orange'
-        vim.cmd('colorscheme gruvbox-material')
+        vim.g.oceanic_next_terminal_bold = 1
+        vim.g.oceanic_next_terminal_italic = 1
+        vim.cmd('colorscheme OceanicNext')
         require('fixcolors')
       end
     }
@@ -152,11 +145,11 @@ return require("packer").startup({
     -- Check syntax in Vim asynchronously and fix files
     use {
       "dense-analysis/ale",
-      ft = {'sh', 'zsh', 'bash', 'lua', 'vue', 'html', 'css', 'js', 'vim', 'txt'},
+      -- ft = {'sh', 'zsh', 'bash', 'lua', 'vue', 'html', 'css', 'js', 'vim', 'txt'},
       config = function()
         vim.g.ale_disable_lsp = 1
         vim.g.ale_sign_column_always = 1
-        vim.g.ale_linter_aliases = {vue = {"vue", "javascript"}}
+        -- vim.g.ale_linter_aliases = {vue = {"vue", "javascript"}}
         vim.g.ale_linters = {vue = {"eslint", "vls"}}
         vim.g.ale_fixers = {"prettier", "eslint", "luafmt", "remove_trailing_lines", "trim_whitespace"}
         vim.g.ale_fix_on_save = 1
@@ -172,7 +165,11 @@ return require("packer").startup({
     -- autopairs for neovim written by lua
     use {
       "windwp/nvim-autopairs",
-      config = function() require("nvim-autopairs").setup() end
+      config = function()
+        require('nvim-autopairs').setup({
+          disable_filetype = { "TelescopePrompt" , "vim" },
+        })
+      end
     }
 
     -- Multiple cursors plugin for vim/neovim
@@ -192,36 +189,34 @@ return require("packer").startup({
     use "honza/vim-snippets"
 
     -- neovim statusline plugin written in lua
-    use {
+      use {
       'hoob3rt/lualine.nvim',
+      requires = {'kyazdani42/nvim-web-devicons', opt = true},
       config = function()
-        local lualine = require('lualine')
-        lualine.options = {
-          theme = 'gruvbox_material',
-          -- theme = 'ayu_dark',
-          -- theme = 'oceanicnext',
-          section_separators = {'', ''},
-          component_separators = {'|', '|'},
-
-          icons_enabled = false,
+        require('lualine').setup{
+          options = {
+            theme = 'ayu_dark',
+            section_separators = {'', ''},
+            component_separators = {'|', '|'},
+            icons_enabled = false,
+          },
+          sections = {
+            lualine_a = { {'mode', upper = true} },
+            lualine_c = { {'branch'}, { 'diff' } },
+            lualine_b = { {'filename', file_status = true,}, { 'diagnostics', sources = { 'coc', 'ale' }} },
+            lualine_x = { 'encoding', 'fileformat', 'filetype' },
+            lualine_y = { 'progress' },
+            lualine_z = { 'location'  },
+          },
+          inactive_sections = {
+            lualine_a = {  },
+            lualine_b = {  },
+            lualine_c = { 'filename' },
+            lualine_x = { 'location' },
+            lualine_y = {  },
+            lualine_z = {   }
+          },
         }
-        lualine.sections = {
-          lualine_a = { 'mode'},
-          lualine_b = { 'filename' , { 'diagnostics', sources = { 'coc', 'ale' }}},
-          lualine_c = { 'branch', { 'diff' } },
-          lualine_x = { 'encoding', 'fileformat', 'filetype' },
-          lualine_y = { 'progress' },
-          lualine_z = { 'location'  },
-        }
-        lualine.inactive_sections = {
-          lualine_a = {  },
-          lualine_b = {  },
-          lualine_c = { 'filename' },
-          lualine_x = { 'location' },
-          lualine_y = {  },
-          lualine_z = {   }
-        }
-        lualine.status()
       end
     }
 

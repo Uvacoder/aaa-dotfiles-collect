@@ -22,9 +22,6 @@ keymap('n', '<C-b>', ':Telescope buffers<cr>', options)
 keymap('n', '<C-e>', ':NvimTreeToggle<CR>', options)
 keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', options)
 
--- Line highlighting
-keymap('n', '<leader>hl', ':set cursorline!<CR>', options)
-
 -- buffers navigation
 keymap('n', '<Space>', '<PageDown>', options)
 keymap('n', '-', '<PageUp>', options)

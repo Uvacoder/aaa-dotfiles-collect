@@ -13,6 +13,8 @@ vim.bo.autoindent = true
 vim.o.encoding = "UTF-8"
 vim.o.background = "dark"
 vim.o.compatible = false
+vim.o.cmdheight = 1
+
 vim.o.hidden = true
 vim.o.updatetime = 100
 vim.o.showcmd = false
@@ -33,36 +35,22 @@ vim.o.smartcase = true
 vim.o.autoread = true
 vim.o.autowrite = true
 vim.o.swapfile = false
+vim.bo.swapfile = false
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.completeopt = "menuone,noinsert,noselect,preview"
 vim.o.shell = "/usr/local/bin/zsh"
 vim.o.errorformat = "%A%f:%l:%c:%m,%-G%.%#"
-vim.o.shortmess = vim.o.shortmess .. 'aIcs'
+-- vim.o.shortmess = vim.o.shortmess .. 'aIcs'
 -- vim.o.listchars = 'eol:↲,tab:»\\ ,trail:•'
-vim.o.listchars = 'tab:»\\ ,trail:•'
+-- vim.o.listchars = 'tab:»\\ ,trail:•'
 vim.o.showbreak = '╰─➤'
 vim.o.fillchars = "vert:│" -- make vertical split sign better
 vim.o.foldmethod = "marker" -- foldmethod using marker
 vim.o.inccommand = "split" -- incrementally show result of command
-local wildignored = {
-  'tags',
-  '*/__pycache__/*',
-  'build/*',
-  'build.?/*',
-  '*/node_modules/*',
-  '*/env/*',
-  '*.png',
-  '*.jpg',
-  '*.jpeg',
-  '*/migrations/*',
-  '*/.git/*'
-}
-local wildignore = ''
-for i=1,#wildignored do
-  wildignore = wildignore .. wildignored[i] .. ','
-end
-vim.o.wildignore = wildignore
+vim.o.wildignore = "*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,_build,*.o,*~,*.pyc"
+vim.o.listchars = "tab:→ ,nbsp:␣,trail:•,precedes:«,extends:»"
+vim.o.shortmess = vim.o.shortmess .. "afilnxtToOFcs"
 vim.o.wildignorecase = true
 vim.o.undofile = true
 vim.o.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")
@@ -76,3 +64,6 @@ if vim.fn.has("termguicolors") == 1 then
   vim.cmd("let &t_8b = '\\<Esc>[48;2;%lu;%lu;%lum'")
   vim.o.termguicolors = true
 end
+
+vim.cmd('set iskeyword+=-')
+vim.cmd('set formatoptions-=cro')

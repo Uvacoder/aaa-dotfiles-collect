@@ -19,15 +19,15 @@
   "suggest.maxCompleteItemCount": 32,
   "suggest.noselect": false,
   "suggest.timeout": 500,
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
   "diagnostic.displayByAle": true,
-  "diagnostic.errorSign": "",
-  "diagnostic.warningSign": "",
-  "diagnostic.infoSign": "",
-  "diagnostic.hintSign": "ﯦ",
-  "diagnostic.maxWindowWidth": 120,
-  "diagnostic.signPriority": 20,
-  "diagnostic.enableHighlightLineNumber": true,
-  "diagnostic.virtualText": true,
+  /* "diagnostic.errorSign": "", */
+  /* "diagnostic.warningSign": "", */
+  /* "diagnostic.infoSign": "", */
+  /* "diagnostic.hintSign": "ﯦ", */
+  /* "diagnostic.maxWindowWidth": 120, */
+  /* "diagnostic.signPriority": 20, */
+  /* "diagnostic.virtualText": true, */
   "tailwindCSS.cssLanguages": ["css", "vue", "postcss"],
   "tailwindCSS.htmlLanguages": ["html", "vue"],
   "tailwindCSS.jsLanguages": ["javascript"],
