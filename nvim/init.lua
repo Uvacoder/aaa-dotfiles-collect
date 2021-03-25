@@ -12,5 +12,6 @@ vim.g._config = {
 
 require('options')
 require('plugins')
+require('config')
 require('autocmd')
 require('mappings')
