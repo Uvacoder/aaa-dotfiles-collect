@@ -134,7 +134,7 @@ require('lualine').setup({
     theme = 'ayu_dark',
     section_separators = {'', ''},
     component_separators = {'|', '|'},
-    icons_enabled = false,
+    icons_enabled = true,
   },
   sections = {
     lualine_a = { {'mode', upper = true} },
