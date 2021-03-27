@@ -37,7 +37,6 @@ return require("packer").startup({
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-fzy-native.nvim"
-    use "nvim-telescope/telescope-media-files.nvim"
     -- show git stuff in signcolumn
     use "lewis6991/gitsigns.nvim"
     -- For commmenting stuff out

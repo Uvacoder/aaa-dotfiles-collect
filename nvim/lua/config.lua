@@ -75,15 +75,10 @@ require("telescope").setup({
     fzy_native = {
       override_generic_sorter = false,
       override_file_sorter = true,
-    },
-    media_files = {
-      filetypes = {"png", "webp", "jpg", "jpeg"},
-      find_cmd = "rg"
     }
   }
 })
 require('telescope').load_extension('fzy_native')
-require('telescope').load_extension('media_files')
 
 -- show git stuff in signcolumn
 require("gitsigns").setup({
