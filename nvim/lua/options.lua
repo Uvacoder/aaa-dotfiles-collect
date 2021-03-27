@@ -14,7 +14,7 @@ vim.o.encoding = "UTF-8"
 vim.o.background = "dark"
 vim.o.compatible = false
 vim.o.cmdheight = 1
-
+vim.o.conceallevel = 0 -- So that I can see `` in markdown files
 vim.o.hidden = true
 vim.o.updatetime = 100
 vim.o.showcmd = false
@@ -50,7 +50,7 @@ vim.o.foldmethod = "marker" -- foldmethod using marker
 vim.o.inccommand = "split" -- incrementally show result of command
 vim.o.wildignore = "*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,_build,*.o,*~,*.pyc"
 vim.o.listchars = "tab:→ ,nbsp:␣,trail:•,precedes:«,extends:»"
-vim.o.shortmess = vim.o.shortmess .. "afilnxtToOFcs"
+-- vim.o.shortmess = vim.o.shortmess .. "afilnxtToOFcs"
 vim.o.wildignorecase = true
 vim.o.undofile = true
 vim.o.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")
@@ -67,3 +67,6 @@ end
 
 vim.cmd('set iskeyword+=-')
 vim.cmd('set formatoptions-=cro')
+vim.cmd('set whichwrap+=<,>,[,],h,l')
+vim.cmd('set shortmess+=c')
+vim.cmd('syntax on')

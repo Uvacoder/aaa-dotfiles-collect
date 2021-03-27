@@ -21,8 +21,9 @@ return require("packer").startup({
     -- Packer can manage itself as an optional plugin
     use { "wbthomason/packer.nvim", opt = true }
     -- Nvim Treesitter configurations and abstraction layer
-    use "nvim-treesitter/nvim-treesitter"
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use "p00f/nvim-ts-rainbow"
+    use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
     -- themes
     use 'mhartington/oceanic-next'
     -- The fastest Neovim colorizer.
@@ -32,14 +33,15 @@ return require("packer").startup({
     -- A file explorer tree for neovim written in lua
     use "kyazdani42/nvim-tree.lua"
     -- telescope
-    use "nvim-telescope/telescope-fzy-native.nvim"
-    use "nvim-telescope/telescope.nvim"
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
+    use "nvim-telescope/telescope.nvim"
+    use "nvim-telescope/telescope-fzy-native.nvim"
     -- show git stuff in signcolumn
     use "lewis6991/gitsigns.nvim"
     -- For commmenting stuff out
-    use "tomtom/tcomment_vim"
+    -- use "tomtom/tcomment_vim"
+    use 'terrortylor/nvim-comment'
      -- Intellisense and completion engine
     use { "neoclide/coc.nvim", branch = "release" }
     -- Check syntax in Vim asynchronously and fix files
