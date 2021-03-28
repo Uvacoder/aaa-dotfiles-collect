@@ -1,9 +1,3 @@
--- Disable netrw.
-vim.g.loaded_netrw  = 1
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_netrwSettings = 1
-vim.g.loaded_netrwFileHandlers = 1
-
 vim.g.python3_host_prog = "/usr/local/bin/python3"
 vim.g.node_host_prog = "/usr/local/lib/node_modules/neovim/bin/cli.js"
 
@@ -23,6 +17,7 @@ return require("packer").startup({
     -- Nvim Treesitter configurations and abstraction layer
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use "p00f/nvim-ts-rainbow"
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
     use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
     -- themes
     use 'mhartington/oceanic-next'
@@ -40,9 +35,8 @@ return require("packer").startup({
     -- show git stuff in signcolumn
     use "lewis6991/gitsigns.nvim"
     -- For commmenting stuff out
-    -- use "tomtom/tcomment_vim"
-    use 'terrortylor/nvim-comment'
-     -- Intellisense and completion engine
+    use "tpope/vim-commentary"
+    -- Intellisense and completion engine
     use { "neoclide/coc.nvim", branch = "release" }
     -- Check syntax in Vim asynchronously and fix files
     use "dense-analysis/ale"
@@ -53,7 +47,10 @@ return require("packer").startup({
     -- A solid language pack for Vim.
     use "sheerun/vim-polyglot"
     -- vim-snipmate default snippets.
-    use "honza/vim-snippets"
+    -- use "honza/vim-snippets"
+    use 'hrsh7th/vim-vsnip'
+    use 'hrsh7th/vim-vsnip-integ'
+    -- use 'hollowtree/vscode-vue-snippets'
     -- neovim statusline plugin written in lua
     use 'hoob3rt/lualine.nvim'
   end

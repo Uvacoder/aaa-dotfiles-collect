@@ -5,6 +5,7 @@ require('nvim-treesitter.configs').setup({
     "graphql", "php", "ruby", "typescript", "regex", "jsonc" 
   },
   highlight = {enable = true},
+  context_commentstring = {enable = true},
   rainbow = {enable = true}
 })
 
@@ -32,14 +33,13 @@ require("colorizer").setup(
 )
 
 -- A file explorer tree for neovim written in lua
-vim.g.nvim_tree_width = 40
+-- vim.g.nvim_tree_width = 40
 vim.g.nvim_tree_auto_close = 1
 vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_hide_dotfiles = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_follow = 1
-vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_icons = { default = "" }
+-- vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_ignore = {
   "plugin",
   "plugin",
@@ -51,7 +51,24 @@ vim.g.nvim_tree_ignore = {
   ".cache",
   ".DS_Store"
 }
-
+vim.g.nvim_tree_icons = {
+    default = '',
+    symlink = '',
+    git = {
+        unstaged = "",
+        staged = "✓",
+        unmerged = "",
+        renamed = "➜",
+        untracked = ""
+    },
+    folder = {
+        default = "",
+        open = "",
+        empty = "",
+        empty_open = "",
+        symlink = ""
+    }
+}
 -- search
 require("telescope").setup({
   defaults = {
@@ -99,7 +116,7 @@ vim.g.coc_global_extensions = {
 }
 
 -- commmenting
-require('nvim_comment').setup()
+-- require('nvim_comment').setup()
 
 -- Check syntax in Vim asynchronously and fix files
 vim.g.ale_disable_lsp = 1

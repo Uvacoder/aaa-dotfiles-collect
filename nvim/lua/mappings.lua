@@ -26,11 +26,11 @@ keymap('n', '<C-e>', ':NvimTreeToggle<CR>', options)
 keymap('n', '<leader>e', ':NvimTreeToggle<CR>', options)
 keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', options)
 
-keymap("n", "<leader>/", ":CommentToggle<CR>", options)
-keymap("v", "<leader>/", ":CommentToggle<CR>", options)
+keymap("n", "<C-_>", ":Commentary<CR>", options)
+keymap("v", "<C-_>", ":Commentary<CR>", options)
 
 -- buffers navigation
-keymap('n', '<Space>', '<PageDown>', options)
+keymap('n', '=', '<PageDown>', options)
 keymap('n', '-', '<PageUp>', options)
 
 -- select all

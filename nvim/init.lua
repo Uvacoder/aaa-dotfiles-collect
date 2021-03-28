@@ -1,5 +1,5 @@
 vim.g._config = {
-  remove_bg = false,
+  remove_bg = true,
   colors = {
     bg = "NONE"
   },

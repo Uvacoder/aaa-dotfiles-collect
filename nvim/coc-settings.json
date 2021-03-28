@@ -36,5 +36,6 @@
   "vetur.completion.autoImport": false,
   "eslint.autoFixOnSave": true,
   "prettier.eslintIntegration": true,
+  "prettier.requireConfig": true,
   "prettier.formatterPriority": -1
 }
