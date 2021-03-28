@@ -113,17 +113,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-polyglot"
   },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-snippets"
+  },
   ["vim-visual-multi"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-visual-multi"
   },
-  ["vim-vsnip"] = {
+  ["vscode-vue-snippets"] = {
     loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-vsnip"
-  },
-  ["vim-vsnip-integ"] = {
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vscode-vue-snippets"
   }
 }
 

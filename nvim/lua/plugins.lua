@@ -47,10 +47,8 @@ return require("packer").startup({
     -- A solid language pack for Vim.
     use "sheerun/vim-polyglot"
     -- vim-snipmate default snippets.
-    -- use "honza/vim-snippets"
-    use 'hrsh7th/vim-vsnip'
-    use 'hrsh7th/vim-vsnip-integ'
-    -- use 'hollowtree/vscode-vue-snippets'
+    use "honza/vim-snippets"
+    use 'hollowtree/vscode-vue-snippets'
     -- neovim statusline plugin written in lua
     use 'hoob3rt/lualine.nvim'
   end
