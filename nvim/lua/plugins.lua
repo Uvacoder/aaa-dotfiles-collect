@@ -12,44 +12,94 @@ vim.cmd("autocmd BufWritePost plugins.lua PackerCompile")
 
 return require("packer").startup({
   function()
-    -- Packer can manage itself as an optional plugin
     use { "wbthomason/packer.nvim", opt = true }
-    -- Nvim Treesitter configurations and abstraction layer
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-    use "p00f/nvim-ts-rainbow"
-    use 'JoosepAlviste/nvim-ts-context-commentstring'
-    use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
-    -- themes
-    use 'mhartington/oceanic-next'
-    -- The fastest Neovim colorizer.
-    use "norcalli/nvim-colorizer.lua"
-    -- lua `fork` of vim-web-devicons for neovim
+    
+    use "tjdevries/nlua.nvim"
     use "kyazdani42/nvim-web-devicons"
-    -- A file explorer tree for neovim written in lua
-    use "kyazdani42/nvim-tree.lua"
-    -- telescope
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
-    use "nvim-telescope/telescope.nvim"
-    use "nvim-telescope/telescope-fzy-native.nvim"
-    -- show git stuff in signcolumn
-    use "lewis6991/gitsigns.nvim"
-    -- For commmenting stuff out
-    use "tpope/vim-commentary"
-    -- Intellisense and completion engine
-    use { "neoclide/coc.nvim", branch = "release" }
-    -- Check syntax in Vim asynchronously and fix files
-    use "dense-analysis/ale"
-    -- autopairs for neovim written by lua
-    use "windwp/nvim-autopairs"
-    -- Multiple cursors plugin for vim/neovim
+    use "p00f/nvim-ts-rainbow"
+
+    use {
+      "nvim-treesitter/nvim-treesitter", 
+      run = ":TSUpdate",
+      config = [[ require('config.treesitter') ]],
+      requires = { "sheerun/vim-polyglot", config = [[ vim.g.vue_pre_processors = {} ]] }
+    }
+    
+    use {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      requires = "tpope/vim-commentary"
+    }
+    
+    use {
+      "lukas-reineke/indent-blankline.nvim", branch = "lua",
+      config = [[ require('config.indent') ]]
+    }
+    
+    use {
+      "mhartington/oceanic-next",
+      config = [[ require('config.colorscheme') ]]
+    }
+    
+    use {
+      "norcalli/nvim-colorizer.lua",
+      config = [[ require('config.colorizer')]]
+    }
+
+    use {
+      "kyazdani42/nvim-tree.lua",
+      config = [[ require('config.tree') ]]
+    }
+
+    use {
+      "nvim-telescope/telescope.nvim",
+      config = [[ require('config.telescope') ]],
+      requires = "nvim-telescope/telescope-fzy-native.nvim"
+    }
+
+    use {
+      'tpope/vim-fugitive', 
+      cmd = {'Gstatus', 'Gdiffsplit', 'GBrowser', 'Gblame', 'Gpush', 'Gpull'}
+    }
+
+    use {
+      "lewis6991/gitsigns.nvim",
+      config = [[ require('config.git') ]]
+    }
+
+    use { 
+      "neoclide/coc.nvim", branch = "release",
+      config = [[ require('config.coc') ]]
+    }
+
+    use {
+      "dense-analysis/ale",
+      config = [[ require('config.ale') ]]
+    }
+    
+    use {
+      "windwp/nvim-autopairs",
+      config = [[ require('config.autopairs') ]]
+    }
+
     use { "mg979/vim-visual-multi", branch = "master" }
-    -- A solid language pack for Vim.
-    use "sheerun/vim-polyglot"
-    -- vim-snipmate default snippets.
-    use "honza/vim-snippets"
-    use 'hollowtree/vscode-vue-snippets'
-    -- neovim statusline plugin written in lua
-    use 'hoob3rt/lualine.nvim'
+    
+    use {
+      "honza/vim-snippets",
+      "hollowtree/vscode-vue-snippets"
+    }
+
+    use {
+      "hoob3rt/lualine.nvim",
+      config = [[ require('config.lualine') ]]
+    }
+
+    use {
+      'mbbill/undotree',
+      cmd = 'UndotreeToggle',
+      config = [[ vim.g.undotree_SetFocusWhenToggle = 1 ]]
+    }
+  
   end
 })

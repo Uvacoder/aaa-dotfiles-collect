@@ -33,38 +33,51 @@ end
 
 _G.packer_plugins = {
   ale = {
+    config = { " require('config.ale') " },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/ale"
   },
   ["coc.nvim"] = {
+    config = { " require('config.coc') " },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/coc.nvim"
   },
   ["gitsigns.nvim"] = {
+    config = { " require('config.git') " },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
   ["indent-blankline.nvim"] = {
+    config = { " require('config.indent') " },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
   },
   ["lualine.nvim"] = {
+    config = { " require('config.lualine') " },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
+  ["nlua.nvim"] = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nlua.nvim"
+  },
   ["nvim-autopairs"] = {
+    config = { " require('config.autopairs') " },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
   ["nvim-colorizer.lua"] = {
+    config = { " require('config.colorizer')" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-tree.lua"] = {
+    config = { " require('config.tree') " },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
+    config = { " require('config.treesitter') " },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
@@ -81,6 +94,7 @@ _G.packer_plugins = {
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["oceanic-next"] = {
+    config = { " require('config.colorscheme') " },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/oceanic-next"
   },
@@ -102,12 +116,26 @@ _G.packer_plugins = {
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
   },
   ["telescope.nvim"] = {
+    config = { " require('config.telescope') " },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  undotree = {
+    commands = { "UndotreeToggle" },
+    config = { " vim.g.undotree_SetFocusWhenToggle = 1 " },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/opt/undotree"
   },
   ["vim-commentary"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-commentary"
+  },
+  ["vim-fugitive"] = {
+    commands = { "Gstatus", "Gdiffsplit", "GBrowser", "Gblame", "Gpush", "Gpull" },
+    loaded = false,
+    needs_bufread = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/opt/vim-fugitive"
   },
   ["vim-polyglot"] = {
     loaded = true,
@@ -126,6 +154,38 @@ _G.packer_plugins = {
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vscode-vue-snippets"
   }
 }
+
+-- Config for: nvim-colorizer.lua
+ require('config.colorizer')
+-- Config for: nvim-treesitter
+ require('config.treesitter') 
+-- Config for: gitsigns.nvim
+ require('config.git') 
+-- Config for: indent-blankline.nvim
+ require('config.indent') 
+-- Config for: coc.nvim
+ require('config.coc') 
+-- Config for: ale
+ require('config.ale') 
+-- Config for: lualine.nvim
+ require('config.lualine') 
+-- Config for: oceanic-next
+ require('config.colorscheme') 
+-- Config for: nvim-autopairs
+ require('config.autopairs') 
+-- Config for: telescope.nvim
+ require('config.telescope') 
+-- Config for: nvim-tree.lua
+ require('config.tree') 
+
+-- Command lazy-loads
+vim.cmd [[command! -nargs=* -range -bang -complete=file UndotreeToggle lua require("packer.load")({'undotree'}, { cmd = "UndotreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Gstatus lua require("packer.load")({'vim-fugitive'}, { cmd = "Gstatus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Gdiffsplit lua require("packer.load")({'vim-fugitive'}, { cmd = "Gdiffsplit", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file GBrowser lua require("packer.load")({'vim-fugitive'}, { cmd = "GBrowser", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Gblame lua require("packer.load")({'vim-fugitive'}, { cmd = "Gblame", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Gpush lua require("packer.load")({'vim-fugitive'}, { cmd = "Gpush", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Gpull lua require("packer.load")({'vim-fugitive'}, { cmd = "Gpull", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 
 END
 

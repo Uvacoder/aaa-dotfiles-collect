@@ -36,7 +36,12 @@ keymap('n', '-', '<PageUp>', options)
 -- select all
 keymap('n', '<Leader>sa', 'ggVG', options)
 
+-- I hate escape
+keymap('i', 'jk', '<ESC>', options)
+keymap('i', 'kj', '<ESC>', options)
+keymap('i', 'jj', '<ESC>', options)
 keymap('t', 'jj', '<ESC>', options)
+
 keymap('n', '<C-s>', ':w<CR>', options)
 keymap('i', '<C-s>', '<esc>:w<CR>', options)
 keymap('n', '<C-q>', '!<CR>', options)
@@ -56,22 +61,16 @@ keymap('v', '<S-H>', '<gv', options)
 keymap('v', '<TAB>', '>gv', options)
 keymap('v', '<S-TAB>', '<gv', options)
 
+-- Tab switch buffer
+keymap('n', '<TAB>', ':bnext<CR>', options)
+keymap('n', '<S-TAB>', ':bprevious<CR>', options)
+
 --  Quick window switching
 keymap('n', '<leader>j', '<C-w><C-j>', options)
 keymap('n', '<leader>k', '<C-w><C-k>', options)
 
 -- better window movement
-keymap('n', '<C-h>', '<C-w>h', {silent = true})
-keymap('n', '<C-j>', '<C-w>j', {silent = true})
-keymap('n', '<C-k>', '<C-w>k', {silent = true})
-keymap('n', '<C-l>', '<C-w>l', {silent = true})
-
--- I hate escape
-keymap('i', 'jk', '<ESC>', options)
-keymap('i', 'kj', '<ESC>', options)
-keymap('i', 'jj', '<ESC>', options)
-
--- Tab switch buffer
-keymap('n', '<TAB>', ':bnext<CR>', options)
-keymap('n', '<S-TAB>', ':bprevious<CR>', options)
-
+-- keymap('n', '<C-h>', '<C-w>h', {silent = true})
+-- keymap('n', '<C-j>', '<C-w>j', {silent = true})
+-- keymap('n', '<C-k>', '<C-w>k', {silent = true})
+-- keymap('n', '<C-l>', '<C-w>l', {silent = true})
