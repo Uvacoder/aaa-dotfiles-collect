@@ -14,7 +14,6 @@ return require("packer").startup({
   function()
     use { "wbthomason/packer.nvim", opt = true }
     
-    use "tjdevries/nlua.nvim"
     use "kyazdani42/nvim-web-devicons"
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
@@ -100,6 +99,6 @@ return require("packer").startup({
       cmd = 'UndotreeToggle',
       config = [[ vim.g.undotree_SetFocusWhenToggle = 1 ]]
     }
-  
+    
   end
 })
