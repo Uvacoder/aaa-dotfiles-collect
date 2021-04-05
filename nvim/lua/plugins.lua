@@ -37,7 +37,8 @@ return require("packer").startup({
     }
     
     use {
-      "mhartington/oceanic-next",
+      -- "mhartington/oceanic-next",
+      "norcalli/nvim-base16.lua",
       config = [[ require('config.colorscheme') ]]
     }
     

@@ -1,8 +1,11 @@
 local execute = vim.api.nvim_command
 
-vim.g.oceanic_next_terminal_bold = 1
-vim.g.oceanic_next_terminal_italic = 1
-vim.cmd('colorscheme OceanicNext')
+local base16 = require "base16"
+base16(base16.themes["onedark"], true)
+
+-- vim.g.oceanic_next_terminal_bold = 1
+-- vim.g.oceanic_next_terminal_italic = 1
+-- vim.cmd('colorscheme OceanicNext')
 
 local config = {
   remove_bg = true,
@@ -31,6 +34,8 @@ else
   execute("hi! DiffDelete  guifg="..config.status.removed)
 end
 
+execute("hi! CustomExplorerBg guibg=#242830")
+execute("hi! IndentBlanklineChar guifg=#373b43")
 execute("hi! link    VertSplit       NonText")
 -- execute("hi! link    NonText         VertSplit")
 -- execute("hi! link    EndOfBuffer     VertSplit")
