@@ -151,37 +151,37 @@ _G.packer_plugins = {
   }
 }
 
+-- Config for: nvim-base16.lua
+ require('config.colorscheme') 
+-- Config for: gitsigns.nvim
+ require('config.git') 
+-- Config for: coc.nvim
+ require('config.coc') 
+-- Config for: nvim-tree.lua
+ require('config.tree') 
+-- Config for: ale
+ require('config.ale') 
 -- Config for: indent-blankline.nvim
  require('config.indent') 
 -- Config for: nvim-treesitter
  require('config.treesitter') 
 -- Config for: lualine.nvim
  require('config.lualine') 
--- Config for: ale
- require('config.ale') 
--- Config for: nvim-base16.lua
- require('config.colorscheme') 
 -- Config for: nvim-autopairs
  require('config.autopairs') 
--- Config for: nvim-colorizer.lua
- require('config.colorizer')
--- Config for: gitsigns.nvim
- require('config.git') 
--- Config for: nvim-tree.lua
- require('config.tree') 
 -- Config for: telescope.nvim
  require('config.telescope') 
--- Config for: coc.nvim
- require('config.coc') 
+-- Config for: nvim-colorizer.lua
+ require('config.colorizer')
 
 -- Command lazy-loads
-vim.cmd [[command! -nargs=* -range -bang -complete=file Gpull lua require("packer.load")({'vim-fugitive'}, { cmd = "Gpull", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file UndotreeToggle lua require("packer.load")({'undotree'}, { cmd = "UndotreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Gstatus lua require("packer.load")({'vim-fugitive'}, { cmd = "Gstatus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Gdiffsplit lua require("packer.load")({'vim-fugitive'}, { cmd = "Gdiffsplit", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file GBrowser lua require("packer.load")({'vim-fugitive'}, { cmd = "GBrowser", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Gblame lua require("packer.load")({'vim-fugitive'}, { cmd = "Gblame", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Gpush lua require("packer.load")({'vim-fugitive'}, { cmd = "Gpush", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Gpull lua require("packer.load")({'vim-fugitive'}, { cmd = "Gpull", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 
 END
 
