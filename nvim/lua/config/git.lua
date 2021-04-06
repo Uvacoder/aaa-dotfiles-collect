@@ -8,3 +8,9 @@ require("gitsigns").setup({
   },
   sign_priority = 5,
 })
+
+local keymap = vim.api.nvim_set_keymap
+
+keymap("n", "<Leader>gg", ":Gstatus<CR>", {})
+keymap("n", "<Leader>gb", ":GBranches<CR>", {})
+keymap("n", "<Leader>go", ":GBrowse<CR>", {})

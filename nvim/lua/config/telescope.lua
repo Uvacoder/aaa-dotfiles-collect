@@ -27,3 +27,9 @@ require("telescope").setup({
 })
 require('telescope').load_extension('fzy_native')
 
+local keymap = vim.api.nvim_set_keymap
+local options = {noremap = true, silent = true}
+
+keymap('n', '<C-p>', ':Telescope find_files<cr>', options)
+keymap('n', '<C-g>', ':Telescope live_grep<cr>', options)
+keymap('n', '<C-b>', ':Telescope buffers<cr>', options)
