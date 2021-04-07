@@ -25,7 +25,6 @@ echo "---------------------------------------------------------"
 echo "$(tput setaf 2)FRIDAY: Installing Homebrew Cask packages.$(tput sgr 0)"
 
 tap_packages=(
-  "epk/epk"
   "homebrew/cask"
   "homebrew/cask-fonts"
   "homebrew/core"
@@ -42,21 +41,17 @@ echo "$(tput setaf 2)FRIDAY: Installing Homebrew System Packages.$(tput sgr 0)"
 
 brew_packages=(
   "autoconf"
-  "fzf"
   "git"
   "makedepend"
-  "luajit"
   "luarocks"
-  "node@14"
+  "node"
   "python3"
-  # "neovim"
   "--HEAD neovim"
-  "ripgrep"
   "wget"
-  "youtube-dl"
-#  "tmux"
   "z"
   "zsh"
+  "zsh-autosuggestions"
+  "romkatv/powerlevel10k/powerlevel10k"
 )
 
 for package in "${brew_packages[@]}"
@@ -68,24 +63,18 @@ echo "$(tput setaf 2)FRIDAY: Homebrew System Package installed.$(tput sgr 0)"
 
 echo "$(tput setaf 2)FRIDAY: Installing Homebrew Cash Apps.$(tput sgr 0)"
 cask_packages=(
-  "cyberduck"
-  "font-sf-mono-nerd-font"
   "font-hack-nerd-font"
-  "font-jetbrains-mono-nerd-font"
-  "google-chrome"
   "iterm2"
   "transmission"
-  "vlc"
+# "vlc"
   "mas-cli/tap/mas"
-  "robo-3t"
+# "robo-3t"
   "whatsApp"
-  "1password"
-  "acorn"
+  "bitwarden"
   "evernote"
   "popclip"
   "github"
   "the-unarchiver"
-  "tweetbot"
 )
 
 for package in "${cask_packages[@]}"
@@ -100,17 +89,17 @@ echo "---------------------------------------------------------"
 echo "$(tput setaf 2)FRIDAY: Installing PopClip extensions.$(tput sgr 0)"
 
 pop_packages=(
-  "https://pilotmoon.com/popclip/extensions/ext/RunCommand.popclipextz"
-  "https://pilotmoon.com/popclip/extensions/ext/GoogleTranslate.popclipextz"
-  "http://pilotmoon.com/popclip/extensions/ext/Uppercase.popclipextz"
-  "http://pilotmoon.com/popclip/extensions/ext/Lowercase.popclipextz"
-  "http://pilotmoon.com/popclip/extensions/ext/Capitalize.popclipextz"
-  "https://pilotmoon.com/popclip/extensions/ext/Evernote.popclipextz"
-  "https://pilotmoon.com/popclip/extensions/ext/Calculate.popclipextz"
-  "https://pilotmoon.com/popclip/extensions/ext/OpenInChrome.popclipextz"
-  "https://pilotmoon.com/popclip/extensions/ext/Todoist.popclipextz",
-  "https://pilotmoon.com/popclip/extensions/ext/Hyphenate.popclipextz",
-  "https://pilotmoon.com/popclip/extensions/ext/URLEncode.popclipextz"
+  "https://pilotmoon.com/popclip/extensions/ext/RunCommand.popclipextz --no-check-certificate"
+  "https://pilotmoon.com/popclip/extensions/ext/GoogleTranslate.popclipextz --no-check-certificate"
+  "http://pilotmoon.com/popclip/extensions/ext/Uppercase.popclipextz --no-check-certificate"
+  "http://pilotmoon.com/popclip/extensions/ext/Lowercase.popclipextz --no-check-certificate"
+  "http://pilotmoon.com/popclip/extensions/ext/Capitalize.popclipextz --no-check-certificate"
+  "https://pilotmoon.com/popclip/extensions/ext/Evernote.popclipextz --no-check-certificate"
+  "https://pilotmoon.com/popclip/extensions/ext/Calculate.popclipextz --no-check-certificate"
+  "https://pilotmoon.com/popclip/extensions/ext/OpenInChrome.popclipextz --no-check-certificate"
+  "https://pilotmoon.com/popclip/extensions/ext/Todoist.popclipextz --no-check-certificate",
+  "https://pilotmoon.com/popclip/extensions/ext/Hyphenate.popclipextz --no-check-certificate",
+  "https://pilotmoon.com/popclip/extensions/ext/URLEncode.popclipextz --no-check-certificate"
 )
 
 for package in "${pop_packages[@]}"
@@ -126,9 +115,9 @@ echo "---------------------------------------------------------"
 echo "$(tput setaf 2)FRIDAY: install old versions.$(tput sgr 0)"
 
 old_packages=(
-  "wget http://usa.maintain.se/Cocktail12ME.dmg"
-  "wget https://dl.devmate.com/com.macpaw.CleanMyMac3/CleanMyMac3.dmg"
-  "wget https://sipapp.io/updates/v1/sip-1.2.dmg"
+  # "wget http://usa.maintain.se/Cocktail12ME.dmg --no-check-certificate"
+  "wget https://dl.devmate.com/com.macpaw.CleanMyMac3/CleanMyMac3.dmg --no-check-certificate"
+  "wget https://sipapp.io/updates/v1/sip-1.2.dmg --no-check-certificate"
 )
 
 for package in "${old_packages[@]}"
@@ -145,19 +134,19 @@ echo "$(tput setaf 2)FRIDAY: Installing Mas packages.$(tput sgr 0)"
 mas_packages=(
   "824171161"  #Affinity Designer
   "937984704"  #Amphetamine
-  "671736912"  #FruitJuice
-  "1289197285" #MindNode
-  "910837444"  #Photo Editor Movavi
+# "671736912"  #FruitJuice
+# "1289197285" #MindNode
+# "910837444"  #Photo Editor Movavi
   "442168834"  #SiteSucker
-  # "443987910"  #1Password
-  # "634108295"  #Acorn
-  # "406056744"  #Evernote
-  # "445189367"  #PopClip
-  # "1176895641" #Spark
-  # "425424353"  #The Unarchiver
-  # "585829637"  #Todoist?
-  # "1384080005" #Tweetbot
-  # "1147396723" #WhatsApp
+# "443987910"  #1Password
+  "634108295"  #Acorn
+# "406056744"  #Evernote
+# "445189367"  #PopClip
+  "1176895641" #Spark
+# "425424353"  #The Unarchiver
+# "585829637"  #Todoist?
+# "1384080005" #Tweetbot
+# "1147396723" #WhatsApp
 )
 
 for package in "${mas_packages[@]}"
@@ -184,80 +173,21 @@ done
 echo "$(tput setaf 2)FRIDAY: Python Packages installed.$(tput sgr 0)"
 
 
-
-echo "---------------------------------------------------------"
-echo "$(tput setaf 2)FRIDAY: Installing oh-my-zsh.$(tput sgr 0)"
-
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  echo "$(tput setaf 2)FRIDAY: oh-my-zsh installed.$(tput sgr 0)"
-else
-  echo "$(tput setaf 2)FRIDAY: oh-my-zsh already installed.$(tput sgr 0)"
-fi
-
-
-echo "---------------------------------------------------------"
-echo "$(tput setaf 2)FRIDAY: Checking for Git installation.$(tput sgr 0)"
-
-GIT_FOLDER="/usr/local/bin/git"
-if ! [[ -f "$GIT_FOLDER" ]]; then
-  echo "$(tput setaf 1)FRIDAY: Invalid git installation. Aborting. Please install git.$(tput sgr 0)"
-  exit 1
-fi
-
-echo "$(tput setaf 2)FRIDAY: Installing Git Packages.$(tput sgr 0)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-echo "$(tput setaf 2)FRIDAY: Git Packages installed.$(tput sgr 0)"
-
-
-echo "---------------------------------------------------------"
-echo "$(tput setaf 2)FRIDAY: Backup up current dotfiles.$(tput sgr 0)"
-
-# Backup files that are provided by the Jarvis into a ~/$HOME/backup directory
-BACKUP_FOLDER=$HOME/backup
-
-# Exit immediately if a command exits with a non-zero status.
-set -e
-
-# Create backup folder if it doesn't exist
-if [ ! -d $BACKUP_FOLDER ]; then
-  echo "$(tput setaf 2)FRIDAY: Creating backup directory at $BACKUP_FOLDER.$(tput sgr 0)"
-  mkdir -p $BACKUP_FOLDER
-fi
-
-files=(
-  ".gitconfig"
-  ".gitignore_global"
-  ".global_ignore"
-  # ".tmux.conf"
-  ".wgetrc"
-  ".zshrc"
-)
-
-for filename in "${files[@]}"; do
-    if [ -L $HOME/$filename ]; then
-      echo "$(tput setaf 2)FRIDAY: Backing up $filename.$(tput sgr 0)"
-      mv $HOME/$filename $BACKUP_FOLDER/$filename
-    else
-      echo "$(tput setaf 3)FRIDAY: $filename does not exist at $HOME.$(tput sgr 0)"
-      rm -rf $HOME/$filename
-    fi
-done
-
-echo "$(tput setaf 2)FRIDAY: Backup completed.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 
 echo "$(tput setaf 2)FRIDAY: linking dotfiles.$(tput sgr 0)"
 
-DOTFILES_FOLDER=$HOME/Dropbox/Mac/Dotfiles
+mkdir ~/.config
+
+DOTFILES_FOLDER=$HOME/.dotfiles
+ln -s $DOTFILES_FOLDER/zsh/p10k.zsh $HOME/.p10k.zsh
+ln -s $DOTFILES_FOLDER/nvim $HOME/.config/nvim
 ln -s $DOTFILES_FOLDER/zsh/zshrc $HOME/.zshrc
 ln -s $DOTFILES_FOLDER/git/gitconfig $HOME/.gitconfig
 ln -s $DOTFILES_FOLDER/git/gitignore_global $HOME/.gitignore_global
 ln -s $DOTFILES_FOLDER/git/global_ignore $HOME/.global_ignore
 ln -s $DOTFILES_FOLDER/wget/wgetrc $HOME/.wgetrc
-# ln -s $DOTFILES_FOLDER/tmux/tmux.conf $HOME/.tmux.conf
+
 echo "$(tput setaf 2)FRIDAY: Linked dotfiles.$(tput sgr 0)"
 
 echo "---------------------------------------------------------"
@@ -314,30 +244,6 @@ defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
 killall Dock
 
-echo "$(tput setaf 2)FRIDAY: Restore safari bookmarks.$(tput sgr 0)"
-cp $HOME/Dropbox/Mac/Settings/Safari/Bookmarks.plist ~/Library/Safari/Bookmarks.plist
-
-echo "$(tput setaf 2)FRIDAY: Restore preferences.$(tput sgr 0)"
-cp $HOME/Dropbox/Mac/Settings/Preferences/com.apple.Safari.plist ~/Library/Preferences/com.apple.Safari.plist
-cp $HOME/Dropbox/Mac/Settings/Preferences/com.apple.Terminal.plist ~/Library/Preferences/com.apple.Terminal.plist
-cp $HOME/Dropbox/Mac/Settings/Preferences/com.apple.dock.plist ~/Library/Preferences/com.apple.dock.plist
-cp $HOME/Dropbox/Mac/Settings/Preferences/com.apple.finder.plist ~/Library/Preferences/com.apple.finder.plist
-cp $HOME/Dropbox/Mac/Settings/Preferences/com.apple.spaces.plist ~/Library/Preferences/com.apple.spaces.plist
-cp $HOME/Dropbox/Mac/Settings/Preferences/com.apple.systempreferences.plist ~/Library/Preferences/com.apple.systempreferences.plist
-cp $HOME/Dropbox/Mac/Settings/Preferences/com.apple.systemuiserver.plist ~/Library/Preferences/com.apple.systemuiserver.plist
-
-echo "$(tput setaf 2)FRIDAY: Restore Sublime Text Settings.$(tput sgr 0)"
-cp -r $HOME/Dropbox/Mac/Settings/SublimeText/User $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages
-
-#echo "---------------------------------------------------------"
-#echo "$(tput setaf 2)FRIDAY: Installing tmux plugin manager.$(tput sgr 0)"
-
-#if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
-#  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-#  ~/.tmux/plugins/tpm/scripts/install_plugins.sh
-#fi
-
-
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)FRIDAY: Switching shell to zsh. You may need to logout.$(tput sgr 0)"
 
@@ -351,11 +257,8 @@ echo "$(tput setaf 2)FRIDAY: Installing Node Global package$(tput sgr 0)"
 
 node_packages=(
   "neovim"
-  "spaceship-prompt"
-  "bash-language-server"
   "eslint"
   "prettier"
-  "vtop"
   "@vue/cli"
   "serve"
   "typescript"
