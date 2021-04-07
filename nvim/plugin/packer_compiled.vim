@@ -151,28 +151,28 @@ _G.packer_plugins = {
   }
 }
 
--- Config for: gitsigns.nvim
- require('config.git') 
--- Config for: nvim-base16.lua
- require('config.colorscheme') 
--- Config for: coc.nvim
- require('config.coc') 
--- Config for: nvim-colorizer.lua
- require('config.colorizer')
--- Config for: nvim-tree.lua
- require('config.tree') 
--- Config for: indent-blankline.nvim
- require('config.indent') 
--- Config for: ale
- require('config.ale') 
--- Config for: telescope.nvim
- require('config.telescope') 
--- Config for: nvim-treesitter
- require('config.treesitter') 
--- Config for: lualine.nvim
- require('config.lualine') 
 -- Config for: nvim-autopairs
  require('config.autopairs') 
+-- Config for: nvim-tree.lua
+ require('config.tree') 
+-- Config for: coc.nvim
+ require('config.coc') 
+-- Config for: lualine.nvim
+ require('config.lualine') 
+-- Config for: indent-blankline.nvim
+ require('config.indent') 
+-- Config for: nvim-treesitter
+ require('config.treesitter') 
+-- Config for: ale
+ require('config.ale') 
+-- Config for: gitsigns.nvim
+ require('config.git') 
+-- Config for: nvim-colorizer.lua
+ require('config.colorizer')
+-- Config for: telescope.nvim
+ require('config.telescope') 
+-- Config for: nvim-base16.lua
+ require('config.colorscheme') 
 
 -- Command lazy-loads
 vim.cmd [[command! -nargs=* -range -bang -complete=file Gstatus lua require("packer.load")({'vim-fugitive'}, { cmd = "Gstatus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]

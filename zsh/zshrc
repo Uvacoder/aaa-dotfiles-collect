@@ -5,7 +5,6 @@ export ZSH_CUSTOM="$ZSH/custom"
 export NODE_ENV="development"
 
 export LANG=en_US.UTF-8
-# Set default editor to nvim
 export EDITOR='nvim'
 # Enabled true color support for terminals
 # export NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -22,18 +21,11 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 DISABLE_LS_COLORS="true"
 HIST_STAMPS="yyyy-mm-dd"
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="pure"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 ZSH_DISABLE_COMPFIX="true"
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 plugins=(
   git
@@ -55,9 +47,8 @@ alias mem='top -o rsize' # Memory
 alias te='tree'
 
 # Editors
-# alias v=nvim
-# alias s='subl'
-
+alias v=nvim
+alias s='subl'
 alias c='code --disable-gpu'
 # PS
 alias psa="ps aux"
@@ -74,8 +65,6 @@ alias xatcr='xattr -cr '
 alias ydl='cd /Volumes/Pendrive/Downloads && youtube-dl'
 # reset dns
 alias dns:r='networksetup -setairportpower en0 off && sudo killall -HUP mDNSResponder && echo macOS DNS Cache Reset && networksetup -setairportpower en0 on'
-# edit dotfiles
-alias dot="cd $HOME/.dotfiles"
 # diversos
 alias bat="pmset -g batt"
 alias update="sudo softwareupdate -v -i -a"
@@ -97,6 +86,9 @@ alias zshup="upgrade_oh_my_zsh"
 alias ..='cd ..'
 alias home='cd $HOME/'
 alias sites='cd /Volumes/Sites && clear '
+
+# dotfiles
+alias dot="cd $HOME/.dotfiles"
 
 # Sites
 alias anp='cd /Volumes/Sites/agua_nova_piscinas && clear'
@@ -177,8 +169,12 @@ function gitinit(){
 }
 
 # source $ZSH/oh-my-zsh.sh
+
 # Enabled zsh-autosuggestions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# source ~/.zshrc

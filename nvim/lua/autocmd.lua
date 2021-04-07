@@ -6,9 +6,9 @@ cmd(':command! Wq wq')
 cmd(':command! Wqa wqa')
 cmd(':command! W w')
 cmd(':command! Q q')
+
 -- Auto save files when focus is lost
 cmd "au FocusLost * silent! :wa!"
-
 cmd "au TermOpen * setlocal signcolumn=no nonumber norelativenumber"
 
 vim.api.nvim_exec([[
@@ -18,3 +18,4 @@ vim.api.nvim_exec([[
     autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
   augroup END
 ]], "")
+
