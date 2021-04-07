@@ -3,7 +3,7 @@
 ### 1 - Clonar github repo
 
 ```
-git clone https://github.com/sldobri/dotfiles.git ~/.dotfiles
+git clone https://github.com/dobbbri/dotfiles.git ~/.dotfiles
 ```
 
 ### 2 - Remove old linked files/folders
