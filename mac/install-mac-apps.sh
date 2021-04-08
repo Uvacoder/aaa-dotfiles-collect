@@ -63,6 +63,7 @@ echo "$(tput setaf 2)FRIDAY: Homebrew System Package installed.$(tput sgr 0)"
 
 echo "$(tput setaf 2)FRIDAY: Installing Homebrew Cash Apps.$(tput sgr 0)"
 cask_packages=(
+  "sublime-text"
   "font-hack-nerd-font"
   "iterm2"
   "transmission"
@@ -115,7 +116,7 @@ echo "---------------------------------------------------------"
 echo "$(tput setaf 2)FRIDAY: install old versions.$(tput sgr 0)"
 
 old_packages=(
-  # "wget http://usa.maintain.se/Cocktail12ME.dmg --no-check-certificate"
+  "wget https://www.maintain.se/downloads/Cocktail12ME.dm --no-check-certificate"
   "wget https://dl.devmate.com/com.macpaw.CleanMyMac3/CleanMyMac3.dmg --no-check-certificate"
   "wget https://sipapp.io/updates/v1/sip-1.2.dmg --no-check-certificate"
 )
