@@ -23,7 +23,8 @@ mkdir ~/.config
 
 echo "$(tput setaf 2)FRIDAY: link dotfiles.$(tput sgr 0)"
 
-ln -s ~/.dotfiles/zsh/zsh  ~/.zshrc
+ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
+ln -s ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/wget/wgetrc  ~/.wgetrc
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig

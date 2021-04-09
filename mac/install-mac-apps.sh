@@ -73,7 +73,6 @@ cask_packages=(
   "whatsApp"
   "bitwarden"
   "evernote"
-  "popclip"
   "github"
   "the-unarchiver"
 )
@@ -90,23 +89,22 @@ echo "---------------------------------------------------------"
 echo "$(tput setaf 2)FRIDAY: Installing PopClip extensions.$(tput sgr 0)"
 
 pop_packages=(
-  "https://pilotmoon.com/popclip/extensions/ext/RunCommand.popclipextz --no-check-certificate"
-  "https://pilotmoon.com/popclip/extensions/ext/GoogleTranslate.popclipextz --no-check-certificate"
-  "http://pilotmoon.com/popclip/extensions/ext/Uppercase.popclipextz --no-check-certificate"
-  "http://pilotmoon.com/popclip/extensions/ext/Lowercase.popclipextz --no-check-certificate"
-  "http://pilotmoon.com/popclip/extensions/ext/Capitalize.popclipextz --no-check-certificate"
-  "https://pilotmoon.com/popclip/extensions/ext/Evernote.popclipextz --no-check-certificate"
-  "https://pilotmoon.com/popclip/extensions/ext/Calculate.popclipextz --no-check-certificate"
-  "https://pilotmoon.com/popclip/extensions/ext/OpenInChrome.popclipextz --no-check-certificate"
-  "https://pilotmoon.com/popclip/extensions/ext/Todoist.popclipextz --no-check-certificate",
-  "https://pilotmoon.com/popclip/extensions/ext/Hyphenate.popclipextz --no-check-certificate",
-  "https://pilotmoon.com/popclip/extensions/ext/URLEncode.popclipextz --no-check-certificate"
+  "https://pilotmoon.com/popclip/extensions/ext/RunCommand.popclipextz"
+  "https://pilotmoon.com/popclip/extensions/ext/OpenInEdge.popclipextz"
+  "https://pilotmoon.com/popclip/extensions/ext/Uppercase.popclipextz"
+  "https://pilotmoon.com/popclip/extensions/ext/Lowercase.popclipextz"
+  "https://pilotmoon.com/popclip/extensions/ext/Capitalize.popclipextz"
+ # "https://pilotmoon.com/popclip/extensions/ext/Evernote.popclipextz"
+  "https://pilotmoon.com/popclip/extensions/ext/Calculate.popclipextz"
+  "https://pilotmoon.com/popclip/extensions/ext/OpenInChrome.popclipextz"
+  "https://pilotmoon.com/popclip/extensions/ext/Hyphenate.popclipextz"
+  "https://pilotmoon.com/popclip/extensions/ext/URLEncode.popclipextz"
 )
 
 for package in "${pop_packages[@]}"
 do
   echo "$(tput setaf 2)FRIDAY: download $package.$(tput sgr 0)"
-  wget $package
+  wget $package --no-check-certificate
 done
 echo "$(tput setaf 2)FRIDAY: PopClip extensions installed.$(tput sgr 0)"
 
@@ -116,15 +114,15 @@ echo "---------------------------------------------------------"
 echo "$(tput setaf 2)FRIDAY: install old versions.$(tput sgr 0)"
 
 old_packages=(
-  "wget https://www.maintain.se/downloads/Cocktail12ME.dm --no-check-certificate"
-  "wget https://dl.devmate.com/com.macpaw.CleanMyMac3/CleanMyMac3.dmg --no-check-certificate"
-  "wget https://sipapp.io/updates/v1/sip-1.2.dmg --no-check-certificate"
+  "wget https://www.maintain.se/downloads/Cocktail12ME.dm"
+  "wget https://dl.devmate.com/com.macpaw.CleanMyMac3/CleanMyMac3.dmg"
+  "wget https://sipapp.io/updates/v1/sip-1.2.dmg"
 )
 
 for package in "${old_packages[@]}"
 do
   echo "$(tput setaf 2)FRIDAY: download old version of $package.$(tput sgr 0)"
-  wget $package
+  wget $package --no-check-certificate
 done
 echo "$(tput setaf 2)FRIDAY: Old versions installed.$(tput sgr 0)"
 
@@ -142,7 +140,7 @@ mas_packages=(
 # "443987910"  #1Password
   "634108295"  #Acorn
 # "406056744"  #Evernote
-# "445189367"  #PopClip
+  "445189367"  #PopClip
   "1176895641" #Spark
 # "425424353"  #The Unarchiver
 # "585829637"  #Todoist?
@@ -175,24 +173,6 @@ echo "$(tput setaf 2)FRIDAY: Python Packages installed.$(tput sgr 0)"
 
 
 echo "---------------------------------------------------------"
-
-echo "$(tput setaf 2)FRIDAY: linking dotfiles.$(tput sgr 0)"
-
-mkdir ~/.config
-
-DOTFILES_FOLDER=$HOME/.dotfiles
-ln -s $DOTFILES_FOLDER/zsh/p10k.zsh $HOME/.p10k.zsh
-ln -s $DOTFILES_FOLDER/nvim $HOME/.config/nvim
-ln -s $DOTFILES_FOLDER/zsh/zshrc $HOME/.zshrc
-ln -s $DOTFILES_FOLDER/git/gitconfig $HOME/.gitconfig
-ln -s $DOTFILES_FOLDER/git/gitignore_global $HOME/.gitignore_global
-ln -s $DOTFILES_FOLDER/git/global_ignore $HOME/.global_ignore
-ln -s $DOTFILES_FOLDER/wget/wgetrc $HOME/.wgetrc
-
-echo "$(tput setaf 2)FRIDAY: Linked dotfiles.$(tput sgr 0)"
-
-echo "---------------------------------------------------------"
-echo "$(tput setaf 2)FRIDAY: Setting Mac defaults.$(tput sgr 0)"
 
 echo "$(tput setaf 2)FRIDAY: Disable touristd.$(tput sgr 0)"
 defaults write com.apple.touristd firstOSLogin -date "$(date)"
@@ -244,13 +224,6 @@ defaults write com.apple.dock persistent-apps -array
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
 killall Dock
-
-echo "---------------------------------------------------------"
-echo "$(tput setaf 2)FRIDAY: Switching shell to zsh. You may need to logout.$(tput sgr 0)"
-
-sudo sh -c "echo $(which zsh) >> /etc/shells"
-chsh -s $(which zsh)
-
 
 
 echo "---------------------------------------------------------"
