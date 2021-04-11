@@ -23,7 +23,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 ZSH_DISABLE_COMPFIX="true"
 # ZSH_THEME="pure"
 
-source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/themes/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -34,18 +34,18 @@ plugins=(
   # z
   git
   osx
-  zsh-syntax-highlighting
+  # zsh-syntax-highlighting
   zsh-autosuggestions
 )
 
 
 # ZSH
 alias zsh="nvim $HOME/.zshrc"
+alias sz="source $HOME/.zshrc"
 
 
 # aliases
-alias ld="ls -alGh"
-alias ls="ls -Gh"
+alias ls="ls -la"
 alias lh="ls -lhtr"
 alias history="fc -il 1i"
 alias c="clear"
@@ -109,7 +109,6 @@ alias bi="brew install"
 alias bs="brew search"
 alias bu="brew uninstall"
 alias bc="brew cleanup"
-alias br="bu"
 alias bubu="brew update && brew upgrade && brew cleanup && brew doctor"
 
 
