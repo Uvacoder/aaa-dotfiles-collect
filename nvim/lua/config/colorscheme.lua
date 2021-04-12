@@ -15,6 +15,8 @@ if config.remove_bg then
   execute("hi! SignColumn  guibg="..config.colors.bg)
   execute("hi! FoldColumn  guibg="..config.colors.bg)
   execute("hi! LineNr      guibg="..config.colors.bg)
+  execute("hi! NonText     guibg="..config.colors.bg)
+  execute("hi! EndOfBuffer guibg="..config.colors.bg)
   execute("hi! VertSplit   guibg="..config.colors.bg)
   execute("hi! Error       guibg="..config.colors.bg.." guifg="..config.status.removed)
   execute("hi! Warning     guibg="..config.colors.bg.." guifg="..config.status.modified)

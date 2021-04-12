@@ -137,28 +137,28 @@ _G.packer_plugins = {
   }
 }
 
--- Config for: nvim-colorizer.lua
- require('config.colorizer')
--- Config for: gitsigns.nvim
- require('config.git') 
--- Config for: nvim-tree.lua
- require('config.tree') 
--- Config for: telescope.nvim
- require('config.telescope') 
--- Config for: oceanic-next
- require('config.colorscheme') 
 -- Config for: lualine.nvim
  require('config.lualine') 
--- Config for: coc.nvim
- require('config.coc') 
+-- Config for: nvim-tree.lua
+ require('config.tree') 
+-- Config for: gitsigns.nvim
+ require('config.git') 
 -- Config for: nvim-treesitter
  require('config.treesitter') 
+-- Config for: coc.nvim
+ require('config.coc') 
+-- Config for: vim-polyglot
+ vim.g.vue_pre_processors = {} 
+-- Config for: oceanic-next
+ require('config.colorscheme') 
+-- Config for: telescope.nvim
+ require('config.telescope') 
 -- Config for: ale
  require('config.ale') 
 -- Config for: nvim-autopairs
  require('config.autopairs') 
--- Config for: vim-polyglot
- vim.g.vue_pre_processors = {} 
+-- Config for: nvim-colorizer.lua
+ require('config.colorizer')
 
 -- Command lazy-loads
 vim.cmd [[command! -nargs=* -range -bang -complete=file UndotreeToggle lua require("packer.load")({'undotree'}, { cmd = "UndotreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
