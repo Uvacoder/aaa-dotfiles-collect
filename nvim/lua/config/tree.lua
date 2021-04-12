@@ -27,12 +27,16 @@ vim.g.nvim_tree_icons = {
         untracked = ""
     },
     folder = {
-        default = "",
-        open = "",
-        empty = "",
-        empty_open = "",
-        symlink = ""
+        default = "",
+        open = "",
     }
+    -- folder = {
+    --     default = "",
+    --     open = "",
+    --     empty = "",
+    --     empty_open = "",
+    --     symlink = ""
+    -- }
 }
 
 local keymap = vim.api.nvim_set_keymap

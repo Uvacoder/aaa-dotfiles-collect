@@ -17,28 +17,22 @@ return require("packer").startup({
     use "kyazdani42/nvim-web-devicons"
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
-    use "p00f/nvim-ts-rainbow"
+    use "tpope/vim-commentary"
+
 
     use {
       "nvim-treesitter/nvim-treesitter", 
       run = ":TSUpdate",
       config = [[ require('config.treesitter') ]],
-      requires = { "sheerun/vim-polyglot", config = [[ vim.g.vue_pre_processors = {} ]] }
+      requires = {
+        -- "p00f/nvim-ts-rainbow",
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        { "sheerun/vim-polyglot", config = [[ vim.g.vue_pre_processors = {} ]] }
+      }
     }
     
     use {
-      "JoosepAlviste/nvim-ts-context-commentstring",
-      requires = "tpope/vim-commentary"
-    }
-    
-    use {
-      "lukas-reineke/indent-blankline.nvim", branch = "lua",
-      config = [[ require('config.indent') ]]
-    }
-    
-    use {
-      -- "mhartington/oceanic-next",
-      "norcalli/nvim-base16.lua",
+      "mhartington/oceanic-next",
       config = [[ require('config.colorscheme') ]]
     }
     
@@ -56,11 +50,6 @@ return require("packer").startup({
       "nvim-telescope/telescope.nvim",
       config = [[ require('config.telescope') ]],
       requires = "nvim-telescope/telescope-fzy-native.nvim"
-    }
-
-    use {
-      'tpope/vim-fugitive', 
-      cmd = {'Gstatus', 'Gdiffsplit', 'GBrowser', 'Gblame', 'Gpush', 'Gpull'}
     }
 
     use {

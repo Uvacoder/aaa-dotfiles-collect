@@ -1,11 +1,8 @@
 local execute = vim.api.nvim_command
 
-local base16 = require "base16"
-base16(base16.themes["onedark"], true)
-
--- vim.g.oceanic_next_terminal_bold = 1
--- vim.g.oceanic_next_terminal_italic = 1
--- vim.cmd('colorscheme OceanicNext')
+vim.g.oceanic_next_terminal_bold = 1
+vim.g.oceanic_next_terminal_italic = 1
+vim.cmd('colorscheme OceanicNext')
 
 local config = {
   remove_bg = true,
