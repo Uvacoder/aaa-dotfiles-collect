@@ -6,7 +6,7 @@ vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_follow = 1
 -- vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_ignore = {
-  "plugin",
+  "dist",
   "plugin",
   "jsconfig.json",
   "package-lock.json",

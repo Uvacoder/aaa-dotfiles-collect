@@ -76,14 +76,18 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring"
   },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
-  ["oceanic-next"] = {
+  ["onedark.vim"] = {
     config = { " require('config.colorscheme') " },
     loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/oceanic-next"
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/onedark.vim"
   },
   ["packer.nvim"] = {
     loaded = false,
@@ -97,6 +101,10 @@ _G.packer_plugins = {
   ["popup.nvim"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/popup.nvim"
+  },
+  ["taskpaper.vim"] = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/taskpaper.vim"
   },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
@@ -141,22 +149,22 @@ _G.packer_plugins = {
  require('config.lualine') 
 -- Config for: nvim-tree.lua
  require('config.tree') 
--- Config for: gitsigns.nvim
- require('config.git') 
--- Config for: nvim-treesitter
- require('config.treesitter') 
 -- Config for: coc.nvim
  require('config.coc') 
--- Config for: vim-polyglot
- vim.g.vue_pre_processors = {} 
--- Config for: oceanic-next
- require('config.colorscheme') 
 -- Config for: telescope.nvim
  require('config.telescope') 
 -- Config for: ale
  require('config.ale') 
+-- Config for: gitsigns.nvim
+ require('config.git') 
+-- Config for: onedark.vim
+ require('config.colorscheme') 
+-- Config for: nvim-treesitter
+ require('config.treesitter') 
 -- Config for: nvim-autopairs
  require('config.autopairs') 
+-- Config for: vim-polyglot
+ vim.g.vue_pre_processors = {} 
 -- Config for: nvim-colorizer.lua
  require('config.colorizer')
 

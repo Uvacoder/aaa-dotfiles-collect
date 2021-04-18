@@ -25,14 +25,15 @@ return require("packer").startup({
       run = ":TSUpdate",
       config = [[ require('config.treesitter') ]],
       requires = {
-        -- "p00f/nvim-ts-rainbow",
+        "p00f/nvim-ts-rainbow",
         "JoosepAlviste/nvim-ts-context-commentstring",
         { "sheerun/vim-polyglot", config = [[ vim.g.vue_pre_processors = {} ]] }
       }
     }
     
     use {
-      "mhartington/oceanic-next",
+      -- "mhartington/oceanic-next",
+      "joshdick/onedark.vim", 
       config = [[ require('config.colorscheme') ]]
     }
     
@@ -90,5 +91,6 @@ return require("packer").startup({
       config = [[ vim.g.undotree_SetFocusWhenToggle = 1 ]]
     }
     
+    use "davidoc/taskpaper.vim"
   end
 })

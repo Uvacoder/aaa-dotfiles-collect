@@ -8,8 +8,8 @@ cmd(':command! W w')
 cmd(':command! Q q')
 
 -- Auto save files when focus is lost
-cmd "au FocusLost * silent! :wa!"
-cmd "au TermOpen * setlocal signcolumn=no nonumber norelativenumber"
+cmd("autocmd FocusLost * silent! :wa!")
+cmd("autocmd TermOpen * setlocal signcolumn=no nonumber norelativenumber")
 
 vim.api.nvim_exec([[
   augroup numbertoggle
@@ -18,4 +18,12 @@ vim.api.nvim_exec([[
     autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
   augroup END
 ]], "")
+
+
+-- vim.api.nvim_exec([[
+--   augroup vimrc
+--     au BufReadPre * setlocal foldmethod=indent
+--     au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+--   augroup END
+-- ]], "")
 

@@ -1,6 +1,7 @@
 local shiftwidth = 2
 
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -67,5 +68,7 @@ vim.cmd('set iskeyword+=-')
 vim.cmd('set formatoptions-=cro')
 vim.cmd('set whichwrap+=<,>,[,],h,l')
 vim.cmd('set shortmess+=c')
-vim.cmd('filetype plugin on')
+vim.cmd('filetype plugin indent on')
 vim.cmd('syntax on')
+vim.cmd('set foldlevel=99')
+
