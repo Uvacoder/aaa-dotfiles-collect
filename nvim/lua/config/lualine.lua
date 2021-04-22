@@ -7,8 +7,8 @@ require('lualine').setup({
   },
   sections = {
     lualine_a = { {'mode', upper = true} },
-    lualine_b = { {'branch'}, { 'diff' } },
-    lualine_c = { {'filename', file_status = true,}, { 'diagnostics', sources = { 'coc', 'ale' }} },
+    lualine_c = { {'branch'}, { 'diff' } },
+    lualine_b = { {'filename', file_status = true,}, { 'diagnostics', sources = { 'coc', 'ale' }} },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
     lualine_y = { 'progress' },
     lualine_z = { 'location'  },
