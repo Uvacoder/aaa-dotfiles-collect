@@ -33,7 +33,8 @@ return require("packer").startup({
     
     use {
       -- "mhartington/oceanic-next",
-      "joshdick/onedark.vim", 
+      -- "joshdick/onedark.vim", 
+      "Rigellute/shades-of-purple.vim",
       config = [[ require('config.colorscheme') ]]
     }
     

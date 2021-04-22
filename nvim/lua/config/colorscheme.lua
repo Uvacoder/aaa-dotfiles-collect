@@ -4,8 +4,10 @@ local execute = vim.api.nvim_command
 -- vim.g.oceanic_next_terminal_italic = 1
 -- vim.cmd('colorscheme OceanicNext')
 
-vim.g.onedark_terminal_italics = 2
-vim.cmd('colorscheme onedark')
+-- vim.g.onedark_terminal_italics = 2
+-- vim.cmd('colorscheme onedark')
+
+vim.cmd('colorscheme shades_of_purple')
 
 local config = {
   remove_bg = true,

@@ -31,7 +31,7 @@ source $ZSH/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 
 plugins=(
-  # z
+  z
   git
   osx
   # zsh-syntax-highlighting
