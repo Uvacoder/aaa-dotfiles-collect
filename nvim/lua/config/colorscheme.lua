@@ -2,12 +2,21 @@ local execute = vim.api.nvim_command
 
 -- vim.g.oceanic_next_terminal_bold = 1
 -- vim.g.oceanic_next_terminal_italic = 1
--- vim.cmd('colorscheme OceanicNext')
+-- vim.cmd("colorscheme OceanicNext")
 
 -- vim.g.onedark_terminal_italics = 2
--- vim.cmd('colorscheme onedark')
+-- vim.cmd("colorscheme onedark")
 
-vim.cmd('colorscheme shades_of_purple')
+-- vim.g.material_style = "deep ocean"
+-- vim.g.material_italic_comments = true
+-- vim.g.material_italic_keywords = true
+-- vim.g.material_italic_functions = true
+-- vim.g.material_italic_variables = false
+-- vim.g.material_contrast = true
+-- vim.g.material_borders = false 
+-- require("material").set()
+
+vim.cmd("colorscheme wildcherry")
 
 local config = {
   remove_bg = true,
@@ -36,6 +45,7 @@ else
   execute("hi! DiffDelete  guifg="..config.status.removed)
 end
 
+execute("hi! lualine_c    guibg="..config.colors.bg)
 execute("hi! IndentBlanklineChar guifg=#373b43")
 
 execute("hi! link    ALEErrorSign    Error")
