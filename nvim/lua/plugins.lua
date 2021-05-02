@@ -34,8 +34,8 @@ return require("packer").startup({
     use {
       -- "mhartington/oceanic-next",
       -- "marko-cerovac/material.nvim",
-      -- "joshdick/onedark.vim", 
-      "sliminality/wild-cherry-vim",
+      "joshdick/onedark.vim", 
+      -- "sliminality/wild-cherry-vim",
       config = [[ require("config.colorscheme") ]]
     }
 
@@ -46,7 +46,7 @@ return require("packer").startup({
 
     use {
       "kyazdani42/nvim-tree.lua",
-      config = [[ require("config.tree") ]]
+      config = [[ require("config.nvim-tree") ]]
     }
 
     use {
@@ -65,10 +65,10 @@ return require("packer").startup({
       config = [[ require("config.coc") ]]
     }
 
-    use {
-      "dense-analysis/ale",
-      config = [[ require("config.ale") ]]
-    }
+    -- use {
+    --   "dense-analysis/ale",
+    --   config = [[ require("config.ale") ]]
+    -- }
 
     use {
       "windwp/nvim-autopairs",

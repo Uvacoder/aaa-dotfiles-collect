@@ -1,4 +1,6 @@
 vim.g.coc_global_extensions = {
+  "coc-prettier",
+  "coc-eslint",
   "coc-snippets",
   "coc-tailwindcss"
 }

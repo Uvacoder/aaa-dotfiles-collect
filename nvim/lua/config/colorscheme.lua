@@ -4,9 +4,6 @@ local execute = vim.api.nvim_command
 -- vim.g.oceanic_next_terminal_italic = 1
 -- vim.cmd("colorscheme OceanicNext")
 
--- vim.g.onedark_terminal_italics = 2
--- vim.cmd("colorscheme onedark")
-
 -- vim.g.material_style = "deep ocean"
 -- vim.g.material_italic_comments = true
 -- vim.g.material_italic_keywords = true
@@ -16,7 +13,10 @@ local execute = vim.api.nvim_command
 -- vim.g.material_borders = false 
 -- require("material").set()
 
-vim.cmd("colorscheme wildcherry")
+vim.g.onedark_terminal_italics = 2
+vim.cmd("colorscheme onedark")
+
+-- vim.cmd("colorscheme wildcherry")
 
 local config = {
   remove_bg = true,
@@ -38,6 +38,8 @@ if config.remove_bg then
   execute("hi! DiffChange  guibg="..config.colors.bg.." guifg="..config.status.modified)
   execute("hi! DiffDelete  guibg="..config.colors.bg.." guifg="..config.status.removed)
 else
+  execute("hi! SignColumn  guibg="..config.colors.bg)
+  execute("hi! FoldColumn  guibg="..config.colors.bg)
   execute("hi! Error       guifg="..config.status.removed)
   execute("hi! Warning     guifg="..config.status.modified)
   execute("hi! DiffAdd     guifg="..config.status.added)
@@ -45,8 +47,11 @@ else
   execute("hi! DiffDelete  guifg="..config.status.removed)
 end
 
-execute("hi! lualine_c    guibg="..config.colors.bg)
 execute("hi! IndentBlanklineChar guifg=#373b43")
+
+execute("hi! link    CursorColumn    Normal")
+-- execute("hi! link    CursorLine      Normal")
+execute("hi! link    CursorLineNr    Normal")
 
 execute("hi! link    ALEErrorSign    Error")
 execute("hi! link    ALEWarningSign  Warning")

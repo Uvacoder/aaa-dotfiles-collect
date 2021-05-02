@@ -5,8 +5,8 @@ local colors = {
   visual   = "#ffee99",
   inactive  = "#9298A5",
   filename  = "#e6e1cf",
-  bg = "#2a1e32",
-  -- bg = "#101419",
+  -- bg = "#2a1e32",
+  bg = "#101419",
 }
 
 local dark = {

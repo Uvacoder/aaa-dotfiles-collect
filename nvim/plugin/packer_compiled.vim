@@ -71,11 +71,6 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
-  ale = {
-    config = { ' require("config.ale") ' },
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/ale"
-  },
   ["coc.nvim"] = {
     config = { ' require("config.coc") ' },
     loaded = true,
@@ -102,7 +97,7 @@ _G.packer_plugins = {
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-tree.lua"] = {
-    config = { ' require("config.tree") ' },
+    config = { ' require("config.nvim-tree") ' },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
@@ -122,6 +117,11 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+  },
+  ["onedark.vim"] = {
+    config = { ' require("config.colorscheme") ' },
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/onedark.vim"
   },
   ["packer.nvim"] = {
     loaded = false,
@@ -176,19 +176,14 @@ _G.packer_plugins = {
   ["vscode-vue-snippets"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vscode-vue-snippets"
-  },
-  ["wild-cherry-vim"] = {
-    config = { ' require("config.colorscheme") ' },
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/wild-cherry-vim"
   }
 }
 
 time("Defining packer_plugins", false)
--- Config for: wild-cherry-vim
-time("Config for wild-cherry-vim", true)
- require("config.colorscheme") 
-time("Config for wild-cherry-vim", false)
+-- Config for: lualine.nvim
+time("Config for lualine.nvim", true)
+ require("config.lualine") 
+time("Config for lualine.nvim", false)
 -- Config for: nvim-treesitter
 time("Config for nvim-treesitter", true)
  require("config.treesitter") 
@@ -197,38 +192,34 @@ time("Config for nvim-treesitter", false)
 time("Config for nvim-colorizer.lua", true)
  require("config.colorizer")
 time("Config for nvim-colorizer.lua", false)
--- Config for: ale
-time("Config for ale", true)
- require("config.ale") 
-time("Config for ale", false)
 -- Config for: nvim-tree.lua
 time("Config for nvim-tree.lua", true)
- require("config.tree") 
+ require("config.nvim-tree") 
 time("Config for nvim-tree.lua", false)
--- Config for: nvim-autopairs
-time("Config for nvim-autopairs", true)
- require("config.autopairs") 
-time("Config for nvim-autopairs", false)
--- Config for: coc.nvim
-time("Config for coc.nvim", true)
- require("config.coc") 
-time("Config for coc.nvim", false)
--- Config for: vim-polyglot
-time("Config for vim-polyglot", true)
- vim.g.vue_pre_processors = {} 
-time("Config for vim-polyglot", false)
--- Config for: lualine.nvim
-time("Config for lualine.nvim", true)
- require("config.lualine") 
-time("Config for lualine.nvim", false)
--- Config for: gitsigns.nvim
-time("Config for gitsigns.nvim", true)
- require("config.git") 
-time("Config for gitsigns.nvim", false)
 -- Config for: telescope.nvim
 time("Config for telescope.nvim", true)
  require("config.telescope") 
 time("Config for telescope.nvim", false)
+-- Config for: onedark.vim
+time("Config for onedark.vim", true)
+ require("config.colorscheme") 
+time("Config for onedark.vim", false)
+-- Config for: nvim-autopairs
+time("Config for nvim-autopairs", true)
+ require("config.autopairs") 
+time("Config for nvim-autopairs", false)
+-- Config for: vim-polyglot
+time("Config for vim-polyglot", true)
+ vim.g.vue_pre_processors = {} 
+time("Config for vim-polyglot", false)
+-- Config for: coc.nvim
+time("Config for coc.nvim", true)
+ require("config.coc") 
+time("Config for coc.nvim", false)
+-- Config for: gitsigns.nvim
+time("Config for gitsigns.nvim", true)
+ require("config.git") 
+time("Config for gitsigns.nvim", false)
 
 -- Command lazy-loads
 time("Defining lazy-load commands", true)
