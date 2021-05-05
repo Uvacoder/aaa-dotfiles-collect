@@ -34,8 +34,9 @@ return require("packer").startup({
     use {
       -- "mhartington/oceanic-next",
       -- "marko-cerovac/material.nvim",
-      "joshdick/onedark.vim", 
+      -- "joshdick/onedark.vim", 
       -- "sliminality/wild-cherry-vim",
+      'folke/tokyonight.nvim',
       config = [[ require("config.colorscheme") ]]
     }
 

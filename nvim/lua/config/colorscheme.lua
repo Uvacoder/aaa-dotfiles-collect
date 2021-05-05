@@ -13,10 +13,14 @@ local execute = vim.api.nvim_command
 -- vim.g.material_borders = false 
 -- require("material").set()
 
-vim.g.onedark_terminal_italics = 2
-vim.cmd("colorscheme onedark")
+-- vim.g.onedark_terminal_italics = 2
+-- vim.cmd("colorscheme onedark")
 
 -- vim.cmd("colorscheme wildcherry")
+
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_transparent = true
+vim.cmd("colorscheme tokyonight")
 
 local config = {
   remove_bg = true,
