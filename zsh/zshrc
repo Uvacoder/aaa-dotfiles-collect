@@ -12,6 +12,7 @@ export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
 # export PATH="/usr/local/opt/mongodb-community@3.4/bin:$PATH"
 
 
@@ -21,17 +22,17 @@ ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 ZSH_DISABLE_COMPFIX="true"
-# ZSH_THEME="pure"
+ZSH_THEME="muse"
 
 # source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZSH/themes/powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# source $ZSH/themes/powerlevel10k/powerlevel10k.zsh-theme
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 
 
 plugins=(
-  z
+  # z
   git
   osx
   # zsh-syntax-highlighting

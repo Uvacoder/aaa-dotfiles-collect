@@ -10,7 +10,7 @@ mkdir ~/.config
 
 ln -s ~/.dotfiles/nvim ~/.config/nvim
 
-ln -s ~/.dotfiles/nvim/lua/config/dark.lua ~/.local/share/nvim/site/pack/packer/start/lualine.nvim/lua/lualine/themes/dark.lua
+ln -s ~/.dotfiles/nvim/lua/config/lualine-dark.lua ~/.local/share/nvim/site/pack/packer/start/lualine.nvim/lua/lualine/themes/dark.lua
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)FRIDAY: the ende.$(tput sgr 0)"

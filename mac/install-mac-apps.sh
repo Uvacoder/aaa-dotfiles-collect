@@ -49,9 +49,6 @@ brew_packages=(
   "--HEAD neovim"
   "wget"
   "z"
-  "zsh"
-  "zsh-autosuggestions"
-  "romkatv/powerlevel10k/powerlevel10k"
 )
 
 for package in "${brew_packages[@]}"

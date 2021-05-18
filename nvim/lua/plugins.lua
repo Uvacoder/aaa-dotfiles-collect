@@ -19,7 +19,6 @@ return require("packer").startup({
     use "nvim-lua/plenary.nvim"
     use "tpope/vim-commentary"
 
-
     use {
       "nvim-treesitter/nvim-treesitter", 
       run = ":TSUpdate",
@@ -36,7 +35,8 @@ return require("packer").startup({
       -- "marko-cerovac/material.nvim",
       -- "joshdick/onedark.vim", 
       -- "sliminality/wild-cherry-vim",
-      'folke/tokyonight.nvim',
+      -- 'folke/tokyonight.nvim',
+      'rafalbromirski/vim-aurora',
       config = [[ require("config.colorscheme") ]]
     }
 
@@ -94,6 +94,6 @@ return require("packer").startup({
       config = [[ vim.g.undotree_SetFocusWhenToggle = 1 ]]
     }
 
-    use "davidoc/taskpaper.vim"
+    -- use "davidoc/taskpaper.vim"
   end
 })
