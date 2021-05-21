@@ -10,22 +10,15 @@ git clone https://github.com/sldobri/dotfiles.git ~/.dotfiles
 
 echo "$(tput setaf 2)FRIDAY: Clean old linked files/folder.$(tput sgr 0)"
 
-rm -rf ~/.config
 rm ~/.zshrc
 rm ~/.wgetrc
 rm ~/.gitconfig
 rm ~/.global_ignore
 rm ~/.gitignore_global
 
-echo "$(tput setaf 2)FRIDAY: create config folder.$(tput sgr 0)"
-
-mkdir ~/.config
-
 echo "$(tput setaf 2)FRIDAY: link dotfiles.$(tput sgr 0)"
 
 ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
-ln -s ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
-ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/wget/wgetrc  ~/.wgetrc
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/global_ignore ~/.global_ignore

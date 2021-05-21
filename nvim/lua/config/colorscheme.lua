@@ -62,5 +62,4 @@ execute("hi! link    CursorLineNr    Normal")
 execute("hi! link    ALEErrorSign    Error")
 execute("hi! link    ALEWarningSign  Warning")
 
-execute("hi! String  gui=italic")
 execute("hi! Comment gui=italic")
