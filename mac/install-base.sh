@@ -50,6 +50,7 @@ brew_packages=(
   "--HEAD neovim"
   "wget"
   "z"
+  "mas-cli/tap/mas"
 )
 
 for package in "${brew_packages[@]}"
@@ -68,7 +69,7 @@ cask_packages=(
   "iterm2"
   "transmission"
 # "vlc"
-  "mas-cli/tap/mas"
+# "mas-cli/tap/mas"
 # "robo-3t"
   "sequel-pro"
   "whatsApp"
@@ -76,6 +77,8 @@ cask_packages=(
   "evernote"
   "github"
   "the-unarchiver"
+  "cyberduck"
+  "dropbox"
 )
 
 for package in "${cask_packages[@]}"
