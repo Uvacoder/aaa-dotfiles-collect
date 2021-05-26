@@ -19,6 +19,8 @@ return require("packer").startup({
     use "nvim-lua/plenary.nvim"
     use "tpope/vim-commentary"
 
+    use "editorconfig/editorconfig-vim"
+
     use {
       "nvim-treesitter/nvim-treesitter", 
       run = ":TSUpdate",
