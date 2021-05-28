@@ -1,4 +1,9 @@
 local execute = vim.api.nvim_command
+local config = {
+  remove_bg = true,
+  colors = { bg = "NONE" },
+  status = { added = "#5ccc96", modified = "#ffc600", removed = "#F84B5E" }
+}
 
 -- vim.g.oceanic_next_terminal_bold = 1
 -- vim.g.oceanic_next_terminal_italic = 1
@@ -18,19 +23,13 @@ local execute = vim.api.nvim_command
 
 -- vim.cmd("colorscheme wildcherry")
 
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_transparent = true
-vim.cmd("colorscheme tokyonight")
+-- vim.g.tokyonight_style = "night"
+-- vim.g.tokyonight_transparent = true
+-- vim.cmd("colorscheme tokyonight")
 
 -- vim.cmd("colorscheme aurora")
 
--- vim.cmd("colorscheme darcula-solid")
-
-local config = {
-  remove_bg = false,
-  colors = { bg = "NONE" },
-  status = { added = "#5ccc96", modified = "#ffc600", removed = "#F84B5E" }
-}
+vim.cmd("colorscheme darcula-solid")
 
 if config.remove_bg then
   execute("hi! Normal      guibg="..config.colors.bg)

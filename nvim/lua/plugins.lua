@@ -37,9 +37,9 @@ return require("packer").startup({
       -- "marko-cerovac/material.nvim",
       -- "joshdick/onedark.vim", 
       -- "sliminality/wild-cherry-vim",
-      'folke/tokyonight.nvim',
+      -- 'folke/tokyonight.nvim',
       -- 'rafalbromirski/vim-aurora',
-      -- "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim",
+      "dobbbri/darcula-solid.nvim", requires = "rktjmp/lush.nvim",
       config = [[ require("config.colorscheme") ]]
     }
 
@@ -82,8 +82,8 @@ return require("packer").startup({
     use { "mg979/vim-visual-multi", branch = "master" }
 
     use {
-      "honza/vim-snippets",
-      "hollowtree/vscode-vue-snippets"
+      "honza/vim-snippets"
+      -- "hollowtree/vscode-vue-snippets"
     }
 
     use {
