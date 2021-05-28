@@ -37,8 +37,9 @@ return require("packer").startup({
       -- "marko-cerovac/material.nvim",
       -- "joshdick/onedark.vim", 
       -- "sliminality/wild-cherry-vim",
-      -- 'folke/tokyonight.nvim',
-      'rafalbromirski/vim-aurora',
+      'folke/tokyonight.nvim',
+      -- 'rafalbromirski/vim-aurora',
+      -- "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim",
       config = [[ require("config.colorscheme") ]]
     }
 

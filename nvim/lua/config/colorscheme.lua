@@ -18,14 +18,16 @@ local execute = vim.api.nvim_command
 
 -- vim.cmd("colorscheme wildcherry")
 
--- vim.g.tokyonight_style = "night"
--- vim.g.tokyonight_transparent = true
--- vim.cmd("colorscheme tokyonight")
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_transparent = true
+vim.cmd("colorscheme tokyonight")
 
-vim.cmd("colorscheme aurora")
+-- vim.cmd("colorscheme aurora")
+
+-- vim.cmd("colorscheme darcula-solid")
 
 local config = {
-  remove_bg = true,
+  remove_bg = false,
   colors = { bg = "NONE" },
   status = { added = "#5ccc96", modified = "#ffc600", removed = "#F84B5E" }
 }

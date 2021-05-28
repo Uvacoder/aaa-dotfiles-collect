@@ -64,9 +64,10 @@ pop_packages=(
   "https://pilotmoon.com/popclip/extensions/ext/Capitalize.popclipextz"
  # "https://pilotmoon.com/popclip/extensions/ext/Evernote.popclipextz"
   "https://pilotmoon.com/popclip/extensions/ext/Calculate.popclipextz"
-  "https://pilotmoon.com/popclip/extensions/ext/OpenInChrome.popclipextz"
+ # "https://pilotmoon.com/popclip/extensions/ext/OpenInChrome.popclipextz"
   "https://pilotmoon.com/popclip/extensions/ext/Hyphenate.popclipextz"
   "https://pilotmoon.com/popclip/extensions/ext/URLEncode.popclipextz"
+  "https://pilotmoon.com/popclip/extensions/ext/GoogleTranslate.popclipextz"
 )
 
 for package in "${pop_packages[@]}"
