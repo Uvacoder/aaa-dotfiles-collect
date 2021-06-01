@@ -7,7 +7,8 @@ export LANG="en_US.UTF-8"
 
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="/usr/local/Cellar/node/16.0.0/bin:$PATH"
+export PATH="/usr/local/opt/node@14/bin:$PATH"
+# export PATH="/usr/local/Cellar/node/16.0.0/bin:$PATH"
 export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
@@ -87,22 +88,29 @@ alias dot="cd $HOME/.dotfiles"
 
 
 # Sites
-alias mes="cd /Volumes/Sites/material-eshop && clear"
-alias esh="cd /Volumes/Sites/e-shop && clear"
+
 alias anp="cd /Volumes/Sites/agua_nova_piscinas && clear"
 alias r3c="cd /Volumes/Sites/rancho_tres_coracoes_2019 && clear"
 alias q1s="cd /Volumes/Sites/quero1site_2020 && clear"
 alias sca="cd /Volumes/Sites/shopping_da_carne_2021 && clear"
 alias ptu="cd /Volumes/Sites/pousada_do_tucunare_2020 && clear"
 alias sen="cd /Volumes/Sites/santos_e_nascimento_2020 && clear"
-alias low="cd /Volumes/Sites/nuxt-express-auth-lowdb-admin && clear"
+
+# Projects
+
+alias mes="cd /Volumes/Projects/material-eshop && clear"
+alias esh="cd /Volumes/Projects/e-shop && clear"
+alias low="cd /Volumes/Projects/nuxt-express-auth-lowdb-admin && clear"
+alias cds="cd /Volumes/Projects/car-dealership-2020 && clear"
+
+# old
+
 # alias fag="cd /Volumes/Sites/filmAgora_2020 && clear"
 # alias dmo="cd /Volumes/Sites/dular_moveis_2020 && clear"
 # alias cor="cd /Volumes/Sites/colchoes_oriental_2020 && clear"
 # alias per="cd /Volumes/Sites/psicologa_erica_rover_2020 && clear"
 # alias avp="cd /Volumes/Sites/arte_visual_propag_2021 && clear"
 # alias zzz="cd /Volumes/Sites/blog && clear"
-# alias cds="cd /Volumes/Sites/car-dealership-2020 && clear"
 # alias cda="cd /Volumes/WS/car-dealership-api-2020 && clear"
 # alias cdd="cd /Volumes/WS/car-dealership-adm-2020 && clear"
 

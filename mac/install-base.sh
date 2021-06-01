@@ -27,7 +27,7 @@ echo "$(tput setaf 2)FRIDAY: Installing Homebrew Cask packages.$(tput sgr 0)"
 tap_packages=(
   "homebrew/cask"
   "homebrew/cask-fonts"
-  "sscotth/monoid"
+# "sscotth/monoid"
   "homebrew/core"
 )
 
@@ -45,9 +45,9 @@ brew_packages=(
   "git"
   "makedepend"
   "luarocks"
-  "node"
   "python3"
   "--HEAD neovim"
+  "node@14"
   "wget"
   "z"
   "mas-cli/tap/mas"
@@ -64,13 +64,13 @@ echo "$(tput setaf 2)FRIDAY: Installing Homebrew Cash Apps.$(tput sgr 0)"
 cask_packages=(
   "sublime-text"
   "font-hack-nerd-font"
-  "font-monoid-xtralarge-dollar-1-l-nocalt"
+# "font-monoid-xtralarge-dollar-1-l-nocalt"
   "font-monoid-nerd-font"
   "iterm2"
   "transmission"
 # "vlc"
 # "mas-cli/tap/mas"
-# "robo-3t"
+  "robo-3t"
   "sequel-pro"
   "whatsApp"
   "bitwarden"
@@ -79,6 +79,8 @@ cask_packages=(
   "the-unarchiver"
   "cyberduck"
   "dropbox"
+  "postman"
+  "forklift"
 )
 
 for package in "${cask_packages[@]}"
@@ -158,25 +160,6 @@ defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
 killall Dock
 
-
-echo "---------------------------------------------------------"
-echo "$(tput setaf 2)FRIDAY: Installing Node Global package$(tput sgr 0)"
-
-node_packages=(
-  "neovim"
-  "eslint"
-  "prettier"
-  "@vue/cli"
-  "serve"
-  "typescript"
-)
-
-for package in "${node_packages[@]}"
-do
-  echo "$(tput setaf 2)FRIDAY: Installing $package.$(tput sgr 0)"
-  npm i -g $package
-done
-echo "$(tput setaf 2)FRIDAY: Node Packages installed.$(tput sgr 0)"
 
 
 echo "---------------------------------------------------------"
