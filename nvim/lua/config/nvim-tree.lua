@@ -25,21 +25,23 @@ vim.g.nvim_tree_icons = {
         unmerged = "",
         renamed = "➜",
         untracked = "",
-        deleted = "✗"
+        deleted = "✗",
+        ignored = "◌"
     },
     folder = {
         default = "",
         open = "",
+        empty = "",
+        empty_open = "",
+        symlink = ""
+    },
+    lsp = {
+         hint = "",
+         info = "",
+         warning = "",
+         error = ""
     }
-    -- folder = {
-    --     default = "",
-    --     open = "",
-    --     empty = "",
-    --     empty_open = "",
-    --     symlink = ""
-    -- }
 }
-
 local keymap = vim.api.nvim_set_keymap
 local options = {noremap = true, silent = true}
 
