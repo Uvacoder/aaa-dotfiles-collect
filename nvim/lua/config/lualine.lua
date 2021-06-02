@@ -1,13 +1,15 @@
 require('lualine').setup({
   options = {
     theme = 'dark',
-    section_separators = {'', ''},
-    -- section_separators = {'|', '|'},
-    component_separators = {'|', '|'},
+    -- section_separators = {'', ''},
+    section_separators = {'▏', '▏'},
+    component_separators = {'▏', '▏'},
     icons_enabled = true,
+    padding = 1,
+
   },
   sections = {
-    lualine_a = {{'mode', upper = true}},
+    lualine_a = {{'mode', upper = true}, {'g:coc_status', 'bo:filetype'}},
     lualine_z = {{'branch'}, {'diff'}},
     lualine_b = {{'filename', file_status = true}, {'diagnostics', sources = {'coc', 'ale'}}},
     lualine_x = {'encoding', 'fileformat', 'filetype'},

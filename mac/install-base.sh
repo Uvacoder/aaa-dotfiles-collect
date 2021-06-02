@@ -27,7 +27,7 @@ echo "$(tput setaf 2)FRIDAY: Installing Homebrew Cask packages.$(tput sgr 0)"
 tap_packages=(
   "homebrew/cask"
   "homebrew/cask-fonts"
-# "sscotth/monoid"
+  "sscotth/monoid"
   "homebrew/core"
 )
 
@@ -64,12 +64,11 @@ echo "$(tput setaf 2)FRIDAY: Installing Homebrew Cash Apps.$(tput sgr 0)"
 cask_packages=(
   "sublime-text"
   "font-hack-nerd-font"
-# "font-monoid-xtralarge-dollar-1-l-nocalt"
+  "font-monoid-xtralarge-dollar-1-l-nocalt"
   "font-monoid-nerd-font"
   "iterm2"
   "transmission"
 # "vlc"
-# "mas-cli/tap/mas"
   "robo-3t"
   "sequel-pro"
   "whatsApp"
@@ -81,6 +80,7 @@ cask_packages=(
   "dropbox"
   "postman"
   "forklift"
+  "notion"
 )
 
 for package in "${cask_packages[@]}"
