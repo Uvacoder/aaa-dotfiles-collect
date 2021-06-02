@@ -96,12 +96,12 @@ alias sca="cd /Volumes/Sites/shopping_da_carne_2021 && clear"
 alias ptu="cd /Volumes/Sites/pousada_do_tucunare_2020 && clear"
 alias sen="cd /Volumes/Sites/santos_e_nascimento_2020 && clear"
 
-# Projects
+# Code
 
-alias mes="cd /Volumes/Projects/material-eshop && clear"
-alias esh="cd /Volumes/Projects/e-shop && clear"
-alias low="cd /Volumes/Projects/nuxt-express-auth-lowdb-admin && clear"
-alias cds="cd /Volumes/Projects/car-dealership-2020 && clear"
+alias mes="cd /Volumes/Code/material-eshop && clear"
+alias esh="cd /Volumes/Code/e-shop && clear"
+alias low="cd /Volumes/Code/nuxt-express-auth-lowdb-admin && clear"
+alias cds="cd /Volumes/Code/car-dealership-2020 && clear"
 
 # old
 
