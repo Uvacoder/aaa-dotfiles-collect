@@ -16,11 +16,8 @@ sudo mv /System/Library/LaunchDaemons/com.apple.spindump.plist /System/Library/L
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.tailspind.plist
 sudo mv /System/Library/LaunchDaemons/com.apple.tailspind.plist /System/Library/LaunchDaemons/com.apple.tailspind.plist.bak
 
-sudo launchctl unload -w /system/library/launchdaemons/com.apple.metadata.mds.plist
-sudo mv /system/library/launchdaemons/com.apple.metadata.mds.plist /system/library/launchdaemons/com.apple.metadata.mds.plist.bak
-
-# sudo mv /system/library/launchdaemons/com.apple.metadata.mds.plist.bak /system/library/launchdaemons/com.apple.metadata.mds.plist
-# sudo launchctl load -w /system/library/launchdaemons/com.apple.metadata.mds.plist
+# sudo launchctl unload -w /system/library/launchdaemons/com.apple.metadata.mds.plist
+# sudo mv /system/library/launchdaemons/com.apple.metadata.mds.plist /system/library/launchdaemons/com.apple.metadata.mds.plist.bak
 
 # 19 - AGENTS ------------------------------------------------------------------
 launchctl unload -w /System/Library/LaunchAgents/com.apple.CalendarAgent.plist
