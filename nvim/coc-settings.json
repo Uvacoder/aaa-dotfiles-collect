@@ -10,7 +10,6 @@
     "json",
     "html",
     "vue",
-    "css",
     "svg"
   ],
   "codeLens.enable": true,
@@ -32,7 +31,7 @@
   "tailwindCSS.htmlLanguages": ["html", "vue"],
   "tailwindCSS.jsLanguages": ["javascript"],
   "tailwindCSS.headwind.removeDuplicates": true,
-  "tailwindCSS.headwind.runOnSave": true,
+  "tailwindCSS.headwind.runOnSave": false,
   "vetur.completion.autoImport": false,
   "eslint.autoFixOnSave": true,
   "prettier.eslintIntegration": true
