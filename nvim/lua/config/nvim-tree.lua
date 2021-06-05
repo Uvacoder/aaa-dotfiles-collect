@@ -1,4 +1,4 @@
-vim.g.nvim_tree_width = 40
+vim.g.nvim_tree_width = 35
 vim.g.nvim_tree_auto_close = 1
 vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_hide_dotfiles = 1
@@ -16,24 +16,30 @@ vim.g.nvim_tree_ignore = {
   ".cache",
   ".DS_Store"
 }
+vim.g.nvim_tree_show_icons = {
+  git = 1,
+  folders = 1,
+  files =  0,
+  folder_arrows = 1
+}
 vim.g.nvim_tree_icons = {
-    default = '',
-    symlink = '',
+    default = '',
+    symlink = '',
     git = {
-        unstaged = "",
+        unstaged = "●",
         staged = "✓",
-        unmerged = "",
-        renamed = "➜",
-        untracked = "",
-        deleted = "✗",
-        ignored = "◌"
+        unmerged = "∳",
+        renamed = "➞",
+        untracked = "✭",
+        deleted = "✕",
+        ignored = "○"
     },
     folder = {
-        default = "",
-        open = "",
-        empty = "",
-        empty_open = "",
-        symlink = ""
+        default = "▶",
+        open = "▼",
+        empty = "▷",
+        empty_open = "▽",
+        symlink = "◗"
     },
     lsp = {
          hint = "",

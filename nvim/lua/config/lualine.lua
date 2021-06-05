@@ -1,10 +1,10 @@
 require('lualine').setup({
   options = {
-    theme = 'dark',
+    theme = 'dark', 
     -- section_separators = {'', ''},
     section_separators = {'▏', '▏'},
     component_separators = {'▏', '▏'},
-    icons_enabled = true,
+    icons_enabled = false,
     padding = 1,
 
   },
