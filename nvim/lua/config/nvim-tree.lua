@@ -28,18 +28,18 @@ vim.g.nvim_tree_icons = {
     git = {
         unstaged = "●",
         staged = "✓",
-        unmerged = "∳",
+        unmerged = "⚑",
         renamed = "➞",
         untracked = "✭",
         deleted = "✕",
-        ignored = "○"
+        ignored = "☉"
     },
     folder = {
         default = "▶",
         open = "▼",
         empty = "▷",
         empty_open = "▽",
-        symlink = "◗"
+        symlink = "◈"
     },
     lsp = {
          hint = "",

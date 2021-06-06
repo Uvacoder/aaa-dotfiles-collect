@@ -14,7 +14,7 @@ return require("packer").startup({
   function()
     use { "wbthomason/packer.nvim", opt = true }
 
-    use "kyazdani42/nvim-web-devicons"
+    -- use "kyazdani42/nvim-web-devicons"
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use "tpope/vim-commentary"
