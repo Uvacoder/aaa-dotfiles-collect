@@ -62,8 +62,9 @@ time("try_loadstring definition", true)
 local function try_loadstring(s, component, name)
   local success, result = pcall(loadstring(s))
   if not success then
-    print('Error running ' .. component .. ' for ' .. name)
-    error(result)
+    vim.schedule(function()
+      vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
+    end)
   end
   return result
 end
@@ -88,6 +89,10 @@ _G.packer_plugins = {
   ["editorconfig-vim"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/friendly-snippets"
   },
   ["gitsigns.nvim"] = {
     config = { ' require("config.git") ' },
@@ -136,10 +141,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
   },
-  ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
-  },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
@@ -178,29 +179,37 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-polyglot"
   },
-  ["vim-snippets"] = {
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-snippets"
-  },
   ["vim-visual-multi"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-visual-multi"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   }
 }
 
 time("Defining packer_plugins", false)
--- Config for: lualine.nvim
-time("Config for lualine.nvim", true)
- require("config.lualine") 
-time("Config for lualine.nvim", false)
+-- Config for: nvim-treesitter
+time("Config for nvim-treesitter", true)
+ require("config.treesitter") 
+time("Config for nvim-treesitter", false)
 -- Config for: nvim-tree.lua
 time("Config for nvim-tree.lua", true)
  require("config.nvim-tree") 
 time("Config for nvim-tree.lua", false)
--- Config for: telescope.nvim
-time("Config for telescope.nvim", true)
- require("config.telescope") 
-time("Config for telescope.nvim", false)
+-- Config for: indent-guides.nvim
+time("Config for indent-guides.nvim", true)
+ require("config.indent-guides") 
+time("Config for indent-guides.nvim", false)
+-- Config for: darcula-solid.nvim
+time("Config for darcula-solid.nvim", true)
+ require("config.colorscheme") 
+time("Config for darcula-solid.nvim", false)
+-- Config for: lualine.nvim
+time("Config for lualine.nvim", true)
+ require("config.lualine") 
+time("Config for lualine.nvim", false)
 -- Config for: nvim-autopairs
 time("Config for nvim-autopairs", true)
  require("config.autopairs") 
@@ -209,30 +218,22 @@ time("Config for nvim-autopairs", false)
 time("Config for gitsigns.nvim", true)
  require("config.git") 
 time("Config for gitsigns.nvim", false)
--- Config for: indent-guides.nvim
-time("Config for indent-guides.nvim", true)
- require("config.indent-guides") 
-time("Config for indent-guides.nvim", false)
--- Config for: vim-polyglot
-time("Config for vim-polyglot", true)
- vim.g.vue_pre_processors = {} 
-time("Config for vim-polyglot", false)
 -- Config for: coc.nvim
 time("Config for coc.nvim", true)
  require("config.coc") 
 time("Config for coc.nvim", false)
--- Config for: nvim-treesitter
-time("Config for nvim-treesitter", true)
- require("config.treesitter") 
-time("Config for nvim-treesitter", false)
--- Config for: darcula-solid.nvim
-time("Config for darcula-solid.nvim", true)
- require("config.colorscheme") 
-time("Config for darcula-solid.nvim", false)
 -- Config for: nvim-colorizer.lua
 time("Config for nvim-colorizer.lua", true)
  require("config.colorizer")
 time("Config for nvim-colorizer.lua", false)
+-- Config for: telescope.nvim
+time("Config for telescope.nvim", true)
+ require("config.telescope") 
+time("Config for telescope.nvim", false)
+-- Config for: vim-polyglot
+time("Config for vim-polyglot", true)
+ vim.g.vue_pre_processors = {} 
+time("Config for vim-polyglot", false)
 
 -- Command lazy-loads
 time("Defining lazy-load commands", true)

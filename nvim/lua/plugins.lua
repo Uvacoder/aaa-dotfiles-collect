@@ -83,9 +83,9 @@ return require("packer").startup({
 
     use { "mg979/vim-visual-multi", branch = "master" }
 
-    use {
-      "honza/vim-snippets"
-    }
+    use "honza/vim-snippets"
+    use "rafamadriz/friendly-snippets"
+    use "hrsh7th/vim-vsnip"
 
     use {
       "hoob3rt/lualine.nvim",
