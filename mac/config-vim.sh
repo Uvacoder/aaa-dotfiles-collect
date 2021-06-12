@@ -12,7 +12,7 @@ mkdir ~/.config
 echo "$(tput setaf 2)FRIDAY: link nvim folder.$(tput sgr 0)"
 ln -s ~/.dotfiles/nvim-coc ~/.config/nvim
 
-ln -s ~/.dotfiles/VapourNvim ~/.config/nvim
+# ln -s ~/.dotfiles/VapourNvim ~/.config/nvim
 
 # ln -s ~/.dotfiles/nvim-lsp ~/.config/nvim
 

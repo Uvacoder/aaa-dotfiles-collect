@@ -27,7 +27,6 @@ return require("packer").startup({
       config = [[ require("config.treesitter") ]],
       requires = {
         "p00f/nvim-ts-rainbow",
-        "JoosepAlviste/nvim-ts-context-commentstring",
         { "sheerun/vim-polyglot", config = [[ vim.g.vue_pre_processors = {} ]] }
       }
     }
@@ -100,16 +99,17 @@ return require("packer").startup({
 
     use {
       "lukas-reineke/indent-blankline.nvim", branch = "lua",
-      config = [[ require("config.indent-guides") ]]
+      config = 'require("config.indent-guides")'
     }
 
-    use 'famiu/nvim-reload'
-    local reload = require('nvim-reload')
-    local plugin_dirs = vim.fn.stdpath('data') .. '/site/pack/*/start/*'
-    reload.vim_reload_dirs = {
-      vim.fn.stdpath('config'),
-      plugin_dirs
+    use {
+      'terrortylor/nvim-comment', 
+      config = "require('nvim_comment').setup()"
     }
 
+    use {
+      'akinsho/nvim-toggleterm.lua',
+      config = [[ require('config.nvim-toggleterm') ]]
+    }
   end
 })

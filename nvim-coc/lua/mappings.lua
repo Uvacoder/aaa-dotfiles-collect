@@ -3,10 +3,8 @@ local options = {noremap = true, silent = true}
 
 keymap('n', '<Space>', '<NOP>', options)
 
--- keymap('n', '<C-m>', [[<Cmd>lua require('material.functions').toggle_style()<CR>]], options)
-
-keymap("n", "<C-_>", ":Commentary<CR>", options)
-keymap("v", "<C-_>", ":Commentary<CR>", options)
+keymap("n", "<C-_>", ":CommentToggle<CR>", options)
+keymap("v", "<C-_>", ":CommentToggle<CR>", options)
 
 -- buffers navigation
 keymap('n', '=', '<PageDown>', options)

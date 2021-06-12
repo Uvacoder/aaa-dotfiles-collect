@@ -117,6 +117,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
+  ["nvim-lspinstall"] = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+  },
   ["nvim-toggleterm.lua"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-toggleterm.lua"
