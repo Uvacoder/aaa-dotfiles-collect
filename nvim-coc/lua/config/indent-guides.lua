@@ -1,6 +1,9 @@
-require('indent_guides').setup({
-    indent_enable = true,
-    even_colors = { fg = '#080A0C', bg = '#090911' },
-    odd_colors =  { fg = '#090911', bg = '#080A0C' }
-})
+vim.g.indentLine_enabled = 1
+vim.g.indent_blankline_char = "▏"
+
+vim.g.indent_blankline_filetype_exclude = {"help", "terminal"}
+vim.g.indent_blankline_buftype_exclude = {"terminal"}
+
+vim.g.indent_blankline_show_trailing_blankline_indent = false
+vim.g.indent_blankline_show_first_indent_level = false
 

@@ -14,7 +14,7 @@ return require("packer").startup({
   function()
     use { "wbthomason/packer.nvim", opt = true }
 
-    -- use "kyazdani42/nvim-web-devicons"
+    use "kyazdani42/nvim-web-devicons"
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use "tpope/vim-commentary"
@@ -99,8 +99,17 @@ return require("packer").startup({
     }
 
     use {
-      "glepnir/indent-guides.nvim",
+      "lukas-reineke/indent-blankline.nvim", branch = "lua",
       config = [[ require("config.indent-guides") ]]
     }
+
+    use 'famiu/nvim-reload'
+    local reload = require('nvim-reload')
+    local plugin_dirs = vim.fn.stdpath('data') .. '/site/pack/*/start/*'
+    reload.vim_reload_dirs = {
+      vim.fn.stdpath('config'),
+      plugin_dirs
+    }
+
   end
 })

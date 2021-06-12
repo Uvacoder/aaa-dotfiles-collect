@@ -16,38 +16,35 @@ vim.g.nvim_tree_ignore = {
   ".cache",
   ".DS_Store"
 }
+
 vim.g.nvim_tree_show_icons = {
-  git = 1,
-  folders = 1,
-  files =  0,
-  folder_arrows = 1
+    git = 1,
+    folders = 1,
+    files = 1
 }
+
 vim.g.nvim_tree_icons = {
-    default = '',
-    symlink = '',
+    default = " ",
+    symlink = " ",
     git = {
-        unstaged = "●",
+        unstaged = "✗",
         staged = "✓",
-        unmerged = "⚑",
-        renamed = "➞",
-        untracked = "✭",
-        deleted = "✕",
-        ignored = "☉"
+        unmerged = "",
+        renamed = "➜",
+        untracked = "★",
+        deleted = "",
+        ignored = "◌"
     },
     folder = {
-        default = "▶",
-        open = "▼",
-        empty = "▷",
-        empty_open = "▽",
-        symlink = "◈"
-    },
-    lsp = {
-         hint = "",
-         info = "",
-         warning = "",
-         error = ""
+        default = "",
+        open = "",
+        symlink = "",
+        empty = "",
+        empty_open = "",
+        symlink_open = ""
     }
 }
+
 local keymap = vim.api.nvim_set_keymap
 local options = {noremap = true, silent = true}
 

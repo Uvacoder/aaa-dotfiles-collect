@@ -99,10 +99,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
-  ["indent-guides.nvim"] = {
+  ["indent-blankline.nvim"] = {
     config = { ' require("config.indent-guides") ' },
     loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/indent-guides.nvim"
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
   },
   ["lualine.nvim"] = {
     config = { ' require("config.lualine") ' },
@@ -140,6 +140,10 @@ _G.packer_plugins = {
   ["nvim-ts-rainbow"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = false,
@@ -179,6 +183,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-polyglot"
   },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-snippets"
+  },
   ["vim-visual-multi"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-visual-multi"
@@ -190,26 +198,10 @@ _G.packer_plugins = {
 }
 
 time("Defining packer_plugins", false)
--- Config for: nvim-treesitter
-time("Config for nvim-treesitter", true)
- require("config.treesitter") 
-time("Config for nvim-treesitter", false)
--- Config for: nvim-tree.lua
-time("Config for nvim-tree.lua", true)
- require("config.nvim-tree") 
-time("Config for nvim-tree.lua", false)
--- Config for: indent-guides.nvim
-time("Config for indent-guides.nvim", true)
- require("config.indent-guides") 
-time("Config for indent-guides.nvim", false)
--- Config for: darcula-solid.nvim
-time("Config for darcula-solid.nvim", true)
- require("config.colorscheme") 
-time("Config for darcula-solid.nvim", false)
--- Config for: lualine.nvim
-time("Config for lualine.nvim", true)
- require("config.lualine") 
-time("Config for lualine.nvim", false)
+-- Config for: telescope.nvim
+time("Config for telescope.nvim", true)
+ require("config.telescope") 
+time("Config for telescope.nvim", false)
 -- Config for: nvim-autopairs
 time("Config for nvim-autopairs", true)
  require("config.autopairs") 
@@ -218,22 +210,38 @@ time("Config for nvim-autopairs", false)
 time("Config for gitsigns.nvim", true)
  require("config.git") 
 time("Config for gitsigns.nvim", false)
--- Config for: coc.nvim
-time("Config for coc.nvim", true)
- require("config.coc") 
-time("Config for coc.nvim", false)
 -- Config for: nvim-colorizer.lua
 time("Config for nvim-colorizer.lua", true)
  require("config.colorizer")
 time("Config for nvim-colorizer.lua", false)
--- Config for: telescope.nvim
-time("Config for telescope.nvim", true)
- require("config.telescope") 
-time("Config for telescope.nvim", false)
+-- Config for: coc.nvim
+time("Config for coc.nvim", true)
+ require("config.coc") 
+time("Config for coc.nvim", false)
+-- Config for: indent-blankline.nvim
+time("Config for indent-blankline.nvim", true)
+ require("config.indent-guides") 
+time("Config for indent-blankline.nvim", false)
 -- Config for: vim-polyglot
 time("Config for vim-polyglot", true)
  vim.g.vue_pre_processors = {} 
 time("Config for vim-polyglot", false)
+-- Config for: nvim-treesitter
+time("Config for nvim-treesitter", true)
+ require("config.treesitter") 
+time("Config for nvim-treesitter", false)
+-- Config for: lualine.nvim
+time("Config for lualine.nvim", true)
+ require("config.lualine") 
+time("Config for lualine.nvim", false)
+-- Config for: darcula-solid.nvim
+time("Config for darcula-solid.nvim", true)
+ require("config.colorscheme") 
+time("Config for darcula-solid.nvim", false)
+-- Config for: nvim-tree.lua
+time("Config for nvim-tree.lua", true)
+ require("config.nvim-tree") 
+time("Config for nvim-tree.lua", false)
 
 -- Command lazy-loads
 time("Defining lazy-load commands", true)

@@ -1,3 +1,14 @@
+
+local install_path = vim.fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
+
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  vim.api.nvim_command("!git clone https://github.com/wbthomason/packer.nvim "..install_path)
+end
+
+vim.cmd("packadd packer.nvim")
+vim.cmd("autocmd BufWritePost plugins.lua PackerCompile")
+
+
 local packer = require("packer")
 local use = packer.use
 
@@ -6,21 +17,19 @@ return require("packer").startup(
     function()
         use "wbthomason/packer.nvim"
 
-        -- color related stuff
+        -- theme stuff
         use "siduck76/nvim-base16.lua"
-        use "norcalli/nvim-colorizer.lua"
 
         -- lang stuff
-        use "nvim-treesitter/nvim-treesitter"
         use "neovim/nvim-lspconfig"
         use "hrsh7th/nvim-compe"
-        use "onsails/lspkind-nvim"
-        use "sbdchd/neoformat"
-        use "nvim-lua/plenary.nvim"
         use "kabouzeid/nvim-lspinstall"
+        use "sbdchd/neoformat"
+        use "onsails/lspkind-nvim"
 
+        use "nvim-lua/plenary.nvim"
+        use "nvim-treesitter/nvim-treesitter"
         use "lewis6991/gitsigns.nvim"
-        use "akinsho/nvim-bufferline.lua"
         use "glepnir/galaxyline.nvim"
         use "windwp/nvim-autopairs"
         use "alvan/vim-closetag"
@@ -32,22 +41,12 @@ return require("packer").startup(
         -- file managing , picker etc
         use "kyazdani42/nvim-tree.lua"
         use "kyazdani42/nvim-web-devicons"
-        use "ryanoasis/vim-devicons"
         use "nvim-telescope/telescope.nvim"
         use "nvim-telescope/telescope-media-files.nvim"
         use "nvim-lua/popup.nvim"
 
         -- misc
-        use "tweekmonster/startuptime.vim"
-        use "907th/vim-auto-save"
-        use "karb94/neoscroll.nvim"
-        use "kdav5758/TrueZen.nvim"
-        use "folke/which-key.nvim"
+        use "norcalli/nvim-colorizer.lua"
         use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
-    end,
-    {
-        display = {
-            border = {"┌", "─", "┐", "│", "┘", "─", "└", "│"}
-        }
-    }
+    end
 )

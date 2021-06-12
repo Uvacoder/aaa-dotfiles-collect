@@ -1,16 +1,14 @@
 -- load all plugins
 require "pluginList"
-require "misc-utils"
+require "options-utils"
 
-require "top-bufferline"
 require "statusline"
 
 require("colorizer").setup()
-require("neoscroll").setup() -- smooth scroll
 
 -- lsp stuff
 require "nvim-lspconfig"
-require "compe-completion"
+require "nvim-compe"
 
 local cmd = vim.cmd
 local g = vim.g
@@ -24,7 +22,7 @@ cmd "syntax on"
 local base16 = require "base16"
 base16(base16.themes["onedark"], true)
 
-require "colors"
+-- require "colors"
 
 -- blankline
 
@@ -53,7 +51,3 @@ require("lspkind").init()
 vim.api.nvim_exec([[
    au BufEnter term://* setlocal nonumber
 ]], false)
-
--- setup for TrueZen.nvim
-require "zenmode"
-require "whichkey"

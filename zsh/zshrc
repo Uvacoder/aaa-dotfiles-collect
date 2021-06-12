@@ -181,3 +181,5 @@ source $ZSH/oh-my-zsh.sh
 
 # source ~/.zshrc
 
+
+alias luamake=/Users/sldobri/.config/nvim/ls/lua-language-server/3rd/luamake/luamake

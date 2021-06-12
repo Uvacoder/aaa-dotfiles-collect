@@ -49,28 +49,6 @@ local function setup_servers()
                 on_attach = on_attach,
                 root_dir = vim.loop.cwd
             }
-        elseif lang == "lua" then
-            lspconf[lang].setup {
-                root_dir = function()
-                    return vim.loop.cwd()
-                end,
-                settings = {
-                    Lua = {
-                        diagnostics = {
-                            globals = {"vim"}
-                        },
-                        workspace = {
-                            library = {
-                                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                                [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
-                            }
-                        },
-                        telemetry = {
-                            enable = false
-                        }
-                    }
-                }
-            }
         end
     end
 end
@@ -88,3 +66,4 @@ vim.fn.sign_define("LspDiagnosticsSignError", {text = "", numhl = "LspDiagnos
 vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", numhl = "LspDiagnosticsDefaultWarning"})
 vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "LspDiagnosticsDefaultInformation"})
 vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "LspDiagnosticsDefaultHint"})
+
