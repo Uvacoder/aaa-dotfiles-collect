@@ -23,27 +23,27 @@ vim.g.nvim_tree_show_icons = {
     files = 1
 }
 
-vim.g.nvim_tree_icons = {
-    default = " ",
-    symlink = " ",
-    git = {
-        unstaged = "✗",
-        staged = "✓",
-        unmerged = "",
-        renamed = "➜",
-        untracked = "★",
-        deleted = "",
-        ignored = "◌"
-    },
-    folder = {
-        default = "",
-        open = "",
-        symlink = "",
-        empty = "",
-        empty_open = "",
-        symlink_open = ""
-    }
-}
+-- vim.g.nvim_tree_icons = {
+--     default = " ",
+--     symlink = " ",
+--     git = {
+--         unstaged = "✗",
+--         staged = "✓",
+--         unmerged = "",
+--         renamed = "➜",
+--         untracked = "★",
+--         deleted = "",
+--         ignored = "◌"
+--     },
+    -- folder = {
+    --     default = "",
+    --     open = "",
+    --     symlink = "",
+    --     empty = "",
+    --     empty_open = "",
+    --     symlink_open = ""
+    -- }
+-- }
 
 local keymap = vim.api.nvim_set_keymap
 local options = {noremap = true, silent = true}
