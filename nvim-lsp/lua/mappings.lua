@@ -1,35 +1,53 @@
- local function map(mode, lhs, rhs, opts)
-    local options = {noremap = true}
-    if opts then
-        options = vim.tbl_extend("force", options, opts)
-    end
-    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
+local keymap = vim.api.nvim_set_keymap
+local options = {noremap = true, silent = true}
 
-local opt = {}
+keymap('n', '<Space>', '<NOP>', options)
 
--- dont copy any deleted text , this is disabled by default so uncomment the below mappings if you want them!
---[[ remove this line
+keymap("n", "<C-_>", ":CommentToggle<CR>", options)
+keymap("v", "<C-_>", ":CommentToggle<CR>", options)
 
-map("n", "dd", [=[ "_dd ]=], opt)
-map("v", "dd", [=[ "_dd ]=], opt)
-map("v", "x", [=[ "_x ]=], opt)
+-- buffers navigation
+keymap('n', '=', '<PageDown>', options)
+keymap('n', '-', '<PageUp>', options)
 
- this line too ]]
--- OPEN TERMINALS --
-map("n", "<C-l>", [[<Cmd>vnew term://bash <CR>]], opt) -- term over right
-map("n", "<C-x>", [[<Cmd> split term://bash | resize 10 <CR>]], opt) --  term bottom
-map("n", "<C-t>t", [[<Cmd> tabnew | term <CR>]], opt) -- term newtab
+-- select all
+keymap('n', '<Leader>sa', 'ggVG', options)
 
--- COPY EVERYTHING --
-map("n", "<C-a>", [[ <Cmd> %y+<CR>]], opt)
+-- I hate escape
+keymap('i', 'jk', '<ESC>', options)
+keymap('i', 'kj', '<ESC>', options)
+keymap('i', 'jj', '<ESC>', options)
+keymap('t', 'jj', '<ESC>', options)
 
--- toggle numbers ---
-map("n", "<leader>n", [[ <Cmd> set nu!<CR>]], opt)
+keymap('n', '<C-s>', ':w<CR>', options)
+keymap('i', '<C-s>', '<esc>:w<CR>', options)
+keymap('n', '<C-q>', '!<CR>', options)
+keymap('i', '<C-c>', '<esc>', options)
 
--- toggle truezen.nvim's ataraxis and minimalist mode
-map("n", "<leader>z", [[ <Cmd> TZAtaraxis<CR>]], opt)
-map("n", "<leader>m", [[ <Cmd> TZMinimalist<CR>]], opt)
+-- search and replace
+keymap('n', '<C-h>', ':%s///gcI<Left><Left><Left><Left><Left>', {noremap = true, expr = false, silent = false})
+keymap('n', '<Esc><Esc><Esc>', ':nohlsearch<CR><Esc>', options)
 
-map("n", "<C-s>", [[ <Cmd> w <CR>]], opt)
--- vim.cmd("inoremap jh <Esc>")
+-- move lines:
+keymap('v', '<S-K>', ":m '<-2<CR>gv=gv", options)
+keymap('v', '<S-J>', ":m '>+1<CR>gv=gv", options)
+keymap('v', '<S-L>', '>gv', options)
+keymap('v', '<S-H>', '<gv', options)
+
+-- Better indenting
+keymap('v', '<TAB>', '>gv', options)
+keymap('v', '<S-TAB>', '<gv', options)
+
+-- Tab switch buffer
+keymap('n', '<TAB>', ':bnext<CR>', options)
+keymap('n', '<S-TAB>', ':bprevious<CR>', options)
+
+--  Quick window switching
+keymap('n', '<leader>j', '<C-w><C-j>', options)
+keymap('n', '<leader>k', '<C-w><C-k>', options)
+
+-- better window movement
+-- keymap('n', '<C-h>', '<C-w>h', {silent = true})
+-- keymap('n', '<C-j>', '<C-w>j', {silent = true})
+-- keymap('n', '<C-k>', '<C-w>k', {silent = true})
+-- keymap('n', '<C-l>', '<C-w>l', {silent = true})
