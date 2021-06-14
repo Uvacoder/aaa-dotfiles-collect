@@ -34,6 +34,7 @@ vim.cmd("colorscheme darcula-solid")
 if config.remove_bg then
   execute("hi! Normal      guibg="..config.colors.bg)
   execute("hi! SignColumn  guibg="..config.colors.bg)
+  execute("hi! StatusLine  guibg="..config.colors.bg)
   execute("hi! FoldColumn  guibg="..config.colors.bg)
   execute("hi! LineNr      guibg="..config.colors.bg)
   execute("hi! NonText     guibg="..config.colors.bg)

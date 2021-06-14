@@ -7,5 +7,14 @@ require("nvim-treesitter.configs").setup {
         enable = true,
         use_languagetree = true
   },
-  rainbow = {enable = true}
+  rainbow = {enable = true},
+  textobjects = {
+    lsp_interop = {
+      enable = true,
+      peek_definition_code = {
+        ["df"] = "@function.outer",
+        ["dF"] = "@class.outer",
+      },
+    },
+  }
 }

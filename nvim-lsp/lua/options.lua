@@ -54,6 +54,10 @@ vim.o.wildignorecase = true
 vim.o.undofile = true
 vim.o.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")
 
+vim.o.foldlevel = 99
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+
 if vim.fn.isdirectory(vim.o.undodir) == 0 then
   vim.fn.mkdir(vim.o.undodir, "p")
 end

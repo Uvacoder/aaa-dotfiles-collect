@@ -16,7 +16,7 @@ return require("packer").startup({
 
     use {
       "kyazdani42/nvim-web-devicons",
-      config = [[ require("config.web-devicons") ]],
+      config = 'require("config.web-devicons")',
     }
     
     use "nvim-lua/popup.nvim"
@@ -28,10 +28,11 @@ return require("packer").startup({
     use {
       "nvim-treesitter/nvim-treesitter", 
       run = ":TSUpdate",
-      config = [[ require("config.treesitter") ]],
+      config = 'require("config.treesitter")',
       requires = {
         "p00f/nvim-ts-rainbow",
-        { "sheerun/vim-polyglot", config = [[ vim.g.vue_pre_processors = {} ]] }
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        { "sheerun/vim-polyglot", config = 'vim.g.vue_pre_processors = {}' }
       }
     }
 
@@ -43,69 +44,56 @@ return require("packer").startup({
       -- 'folke/tokyonight.nvim',
       -- 'rafalbromirski/vim-aurora',
       "dobbbri/darcula-solid.nvim", requires = "rktjmp/lush.nvim",
-      config = [[ require("config.colorscheme") ]]
+      config = 'require("config.colorscheme")'
     }
 
     use {
       "norcalli/nvim-colorizer.lua",
-      config = [[ require("config.colorizer")]]
+      config = 'require("config.colorizer")'
     }
 
     use {
       "kyazdani42/nvim-tree.lua",
-      config = [[ require("config.tree") ]]
+      config = 'require("config.tree")'
     }
 
     use {
       "nvim-telescope/telescope.nvim",
-      config = [[ require("config.telescope") ]],
+      config = 'require("config.telescope")',
       requires = "nvim-telescope/telescope-fzy-native.nvim"
     }
 
     use {
       "lewis6991/gitsigns.nvim",
-      config = [[ require("config.git") ]]
+      config = 'require("config.git")'
     }
 
     use {
       "neovim/nvim-lspconfig",
-      config = [[ require("config.lsp-config") ]],
+      config = 'require("config.lsp.config")',
       requires = "kabouzeid/nvim-lspinstall"
     }
     
     use {
       "hrsh7th/nvim-compe",
-      config = [[ require("config.compe") ]]
+      config = 'require("config.lsp.compe")'
     }
     
     use "onsails/lspkind-nvim"
 
     use {
       "lukas-reineke/format.nvim",
-      config = [[ require("config.format") ]]
+      config = 'require("config.lsp.format")'
     }
-
-
-    -- use { 
-    --   "neoclide/coc.nvim", branch = "release",
-    --   config = [[ require("config.coc") ]]
-    -- }
-    
-    -- use{'rodrigore/coc-tailwind-intellisense', run = 'npm install'}
-  
-    -- use {
-    --   "dense-analysis/ale",
-    --   config = [[ require("config.ale") ]]
-    -- }
 
     use {
       'akinsho/nvim-toggleterm.lua',
-      config= [[ require('config.toggle-term') ]]
+      config= 'require("config.toggle-term")'
     }
 
     use {
       "windwp/nvim-autopairs",
-      config = [[ require("config.autopairs") ]]
+      config = 'require("config.autopairs")'
     }
 
     use { "mg979/vim-visual-multi", branch = "master" }
@@ -114,20 +102,15 @@ return require("packer").startup({
     use "hrsh7th/vim-vsnip"
     use "rafamadriz/friendly-snippets"
 
-    -- use {
-    --   "hoob3rt/lualine.nvim",
-    --   config = [[ require("config.lualine") ]]
-    -- }
-
     use {
       'glepnir/galaxyline.nvim', branch = 'main',
-      config = [[ require("config.galaxy-line") ]]
+      config = 'require("config.aeroline")'
     }
 
     use {
       "mbbill/undotree",
       cmd = "UndotreeToggle",
-      config = [[ vim.g.undotree_SetFocusWhenToggle = 1 ]]
+      config = 'vim.g.undotree_SetFocusWhenToggle = 1'
     }
 
     use {
@@ -137,7 +120,13 @@ return require("packer").startup({
 
     use {
       'terrortylor/nvim-comment', 
-      config = "require('nvim_comment').setup()"
+      config = 'require("nvim_comment").setup()'
     }
+
+  use {
+    'NTBBloodbath/rest.nvim',
+    requires = { 'nvim-lua/plenary.nvim' }
+  }
+
   end
 })
