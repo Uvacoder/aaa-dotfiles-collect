@@ -104,7 +104,7 @@ return require("packer").startup({
 
     use {
       'glepnir/galaxyline.nvim', branch = 'main',
-      config = 'require("config.aeroline")'
+      config = 'require("config.galaxy-line")'
     }
 
     use {
