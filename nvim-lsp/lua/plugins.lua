@@ -41,9 +41,9 @@ return require("packer").startup({
       -- "marko-cerovac/material.nvim",
       -- "joshdick/onedark.vim", 
       -- "sliminality/wild-cherry-vim",
-      -- 'folke/tokyonight.nvim',
+      'folke/tokyonight.nvim',
       -- 'rafalbromirski/vim-aurora',
-      "dobbbri/darcula-solid.nvim", requires = "rktjmp/lush.nvim",
+      -- "dobbbri/darcula-solid.nvim", requires = "rktjmp/lush.nvim",
       config = 'require("config.colorscheme")'
     }
 
@@ -79,7 +79,10 @@ return require("packer").startup({
       config = 'require("config.lsp.compe")'
     }
     
-    use "onsails/lspkind-nvim"
+    -- use {
+    --   "onsails/lspkind-nvim",
+    --   config = 'require("lspkind").init()'
+    -- }
 
     use {
       "lukas-reineke/format.nvim",

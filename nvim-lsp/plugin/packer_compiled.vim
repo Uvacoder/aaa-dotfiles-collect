@@ -72,11 +72,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["darcula-solid.nvim"] = {
-    config = { 'require("config.colorscheme")' },
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/darcula-solid.nvim"
-  },
   ["editorconfig-vim"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
@@ -91,7 +86,7 @@ _G.packer_plugins = {
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/friendly-snippets"
   },
   ["galaxyline.nvim"] = {
-    config = { 'require("config.aeroline")' },
+    config = { 'require("config.galaxy-line")' },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
@@ -104,14 +99,6 @@ _G.packer_plugins = {
     config = { 'require("config.indent-guides")' },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
-  },
-  ["lspkind-nvim"] = {
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
-  },
-  ["lush.nvim"] = {
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/lush.nvim"
   },
   ["nvim-autopairs"] = {
     config = { 'require("config.autopairs")' },
@@ -196,6 +183,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  ["tokyonight.nvim"] = {
+    config = { 'require("config.colorscheme")' },
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/tokyonight.nvim"
+  },
   undotree = {
     commands = { "UndotreeToggle" },
     config = { "vim.g.undotree_SetFocusWhenToggle = 1" },
@@ -227,14 +219,42 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: darcula-solid.nvim
-time([[Config for darcula-solid.nvim]], true)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require("config.lsp.config")
+time([[Config for nvim-lspconfig]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require("config.git")
+time([[Config for gitsigns.nvim]], false)
+-- Config for: vim-polyglot
+time([[Config for vim-polyglot]], true)
+vim.g.vue_pre_processors = {}
+time([[Config for vim-polyglot]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+require("config.indent-guides")
+time([[Config for indent-blankline.nvim]], false)
+-- Config for: nvim-toggleterm.lua
+time([[Config for nvim-toggleterm.lua]], true)
+require("config.toggle-term")
+time([[Config for nvim-toggleterm.lua]], false)
+-- Config for: nvim-compe
+time([[Config for nvim-compe]], true)
+require("config.lsp.compe")
+time([[Config for nvim-compe]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require("config.tree")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: tokyonight.nvim
+time([[Config for tokyonight.nvim]], true)
 require("config.colorscheme")
-time([[Config for darcula-solid.nvim]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-require("config.autopairs")
-time([[Config for nvim-autopairs]], false)
+time([[Config for tokyonight.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require("config.treesitter")
+time([[Config for nvim-treesitter]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require("config.telescope")
@@ -251,46 +271,18 @@ time([[Config for format.nvim]], false)
 time([[Config for nvim-comment]], true)
 require("nvim_comment").setup()
 time([[Config for nvim-comment]], false)
--- Config for: vim-polyglot
-time([[Config for vim-polyglot]], true)
-vim.g.vue_pre_processors = {}
-time([[Config for vim-polyglot]], false)
--- Config for: nvim-compe
-time([[Config for nvim-compe]], true)
-require("config.lsp.compe")
-time([[Config for nvim-compe]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require("config.git")
-time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require("config.lsp.config")
-time([[Config for nvim-lspconfig]], false)
--- Config for: galaxyline.nvim
-time([[Config for galaxyline.nvim]], true)
-require("config.aeroline")
-time([[Config for galaxyline.nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-require("config.indent-guides")
-time([[Config for indent-blankline.nvim]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+require("config.autopairs")
+time([[Config for nvim-autopairs]], false)
 -- Config for: nvim-web-devicons
 time([[Config for nvim-web-devicons]], true)
 require("config.web-devicons")
 time([[Config for nvim-web-devicons]], false)
--- Config for: nvim-toggleterm.lua
-time([[Config for nvim-toggleterm.lua]], true)
-require("config.toggle-term")
-time([[Config for nvim-toggleterm.lua]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require("config.treesitter")
-time([[Config for nvim-treesitter]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require("config.tree")
-time([[Config for nvim-tree.lua]], false)
+-- Config for: galaxyline.nvim
+time([[Config for galaxyline.nvim]], true)
+require("config.galaxy-line")
+time([[Config for galaxyline.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)

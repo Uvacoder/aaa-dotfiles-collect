@@ -51,3 +51,5 @@ keymap('n', '<leader>k', '<C-w><C-k>', options)
 -- keymap('n', '<C-j>', '<C-w>j', {silent = true})
 -- keymap('n', '<C-k>', '<C-w>k', {silent = true})
 -- keymap('n', '<C-l>', '<C-w>l', {silent = true})
+
+keymap("n", "<C-r>", "<Plug>RestNvim", {noremap = false})
