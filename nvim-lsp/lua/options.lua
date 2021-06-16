@@ -1,5 +1,5 @@
 local shiftwidth = 2
-
+vim.g.colorcolumn = {"+1"}
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -45,8 +45,17 @@ vim.o.completeopt = "menuone,noinsert,noselect,preview"
 vim.o.shell = "/bin/zsh"
 vim.o.errorformat = "%A%f:%l:%c:%m,%-G%.%#"
 vim.o.showbreak = '﬌ '
-vim.o.fillchars = "vert: ,eob: " -- make vertical split sign better
-vim.o.foldmethod = "marker" -- foldmethod using marker
+-- vim.o.fillchars = "vert: ,eob: " -- make vertical split sign better
+vim.opt.fillchars = {
+  vert = " ", -- alternatives ▕│
+  fold = " ",
+  eob = " ", -- suppress ~ at EndOfBuffer
+  diff = "╱", -- alternatives = ⣿ ░ ─
+  msgsep = "‾",
+  foldopen = "▾",
+  foldsep = "│",
+  foldclose = "▸"
+}
 vim.o.inccommand = "split" -- incrementally show result of command
 vim.o.wildignore = "*/.git/*,*/.DS_Store,dist,*.o,*~,package-lock.json"
 vim.o.listchars = "tab:→ ,nbsp:␣,trail:•,precedes:«,extends:»"
@@ -55,6 +64,7 @@ vim.o.undofile = true
 vim.o.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")
 
 vim.o.foldlevel = 99
+-- vim.o.foldmethod = "marker" -- foldmethod using marker
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 

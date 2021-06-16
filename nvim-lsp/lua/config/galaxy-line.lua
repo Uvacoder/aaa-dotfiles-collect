@@ -6,7 +6,7 @@ gl.short_line_list = {'NvimTree','vista','dbui','packer'}
 
 gls.left[1] = {
   RainbowRed = {
-    provider = function() return '▊ ' end,
+    provider = function() return 'ﰙ ' end,
     highlight = {colors.blue,'NONE'}
   },
 }
@@ -23,7 +23,7 @@ gls.left[2] = {
                           rm = colors.cyan, ['r?'] = colors.cyan,
                           ['!']  = colors.red,t = colors.red}
       vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim.fn.mode()])
-      return '  '
+      return '  '
     end,
     highlight = {colors.red,'NONE','bold'},
   },
@@ -111,7 +111,7 @@ gls.mid[1] = {
       return true
     end,
     icon = '   ',
-    highlight = {colors.cyan,'NONE','bold'}
+    highlight = {colors.fg,'NONE','bold'}
   }
 }
 
@@ -131,7 +131,7 @@ gls.right[2] = {
     condition = condition.hide_in_width,
     separator = ' ',
     separator_highlight = {'NONE','NONE'},
-    highlight = {colors.green,'NONE','bold'}
+    highlight = {colors.fg,'NONE','bold'}
   }
 }
 
@@ -182,7 +182,7 @@ gls.right[7] = {
 
 gls.right[8] = {
   RainbowBlue = {
-    provider = function() return ' ▊' end,
+    provider = function() return ' ﰙ' end,
     highlight = {colors.blue,'NONE'}
   },
 }

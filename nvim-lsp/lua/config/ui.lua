@@ -25,18 +25,16 @@ local config = {
 -- vim.g.material_borders = false 
 -- require("material").set()
 
--- vim.g.onedark_terminal_italics = 2
--- vim.cmd("colorscheme onedark")
-
 -- vim.cmd("colorscheme wildcherry")
 
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_transparent = true
-vim.cmd("colorscheme tokyonight")
 
 -- vim.cmd("colorscheme aurora")
 
 -- vim.cmd("colorscheme darcula-solid")
+
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_transparent = true
+vim.cmd("colorscheme tokyonight")
 
 if config.remove_bg then
   execute("hi! Normal      guibg="..config.colors.bg)

@@ -3,18 +3,31 @@ require("nvim-treesitter.configs").setup {
     "css", "lua", "html", "bash", "vue", "javascript", "json", 
     "graphql", "php", "ruby", "typescript", "regex", "jsonc" 
   },
-  highlight = {
-        enable = true,
-        use_languagetree = true
-  },
   rainbow = {enable = true},
+  highlight = {
+    enable = true,
+    language_tree = true
+  },
+  indent = {
+    enable = true
+  },
+  refactor = {
+    highlight_definitions = {
+      enable = true
+    }
+  },
+  autotag = {
+    enable = true
+  },
   textobjects = {
-    lsp_interop = {
+    select = {
       enable = true,
-      peek_definition_code = {
-        ["df"] = "@function.outer",
-        ["dF"] = "@class.outer",
-      },
-    },
+      keymaps = {
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner"
+      }
+    }
   }
 }

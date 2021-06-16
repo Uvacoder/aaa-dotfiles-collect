@@ -31,7 +31,9 @@ return require("packer").startup({
       config = 'require("config.treesitter")',
       requires = {
         "p00f/nvim-ts-rainbow",
+        "nvim-treesitter/nvim-treesitter-refactor",
         "nvim-treesitter/nvim-treesitter-textobjects",
+        "windwp/nvim-ts-autotag",
         { "sheerun/vim-polyglot", config = 'vim.g.vue_pre_processors = {}' }
       }
     }
@@ -39,12 +41,11 @@ return require("packer").startup({
     use {
       -- "mhartington/oceanic-next",
       -- "marko-cerovac/material.nvim",
-      -- "joshdick/onedark.vim", 
       -- "sliminality/wild-cherry-vim",
-      'folke/tokyonight.nvim',
       -- 'rafalbromirski/vim-aurora',
       -- "dobbbri/darcula-solid.nvim", requires = "rktjmp/lush.nvim",
-      config = 'require("config.colorscheme")'
+      'folke/tokyonight.nvim',
+      config = 'require("config.ui")'
     }
 
     use {
