@@ -152,5 +152,7 @@ return require("packer").startup({
     requires = { 'nvim-lua/plenary.nvim' }
   }
 
+  use 'Jorengarenar/vim-MvVis'
+
   end
 })

@@ -28,16 +28,6 @@ keymap('i', '<C-c>', '<esc>', options)
 keymap('n', '<C-h>', ':%s///gcI<Left><Left><Left><Left><Left>', {noremap = true, expr = false, silent = false})
 keymap('n', '<Esc><Esc><Esc>', ':nohlsearch<CR><Esc>', options)
 
--- move lines:
-keymap('v', '<S-K>', ":m '<-2<CR>gv=gv", options)
-keymap('v', '<S-J>', ":m '>+1<CR>gv=gv", options)
-keymap('v', '<S-L>', '>gv', options)
-keymap('v', '<S-H>', '<gv', options)
-
--- Better indenting
-keymap('v', '<TAB>', '>gv', options)
-keymap('v', '<S-TAB>', '<gv', options)
-
 -- Tab switch buffer
 keymap('n', '<TAB>', ':bnext<CR>', options)
 keymap('n', '<S-TAB>', ':bprevious<CR>', options)
@@ -45,12 +35,6 @@ keymap('n', '<S-TAB>', ':bprevious<CR>', options)
 --  Quick window switching
 keymap('n', '<leader>j', '<C-w><C-j>', options)
 keymap('n', '<leader>k', '<C-w><C-k>', options)
-
--- better window movement
--- keymap('n', '<C-h>', '<C-w>h', {silent = true})
--- keymap('n', '<C-j>', '<C-w>j', {silent = true})
--- keymap('n', '<C-k>', '<C-w>k', {silent = true})
--- keymap('n', '<C-l>', '<C-w>l', {silent = true})
 
 -- Trouble
 keymap("n", "<leader>xx", "<cmd>Trouble<cr>", options)
