@@ -52,4 +52,13 @@ keymap('n', '<leader>k', '<C-w><C-k>', options)
 -- keymap('n', '<C-k>', '<C-w>k', {silent = true})
 -- keymap('n', '<C-l>', '<C-w>l', {silent = true})
 
+-- Trouble
+keymap("n", "<leader>xx", "<cmd>Trouble<cr>", options)
+keymap("n", "<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<cr>", options)
+keymap("n", "<leader>xd", "<cmd>Trouble lsp_document_diagnostics<cr>", options)
+keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", options)
+keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", options)
+keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", options)
+
+-- RestNvim
 keymap("n", "<C-r>", "<Plug>RestNvim", {noremap = false})

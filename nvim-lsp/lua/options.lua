@@ -1,5 +1,5 @@
 local shiftwidth = 2
-vim.g.colorcolumn = {"+1"}
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 

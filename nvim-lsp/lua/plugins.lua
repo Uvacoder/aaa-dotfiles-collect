@@ -37,17 +37,31 @@ return require("packer").startup({
         { "sheerun/vim-polyglot", config = 'vim.g.vue_pre_processors = {}' }
       }
     }
-
+    
     use {
-      -- "mhartington/oceanic-next",
-      -- "marko-cerovac/material.nvim",
-      -- "sliminality/wild-cherry-vim",
-      -- 'rafalbromirski/vim-aurora',
-      -- "dobbbri/darcula-solid.nvim", requires = "rktjmp/lush.nvim",
-      'folke/tokyonight.nvim',
-      config = 'require("config.ui")'
+      'lewis6991/spellsitter.nvim',
+      config = "require('config.spellsitter')"
     }
 
+    -- use {
+    --   'folke/tokyonight.nvim',
+    --   config = function()
+    --     vim.g.tokyonight_style = "night"
+    --     vim.g.tokyonight_transparent = true
+    --     vim.cmd("colorscheme tokyonight")
+    --   end
+    -- }
+
+    use {
+      'rafalbromirski/vim-aurora',
+      config = 'vim.cmd("colorscheme aurora")'
+    }
+
+--     use {
+--       "dobbbri/darcula-solid.nvim", requires = "rktjmp/lush.nvim",
+--       config = 'vim.cmd("colorscheme darcula-solid")'
+--     }
+    
     use {
       "norcalli/nvim-colorizer.lua",
       config = 'require("config.colorizer")'
@@ -78,6 +92,12 @@ return require("packer").startup({
     use {
       "hrsh7th/nvim-compe",
       config = 'require("config.lsp.compe")'
+    }
+     
+    use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = 'require("config.trouble")'
     }
     
     -- use {

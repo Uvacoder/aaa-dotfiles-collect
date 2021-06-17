@@ -1,3 +1,4 @@
+local execute = vim.api.nvim_exec
 local cmd = vim.cmd
 
 cmd(':command! WQ wq')
@@ -14,7 +15,7 @@ cmd("autocmd InsertLeave * set nocul")
 cmd("autocmd FocusLost * silent! :wa!")
 cmd("autocmd TermOpen * setlocal signcolumn=no nonumber norelativenumber")
 
-vim.api.nvim_exec([[
+execute([[
   augroup numbertoggle
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
@@ -22,11 +23,9 @@ vim.api.nvim_exec([[
   augroup END
 ]], "")
 
-
--- vim.api.nvim_exec([[
---   augroup vimrc
---     au BufReadPre * setlocal foldmethod=indent
---     au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
---   augroup END
--- ]], "")
-
+execute([[
+  augroup updateColors
+    autocmd!
+    autocmd ColorScheme * lua require('config.colors').myColors()
+  augroup END
+]], "")

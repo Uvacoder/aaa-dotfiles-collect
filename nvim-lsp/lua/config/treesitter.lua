@@ -4,20 +4,15 @@ require("nvim-treesitter.configs").setup {
     "graphql", "php", "ruby", "typescript", "regex", "jsonc" 
   },
   rainbow = {enable = true},
+  indent = { enable = true },
+  autotag = { enable = true },
   highlight = {
     enable = true,
     language_tree = true
   },
-  indent = {
-    enable = true
-  },
   refactor = {
-    highlight_definitions = {
-      enable = true
-    }
-  },
-  autotag = {
-    enable = true
+    highlight_current_scope = { enable = false },
+    highlight_definitions = { enable = true }
   },
   textobjects = {
     select = {

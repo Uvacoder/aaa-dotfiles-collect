@@ -1,6 +1,88 @@
 local gl = require('galaxyline')
-local colors = require('galaxyline.theme').default
+local colors =  {
+  bg = '#202328',
+  fg = '#C1C7F6',
+  yellow = '#ECBE7B',
+  cyan = '#55DCCA',
+  darkblue = '#081633',
+  green = '#90D36A',
+  orange = '#FF995A',
+  violet = '#A56ED8',
+  magenta = '#c678dd',
+  blue = '#7A9BF9';
+  red = '#D70000';
+}
+
 local condition = require('galaxyline.condition')
+
+local mode_colors = {
+  n = colors.red, 
+  no = colors.red,
+  i = colors.green,
+  ic = colors.yellow,
+  v = colors.blue,
+  [''] = colors.blue,
+  V = colors.blue,
+  c = colors.magenta,
+  ce =colors.red, 
+  s = colors.orange,
+  S = colors.orange,
+  [''] = colors.orange,
+  r = colors.cyan,
+  R = colors.violet,
+  Rv = colors.violet,
+  cv = colors.red,
+  rm = colors.cyan, 
+  ['r?'] = colors.cyan,
+  ['!']  = colors.red,
+  t = colors.red
+}
+
+local mode_icons = {
+  n = "    ", 
+  no = "    ",
+  i = "    ",
+  ic = "    ",
+  v = "    ",
+  [''] = "    ",
+  V = "    ",
+  c = "  גּ  ",
+  ce ="    ", 
+  s = "  礪 ",
+  S = "  礪 ",
+  [''] = "  礪 ",
+  r =  "    ",
+  R =  "    ",
+  Rv = "    ",
+  cv = "    ",
+  rm = "     ", 
+  ['r?'] = "    ",
+  ['!']  = "    ",
+  t = "    "
+}
+
+-- local mode_map = {
+--   ['n'] = 'normal ',
+--   ['no'] = 'n·operator pending ',
+--   ['v'] = 'visual ',
+--   ['V'] = 'v·line ',
+--   [''] = 'v·block ',
+--   ['s'] = 'select ',
+--   ['S'] = 's·line ',
+--   [''] = 's·block ',
+--   ['i'] = 'insert ',
+--   ['R'] = 'replace ',
+--   ['Rv'] = 'v·replace ',
+--   ['c'] = 'command ',
+--   ['cv'] = 'vim ex ',
+--   ['ce'] = 'ex ',
+--   ['r'] = 'prompt ',
+--   ['rm'] = 'more ',
+--   ['r?'] = 'confirm ',
+--   ['!'] = 'shell ',
+--   ['t'] = 'terminal '
+-- }
+
 local gls = gl.section
 gl.short_line_list = {'NvimTree','vista','dbui','packer'}
 
@@ -10,24 +92,19 @@ gls.left[1] = {
     highlight = {colors.blue,'NONE'}
   },
 }
+
 gls.left[2] = {
   ViMode = {
     provider = function()
-      -- auto change color according the vim mode
-      local mode_color = {n = colors.red, i = colors.green,v=colors.blue,
-                          [''] = colors.blue,V=colors.blue,
-                          c = colors.magenta,no = colors.red,s = colors.orange,
-                          S=colors.orange,[''] = colors.orange,
-                          ic = colors.yellow,R = colors.violet,Rv = colors.violet,
-                          cv = colors.red,ce=colors.red, r = colors.cyan,
-                          rm = colors.cyan, ['r?'] = colors.cyan,
-                          ['!']  = colors.red,t = colors.red}
-      vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim.fn.mode()])
-      return '  '
+	    local modeIcon	= mode_icons[vim.fn.mode()]
+	    local modeColor = mode_colors[vim.fn.mode()]
+      vim.api.nvim_command('hi GalaxyViMode guifg='..modeColor)
+      return modeIcon
     end,
     highlight = {colors.red,'NONE','bold'},
   },
 }
+
 gls.left[3] = {
   FileSize = {
     provider = 'FileSize',

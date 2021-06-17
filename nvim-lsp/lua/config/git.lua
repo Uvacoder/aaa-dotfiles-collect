@@ -1,3 +1,5 @@
+local keymap = vim.api.nvim_set_keymap
+
 require("gitsigns").setup({
   signs = {
     add = {hl = "DiffAdd", text = "▏", numhl="GitSignsAddNr"},
@@ -8,8 +10,6 @@ require("gitsigns").setup({
   },
   sign_priority = 5,
 })
-
-local keymap = vim.api.nvim_set_keymap
 
 keymap("n", "<Leader>gg", ":Gstatus<CR>", {})
 keymap("n", "<Leader>gb", ":GBranches<CR>", {})
