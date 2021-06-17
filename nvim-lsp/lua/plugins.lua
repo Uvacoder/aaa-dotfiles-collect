@@ -43,19 +43,19 @@ return require("packer").startup({
       config = "require('config.spellsitter')"
     }
 
-    -- use {
-    --   'folke/tokyonight.nvim',
-    --   config = function()
-    --     vim.g.tokyonight_style = "night"
-    --     vim.g.tokyonight_transparent = true
-    --     vim.cmd("colorscheme tokyonight")
-    --   end
-    -- }
-
     use {
-      'rafalbromirski/vim-aurora',
-      config = 'vim.cmd("colorscheme aurora")'
+      'folke/tokyonight.nvim',
+      config = function()
+        vim.g.tokyonight_style = "night"
+        vim.g.tokyonight_transparent = true
+        vim.cmd("colorscheme tokyonight")
+      end
     }
+
+    -- use {
+    --   'rafalbromirski/vim-aurora',
+    --   config = 'vim.cmd("colorscheme aurora")'
+    -- }
 
 --     use {
 --       "dobbbri/darcula-solid.nvim", requires = "rktjmp/lush.nvim",
