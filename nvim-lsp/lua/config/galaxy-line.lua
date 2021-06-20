@@ -105,14 +105,7 @@ gls.left[2] = {
   },
 }
 
-gls.left[3] = {
-  FileSize = {
-    provider = 'FileSize',
-    condition = condition.buffer_not_empty,
-    highlight = {colors.fg,'NONE'}
-  }
-}
-gls.left[4] ={
+gls.left[3] ={
   FileIcon = {
     provider = 'FileIcon',
     condition = condition.buffer_not_empty,
@@ -120,11 +113,19 @@ gls.left[4] ={
   },
 }
 
-gls.left[5] = {
+gls.left[4] = {
   FileName = {
     provider = 'FileName',
     condition = condition.buffer_not_empty,
     highlight = {colors.magenta,'NONE','bold'}
+  }
+}
+
+gls.left[5] = {
+  FileSize = {
+    provider = 'FileSize',
+    condition = condition.buffer_not_empty,
+    highlight = {colors.fg,'NONE'}
   }
 }
 

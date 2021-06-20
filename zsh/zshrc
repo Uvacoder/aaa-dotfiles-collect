@@ -7,7 +7,11 @@ export LANG="en_US.UTF-8"
 
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 export PATH="/usr/local/opt/node@14/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/node@14/lib"
+export CPPFLAGS="-I/usr/local/opt/node@14/include"
+
 # export PATH="/usr/local/Cellar/node/16.0.0/bin:$PATH"
 export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
@@ -23,7 +27,7 @@ ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 ZSH_DISABLE_COMPFIX="true"
-ZSH_THEME="muse"
+ZSH_THEME="avit"
 
 # source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

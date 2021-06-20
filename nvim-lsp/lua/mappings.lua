@@ -45,4 +45,4 @@ keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", options)
 keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", options)
 
 -- RestNvim
-keymap("n", "<C-r>", "<Plug>RestNvim", {noremap = false})
+keymap("n", "<C-a>", "<Plug>RestNvim", {noremap = false})
