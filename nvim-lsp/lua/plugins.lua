@@ -13,146 +13,56 @@ vim.cmd("autocmd BufWritePost plugins.lua PackerCompile")
 return require("packer").startup({
   function()
     use { "wbthomason/packer.nvim", opt = true }
+    use { "nvim-lua/popup.nvim" }
+    use { "nvim-lua/plenary.nvim" }
+    use { "tpope/vim-commentary" }
+    use { "editorconfig/editorconfig-vim" }
+    use { "kyazdani42/nvim-web-devicons", config = 'require("config.web-devicons")' }
+    use { "norcalli/nvim-colorizer.lua", config = "require('config.colorizer')" }
+    use { "kyazdani42/nvim-tree.lua", config = "require('config.tree')" }
+    use { "lewis6991/gitsigns.nvim", config = "require('config.git')" }
+    use { "akinsho/nvim-toggleterm.lua", config= "require('config.toggle-term')" }
+    use { "windwp/nvim-autopairs", config = "require('config.autopairs')" }
+    use { "mg979/vim-visual-multi", branch = "master" }
+    use { "glepnir/galaxyline.nvim", branch = "main", config = "require('config.galaxy-line')" }
+    use { "mbbill/undotree", cmd = "UndotreeToggle", config = "vim.g.undotree_SetFocusWhenToggle = 1" }
+    use { "lukas-reineke/indent-blankline.nvim", branch = "lua", config = "require('config.indent-guides')" }
+    use { "terrortylor/nvim-comment",  config = "require('nvim_comment').setup()" }
+    -- use { 'NTBBloodbath/rest.nvim' }
 
-    use {
-      "kyazdani42/nvim-web-devicons",
-      config = 'require("config.web-devicons")',
-    }
+    -- treesitter
+    use { "p00f/nvim-ts-rainbow" }
+    use { "windwp/nvim-ts-autotag" }
+    use { "nvim-treesitter/nvim-treesitter-refactor" }
+    use { "nvim-treesitter/nvim-treesitter-textobjects" }
+    use { "sheerun/vim-polyglot", config = "vim.g.vue_pre_processors = {}" }
+    use { "lewis6991/spellsitter.nvim", config = "require('config.spellsitter')" }
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = 'require("config.treesitter")' }
     
-    use "nvim-lua/popup.nvim"
-    use "nvim-lua/plenary.nvim"
-    use "tpope/vim-commentary"
-
-    use "editorconfig/editorconfig-vim"
-
-    use {
-      "nvim-treesitter/nvim-treesitter", 
-      run = ":TSUpdate",
-      config = 'require("config.treesitter")',
-      requires = {
-        "p00f/nvim-ts-rainbow",
-        "nvim-treesitter/nvim-treesitter-refactor",
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        "windwp/nvim-ts-autotag",
-        { "sheerun/vim-polyglot", config = 'vim.g.vue_pre_processors = {}' }
-      }
-    }
+    -- telescope
+    use { "nvim-telescope/telescope-fzy-native.nvim" }
+    use { "nvim-telescope/telescope.nvim", config = "require('config.telescope')" }
     
+    -- snippets
+    use { "hrsh7th/vim-vsnip" }
+    use { "rafamadriz/friendly-snippets" }
+    
+    -- lsp
+    use { "kabouzeid/nvim-lspinstall" } 
+    use { "neovim/nvim-lspconfig", config = "require('config.lsp.config')" }
+    use { "hrsh7th/nvim-compe", config = "require('config.lsp.compe')" }
+    use { "lukas-reineke/format.nvim", config = "require('config.lsp.format')" }
+    use { "folke/trouble.nvim", config = "require('config.lsp.trouble')" }
+    
+    -- colorscheme
     use {
-      'lewis6991/spellsitter.nvim',
-      config = "require('config.spellsitter')"
-    }
-
-    use {
-      'folke/tokyonight.nvim',
+      "folke/tokyonight.nvim",
       config = function()
         vim.g.tokyonight_style = "night"
         vim.g.tokyonight_transparent = true
         vim.cmd("colorscheme tokyonight")
       end
     }
-
-    -- use {
-    --   'rafalbromirski/vim-aurora',
-    --   config = 'vim.cmd("colorscheme aurora")'
-    -- }
-
---     use {
---       "dobbbri/darcula-solid.nvim", requires = "rktjmp/lush.nvim",
---       config = 'vim.cmd("colorscheme darcula-solid")'
---     }
-    
-    use {
-      "norcalli/nvim-colorizer.lua",
-      config = 'require("config.colorizer")'
-    }
-
-    use {
-      "kyazdani42/nvim-tree.lua",
-      config = 'require("config.tree")'
-    }
-
-    use {
-      "nvim-telescope/telescope.nvim",
-      config = 'require("config.telescope")',
-      requires = "nvim-telescope/telescope-fzy-native.nvim"
-    }
-
-    use {
-      "lewis6991/gitsigns.nvim",
-      config = 'require("config.git")'
-    }
-
-    use {
-      "neovim/nvim-lspconfig",
-      config = 'require("config.lsp.config")',
-      requires = "kabouzeid/nvim-lspinstall"
-    }
-    
-    use {
-      "hrsh7th/nvim-compe",
-      config = 'require("config.lsp.compe")'
-    }
-     
-    use {
-      "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
-      config = 'require("config.trouble")'
-    }
-    
-    -- use {
-    --   "onsails/lspkind-nvim",
-    --   config = 'require("lspkind").init()'
-    -- }
-
-    use {
-      "lukas-reineke/format.nvim",
-      config = 'require("config.lsp.format")'
-    }
-
-    use {
-      'akinsho/nvim-toggleterm.lua',
-      config= 'require("config.toggle-term")'
-    }
-
-    use {
-      "windwp/nvim-autopairs",
-      config = 'require("config.autopairs")'
-    }
-
-    use { "mg979/vim-visual-multi", branch = "master" }
-
-    use "honza/vim-snippets"
-    use "hrsh7th/vim-vsnip"
-    use "rafamadriz/friendly-snippets"
-
-    use {
-      'glepnir/galaxyline.nvim', branch = 'main',
-      config = 'require("config.galaxy-line")'
-    }
-
-    use {
-      "mbbill/undotree",
-      cmd = "UndotreeToggle",
-      config = 'vim.g.undotree_SetFocusWhenToggle = 1'
-    }
-
-    use {
-      "lukas-reineke/indent-blankline.nvim", branch = "lua",
-      config = 'require("config.indent-guides")'
-    }
-
-    use {
-      'terrortylor/nvim-comment', 
-      config = 'require("nvim_comment").setup()'
-    }
-
-  use {
-    'NTBBloodbath/rest.nvim',
-    requires = { 'nvim-lua/plenary.nvim' }
-  }
-
-  use 'Jorengarenar/vim-MvVis'
 
   end
 })

@@ -6,7 +6,8 @@ require("format").setup{
         {cmd = {"./node_modules/.bin/prettier -w", "./node_modules/.bin/eslint --fix"}}
     },
     vue = {
-        {cmd = {"./node_modules/.bin/prettier -w"}}
+        {cmd = {"./node_modules/.bin/prettier -w", "./node_modules/.bin/eslint --fix"}}
+        -- {cmd = {"./node_modules/.bin/prettier -w"}}
     },
     css = {
         {cmd = {"./node_modules/.bin/prettier -w"}}

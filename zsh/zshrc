@@ -92,7 +92,8 @@ alias dot="cd $HOME/.dotfiles"
 
 
 # Sites
-
+alias sm="cd /Volumes/Sites/site-modelo-2021 && clear"
+alias mp="cd /Volumes/Sites/my-project && clear"
 alias anp="cd /Volumes/Sites/agua_nova_piscinas && clear"
 alias r3c="cd /Volumes/Sites/rancho_tres_coracoes_2019 && clear"
 alias q1s="cd /Volumes/Sites/quero1site_2020 && clear"

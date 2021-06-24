@@ -28,6 +28,16 @@ keymap('i', '<C-c>', '<esc>', options)
 keymap('n', '<C-h>', ':%s///gcI<Left><Left><Left><Left><Left>', {noremap = true, expr = false, silent = false})
 keymap('n', '<Esc><Esc><Esc>', ':nohlsearch<CR><Esc>', options)
 
+-- move lines:
+keymap('v', '<S-K>', ":m '<-2<CR>gv=gv", options)
+keymap('v', '<S-J>', ":m '>+1<CR>gv=gv", options)
+keymap('v', '<S-L>', '>gv', options)
+keymap('v', '<S-H>', '<gv', options)
+
+-- Better indenting
+keymap('v', '<TAB>', '>gv', options)
+keymap('v', '<S-TAB>', '<gv', options)
+
 -- Tab switch buffer
 keymap('n', '<TAB>', ':bnext<CR>', options)
 keymap('n', '<S-TAB>', ':bprevious<CR>', options)
