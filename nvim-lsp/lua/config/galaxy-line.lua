@@ -117,7 +117,7 @@ gls.left[4] = {
   FileName = {
     provider = 'FileName',
     condition = condition.buffer_not_empty,
-    highlight = {colors.magenta,'NONE','bold'}
+    highlight = {colors.yellow,'NONE','bold'}
   }
 }
 
@@ -178,20 +178,20 @@ gls.left[11] = {
   }
 }
 
-gls.mid[1] = {
-  ShowLspClient = {
-    provider = 'GetLspClient',
-    condition = function ()
-      local tbl = {['dashboard'] = true,['']=true}
-      if tbl[vim.bo.filetype] then
-        return false
-      end
-      return true
-    end,
-    icon = '   ',
-    highlight = {colors.fg,'NONE','bold'}
-  }
-}
+-- gls.mid[1] = {
+--   ShowLspClient = {
+--     provider = 'GetLspClient',
+--     condition = function ()
+--       local tbl = {['dashboard'] = true,['']=true}
+--       if tbl[vim.bo.filetype] then
+--         return false
+--       end
+--       return true
+--     end,
+--     icon = '   ',
+--     highlight = {colors.fg,'NONE','bold'}
+--   }
+-- }
 
 gls.right[1] = {
   FileEncode = {
