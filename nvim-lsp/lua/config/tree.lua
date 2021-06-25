@@ -1,4 +1,4 @@
-vim.g.nvim_tree_width = 35
+vim.g.nvim_tree_width = 50
 vim.g.nvim_tree_auto_close = 1
 vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_hide_dotfiles = 1
