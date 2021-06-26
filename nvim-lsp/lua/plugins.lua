@@ -35,7 +35,7 @@ return require("packer").startup({
     use { "windwp/nvim-ts-autotag" }
     use { "nvim-treesitter/nvim-treesitter-refactor" }
     use { "nvim-treesitter/nvim-treesitter-textobjects" }
-    -- use { "sheerun/vim-polyglot", config = "vim.g.vue_pre_processors = {}" }
+    use { "sheerun/vim-polyglot", config = "vim.g.vue_pre_processors = {}" }
     use { "lewis6991/spellsitter.nvim", config = "require('config.spellsitter')" }
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = 'require("config.treesitter")' }
     
@@ -45,10 +45,10 @@ return require("packer").startup({
     
     -- snippets
     use { "hrsh7th/vim-vsnip" }
-    use { "hrsh7th/vim-vsnip-integ" }
-    use { "rafamadriz/friendly-snippets" }
-    use { "sdras/vue-vscode-snippets" }
-    use { "prabirshrestha/vim-lsp" }
+    -- use { "hrsh7th/vim-vsnip-integ" }
+    -- use { "rafamadriz/friendly-snippets" }
+    -- use { "sdras/vue-vscode-snippets" }
+    -- use { "prabirshrestha/vim-lsp" }
     
     -- lsp
     use { "kabouzeid/nvim-lspinstall" } 

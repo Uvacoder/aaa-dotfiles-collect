@@ -81,6 +81,7 @@ cask_packages=(
   "postman"
   "forklift"
   "notion"
+  "responsively"
 )
 
 for package in "${cask_packages[@]}"

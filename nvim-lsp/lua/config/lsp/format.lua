@@ -3,11 +3,12 @@ require("format").setup{
         {cmd = {"sed -i 's/[ \t]*$//'"}} -- remove trailing whitespace
     },
     javascript = {
-        {cmd = {"./node_modules/.bin/prettier -w", "./node_modules/.bin/eslint --fix"}}
+        {cmd = {"./node_modules/.bin/prettier -w"}}
+        -- {cmd = {"./node_modules/.bin/prettier -w", "./node_modules/.bin/eslint --fix"}}
     },
     vue = {
-        {cmd = {"./node_modules/.bin/prettier -w", "./node_modules/.bin/eslint --fix"}}
-        -- {cmd = {"./node_modules/.bin/prettier -w"}}
+        {cmd = {"./node_modules/.bin/prettier -w"}}
+        -- {cmd = {"./node_modules/.bin/prettier -w", "./node_modules/.bin/eslint --fix"}}
     },
     css = {
         {cmd = {"./node_modules/.bin/prettier -w"}}
