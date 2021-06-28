@@ -40,13 +40,20 @@ end
 local function setup_servers()
     require "lspinstall".setup()
 
+    -- local langs = { 'vue', 'tailwindcss'}
+    -- require'lspinstall'.install_server(langs)
+    
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
+
     local lspconf = require("lspconfig")
     local servers = require "lspinstall".installed_servers()
-
+    
     for _, lang in pairs(servers) do
         if lang ~= "lua" then
             lspconf[lang].setup {
                 on_attach = on_attach,
+                capabilities = capabilities,
                 root_dir = vim.loop.cwd
             }
         end

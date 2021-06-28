@@ -76,6 +76,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
   },
+  ["emmet-vim"] = {
+    config = { 'require("config.emmet")' },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/opt/emmet-vim"
+  },
   ["format.nvim"] = {
     config = { "require('config.lsp.format')" },
     loaded = true,
@@ -91,10 +97,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
-  ["indent-blankline.nvim"] = {
+  indentLine = {
     config = { "require('config.indent-guides')" },
     loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/indentLine"
   },
   ["nvim-autopairs"] = {
     config = { "require('config.autopairs')" },
@@ -107,7 +113,7 @@ _G.packer_plugins = {
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-comment"] = {
-    config = { "require('nvim_comment').setup()" },
+    config = { "require('nvim_comment').setup({comment_empty = true})" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-comment"
   },
@@ -124,11 +130,6 @@ _G.packer_plugins = {
   ["nvim-lspinstall"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
-  },
-  ["nvim-toggleterm.lua"] = {
-    config = { "require('config.toggle-term')" },
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-toggleterm.lua"
   },
   ["nvim-tree.lua"] = {
     config = { "require('config.tree')" },
@@ -174,11 +175,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
-  ["spellsitter.nvim"] = {
-    config = { "require('config.spellsitter')" },
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/spellsitter.nvim"
-  },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
@@ -189,7 +185,7 @@ _G.packer_plugins = {
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
   ["tokyonight.nvim"] = {
-    config = { "\27LJ\2\nä\1\0\0\3\0\a\0\r6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\4\0006\0\0\0009\0\5\0'\2\6\0B\0\2\1K\0\1\0\27colorscheme tokyonight\bcmd\27tokyonight_transparent\nnight\21tokyonight_style\6g\bvim\0" },
+    config = { "\27LJ\2\n±\1\0\0\3\0\b\0\0176\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\4\0006\0\0\0009\0\1\0+\1\1\0=\1\5\0006\0\0\0009\0\6\0'\2\a\0B\0\2\1K\0\1\0\27colorscheme tokyonight\bcmd\27okyonight_dark_sidebar\27tokyonight_transparent\nnight\21tokyonight_style\6g\bvim\0" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/tokyonight.nvim"
   },
@@ -204,10 +200,6 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/opt/undotree"
-  },
-  ["vim-commentary"] = {
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-commentary"
   },
   ["vim-polyglot"] = {
     config = { "vim.g.vue_pre_processors = {}" },
@@ -229,80 +221,83 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-web-devicons]], true)
 require("config.web-devicons")
 time([[Config for nvim-web-devicons]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require('config.git')
-time([[Config for gitsigns.nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
+-- Config for: indentLine
+time([[Config for indentLine]], true)
 require('config.indent-guides')
-time([[Config for indent-blankline.nvim]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-require('config.autopairs')
-time([[Config for nvim-autopairs]], false)
--- Config for: spellsitter.nvim
-time([[Config for spellsitter.nvim]], true)
-require('config.spellsitter')
-time([[Config for spellsitter.nvim]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-require('config.colorizer')
-time([[Config for nvim-colorizer.lua]], false)
--- Config for: nvim-comment
-time([[Config for nvim-comment]], true)
-require('nvim_comment').setup()
-time([[Config for nvim-comment]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require('config.telescope')
-time([[Config for telescope.nvim]], false)
--- Config for: nvim-compe
-time([[Config for nvim-compe]], true)
-require('config.lsp.compe')
-time([[Config for nvim-compe]], false)
+time([[Config for indentLine]], false)
 -- Config for: tokyonight.nvim
 time([[Config for tokyonight.nvim]], true)
-try_loadstring("\27LJ\2\nä\1\0\0\3\0\a\0\r6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\4\0006\0\0\0009\0\5\0'\2\6\0B\0\2\1K\0\1\0\27colorscheme tokyonight\bcmd\27tokyonight_transparent\nnight\21tokyonight_style\6g\bvim\0", "config", "tokyonight.nvim")
+try_loadstring("\27LJ\2\n±\1\0\0\3\0\b\0\0176\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\4\0006\0\0\0009\0\1\0+\1\1\0=\1\5\0006\0\0\0009\0\6\0'\2\a\0B\0\2\1K\0\1\0\27colorscheme tokyonight\bcmd\27okyonight_dark_sidebar\27tokyonight_transparent\nnight\21tokyonight_style\6g\bvim\0", "config", "tokyonight.nvim")
 time([[Config for tokyonight.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('config.lsp.config')
-time([[Config for nvim-lspconfig]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-require('config.lsp.trouble')
-time([[Config for trouble.nvim]], false)
--- Config for: nvim-toggleterm.lua
-time([[Config for nvim-toggleterm.lua]], true)
-require('config.toggle-term')
-time([[Config for nvim-toggleterm.lua]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require('config.tree')
-time([[Config for nvim-tree.lua]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require("config.treesitter")
-time([[Config for nvim-treesitter]], false)
--- Config for: vim-polyglot
-time([[Config for vim-polyglot]], true)
-vim.g.vue_pre_processors = {}
-time([[Config for vim-polyglot]], false)
--- Config for: format.nvim
-time([[Config for format.nvim]], true)
-require('config.lsp.format')
-time([[Config for format.nvim]], false)
 -- Config for: galaxyline.nvim
 time([[Config for galaxyline.nvim]], true)
 require('config.galaxy-line')
 time([[Config for galaxyline.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require('config.git')
+time([[Config for gitsigns.nvim]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+require('config.lsp.trouble')
+time([[Config for trouble.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require("config.treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('config.tree')
+time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+require('config.autopairs')
+time([[Config for nvim-autopairs]], false)
+-- Config for: vim-polyglot
+time([[Config for vim-polyglot]], true)
+vim.g.vue_pre_processors = {}
+time([[Config for vim-polyglot]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+require('config.colorizer')
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('config.telescope')
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-comment
+time([[Config for nvim-comment]], true)
+require('nvim_comment').setup({comment_empty = true})
+time([[Config for nvim-comment]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require('config.lsp.config')
+time([[Config for nvim-lspconfig]], false)
+-- Config for: nvim-compe
+time([[Config for nvim-compe]], true)
+require('config.lsp.compe')
+time([[Config for nvim-compe]], false)
+-- Config for: format.nvim
+time([[Config for format.nvim]], true)
+require('config.lsp.format')
+time([[Config for format.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
 vim.cmd [[command! -nargs=* -range -bang -complete=file UndotreeToggle lua require("packer.load")({'undotree'}, { cmd = "UndotreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 time([[Defining lazy-load commands]], false)
 
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType javascriptreact ++once lua require("packer.load")({'emmet-vim'}, { ft = "javascriptreact" }, _G.packer_plugins)]]
+vim.cmd [[au FileType css ++once lua require("packer.load")({'emmet-vim'}, { ft = "css" }, _G.packer_plugins)]]
+vim.cmd [[au FileType html ++once lua require("packer.load")({'emmet-vim'}, { ft = "html" }, _G.packer_plugins)]]
+vim.cmd [[au FileType vue ++once lua require("packer.load")({'emmet-vim'}, { ft = "vue" }, _G.packer_plugins)]]
+vim.cmd [[au FileType javascript ++once lua require("packer.load")({'emmet-vim'}, { ft = "javascript" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
+vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 END

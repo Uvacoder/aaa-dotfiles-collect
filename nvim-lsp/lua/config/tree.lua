@@ -8,6 +8,7 @@ vim.g.nvim_tree_git_hl = 0
 vim.g.nvim_tree_ignore = {
   "dist",
   "plugin",
+  "netlify.toml",
   "jsconfig.json",
   "package-lock.json",
   ".git",
@@ -19,33 +20,41 @@ vim.g.nvim_tree_ignore = {
 }
 
 vim.g.nvim_tree_show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1
+  git = 1,
+  folders = 1,
+  files = 1,
+  folder_arrows = 0
 }
 
--- vim.g.nvim_tree_icons = {
---     default = " ",
---     symlink = " ",
---     git = {
---         unstaged = "✗",
---         staged = "✓",
---         unmerged = "",
---         renamed = "➜",
---         untracked = "★",
---         deleted = "",
---         ignored = "◌"
---     },
-    -- folder = {
-    --     default = "",
-    --     open = "",
-    --     symlink = "",
-    --     empty = "",
-    --     empty_open = "",
-    --     symlink_open = ""
-    -- }
--- }
-
+vim.g.nvim_tree_icons = {
+  default = '',
+  symlik = '',
+  git ={ 
+    unstaged = "✗",
+    stated = "✓",
+    unmerged = "",
+    renamed = "➜",
+    untracked = "★",
+    deleted = "",
+    ignored = "◌"
+  },
+  folder = {
+    arrow_open = "",
+    arrow_closed = "",
+    default = "",
+    open = "",
+    empty = "",
+    empty_open = "",
+    symlink = "",
+    symlink_open = ""
+  },
+  lsp = {
+    hint = "",
+    info = "",
+    warning = "",
+    error = ""
+  }
+}
 local keymap = vim.api.nvim_set_keymap
 local options = {noremap = true, silent = true}
 

@@ -15,19 +15,18 @@ return require("packer").startup({
     use { "wbthomason/packer.nvim", opt = true }
     use { "nvim-lua/popup.nvim" }
     use { "nvim-lua/plenary.nvim" }
-    use { "tpope/vim-commentary" }
     use { "editorconfig/editorconfig-vim" }
     use { "kyazdani42/nvim-web-devicons", config = 'require("config.web-devicons")' }
     use { "norcalli/nvim-colorizer.lua", config = "require('config.colorizer')" }
     use { "kyazdani42/nvim-tree.lua", config = "require('config.tree')" }
     use { "lewis6991/gitsigns.nvim", config = "require('config.git')" }
-    use { "akinsho/nvim-toggleterm.lua", config= "require('config.toggle-term')" }
     use { "windwp/nvim-autopairs", config = "require('config.autopairs')" }
     use { "mg979/vim-visual-multi", branch = "master" }
     use { "glepnir/galaxyline.nvim", branch = "main", config = "require('config.galaxy-line')" }
     use { "mbbill/undotree", cmd = "UndotreeToggle", config = "vim.g.undotree_SetFocusWhenToggle = 1" }
-    use { "lukas-reineke/indent-blankline.nvim", branch = "lua", config = "require('config.indent-guides')" }
-    use { "terrortylor/nvim-comment",  config = "require('nvim_comment').setup()" }
+    use { "Yggdroot/indentLine", config = "require('config.indent-guides')" }
+    use { "terrortylor/nvim-comment",  config = "require('nvim_comment').setup({comment_empty = true})" }
+    use { "mattn/emmet-vim", ft = {'html','css','javascript','javascriptreact','vue'}, config = 'require("config.emmet")'  }
     -- use { 'NTBBloodbath/rest.nvim' }
 
     -- treesitter
@@ -36,7 +35,6 @@ return require("packer").startup({
     use { "nvim-treesitter/nvim-treesitter-refactor" }
     use { "nvim-treesitter/nvim-treesitter-textobjects" }
     use { "sheerun/vim-polyglot", config = "vim.g.vue_pre_processors = {}" }
-    use { "lewis6991/spellsitter.nvim", config = "require('config.spellsitter')" }
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = 'require("config.treesitter")' }
     
     -- telescope
@@ -53,7 +51,8 @@ return require("packer").startup({
     -- lsp
     use { "kabouzeid/nvim-lspinstall" } 
     use { "neovim/nvim-lspconfig", config = "require('config.lsp.config')" }
-    use { "hrsh7th/nvim-compe", config = "require('config.lsp.compe')" }     
+    -- use { "glepnir/lspsaga.nvim", config = "require('lspsaga').init_lsp_saga()"}
+    use { "hrsh7th/nvim-compe", config = "require('config.lsp.compe')" }
     -- use { "tzachar/compe-tabnine", run="./install.sh", config = "vim.g.compe.source.tabnine = true" }
     use { "lukas-reineke/format.nvim", config = "require('config.lsp.format')" }
     use { "folke/trouble.nvim", config = "require('config.lsp.trouble')" }
@@ -64,6 +63,7 @@ return require("packer").startup({
       config = function()
         vim.g.tokyonight_style = "night"
         vim.g.tokyonight_transparent = true
+        vim.g.okyonight_dark_sidebar = false
         vim.cmd("colorscheme tokyonight")
       end
     }
