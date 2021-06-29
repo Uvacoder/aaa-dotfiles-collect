@@ -160,6 +160,7 @@ alias gp="git push"
 alias gps="git push && git status --short"
 alias gnah="git reset --hard && git clean -df"
 alias gaac="rm -rf dist && git add . && git commit -m"
+alias gaacz="rm -rf dist && git add . && git cz"
 alias gsync="git pull && git push"
 
 
