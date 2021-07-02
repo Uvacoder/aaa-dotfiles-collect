@@ -81,8 +81,8 @@ local function setup_servers()
   -- get all installed servers
   local servers = require'lspinstall'.installed_servers()
   -- ... and add manually installed servers
-  table.insert(servers, "vue")
-  table.insert(servers, "tailwindcss")
+  -- table.insert(servers, "vue")
+  -- table.insert(servers, "tailwindcss")
 
   for _, server in pairs(servers) do
     local config = make_config()

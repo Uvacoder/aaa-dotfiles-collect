@@ -46,6 +46,7 @@ brew_packages=(
   "makedepend"
   "luarocks"
   "python3"
+  "--HEAD luajit"
   "--HEAD neovim"
   "node@14"
   "wget"
