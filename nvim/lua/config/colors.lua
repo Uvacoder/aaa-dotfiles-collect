@@ -27,6 +27,7 @@ function M.myColors()
     execute("hi! FoldColumn  guibg="..config.colors.bg)
   end
 
+  execute("hi! NvimTreeNormal guibg=#0b0b15")
   execute("hi! IndentBlanklineChar guifg=#373b43")
   execute("hi! link    CursorColumn    Normal")
   -- execute("hi! link    CursorLine      Normal")

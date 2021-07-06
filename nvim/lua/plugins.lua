@@ -19,9 +19,9 @@ vim.api.nvim_exec([[
 local use = require('packer').use
 require('packer').startup(function()
   use { "wbthomason/packer.nvim", opt = true }
-  use { "nvim-lua/popup.nvim" }
-  use { "nvim-lua/plenary.nvim" }
-  use { "editorconfig/editorconfig-vim" }
+  use "nvim-lua/popup.nvim"
+  use "nvim-lua/plenary.nvim"
+  use "editorconfig/editorconfig-vim"
   use { "kyazdani42/nvim-web-devicons", config = 'require("config.web-devicons")' }
   use { "norcalli/nvim-colorizer.lua", config = "require('config.colorizer')" }
   use { "kyazdani42/nvim-tree.lua", config = "require('config.tree')" }
@@ -37,44 +37,56 @@ require('packer').startup(function()
   use 'sindrets/diffview.nvim'
   
   -- treesitter
-  use { "p00f/nvim-ts-rainbow" }
-  use { "windwp/nvim-ts-autotag" }
-  use { "nvim-treesitter/nvim-treesitter-refactor" }
-  use { "nvim-treesitter/nvim-treesitter-textobjects" }
+  use "p00f/nvim-ts-rainbow"
+  use "windwp/nvim-ts-autotag"
+  use "nvim-treesitter/nvim-treesitter-refactor"
+  use "nvim-treesitter/nvim-treesitter-textobjects"
   use { "sheerun/vim-polyglot", config = "vim.g.vue_pre_processors = {}" }
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = 'require("config.treesitter")' }
   
   -- telescope
-  use { "nvim-telescope/telescope-fzy-native.nvim" }
+  use "nvim-telescope/telescope-fzy-native.nvim"
   use { "nvim-telescope/telescope.nvim", config = "require('config.telescope')" }
-  
+
   -- snippets
-  use { "hrsh7th/vim-vsnip" }
-  
+  use "hrsh7th/vim-vsnip"
+  use "rafamadriz/friendly-snippets"
+
   -- lsp
-  use { "kabouzeid/nvim-lspinstall" } 
+  use "kabouzeid/nvim-lspinstall"
   use { "neovim/nvim-lspconfig", config = "require('config.lsp.config')" }
   -- use { "glepnir/lspsaga.nvim", config = "require('lspsaga').init_lsp_saga()"}
   use { "hrsh7th/nvim-compe", config = "require('config.lsp.compe')" }
-  -- use { "tzachar/compe-tabnine", run="./install.sh", config = "vim.g.compe.source.tabnine = true" }
   use { "lukas-reineke/format.nvim", config = "require('config.lsp.format')" }
   use { "folke/trouble.nvim", config = "require('config.lsp.trouble')" }
-  
+
   -- colorscheme
+
   use {
     "folke/tokyonight.nvim",
     config = function()
       vim.g.tokyonight_style = "night"
       vim.g.tokyonight_transparent = true
-      vim.g.tokyonight_dark_sidebar = false
       vim.g.tokyonight_italic_functions = true
       vim.g.tokyonight_hide_inactive_statusline = true
-      vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
+      vim.g.tokyonight_colors = { hint = "orange" }
       vim.cmd("colorscheme tokyonight")
     end
   }
 
-  -- use { 
+  -- use {
+  --   "eddyekofo94/gruvbox-flat.nvim",
+  --   config = function()
+  --     vim.g.gruvbox_style = "hard"
+  --     vim.g.gruvbox_transparent = true
+  --     vim.g.gruvbox_italic_functions = true
+  --     vim.g.gruvbox_hide_inactive_statusline = true
+  --     vim.g.gruvbox_colors = { hint = "orange" }
+  --     vim.cmd("colorscheme gruvbox-flat")
+  --   end
+  -- }
+
+  -- use {
   --   "bluz71/vim-nightfly-guicolors",
   --   config = function()
   --     vim.g.nightflyUnderlineMatchParen = 1
