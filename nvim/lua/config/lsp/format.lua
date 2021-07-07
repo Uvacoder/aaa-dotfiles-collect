@@ -2,19 +2,23 @@ require("format").setup{
     ["*"] = {
         {cmd = {"sed -i 's/[ \t]*$//'"}} -- remove trailing whitespace
     },
+    html = {
+        {cmd = {"prettier -w"}}
+        -- {cmd = {"./node_modules/.bin/prettier -w", "./node_modules/.bin/eslint --fix"}}
+    },
     javascript = {
-        {cmd = {"./node_modules/.bin/prettier -w"}}
+        {cmd = {"prettier -w"}}
         -- {cmd = {"./node_modules/.bin/prettier -w", "./node_modules/.bin/eslint --fix"}}
     },
     vue = {
-        {cmd = {"./node_modules/.bin/prettier -w"}}
+        {cmd = {"prettier -w"}}
         -- {cmd = {"./node_modules/.bin/prettier -w", "./node_modules/.bin/eslint --fix"}}
     },
     css = {
-        {cmd = {"./node_modules/.bin/prettier -w"}}
+        {cmd = {"prettier -w"}}
     },
     markdown = {
-        {cmd = {"./node_modules/.bin/prettier -w"}},
+        {cmd = {"prettier -w"}},
         {
             cmd = {"black"},
             start_pattern = "^```python$",
@@ -27,6 +31,6 @@ require("format").setup{
 vim.api.nvim_exec([[
     augroup FormatAutogroup
       autocmd!
-      autocmd BufWritePost *.js,*.vue,*.css FormatWrite
+      autocmd BufWritePost *.html,*.js,*.vue,*.css FormatWrite
     augroup END
 ]], true)
