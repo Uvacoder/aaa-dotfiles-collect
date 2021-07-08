@@ -30,12 +30,12 @@ require('packer').startup(function()
   use { "mg979/vim-visual-multi", branch = "master" }
   use { "glepnir/galaxyline.nvim", branch = "main", config = "require('config.galaxy-line')" }
   use { "mbbill/undotree", cmd = "UndotreeToggle", config = "vim.g.undotree_SetFocusWhenToggle = 1" }
-  use { "Yggdroot/indentLine", config = "require('config.indent-guides')" }
+  use { "lukas-reineke/indent-blankline.nvim", config = "require('config.indent-guides')" }
   use { "terrortylor/nvim-comment",  config = "require('nvim_comment').setup({comment_empty = true})" }
   use { "mattn/emmet-vim", ft = {'html','css','javascript','javascriptreact','vue'}, config = 'require("config.emmet")'  }
+  use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons', config = "require('bufferline').setup{}"}
   use 'NTBBloodbath/rest.nvim'
   use 'sindrets/diffview.nvim'
-  
   -- treesitter
   use "p00f/nvim-ts-rainbow"
   use "windwp/nvim-ts-autotag"
