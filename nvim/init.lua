@@ -1,3 +1,6 @@
+vim.g.python3_host_prog = "/usr/local/bin/python3"
+vim.g.node_host_prog = "/usr/local/lib/node_modules/neovim/bin/cli.js"
+
 vim.g.my_config = {
   remove_bg = true,
   colors = { bg = "NONE" },

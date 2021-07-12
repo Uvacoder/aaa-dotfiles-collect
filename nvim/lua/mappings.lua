@@ -3,6 +3,9 @@ local options = {noremap = true, silent = true}
 
 keymap('n', '<Space>', '<NOP>', options)
 
+keymap("n", "<Leader>bd", "<Cmd>bdelete<CR>", options)
+keymap("n", "<Leader>q", "<Cmd>qall<CR>",options)
+
 keymap("n", "<C-_>", ":CommentToggle<CR>", options)
 keymap("v", "<C-_>", ":CommentToggle<CR>", options)
 

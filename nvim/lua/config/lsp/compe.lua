@@ -25,11 +25,11 @@ require'compe'.setup {
   source = {
     path = true;
     buffer = true;
-    calc = true;
+    -- calc = true;
     nvim_lsp = true;
     nvim_lua = true;
     vsnip = true;
-    ultisnips = true;
+    -- ultisnips = true;
     luasnip = true;
   };
 }
@@ -87,16 +87,3 @@ end
 
 vim.api.nvim_set_keymap("i", "<CR>", "v:lua.completions()", {expr = true})
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  }
-}
-
-require'lspconfig'.rust_analyzer.setup {
-  capabilities = capabilities,
-}

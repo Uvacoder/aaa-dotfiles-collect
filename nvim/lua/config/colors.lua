@@ -28,7 +28,7 @@ function M.myColors()
   end
 
   execute("hi! NvimTreeNormal guibg=#0b0b15")
-  execute("hi! IndentBlanklineChar guifg=#373b43")
+  -- execute("hi! IndentBlanklineChar guifg=#373b43")
   execute("hi! link    CursorColumn    Normal")
   -- execute("hi! link    CursorLine      Normal")
   execute("hi! link    CursorLineNr    Normal")
