@@ -46,7 +46,7 @@ require('packer').startup(function()
 
   -- nvim-tree
   use {
-    "kyazdani42/nvim-tree.lua", config = "require('config.tree')", 
+    "kyazdani42/nvim-tree.lua", config = "require('config.tree')",
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
@@ -92,7 +92,8 @@ require('packer').startup(function()
   use { 'sindrets/diffview.nvim' }
 
   -- colorscheme
-  use { "folke/tokyonight.nvim", config = "require('config.cs.tokyonight')" }
+  use { 'yashguptaz/calvera-dark.nvim', config = "require('config.cs.calvera-dark')" }
+  -- use { "folke/tokyonight.nvim", config = "require('config.cs.tokyonight')" }
   -- use { "eddyekofo94/gruvbox-flat.nvim", config = "require('config.cs.gruvbox-flat')" }
   -- use { "bluz71/vim-nightfly-guicolors", config = "require('config.nightfly')" }
   -- use { "mhartington/oceanic-next", config = "require('config.oceanic-next')" }
