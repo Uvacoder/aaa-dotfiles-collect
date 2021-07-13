@@ -50,12 +50,6 @@ require('packer').startup(function()
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-  -- bufferline
-  use {
-    'akinsho/nvim-bufferline.lua', config = "require('config.bufferline')",
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-
   -- treesitter
   use {
     "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = 'require("config.treesitter")',
@@ -80,21 +74,28 @@ require('packer').startup(function()
   }
 
   use { "mg979/vim-visual-multi", branch = "master" }
+
   use { "norcalli/nvim-colorizer.lua", config = "require'colorizer'.setup()" }
+  
   use { "lewis6991/gitsigns.nvim", config = "require('config.git')" }
+  
   use { "windwp/nvim-autopairs", config = "require('config.autopairs')" }
-  -- use { "glepnir/galaxyline.nvim", branch = "main", config = "require('config.galaxy-line')" }
+  
   use { "mbbill/undotree", cmd = "UndotreeToggle", config = "vim.g.undotree_SetFocusWhenToggle = 1" }
+  
   use { "lukas-reineke/indent-blankline.nvim", config = "require('config.indent-guides')" }
+  
   use { "terrortylor/nvim-comment",  config = "require('nvim_comment').setup({comment_empty = true})" }
+  
   use { "editorconfig/editorconfig-vim" }
+  
   use { 'NTBBloodbath/rest.nvim' }
+  
   use { 'sindrets/diffview.nvim' }
 
   -- colorscheme
-  use { 'yashguptaz/calvera-dark.nvim', config = "require('config.cs.calvera-dark')" }
-  -- use { "folke/tokyonight.nvim", config = "require('config.cs.tokyonight')" }
-  -- use { "eddyekofo94/gruvbox-flat.nvim", config = "require('config.cs.gruvbox-flat')" }
+  use { "folke/tokyonight.nvim", config = "require('config.cs.tokyonight')" }
   -- use { "bluz71/vim-nightfly-guicolors", config = "require('config.nightfly')" }
-  -- use { "mhartington/oceanic-next", config = "require('config.oceanic-next')" }
+  -- use { 'yashguptaz/calvera-dark.nvim', config = "require('config.cs.calvera-dark')" }
+
 end)

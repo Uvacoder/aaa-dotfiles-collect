@@ -1,17 +1,4 @@
-local colors = {
-    bg = '#0D0A1F',
-    fg = '#abb2bf',
-    yellow = '#e0af68',
-    cyan = '#56b6c2',
-    darkblue = '#081633',
-    green = '#98c379',
-    orange = '#d19a66',
-    violet = '#a9a1e1',
-    magenta = '#c678dd',
-    blue = '#61afef',
-    red = '#e86671'
-}
-
+local colors = vim.g.colors
 local lsp = require 'feline.providers.lsp'
 local vi_mode_utils = require 'feline.providers.vi_mode'
 
@@ -56,7 +43,7 @@ local function file_osinfo()
     else
         icon = icons.windows
     end
-    return icon .. os
+    return icon .. os:lower()
 end
 
 local function lsp_diagnostics_info()
@@ -110,7 +97,6 @@ local comps = {
             provider = 'file_info',
             hl = {
                 fg = colors.blue,
-                style = 'bold'
             }
         },
         encoding = {
@@ -118,7 +104,6 @@ local comps = {
             left_sep = ' ',
             hl = {
                 fg = colors.violet,
-                style = 'bold'
             }
         },
         type = {
@@ -129,7 +114,6 @@ local comps = {
             left_sep = ' ',
             hl = {
                 fg = colors.violet,
-                style = 'bold'
             }
         }
     },
@@ -137,7 +121,7 @@ local comps = {
         provider = 'line_percentage',
         left_sep = ' ',
         hl = {
-            style = 'bold'
+            fg = colors.fg
         }
     },
     scroll_bar = {
@@ -145,7 +129,6 @@ local comps = {
         left_sep = ' ',
         hl = {
             fg = colors.blue,
-            style = 'bold'
         }
     },
     diagnos = {
@@ -199,7 +182,6 @@ local comps = {
             left_sep = ' ',
             hl = {
                 fg = colors.violet,
-                style = 'bold'
             },
         },
         add = {

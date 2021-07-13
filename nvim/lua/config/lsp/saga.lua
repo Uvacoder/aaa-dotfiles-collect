@@ -23,6 +23,6 @@ keymap("n", "]d", "<Cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next
 
 
 -- scroll down hover doc or scroll in definition preview
-keymap("n", "<C-f>", "<Cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", opts)
+keymap("n", "<C-sd>", "<Cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", opts)
 -- scroll up hover doc
-keymap("n", "<C-b>", "<Cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", opts)
+keymap("n", "<C-su>", "<Cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", opts)
