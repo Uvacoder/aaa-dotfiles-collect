@@ -1,3 +1,8 @@
-
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+nvim/plugin/packer_compiled.vim
 nvim-coc/plugin/packer_compiled.vim
-nvim-coc/plugin/packer_compiled.vim
+nvim-default/plugin/packer_compiled.vim
