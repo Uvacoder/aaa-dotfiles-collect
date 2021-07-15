@@ -61,7 +61,5 @@ vim.g.nvim_tree_icons = {
 local keymap = vim.api.nvim_set_keymap
 local options = {noremap = true, silent = true}
 
-keymap('n', '<C-e>', ':NvimTreeToggle<CR>', options)
-keymap('n', '<leader>e', ':NvimTreeToggle<CR>', options)
-keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', options)
+keymap('n', '/', ':NvimTreeToggle<CR>', options)
 

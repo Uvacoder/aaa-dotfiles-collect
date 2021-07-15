@@ -27,8 +27,8 @@ require('packer').startup(function()
     requires = {
       { 'kabouzeid/nvim-lspinstall', config = "require('config.lsp.install')" },
       { 'ray-x/lsp_signature.nvim' },
-      { 'glepnir/lspsaga.nvim', config = "require('config.lsp.saga')" },
       { 'hrsh7th/nvim-compe', config = "require('config.lsp.compe')" },
+      { "lukas-reineke/format.nvim", config = "require('config.lsp.format')" },
       { "folke/trouble.nvim", config = "require('config.lsp.trouble')" },
       { 'hrsh7th/vim-vsnip', requires = 'rafamadriz/friendly-snippets' }
     }
