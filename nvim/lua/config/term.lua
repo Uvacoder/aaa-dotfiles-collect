@@ -15,3 +15,7 @@ local opts = { noremap = true, silent = true }
 keymap('n', '<C-t>', '<CMD>lua require("FTerm").toggle()<CR>', opts)
 keymap('t', '<C-t>', '<CMD>lua require("FTerm").toggle()<CR>', opts)
 keymap('t', '<C-c>', '<CMD>lua require("FTerm").close()<CR>', opts)
+
+-- To enter de normal mode: Ctrl-\ Ctrl-n
+-- scroll up down works
+-- press i or a to go back to normal terminal mode
