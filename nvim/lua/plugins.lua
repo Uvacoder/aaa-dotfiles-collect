@@ -87,6 +87,8 @@ require('packer').startup(function()
   
   use { "terrortylor/nvim-comment",  config = "require('nvim_comment').setup({comment_empty = true})" }
   
+  use { "numtostr/FTerm.nvim", config = "require('config.term')" }
+
   use { "editorconfig/editorconfig-vim" }
   
   use { 'NTBBloodbath/rest.nvim' }
@@ -94,8 +96,8 @@ require('packer').startup(function()
   use { 'sindrets/diffview.nvim' }
 
   -- colorscheme
-  use { "folke/tokyonight.nvim", config = "require('config.cs.tokyonight')" }
+  -- use { "folke/tokyonight.nvim", config = "require('config.cs.tokyonight')" }
   -- use { "bluz71/vim-nightfly-guicolors", config = "require('config.nightfly')" }
   -- use { 'yashguptaz/calvera-dark.nvim', config = "require('config.cs.calvera-dark')" }
-
+  use {'projekt0n/github-nvim-theme', config = "require('config.cs.github')" }
 end)

@@ -1,7 +1,7 @@
 vim.g.python3_host_prog = "/usr/local/bin/python3"
 vim.g.node_host_prog = "/usr/local/lib/node_modules/neovim/bin/cli.js"
 vim.g.colors = {
-  bg = '#0b0b15',
+  bg = '#07080a',
   fg = '#abb2bf',
   yellow = "#ffc600",
   cyan = '#56b6c2',

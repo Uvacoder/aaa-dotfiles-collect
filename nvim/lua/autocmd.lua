@@ -26,6 +26,6 @@ execute([[
 execute([[
   augroup updateColors
     autocmd!
-    autocmd ColorScheme * lua require('config.cs.fix').myColors()
+    autocmd ColorScheme * lua require('config.cs._fix').myColors()
   augroup END
 ]], "")

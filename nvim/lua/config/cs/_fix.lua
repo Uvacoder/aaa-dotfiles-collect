@@ -2,6 +2,7 @@ local execute = vim.api.nvim_command
 local M = {}
 
 function M.myColors()
+  -- execute("hi! VertSplit   guibg="..vim.g.colors.bg)
   -- execute("hi! SignColumn  guibg="..vim.g.colors.bg)
   -- execute("hi! FoldColumn  guibg="..vim.g.colors.bg)
   execute("hi! DiffAdd     guifg="..vim.g.colors.green)
