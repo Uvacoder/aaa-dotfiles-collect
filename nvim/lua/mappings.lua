@@ -3,11 +3,11 @@ local options = {noremap = true, silent = true}
 
 keymap('n', '<Space>', '<NOP>', options)
 
-keymap("n", "<Leader>bd", "<Cmd>bdelete<CR>", options)
-keymap("n", "<Leader>q", "<Cmd>qall<CR>",options)
+keymap("n", "<Leader>bd", "<cmd>Bdelete<CR>", options)
+keymap("n", "<Leader>q", "<cmd>qall<CR>",options)
 
-keymap("n", "<C-_>", ":CommentToggle<CR>", options)
-keymap("v", "<C-_>", ":CommentToggle<CR>", options)
+keymap("n", "<C-_>", "<cmd>CommentToggle<CR>", options)
+keymap("v", "<C-_>", "<cmd>CommentToggle<CR>", options)
 
 -- buffers navigation
 keymap('n', '=', '<PageDown>', options)
@@ -28,12 +28,12 @@ keymap('n', '<C-q>', '!<CR>', options)
 keymap('i', '<C-c>', '<esc>', options)
 
 -- search and replace
-keymap('n', '<C-h>', ':%s///gcI<Left><Left><Left><Left><Left>', {noremap = true, expr = false, silent = false})
-keymap('n', '<Esc><Esc><Esc>', ':nohlsearch<CR><Esc>', options)
+keymap('n', '<C-h>', '<cmd>%s///gcI<Left><Left><Left><Left><Left>', {noremap = true, expr = false, silent = false})
+keymap('n', '<Esc><Esc><Esc>', '<cmd>nohlsearch<CR><Esc>', options)
 
 -- move lines:
-keymap('v', '<S-K>', ":m '<-2<CR>gv=gv", options)
-keymap('v', '<S-J>', ":m '>+1<CR>gv=gv", options)
+keymap('v', '<S-K>', "<cmd>m '<-2<CR>gv=gv", options)
+keymap('v', '<S-J>', "<cmd>m '>+1<CR>gv=gv", options)
 keymap('v', '<S-L>', '>gv', options)
 keymap('v', '<S-H>', '<gv', options)
 
@@ -42,8 +42,8 @@ keymap('v', '<TAB>', '>gv', options)
 keymap('v', '<S-TAB>', '<gv', options)
 
 -- Tab switch buffer
-keymap('n', '<TAB>', ':bnext<CR>', options)
-keymap('n', '<S-TAB>', ':bprevious<CR>', options)
+keymap('n', '<TAB>', '<cmd>bnext<CR>', options)
+keymap('n', '<S-TAB>', '<cmd>bprevious<CR>', options)
 
 --  Quick window switching
 keymap('n', '<leader>j', '<C-w><C-j>', options)

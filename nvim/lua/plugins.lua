@@ -54,7 +54,7 @@ require('packer').startup(function()
   use {
     "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = 'require("config.treesitter")',
     requires = {
-      { "p00f/nvim-ts-rainbow" },
+      -- { "p00f/nvim-ts-rainbow" },
       { "windwp/nvim-ts-autotag" },
       { "nvim-treesitter/nvim-treesitter-refactor" },
       { "nvim-treesitter/nvim-treesitter-textobjects" }
@@ -68,10 +68,12 @@ require('packer').startup(function()
   }
   
   -- feline
-    use {
+  use {
     'famiu/feline.nvim', config = "require('config.feline')",
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+
+  use { 'akinsho/nvim-toggleterm.lua', config = "require('config.term')" }
 
   use { "mg979/vim-visual-multi", branch = "master" }
 
@@ -85,19 +87,20 @@ require('packer').startup(function()
   
   use { "lukas-reineke/indent-blankline.nvim", config = "require('config.indent-guides')" }
   
-  use { "terrortylor/nvim-comment",  config = "require('nvim_comment').setup({comment_empty = true})" }
+  use { "terrortylor/nvim-comment", config = "require('nvim_comment').setup({comment_empty = true})" }
   
-  use { "numtostr/FTerm.nvim", config = "require('config.term')" }
-
   use { "editorconfig/editorconfig-vim" }
   
   use { 'NTBBloodbath/rest.nvim' }
   
+  use { 'famiu/bufdelete.nvim' } 
+
   use { 'sindrets/diffview.nvim' }
 
   -- colorscheme
+  use { "bluz71/vim-nightfly-guicolors", config = "require('config.cs.nightfly')" }
   -- use { "folke/tokyonight.nvim", config = "require('config.cs.tokyonight')" }
-  -- use { "bluz71/vim-nightfly-guicolors", config = "require('config.nightfly')" }
   -- use { 'yashguptaz/calvera-dark.nvim', config = "require('config.cs.calvera-dark')" }
-  use {'projekt0n/github-nvim-theme', config = "require('config.cs.github')" }
+  -- use { 'projekt0n/github-nvim-theme', config = "require('config.cs.github')" }
+
 end)
