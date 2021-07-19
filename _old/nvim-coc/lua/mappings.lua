@@ -1,7 +1,16 @@
 local keymap = vim.api.nvim_set_keymap
 local options = {noremap = true, silent = true}
 
-keymap('n', '<Space>', '<NOP>', options)
+--Remap space as leader key
+keymap('', '<Space>', '<Nop>', { noremap = true, silent=true})
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+--Remap escape to leave terminal mode
+keymap('t', '<Esc>', [[<c-\><c-n>]], {noremap = true})
+
+--Add map to enter paste mode
+vim.o.pastetoggle="<F3>"
 
 keymap("n", "<C-_>", ":CommentToggle<CR>", options)
 keymap("v", "<C-_>", ":CommentToggle<CR>", options)

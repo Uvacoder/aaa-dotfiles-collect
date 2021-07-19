@@ -1,6 +1,17 @@
 local execute = vim.api.nvim_command
 local M = {}
 
+function M.removeBgColor()
+  execute("hi! Normal guibg=NONE")
+  execute("hi! EndOfBuffer guibg=NONE")
+  execute("hi! NonText guibg=NONE")
+  execute("hi! LineNr guibg=NONE")
+  execute("hi! CursorLine guibg=NONE")
+  execute("hi! SpecialKey guibg=NONE")
+  execute("hi! FoldColumn guibg=NONE")
+  execute("hi! VertSplit guibg=NONE")
+end
+
 function M.myColors()
   -- execute("hi! VertSplit   guibg="..vim.g.colors.bg)
   execute("hi! SignColumn  guibg="..vim.g.colors.bg)

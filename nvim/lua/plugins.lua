@@ -98,7 +98,9 @@ require('packer').startup(function()
   use { 'sindrets/diffview.nvim' }
 
   -- colorscheme
-  use { "bluz71/vim-nightfly-guicolors", config = "require('config.cs.nightfly')" }
+  use { "mhartington/oceanic-next", config = "require('config.cs.oceanic-next')" }
+  -- use { "Yagua/nebulous.nvim", config = "require('config.cs.nebulous')" }
+  -- use { "bluz71/vim-nightfly-guicolors", config = "require('config.cs.nightfly')" }
   -- use { "folke/tokyonight.nvim", config = "require('config.cs.tokyonight')" }
   -- use { 'yashguptaz/calvera-dark.nvim', config = "require('config.cs.calvera-dark')" }
   -- use { 'projekt0n/github-nvim-theme', config = "require('config.cs.github')" }
