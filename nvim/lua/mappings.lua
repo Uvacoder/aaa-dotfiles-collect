@@ -6,8 +6,8 @@ keymap('n', '<Space>', '<NOP>', options)
 keymap("n", "<Leader>bd", "<cmd>Bdelete<CR>", options)
 keymap("n", "<Leader>q", "<cmd>qall<CR>",options)
 
-keymap("n", "<C-_>", "<cmd>CommentToggle<CR>", options)
-keymap("v", "<C-_>", "<cmd>CommentToggle<CR>", options)
+keymap("n", "<C-_>", "<cmd>Commentary<CR>", options)
+keymap("v", "<C-_>", "<cmd>Commentary<CR>", options)
 
 -- buffers navigation
 keymap('n', '=', '<PageDown>', options)

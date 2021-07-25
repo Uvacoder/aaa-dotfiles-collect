@@ -60,8 +60,14 @@ require('packer').startup(function()
     'famiu/feline.nvim', config = "require('config.feline')",
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+  -- nvim-ts-context-commentstring
+  use {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    requires = { "tpope/vim-commentary" }
+  }
   -- emmet
   use { "mattn/emmet-vim", ft = {'html','css','javascript','javascriptreact','vue'}, config = 'require("config.emmet")' }
+
   use { 'akinsho/nvim-toggleterm.lua', config = "require('config.term')" }
   use { "mg979/vim-visual-multi", branch = "master" }
   use { "norcalli/nvim-colorizer.lua", config = "require'colorizer'.setup()" }
@@ -69,7 +75,6 @@ require('packer').startup(function()
   use { "windwp/nvim-autopairs", config = "require('config.autopairs')" }
   use { "mbbill/undotree", cmd = "UndotreeToggle", config = "vim.g.undotree_SetFocusWhenToggle = 1" }
   use { "lukas-reineke/indent-blankline.nvim", config = "require('config.indent-guides')" }
-  use { "terrortylor/nvim-comment", config = "require('nvim_comment').setup({comment_empty = true})" }
   use { "editorconfig/editorconfig-vim" }
   use { 'NTBBloodbath/rest.nvim' }
   use { 'famiu/bufdelete.nvim' } 

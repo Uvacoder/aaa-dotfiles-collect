@@ -125,11 +125,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
-  ["nvim-comment"] = {
-    config = { "require('nvim_comment').setup({comment_empty = true})" },
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-comment"
-  },
   ["nvim-compe"] = {
     config = { "require('config.lsp.compe')" },
     loaded = true,
@@ -171,6 +166,10 @@ _G.packer_plugins = {
   ["nvim-ts-autotag"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
+  },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring"
   },
   ["nvim-web-devicons"] = {
     config = { 'require("config.web-devicons")' },
@@ -220,6 +219,10 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/opt/undotree"
   },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-commentary"
+  },
   ["vim-visual-multi"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-visual-multi"
@@ -231,34 +234,42 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require('config.telescope')
-time([[Config for telescope.nvim]], false)
--- Config for: nvim-comment
-time([[Config for nvim-comment]], true)
-require('nvim_comment').setup({comment_empty = true})
-time([[Config for nvim-comment]], false)
+-- Config for: feline.nvim
+time([[Config for feline.nvim]], true)
+require('config.feline')
+time([[Config for feline.nvim]], false)
+-- Config for: tokyodark.nvim
+time([[Config for tokyodark.nvim]], true)
+require('config.cs.tokyodark')
+time([[Config for tokyodark.nvim]], false)
+-- Config for: format.nvim
+time([[Config for format.nvim]], true)
+require('config.lsp.format')
+time([[Config for format.nvim]], false)
 -- Config for: trouble.nvim
 time([[Config for trouble.nvim]], true)
 require('config.lsp.trouble')
 time([[Config for trouble.nvim]], false)
--- Config for: nvim-compe
-time([[Config for nvim-compe]], true)
-require('config.lsp.compe')
-time([[Config for nvim-compe]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('config.lsp.config')
-time([[Config for nvim-lspconfig]], false)
 -- Config for: nvim-lspinstall
 time([[Config for nvim-lspinstall]], true)
 require('config.lsp.install')
 time([[Config for nvim-lspinstall]], false)
--- Config for: nvim-toggleterm.lua
-time([[Config for nvim-toggleterm.lua]], true)
-require('config.term')
-time([[Config for nvim-toggleterm.lua]], false)
+-- Config for: nvim-compe
+time([[Config for nvim-compe]], true)
+require('config.lsp.compe')
+time([[Config for nvim-compe]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require('config.git')
+time([[Config for gitsigns.nvim]], false)
+-- Config for: nvim-web-devicons
+time([[Config for nvim-web-devicons]], true)
+require("config.web-devicons")
+time([[Config for nvim-web-devicons]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+require('config.indent-guides')
+time([[Config for indent-blankline.nvim]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 require('config.tree')
@@ -267,38 +278,26 @@ time([[Config for nvim-tree.lua]], false)
 time([[Config for nvim-treesitter]], true)
 require("config.treesitter")
 time([[Config for nvim-treesitter]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require('config.git')
-time([[Config for gitsigns.nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-require('config.indent-guides')
-time([[Config for indent-blankline.nvim]], false)
--- Config for: tokyodark.nvim
-time([[Config for tokyodark.nvim]], true)
-require('config.cs.tokyodark')
-time([[Config for tokyodark.nvim]], false)
--- Config for: nvim-web-devicons
-time([[Config for nvim-web-devicons]], true)
-require("config.web-devicons")
-time([[Config for nvim-web-devicons]], false)
+-- Config for: nvim-toggleterm.lua
+time([[Config for nvim-toggleterm.lua]], true)
+require('config.term')
+time([[Config for nvim-toggleterm.lua]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 require('config.autopairs')
 time([[Config for nvim-autopairs]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require('config.lsp.config')
+time([[Config for nvim-lspconfig]], false)
 -- Config for: nvim-colorizer.lua
 time([[Config for nvim-colorizer.lua]], true)
 require'colorizer'.setup()
 time([[Config for nvim-colorizer.lua]], false)
--- Config for: format.nvim
-time([[Config for format.nvim]], true)
-require('config.lsp.format')
-time([[Config for format.nvim]], false)
--- Config for: feline.nvim
-time([[Config for feline.nvim]], true)
-require('config.feline')
-time([[Config for feline.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('config.telescope')
+time([[Config for telescope.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -314,8 +313,8 @@ time([[Defining lazy-load filetype autocommands]], true)
 vim.cmd [[au FileType javascriptreact ++once lua require("packer.load")({'emmet-vim'}, { ft = "javascriptreact" }, _G.packer_plugins)]]
 vim.cmd [[au FileType javascript ++once lua require("packer.load")({'emmet-vim'}, { ft = "javascript" }, _G.packer_plugins)]]
 vim.cmd [[au FileType html ++once lua require("packer.load")({'emmet-vim'}, { ft = "html" }, _G.packer_plugins)]]
-vim.cmd [[au FileType css ++once lua require("packer.load")({'emmet-vim'}, { ft = "css" }, _G.packer_plugins)]]
 vim.cmd [[au FileType vue ++once lua require("packer.load")({'emmet-vim'}, { ft = "vue" }, _G.packer_plugins)]]
+vim.cmd [[au FileType css ++once lua require("packer.load")({'emmet-vim'}, { ft = "css" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
