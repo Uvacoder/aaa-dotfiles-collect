@@ -2,6 +2,27 @@ local colors = vim.g.colors
 local lsp = require 'feline.providers.lsp'
 local vi_mode_utils = require 'feline.providers.vi_mode'
 
+local vi_mode_provider = function()
+  local mode_alias = {
+    n = 'NORMAL',
+    no = 'NORMAL',
+    i = 'INSERT',
+    v = 'VISUAL',
+    V = 'V-LINE',
+    [''] = 'V-BLOCK',
+    c = 'COMMAND',
+    cv = 'COMMAND',
+    ce = 'COMMAND',
+    R = 'REPLACE',
+    Rv = 'REPLACE',
+    s = 'SELECT',
+    S = 'SELECT',
+    [''] = 'SELECT',
+    t = 'TERMINAL',
+  }
+  return mode_alias[vim.fn.mode()] .. ' '
+end
+
 local vi_mode_colors = {
     NORMAL = colors.green,
     INSERT = colors.red,
@@ -20,9 +41,9 @@ local vi_mode_colors = {
 }
 
 local icons = {
-    linux = '  ',
-    macos = '  ',
-    windows = '  ',
+    linux = ' ',
+    macos = ' ',
+    windows = ' ',
 
     errs = ' ',
     warns = ' ',
@@ -30,8 +51,17 @@ local icons = {
     hints = ' ',
 
     lsp = ' ',
-    git = ' '
+    git = ' '
 }
+
+local vi_mode_hl = function()
+  local vi_mode = require 'feline.providers.vi_mode'
+  return {
+    name = vi_mode.get_mode_highlight_name(),
+    bg = 'bg',
+    fg = vi_mode.get_mode_color()
+  }
+end
 
 local function file_osinfo()
     local os = vim.bo.fileformat:upper()
@@ -43,7 +73,7 @@ local function file_osinfo()
     else
         icon = icons.windows
     end
-    return icon .. os:lower()
+    return icon
 end
 
 local function lsp_diagnostics_info()
@@ -81,22 +111,27 @@ end
 
 local comps = {
     vi_mode = {
-        left = {
-            provider = '▊',
-            hl = vimode_hl,
-            right_sep = ' '
-        },
-        right = {
-            provider = '▊',
-            hl = vimode_hl,
-            left_sep = ' '
-        }
+      left = {
+          provider = ' ',
+          hl = vi_mode_hl,
+          right_sep = ' '
+      },
+      right = {
+          provider = ' ',
+          hl = vi_mode_hl,
+          left_sep = ' '
+      },
+      name = {
+          provider = vi_mode_provider,
+          hl = vi_mode_hl,
+          right_sep = ' '
+      },
     },
     file = {
         info = {
             provider = 'file_info',
             hl = {
-                fg = colors.blue,
+                fg = colors.violet,
             }
         },
         encoding = {
@@ -115,20 +150,6 @@ local comps = {
             hl = {
                 fg = colors.violet,
             }
-        }
-    },
-    line_percentage = {
-        provider = 'line_percentage',
-        left_sep = ' ',
-        hl = {
-            fg = colors.fg
-        }
-    },
-    scroll_bar = {
-        provider = 'scroll_bar',
-        left_sep = ' ',
-        hl = {
-            fg = colors.blue,
         }
     },
     diagnos = {
@@ -224,11 +245,14 @@ local components = {
     left = {
         active = {
             comps.vi_mode.left,
+            comps.vi_mode.name,
             comps.file.info,
             comps.diagnos.err,
             comps.diagnos.warn,
             comps.diagnos.hint,
-            comps.diagnos.info
+            comps.diagnos.info,
+            comps.file.os,
+            comps.file.encoding
         },
         inactive = {
             comps.vi_mode.left,
@@ -247,9 +271,6 @@ local components = {
     right = {
         active = {
             comps.lsp.name,
-            comps.file.os,
-            comps.line_percentage,
-            comps.scroll_bar,
             comps.vi_mode.right
         },
         inactive = {}
