@@ -31,7 +31,7 @@ local icons = {
   errs = ' ',
   warns = ' ',
   infos = ' ',
-  hints = ' ',
+  hints = ' ',
 
   lsp = ' ',
   git = ' '
@@ -106,7 +106,8 @@ local comps = {
   file = {
       info = {
           provider = 'file_info',
-          hl = { fg = colors.orange }
+          hl = { fg = colors.yellow },
+          left_sep = ' '
       },
       encoding = {
           provider = 'file_encoding',
@@ -158,7 +159,7 @@ local comps = {
           provider = 'lsp_client_names',
           left_sep = ' ',
           icon = icons.lsp,
-          hl = { fg = colors.yellow }
+          hl = { fg = colors.fg }
       }
   },
   git = {
