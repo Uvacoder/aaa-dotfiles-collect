@@ -86,120 +86,101 @@ end
 -- LuaFormatter off
 
 local comps = {
-    vi_mode = {
-      left = {
-          provider = ' ',
-          hl = { fg = colors.orange },
-          right_sep = ' '
+  vi_mode = {
+    left = {
+        provider = ' ',
+        hl = { fg = colors.orange },
+        right_sep = ' '
+    },
+    right = {
+        provider = ' ',
+        hl = { fg = colors.orange },
+        left_sep = ' '
+    },
+    name = {
+        provider = vi_mode_provider,
+        hl = vi_mode_hl,
+        right_sep = ' '
+    },
+  },
+  file = {
+      info = {
+          provider = 'file_info',
+          hl = { fg = colors.orange }
       },
-      right = {
-          provider = ' ',
-          hl = { fg = colors.orange },
-          left_sep = ' '
+      encoding = {
+          provider = 'file_encoding',
+          left_sep = ' ',
+          hl = { fg = colors.fg }
       },
+      type = {
+          provider = 'file_type'
+      },
+      cursor = { 
+          provider = 'position',
+          left_sep = ' ',
+          hl = { fg = colors.fg }
+      },
+      os = {
+          provider = file_osinfo,
+          left_sep = ' ',
+          hl = { fg = colors.fg }
+      }
+  },
+  diagnos = {
+      err = {
+          provider = diag_of(lsp_diagnostics_info, 'errs'),
+          left_sep = ' ',
+          enabled = diag_enable(lsp_diagnostics_info, 'errs'),
+          hl = { fg = colors.red }
+      },
+      warn = {
+          provider = diag_of(lsp_diagnostics_info, 'warns'),
+          left_sep = ' ',
+          enabled = diag_enable(lsp_diagnostics_info, 'warns'),
+          hl = { fg = colors.yellow }
+      },
+      info = {
+          provider = diag_of(lsp_diagnostics_info, 'infos'),
+          left_sep = ' ',
+          enabled = diag_enable(lsp_diagnostics_info, 'infos'),
+          hl = { fg = colors.blue }
+      },
+      hint = {
+          provider = diag_of(lsp_diagnostics_info, 'hints'),
+          left_sep = ' ',
+          enabled = diag_enable(lsp_diagnostics_info, 'hints'),
+          hl = { fg = colors.cyan }
+      },
+  },
+  lsp = {
       name = {
-          provider = vi_mode_provider,
-          hl = vi_mode_hl,
-          right_sep = ' '
-      },
+          provider = 'lsp_client_names',
+          left_sep = ' ',
+          icon = icons.lsp,
+          hl = { fg = colors.yellow }
+      }
+  },
+  git = {
+    branch = {
+        provider = 'git_branch',
+        icon = icons.git,
+        left_sep = ' ',
+        hl = { fg = colors.violet },
     },
-    file = {
-        info = {
-            provider = 'file_info',
-            hl = {
-                fg = colors.violet,
-            }
-        },
-        encoding = {
-            provider = 'file_encoding',
-            left_sep = ' ',
-            hl = {
-                fg = colors.violet,
-            }
-        },
-        type = {
-            provider = 'file_type'
-        },
-        os = {
-            provider = file_osinfo,
-            left_sep = ' ',
-            hl = {
-                fg = colors.violet,
-            }
-        }
+    add = {
+        provider = 'git_diff_added',
+        hl = { fg = colors.green }
     },
-    diagnos = {
-        err = {
-            provider = diag_of(lsp_diagnostics_info, 'errs'),
-            left_sep = ' ',
-            enabled = diag_enable(lsp_diagnostics_info, 'errs'),
-            hl = {
-                fg = colors.red
-            }
-        },
-        warn = {
-            provider = diag_of(lsp_diagnostics_info, 'warns'),
-            left_sep = ' ',
-            enabled = diag_enable(lsp_diagnostics_info, 'warns'),
-            hl = {
-                fg = colors.yellow
-            }
-        },
-        info = {
-            provider = diag_of(lsp_diagnostics_info, 'infos'),
-            left_sep = ' ',
-            enabled = diag_enable(lsp_diagnostics_info, 'infos'),
-            hl = {
-                fg = colors.blue
-            }
-        },
-        hint = {
-            provider = diag_of(lsp_diagnostics_info, 'hints'),
-            left_sep = ' ',
-            enabled = diag_enable(lsp_diagnostics_info, 'hints'),
-            hl = {
-                fg = colors.cyan
-            }
-        },
+    change = {
+        provider = 'git_diff_changed',
+        hl = { fg = colors.orange }
     },
-    lsp = {
-        name = {
-            provider = 'lsp_client_names',
-            left_sep = ' ',
-            icon = icons.lsp,
-            hl = {
-                fg = colors.yellow
-            }
-        }
-    },
-    git = {
-        branch = {
-            provider = 'git_branch',
-            icon = icons.git,
-            left_sep = ' ',
-            hl = {
-                fg = colors.violet,
-            },
-        },
-        add = {
-            provider = 'git_diff_added',
-            hl = {
-                fg = colors.green
-            }
-        },
-        change = {
-            provider = 'git_diff_changed',
-            hl = {
-                fg = colors.orange
-            }
-        },
-        remove = {
-            provider = 'git_diff_removed',
-            hl = {
-                fg = colors.red
-            }
-        }
+    remove = {
+        provider = 'git_diff_removed',
+        hl = { fg = colors.red }
     }
+  }
 }
 
 local properties = {
@@ -223,6 +204,7 @@ local components = {
             comps.vi_mode.left,
             comps.vi_mode.name,
             comps.file.info,
+            comps.file.cursor,
             comps.diagnos.err,
             comps.diagnos.warn,
             comps.diagnos.hint,

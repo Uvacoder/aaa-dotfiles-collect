@@ -6,6 +6,6 @@ vim.g.gruvqueen_italic_functions = true
 vim.g.gruvqueen_italic_variables = false
 vim.g.gruvqueen_invert_selection = true
 vim.g.gruvqueen_disable_bold = true
-vim.g.gruvqueen_style = 'material' -- possible values: 'original', 'mix', 'material'
+vim.g.gruvqueen_style = 'mix' -- possible values: 'original', 'mix', 'material'
 
 vim.cmd('colorscheme gruvqueen')

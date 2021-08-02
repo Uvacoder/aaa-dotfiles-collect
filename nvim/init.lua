@@ -1,4 +1,4 @@
-vim.g.python3_host_prog = "/usr/local/bin/python3"
+-- vim.g.python3_host_prog = "/usr/local/bin/python3"
 vim.g.node_host_prog = "/usr/local/lib/node_modules/neovim/bin/cli.js"
 vim.g.colors = {
   bg = '#07080a',
@@ -7,10 +7,10 @@ vim.g.colors = {
   cyan = '#56b6c2',
   darkblue = '#081633',
   green = "#5ccc96",
-  orange = '#EC5F67',
+  orange = '#FF7645',
   violet = '#a9a1e1',
   magenta = '#c678dd',
-  blue = "#00B8FF",
+  blue = "#00D1E3",
   red = "#F84B5E"
 }
 

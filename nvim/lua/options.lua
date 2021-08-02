@@ -5,7 +5,7 @@ protocol.CompletionItemKind = {
   ' Method',      -- = 2,
   ' Function',    -- = 3,
   ' Constructor', -- = 4,
-  'ƒ Field',         -- = 5,
+  'ƒ Field',       -- = 5,
   ' Variable',    -- = 6,
   ' Class',       -- = 7,
   'ﰮ Interface',   -- = 8,
@@ -109,7 +109,7 @@ end
 vim.cmd('set iskeyword+=-')
 vim.cmd('set formatoptions-=cro')
 vim.cmd('set whichwrap+=<,>,[,],h,l')
-vim.cmd('set shortmess+=c')
+vim.cmd('set shortmess+=cFW')
 vim.cmd('filetype plugin indent on')
 vim.cmd('syntax on')
 vim.cmd('set foldlevel=99')
