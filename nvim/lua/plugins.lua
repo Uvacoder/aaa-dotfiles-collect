@@ -17,6 +17,18 @@ local use = require('packer').use
 require('packer').startup(function()
 
   use { "wbthomason/packer.nvim" }
+  
+  use {
+    "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = 'require("config.treesitter")',
+    requires = {
+      { "p00f/nvim-ts-rainbow" },
+      { "windwp/nvim-ts-autotag" },
+      { "nvim-treesitter/nvim-treesitter-refactor" },
+      { "nvim-treesitter/nvim-treesitter-textobjects" },
+      { 'JoosepAlviste/nvim-ts-context-commentstring', requires = { "tpope/vim-commentary" }}
+    }
+  }
+
   use { "kyazdani42/nvim-web-devicons", config = 'require("config.web-devicons")' }
   use { "mattn/emmet-vim", config = 'require("config.emmet")' }
   use { 'akinsho/nvim-toggleterm.lua', config = "require('config.term')" }
@@ -30,17 +42,6 @@ require('packer').startup(function()
   use { 'NTBBloodbath/rest.nvim' }
   use { 'famiu/bufdelete.nvim' } 
   use { 'sindrets/diffview.nvim' }
-
-  use {
-    "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = 'require("config.treesitter")',
-    requires = {
-      { "p00f/nvim-ts-rainbow" },
-      { "windwp/nvim-ts-autotag" },
-      { "nvim-treesitter/nvim-treesitter-refactor" },
-      { "nvim-treesitter/nvim-treesitter-textobjects" },
-      { 'JoosepAlviste/nvim-ts-context-commentstring', requires = { "tpope/vim-commentary" }}
-    }
-  }
 
   use {
     'neovim/nvim-lspconfig', config = "require('config.lsp.config')",
