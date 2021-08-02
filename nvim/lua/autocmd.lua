@@ -8,12 +8,14 @@ cmd(':command! Wqa wqa')
 cmd(':command! W w')
 cmd(':command! Q q')
 
-cmd("autocmd InsertEnter * set cul")
-cmd("autocmd InsertLeave * set nocul")
+-- cmd("autocmd InsertEnter * set cul")
+-- cmd("autocmd InsertLeave * set nocul")
 
 -- Auto save files when focus is lost
 cmd("autocmd FocusLost * silent! :wa!")
 cmd("autocmd TermOpen * setlocal signcolumn=no nonumber norelativenumber")
+
+cmd("autocmd FileType html,css,vue,js,javascript,javascriptreact EmmetInstall")
 
 execute([[
   augroup numbertoggle

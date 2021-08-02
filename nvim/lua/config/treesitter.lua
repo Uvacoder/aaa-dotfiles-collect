@@ -3,18 +3,17 @@ require("nvim-treesitter.configs").setup {
     "css", "lua", "html", "bash", "vue", "javascript", "json", 
     "graphql", "php", "ruby", "typescript", "regex", "jsonc" 
   },
-  -- rainbow = {
-  --   enable = true,
-  --   extended_mode = true
-  -- },
+  rainbow = {
+    enable = true,
+    extended_mode = true
+  },
   context_commentstring = {
     enable = true
   },
   indent = { enable = true },
   autotag = { enable = true },
   highlight = {
-    enable = true,
-    language_tree = true
+    enable = true
   },
   refactor = {
     highlight_current_scope = { enable = false },

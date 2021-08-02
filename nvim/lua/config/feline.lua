@@ -23,35 +23,18 @@ local vi_mode_provider = function()
   return mode_alias[vim.fn.mode()] .. ' '
 end
 
-local vi_mode_colors = {
-    NORMAL = colors.green,
-    INSERT = colors.red,
-    VISUAL = colors.magenta,
-    OP = colors.green,
-    BLOCK = colors.blue,
-    REPLACE = colors.violet,
-    ['V-REPLACE'] = colors.violet,
-    ENTER = colors.cyan,
-    MORE = colors.cyan,
-    SELECT = colors.orange,
-    COMMAND = colors.green,
-    SHELL = colors.green,
-    TERM = colors.green,
-    NONE = colors.yellow
-}
-
 local icons = {
-    linux = ' ',
-    macos = ' ',
-    windows = ' ',
+  linux = ' ',
+  macos = ' ',
+  windows = ' ',
 
-    errs = ' ',
-    warns = ' ',
-    infos = ' ',
-    hints = ' ',
+  errs = ' ',
+  warns = ' ',
+  infos = ' ',
+  hints = ' ',
 
-    lsp = ' ',
-    git = ' '
+  lsp = ' ',
+  git = ' '
 }
 
 local vi_mode_hl = function()
@@ -64,47 +47,40 @@ local vi_mode_hl = function()
 end
 
 local function file_osinfo()
-    local os = vim.bo.fileformat:upper()
-    local icon
-    if os == 'UNIX' then
-        icon = icons.linux
-    elseif os == 'MAC' then
-        icon = icons.macos
-    else
-        icon = icons.windows
-    end
-    return icon
+  local os = vim.bo.fileformat:upper()
+  local icon
+  if os == 'UNIX' then
+    icon = icons.linux
+  elseif os == 'MAC' then
+    icon = icons.macos
+  else
+    icon = icons.windows
+  end
+  return icon
 end
 
 local function lsp_diagnostics_info()
-    return {
-        errs = lsp.get_diagnostics_count('Error'),
-        warns = lsp.get_diagnostics_count('Warning'),
-        infos = lsp.get_diagnostics_count('Information'),
-        hints = lsp.get_diagnostics_count('Hint')
-    }
+  return {
+    errs = lsp.get_diagnostics_count('Error'),
+    warns = lsp.get_diagnostics_count('Warning'),
+    infos = lsp.get_diagnostics_count('Information'),
+    hints = lsp.get_diagnostics_count('Hint')
+  }
 end
 
 local function diag_enable(f, s)
-    return function()
-        local diag = f()[s]
-        return diag and diag ~= 0
-    end
+  return function()
+    local diag = f()[s]
+    return diag and diag ~= 0
+  end
 end
 
 local function diag_of(f, s)
-    local icon = icons[s]
-    return function()
-        local diag = f()[s]
-        return icon .. diag
-    end
-end
-
-local function vimode_hl()
-    return {
-        name = vi_mode_utils.get_mode_highlight_name(),
-        fg = vi_mode_utils.get_mode_color()
-    }
+  local icon = icons[s]
+  return function()
+    local diag = f()[s]
+    return icon .. diag
+  end
 end
 
 -- LuaFormatter off
@@ -113,12 +89,12 @@ local comps = {
     vi_mode = {
       left = {
           provider = ' ',
-          hl = vi_mode_hl,
+          hl = { fg = colors.orange },
           right_sep = ' '
       },
       right = {
           provider = ' ',
-          hl = vi_mode_hl,
+          hl = { fg = colors.orange },
           left_sep = ' '
       },
       name = {
@@ -284,5 +260,5 @@ require'feline'.setup {
     default_fg = colors.fg,
     components = components,
     properties = properties,
-    vi_mode_colors = vi_mode_colors
+    -- vi_mode_colors = vi_mode_colors
 }
