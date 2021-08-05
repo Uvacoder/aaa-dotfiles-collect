@@ -28,12 +28,12 @@ keymap('n', '<C-q>', '!<CR>', options)
 keymap('i', '<C-c>', '<esc>', options)
 
 -- search and replace
-keymap('n', '<C-h>', '<cmd>%s///gcI<Left><Left><Left><Left><Left>', {noremap = true, expr = false, silent = false})
+keymap('n', '<C-h>', ':%s///gcI<Left><Left><Left><Left><Left>', {noremap = true, expr = false, silent = false})
 keymap('n', '<Esc><Esc><Esc>', '<cmd>nohlsearch<CR><Esc>', options)
 
 -- move lines:
-keymap('v', '<S-K>', "<cmd>m '<-2<CR>gv=gv", options)
-keymap('v', '<S-J>', "<cmd>m '>+1<CR>gv=gv", options)
+keymap('v', '<S-K>', ":m '<-2<CR>gv=gv", options)
+keymap('v', '<S-J>', ":m '>+1<CR>gv=gv", options)
 keymap('v', '<S-L>', '>gv', options)
 keymap('v', '<S-H>', '<gv', options)
 

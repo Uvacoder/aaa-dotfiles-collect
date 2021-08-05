@@ -16,5 +16,5 @@ vim.g.colors = {
 
 require('options')
 require('plugins')
-require('autocmd')
 require('mappings')
+require('autocmd')

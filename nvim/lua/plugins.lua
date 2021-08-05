@@ -74,14 +74,14 @@ require('packer').startup(function()
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-  use { "Murtaza-Udaipurwala/gruvqueen", config = "require('config.cs.gruvqueen')" }
+  use { "folke/tokyonight.nvim", config = "require('config.cs.tokyonight')" }
+  -- use { "Murtaza-Udaipurwala/gruvqueen", config = "require('config.cs.gruvqueen')" }
   -- use { "tiagovla/tokyodark.nvim", config = "require('config.cs.tokyodark')" }
   -- use { "marko-cerovac/material.nvim", config = "require('config.cs.material')" }
   -- use { "Th3Whit3Wolf/one-nvim", config = "require('config.cs.one-nvim')" }
   -- use { "mhartington/oceanic-next", config = "require('config.cs.oceanic-next')" }
   -- use { "Yagua/nebulous.nvim", config = "require('config.cs.nebulous')" }
   -- use { "bluz71/vim-nightfly-guicolors", config = "require('config.cs.nightfly')" }
-  -- use { "folke/tokyonight.nvim", config = "require('config.cs.tokyonight')" }
   -- use { 'yashguptaz/calvera-dark.nvim', config = "require('config.cs.calvera-dark')" }
   -- use { 'projekt0n/github-nvim-theme', config = "require('config.cs.github')" }
 
