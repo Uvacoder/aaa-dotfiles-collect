@@ -41,7 +41,7 @@ local vi_mode_hl = function()
   local vi_mode = require 'feline.providers.vi_mode'
   return {
     name = vi_mode.get_mode_highlight_name(),
-    bg = 'bg',
+    -- bg = 'status',
     fg = vi_mode.get_mode_color()
   }
 end
@@ -86,162 +86,96 @@ end
 -- LuaFormatter off
 
 local comps = {
+  sepa = {
+    left = { provider = ' ', hl = { fg = colors.orange }, right_sep = ' ' },
+    right = { provider = ' ', hl = { fg = colors.orange }, left_sep = ' ' },
+  },
   vi_mode = {
-    left = {
-        provider = ' ',
-        hl = { fg = colors.orange },
-        right_sep = ' '
-    },
-    right = {
-        provider = ' ',
-        hl = { fg = colors.orange },
-        left_sep = ' '
-    },
-    name = {
-        provider = vi_mode_provider,
-        hl = vi_mode_hl,
-        right_sep = ' '
-    },
+    name = { provider = vi_mode_provider, hl = vi_mode_hl, right_sep = ' ' },
   },
   file = {
-      info = {
-          provider = 'file_info',
-          hl = { fg = colors.yellow },
-          left_sep = ' '
-      },
-      encoding = {
-          provider = 'file_encoding',
-          left_sep = ' ',
-          hl = { fg = colors.fg }
-      },
-      type = {
-          provider = 'file_type'
-      },
-      cursor = { 
-          provider = 'position',
-          left_sep = ' ',
-          hl = { fg = colors.fg }
-      },
-      os = {
-          provider = file_osinfo,
-          left_sep = ' ',
-          hl = { fg = colors.fg }
-      }
+    info = { provider = 'file_info', hl = { fg = colors.yellow }, left_sep = ' ' },
+    encoding = { provider = 'file_encoding', left_sep = ' ', hl = { fg = colors.white }},
+    type = { provider = 'file_type' },
+    cursor = { provider = 'position', left_sep = ' ', hl = { fg = colors.white }},
+    os = { provider = file_osinfo, left_sep = ' ', hl = { fg = colors.white }}
   },
   diagnos = {
-      err = {
-          provider = diag_of(lsp_diagnostics_info, 'errs'),
-          left_sep = ' ',
-          enabled = diag_enable(lsp_diagnostics_info, 'errs'),
-          hl = { fg = colors.red }
-      },
-      warn = {
-          provider = diag_of(lsp_diagnostics_info, 'warns'),
-          left_sep = ' ',
-          enabled = diag_enable(lsp_diagnostics_info, 'warns'),
-          hl = { fg = colors.yellow }
-      },
-      info = {
-          provider = diag_of(lsp_diagnostics_info, 'infos'),
-          left_sep = ' ',
-          enabled = diag_enable(lsp_diagnostics_info, 'infos'),
-          hl = { fg = colors.blue }
-      },
-      hint = {
-          provider = diag_of(lsp_diagnostics_info, 'hints'),
-          left_sep = ' ',
-          enabled = diag_enable(lsp_diagnostics_info, 'hints'),
-          hl = { fg = colors.cyan }
-      },
+    erro = { provider = diag_of(lsp_diagnostics_info, 'errs'), left_sep = ' ', enabled = diag_enable(lsp_diagnostics_info, 'errs'), hl = { fg = colors.red }},
+    warn = { provider = diag_of(lsp_diagnostics_info, 'warns'), left_sep = ' ', enabled = diag_enable(lsp_diagnostics_info, 'warns'), hl = { fg = colors.yellow }},
+    info = { provider = diag_of(lsp_diagnostics_info, 'infos'), left_sep = ' ', enabled = diag_enable(lsp_diagnostics_info, 'infos'), hl = { fg = colors.blue }},
+    hint = { provider = diag_of(lsp_diagnostics_info, 'hints'), left_sep = ' ', enabled = diag_enable(lsp_diagnostics_info, 'hints'), hl = { fg = colors.cyan }},
   },
   lsp = {
-      name = {
-          provider = 'lsp_client_names',
-          left_sep = ' ',
-          icon = icons.lsp,
-          hl = { fg = colors.fg }
-      }
+    name = { provider = 'lsp_client_names', left_sep = ' ', icon = icons.lsp, hl = { fg = colors.white } }
   },
   git = {
-    branch = {
-        provider = 'git_branch',
-        icon = icons.git,
-        left_sep = ' ',
-        hl = { fg = colors.violet },
-    },
-    add = {
-        provider = 'git_diff_added',
-        hl = { fg = colors.green }
-    },
-    change = {
-        provider = 'git_diff_changed',
-        hl = { fg = colors.orange }
-    },
-    remove = {
-        provider = 'git_diff_removed',
-        hl = { fg = colors.red }
-    }
+    branch = { provider = 'git_branch', icon = icons.git, left_sep = ' ', hl = { fg = colors.violet }},
+    add = { provider = 'git_diff_added', hl = { fg = colors.green }},
+    change = { provider = 'git_diff_changed', hl = { fg = colors.orange }},
+    remove = { provider = 'git_diff_removed', hl = { fg = colors.red }}
   }
 }
 
 local properties = {
-    force_inactive = {
-        filetypes = {
-            'NvimTree',
-            'dbui',
-            'packer',
-            'startify',
-            'fugitive',
-            'fugitiveblame'
-        },
-        buftypes = {'terminal'},
-        bufnames = {}
-    }
+  force_inactive = {
+    filetypes = {
+      'NvimTree',
+      'dbui',
+      'packer',
+      'startify',
+      'fugitive',
+      'fugitiveblame'
+    },
+    buftypes = {'terminal'},
+    bufnames = {}
+  }
 }
 
 local components = {
-    left = {
-        active = {
-            comps.vi_mode.left,
-            comps.vi_mode.name,
-            comps.file.info,
-            comps.file.cursor,
-            comps.diagnos.err,
-            comps.diagnos.warn,
-            comps.diagnos.hint,
-            comps.diagnos.info,
-            comps.file.os,
-            comps.file.encoding
-        },
-        inactive = {
-            comps.vi_mode.left,
-            comps.file.info
-        }
+  left = {
+    active = {
+      comps.sepa.left,
+      comps.vi_mode.name,
+      comps.file.info,
+      comps.diagnos.err0,
+      comps.diagnos.warn,
+      comps.diagnos.hint,
+      comps.diagnos.info,
+      comps.file.os,
+      comps.file.cursor,
+      comps.file.encoding
     },
-    mid = {
-        active = {
-          comps.git.branch,
-          comps.git.add,
-          comps.git.change,
-          comps.git.remove,
-        },
-        inactive = {}
-    },
-    right = {
-        active = {
-            comps.lsp.name,
-            comps.vi_mode.right
-        },
-        inactive = {}
+    inactive = {
+      comps.sepa.left,
+      comps.file.info
     }
+  },
+  mid = {
+    active = {
+      comps.git.branch,
+      comps.git.add,
+      comps.git.change,
+      comps.git.remove,
+    },
+    inactive = {}
+  },
+  right = {
+    active = {
+      comps.lsp.name,
+      comps.sepa.right
+    },
+    inactive = {
+      comps.sepa.right
+    }
+  }
 }
 
 -- LuaFormatter on
 
 require'feline'.setup {
-    default_bg = colors.bg,
-    default_fg = colors.fg,
-    components = components,
-    properties = properties,
-    -- vi_mode_colors = vi_mode_colors
+  default_bg = colors.statusline,
+  default_fg = colors.white,
+  components = components,
+  properties = properties,
 }
