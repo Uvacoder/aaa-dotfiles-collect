@@ -17,6 +17,7 @@ require('packer').startup({
       requires = {
         { "p00f/nvim-ts-rainbow" },
         { "windwp/nvim-ts-autotag" },
+        { "haringsrob/nvim_context_vt",  },
         { "nvim-treesitter/nvim-treesitter-refactor" },
         { "nvim-treesitter/nvim-treesitter-textobjects" },
         { 'JoosepAlviste/nvim-ts-context-commentstring', requires = { "tpope/vim-commentary" }}
@@ -36,6 +37,7 @@ require('packer').startup({
     use { 'NTBBloodbath/rest.nvim' }
     use { 'famiu/bufdelete.nvim' } 
     use { 'sindrets/diffview.nvim' }
+    use { 'jasonshell/vim-svg-indent' }
 
     use {
       'neovim/nvim-lspconfig', config = "require('config.lsp.config')",
@@ -43,7 +45,6 @@ require('packer').startup({
         { 'kabouzeid/nvim-lspinstall', config = "require('config.lsp.install')" },
         { 'ray-x/lsp_signature.nvim' },
         { 'hrsh7th/nvim-compe', config = "require('config.lsp.compe')" },
-        -- { "mhartington/formatter.nvim", cmd = "Format", config = "require('config.lsp.format2')"  }
         { "lukas-reineke/format.nvim", config = "require('config.lsp.format')" },
         { "folke/trouble.nvim", config = "require('config.lsp.trouble')" },
         { 'hrsh7th/vim-vsnip', requires = 'rafamadriz/friendly-snippets' }
@@ -69,7 +70,8 @@ require('packer').startup({
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    use { "folke/tokyonight.nvim", config = "require('config.cs.tokyonight')" }
+    use { 'rose-pine/neovim', as = 'rose-pine' , config = "require('config.cs.rose-pine')" }
+    -- use { "folke/tokyonight.nvim", config = "require('config.cs.tokyonight')" }
     -- use { "Murtaza-Udaipurwala/gruvqueen", config = "require('config.cs.gruvqueen')" }
     -- use { "tiagovla/tokyodark.nvim", config = "require('config.cs.tokyodark')" }
     -- use { "marko-cerovac/material.nvim", config = "require('config.cs.material')" }

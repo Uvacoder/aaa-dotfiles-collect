@@ -179,6 +179,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
+  nvim_context_vt = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim_context_vt"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/packer.nvim"
@@ -195,6 +199,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/rest.nvim"
   },
+  ["rose-pine"] = {
+    config = { "require('config.cs.rose-pine')" },
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/rose-pine"
+  },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
@@ -203,11 +212,6 @@ _G.packer_plugins = {
     config = { "require('config.telescope')" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/telescope.nvim"
-  },
-  ["tokyonight.nvim"] = {
-    config = { "require('config.cs.tokyonight')" },
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/tokyonight.nvim"
   },
   ["trouble.nvim"] = {
     config = { "require('config.lsp.trouble')" },
@@ -225,6 +229,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-commentary"
   },
+  ["vim-svg-indent"] = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-svg-indent"
+  },
   ["vim-visual-multi"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-visual-multi"
@@ -236,14 +244,30 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require('config.telescope')
-time([[Config for telescope.nvim]], false)
--- Config for: tokyonight.nvim
-time([[Config for tokyonight.nvim]], true)
-require('config.cs.tokyonight')
-time([[Config for tokyonight.nvim]], false)
+-- Config for: indentLine
+time([[Config for indentLine]], true)
+require('config.indent-guides')
+time([[Config for indentLine]], false)
+-- Config for: nvim-web-devicons
+time([[Config for nvim-web-devicons]], true)
+require("config.web-devicons")
+time([[Config for nvim-web-devicons]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+require('config.autopairs')
+time([[Config for nvim-autopairs]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+require('colorizer').setup()
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: nvim-compe
+time([[Config for nvim-compe]], true)
+require('config.lsp.compe')
+time([[Config for nvim-compe]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require('config.lsp.config')
+time([[Config for nvim-lspconfig]], false)
 -- Config for: nvim-lspinstall
 time([[Config for nvim-lspinstall]], true)
 require('config.lsp.install')
@@ -256,10 +280,10 @@ time([[Config for nvim-toggleterm.lua]], false)
 time([[Config for nvim-tree.lua]], true)
 require('config.tree')
 time([[Config for nvim-tree.lua]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require("config.treesitter")
-time([[Config for nvim-treesitter]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+require('config.lsp.trouble')
+time([[Config for trouble.nvim]], false)
 -- Config for: emmet-vim
 time([[Config for emmet-vim]], true)
 require("config.emmet")
@@ -272,38 +296,22 @@ time([[Config for feline.nvim]], false)
 time([[Config for format.nvim]], true)
 require('config.lsp.format')
 time([[Config for format.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require("config.treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: rose-pine
+time([[Config for rose-pine]], true)
+require('config.cs.rose-pine')
+time([[Config for rose-pine]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 require('config.git')
 time([[Config for gitsigns.nvim]], false)
--- Config for: indentLine
-time([[Config for indentLine]], true)
-require('config.indent-guides')
-time([[Config for indentLine]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('config.lsp.config')
-time([[Config for nvim-lspconfig]], false)
--- Config for: nvim-compe
-time([[Config for nvim-compe]], true)
-require('config.lsp.compe')
-time([[Config for nvim-compe]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-require('config.lsp.trouble')
-time([[Config for trouble.nvim]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-require('config.autopairs')
-time([[Config for nvim-autopairs]], false)
--- Config for: nvim-web-devicons
-time([[Config for nvim-web-devicons]], true)
-require("config.web-devicons")
-time([[Config for nvim-web-devicons]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-require('colorizer').setup()
-time([[Config for nvim-colorizer.lua]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('config.telescope')
+time([[Config for telescope.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)

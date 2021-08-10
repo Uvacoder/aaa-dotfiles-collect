@@ -6,6 +6,10 @@ require("format").setup{
         {cmd = {"prettier -w"}}
         -- {cmd = {"./node_modules/.bin/prettier -w", "./node_modules/.bin/eslint --fix"}}
     },
+    svg = {
+        {cmd = {"prettier -w"}}
+        -- {cmd = {"./node_modules/.bin/prettier -w", "./node_modules/.bin/eslint --fix"}}
+    },
     javascript = {
         {cmd = {"eslint --fix", "prettier -w"}}
         -- {cmd = {"./node_modules/.bin/prettier -w", "./node_modules/.bin/eslint --fix"}}
