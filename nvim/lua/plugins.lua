@@ -17,7 +17,7 @@ require('packer').startup({
       requires = {
         { "p00f/nvim-ts-rainbow" },
         { "windwp/nvim-ts-autotag" },
-        { "haringsrob/nvim_context_vt",  },
+        -- { "haringsrob/nvim_context_vt",  },
         { "nvim-treesitter/nvim-treesitter-refactor" },
         { "nvim-treesitter/nvim-treesitter-textobjects" },
         { 'JoosepAlviste/nvim-ts-context-commentstring', requires = { "tpope/vim-commentary" }}
@@ -37,7 +37,6 @@ require('packer').startup({
     use { 'NTBBloodbath/rest.nvim' }
     use { 'famiu/bufdelete.nvim' } 
     use { 'sindrets/diffview.nvim' }
-    use { 'jasonshell/vim-svg-indent' }
 
     use {
       'neovim/nvim-lspconfig', config = "require('config.lsp.config')",

@@ -18,7 +18,7 @@ vim.g.nvim_tree_ignore = {
   ".nuxt",
   "node_modules",
   ".cache",
-  "~*.*",
+  "~*",
   ".DS_Store"
 }
 

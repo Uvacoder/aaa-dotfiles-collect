@@ -1,10 +1,9 @@
 export ZSH="/Users/sldobri/.oh-my-zsh"
 export ZSH_CUSTOM="$ZSH/custom"
 export NODE_ENV="development"
-export EDITOR="nvim"
+# export EDITOR="nvim"
 export LANG="en_US.UTF-8"
 # export NVIM_TUI_ENABLE_TRUE_COLOR=1
-
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -73,6 +72,8 @@ alias c="code --disable-gpu"
 alias psa="ps aux"
 alias psg="ps aux | grep "
 
+alias dot-bkp="$HOME/Dropbox/Mac/Scripts/dot-bkp.sh"
+alias dot-restore="$HOME/Dropbox/Mac/Settings/dot-restore.sh"
 
 # remove the ‘application downloaded from the internet’ error message
 alias xatcr="xattr -cr "
@@ -91,7 +92,7 @@ alias home="cd $HOME/"
 alias dot="cd $HOME/.dotfiles"
 
 
-# Sites
+# Site
 alias sm="cd /Volumes/Sites/site-modelo-2021 && clear"
 alias mp="cd /Volumes/Sites/my-project && clear"
 alias anp="cd /Volumes/Sites/agua_nova_piscinas && clear"
@@ -102,8 +103,9 @@ alias ptu="cd /Volumes/Sites/pousada_do_tucunare_2020 && clear"
 alias sen="cd /Volumes/Sites/santos_e_nascimento_2020 && clear"
 
 # Code
-
-alias mes="cd /Volumes/Code/material-eshop && clear"
+alias as="cd /Volumes/Code/auton/server && clear"
+alias ac="cd /Volumes/Code/auton/client && clear"
+alias eu="cd /Volumes/Code/urban-octo-eureka && clear"
 alias esh="cd /Volumes/Code/e-shop && clear"
 alias low="cd /Volumes/Code/nuxt-express-auth-lowdb-admin && clear"
 alias cds="cd /Volumes/Code/car-dealership-2020 && clear"
