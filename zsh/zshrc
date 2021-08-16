@@ -103,8 +103,9 @@ alias ptu="cd /Volumes/Sites/pousada_do_tucunare_2020 && clear"
 alias sen="cd /Volumes/Sites/santos_e_nascimento_2020 && clear"
 
 # Code
-alias as="cd /Volumes/Code/auton/server && clear"
-alias ac="cd /Volumes/Code/auton/client && clear"
+alias au="cd /Volumes/Code/auton-2021 && clear"
+alias auc="cd /Volumes/Code/auton-2021/client && clear"
+alias aus="cd /Volumes/Code/auton-2021/server && clear"
 alias eu="cd /Volumes/Code/urban-octo-eureka && clear"
 alias esh="cd /Volumes/Code/e-shop && clear"
 alias low="cd /Volumes/Code/nuxt-express-auth-lowdb-admin && clear"
