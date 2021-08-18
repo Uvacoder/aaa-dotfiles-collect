@@ -3,6 +3,8 @@ local options = {noremap = true, silent = true}
 
 keymap('n', '<Space>', '<NOP>', options)
 
+keymap('n', 'q', ':q<CR>', options)
+
 keymap("n", "<Leader>bd", "<cmd>Bdelete<CR>", options)
 keymap("n", "<Leader>q", "<cmd>qall<CR>",options)
 
