@@ -26,11 +26,18 @@ if ! [[ -f "$GIT_FOLDER" ]]; then
 fi
 
 echo "$(tput setaf 2)FRIDAY: Installing Git Packages.$(tput sgr 0)"
-git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/themes/powerlevel10k
+
+tap_packages=(
+  "https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/plugins/zsh-autosuggestions"
+  "https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting"
+  "--depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/themes/powerlevel10k"
+)
+
+for package in "${tap_packages[@]}"
+do
+  echo "$(tput setaf 2)FRIDAY: Brew Tapping $package.$(tput sgr 0)"
+  git clone $package
+done
+
 echo "$(tput setaf 2)FRIDAY: Git Packages installed.$(tput sgr 0)"
-
-
 echo "---------------------------------------------------------"
-echo "$(tput setaf 2)FRIDAY: Switching shell to zsh. You may need to logout.$(tput sgr 0)"

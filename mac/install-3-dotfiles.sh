@@ -24,6 +24,12 @@ ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/global_ignore ~/.global_ignore
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 
+echo "$(tput setaf 2)FRIDAY: add nvim link.$(tput sgr 0)"
+
+mkdir ~/.config
+
+ln -s ~/.dotfiles/nvim ~/.config/nvim
+
 echo "$(tput setaf 2)FRIDAY: Load .zshrc.$(tput sgr 0)"
 
 source .zshrc
