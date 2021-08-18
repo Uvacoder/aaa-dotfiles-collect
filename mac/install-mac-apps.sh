@@ -54,28 +54,28 @@ echo "$(tput setaf 2)FRIDAY: Mas Packages installed.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 
 
-echo "$(tput setaf 2)FRIDAY: Installing PopClip extensions.$(tput sgr 0)"
+# echo "$(tput setaf 2)FRIDAY: Installing PopClip extensions.$(tput sgr 0)"
 
-pop_packages=(
-  "https://pilotmoon.com/popclip/extensions/ext/RunCommand.popclipextz"
-  "https://pilotmoon.com/popclip/extensions/ext/OpenInEdge.popclipextz"
-  "https://pilotmoon.com/popclip/extensions/ext/Uppercase.popclipextz"
-  "https://pilotmoon.com/popclip/extensions/ext/Lowercase.popclipextz"
-  "https://pilotmoon.com/popclip/extensions/ext/Capitalize.popclipextz"
- # "https://pilotmoon.com/popclip/extensions/ext/Evernote.popclipextz"
-  "https://pilotmoon.com/popclip/extensions/ext/Calculate.popclipextz"
- # "https://pilotmoon.com/popclip/extensions/ext/OpenInChrome.popclipextz"
-  "https://pilotmoon.com/popclip/extensions/ext/Hyphenate.popclipextz"
-  "https://pilotmoon.com/popclip/extensions/ext/URLEncode.popclipextz"
-  "https://pilotmoon.com/popclip/extensions/ext/GoogleTranslate.popclipextz"
-)
+# pop_packages=(
+#   "https://pilotmoon.com/popclip/extensions/ext/RunCommand.popclipextz"
+#   "https://pilotmoon.com/popclip/extensions/ext/OpenInEdge.popclipextz"
+#   "https://pilotmoon.com/popclip/extensions/ext/Uppercase.popclipextz"
+#   "https://pilotmoon.com/popclip/extensions/ext/Lowercase.popclipextz"
+#   "https://pilotmoon.com/popclip/extensions/ext/Capitalize.popclipextz"
+#  # "https://pilotmoon.com/popclip/extensions/ext/Evernote.popclipextz"
+#   "https://pilotmoon.com/popclip/extensions/ext/Calculate.popclipextz"
+#  # "https://pilotmoon.com/popclip/extensions/ext/OpenInChrome.popclipextz"
+#   "https://pilotmoon.com/popclip/extensions/ext/Hyphenate.popclipextz"
+#   "https://pilotmoon.com/popclip/extensions/ext/URLEncode.popclipextz"
+#   "https://pilotmoon.com/popclip/extensions/ext/GoogleTranslate.popclipextz"
+# )
 
-for package in "${pop_packages[@]}"
-do
-  echo "$(tput setaf 2)FRIDAY: download $package.$(tput sgr 0)"
-  wget $package --no-check-certificate
-done
-echo "$(tput setaf 2)FRIDAY: PopClip extensions installed.$(tput sgr 0)"
+# for package in "${pop_packages[@]}"
+# do
+#   echo "$(tput setaf 2)FRIDAY: download $package.$(tput sgr 0)"
+#   wget $package --no-check-certificate
+# done
+# echo "$(tput setaf 2)FRIDAY: PopClip extensions installed.$(tput sgr 0)"
 
 
 echo "---------------------------------------------------------"

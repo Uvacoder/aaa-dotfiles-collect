@@ -27,7 +27,6 @@ echo "$(tput setaf 2)FRIDAY: Installing Homebrew Cask packages.$(tput sgr 0)"
 tap_packages=(
   "homebrew/cask"
   "homebrew/cask-fonts"
-  "sscotth/monoid"
   "homebrew/core"
 )
 
@@ -65,19 +64,17 @@ echo "$(tput setaf 2)FRIDAY: Installing Homebrew Cash Apps.$(tput sgr 0)"
 cask_packages=(
   "sublime-text"
   "font-hack-nerd-font"
-  "font-monoid-xtralarge-dollar-1-l-nocalt"
-  "font-monoid-nerd-font"
   "iterm2"
   "transmission"
 # "vlc"
   "robo-3t"
-  "sequel-pro"
+  # "sequel-pro"
   "whatsApp"
   "bitwarden"
   "evernote"
   "github"
   "the-unarchiver"
-  "cyberduck"
+  # "cyberduck"
   "dropbox"
   "postman"
   "forklift"
@@ -111,10 +108,10 @@ echo "$(tput setaf 2)FRIDAY: Python Packages installed.$(tput sgr 0)"
 
 echo "---------------------------------------------------------"
 
-echo "$(tput setaf 2)FRIDAY: Disable touristd.$(tput sgr 0)"
-defaults write com.apple.touristd firstOSLogin -date "$(date)"
-defaults write com.apple.touristd seed-numNotifications-f/Pn3F4RScOh+GUBKO9sRA -int 1
-defaults write com.apple.touristd seed-notificationDueDate-f/Pn3F4RScOh+GUBKO9sRA -date "$(date)"
+# echo "$(tput setaf 2)FRIDAY: Disable touristd.$(tput sgr 0)"
+# defaults write com.apple.touristd firstOSLogin -date "$(date)"
+# defaults write com.apple.touristd seed-numNotifications-f/Pn3F4RScOh+GUBKO9sRA -int 1
+# defaults write com.apple.touristd seed-notificationDueDate-f/Pn3F4RScOh+GUBKO9sRA -date "$(date)"
 # defaults read com.apple.touristd
 # Use Plain Text Mode as Default
 defaults write com.apple.TextEdit RichText -int 0
