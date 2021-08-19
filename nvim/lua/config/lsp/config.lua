@@ -51,7 +51,7 @@ local on_attach = function(client, bufnr)
     ]], false)
   end
   -- lsp_signature
-  require('lsp_signature').on_attach()
+  -- require('lsp_signature').on_attach()
 end
 
 -- use lsp snippet
