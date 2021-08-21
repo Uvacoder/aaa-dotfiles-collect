@@ -202,66 +202,66 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-compe
-time([[Config for nvim-compe]], true)
-require('config.lsp.compe')
-time([[Config for nvim-compe]], false)
--- Config for: emmet-vim
-time([[Config for emmet-vim]], true)
-require("config.emmet")
-time([[Config for emmet-vim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require('config.tree')
-time([[Config for nvim-tree.lua]], false)
--- Config for: feline.nvim
-time([[Config for feline.nvim]], true)
-require('config.feline')
-time([[Config for feline.nvim]], false)
--- Config for: rose-pine
-time([[Config for rose-pine]], true)
-require('config.cs.rose-pine')
-time([[Config for rose-pine]], false)
--- Config for: format.nvim
-time([[Config for format.nvim]], true)
-require('config.lsp.format')
-time([[Config for format.nvim]], false)
--- Config for: nvim-web-devicons
-time([[Config for nvim-web-devicons]], true)
-require("config.web-devicons")
-time([[Config for nvim-web-devicons]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require("config.treesitter")
-time([[Config for nvim-treesitter]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require('config.telescope')
-time([[Config for telescope.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require('config.git')
-time([[Config for gitsigns.nvim]], false)
 -- Config for: trouble.nvim
 time([[Config for trouble.nvim]], true)
 require('config.lsp.trouble')
 time([[Config for trouble.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require('config.git')
+time([[Config for gitsigns.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 require('config.autopairs')
 time([[Config for nvim-autopairs]], false)
--- Config for: nvim-lspinstall
-time([[Config for nvim-lspinstall]], true)
-require('config.lsp.install')
-time([[Config for nvim-lspinstall]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require("config.treesitter")
+time([[Config for nvim-treesitter]], false)
 -- Config for: nvim-colorizer.lua
 time([[Config for nvim-colorizer.lua]], true)
 require('colorizer').setup()
 time([[Config for nvim-colorizer.lua]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('config.tree')
+time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-web-devicons
+time([[Config for nvim-web-devicons]], true)
+require("config.web-devicons")
+time([[Config for nvim-web-devicons]], false)
+-- Config for: nvim-lspinstall
+time([[Config for nvim-lspinstall]], true)
+require('config.lsp.install')
+time([[Config for nvim-lspinstall]], false)
+-- Config for: emmet-vim
+time([[Config for emmet-vim]], true)
+require("config.emmet")
+time([[Config for emmet-vim]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
 require('config.lsp.config')
 time([[Config for nvim-lspconfig]], false)
+-- Config for: feline.nvim
+time([[Config for feline.nvim]], true)
+require('config.feline')
+time([[Config for feline.nvim]], false)
+-- Config for: nvim-compe
+time([[Config for nvim-compe]], true)
+require('config.lsp.compe')
+time([[Config for nvim-compe]], false)
+-- Config for: format.nvim
+time([[Config for format.nvim]], true)
+require('config.lsp.format')
+time([[Config for format.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('config.telescope')
+time([[Config for telescope.nvim]], false)
+-- Config for: rose-pine
+time([[Config for rose-pine]], true)
+require('config.cs.rose-pine')
+time([[Config for rose-pine]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)

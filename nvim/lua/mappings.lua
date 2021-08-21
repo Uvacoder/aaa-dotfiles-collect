@@ -24,8 +24,10 @@ keymap('t', 'jj', '<ESC>', options)
 
 keymap('n', 'ss', ':w<CR>', options)
 keymap('i', '<C-s>', '<esc>:w<CR>', options)
+keymap('n', '<C-s>', '<esc>:w<CR>', options)
 keymap('n', 'qq', ':q<CR>', options)
 keymap('n', '<C-q>', ':q<CR>', options)
+keymap('i', '<C-q>', ':q<CR>', options)
 
 -- search and replace
 keymap('n', 'hh', ':%s///gcI<Left><Left><Left><Left><Left>', {noremap = true, expr = false, silent = false})

@@ -72,9 +72,6 @@ alias c="code --disable-gpu"
 alias psa="ps aux"
 alias psg="ps aux | grep "
 
-# alias dot-bkp="$HOME/Dropbox/Mac/Scripts/dot-bkp.sh"
-# alias dot-restore="$HOME/Dropbox/Mac/Settings/dot-restore.sh"
-
 # remove the ‘application downloaded from the internet’ error message
 alias xatcr="xattr -cr "
 
