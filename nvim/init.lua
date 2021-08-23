@@ -131,11 +131,12 @@ vim.g.rose_pine_enable_italics = true
 vim.g.rose_pine_disable_background = true
 require('rose-pine').set()
 
+vim.api.nvim_command("hi! StatusLine guibg=#000000 guifg=#333333")
+vim.api.nvim_command("hi! StatusLineNC guibg=#000000 guifg=#000000")
+vim.api.nvim_command("hi! EndOfBuffer guifg=#000000")
+vim.api.nvim_command("hi! NonText guifg=#000000")
 vim.api.nvim_command("hi! link CursorLineNr Normal")
 vim.api.nvim_command("hi! Comment gui=italic")
-vim.api.nvim_command("hi! Normal guibg=NONE")
-vim.api.nvim_command("hi! EndOfBuffer guibg=NONE")
-vim.api.nvim_command("hi! NonText guibg=NONE")
 
 
 -- colorizer
