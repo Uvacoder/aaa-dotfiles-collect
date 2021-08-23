@@ -1,3 +1,5 @@
+use 'bluz71/vim-nightfly-guicolors'
+
 vim.g.nightflyUnderlineMatchParen = 1
 vim.g.nightflyCursorColor = 1
 vim.g.nightflyItalics = 1

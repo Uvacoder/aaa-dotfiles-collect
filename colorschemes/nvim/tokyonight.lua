@@ -1,3 +1,5 @@
+use 'folke/tokyonight.nvim'
+
 vim.g.tokyonight_style = "night"
 vim.g.tokyonight_transparent = true
 vim.g.tokyonight_italic_comments = true

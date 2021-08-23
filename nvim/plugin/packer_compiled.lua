@@ -74,17 +74,10 @@ _G.packer_plugins = {
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
   },
   ["emmet-vim"] = {
-    config = { 'require("config.emmet")' },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/emmet-vim"
   },
-  ["feline.nvim"] = {
-    config = { "require('config.feline')" },
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/feline.nvim"
-  },
   ["format.nvim"] = {
-    config = { "require('config.lsp.format')" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/format.nvim"
   },
@@ -93,42 +86,34 @@ _G.packer_plugins = {
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/friendly-snippets"
   },
   ["gitsigns.nvim"] = {
-    config = { "require('config.git')" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
   ["nvim-autopairs"] = {
-    config = { "require('config.autopairs')" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
   ["nvim-colorizer.lua"] = {
-    config = { "require('colorizer').setup()" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-compe"] = {
-    config = { "require('config.lsp.compe')" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
   ["nvim-lspconfig"] = {
-    config = { "require('config.lsp.config')" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-lspinstall"] = {
-    config = { "require('config.lsp.install')" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
   ["nvim-tree.lua"] = {
-    config = { "require('config.tree')" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    config = { 'require("config.treesitter")' },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
@@ -145,7 +130,6 @@ _G.packer_plugins = {
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
-    config = { 'require("config.web-devicons")' },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
@@ -161,31 +145,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
+  ["rest.nvim"] = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/rest.nvim"
+  },
   ["rose-pine"] = {
-    config = { "require('config.cs.rose-pine')" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/rose-pine"
   },
-  ["telescope-fzy-native.nvim"] = {
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
-  },
-  ["telescope.nvim"] = {
-    config = { "require('config.telescope')" },
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/telescope.nvim"
-  },
   ["trouble.nvim"] = {
-    config = { "require('config.lsp.trouble')" },
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/trouble.nvim"
-  },
-  undotree = {
-    commands = { "UndotreeToggle" },
-    config = { "vim.g.undotree_SetFocusWhenToggle = 1" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/opt/undotree"
   },
   ["vim-commentary"] = {
     loaded = true,
@@ -202,72 +172,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-require('config.lsp.trouble')
-time([[Config for trouble.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require('config.git')
-time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-require('config.autopairs')
-time([[Config for nvim-autopairs]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require("config.treesitter")
-time([[Config for nvim-treesitter]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-require('colorizer').setup()
-time([[Config for nvim-colorizer.lua]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require('config.tree')
-time([[Config for nvim-tree.lua]], false)
--- Config for: nvim-web-devicons
-time([[Config for nvim-web-devicons]], true)
-require("config.web-devicons")
-time([[Config for nvim-web-devicons]], false)
--- Config for: nvim-lspinstall
-time([[Config for nvim-lspinstall]], true)
-require('config.lsp.install')
-time([[Config for nvim-lspinstall]], false)
--- Config for: emmet-vim
-time([[Config for emmet-vim]], true)
-require("config.emmet")
-time([[Config for emmet-vim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('config.lsp.config')
-time([[Config for nvim-lspconfig]], false)
--- Config for: feline.nvim
-time([[Config for feline.nvim]], true)
-require('config.feline')
-time([[Config for feline.nvim]], false)
--- Config for: nvim-compe
-time([[Config for nvim-compe]], true)
-require('config.lsp.compe')
-time([[Config for nvim-compe]], false)
--- Config for: format.nvim
-time([[Config for format.nvim]], true)
-require('config.lsp.format')
-time([[Config for format.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require('config.telescope')
-time([[Config for telescope.nvim]], false)
--- Config for: rose-pine
-time([[Config for rose-pine]], true)
-require('config.cs.rose-pine')
-time([[Config for rose-pine]], false)
-
--- Command lazy-loads
-time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command! -nargs=* -range -bang -complete=file UndotreeToggle lua require("packer.load")({'undotree'}, { cmd = "UndotreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-time([[Defining lazy-load commands]], false)
-
 if should_profile then save_profiles() end
 
 end)
