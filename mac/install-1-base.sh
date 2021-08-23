@@ -150,6 +150,12 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 killall Dock
 
 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.spindump.plist
+sudo mv /System/Library/LaunchDaemons/com.apple.spindump.plist /System/Library/LaunchDaemons/com.apple.spindump.plist.bak
+
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.tailspind.plist
+sudo mv /System/Library/LaunchDaemons/com.apple.tailspind.plist /System/Library/LaunchDaemons/com.apple.tailspind.plist.bak
+
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)FRIDAY: System update complete. Currently running at 100% power. Enjoy.$(tput sgr 0)"

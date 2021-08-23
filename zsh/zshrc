@@ -101,8 +101,8 @@ alias sen="cd /Volumes/Sites/santos_e_nascimento_2020 && clear"
 
 # Code
 alias au="cd /Volumes/Code/auton-2021 && clear"
-alias ac="cd /Volumes/Code/auton-2021/client && clear"
-alias as="cd /Volumes/Code/auton-2021/server && clear"
+alias cc="cd /Volumes/Code/auton-2021/client && clear"
+alias ss="cd /Volumes/Code/auton-2021/server && clear"
 alias eu="cd /Volumes/Code/urban-octo-eureka && clear"
 alias esh="cd /Volumes/Code/e-shop && clear"
 alias low="cd /Volumes/Code/nuxt-express-auth-lowdb-admin && clear"
