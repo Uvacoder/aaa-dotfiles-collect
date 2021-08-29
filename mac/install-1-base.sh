@@ -82,6 +82,7 @@ cask_packages=(
   "notion"
   "responsively"
   "numi"
+  "icab"
 )
 
 for package in "${cask_packages[@]}"
