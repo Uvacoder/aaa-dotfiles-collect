@@ -58,7 +58,7 @@ alias f="open ."
 alias rm="rm -ifr"
 alias cpu="top -o cpu"   # CPU
 alias mem="top -o rsize" # Memory
-
+alias speed="speedtest"
 
 # Editors
 alias v="nvim"

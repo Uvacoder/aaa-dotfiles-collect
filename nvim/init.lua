@@ -92,6 +92,7 @@ local use = require('packer').use
 require('packer').startup({ function()
   use 'wbthomason/packer.nvim'
   --
+  use 'tpope/vim-fugitive'
   use 'tpope/vim-commentary'
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim' 
@@ -103,6 +104,7 @@ require('packer').startup({ function()
   use 'windwp/nvim-autopairs'
   use 'kyazdani42/nvim-tree.lua'
   use 'lewis6991/gitsigns.nvim'
+  use 'nvim-telescope/telescope.nvim'
   use 'NTBBloodbath/rest.nvim'
   --
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } 
@@ -112,12 +114,19 @@ require('packer').startup({ function()
   --
   use 'neovim/nvim-lspconfig'
   use 'kabouzeid/nvim-lspinstall'
-  use 'hrsh7th/nvim-compe'
+  -- use 'hrsh7th/nvim-compe'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-nvim-lsp'
+  
   use 'lukas-reineke/format.nvim'
   use 'folke/trouble.nvim'
   use 'hrsh7th/vim-vsnip'
   use 'rafamadriz/friendly-snippets'
   --
+  -- use 'tiagovla/tokyodark.nvim'
   use { 'rose-pine/neovim', as = 'rose-pine'}
 
   end,
@@ -125,18 +134,39 @@ require('packer').startup({ function()
 })
 
 
+--tokyodark
+-- vim.g.tokyodark_transparent_background = true
+-- vim.g.tokyodark_enable_italic_comment = true
+-- vim.g.tokyodark_enable_italic = true
+-- vim.g.tokyodark_color_gamma = "1.5"
+-- vim.cmd[[colorscheme tokyodark]]
+
 -- rose-pine
 vim.g.rose_pine_variant = 'moon'
 vim.g.rose_pine_enable_italics = true
 vim.g.rose_pine_disable_background = true
 require('rose-pine').set()
 
-vim.api.nvim_command("hi! StatusLine guibg=#000000 guifg=#333333")
+
+-- fix colors
+vim.api.nvim_command("hi! StatusLine guibg='#24272B' guifg='#000000'")
 vim.api.nvim_command("hi! StatusLineNC guibg=#000000 guifg=#000000")
 vim.api.nvim_command("hi! EndOfBuffer guifg=#000000")
 vim.api.nvim_command("hi! NonText guifg=#000000")
 vim.api.nvim_command("hi! link CursorLineNr Normal")
 vim.api.nvim_command("hi! Comment gui=italic")
+
+
+-- statusline
+local fn, cmd = vim.fn, vim.cmd
+function my_statusline()
+  local branch = fn.FugitiveHead()
+  if branch and #branch > 0 then
+    branch = '  '..branch
+  end
+  return branch..'   %f%m%=%l:%c '
+end
+cmd[[ set statusline=%!luaeval('my_statusline()') ]]
 
 
 -- colorizer
@@ -149,6 +179,13 @@ vim.g.user_emmet_install_global = 0
 vim.g.user_emmet_install_command = 0
 vim.g.user_emmet_mode = 'i'
 
+
+require('telescope').setup{}
+
+vim.api.nvim_set_keymap('n', 'ff', ':lua require("telescope.builtin").find_files()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'fg', ':lua require("telescope.builtin").live_grep()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'fb', ':lua require("telescope.builtin").buffers()<CR>', {noremap = true, silent = true})
+--
 
 -- autopairs
 require('nvim-autopairs').setup({
@@ -352,104 +389,138 @@ vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "LspD
 vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "LspDiagnosticsDefaultHint"})
 
 -- compe
-vim.o.completeopt = "menuone,noselect"
+-- vim.o.completeopt = "menuone,noselect"
 
-require'compe'.setup {
-  enabled = true;
-  autocomplete = true;
-  debug = false;
-  min_length = 1;
-  preselect = 'enable';
-  throttle_time = 80;
-  source_timeout = 200;
-  resolve_timeout = 800;
-  incomplete_delay = 400;
-  max_abbr_width = 100;
-  max_kind_width = 100;
-  max_menu_width = 100;
-  documentation = {
-    border = { '', '' ,'', ' ', '', '', '', ' ' }, -- the border option is the same as `|help nvim_open_win|`
-    winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
-    max_width = 120,
-    min_width = 60,
-    max_height = math.floor(vim.o.lines * 0.3),
-    min_height = 1,
-  };
+-- require'compe'.setup {
+--   enabled = true;
+--   autocomplete = true;
+--   debug = false;
+--   min_length = 1;
+--   preselect = 'enable';
+--   throttle_time = 80;
+--   source_timeout = 200;
+--   resolve_timeout = 800;
+--   incomplete_delay = 400;
+--   max_abbr_width = 100;
+--   max_kind_width = 100;
+--   max_menu_width = 100;
+--   documentation = {
+--     border = { '', '' ,'', ' ', '', '', '', ' ' }, -- the border option is the same as `|help nvim_open_win|`
+--     winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
+--     max_width = 120,
+--     min_width = 60,
+--     max_height = math.floor(vim.o.lines * 0.3),
+--     min_height = 1,
+--   };
 
-  source = {
-    path = true;
-    buffer = true;
-    -- calc = true;
-    nvim_lsp = true;
-    nvim_lua = true;
-    vsnip = true;
-    -- ultisnips = true;
-    luasnip = true;
-  };
-}
+--   source = {
+--     path = true;
+--     buffer = true;
+--     -- calc = true;
+--     nvim_lsp = true;
+--     nvim_lua = true;
+--     vsnip = true;
+--     -- ultisnips = true;
+--     luasnip = true;
+--   };
+-- }
 
-local t = function(str)
-    return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
+-- local t = function(str)
+--     return vim.api.nvim_replace_termcodes(str, true, true, true)
+-- end
 
-local check_back_space = function()
-    local col = vim.fn.col(".") - 1
-    if col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
-        return true
-    else
-        return false
-    end
-end
+-- local check_back_space = function()
+--     local col = vim.fn.col(".") - 1
+--     if col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
+--         return true
+--     else
+--         return false
+--     end
+-- end
 
--- tab completion
+-- -- tab completion
 
-_G.tab_complete = function()
-    if vim.fn.pumvisible() == 1 then
-        return t "<C-n>"
-    elseif check_back_space() then
-        return t "<Tab>"
-    else
-        return vim.fn["compe#complete"]()
-    end
-end
-_G.s_tab_complete = function()
-    if vim.fn.pumvisible() == 1 then
-        return t "<C-p>"
-    elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
-        return t "<Plug>(vsnip-jump-prev)"
-    else
-        return t "<S-Tab>"
-    end
-end
+-- _G.tab_complete = function()
+--     if vim.fn.pumvisible() == 1 then
+--         return t "<C-n>"
+--     elseif check_back_space() then
+--         return t "<Tab>"
+--     else
+--         return vim.fn["compe#complete"]()
+--     end
+-- end
+-- _G.s_tab_complete = function()
+--     if vim.fn.pumvisible() == 1 then
+--         return t "<C-p>"
+--     elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
+--         return t "<Plug>(vsnip-jump-prev)"
+--     else
+--         return t "<S-Tab>"
+--     end
+-- end
 
---  mappings
+-- --  mappings
 
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+-- vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+-- vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+-- vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+-- vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
-function _G.completions()
-    local npairs = require("nvim-autopairs")
-    if vim.fn.pumvisible() == 1 then
-        if vim.fn.complete_info()["selected"] ~= -1 then
-            return vim.fn["compe#confirm"]("<CR>")
-        end
-    end
-    return npairs.check_break_line_char()
-end
+-- function _G.completions()
+--     local npairs = require("nvim-autopairs")
+--     if vim.fn.pumvisible() == 1 then
+--         if vim.fn.complete_info()["selected"] ~= -1 then
+--             return vim.fn["compe#confirm"]("<CR>")
+--         end
+--     end
+--     return npairs.check_break_line_char()
+-- end
 
-vim.api.nvim_set_keymap("i", "<CR>", "v:lua.completions()", {expr = true})
+-- vim.api.nvim_set_keymap("i", "<CR>", "v:lua.completions()", {expr = true})
+
+-- cmp
+  local cmp = require('cmp')
+  cmp.setup {
+    completion = {
+      completeopt = 'menu,menuone,noinsert',
+    },
+    -- You must install `vim-vsnip` if you use the following as-is.
+    snippet = {
+      expand = function(args)
+        vim.fn['vsnip#anonymous'](args.body)
+      end
+    },
+    -- You must set mapping if you want.
+    mapping = {
+      ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
+      ['<C-p>'] = cmp.mapping.select_prev_item(),
+      ['<C-n>'] = cmp.mapping.select_next_item(),
+      ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.close(),
+      ['<CR>'] = cmp.mapping.confirm({
+        behavior = cmp.ConfirmBehavior.Insert,
+        select = true,
+      })
+    },
+    -- You should specify your *installed* sources.
+    sources = {
+      { name = 'buffer' },
+      { name = 'path' },
+      { name = 'nvim_lsp' },
+      { name = 'vsnip' },
+    },
+  }
+
 
 
 -- format
 require("format").setup{
   -- remove trailing whitespace 
   ["*"] = {{cmd = {"sed -i 's/[ \t]*$//'"}}}, 
-  -- vue = {{cmd = {"eslint --fix", "prettier -w"}}},
-  -- javascript = {{cmd = {"eslint --fix", "prettier -w"}}},
-  javascript = {{cmd = {"prettier -w"}}},
-  vue = {{cmd = {"prettier -w"}}},
+  javascript = {{cmd = {"prettier -w", "eslint --fix"}}},
+  vue = {{cmd = {"prettier -w", "eslint --fix"}}},
   html = {{cmd = {"prettier -w"}}},
   svg = {{cmd = {"prettier -w"}}},
   css = {{cmd = {"prettier -w"}}},
@@ -483,29 +554,14 @@ require("trouble").setup {
   fold_open = "", -- icon used for open folds
   fold_closed = "", -- icon used for closed folds
   action_keys = { -- key mappings for actions in the trouble list
-      -- map to {} to remove a mapping, for example:
-      -- close = {},
       close = "q", -- close the list
       cancel = "<esc>", -- cancel the preview and get back to your last window / buffer / cursor
       refresh = "r", -- manually refresh
       jump = {"<cr>", "<tab>"}, -- jump to the diagnostic or open / close folds
-      open_split = { "<c-x>" }, -- open buffer in new split
-      open_vsplit = { "<c-v>" }, -- open buffer in new vsplit
-      open_tab = { "<c-t>" }, -- open buffer in new tab
-      jump_close = {"o"}, -- jump to the diagnostic and close the list
-      toggle_mode = "m", -- toggle between "workspace" and "document" diagnostics mode
-      toggle_preview = "P", -- toggle auto_preview
-      hover = "K", -- opens a small poup with the full multiline message
-      preview = "p", -- preview the diagnostic location
-      close_folds = {"zM", "zm"}, -- close all folds
-      open_folds = {"zR", "zr"}, -- open all folds
-      toggle_fold = {"zA", "za"}, -- toggle fold of current file
-      previous = "k", -- preview item
-      next = "j" -- next item
   },
   indent_lines = true, -- add an indent guide below the fold icons
   auto_open = false, -- automatically open the list when you have diagnostics
-  auto_close = false, -- automatically close the list when you have no diagnostics
+  auto_close = true, -- automatically close the list when you have no diagnostics
   auto_preview = true, -- automatyically preview the location of the diagnostic. <esc> to close preview and go back to last window
   auto_fold = false, -- automatically fold a file trouble list at creation
   signs = {

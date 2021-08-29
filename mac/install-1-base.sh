@@ -28,6 +28,7 @@ tap_packages=(
   "homebrew/cask"
   # "homebrew/cask-fonts"
   "homebrew/core"
+  "teamookla/speedtest"
 )
 
 for package in "${tap_packages[@]}"
@@ -50,6 +51,7 @@ brew_packages=(
   "node@14"
   "wget"
   "z"
+  "speedtest --force"
 )
 
 for package in "${brew_packages[@]}"
@@ -79,6 +81,7 @@ cask_packages=(
   "forklift"
   "notion"
   "responsively"
+  "numi"
 )
 
 for package in "${cask_packages[@]}"
