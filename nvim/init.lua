@@ -51,6 +51,17 @@ vim.o.completeopt = "menuone,noinsert,noselect,preview"
 vim.o.shell = "/bin/zsh"
 vim.o.errorformat = "%A%f:%l:%c:%m,%-G%.%#"
 vim.o.showbreak = '﬌ '
+-- vim.o.fillchars = "vert: ,eob: " -- make vertical split sign better
+vim.opt.fillchars = {
+  vert = " ", -- alternatives ▕│
+  fold = " ",
+  eob = " ", -- suppress ~ at EndOfBuffer
+  diff = "╱", -- alternatives = ⣿ ░ ─
+  msgsep = "‾",
+  foldopen = "▾",
+  foldsep = "│",
+  foldclose = "▸"
+}
 vim.o.inccommand = "split" -- incrementally show result of command
 vim.o.wildignore = "*/.git/*,*/.DS_Store,dist,*.o,*~,package-lock.json"
 vim.o.listchars = "tab:→ ,nbsp:␣,trail:•,precedes:«,extends:»"
@@ -58,7 +69,18 @@ vim.o.wildignorecase = true
 vim.o.undofile = true
 vim.o.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")
 
+vim.o.foldlevel = 99
+-- vim.o.foldmethod = "marker" -- foldmethod using marker
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+
+if vim.fn.isdirectory(vim.o.undodir) == 0 then
+  vim.fn.mkdir(vim.o.undodir, "p")
+end
+
 if vim.fn.has("termguicolors") == 1 then
+  vim.cmd("let &t_8f = '\\<Esc>[38;2;%lu;%lu;%lum'")
+  vim.cmd("let &t_8b = '\\<Esc>[48;2;%lu;%lu;%lum'")
   vim.o.termguicolors = true
 end
 
@@ -123,8 +145,7 @@ require('packer').startup({ function()
   use 'hoob3rt/lualine.nvim'
 
   -- use 'tiagovla/tokyodark.nvim'
-  -- use { 'rose-pine/neovim', as = 'rose-pine'}
-  use 'lifepillar/vim-gruvbox8'
+  use { 'rose-pine/neovim', as = 'rose-pine'}
 
   end,
   config = { display = { open_fn = require('packer.util').float }}
@@ -139,15 +160,11 @@ require('packer').startup({ function()
 -- vim.cmd[[colorscheme tokyodark]]
 
 -- rose-pine
--- vim.g.rose_pine_variant = 'moon'
--- vim.g.rose_pine_enable_italics = true
--- vim.g.rose_pine_disable_background = true
--- require('rose-pine').set()
+vim.g.rose_pine_variant = 'moon'
+vim.g.rose_pine_enable_italics = true
+vim.g.rose_pine_disable_background = true
+require('rose-pine').set()
 
--- vim-gruvbox8
-vim.g.gruvbox_bold = 0
-vim.g.gruvbox_transp_bg = 1
-vim.cmd[[colorscheme gruvbox8_soft]]
 
 -- fix colors
 vim.api.nvim_command("hi! EndOfBuffer guifg=#000000")
@@ -157,7 +174,12 @@ vim.api.nvim_command("hi! Comment gui=italic")
 
 
 -- statusline
-require('lualine').setup()
+require('lualine').setup{
+  options = {
+    theme = 'iceberg_dark',
+    component_separators = {'', ''}
+  }
+}
 
 
 --colorizer
@@ -330,6 +352,7 @@ local on_attach = function(client, bufnr)
     augroup END
     ]], false)
   end
+  -- lsp_signature
 end
 
 -- use lsp snippet
@@ -354,9 +377,6 @@ local function setup_servers()
     nvim_lsp[server].setup{
       on_attach = on_attach,
       capabilities = capabilities,
-      flags = {
-         debounce_text_changes = 150,
-      }
     }
   end
 end
@@ -364,7 +384,7 @@ end
 setup_servers()
 
 -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-  require'lspinstall'.post_install_hook = function ()
+require'lspinstall'.post_install_hook = function ()
   setup_servers() -- reload installed servers
   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
@@ -551,7 +571,7 @@ vim.api.nvim_set_keymap('n', '=', '<PageDown>', { noremap=true, silent=true })
 vim.api.nvim_set_keymap('n', '-', '<PageUp>', { noremap=true, silent=true })
 
 -- select all
-vim.api.nvim_set_keymap('n', '<C-a>', 'ggVG', { noremap=true, silent=true })
+vim.api.nvim_set_keymap('n', '<S-A>', 'ggVG', { noremap=true, silent=true })
 
 
 vim.api.nvim_set_keymap('n', 'ss', ':w<CR>', { noremap=true, silent=true })
@@ -606,9 +626,6 @@ vim.api.nvim_exec("autocmd InsertLeave * set nocul", "")
 -- Auto save files when focus is lost
 vim.cmd("autocmd FocusLost * silent! :wa!")
 vim.cmd("autocmd TermOpen * setlocal signcolumn=no nonumber norelativenumber")
-
-vim.cmd("autocmd FileType html,css,vue,js,javascript,javascriptreact EmmetInstall")
-
 
 vim.api.nvim_exec([[
   augroup numbertoggle
