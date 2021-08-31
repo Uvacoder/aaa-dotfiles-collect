@@ -184,7 +184,7 @@ require('lualine').setup{
     lualine_b = {"branch", "diff"},
     lualine_c = {
       {"filename", file_status = true, full_path = true},
-      {"diagnostics", sources = {"nvim_lsp"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ''}}
+      {"diagnostics", sources = {"nvim_lsp"}, symbols = {error = '', warn = '', info = '', hint = ''}}
     },
     lualine_x = {"filetype"},
     lualine_y = {{"progress"}},
@@ -216,8 +216,8 @@ require('gitsigns').setup {
   signs = {
     add = { hl = 'DiffAdd', text = '+' },
     change = { hl = 'DiffChange', text = '~' },
-    delete = { hl = 'DiffDelete', text = '_' },
-    topdelete = { hl = 'DiffDelete', text = '‾' },
+    delete = { hl = 'DiffDelete', text = '-' },
+    topdelete = { hl = 'DiffDelete', text = '-' },
     changedelete = { hl = 'DiffChange', text = '~' },
   },
 }
@@ -398,10 +398,10 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 
 -- the default lsp diagnostic letters with prettier symbols
-vim.fn.sign_define("LspDiagnosticsSignError", {text = "", numhl = "LspDiagnosticsDefaultError"})
-vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", numhl = "LspDiagnosticsDefaultWarning"})
-vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "LspDiagnosticsDefaultInformation"})
-vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "LspDiagnosticsDefaultHint"})
+vim.fn.sign_define("LspDiagnosticsSignError", {text = "", numhl = "LspDiagnosticsDefaultError"})
+vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", numhl = "LspDiagnosticsDefaultWarning"})
+vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "LspDiagnosticsDefaultInformation"})
+vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "LspDiagnosticsDefaultHint"})
 
 -- nvim_comp
 vim.o.completeopt = "menuone,noselect"
