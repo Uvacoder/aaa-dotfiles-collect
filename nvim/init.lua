@@ -141,7 +141,7 @@ require('packer').startup({ function()
 
   use 'lukas-reineke/format.nvim'
   use 'folke/trouble.nvim'
-  
+  use 'sindrets/diffview.nvim'
   use 'hoob3rt/lualine.nvim'
 
   -- use 'tiagovla/tokyodark.nvim'
@@ -332,16 +332,17 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
   buf_set_keymap("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap = true, silent = true })
 
+  -- vue 3 cause errors
   -- Set autocommands conditional on server_capabilities
-  if client.resolved_capabilities.document_highlight then
-    vim.api.nvim_exec([[
-    augroup lsp_document_highlight
-      autocmd! * <buffer>
-      autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
-      autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-    augroup END
-    ]], false)
-  end
+  -- if client.resolved_capabilities.document_highlight then
+  --   vim.api.nvim_exec([[
+  --   augroup lsp_document_highlight
+  --     autocmd! * <buffer>
+  --     autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
+  --     autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+  --   augroup END
+  --   ]], false)
+  -- end
   -- auto formatting
   if client.resolved_capabilities.document_formatting then
     vim.api.nvim_exec([[
@@ -363,7 +364,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
     'detail',
     'additionalTextEdits',
   }
-}
+}  
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
@@ -375,7 +376,7 @@ local function setup_servers()
   for _, server in pairs(servers) do
     nvim_lsp[server].setup{
       on_attach = on_attach,
-      capabilities = capabilities,
+      capabilities = capabilities
     }
   end
 end
@@ -498,8 +499,10 @@ vim.api.nvim_set_keymap("i", "<CR>", "v:lua.completions()", {expr = true})
 require("format").setup{
   -- remove trailing whitespace 
   ["*"] = {{cmd = {"sed -i 's/[ \t]*$//'"}}}, 
-  javascript = {{cmd = {"prettier -w", "eslint --fix"}}},
-  vue = {{cmd = {"prettier -w", "eslint --fix"}}},
+  -- javascript = {{cmd = {"prettier -w", "eslint --fix"}}},
+  -- vue = {{cmd = {"prettier -w", "eslint --fix"}}},
+  javascript = {{cmd = {"prettier -w"}}},
+  vue = {{cmd = {"prettier -w"}}},
   html = {{cmd = {"prettier -w"}}},
   svg = {{cmd = {"prettier -w"}}},
   css = {{cmd = {"prettier -w"}}},
@@ -587,8 +590,8 @@ vim.api.nvim_set_keymap('n', '<Esc><Esc><Esc>', '<cmd>nohlsearch<CR><Esc>', { no
 --Add move line shortcuts
 vim.api.nvim_set_keymap('n', '<S-J>', ':m .+1<CR>==', { noremap = true})
 vim.api.nvim_set_keymap('n', '<S-K>', ':m .-2<CR>==', { noremap = true})
-vim.api.nvim_set_keymap('i', '<S-J>', '<Esc>:m .+1<CR>==gi', { noremap = true})
-vim.api.nvim_set_keymap('i', '<S-K>', '<Esc>:m .-2<CR>==gi', { noremap = true})
+-- vim.api.nvim_set_keymap('i', '<S-J>', '<Esc>:m .+1<CR>==gi', { noremap = true})
+-- vim.api.nvim_set_keymap('i', '<S-K>', '<Esc>:m .-2<CR>==gi', { noremap = true})
 vim.api.nvim_set_keymap('v', '<S-J>', ':m \'>+1<CR>gv=gv', { noremap = true})
 vim.api.nvim_set_keymap('v', '<S-K>', ':m \'<-2<CR>gv=gv', { noremap = true})
 
