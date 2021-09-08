@@ -4,54 +4,46 @@ vim.g.node_host_prog = "/usr/local/lib/node_modules/neovim/bin/cli.js"
 -------------
 -- options --
 -------------
-local shiftwidth = 2
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.wo.number = true
-vim.wo.relativenumber = true
-vim.wo.signcolumn = "yes"
-vim.wo.wrap = false
-vim.wo.list = true
-
-vim.bo.shiftwidth = shiftwidth
-vim.bo.softtabstop = shiftwidth
-vim.bo.autoindent = true
-
-vim.o.encoding = "UTF-8"
-vim.o.background = "dark"
-vim.o.compatible = false
-vim.o.cmdheight = 1
-vim.o.conceallevel = 0 -- So that I can see `` in markdown files
-vim.o.hidden = true
-vim.o.updatetime = 100
-vim.o.showcmd = false
-vim.o.showmode = false
-vim.o.cursorline = false
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.wrap = false
-vim.o.expandtab = true
-vim.o.joinspaces = false
-vim.o.shiftwidth = shiftwidth
-vim.o.softtabstop = shiftwidth
-vim.o.clipboard = "unnamedplus"
-vim.o.hlsearch = true
-vim.o.incsearch = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.autoread = true
-vim.o.autowrite = true
-vim.o.swapfile = false
-vim.bo.swapfile = false
-vim.o.backup = false
-vim.o.writebackup = false
-vim.o.completeopt = "menuone,noinsert,noselect,preview"
-vim.o.shell = "/bin/zsh"
-vim.o.errorformat = "%A%f:%l:%c:%m,%-G%.%#"
-vim.o.showbreak = '﬌ '
--- vim.o.fillchars = "vert: ,eob: " -- make vertical split sign better
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = "yes"
+vim.opt.list = true
+vim.opt.autoindent = true
+vim.opt.encoding = "UTF-8"
+vim.opt.background = "dark"
+vim.opt.compatible = false
+vim.opt.cmdheight = 1
+vim.opt.conceallevel = 0 -- So that I can see `` in markdown files
+vim.opt.hidden = true
+vim.opt.updatetime = 100
+vim.opt.showcmd = false
+vim.opt.showmode = false
+vim.opt.cursorline = false
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.wrap = false
+vim.opt.expandtab = true
+vim.opt.joinspaces = false
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.clipboard = "unnamedplus"
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.autoread = true
+vim.opt.autowrite = true
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.completeopt = "menuone,noinsert,noselect,preview"
+vim.opt.shell = "/bin/zsh"
+vim.opt.errorformat = "%A%f:%l:%c:%m,%-G%.%#"
+vim.opt.showbreak = '﬌ '
+-- vim.opt.fillchars = "vert: ,eob: " -- make vertical split sign better
 vim.opt.fillchars = {
   vert = " ", -- alternatives ▕│
   fold = " ",
@@ -62,36 +54,20 @@ vim.opt.fillchars = {
   foldsep = "│",
   foldclose = "▸"
 }
-vim.o.inccommand = "split" -- incrementally show result of command
-vim.o.wildignore = "*/.git/*,*/.DS_Store,dist,*.o,*~,package-lock.json"
-vim.o.listchars = "tab:→ ,nbsp:␣,trail:•,precedes:«,extends:»"
-vim.o.wildignorecase = true
-vim.o.undofile = true
-vim.o.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")
-
-vim.o.foldlevel = 99
--- vim.o.foldmethod = "marker" -- foldmethod using marker
-vim.o.foldmethod = 'expr'
-vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
-
-if vim.fn.isdirectory(vim.o.undodir) == 0 then
-  vim.fn.mkdir(vim.o.undodir, "p")
-end
+vim.opt.inccommand = "split" -- incrementally show result of command
+vim.opt.wildignore = "*/.git/*,*/.DS_Store,dist,*.o,*~,package-lock.json"
+vim.opt.listchars = "tab:→ ,nbsp:␣,trail:•,precedes:«,extends:»"
+vim.opt.wildignorecase = true
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")
+vim.opt.foldenable = false
+vim.opt.foldlevel = 99
+vim.opt.foldmethod = "indent"
+vim.opt.formatoptions = "l"
 
 if vim.fn.has("termguicolors") == 1 then
-  vim.cmd("let &t_8f = '\\<Esc>[38;2;%lu;%lu;%lum'")
-  vim.cmd("let &t_8b = '\\<Esc>[48;2;%lu;%lu;%lum'")
-  vim.o.termguicolors = true
+  vim.opt.termguicolors = true
 end
-
-vim.cmd('set iskeyword+=-')
-vim.cmd('set formatoptions-=cro')
-vim.cmd('set whichwrap+=<,>,[,],h,l')
-vim.cmd('set shortmess+=cFW')
-vim.cmd('filetype plugin indent on')
-vim.cmd('syntax on')
-vim.cmd('set foldlevel=99')
-
 
 
 -------------
@@ -199,10 +175,12 @@ require('colorizer').setup()
 
 
 -- telescope
-require('telescope').setup{}
+require('telescope').setup{
+  defaults = { file_ignore_patterns = {"node_modules"} }
+}
 vim.api.nvim_set_keymap('n', 'ff', ':lua require("telescope.builtin").find_files()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', 'fg', ':lua require("telescope.builtin").live_grep()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'fb', ':lua require("telescope.builtin").buffers()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'bb', ':lua require("telescope.builtin").buffers()<CR>', {noremap = true, silent = true})
 --
 
 -- autopairs
@@ -258,7 +236,8 @@ require("nvim-treesitter.configs").setup {
   },
   rainbow = {
     enable = true,
-    extended_mode = true
+    extended_mode = true,
+    max_file_lines = nil,
   },
   context_commentstring = {
     enable = true
@@ -405,7 +384,7 @@ vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "LspD
 vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "LspDiagnosticsDefaultHint"})
 
 -- nvim_comp
-vim.o.completeopt = "menuone,noselect"
+vim.opt.completeopt = "menuone,noselect"
 
 require'compe'.setup {
   enabled = true;
