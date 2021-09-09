@@ -62,7 +62,7 @@ vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")
 vim.opt.foldenable = false
 vim.opt.foldlevel = 99
-vim.opt.foldmethod = "indent"
+vim.opt.foldmethod = "manual"
 vim.opt.formatoptions = "l"
 
 if vim.fn.has("termguicolors") == 1 then
@@ -119,9 +119,10 @@ require('packer').startup({ function()
   use 'folke/trouble.nvim'
   use 'sindrets/diffview.nvim'
   use 'hoob3rt/lualine.nvim'
+  use 'akinsho/nvim-bufferline.lua'
 
-  -- use 'tiagovla/tokyodark.nvim'
-  use { 'rose-pine/neovim', as = 'rose-pine'}
+  use 'tiagovla/tokyodark.nvim'
+  -- use { 'rose-pine/neovim', as = 'rose-pine'}
 
   end,
   config = { display = { open_fn = require('packer.util').float }}
@@ -129,23 +130,25 @@ require('packer').startup({ function()
 
 
 --tokyodark
--- vim.g.tokyodark_transparent_background = true
--- vim.g.tokyodark_enable_italic_comment = true
--- vim.g.tokyodark_enable_italic = true
--- vim.g.tokyodark_color_gamma = "1.5"
--- vim.cmd[[colorscheme tokyodark]]
+vim.g.tokyodark_transparent_background = true
+vim.g.tokyodark_enable_italic_comment = true
+vim.g.tokyodark_enable_italic = true
+vim.g.tokyodark_color_gamma = "1.5"
+vim.cmd[[colorscheme tokyodark]]
 
--- rose-pine
-vim.g.rose_pine_variant = 'moon'
-vim.g.rose_pine_enable_italics = true
-vim.g.rose_pine_disable_background = true
-require('rose-pine').set()
+
+-- vim.g.rose_pine_enable_italics = true
+-- vim.g.rose_pine_disable_background = true
+-- require('rose-pine').set()
 
 
 -- fix colors
+-- SignColumn
+vim.api.nvim_command("hi! SignColumn guibg=NONE")
 vim.api.nvim_command("hi! EndOfBuffer guifg=#000000")
 vim.api.nvim_command("hi! NonText guifg=#000000")
 vim.api.nvim_command("hi! link CursorLineNr Normal")
+vim.api.nvim_command("hi! link SignColumn Normal")
 vim.api.nvim_command("hi! Comment gui=italic")
 
 
@@ -153,7 +156,7 @@ vim.api.nvim_command("hi! Comment gui=italic")
 require('lualine').setup{
   options = {
     theme = 'iceberg_dark',
-    component_separators = {'', ''}
+    component_separators = {' ', ' '}
   },
   sections = {
     lualine_a = {"mode", "paste"},
@@ -169,6 +172,15 @@ require('lualine').setup{
   extensions = {'nvim-tree'}
 }
 
+
+require("bufferline").setup{ 
+  options = {
+    offsets = {{filetype = "NvimTree", text = " Explorer"}},
+    show_buffer_icons = true , 
+    show_buffer_close_icons = false ,
+    separator_style = {'',''}
+  }
+}
 
 --colorizer
 require('colorizer').setup()
@@ -192,11 +204,11 @@ require('nvim-autopairs').setup({
 -- gitsigns
 require('gitsigns').setup {
   signs = {
-    add = { hl = 'DiffAdd', text = '+' },
-    change = { hl = 'DiffChange', text = '~' },
-    delete = { hl = 'DiffDelete', text = '-' },
-    topdelete = { hl = 'DiffDelete', text = '-' },
-    changedelete = { hl = 'DiffChange', text = '~' },
+    add          = {hl = 'GitSignsAdd'   , text = '+', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
+    change       = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+    delete       = {hl = 'GitSignsDelete', text = '-', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+    topdelete    = {hl = 'GitSignsDelete', text = '-', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+    changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
   },
 }
 
@@ -615,4 +627,29 @@ vim.api.nvim_exec([[
     autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
   augroup END
 ]], "")
+
+local disabled_built_ins = {
+  "netrw",
+  "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "gzip",
+  "zip",
+  "zipPlugin",
+  "tar",
+  "tarPlugin",
+  "getscript",
+  "getscriptPlugin",
+  "vimball",
+  "vimballPlugin",
+  "2html_plugin",
+  "logipat",
+  "rrhelper",
+  "spellfile_plugin",
+  "matchit",
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+  vim.g["loaded_" .. plugin] = 1
+end
 
