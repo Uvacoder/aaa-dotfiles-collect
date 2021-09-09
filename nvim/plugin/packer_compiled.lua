@@ -89,6 +89,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
+  ["lsp-colors.nvim"] = {
+    loaded = true,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/lualine.nvim"

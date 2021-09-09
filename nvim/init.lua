@@ -120,6 +120,7 @@ require('packer').startup({ function()
   use 'sindrets/diffview.nvim'
   use 'hoob3rt/lualine.nvim'
   use 'akinsho/nvim-bufferline.lua'
+  use 'folke/lsp-colors.nvim'
 
   use 'tiagovla/tokyodark.nvim'
   -- use { 'rose-pine/neovim', as = 'rose-pine'}
@@ -144,11 +145,11 @@ vim.cmd[[colorscheme tokyodark]]
 
 -- fix colors
 -- SignColumn
-vim.api.nvim_command("hi! SignColumn guibg=NONE")
+-- vim.api.nvim_command("hi! SignColumn guibg=NONE")
 vim.api.nvim_command("hi! EndOfBuffer guifg=#000000")
 vim.api.nvim_command("hi! NonText guifg=#000000")
 vim.api.nvim_command("hi! link CursorLineNr Normal")
-vim.api.nvim_command("hi! link SignColumn Normal")
+-- vim.api.nvim_command("hi! link SignColumn Normal")
 vim.api.nvim_command("hi! Comment gui=italic")
 
 
@@ -156,13 +157,15 @@ vim.api.nvim_command("hi! Comment gui=italic")
 require('lualine').setup{
   options = {
     theme = 'iceberg_dark',
-    component_separators = {' ', ' '}
+    -- theme = 'tokyodark',
+    component_separators = "",
+    section_separators = "",
   },
   sections = {
     lualine_a = {"mode", "paste"},
     lualine_b = {"branch", "diff"},
     lualine_c = {
-      {"filename", file_status = true, full_path = true},
+      {"filename", file_status = true, full_path = true, color = {fg = '#f0f0f0', gui = 'bold'}},
       {"diagnostics", sources = {"nvim_lsp"}, symbols = {error = '', warn = '', info = '', hint = ''}}
     },
     lualine_x = {"filetype"},
@@ -173,17 +176,35 @@ require('lualine').setup{
 }
 
 
+-- bufferline
 require("bufferline").setup{ 
   options = {
     offsets = {{filetype = "NvimTree", text = " Explorer"}},
-    show_buffer_icons = true , 
+    indicator_icon = '',
+    show_buffer_icons = false , 
     show_buffer_close_icons = false ,
+    enforce_regular_tabs = false, 
     separator_style = {'',''}
+  },
+  highlights = {
+    buffer_selected = { guifg = '#f0f0f0', gui = "bold" },
+    background = { guibg = '#0F1117' },
+    fill = { guibg = '#0F1117' },
+    tab = { guibg = '#0F1117'},
   }
 }
 
 --colorizer
 require('colorizer').setup()
+
+
+-- lsp-colors
+require("lsp-colors").setup({
+  Error = "#db4b4b",
+  Warning = "#e0af68",
+  Information = "#0db9d7",
+  Hint = "#10B981"
+})
 
 
 -- telescope
