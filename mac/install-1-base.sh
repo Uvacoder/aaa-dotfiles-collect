@@ -63,11 +63,11 @@ echo "$(tput setaf 2)FRIDAY: Homebrew System Package installed.$(tput sgr 0)"
 
 echo "$(tput setaf 2)FRIDAY: Installing Homebrew Cash Apps.$(tput sgr 0)"
 cask_packages=(
-  "sublime-text"
+  # "sublime-text"
   # "font-hack-nerd-font"
   "iterm2"
   "transmission"
-# "vlc"
+  # "vlc"
   "robo-3t"
   # "sequel-pro"
   "whatsApp"
@@ -117,6 +117,7 @@ old_packages=(
   "wget https://www.maintain.se/downloads/Cocktail12ME.dmg"
   "wget https://dl.devmate.com/com.macpaw.CleanMyMac3/CleanMyMac3.dmg"
   "wget https://sipapp.io/updates/v1/sip-1.2.dmg"
+  "wget https://download.sublimetext.com/Sublime%20Text%20Build%203211.dmg"
 )
 
 for package in "${old_packages[@]}"

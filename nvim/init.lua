@@ -122,30 +122,48 @@ require('packer').startup({ function()
   use 'akinsho/nvim-bufferline.lua'
   use 'folke/lsp-colors.nvim'
 
-  use 'tiagovla/tokyodark.nvim'
+  use "projekt0n/github-nvim-theme"
+  -- use 'Yagua/nebulous.nvim'
+  -- use 'tiagovla/tokyodark.nvim'
   -- use { 'rose-pine/neovim', as = 'rose-pine'}
 
   end,
   config = { display = { open_fn = require('packer.util').float }}
 })
 
+require("github-theme").setup({
+  theme_style =	"dark",
+  transparent = true,
+  hide_end_of_buffer = true,
+  sidebars = {"qf", "vista_kind", "terminal", "packer"},
+  colors = {hint = "orange", error = "#ff0000"}
+})
 
---tokyodark
-vim.g.tokyodark_transparent_background = true
-vim.g.tokyodark_enable_italic_comment = true
-vim.g.tokyodark_enable_italic = true
-vim.g.tokyodark_color_gamma = "1.5"
-vim.cmd[[colorscheme tokyodark]]
+-- tokyodark
+-- vim.g.tokyodark_transparent_background = true
+-- vim.g.tokyodark_enable_italic_comment = true
+-- vim.g.tokyodark_enable_italic = true
+-- vim.g.tokyodark_color_gamma = "1.5"
+-- vim.cmd[[colorscheme tokyodark]]
 
-
+-- rose-pine
 -- vim.g.rose_pine_enable_italics = true
 -- vim.g.rose_pine_disable_background = true
 -- require('rose-pine').set()
 
+--Nebulous Settings
+-- require("nebulous").setup {
+--   variant = "night",
+--   disable = { background = true },
+--   italic = {
+--     comments   = true,
+--     keywords   = true,
+--     functions  = false,
+--     variables  = false,
+--   },
+-- }
 
 -- fix colors
--- SignColumn
--- vim.api.nvim_command("hi! SignColumn guibg=NONE")
 vim.api.nvim_command("hi! EndOfBuffer guifg=#000000")
 vim.api.nvim_command("hi! NonText guifg=#000000")
 vim.api.nvim_command("hi! link CursorLineNr Normal")
@@ -157,7 +175,6 @@ vim.api.nvim_command("hi! Comment gui=italic")
 require('lualine').setup{
   options = {
     theme = 'iceberg_dark',
-    -- theme = 'tokyodark',
     component_separators = "",
     section_separators = "",
   },

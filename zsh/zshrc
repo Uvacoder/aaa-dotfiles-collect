@@ -1,6 +1,6 @@
 export ZSH="/Users/sldobri/.oh-my-zsh"
 export ZSH_CUSTOM="$ZSH/custom"
-export NODE_ENV="development"
+# export NODE_ENV="development"
 # export EDITOR="nvim"
 export LANG="en_US.UTF-8"
 # export NVIM_TUI_ENABLE_TRUE_COLOR=1
