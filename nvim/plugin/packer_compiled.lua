@@ -109,10 +109,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua"
   },
-  ["nvim-colorizer.lua"] = {
-    loaded = true,
-    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
-  },
   ["nvim-compe"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/nvim-compe"
@@ -181,6 +177,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-fugitive"
   },
+  ["vim-hexokinase"] = {
+    commands = { "HexokinaseToggle" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/sldobri/.local/share/nvim/site/pack/packer/opt/vim-hexokinase"
+  },
   ["vim-visual-multi"] = {
     loaded = true,
     path = "/Users/sldobri/.local/share/nvim/site/pack/packer/start/vim-visual-multi"
@@ -192,6 +194,12 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file HexokinaseToggle lua require("packer.load")({'vim-hexokinase'}, { cmd = "HexokinaseToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
+time([[Defining lazy-load commands]], false)
+
 if should_profile then save_profiles() end
 
 end)

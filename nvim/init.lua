@@ -69,6 +69,31 @@ if vim.fn.has("termguicolors") == 1 then
   vim.opt.termguicolors = true
 end
 
+local disabled_built_ins = {
+  "netrw",
+  "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "gzip",
+  "zip",
+  "zipPlugin",
+  "tar",
+  "tarPlugin",
+  "getscript",
+  "getscriptPlugin",
+  "vimball",
+  "vimballPlugin",
+  "2html_plugin",
+  "logipat",
+  "rrhelper",
+  "spellfile_plugin",
+  "matchit",
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+  vim.g["loaded_" .. plugin] = 1
+end
+
 
 -------------
 -- plugins --
@@ -95,7 +120,7 @@ require('packer').startup({ function()
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim' 
   use 'kyazdani42/nvim-web-devicons'
-  use 'norcalli/nvim-colorizer.lua'
+  use {'rrethy/vim-hexokinase', run = 'make hexokinase', cmd = 'HexokinaseToggle'}
   use 'editorconfig/editorconfig-vim'
   use 'mg979/vim-visual-multi'
   use 'windwp/nvim-autopairs'
@@ -132,7 +157,7 @@ require('packer').startup({ function()
 })
 
 require("github-theme").setup({
-  theme_style =	"dark",
+  theme_style =	"dark_default",
   transparent = true,
   hide_end_of_buffer = true,
   sidebars = {"qf", "vista_kind", "terminal", "packer"},
@@ -171,6 +196,14 @@ vim.api.nvim_command("hi! link CursorLineNr Normal")
 vim.api.nvim_command("hi! Comment gui=italic")
 
 
+-- hexokinase
+-- download https://golang.org/doc/install and install go 
+-- cd ~/.local/share/nvim/site/pack/packer/opt/vim-hexokinase && make hexokinase
+vim.g.Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla'
+vim.g.Hexokinase_highlighters = {'backgroundfull'}
+vim.g.Hexokinase_ftEnabled = {'lua', 'css', 'html', 'javascript', 'vue'}
+
+
 -- statusline
 require('lualine').setup{
   options = {
@@ -196,7 +229,7 @@ require('lualine').setup{
 -- bufferline
 require("bufferline").setup{ 
   options = {
-    offsets = {{filetype = "NvimTree", text = " Explorer"}},
+    offsets = {{filetype = "NvimTree", text = "  Explorer"}},
     indicator_icon = '',
     show_buffer_icons = false , 
     show_buffer_close_icons = false ,
@@ -210,10 +243,6 @@ require("bufferline").setup{
     tab = { guibg = '#0F1117'},
   }
 }
-
---colorizer
-require('colorizer').setup()
-
 
 -- lsp-colors
 require("lsp-colors").setup({
@@ -639,6 +668,10 @@ vim.api.nvim_set_keymap('n', '<leader>k', '<C-w><C-k>', { noremap=true, silent=t
 -- RestNvim
 vim.api.nvim_set_keymap("n", "<C-a>", "<Plug>RestNvim", {noremap = false})
 
+-- Close Buffer
+vim.api.nvim_set_keymap("n", "<C-c>", "<cmd>BufferLinePickClose<CR>", {noremap = false})
+
+
 
 
 -------------
@@ -665,29 +698,4 @@ vim.api.nvim_exec([[
     autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
   augroup END
 ]], "")
-
-local disabled_built_ins = {
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "gzip",
-  "zip",
-  "zipPlugin",
-  "tar",
-  "tarPlugin",
-  "getscript",
-  "getscriptPlugin",
-  "vimball",
-  "vimballPlugin",
-  "2html_plugin",
-  "logipat",
-  "rrhelper",
-  "spellfile_plugin",
-  "matchit",
-}
-
-for _, plugin in pairs(disabled_built_ins) do
-  vim.g["loaded_" .. plugin] = 1
-end
 

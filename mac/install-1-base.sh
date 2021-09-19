@@ -52,6 +52,7 @@ brew_packages=(
   "wget"
   "z"
   "speedtest --force"
+  "microsoft-edge"
 )
 
 for package in "${brew_packages[@]}"
