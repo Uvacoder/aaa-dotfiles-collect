@@ -144,7 +144,8 @@ require('packer').startup({ function()
   use 'folke/trouble.nvim'
   use 'sindrets/diffview.nvim'
   use 'hoob3rt/lualine.nvim'
-  use 'akinsho/nvim-bufferline.lua'
+  -- use 'akinsho/nvim-bufferline.lua'
+  use 'romgrk/barbar.nvim'
   use 'folke/lsp-colors.nvim'
 
   use "projekt0n/github-nvim-theme"
@@ -225,24 +226,43 @@ require('lualine').setup{
   extensions = {'nvim-tree'}
 }
 
+vim.g.bufferline = {
+  animation = true,
+  auto_hide = true,
+  tabpages = true,
+  closable = true,
+  clickable = true,
+  icons = true,
+  icon_custom_colors = false,
+  icon_separator_active = '',
+  icon_separator_inactive = '',
+  icon_close_tab = '',
+  icon_close_tab_modified = '●',
+  icon_pinned = '車',
+  insert_at_end = true,
+  maximum_padding = 1,
+  maximum_length = 30,
+}
+vim.api.nvim_set_keymap('n', 'bc', ':BufferClose<CR>', { noremap = true, silent = true })
+
 
 -- bufferline
-require("bufferline").setup{ 
-  options = {
-    offsets = {{filetype = "NvimTree", text = "  Explorer"}},
-    indicator_icon = '',
-    show_buffer_icons = false , 
-    show_buffer_close_icons = false ,
-    enforce_regular_tabs = false, 
-    separator_style = {'',''}
-  },
-  highlights = {
-    buffer_selected = { guifg = '#f0f0f0', gui = "bold" },
-    background = { guibg = '#0F1117' },
-    fill = { guibg = '#0F1117' },
-    tab = { guibg = '#0F1117'},
-  }
-}
+-- require("bufferline").setup{ 
+--   options = {
+--     offsets = {{filetype = "NvimTree", text = "  Explorer"}},
+--     indicator_icon = '',
+--     show_buffer_icons = false , 
+--     show_buffer_close_icons = false ,
+--     enforce_regular_tabs = false, 
+--     separator_style = {'',''}
+--   },
+--   highlights = {
+--     buffer_selected = { guifg = '#f0f0f0', gui = "bold" },
+--     background = { guibg = '#0F1117' },
+--     fill = { guibg = '#0F1117' },
+--     tab = { guibg = '#0F1117'},
+--   }
+-- }
 
 -- lsp-colors
 require("lsp-colors").setup({
@@ -667,10 +687,6 @@ vim.api.nvim_set_keymap('n', '<leader>k', '<C-w><C-k>', { noremap=true, silent=t
 
 -- RestNvim
 vim.api.nvim_set_keymap("n", "<C-a>", "<Plug>RestNvim", {noremap = false})
-
--- Close Buffer
-vim.api.nvim_set_keymap("n", "<C-c>", "<cmd>BufferLinePickClose<CR>", {noremap = false})
-
 
 
 
