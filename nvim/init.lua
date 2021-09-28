@@ -11,7 +11,6 @@ require('packer').startup({
     -- require("themes/github").setup(use)
 
     use 'wbthomason/packer.nvim'
-    use 'tpope/vim-fugitive'
     use 'editorconfig/editorconfig-vim'
     use 'mg979/vim-visual-multi'
 
@@ -21,7 +20,6 @@ require('packer').startup({
     require("set/gitsigns").setup(use)
     require("set/telescope").setup(use)
     require("set/treesitter").setup(use) 
-    require("set/lsp-colors").setup(use) 
     require("set/lsp-config").setup(use)
     require("set/lsp-comp").setup(use) 
     require("set/format").setup(use)
