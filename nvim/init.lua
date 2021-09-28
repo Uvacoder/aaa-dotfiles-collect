@@ -5,6 +5,11 @@ require "packer-autoload"
 local use = require('packer').use
 require('packer').startup({ 
   function(use)
+    -- themes
+    require("themes/rose-pine").setup(use)
+    -- require("themes/tokyo-dark").setup(use)
+    -- require("themes/github").setup(use)
+
     use 'wbthomason/packer.nvim'
     use 'tpope/vim-fugitive'
     use 'editorconfig/editorconfig-vim'
@@ -23,11 +28,6 @@ require('packer').startup({
     require("set/trouble").setup(use)
     require("set/lualine").setup(use)
     require("set/barbar").setup(use)
-
-    -- themes
-    require("themes/tokyo-dark").setup(use)
-    -- require("themes/github").setup(use)
-    -- require("themes/rose-pine").setup(use)
 
   end,
   config = { display = { open_fn = require('packer.util').float }}

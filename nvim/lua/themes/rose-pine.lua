@@ -1,13 +1,14 @@
 return {
   setup = function(use)
     use {
-      { 'rose-pine/neovim', as = 'rose-pine'},
-            
+      'rose-pine/neovim',
+
       config = function()
+        -- vim.g.rose_pine_variant = 'moon' 
         vim.g.rose_pine_enable_italics = true
         vim.g.rose_pine_disable_background = true
 
-        require('rose-pine').set()
+        vim.cmd('colorscheme rose-pine')
 
         -- fix colors
         vim.api.nvim_command("hi! EndOfBuffer guifg=#000000")

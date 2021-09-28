@@ -21,8 +21,8 @@ return {
         vim.g.nvim_tree_show_icons = {
           git = 1,
           folders = 0,
-          files = 0,
-          folder_arrows = 0
+          files = 1,
+          folder_arrows = 1
         }
         vim.api.nvim_set_keymap('n', ',', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
       end
