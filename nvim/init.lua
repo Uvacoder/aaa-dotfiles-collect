@@ -9,9 +9,9 @@ require('packer').startup({
   function(use)
 
     -- themes
-    require("themes/tokyo-night").setup(use)
+    -- require("themes/tokyo-night").setup(use)
     -- require("themes/rose-pine").setup(use)
-    -- require("themes/tokyo-dark").setup(use)
+    require("themes/tokyo-dark").setup(use)
     -- require("themes/github").setup(use)
 
     use 'wbthomason/packer.nvim'

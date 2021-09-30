@@ -5,8 +5,8 @@
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', { noremap=true, silent=true })
 
 -- buffers navigation
-vim.api.nvim_set_keymap('n', '-', '<PageDown>', { noremap=true, silent=true })
-vim.api.nvim_set_keymap('n', '=', '<PageUp>', { noremap=true, silent=true })
+vim.api.nvim_set_keymap('n', '=', '<PageDown>', { noremap=true, silent=true })
+vim.api.nvim_set_keymap('n', '-', '<PageUp>', { noremap=true, silent=true })
 
 -- fold unfold html
 vim.api.nvim_set_keymap('n', 'cc', 'zfat', { noremap=true, silent=true })
