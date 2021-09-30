@@ -1,12 +1,16 @@
-require "options"
+require("disable")
 
-require "packer-autoload"
+require("options")
+
+require("packer-autoload")
 
 local use = require('packer').use
 require('packer').startup({ 
   function(use)
+
     -- themes
-    require("themes/rose-pine").setup(use)
+    require("themes/tokyo-night").setup(use)
+    -- require("themes/rose-pine").setup(use)
     -- require("themes/tokyo-dark").setup(use)
     -- require("themes/github").setup(use)
 
@@ -21,16 +25,20 @@ require('packer').startup({
     require("set/telescope").setup(use)
     require("set/treesitter").setup(use) 
     require("set/lsp-config").setup(use)
-    require("set/lsp-comp").setup(use) 
+    require("set/lsp-cmp").setup(use) 
     require("set/format").setup(use)
     require("set/trouble").setup(use)
     require("set/lualine").setup(use)
     require("set/barbar").setup(use)
 
   end,
-  config = { display = { open_fn = require('packer.util').float }}
+  config = { 
+    display = { 
+      open_fn = require('packer.util').float 
+    }
+  }
 })
 
-require "mappings"
+require("mappings")
 
-require "autocmd"
+require("autocmd")

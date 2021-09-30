@@ -1,11 +1,3 @@
--- disable some health checks
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_ruby_provider = 0
-vim.g.loaded_python_provider = 0
-
-vim.g.python3_host_prog = "/usr/local/bin/python3"
-vim.g.node_host_prog = "/usr/local/lib/node_modules/neovim/bin/cli.js"
-
 -------------
 -- options --
 -------------
@@ -48,17 +40,6 @@ vim.opt.completeopt = "menuone,noinsert,noselect,preview"
 vim.opt.shell = "/bin/zsh"
 vim.opt.errorformat = "%A%f:%l:%c:%m,%-G%.%#"
 vim.opt.showbreak = '﬌ '
--- vim.opt.fillchars = "vert: ,eob: " -- make vertical split sign better
--- vim.opt.fillchars = {
---   vert = " ", -- alternatives ▕│
---   fold = " ",
---   eob = " ", -- suppress ~ at EndOfBuffer
---   diff = "╱", -- alternatives = ⣿ ░ ─
---   msgsep = "‾",
---   foldopen = "▾",
---   foldsep = "│",
---   foldclose = "▸"
--- }
 vim.opt.inccommand = "split" -- incrementally show result of command
 vim.opt.wildignore = "*/.git/*,*/.DS_Store,dist,*.o,*~,package-lock.json"
 vim.opt.listchars = "tab:→ ,nbsp:␣,trail:•,precedes:«,extends:»"
@@ -74,27 +55,3 @@ if vim.fn.has("termguicolors") == 1 then
   vim.opt.termguicolors = true
 end
 
-local disabled_built_ins = {
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "gzip",
-  "zip",
-  "zipPlugin",
-  "tar",
-  "tarPlugin",
-  "getscript",
-  "getscriptPlugin",
-  "vimball",
-  "vimballPlugin",
-  "2html_plugin",
-  "logipat",
-  "rrhelper",
-  "spellfile_plugin",
-  "matchit",
-}
-
-for _, plugin in pairs(disabled_built_ins) do
-  vim.g["loaded_" .. plugin] = 1
-end

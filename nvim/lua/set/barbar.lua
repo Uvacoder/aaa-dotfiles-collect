@@ -24,6 +24,9 @@ return {
           maximum_length = 30,
         }
         vim.api.nvim_set_keymap('n', 'bc', ':BufferClose<CR>', { noremap = true, silent = true })
+
+        vim.api.nvim_command("hi! BufferCurrent guifg=#f0f0f0")
+
       end
     }
   end

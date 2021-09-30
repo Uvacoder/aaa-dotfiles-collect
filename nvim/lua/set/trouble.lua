@@ -25,11 +25,11 @@ return {
           auto_close = true, -- automatically close the list when you have no diagnostics
           auto_preview = true, -- automatyically preview the location of the diagnostic. <esc> to close preview and go back to last window
           auto_fold = false, -- automatically fold a file trouble list at creation
-          signs = { error = "", warning = "", information = "", hint = "", other = "" },
+          -- signs = { error = "", warning = "", information = "", hint = "", other = "" },
           use_lsp_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
         }
 
-        vim.api.nvim_set_keymap("n", "tt", "<cmd>Trouble<cr>", { noremap=true, silent=true })
+        vim.api.nvim_set_keymap("n", "tt", "<cmd>LspTroubleToggle<cr>", { noremap=true, silent=true })
         vim.api.nvim_set_keymap("n", "tl", "<cmd>Trouble loclist<cr>", { noremap=true, silent=true })
         vim.api.nvim_set_keymap("n", "tf", "<cmd>Trouble quickfix<cr>", { noremap=true, silent=true })
       end
