@@ -1,5 +1,26 @@
 # dotfiles
 
+```shell
+# Install neovim from head of measter
+brew install neovim --HEAD
+# You can upgrade it later with 
+brew upgrade neovim --fetch-head
+```
+
+At this point, you'll have these config files symlinked in `~./config/nvim`. In
+the example code I'm using brew to install stow, but it's a gnu until and may
+be already available on your linux distro.
+
+Next, we'll have to bootstrap the package manager, Packer. This will take a few
+cranks, so just repeat this step a few times until everything is installed:
+
+```shell
+nvim
+:PackerSync
+:qa
+```
+
+
 ### 1 - Clonar github repo
 
 ```
