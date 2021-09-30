@@ -24,8 +24,10 @@ vim.api.nvim_set_keymap('n', 'rr', ':%s///gcI<Left><Left><Left><Left><Left>', {n
 vim.api.nvim_set_keymap('n', '<Esc><Esc><Esc>', '<cmd>nohlsearch<CR><Esc>', { noremap=true, silent=true })
 
 --Add move line shortcuts
-vim.api.nvim_set_keymap('v', 'dd', ':m \'>+1<CR>gv=gv', { noremap = true})
-vim.api.nvim_set_keymap('v', 'uu', ':m \'<-2<CR>gv=gv', { noremap = true})
+vim.api.nvim_set_keymap('n', '<S-K>', ':m .-2<CR>==', { noremap = true})
+vim.api.nvim_set_keymap('n', '<S-J>', ':m .+1<CR>==', { noremap = true})
+vim.api.nvim_set_keymap('v', '<S-J>', ':m \'>+1<CR>gv=gv', { noremap = true})
+vim.api.nvim_set_keymap('v', '<S-K>', ':m \'<-2<CR>gv=gv', { noremap = true})
 
 -- Better indenting
 vim.api.nvim_set_keymap('v', '<TAB>', '>gv', { noremap=true, silent=true })
