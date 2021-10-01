@@ -16,8 +16,8 @@ vim.api.nvim_set_keymap('n', 'oo', 'zo', { noremap=true, silent=true })
 vim.api.nvim_set_keymap('n', 'aa', 'ggVG', { noremap=true, silent=true })
 
 -- save and close 
-vim.api.nvim_set_keymap('n', 'ss', ':w<CR>', { noremap=true, silent=true })
-vim.api.nvim_set_keymap('n', 'qq', ':q<CR>', { noremap=true, silent=true })
+vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap=true, silent=true })
+vim.api.nvim_set_keymap('n', '<C-q>', ':q<CR>', { noremap=true, silent=true })
 
 -- search and replace
 vim.api.nvim_set_keymap('n', 'rr', ':%s///gcI<Left><Left><Left><Left><Left>', {noremap = true, expr = false, silent = false})
