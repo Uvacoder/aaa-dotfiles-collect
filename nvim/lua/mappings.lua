@@ -2,7 +2,17 @@
 -- mappings --
 --------------
 
-vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', { noremap=true, silent=true })
+--Remap space as leader key
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+--Remap for dealing with word wrap
+vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
+vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
+
+-- Y yank until the end of line  (note: this is now a default on master)
+vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
 
 -- buffers navigation
 vim.api.nvim_set_keymap('n', '=', '<PageDown>', { noremap=true, silent=true })

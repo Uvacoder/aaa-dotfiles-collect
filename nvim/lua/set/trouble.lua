@@ -5,6 +5,8 @@ return {
   
       requires = "kyazdani42/nvim-web-devicons",
 
+      cmd = 'LspTroubleToggle',
+
       config = function()
         require("trouble").setup {
           position = "bottom", -- position of the list can be: bottom, top, left, right
