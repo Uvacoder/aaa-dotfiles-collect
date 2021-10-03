@@ -19,8 +19,8 @@ vim.api.nvim_set_keymap('n', '=', '<PageDown>', { noremap=true, silent=true })
 vim.api.nvim_set_keymap('n', '-', '<PageUp>', { noremap=true, silent=true })
 
 -- fold unfold html
-vim.api.nvim_set_keymap('n', 'cc', 'zfat', { noremap=true, silent=true })
-vim.api.nvim_set_keymap('n', 'oo', 'zo', { noremap=true, silent=true })
+vim.api.nvim_set_keymap('n', 'fc', 'zfat', { noremap=true, silent=true })
+vim.api.nvim_set_keymap('n', 'fo', 'zo', { noremap=true, silent=true })
 
 -- select all
 vim.api.nvim_set_keymap('n', 'aa', 'ggVG', { noremap=true, silent=true })

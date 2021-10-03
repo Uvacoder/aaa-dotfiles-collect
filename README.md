@@ -15,6 +15,7 @@ Next, we'll have to bootstrap the package manager, Packer. This will take a few
 cranks, so just repeat this step a few times until everything is installed:
 
 ```shell
+npm install -g typescript typescript-language-server vls @tailwindcss/language-server
 nvim
 :PackerSync
 :qa

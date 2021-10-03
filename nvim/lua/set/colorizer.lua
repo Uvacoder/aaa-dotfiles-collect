@@ -6,7 +6,10 @@ return {
       cmd = 'ColorizerToggle',
 
       config = function()
-        require'colorizer'.setup()
+        require('colorizer').setup({
+          '*',
+          names = false
+        })
       end
     }
   end

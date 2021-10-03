@@ -2,9 +2,9 @@ return {
   setup = function(use)
     use {
       'neovim/nvim-lspconfig', -- Collection of configurations for built-in LSP client
-      'hrsh7th/nvim-cmp', -- Autocompletion plugin
 
       requires = {
+        'hrsh7th/nvim-cmp', -- Autocompletion plugin
         'hrsh7th/cmp-nvim-lsp',
         'saadparwaiz1/cmp_luasnip',
         'L3MON4D3/LuaSnip', -- Snippets plugin
@@ -23,9 +23,9 @@ return {
           vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
           vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
           vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-          -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-          -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-          -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+          vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+          vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+          vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
           vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
           vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
           vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
@@ -35,7 +35,6 @@ return {
           vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
           vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
           vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-          vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
           vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>so', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
           vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
         end
@@ -45,13 +44,31 @@ return {
         capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
         -- Enable the following language servers
-        local servers = { 'tailwindcss', 'vuels','tsserver' }
-        for _, lsp in ipairs(servers) do
-          nvim_lsp[lsp].setup {
-            on_attach = on_attach,
-            capabilities = capabilities
-          }
-        end
+        -- local servers = { 'tailwindcss', 'vuels', 'tsserver' }
+        -- for _, lsp in ipairs(servers) do
+        --   nvim_lsp[lsp].setup {
+        --     on_attach = on_attach,
+        --     capabilities = capabilities,
+        --   }
+        -- end
+
+        require'lspconfig'.tailwindcss.setup{
+          on_attach = on_attach,
+          capabilities = capabilities
+        }
+
+        require'lspconfig'.vls.setup{
+          on_attach = on_attach,
+          capabilities = capabilities
+        }
+
+        require'lspconfig'.tsserver.setup{
+          on_attach = on_attach,
+          capabilities = capabilities
+        }
+
+        -- Set completeopt to have a better completion experience
+        vim.o.completeopt = 'menuone,noselect'
 
         -- luasnip setup
         local luasnip = require 'luasnip'
@@ -95,12 +112,13 @@ return {
             end,
           },
           sources = {
-            { name = "path" },
-            { name = "buffer" },
             { name = 'nvim_lsp' },
             { name = 'luasnip' },
+            { name = 'path' },
+            { name = 'buffer' },
           },
         }
+
         -- Highlight on yank
         vim.api.nvim_exec([[
           augroup YankHighlight
