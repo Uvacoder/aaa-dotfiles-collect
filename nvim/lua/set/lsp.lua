@@ -23,9 +23,9 @@ return {
           vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
           vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
           vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-          vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-          vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-          vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+          -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+          -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+          -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
           vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
           vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
           vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
@@ -44,28 +44,13 @@ return {
         capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
         -- Enable the following language servers
-        -- local servers = { 'tailwindcss', 'vuels', 'tsserver' }
-        -- for _, lsp in ipairs(servers) do
-        --   nvim_lsp[lsp].setup {
-        --     on_attach = on_attach,
-        --     capabilities = capabilities,
-        --   }
-        -- end
-
-        require'lspconfig'.tailwindcss.setup{
-          on_attach = on_attach,
-          capabilities = capabilities
-        }
-
-        require'lspconfig'.vls.setup{
-          on_attach = on_attach,
-          capabilities = capabilities
-        }
-
-        require'lspconfig'.tsserver.setup{
-          on_attach = on_attach,
-          capabilities = capabilities
-        }
+        local servers = { 'vuels', 'tailwindcss', 'tsserver' }
+        for _, lsp in ipairs(servers) do
+          nvim_lsp[lsp].setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+          }
+        end
 
         -- Set completeopt to have a better completion experience
         vim.o.completeopt = 'menuone,noselect'
@@ -112,10 +97,10 @@ return {
             end,
           },
           sources = {
-            { name = 'nvim_lsp' },
-            { name = 'luasnip' },
             { name = 'path' },
             { name = 'buffer' },
+            { name = 'nvim_lsp' },
+            { name = 'luasnip' },
           },
         }
 

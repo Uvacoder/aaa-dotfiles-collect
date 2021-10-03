@@ -1,7 +1,5 @@
 require("disable")
-
 require("options")
-
 require("packer-autoload")
 
 local use = require('packer').use
@@ -35,6 +33,7 @@ require('packer').startup({
   }
 })
 
-require("mappings")
+--require("plugins")
 
+require("mappings")
 require("autocmd")
