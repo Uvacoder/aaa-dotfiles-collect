@@ -5,10 +5,6 @@ return {
 
       config = function()
         require("format").setup{
-          -- remove trailing whitespace 
-          ["*"] = {{cmd = {"sed -i 's/[ \t]*$//'"}}}, 
-          -- javascript = {{cmd = {"prettier -w", "eslint --fix"}}},
-          -- vue = {{cmd = {"prettier -w", "eslint --fix"}}},
           javascript = {{cmd = {"prettier -w"}}},
           vue = {{cmd = {"prettier -w"}}},
           html = {{cmd = {"prettier -w"}}},
@@ -25,7 +21,7 @@ return {
             }
           }
         }
-        -- {cmd = {"./node_modules/.bin/prettier -w", "./node_modules/.bin/eslint --fix"}}
+
         vim.api.nvim_exec([[
           augroup FormatAutogroup
           autocmd!

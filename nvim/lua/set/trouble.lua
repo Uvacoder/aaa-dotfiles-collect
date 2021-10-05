@@ -2,35 +2,31 @@ return {
   setup = function(use)
     use {
       "folke/trouble.nvim",
-  
+
       requires = "kyazdani42/nvim-web-devicons",
 
       config = function()
         require("trouble").setup {
-          position = "bottom", -- position of the list can be: bottom, top, left, right
-          height = 10, -- height of the trouble list when position is top or bottom
-          width = 50, -- width of the list when position is left or right
-          icons = true, -- use devicons for filenames
+          position = "bottom",
+          height = 10,
+          width = 50,
+          icons = false,
           mode = "lsp_workspace_diagnostics", -- "lsp_workspace_diagnostics", "lsp_document_diagnostics", "quickfix", "lsp_references", "loclist"
-          fold_open = "", -- icon used for open folds
-          fold_closed = "", -- icon used for closed folds
-          action_keys = { -- key mappings for actions in the trouble list
-              close = "q", -- close the list
-              cancel = "<esc>", -- cancel the preview and get back to your last window / buffer / cursor
-              refresh = "r", -- manually refresh
-              jump = {"<cr>", "<tab>"}, -- jump to the diagnostic or open / close folds
+          action_keys = {
+              close = "q",
+              cancel = "<esc>",
+              refresh = "r",
+              jump = {"<cr>", "<tab>"},
           },
-          indent_lines = true, -- add an indent guide below the fold icons
-          auto_open = false, -- automatically open the list when you have diagnostics
-          auto_close = true, -- automatically close the list when you have no diagnostics
-          auto_preview = true, -- automatyically preview the location of the diagnostic. <esc> to close preview and go back to last window
-          auto_fold = false, -- automatically fold a file trouble list at creation
-          -- signs = { error = "", warning = "", information = "", hint = "", other = "" },
-          use_lsp_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
+          indent_lines = true,
+          auto_open = false,
+          auto_close = true,
+          auto_preview = true,
+          auto_fold = false,
+          use_lsp_diagnostic_signs = true
         }
 
         vim.api.nvim_set_keymap("n", "tt", "<cmd>LspTroubleToggle<cr>", { noremap=true, silent=true })
-        vim.api.nvim_set_keymap("n", "tl", "<cmd>Trouble loclist<cr>", { noremap=true, silent=true })
         vim.api.nvim_set_keymap("n", "tf", "<cmd>Trouble quickfix<cr>", { noremap=true, silent=true })
       end
     }

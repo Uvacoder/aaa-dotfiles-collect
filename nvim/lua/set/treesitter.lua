@@ -1,13 +1,13 @@
 return {
   setup = function(use)
     use {
-      'nvim-treesitter/nvim-treesitter', 
+      'nvim-treesitter/nvim-treesitter',
 
       run = ':TSUpdate',
 
       requires = {
-        'p00f/nvim-ts-rainbow', 
-        'nvim-treesitter/nvim-treesitter-textobjects', 
+        'p00f/nvim-ts-rainbow',
+        'nvim-treesitter/nvim-treesitter-textobjects',
         'tpope/vim-commentary',
         'JoosepAlviste/nvim-ts-context-commentstring'
       },
@@ -15,8 +15,8 @@ return {
       config = function()
         require("nvim-treesitter.configs").setup {
           ensure_installed = {
-            "css", "lua", "html", "bash", "vue", "javascript", "json", 
-            "graphql", "php", "ruby", "typescript", "regex", "jsonc" 
+            "css", "lua", "html", "bash", "vue", "javascript", "json",
+            "graphql", "php", "ruby", "typescript", "regex", "jsonc"
           },
           highlight = {
             enable = true, -- false will disable the whole extension

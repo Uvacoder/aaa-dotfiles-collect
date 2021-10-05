@@ -6,8 +6,12 @@ return {
       requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},
 
       config = function()
+        local actions = require("telescope.actions")
         require('telescope').setup{
-          defaults = { file_ignore_patterns = {"node_modules"} }
+          defaults = {
+            mappings = { i = { ["<esc>"] = actions.close }},
+            file_ignore_patterns = { "node_modules", ".git" } 
+          }
         }
         vim.api.nvim_set_keymap('n', 'ss', ':lua require("telescope.builtin").spell_suggest()<CR>', {noremap = true, silent = true})
         vim.api.nvim_set_keymap('n', 'ff', ':lua require("telescope.builtin").find_files()<CR>', {noremap = true, silent = true})

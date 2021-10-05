@@ -2,17 +2,17 @@
 -------------
 
 local use = require('packer').use
-require('packer').startup({ 
+require('packer').startup({
   function(use)
 
     -- Packages
-    use 'wbthomason/packer.nvim' 
+    use 'wbthomason/packer.nvim'
     use 'editorconfig/editorconfig-vim'
     use 'mg979/vim-visual-multi'
     use 'windwp/nvim-autopairs'
     use { 'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons' }
     use 'norcalli/nvim-colorizer.lua'
-    use 'lukas-reineke/format.nvim' 
+    use 'lukas-reineke/format.nvim'
     use { 'lewis6991/gitsigns.nvim',  requires = 'nvim-lua/plenary.nvim' }
     use { 'hoob3rt/lualine.nvim', requires = 'kyazdani42/nvim-web-devicons' }
     use {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}}
@@ -21,15 +21,15 @@ require('packer').startup({
     use 'tpope/vim-commentary'
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use 'p00f/nvim-ts-rainbow' 
-    use 'nvim-treesitter/nvim-treesitter-textobjects' 
+    use 'p00f/nvim-ts-rainbow'
+    use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'JoosepAlviste/nvim-ts-context-commentstring'
 
-    use 'neovim/nvim-lspconfig' 
-    use 'hrsh7th/nvim-cmp' 
+    use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'saadparwaiz1/cmp_luasnip'
-    use 'L3MON4D3/LuaSnip' 
+    use 'L3MON4D3/LuaSnip'
     use "hrsh7th/cmp-path"
     use "hrsh7th/cmp-buffer"
 
@@ -79,7 +79,7 @@ require('colorizer').setup()
 
 -- format
 require("format").setup{
-  ["*"] = {{cmd = {"sed -i 's/[ \t]*$//'"}}}, 
+  ["*"] = {{cmd = {"sed -i 's/[ \t]*$//'"}}},
   javascript = {{cmd = {"prettier -w"}}},
   vue = {{cmd = {"prettier -w"}}},
   html = {{cmd = {"prettier -w"}}},
@@ -138,8 +138,8 @@ vim.g.nvim_tree_hide_dotfiles = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_git_hl = 0
 vim.g.nvim_tree_highlight_opened_files = 1
-vim.g.nvim_tree_ignore = { 
-  "dist", "plugin", "netlify.toml", "jsconfig.json", "package-lock.json", 
+vim.g.nvim_tree_ignore = {
+  "dist", "plugin", "netlify.toml", "jsconfig.json", "package-lock.json",
   ".git", ".nuxt", "node_modules", ".cache", "~*.*", ".DS_Store"
 }
 vim.g.nvim_tree_show_icons = {
@@ -157,15 +157,15 @@ vim.api.nvim_set_keymap('n', ',', ':NvimTreeToggle<CR>', {noremap = true, silent
 
 -- trouble
 require("trouble").setup {
-  position = "bottom", 
-  height = 10, 
-  width = 50, 
+  position = "bottom",
+  height = 10,
+  width = 50,
   mode = "lsp_workspace_diagnostics", -- "lsp_workspace_diagnostics", "lsp_document_diagnostics", "quickfix", "lsp_references", "loclist"
-  indent_lines = true, 
-  auto_open = false, 
-  auto_close = true, 
-  auto_preview = true, 
-  auto_fold = false, 
+  indent_lines = true,
+  auto_open = false,
+  auto_close = true,
+  auto_preview = true,
+  auto_fold = false,
   use_lsp_diagnostic_signs = true -- enabling this will use the signs defined in your lsp client
 }
 
@@ -181,8 +181,8 @@ vim.api.nvim_set_keymap("n", "tf", "<cmd>Trouble quickfix<cr>", { noremap=true, 
 -- nvim-treesitter
 require("nvim-treesitter.configs").setup {
   ensure_installed = {
-    "css", "lua", "html", "bash", "vue", "javascript", "json", 
-    "graphql", "php", "typescript", "regex", "jsonc" 
+    "css", "lua", "html", "bash", "vue", "javascript", "json",
+    "graphql", "php", "typescript", "regex", "jsonc"
   },
   highlight = {
     enable = true, -- false will disable the whole extension
@@ -240,7 +240,7 @@ require("nvim-treesitter.configs").setup {
       },
     },
   },
-} 
+}
 
 
 -- lspconfig
@@ -342,7 +342,7 @@ vim.api.nvim_exec([[
   autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
 ]], false)
- 
+
 
 require("mappings")
 

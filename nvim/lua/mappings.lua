@@ -29,6 +29,9 @@ vim.api.nvim_set_keymap('n', 'aa', 'ggVG', { noremap=true, silent=true })
 vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap=true, silent=true })
 vim.api.nvim_set_keymap('n', '<C-q>', ':q<CR>', { noremap=true, silent=true })
 
+-- delete buffer
+vim.api.nvim_set_keymap('n', 'bc', ':bd<CR>', { noremap=true, silent=true })
+
 -- search and replace
 vim.api.nvim_set_keymap('n', 'rr', ':%s///gcI<Left><Left><Left><Left><Left>', {noremap = true, expr = false, silent = false})
 vim.api.nvim_set_keymap('n', '<Esc><Esc><Esc>', '<cmd>nohlsearch<CR><Esc>', { noremap=true, silent=true })
