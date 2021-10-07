@@ -15,6 +15,7 @@ require('packer').startup({
     require("set/gitsigns").setup(use)
     require("set/telescope").setup(use)
     require("set/treesitter").setup(use)
+    require("set/spellsitter").setup(use)
     require("set/lsp").setup(use)
     require("set/format").setup(use)
     require("set/trouble").setup(use)
