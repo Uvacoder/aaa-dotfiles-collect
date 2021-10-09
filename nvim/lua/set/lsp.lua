@@ -45,7 +45,8 @@ return {
         capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
         -- Enable the following language servers
-        local servers = { 'vuels', 'tailwindcss', 'tsserver' }
+        -- local servers = { 'vuels', 'tailwindcss', 'tsserver' }
+        local servers = { 'vuels', 'tsserver' }
         for _, lsp in ipairs(servers) do
           nvim_lsp[lsp].setup {
             on_attach = on_attach,

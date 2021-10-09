@@ -101,10 +101,10 @@ alias ptu="cd /Volumes/Sites/pousada_do_tucunare_2020 && clear"
 alias sen="cd /Volumes/Sites/santos_e_nascimento_2020 && clear"
 
 # Code
-alias au="cd /Volumes/Code/auton-2021 && clear"
-alias cc="cd /Volumes/Code/auton-2021/client && clear && rm node_modules/.vite"
+alias au="cd /Volumes/Code/auton-quasar && clear"
+alias cc="cd /Volumes/Code/auton-quasar/client && clear && rm node_modules/.vite"
 alias rc="NODE_ENV=development nrd"
-alias ss="cd /Volumes/Code/auton-2021/server && clear"
+alias ss="cd /Volumes/Code/auton-quasar/server && clear"
 alias rs="NODE_ENV=development nrs"
 alias eu="cd /Volumes/Code/urban-octo-eureka && clear"
 alias esh="cd /Volumes/Code/e-shop && clear"
@@ -174,7 +174,7 @@ function mk-cd(){
 
 function find-node-modules(){
  find . -name node_modules -type d
-}  
+}
 
 function git-init(){
   git init
