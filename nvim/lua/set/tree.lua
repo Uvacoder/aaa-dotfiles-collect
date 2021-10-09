@@ -12,7 +12,8 @@ return {
         vim.g.nvim_tree_git_hl = 0
         vim.g.nvim_tree_highlight_opened_files = 1
         vim.g.nvim_tree_ignore = {
-         ".quasar", ".vscode", "dist", "plugin", "netlify.toml", "jsconfig.json", "package-lock.json",
+          ".quasar", ".vscode", "store-flag.d.ts", "quasar.d.ts",
+          "dist", "plugin", "netlify.toml", "jsconfig.json", "package-lock.json",
           ".git", ".nuxt", "node_modules", ".cache", "~*.*", ".DS_Store"
         }
         vim.g.nvim_tree_show_icons = {
