@@ -15,15 +15,15 @@ require('packer').startup({
     require("set/gitsigns").setup(use)
     require("set/telescope").setup(use)
     require("set/treesitter").setup(use)
-    require("set/spellsitter").setup(use)
     require("set/lsp").setup(use)
     require("set/format").setup(use)
     require("set/trouble").setup(use)
-    require("set/hardline").setup(use)
+    require("set/lualine").setup(use)
+    require("set/barbar").setup(use)
     require("set/colorizer").setup(use)
 
-    -- themes (possible values: tokio-dark, rose-pine, gruv-queen, github)
-    require("themes/nord").setup(use)
+    -- themes (possible values: nord, tokio-dark, rose-pine, gruv-queen, github)
+    require("themes/onedark").setup(use)
 
   end,
   config = {

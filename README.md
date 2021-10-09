@@ -3,7 +3,8 @@
 ```shell
 # Install neovim from head of measter
 brew install neovim --HEAD
-# You can upgrade it later with 
+
+# You can upgrade it later with
 brew upgrade neovim --fetch-head
 ```
 

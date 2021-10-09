@@ -6,7 +6,8 @@ return {
       config = function()
         require('hardline').setup {
           bufferline = true,
-          theme = 'nord'
+          -- theme = 'nord'
+          theme = 'one'
         }
       end
     }

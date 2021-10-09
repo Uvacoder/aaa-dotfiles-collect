@@ -19,13 +19,15 @@ return {
           git = 1,
           folders = 1,
           files = 1,
-          folder_arrows = 1
+          folder_arrows = 0
         }
         require'nvim-tree'.setup {
           view = {width = 40}
         }
 
         vim.api.nvim_set_keymap('n', ',', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+
+        -- vim.api.nvim_command("hi! NvimTreeFolderIcon guibg=blue")
       end
     }
   end
