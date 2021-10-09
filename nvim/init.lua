@@ -1,6 +1,6 @@
 require("disable")
 require("options")
-require("packer-autoload")
+require("autoload")
 
 local use = require('packer').use
 require('packer').startup({

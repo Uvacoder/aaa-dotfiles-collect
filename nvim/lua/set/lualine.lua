@@ -6,8 +6,7 @@ return {
       requires = 'kyazdani42/nvim-web-devicons',
 
       config = function()
-
-        local mybg = '#21283b'
+        local mybg = '#0F1117'
         local my = require'lualine.themes.iceberg_dark'
         my.visual.a.fg = '#c678dd'
         my.visual.a.bg = mybg
