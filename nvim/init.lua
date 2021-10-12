@@ -6,10 +6,9 @@ local use = require('packer').use
 require('packer').startup({
   function(use)
     -- Packages
-    use 'wbthomason/packer.nvim'
-    use 'editorconfig/editorconfig-vim'
-    use 'mg979/vim-visual-multi'
-
+    require("set/packer").setup(use)
+    require("set/editorconfig").setup(use)
+    require("set/visual-multi").setup(use)
     require("set/autopairs").setup(use)
     require("set/tree").setup(use)
     require("set/gitsigns").setup(use)
@@ -21,10 +20,9 @@ require('packer').startup({
     require("set/lualine").setup(use)
     require("set/barbar").setup(use)
     require("set/colorizer").setup(use)
-
-    -- themes (possible values: nord, tokio-dark, rose-pine, gruv-queen, github)
+    -- themes
     require("themes/onedark").setup(use)
-
+    -- possible values: onedark, nord, tokio-dark, rose-pine, gruv-queen, github
   end,
   config = {
     display = {
@@ -32,8 +30,6 @@ require('packer').startup({
     }
   }
 })
-
---require("plugins")
 
 require("mappings")
 require("autocmd")

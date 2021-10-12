@@ -4,13 +4,13 @@ return {
       'neovim/nvim-lspconfig', -- Collection of configurations for built-in LSP client
 
       requires = {
-        'kabouzeid/nvim-lspinstall',
+        'kabouzeid/nvim-lspinstall', -- Install language servers
         'hrsh7th/nvim-cmp', -- Autocompletion plugin
         'hrsh7th/cmp-nvim-lsp',
-        'saadparwaiz1/cmp_luasnip',
-        'L3MON4D3/LuaSnip', -- Snippets plugin
-        "hrsh7th/cmp-path",
         "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        'L3MON4D3/LuaSnip', -- Snippets plugin
+        'saadparwaiz1/cmp_luasnip',
       },
 
       config = function()
@@ -82,8 +82,6 @@ return {
             ['<Tab>'] = function(fallback)
               if cmp.visible() then
                 cmp.select_next_item()
-              elseif luasnip.expand_or_jumpable() then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
               else
                 fallback()
               end
@@ -91,8 +89,6 @@ return {
             ['<S-Tab>'] = function(fallback)
               if cmp.visible() then
                 cmp.select_prev_item()
-              elseif luasnip.jumpable(-1) then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
               else
                 fallback()
               end
@@ -105,6 +101,25 @@ return {
             { name = 'luasnip' },
           },
         }
+
+        local function setup_servers()
+          require'lspinstall'.setup()
+          local servers = require'lspinstall'.installed_servers()
+          for _, lsp in pairs(servers) do
+          nvim_lsp[lsp].setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+          }
+          end
+        end
+
+        setup_servers()
+
+        -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
+        require'lspinstall'.post_install_hook = function ()
+          setup_servers() -- reload installed servers
+          vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
+        end
 
         -- Highlight on yank
         vim.api.nvim_exec([[
