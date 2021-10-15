@@ -1,7 +1,7 @@
 return {
   setup = function(use)
-    use {
-      'wbthomason/packer.nvim'
-    }
-  end
+    use({
+      "wbthomason/packer.nvim",
+    })
+  end,
 }

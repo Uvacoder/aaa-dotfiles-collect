@@ -1,9 +1,9 @@
 return {
   setup = function(use)
-    use {
-      'kyazdani42/nvim-tree.lua',
+    use({
+      "kyazdani42/nvim-tree.lua",
 
-      requires = 'kyazdani42/nvim-web-devicons',
+      requires = "kyazdani42/nvim-web-devicons",
 
       config = function()
         vim.g.nvim_tree_quit_on_open = 1
@@ -12,24 +12,36 @@ return {
         vim.g.nvim_tree_git_hl = 0
         vim.g.nvim_tree_highlight_opened_files = 1
         vim.g.nvim_tree_ignore = {
-          ".quasar", ".vscode", "store-flag.d.ts", "quasar.d.ts",
-          "dist", "plugin", "netlify.toml", "jsconfig.json", "package-lock.json",
-          ".git", ".nuxt", "node_modules", ".cache", "~*.*", ".DS_Store"
+          ".quasar",
+          ".vscode",
+          "store-flag.d.ts",
+          "quasar.d.ts",
+          "dist",
+          "plugin",
+          "netlify.toml",
+          "jsconfig.json",
+          "package-lock.json",
+          ".git",
+          ".nuxt",
+          "node_modules",
+          ".cache",
+          "~*.*",
+          ".DS_Store",
         }
         vim.g.nvim_tree_show_icons = {
           git = 1,
           folders = 1,
           files = 1,
-          folder_arrows = 0
+          folder_arrows = 0,
         }
-        require'nvim-tree'.setup {
-          view = {width = 40}
-        }
+        require("nvim-tree").setup({
+          view = { width = 40 },
+        })
 
-        vim.api.nvim_set_keymap('n', ',', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+        vim.api.nvim_set_keymap("n", ",", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
         -- vim.api.nvim_command("hi! NvimTreeFolderIcon guibg=blue")
-      end
-    }
-  end
+      end,
+    })
+  end,
 }

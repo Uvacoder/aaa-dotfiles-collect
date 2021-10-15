@@ -1,11 +1,11 @@
 return {
   setup = function(use)
-    use {
-      'norcalli/nvim-colorizer.lua',
+    use({
+      "norcalli/nvim-colorizer.lua",
 
       config = function()
-        require('colorizer').setup()
-      end
-    }
-  end
+        require("colorizer").setup()
+      end,
+    })
+  end,
 }

@@ -1,10 +1,7 @@
 return {
   setup = function(use)
     use({
-
-      requires = {},
-
-      config = function() end,
+      "editorconfig/editorconfig-vim",
     })
   end,
 }

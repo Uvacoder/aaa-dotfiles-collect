@@ -19,6 +19,7 @@ vim.opt.showmode = false
 vim.opt.cursorline = false
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.nuw = 1
 vim.opt.wrap = false
 vim.opt.expandtab = true
 vim.opt.joinspaces = false
@@ -37,7 +38,7 @@ vim.opt.writebackup = false
 vim.opt.completeopt = "menuone,noinsert,noselect,preview"
 vim.opt.shell = "/bin/zsh"
 vim.opt.errorformat = "%A%f:%l:%c:%m,%-G%.%#"
-vim.opt.showbreak = '﬌ '
+vim.opt.showbreak = "﬌ "
 vim.opt.inccommand = "split" -- incrementally show result of command
 vim.opt.wildignore = "*/.git/*,*/.DS_Store,dist,*.o,*~,package-lock.json"
 vim.opt.listchars = "tab:→ ,nbsp:␣,trail:•,precedes:«,extends:»"
@@ -48,8 +49,10 @@ vim.opt.foldenable = false
 vim.opt.foldlevel = 99
 vim.opt.foldmethod = "manual"
 vim.opt.formatoptions = "l"
+vim.opt.shortmess:append("sI")
 
 if vim.fn.has("termguicolors") == 1 then
   vim.opt.termguicolors = true
 end
 
+vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor"
