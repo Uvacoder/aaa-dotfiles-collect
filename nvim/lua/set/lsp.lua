@@ -4,7 +4,7 @@ return {
       "neovim/nvim-lspconfig", -- Collection of configurations for built-in LSP client
 
       requires = {
-        "kabouzeid/nvim-lspinstall", -- Install language servers
+        "williamboman/nvim-lsp-installer", -- Install language servers
         "hrsh7th/nvim-cmp", -- Autocompletion plugin
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
@@ -69,8 +69,8 @@ return {
         capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
         -- Enable the following language servers
-        -- local servers = { 'vuels', 'tailwindcss', 'tsserver' }
-        local servers = { "vuels", "tsserver" }
+        -- local servers = { 'volar', 'tailwindcss', 'tsserver' }
+        local servers = { "volar", "tsserver" }
         for _, lsp in ipairs(servers) do
           nvim_lsp[lsp].setup({
             on_attach = on_attach,
@@ -126,24 +126,13 @@ return {
           },
         })
 
-        local function setup_servers()
-          require("lspinstall").setup()
-          local servers = require("lspinstall").installed_servers()
-          for _, lsp in pairs(servers) do
-            nvim_lsp[lsp].setup({
-              on_attach = on_attach,
-              capabilities = capabilities,
-            })
-          end
-        end
+        local lsp_installer = require("nvim-lsp-installer")
 
-        setup_servers()
-
-        -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-        require("lspinstall").post_install_hook = function()
-          setup_servers() -- reload installed servers
-          vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
-        end
+        lsp_installer.on_server_ready(function(server)
+          local opts = {}
+          server:setup(opts)
+          vim.cmd [[ do User LspAttachBuffers ]]
+        end)
 
         -- Highlight on yank
         vim.api.nvim_exec(

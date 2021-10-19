@@ -21,8 +21,8 @@ require("packer").startup({
     require("set/barbar").setup(use)
     require("set/toggle-term").setup(use)
     -- themes
-    require("themes/onedark").setup(use)
-    -- possible values: onedark, nord, tokio-dark, rose-pine, gruv-queen, github
+    require("themes/tokyo-dark").setup(use)
+    -- possible values: onedark, nord, tokyo-dark, rose-pine, gruv-queen, github
   end,
   config = {
     display = {

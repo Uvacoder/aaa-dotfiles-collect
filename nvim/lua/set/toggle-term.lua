@@ -5,7 +5,7 @@ return {
 
       config = function()
         require("toggleterm").setup{
-          size = 34,
+          size = vim.o.columns * 0.5,
           open_mapping = [[<c-\>]],
           hide_numbers = true,
           shade_terminals = false,
