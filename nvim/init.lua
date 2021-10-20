@@ -1,5 +1,5 @@
-require("disable")
-require("autoload")
+require("core/disable")
+require("core/autoload")
 
 local use = require("packer").use
 require("packer").startup({
@@ -30,6 +30,6 @@ require("packer").startup({
     },
   },
 })
-require("options")
-require("mappings")
-require("autocmd")
+require("core/options")
+require("core/mappings")
+require("core/autocmd")
