@@ -29,6 +29,9 @@ vim.api.nvim_set_keymap("n", "aa", "ggVG", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-q>", ":q<CR>", { noremap = true, silent = true })
 
+-- Packer Sync
+vim.api.nvim_set_keymap("n", "<F5>", ":PackerSync<CR>", { noremap = true, silent = true })
+
 -- delete buffer
 vim.api.nvim_set_keymap("n", "bc", ":bd<CR>", { noremap = true, silent = true })
 

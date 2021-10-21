@@ -32,15 +32,27 @@ return {
           git = 1,
           folders = 1,
           files = 1,
-          folder_arrows = 0,
         }
+        vim.g.nvim_tree_icons = {
+          default = " ",
+          symlink = " ",
+          git = {
+            unstaged = "",
+            staged = "",
+            unmerged = "",
+            renamed = "",
+            untracked = "",
+            deleted = "",
+            ignored = "◌"
+          },
+        }
+
         require("nvim-tree").setup({
+          auto_resize = true,
           view = { width = 40 },
         })
 
         vim.api.nvim_set_keymap("n", ",", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
-
-        -- vim.api.nvim_command("hi! NvimTreeFolderIcon guibg=blue")
       end,
     })
   end,
