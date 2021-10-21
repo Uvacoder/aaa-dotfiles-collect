@@ -59,6 +59,7 @@ ln -s ~/.dotfiles/wget/wgetrc  ~/.wgetrc
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/global_ignore ~/.global_ignore
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
+ln -s ~/.dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
 
 ln -s ~/.dotfiles/nvim/lua/config/lualine-dark.lua ~/.local/share/nvim/site/pack/packer/start/lualine.nvim/lua/lualine/themes/dark.lua
 ```

@@ -41,8 +41,8 @@ return {
             staged = "",
             unmerged = "",
             renamed = "",
-            untracked = "",
-            deleted = "",
+            untracked = "",
+            deleted = "",
             ignored = "◌"
           },
         }

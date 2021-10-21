@@ -1,0 +1,102 @@
+#
+# modified 2021-10-21
+#
+
+env:
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: xterm-256color
+
+window:
+  # Spread additional padding evenly around the terminal content.
+  padding:
+    x: 1
+    y: 1
+  # Remove buttons
+  decorations: none
+  # Open in full screen
+  startup_mode: SimpleFullscreen
+  # Dimensions if not SimpleFullscreen
+  dimensions:
+    columns: 136
+    lines: 35
+
+# Make background slightly transparent
+background_opacity: 1.0
+
+cursor:
+  # Block Underline or Beam
+  style: Block
+
+font:
+  normal:
+    family: OperatorMono Nerd Font
+    style: Book
+  # Font size
+  size: 19
+  # Offset
+  offset:
+    x: 0
+    y: 5
+
+  # Better font rendering for mac
+  use_thin_strokes: true
+
+  # If `true`, bold text is drawn using the bright color variants.
+  draw_bold_text_with_bright_colors: true
+
+# Colors (rose-pine moon)
+colors:
+  primary:
+    # background: '0x232136'
+    background: '0x000000'
+    foreground: '0xe0def4'
+  cursor:
+    text: '0x232136'
+    cursor: '0x825B65'
+  vi_mode_cursor:
+    text: '0x191724'
+    cursor: '0x825B65'
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text: CellForeground
+    background: '0x312E45'
+  normal:
+    black:   '0x817c9c'
+    red:     '0xeb6f92'
+    green:   '0x9ccfd8'
+    yellow:  '0xf6c177'
+    blue:    '0x3e8fb0'
+    magenta: '0xc4a7e7'
+    cyan:    '0xea9a97'
+    white:   '0xe0def4'
+  bright:
+    black:   '0x6e6a86'
+    red:     '0xeb6f92'
+    green:   '0x9ccfd8'
+    yellow:  '0xf6c177'
+    blue:    '0x31748f'
+    magenta: '0xc4a7e7'
+    cyan:    '0xebbcba'
+    white:   '0xe0def4'
+
+selection:
+  # This string contains all characters that are used as separators for
+  # "semantic words" in Alacritty.
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+  # When true, selected text will be copied to the primary clipboard
+  save_to_clipboard: true
+
+# Login shell with arguments
+shell:
+  program: /bin/zsh
+  args:
+    - --login
+
+# Startup directory, unset or None for home directory
+working_directory: None
