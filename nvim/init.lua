@@ -18,7 +18,7 @@ require("packer").startup({
     -- require("set/telescope").setup(use)
     -- require("set/indent-guides").setup(use)
     require("set/lualine").setup(use)
-    require("set/barbar").setup(use)
+    require("set/bufferline").setup(use)
     require("set/toggle-term").setup(use)
     -- themes
     require("themes/rose-pine").setup(use)
