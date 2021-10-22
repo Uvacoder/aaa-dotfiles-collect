@@ -25,7 +25,7 @@ return {
           ".nuxt",
           "node_modules",
           ".cache",
-          "~*.*",
+          "babel.config.js",
           ".DS_Store",
         }
         vim.g.nvim_tree_show_icons = {
