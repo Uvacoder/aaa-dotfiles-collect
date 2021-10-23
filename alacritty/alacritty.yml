@@ -55,10 +55,10 @@ colors:
     foreground: '0xe0def4'
   cursor:
     text: '0x232136'
-    cursor: '0x825B65'
+    cursor: '0xFFFFFF'
   vi_mode_cursor:
     text: '0x191724'
-    cursor: '0x825B65'
+    cursor: '0xFF7A04'
   line_indicator:
     foreground: None
     background: None
