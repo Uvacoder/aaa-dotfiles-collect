@@ -183,6 +183,15 @@ function git-init(){
   git remote set-url origin "$*"
   git push -u origin master
 }
+
+function lua-fmt(){
+  cd ~
+  stylua ~/.dotfiles/nvim/*.lua
+  stylua ~/.dotfiles/nvim/lua/themes/*.lua
+  stylua ~/.dotfiles/nvim/lua/set/*.lua
+  stylua ~/.dotfiles/nvim/lua/core/*.lua
+}
+
 # git remote add origin https://github.com/dobbbri/pscologa_erica_rover_2020.git
 # git remote set-url origin git@github.com:dobbbri/pscologa_erica_rover_2020.git
 

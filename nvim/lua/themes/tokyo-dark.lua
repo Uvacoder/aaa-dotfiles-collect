@@ -13,8 +13,8 @@ return {
 
         -- fix colors
         -- vim.api.nvim_command("hi! EndOfBuffer guifg=#000000")
-        -- vim.api.nvim_command("hi! NonText guifg=#000000")
-        -- vim.api.nvim_command("hi! link CursorLineNr Normal")
+        -- vim.api.nvim_command("hi! clear SpellBad")
+        -- vim.api.nvim_command("hi! spellbad gui=none guisp=red cterm=none ")
       end,
     })
   end,

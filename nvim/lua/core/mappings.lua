@@ -36,12 +36,7 @@ vim.api.nvim_set_keymap("n", "<F5>", ":PackerSync<CR>", { noremap = true, silent
 vim.api.nvim_set_keymap("n", "bc", ":bd<CR>", { noremap = true, silent = true })
 
 -- search and replace
-vim.api.nvim_set_keymap(
-  "n",
-  "rr",
-  ":%s///gcI<Left><Left><Left><Left><Left>",
-  { noremap = true, expr = false, silent = false }
-)
+vim.api.nvim_set_keymap("n", "rr", ":%s///gcI<Left><Left><Left><Left><Left>", { noremap = true, expr = false, silent = false })
 vim.api.nvim_set_keymap("n", "<Esc><Esc><Esc>", "<cmd>nohlsearch<CR><Esc>", { noremap = true, silent = true })
 
 --Add move line shortcuts

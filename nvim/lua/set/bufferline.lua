@@ -19,10 +19,10 @@ return {
           },
           highlights = {
             buffer_selected = { gui = "bold" },
-            background = { guibg = '#0F1117' },
-            fill = { guibg = '#0F1117' },
-            tab = { guibg = '#0F1117'},
-          }
+            background = { guibg = "#0F1117" },
+            fill = { guibg = "#0F1117" },
+            tab = { guibg = "#0F1117" },
+          },
         })
       end,
     })

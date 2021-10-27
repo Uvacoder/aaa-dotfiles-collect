@@ -11,6 +11,7 @@ return {
         vim.g.nvim_tree_indent_markers = 1
         vim.g.nvim_tree_git_hl = 0
         vim.g.nvim_tree_highlight_opened_files = 1
+        vim.g.nvim_tree_refresh_wait = 500
         vim.g.nvim_tree_ignore = {
           ".quasar",
           ".vscode",
@@ -32,6 +33,7 @@ return {
           git = 1,
           folders = 1,
           files = 1,
+          folder_arrows = 0,
         }
         vim.g.nvim_tree_icons = {
           default = " ",
@@ -43,11 +45,22 @@ return {
             renamed = "",
             untracked = "",
             deleted = "",
-            ignored = "◌"
+            ignored = "◌",
+          },
+          folder = {
+            arrow_open = "",
+            arrow_closed = "",
+            default = "",
+            open = "",
+            empty = "",
+            empty_open = "",
+            symlink = "",
+            symlink_open = "",
           },
         }
 
         require("nvim-tree").setup({
+          auto_close = false,
           auto_resize = true,
           view = { width = 40 },
         })

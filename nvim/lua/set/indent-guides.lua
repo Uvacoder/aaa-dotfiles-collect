@@ -5,9 +5,10 @@ return {
 
       config = function()
         require("indent_guides").setup({
+          indent_guide_size = 2,
           indent_soft_pattern = "\\s",
-          even_colors = { fg = "#131B24", bg = "#283247" },
-          odd_colors = { fg = "#283247", bg = "#131B24" },
+          even_colors = { fg = "#000000", bg = "#0F1117" },
+          odd_colors = { fg = "#0F1117", bg = "#000000" },
         })
       end,
     })

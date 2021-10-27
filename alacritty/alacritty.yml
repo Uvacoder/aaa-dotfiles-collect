@@ -34,6 +34,19 @@ font:
   normal:
     family: OperatorMono Nerd Font
     style: Book
+
+  bold:
+    family: OperatorMono Nerd Font
+    style: Bold
+
+  italic:
+    family: OperatorMono Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: OperatorMono Nerd Font
+    style: Bold Italic
+
   # Font size
   size: 19
   # Offset

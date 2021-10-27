@@ -36,7 +36,12 @@ return {
             lualine_a = { "mode", "paste", color = { gui = "bold" } },
             lualine_b = { "branch", "diff" },
             lualine_c = {
-              { "filename", file_status = true, full_path = true, color = { fg = "#f0f0f0", gui = "bold" } },
+              {
+                "filename",
+                file_status = true,
+                full_path = true,
+                color = { fg = "#f0f0f0", gui = "bold" },
+              },
               { "diagnostics", sources = { "nvim_lsp" } },
             },
             lualine_x = { "filetype" },

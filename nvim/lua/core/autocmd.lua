@@ -27,6 +27,7 @@ vim.api.nvim_exec(
   ""
 )
 
+-- TrimWhitespace on save
 vim.api.nvim_exec(
   [[
   fun! TrimWhitespace()

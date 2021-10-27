@@ -5,7 +5,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.opt.signcolumn = "yes"
-vim.opt.list = true
+vim.opt.list = false
+vim.opt.spell = false
 vim.opt.autoindent = true
 vim.opt.encoding = "UTF-8"
 vim.opt.background = "dark"
@@ -19,7 +20,7 @@ vim.opt.showmode = false
 vim.opt.cursorline = false
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.nuw = 1
+vim.opt.numberwidth = 1
 vim.opt.wrap = false
 vim.opt.expandtab = true
 vim.opt.joinspaces = false
@@ -41,7 +42,7 @@ vim.opt.errorformat = "%A%f:%l:%c:%m,%-G%.%#"
 vim.opt.showbreak = "﬌ "
 vim.opt.inccommand = "split" -- incrementally show result of command
 vim.opt.wildignore = "*/.git/*,*/.DS_Store,dist,*.o,*~,package-lock.json"
-vim.opt.listchars = "tab:→ ,nbsp:␣,trail:•,precedes:«,extends:»"
+vim.opt.listchars = "tab:→ ,nbsp:•,trail:•,precedes:«,extends:»"
 vim.opt.wildignorecase = true
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")
@@ -49,7 +50,7 @@ vim.opt.foldenable = false
 vim.opt.foldlevel = 99
 vim.opt.foldmethod = "manual"
 vim.opt.formatoptions = "l"
-vim.opt.shortmess:append("sI")
+vim.opt.shortmess = "a"
 
 if vim.fn.has("termguicolors") == 1 then
   vim.opt.termguicolors = true

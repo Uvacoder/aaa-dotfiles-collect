@@ -16,13 +16,13 @@ require("packer").startup({
     require("set/trouble").setup(use)
     -- require("set/colorizer").setup(use)
     -- require("set/telescope").setup(use)
-    -- require("set/indent-guides").setup(use)
+    require("set/indent-guides").setup(use)
     require("set/lualine").setup(use)
     require("set/bufferline").setup(use)
     require("set/toggle-term").setup(use)
     -- themes
-    require("themes/rose-pine").setup(use)
-    -- possible values: onedark, nord, tokyo-dark, rose-pine, gruv-queen, github
+    require("themes/tokyo-night").setup(use)
+    -- possible values: tokyo-night, material, onedark, nord, tokyo-dark, rose-pine, gruv-queen, github
   end,
   config = {
     display = {
