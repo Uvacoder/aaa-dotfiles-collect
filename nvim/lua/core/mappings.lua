@@ -18,6 +18,9 @@ vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true })
 vim.api.nvim_set_keymap("n", "=", "<PageDown>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "-", "<PageUp>", { noremap = true, silent = true })
 
+-- delete buffer
+vim.api.nvim_set_keymap("n", "bc", ":bd<CR>", { noremap = true, silent = true })
+
 -- fold unfold html
 vim.api.nvim_set_keymap("n", "fc", "zfat", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "fo", "zo", { noremap = true, silent = true })
@@ -31,9 +34,6 @@ vim.api.nvim_set_keymap("n", "<C-q>", ":q<CR>", { noremap = true, silent = true 
 
 -- Packer Sync
 vim.api.nvim_set_keymap("n", "<F5>", ":PackerSync<CR>", { noremap = true, silent = true })
-
--- delete buffer
-vim.api.nvim_set_keymap("n", "bc", ":bd<CR>", { noremap = true, silent = true })
 
 -- search and replace
 vim.api.nvim_set_keymap("n", "rr", ":%s///gcI<Left><Left><Left><Left><Left>", { noremap = true, expr = false, silent = false })

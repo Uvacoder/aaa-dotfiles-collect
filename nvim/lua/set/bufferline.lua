@@ -24,6 +24,10 @@ return {
             tab = { guibg = "#0F1117" },
           },
         })
+
+        -- delete buffer
+        vim.api.nvim_set_keymap("n", "bl", ":BufferLineCloseLeft<CR>", { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "br", ":BufferLineCloseRight<CR>", { noremap = true, silent = true })
       end,
     })
   end,

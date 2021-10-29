@@ -21,8 +21,8 @@ require("packer").startup({
     require("set/bufferline").setup(use)
     require("set/toggle-term").setup(use)
     -- themes
-    require("themes/tokyo-night").setup(use)
-    -- possible values: tokyo-night, material, onedark, nord, tokyo-dark, rose-pine, gruv-queen, github
+    require("themes/onedark").setup(use)
+    -- possible values: monokai, tokyo-night, material, onedark, nord, tokyo-dark, rose-pine, gruv-queen, github
   end,
   config = {
     display = {
