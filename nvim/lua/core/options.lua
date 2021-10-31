@@ -5,8 +5,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.opt.signcolumn = "yes"
-vim.opt.list = false
-vim.opt.spell = false
+-- vim.opt.list = false
+-- vim.opt.spell = false
 vim.opt.autoindent = true
 vim.opt.encoding = "UTF-8"
 vim.opt.background = "dark"
