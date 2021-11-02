@@ -8,7 +8,7 @@ return {
       requires = {
         "p00f/nvim-ts-rainbow",
         "nvim-treesitter/nvim-treesitter-textobjects",
-        "tpope/vim-commentary",
+        "terrortylor/nvim-comment",
         "JoosepAlviste/nvim-ts-context-commentstring",
       },
 
@@ -39,6 +39,7 @@ return {
           },
           context_commentstring = {
             enable = true,
+            enable_autocmd = false,
           },
           incremental_selection = {
             enable = true,
@@ -85,6 +86,12 @@ return {
               },
             },
           },
+        })
+
+        require("nvim_comment").setup({
+          hook = function()
+            require("ts_context_commentstring.internal").update_commentstring()
+          end,
         })
       end,
     })
