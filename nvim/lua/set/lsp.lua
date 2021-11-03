@@ -4,14 +4,7 @@ return {
       "neovim/nvim-lspconfig", -- Collection of configurations for built-in LSP client
 
       requires = {
-        "williamboman/nvim-lsp-installer", -- Install language servers
-        "hrsh7th/nvim-cmp", -- Autocompletion plugin
         "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-path",
-        "L3MON4D3/LuaSnip", -- Snippets plugin
-        "saadparwaiz1/cmp_luasnip",
-        -- "rafamadriz/friendly-snippets",
       },
 
       config = function()
@@ -53,64 +46,11 @@ return {
           nvim_lsp[lsp].setup({
             on_attach = on_attach,
             capabilities = capabilities,
+            flags = {
+              debounce_text_changes = 150,
+            }
           })
         end
-
-        -- Set completeopt to have a better completion experience
-        vim.o.completeopt = "menuone,noselect"
-
-        -- luasnip setup
-        local luasnip = require("luasnip")
-
-        -- nvim-cmp setup
-        local cmp = require("cmp")
-        cmp.setup({
-          snippet = {
-            expand = function(args)
-              require("luasnip").lsp_expand(args.body)
-            end,
-          },
-          mapping = {
-            ["<C-p>"] = cmp.mapping.select_prev_item(),
-            ["<C-n>"] = cmp.mapping.select_next_item(),
-            ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-            ["<C-f>"] = cmp.mapping.scroll_docs(4),
-            ["<C-Space>"] = cmp.mapping.complete(),
-            ["<C-e>"] = cmp.mapping.close(),
-            ["<CR>"] = cmp.mapping.confirm({
-              behavior = cmp.ConfirmBehavior.Replace,
-              select = true,
-            }),
-            ["<Tab>"] = function(fallback)
-              if cmp.visible() then
-                cmp.select_next_item()
-              else
-                fallback()
-              end
-            end,
-            ["<S-Tab>"] = function(fallback)
-              if cmp.visible() then
-                cmp.select_prev_item()
-              else
-                fallback()
-              end
-            end,
-          },
-          sources = {
-            { name = "path" },
-            { name = "buffer" },
-            { name = "nvim_lsp" },
-            { name = "luasnip" },
-          },
-        })
-
-        local lsp_installer = require("nvim-lsp-installer")
-
-        lsp_installer.on_server_ready(function(server)
-          local opts = {}
-          server:setup(opts)
-          vim.cmd([[ do User LspAttachBuffers ]])
-        end)
 
         -- Highlight on yank
         vim.api.nvim_exec(

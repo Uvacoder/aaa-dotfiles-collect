@@ -12,6 +12,8 @@ require("packer").startup({
     require("set/gitsigns").setup(use)
     require("set/treesitter").setup(use)
     require("set/lsp").setup(use)
+    require("set/cmp").setup(use)
+    require("set/lsp-installer").setup(use)
     require("set/format").setup(use)
     require("set/trouble").setup(use)
     -- require("set/colorizer").setup(use)

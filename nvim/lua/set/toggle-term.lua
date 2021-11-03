@@ -5,17 +5,23 @@ return {
 
       config = function()
         require("toggleterm").setup({
-          direction = "float",
-          float_opts = {
-            border = "double",
-            width = 100,
-            height = 19,
-            winblend = 3,
-            highlights = {
-              border = "Normal",
-              background = "Normal",
-            },
-          },
+          direction = 'vertical',
+          size = 34,
+          -- size = vim.o.columns * 0.5,
+          open_mapping = [[<c-\>]],
+          hide_numbers = true,
+          shade_terminals = false,
+          -- direction = "float",
+          -- float_opts = {
+          --   border = "double",
+          --   width = 100,
+          --   height = 19,
+          --   winblend = 3,
+          --   highlights = {
+          --     border = "Normal",
+          --     background = "Normal",
+          --   },
+          -- },
           open_mapping = [[<c-t>]],
           hide_numbers = true,
           shade_terminals = false,
