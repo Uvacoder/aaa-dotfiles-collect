@@ -69,6 +69,7 @@ return {
             { name = "buffer" },
             { name = "nvim_lsp" },
             { name = "luasnip" },
+            { name = 'orgmode' }
           },
         })
       end,
