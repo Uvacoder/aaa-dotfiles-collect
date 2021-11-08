@@ -89,6 +89,8 @@ alias home="cd $HOME/"
 # dotfiles
 alias dot="cd $HOME/.dotfiles"
 
+# run quasar
+alias qd="quasar dev"
 
 # Site
 alias sm="cd /Volumes/Sites/site-modelo-2021 && clear"
@@ -101,12 +103,9 @@ alias ptu="cd /Volumes/Sites/pousada_do_tucunare_2020 && clear"
 alias sen="cd /Volumes/Sites/santos_e_nascimento_2020 && clear"
 
 # Code
-alias qq="cd /Volumes/Code/quasar-app && clear"
-# alias cc="cd /Volumes/Code/auton-quasar/client && clear && rm node_modules/.vite"
-# alias rc="NODE_ENV=development nrd"
-# alias ss="cd /Volumes/Code/auton-quasar/server && clear"
-# alias rs="NODE_ENV=development nrs"
-alias eu="cd /Volumes/Code/urban-octo-eureka && clear"
+alias ff="cd /Volumes/Code/fifty-three && clear"
+alias nd="cd /Volumes/Code/fifty-three/server && clear && NODE_ENV=development nrd"
+alias qd="cd /Volumes/Code/fifty-three/app && clear && quasar dev"
 alias esh="cd /Volumes/Code/e-shop && clear"
 alias low="cd /Volumes/Code/nuxt-express-auth-lowdb-admin && clear"
 alias cds="cd /Volumes/Code/car-dealership-2020 && clear"

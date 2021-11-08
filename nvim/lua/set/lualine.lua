@@ -3,7 +3,7 @@ return {
     use({
       "hoob3rt/lualine.nvim",
 
-      requires = "kyazdani42/nvim-web-devicons",
+      requires = {"kyazdani42/nvim-web-devicons", opt = true},
 
       config = function()
         local mybg = "#0F1117"

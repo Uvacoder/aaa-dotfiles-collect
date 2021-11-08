@@ -3,7 +3,10 @@ return {
     use({
       "nvim-telescope/telescope.nvim",
 
-      requires = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" },
+      requires = {
+        {"nvim-lua/popup.nvim" , opt = true},
+        {"nvim-lua/plenary.nvim", opt = true}
+      },
 
       config = function()
         local actions = require("telescope.actions")
