@@ -5,7 +5,7 @@ return {
 
       config = function()
         vim.g.onedark_style = "deep"
-        vim.g.onedark_diagnostics_undercurl = false
+        vim.g.onedark_diagnostics_undercurl = true
         vim.g.onedark_hide_ending_tildes = true
         vim.g.onedark_transparent_background = true
         require("onedark").setup()

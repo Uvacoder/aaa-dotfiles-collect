@@ -5,8 +5,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.opt.signcolumn = "yes"
--- vim.opt.list = false
--- vim.opt.spell = false
 vim.opt.autoindent = true
 vim.opt.encoding = "UTF-8"
 vim.opt.background = "dark"
@@ -42,6 +40,7 @@ vim.opt.errorformat = "%A%f:%l:%c:%m,%-G%.%#"
 vim.opt.showbreak = "﬌ "
 vim.opt.inccommand = "split" -- incrementally show result of command
 vim.opt.wildignore = "*/.git/*,*/.DS_Store,dist,*.o,*~,package-lock.json"
+vim.opt.list = true
 vim.opt.listchars = "tab:→ ,nbsp:•,trail:•,precedes:«,extends:»"
 vim.opt.wildignorecase = true
 vim.opt.undofile = true
@@ -50,6 +49,14 @@ vim.opt.foldenable = false
 vim.opt.foldlevel = 99
 vim.opt.foldmethod = "manual"
 vim.opt.formatoptions = "l"
+vim.opt.shortmess:append("filmnrxoOtTAIc")
+
+if vim.fn.has("termguicolors") == 1 then
+  vim.opt.termguicolors = true
+end
+
+vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor"
+
 -- vim.opt.shortmess = vim.opt.shortmess + "f"	   -- Use "(3 of 5)" instead of "(file 3 of 5)"
 -- vim.opt.shortmess = vim.opt.shortmess + "i"	   -- Use "[noeol]" instead of "[Incomplete last line]"
 -- vim.opt.shortmess = vim.opt.shortmess + "l"	   -- Use "999L, 888C" instead of "999 lines, 888 characters"
@@ -65,10 +72,3 @@ vim.opt.formatoptions = "l"
 -- vim.opt.shortmess = vim.opt.shortmess + "A"	   -- Don't give the "ATTENTION" message when an existing swap file is found.
 -- vim.opt.shortmess = vim.opt.shortmess + "I"	   -- Don't give the intro message when starting Vim |:intro|.
 -- vim.opt.shortmess = vim.opt.shortmess + "c"       -- Avoid showing message extra message when using completion
-vim.opt.shortmess:append("filmnrxoOtTAIc")
-
-if vim.fn.has("termguicolors") == 1 then
-  vim.opt.termguicolors = true
-end
-
-vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor"
