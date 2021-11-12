@@ -4,8 +4,8 @@ return {
       "nvim-telescope/telescope.nvim",
 
       requires = {
-        {"nvim-lua/popup.nvim" , opt = true},
-        {"nvim-lua/plenary.nvim", opt = true}
+        { "nvim-lua/popup.nvim", opt = true },
+        { "nvim-lua/plenary.nvim", opt = true },
       },
 
       config = function()

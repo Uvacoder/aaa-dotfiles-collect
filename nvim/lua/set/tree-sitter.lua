@@ -10,7 +10,7 @@ return {
         "nvim-treesitter/nvim-treesitter-textobjects",
         "terrortylor/nvim-comment",
         "JoosepAlviste/nvim-ts-context-commentstring",
-        'nvim-treesitter/nvim-treesitter-refactor'
+        "nvim-treesitter/nvim-treesitter-refactor",
       },
 
       config = function()

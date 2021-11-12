@@ -12,8 +12,8 @@ return {
         vim.g.nvim_tree_highlight_opened_files = 3
         vim.g.nvim_tree_refresh_wait = 500
         vim.g.nvim_tree_window_picker_exclude = {
-          ["filetype"] = { 'packer', 'qf' },
-          ["buftype"] =  { 'terminal' },
+          ["filetype"] = { "packer", "qf" },
+          ["buftype"] = { "terminal" },
         }
         vim.g.nvim_tree_show_icons = {
           git = 1,
@@ -45,7 +45,7 @@ return {
           },
         }
 
-        require'nvim-tree'.setup {
+        require("nvim-tree").setup({
           update_focused_file = {
             enable = true,
           },
@@ -64,10 +64,10 @@ return {
             },
           },
           view = {
-            width = '30%',
+            width = "30%",
             auto_resize = true,
-          }
-        }
+          },
+        })
 
         vim.api.nvim_set_keymap("n", ",", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
       end,

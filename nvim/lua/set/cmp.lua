@@ -7,7 +7,7 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
-        'hrsh7th/cmp-cmdline',
+        "hrsh7th/cmp-cmdline",
         "L3MON4D3/LuaSnip", -- Snippets plugin
         "saadparwaiz1/cmp_luasnip",
       },
@@ -53,7 +53,10 @@ return {
               else
                 fallback()
               end
-            end, { "i", "s" }),
+            end, {
+              "i",
+              "s",
+            }),
 
             ["<S-Tab>"] = cmp.mapping(function(fallback)
               if cmp.visible() then
@@ -63,14 +66,17 @@ return {
               else
                 fallback()
               end
-            end, { "i", "s" }),
+            end, {
+              "i",
+              "s",
+            }),
           },
           sources = {
             { name = "path" },
             { name = "buffer" },
             { name = "nvim_lsp" },
             { name = "luasnip" },
-            { name = 'orgmode' }
+            { name = "orgmode" },
           },
         })
       end,

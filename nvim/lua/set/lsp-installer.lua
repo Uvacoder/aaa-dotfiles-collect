@@ -3,8 +3,7 @@ return {
     use({
       "williamboman/nvim-lsp-installer", -- Install language servers
 
-      requires = {
-      },
+      requires = {},
 
       config = function()
         local lsp_installer = require("nvim-lsp-installer")
