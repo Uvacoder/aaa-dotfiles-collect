@@ -64,7 +64,7 @@ return {
             },
           },
           view = {
-            width = "30%",
+            width = "40%",
             auto_resize = true,
           },
         })

@@ -2,10 +2,18 @@
 
 ```shell
 # Install neovim from head of measter
-brew install neovim --HEAD
+brew install neovim
 
 # You can upgrade it later with
-brew upgrade neovim --fetch-head
+brew upgrade neovim
+
+#install tnux
+brew install tmux
+
+#install tpm tmux plugins manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/erikw/tmux-powerline.git ~/.tmux/style/tmux-powerline
+
 ```
 
 At this point, you'll have these config files symlinked in `~./config/nvim`. In
