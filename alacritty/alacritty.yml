@@ -59,9 +59,14 @@ selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: true
 
+# shell:
+#   program: /bin/zsh
+#   args:
+#     - --login
 shell:
   program: /bin/zsh
   args:
-    - --login
-
+    - -l
+    - -c
+    - "tmux attach || tmux"
 working_directory: None

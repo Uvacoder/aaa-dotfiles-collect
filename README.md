@@ -47,8 +47,7 @@ rm ~/.wgetrc
 rm ~/.gitconfig
 rm ~/.global_ignore
 rm ~/.gitignore_global
-
-rm ~/.local/share/nvim/site/pack/packer/start/lualine.nvim/lua/lualine/themes/dark.lua
+rm ~/.tmux/style/tmux-powerline/themes/default.sh
 ```
 
 ### 3 - Make config fold
@@ -69,9 +68,9 @@ ln -s ~/.dotfiles/git/global_ignore ~/.global_ignore
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 ln -s ~/.dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
 ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/tmux/default.sh ~/.tmux/style/tmux-powerline/themes/default.sh
 ln -s ~/.dotfiles/lua/stylua.toml ~/stylua.toml
 
-ln -s ~/.dotfiles/nvim/lua/config/lualine-dark.lua ~/.local/share/nvim/site/pack/packer/start/lualine.nvim/lua/lualine/themes/dark.lua
 ```
 
 ### 5 - Load zsh config file
