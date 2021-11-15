@@ -24,8 +24,9 @@ require("packer").startup({
     require("set/buffer-line").setup(use)
     require("set/toggle-term").setup(use)
     -- themes
-    require("themes/onedark").setup(use)
-    -- possible values: monokai, tokyo-night, material, onedark, nord, tokyo-dark, rose-pine, gruv-queen, github
+    require("themes/tokyo-dark").setup(use)
+    -- possible values: night-fox, monokai, tokyo-night, material, one-dark, one-dark-pro, nord, tokyo-dark, rose-pine, gruv-queen, github
+    vim.api.nvim_command("hi! link IndentBlanklineChar Comment")
   end,
   config = {
     display = {

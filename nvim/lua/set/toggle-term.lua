@@ -10,8 +10,8 @@ return {
           direction = "float",
           float_opts = {
             border = "double",
-            width = 65,
-            height = 18,
+            width = 120,
+            height = 22,
             winblend = 3,
             highlights = {
               border = "Normal",

@@ -4,6 +4,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.opt.spell = false
+vim.opt.spelllang = { "en_us" }
+
 vim.opt.signcolumn = "yes"
 vim.opt.autoindent = true
 vim.opt.encoding = "UTF-8"
@@ -51,9 +54,10 @@ vim.opt.foldmethod = "manual"
 vim.opt.formatoptions = "l"
 vim.opt.shortmess:append("filmnrxoOtTAIc")
 
-if vim.fn.has("termguicolors") == 1 then
-  vim.opt.termguicolors = true
-end
+vim.opt.termguicolors = false
+-- if vim.fn.has("termguicolors") == 1 then
+--   vim.opt.termguicolors = true
+-- end
 
 vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor"
 
