@@ -12,7 +12,7 @@ return {
           buftype_exclude = { "terminal" },
         })
 
-        vim.cmd([[highlight IndentBlanklineChar guifg=#0F1117 gui=nocombine]])
+        vim.cmd([[highlight IndentBlanklineChar guifg=#121212 gui=nocombine]])
       end,
     })
   end,

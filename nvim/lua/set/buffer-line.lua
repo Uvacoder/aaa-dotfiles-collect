@@ -8,10 +8,9 @@ return {
       config = function()
         require("bufferline").setup({
           options = {
-
+            numbers = "buffer_id",
             max_name_length = 22,
             tab_size = 22,
-            -- offsets = { { filetype = "NvimTree", text = "File Explorer" } },
             indicator_icon = "",
             show_close_icon = false,
             show_buffer_close_icons = false,
