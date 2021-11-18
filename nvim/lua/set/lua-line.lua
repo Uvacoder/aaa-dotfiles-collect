@@ -12,16 +12,12 @@ return {
         -- stylua: ignore
         local colors = {
           bg       = '#121212',
-          fg       = '#bbc2cf',
-          yellow   = '#ECBE7B',
-          cyan     = '#008080',
-          darkblue = '#081633',
-          green    = '#98be65',
-          orange   = '#FF8800',
-          violet   = '#a9a1e1',
-          magenta  = '#c678dd',
-          blue     = '#51afef',
-          red      = '#ec5f67',
+          fg       = '#757575',
+          blue     = '#0087FF',
+          green    = '#00FF5F',
+          yellow   = '#F6C177',
+          red      = '#D70000',
+          white    = '#ffffff',
         }
 
         local conditions = {
@@ -41,13 +37,11 @@ return {
         -- Config
         local config = {
           options = {
+            icons_enabled = false,
             -- Disable sections and component separators
             component_separators = "",
             section_separators = "",
             theme = {
-              -- We are going to use lualine_c an lualine_x as left and
-              -- right section. Both are highlighted by c theme .  So we
-              -- are just setting default looks o statusline
               normal = { c = { fg = colors.fg, bg = colors.bg } },
               inactive = { c = { fg = colors.fg, bg = colors.bg } },
             },
@@ -86,62 +80,41 @@ return {
 
         ins_left({
           -- mode component
-          function()
-            -- auto change color according to neovims mode
-            local mode_color = {
-              n = colors.red,
-              i = colors.green,
-              v = colors.blue,
-              [""] = colors.blue,
-              V = colors.blue,
-              c = colors.magenta,
-              no = colors.red,
-              s = colors.orange,
-              S = colors.orange,
-              [""] = colors.orange,
-              ic = colors.yellow,
-              R = colors.violet,
-              Rv = colors.violet,
-              cv = colors.red,
-              ce = colors.red,
-              r = colors.cyan,
-              rm = colors.cyan,
-              ["r?"] = colors.cyan,
-              ["!"] = colors.red,
-              t = colors.red,
-            }
-            vim.api.nvim_command("hi! LualineMode guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg)
-            return ""
-          end,
-          color = "LualineMode",
-          padding = { left = 1, right = 1 },
+          "mode",
+          color = { fg = colors.fg, bg = colors.bg },
+          padding = { left = 1, right = 2 },
         })
 
-        ins_left({
-          -- filesize component
-          "filesize",
-          cond = conditions.buffer_not_empty,
-        })
+        -- ins_left({
+        --   -- filesize component
+        --   "filetype",
+        --   icon_only = true,
+        --   padding = { left = 1 },
+        --   cond = conditions.buffer_not_empty,
+        -- })
 
         ins_left({
           "filename",
           cond = conditions.buffer_not_empty,
-          color = { fg = "#ffffff", gui = "bold" },
+          color = { fg = colors.white },
         })
 
         ins_left({ "location" })
 
-        ins_left({ "progress", color = { fg = colors.fg, gui = "bold" } })
+        ins_left({ "progress", color = { fg = colors.fg, } })
 
         ins_left({
           "diagnostics",
           sources = { "nvim_lsp" },
-          symbols = { error = " ", warn = " ", info = " " },
+          -- symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' },
+          -- symbols = { error = " ", warn = " ", info = " " },
           diagnostics_color = {
             color_error = { fg = colors.red },
             color_warn = { fg = colors.yellow },
-            color_info = { fg = colors.cyan },
+            color_info = { fg = colors.blue },
+            color_info = { fg = colors.fg }
           },
+          padding = { left = 1 },
         })
 
         -- Insert mid section. You can make any number of sections in neovim :)
@@ -155,7 +128,7 @@ return {
         ins_left({
           -- Lsp server name .
           function()
-            local msg = ""
+            local msg = "-"
             local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
             local clients = vim.lsp.get_active_clients()
             if next(clients) == nil then
@@ -169,37 +142,40 @@ return {
             end
             return msg
           end,
-          color = { fg = colors.violet },
+          color = { fg = colors.fg },
         })
 
         -- Add components to right sections
         ins_right({
-          "o:encoding", -- option component same as &encoding in viml
-          fmt = string.upper, -- I'm not sure why it's upper case either ;)
-          cond = conditions.hide_in_width,
-          color = { fg = colors.green, gui = "bold" },
+          "fileformat",
+          -- icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
+          padding = { right = 1 },
+          color = { fg = colors.fg },
         })
 
         ins_right({
-          "fileformat",
-          fmt = string.upper,
-          icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-          color = { fg = colors.green, gui = "bold" },
+          "o:encoding", -- option component same as &encoding in viml
+          -- icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
+          -- fmt = string.upper, -- I'm not sure why it's upper case either ;)
+          cond = conditions.hide_in_width,
+          padding = { right = 2 },
+          color = { fg = colors.fg, },
         })
 
         ins_right({
           "branch",
           icon = "",
-          color = { fg = colors.yellow },
+          color = { fg = '#ffffff' },
         })
 
         ins_right({
           "diff",
           -- Is it me or the symbol for modified us really weird
-          symbols = { added = " ", modified = "柳", removed = " " },
+          -- symbols = { added = '+', modified = '~', removed = '-' },
+          -- symbols = { added = " ", modified = "柳", removed = " " },
           diff_color = {
             added = { fg = colors.green },
-            modified = { fg = colors.orange },
+            modified = { fg = colors.yellow },
             removed = { fg = colors.red },
           },
           cond = conditions.hide_in_width,
