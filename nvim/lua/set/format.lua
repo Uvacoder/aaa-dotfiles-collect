@@ -11,6 +11,7 @@ return {
           svg = { { cmd = { "prettier -w" } } },
           css = { { cmd = { "prettier -w" } } },
           json = { { cmd = { "prettier -w" } } },
+          sass = { { cmd = { "prettier -w" } } },
           lua = { { cmd = { "stylua %s " } } },
           markdown = {
             { cmd = { "prettier -w" } },

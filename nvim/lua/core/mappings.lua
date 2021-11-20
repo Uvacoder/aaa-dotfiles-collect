@@ -19,7 +19,7 @@ vim.api.nvim_set_keymap("n", "=", "<PageDown>", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("n", "-", "<PageUp>", { noremap = true, silent = true })
 
 -- delete buffer
-vim.api.nvim_set_keymap("n", "bc", ":bd<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-x>", ":bd<CR>", { noremap = true, silent = true })
 
 -- fold unfold html
 vim.api.nvim_set_keymap("n", "fc", "zfat", { noremap = true, silent = true })

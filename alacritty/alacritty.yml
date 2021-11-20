@@ -11,8 +11,9 @@ cursor:
 
 font:
   normal:
-    family: OperatorMono Nerd Font
-  size: 19
+    family: UbuntuMono Nerd Font Mono
+    # family: OperatorMono Nerd Font
+  size: 22
   offset:
     x: 0
     y: 4

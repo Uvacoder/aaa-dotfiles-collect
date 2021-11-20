@@ -68,7 +68,8 @@ ln -s ~/.dotfiles/git/global_ignore ~/.global_ignore
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 ln -s ~/.dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
 ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
-ln -s ~/.dotfiles/tmux/default.sh ~/.tmux/style/tmux-powerline/themes/default.sh
+ln -s ~/.dotfiles/tmux/left_tmux_status.sh ~/.tmux/left_tmux_status.sh
+ln -s ~/.dotfiles/tmux/right_tmux_status.sh ~/.tmux/right_tmux_status.sh
 ln -s ~/.dotfiles/lua/stylua.toml ~/stylua.toml
 
 ```
