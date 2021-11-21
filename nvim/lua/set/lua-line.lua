@@ -107,7 +107,7 @@ return {
 
         ins_left({ "location" })
 
-        ins_left({ "progress", color = { fg = colors.fg, } })
+        ins_left({ "progress", color = { fg = colors.fg } })
 
         ins_left({
           "diagnostics",
@@ -118,7 +118,7 @@ return {
             color_error = { fg = colors.red },
             color_warn = { fg = colors.yellow },
             color_info = { fg = colors.blue },
-            color_info = { fg = colors.fg }
+            color_info = { fg = colors.fg },
           },
           padding = { left = 1 },
         })
@@ -165,13 +165,13 @@ return {
           -- fmt = string.upper, -- I'm not sure why it's upper case either ;)
           cond = conditions.hide_in_width,
           padding = { right = 2 },
-          color = { fg = colors.fg, },
+          color = { fg = colors.fg },
         })
 
         ins_right({
           "branch",
           icon = "",
-          color = { fg = '#ffffff' },
+          color = { fg = "#ffffff" },
         })
 
         ins_right({

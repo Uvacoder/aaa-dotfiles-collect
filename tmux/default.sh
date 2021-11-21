@@ -22,7 +22,7 @@ TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SEPARATOR=${TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SE
 
 if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
   TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
-    # "battery 233 47" \
+    "battery 233 47" \
     "tmux_session_info 233 11" \
     # "hostname 233 33" \
     "pwd 233 33" \
