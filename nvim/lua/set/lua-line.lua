@@ -79,12 +79,18 @@ return {
         end
 
         ins_left({
+          -- battery component
+          "%{Battery_icon()} %{battery#component()}",
+          color = { fg = colors.green, bg = colors.bg },
+          padding = { left = 1, right = 2 },
+        })
+
+        ins_left({
           -- mode component
           "mode",
           color = { fg = colors.fg, bg = colors.bg },
           padding = { left = 1, right = 2 },
         })
-
         -- ins_left({
         --   -- filesize component
         --   "filetype",
