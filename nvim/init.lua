@@ -17,7 +17,6 @@ require("packer").startup({
     require("set/format").setup(use)
     require("set/trouble").setup(use)
     require("set/indent-blank-line").setup(use)
-    require("set/battery").setup(use)
     require("set/lua-line").setup(use)
     require("set/buffer-line").setup(use)
     -- themes
