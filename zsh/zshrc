@@ -62,7 +62,7 @@ alias mem="top -o rsize" # Memory
 alias speed="speedtest"
 
 # Editors
-alias v="nvim"
+alias v="~/nvim-osx64/bin/nvim"
 alias s="subl"
 alias c="code --disable-gpu"
 

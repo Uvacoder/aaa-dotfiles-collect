@@ -46,8 +46,8 @@ brew_packages=(
   "makedepend"
   "luarocks"
   "python3"
-  "luajit"
-  "neovim"
+  # "luajit"
+  # "neovim"
   "node@14"
   "wget"
   "z"
@@ -94,20 +94,20 @@ done
 echo "$(tput setaf 2)FRIDAY: Homebrew Cask Apps installed.$(tput sgr 0)"
 
 
-echo "---------------------------------------------------------"
-echo "$(tput setaf 2)FRIDAY: Installing Python packages.$(tput sgr 0)"
-
-pip3_packages=(
-  "neovim"
-  "vim-vint"
-)
-
-for package in "${pip3_packages[@]}"
-do
-  echo "$(tput setaf 2)FRIDAY: Installing $package.$(tput sgr 0)"
-  pip3 install $package
-done
-echo "$(tput setaf 2)FRIDAY: Python Packages installed.$(tput sgr 0)"
+# echo "---------------------------------------------------------"
+# echo "$(tput setaf 2)FRIDAY: Installing Python packages.$(tput sgr 0)"
+#
+# pip3_packages=(
+#   "neovim"
+#   "vim-vint"
+# )
+#
+# for package in "${pip3_packages[@]}"
+# do
+#   echo "$(tput setaf 2)FRIDAY: Installing $package.$(tput sgr 0)"
+#   pip3 install $package
+# done
+# echo "$(tput setaf 2)FRIDAY: Python Packages installed.$(tput sgr 0)"
 
 
 

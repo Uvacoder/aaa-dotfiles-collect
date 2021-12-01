@@ -72,6 +72,13 @@ ln -s ~/.dotfiles/tmux/left_tmux_status.sh ~/.tmux/left_tmux_status.sh
 ln -s ~/.dotfiles/tmux/right_tmux_status.sh ~/.tmux/right_tmux_status.sh
 ln -s ~/.dotfiles/lua/stylua.toml ~/stylua.toml
 
+cp ~/.dotfiles/local.battery.plist ~/Library/LaunchAgents/local.battery.plist
+
+
+curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz
+tar xzf nvim-macos.tar.gz
+./nvim-osx64/bin/nvim
+
 ```
 
 ### 5 - Load zsh config file
