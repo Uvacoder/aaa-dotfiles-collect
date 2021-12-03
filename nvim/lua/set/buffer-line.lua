@@ -8,7 +8,7 @@ return {
       config = function()
         require("bufferline").setup({
           options = {
-            numbers = "buffer_id",
+            -- numbers = "buffer_id",
             max_name_length = 22,
             tab_size = 22,
             indicator_icon = "",
