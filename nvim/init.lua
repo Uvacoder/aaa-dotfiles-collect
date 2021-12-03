@@ -20,7 +20,7 @@ require("packer").startup({
     require("set/lua-line").setup(use)
     require("set/buffer-line").setup(use)
     -- themes
-    require("themes/oceanic-next").setup(use) -- one-dark|tokyo-dark|rose-pine|gruv-queen
+    require("themes/one-dark").setup(use) -- one-dark|tokyo-dark|rose-pine
     vim.cmd("hi! link IndentBlanklineChar Comment")
   end,
   config = {
