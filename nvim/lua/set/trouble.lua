@@ -3,14 +3,14 @@ return {
     use({
       "folke/trouble.nvim",
 
-      requires = "kyazdani42/nvim-web-devicons",
+      -- requires = "kyazdani42/nvim-web-devicons",
 
       config = function()
         require("trouble").setup({
+          icons = false,
           position = "bottom",
           height = 10,
           width = 50,
-          icons = false,
           mode = "lsp_workspace_diagnostics", -- "lsp_workspace_diagnostics", "lsp_document_diagnostics", "quickfix", "lsp_references", "loclist"
           action_keys = {
             close = "q",

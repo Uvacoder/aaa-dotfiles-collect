@@ -7,6 +7,7 @@ return {
 
       requires = {
         "p00f/nvim-ts-rainbow",
+        "windwp/nvim-ts-autotag",
         "nvim-treesitter/nvim-treesitter-textobjects",
         "terrortylor/nvim-comment",
         "JoosepAlviste/nvim-ts-context-commentstring",
@@ -50,6 +51,9 @@ return {
               scope_incremental = "grc",
               node_decremental = "grm",
             },
+          },
+          autotag = {
+            enable = true,
           },
           indent = {
             enable = true,

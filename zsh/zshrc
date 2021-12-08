@@ -1,7 +1,7 @@
 export ZSH="/Users/sldobri/.oh-my-zsh"
 export ZSH_CUSTOM="$ZSH/custom"
 # export NODE_ENV="development"
-# export EDITOR="nvim"
+export EDITOR="nvim"
 export LANG="en_US.UTF-8"
 # export NVIM_TUI_ENABLE_TRUE_COLOR=1
 LC_CTYPE=en_US.UTF-8
@@ -17,7 +17,7 @@ export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+# export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
 # export PATH="/usr/local/opt/mongodb-community@3.4/bin:$PATH"
 
 
@@ -46,7 +46,7 @@ plugins=(
 
 
 # ZSH
-alias zsh="nvim $HOME/.zshrc"
+alias zsh="v $HOME/.zshrc"
 alias sz="source $HOME/.zshrc"
 
 
@@ -84,6 +84,8 @@ alias ydl="youtube-dl"
 # moving
 alias ..="cd .."
 alias home="cd $HOME/"
+alias code="cd /Volumes/code"
+alias sites="cd /Volumes/sites"
 
 
 # dotfiles
@@ -100,9 +102,11 @@ alias ptu="cd /Volumes/Sites/pousada_do_tucunare_2020 && clear"
 alias sen="cd /Volumes/Sites/santos_e_nascimento_2020 && clear"
 
 # Code
-alias ff="cd /Volumes/Code/fifty-three && clear"
-alias nd="cd /Volumes/Code/fifty-three/server && clear && NODE_ENV=development nrd"
-alias qd="cd /Volumes/Code/fifty-three/app && clear && quasar dev"
+alias ff="cd /Volumes/Code/auton-quasar-firebase && clear"
+alias qd="cd /Volumes/Code/auton-quasar-firebase && clear && quasar dev"
+# alias ff="cd /Volumes/Code/fifty-three && clear"
+# alias nd="cd /Volumes/Code/fifty-three/server && clear && NODE_ENV=development nrd"
+# alias qd="cd /Volumes/Code/fifty-three/app && clear && quasar dev"
 alias esh="cd /Volumes/Code/e-shop && clear"
 alias low="cd /Volumes/Code/nuxt-express-auth-lowdb-admin && clear"
 alias cds="cd /Volumes/Code/car-dealership-2020 && clear"

@@ -19,6 +19,7 @@ require("packer").startup({
     require("set/indent-blank-line").setup(use)
     require("set/lua-line").setup(use)
     require("set/buffer-line").setup(use)
+    require("set/telescope").setup(use)
     -- themes
     require("themes/one-dark").setup(use) -- one-dark|tokyo-dark|rose-pine
     vim.cmd("hi! link IndentBlanklineChar Comment")
