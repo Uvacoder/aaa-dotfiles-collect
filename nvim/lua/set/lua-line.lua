@@ -85,8 +85,8 @@ return {
           color = { fg = colors.fg, bg = colors.bg },
           padding = { left = 1, right = 2 },
         })
+
         -- ins_left({
-        --   -- filesize component
         --   "filetype",
         --   icon_only = true,
         --   padding = { left = 1 },
@@ -105,7 +105,7 @@ return {
 
         ins_left({
           "diagnostics",
-          sources = { "nvim_lsp" },
+          sources = { "nvim_diagnostic" },
           -- symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' },
           -- symbols = { error = " ", warn = " ", info = " " },
           diagnostics_color = {
