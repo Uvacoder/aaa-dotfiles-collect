@@ -11,7 +11,7 @@ return {
           position = "bottom",
           height = 10,
           width = 50,
-          mode = "lsp_workspace_diagnostics", -- "lsp_workspace_diagnostics", "lsp_document_diagnostics", "quickfix", "lsp_references", "loclist"
+          mode = "workspace_diagnostics",
           action_keys = {
             close = "q",
             cancel = "<esc>",
@@ -23,7 +23,7 @@ return {
           auto_close = true,
           auto_preview = true,
           auto_fold = false,
-          use_lsp_diagnostic_signs = true,
+          use_diagnostic_signs = true,
         })
 
         vim.api.nvim_set_keymap("n", "tt", "<cmd>LspTroubleToggle<cr>", { noremap = true, silent = true })
