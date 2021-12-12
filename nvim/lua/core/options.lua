@@ -45,7 +45,7 @@ vim.opt.inccommand = "split" -- incrementally show result of command
 vim.opt.wildignore = "*/.git/*,*/.DS_Store,dist,*.o,*~,package-lock.json"
 vim.opt.list = true
 vim.opt.listchars = "tab:→ ,nbsp:•,trail:•,precedes:«,extends:»"
-vim.opt.fillchars:append {eob = " "}
+vim.opt.fillchars:append({ eob = " " })
 vim.opt.wildignorecase = true
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")
@@ -53,14 +53,13 @@ vim.opt.foldenable = false
 vim.opt.foldlevel = 99
 vim.opt.foldmethod = "manual"
 vim.opt.formatoptions = "l"
-vim.opt.shortmess:append("filmnrxoOtTAIc")
+vim.opt.shortmess:append("aoOtTAIc")
 
-vim.opt.termguicolors = false
--- if vim.fn.has("termguicolors") == 1 then
---   vim.opt.termguicolors = true
--- end
+if vim.fn.has("termguicolors") == 1 then
+  vim.opt.termguicolors = true
+end
 
-vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor"
+-- vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor"
 
 -- vim.opt.shortmess = vim.opt.shortmess + "f"	   -- Use "(3 of 5)" instead of "(file 3 of 5)"
 -- vim.opt.shortmess = vim.opt.shortmess + "i"	   -- Use "[noeol]" instead of "[Incomplete last line]"

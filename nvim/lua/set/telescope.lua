@@ -10,18 +10,18 @@ return {
 
       config = function()
         local actions = require("telescope.actions")
-        require('telescope').setup {
+        require("telescope").setup({
           defaults = {
             file_ignore_patterns = { "node_modules", ".git" },
             mappings = {
               i = {
                 ["<esc>"] = actions.close,
-                ['<C-u>'] = false,
-                ['<C-d>'] = false,
+                ["<C-u>"] = false,
+                ["<C-d>"] = false,
               },
             },
           },
-        }
+        })
         vim.api.nvim_set_keymap("n", "ff", ':lua require("telescope.builtin").find_files()<CR>', { noremap = true, silent = true })
         vim.api.nvim_set_keymap("n", "fg", ':lua require("telescope.builtin").live_grep()<CR>', { noremap = true, silent = true })
         vim.api.nvim_set_keymap("n", "fb", ':lua require("telescope.builtin").buffers()<CR>', { noremap = true, silent = true })
