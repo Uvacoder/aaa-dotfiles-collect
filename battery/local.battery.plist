@@ -9,7 +9,7 @@
         <key>ProgramArguments</key>
         <array>
                 <string>/usr/bin/osascript</string>
-                <string>/Users/sldobri/.dotfiles/Battery.applescript</string>
+                <string>/Users/sldobri/.dotfiles/battery/Battery.applescript</string>
         </array>
         <key>RunAtLoad</key>
         <true/>

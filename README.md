@@ -1,11 +1,6 @@
 # dotfiles
 
 ```shell
-# Install neovim from head of measter
-brew install neovim
-
-# You can upgrade it later with
-brew upgrade neovim
 
 #install tnux
 brew install tmux
@@ -24,7 +19,6 @@ Next, we'll have to bootstrap the package manager, Packer. This will take a few
 cranks, so just repeat this step a few times until everything is installed:
 
 ```shell
-npm install -g typescript typescript-language-server vls @tailwindcss/language-server
 nvim
 :PackerSync
 :qa
@@ -68,11 +62,10 @@ ln -s ~/.dotfiles/git/global_ignore ~/.global_ignore
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 ln -s ~/.dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
 ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
-ln -s ~/.dotfiles/tmux/left_tmux_status.sh ~/.tmux/left_tmux_status.sh
-ln -s ~/.dotfiles/tmux/right_tmux_status.sh ~/.tmux/right_tmux_status.sh
+ln -s ~/.dotfiles/tmux/default.sh ~/.tmux/style/tmux-powerline/themes/default.sh
 ln -s ~/.dotfiles/lua/stylua.toml ~/stylua.toml
 
-cp ~/.dotfiles/local.battery.plist ~/Library/LaunchAgents/local.battery.plist
+cp ~/.dotfiles/battery/local.battery.plist ~/Library/LaunchAgents/local.battery.plist
 
 
 curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz

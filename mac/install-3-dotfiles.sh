@@ -15,6 +15,7 @@ rm ~/.wgetrc
 rm ~/.gitconfig
 rm ~/.global_ignore
 rm ~/.gitignore_global
+rm ~/.tmux/style/tmux-powerline/themes/default.sh
 
 echo "$(tput setaf 2)FRIDAY: link dotfiles.$(tput sgr 0)"
 
