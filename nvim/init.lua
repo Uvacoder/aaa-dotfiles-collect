@@ -20,6 +20,7 @@ require("packer").startup({
     require("set/lua-line").setup(use)
     require("set/buffer-line").setup(use)
     require("set/telescope").setup(use)
+    require("set/stylua").setup(use)
     -- themes
     require("themes/one-dark").setup(use) -- one-dark|tokyo-dark|rose-pine
     vim.cmd("hi! link IndentBlanklineChar Comment")

@@ -12,27 +12,20 @@ return {
           css = { { cmd = { "prettier -w" } } },
           json = { { cmd = { "prettier -w" } } },
           sass = { { cmd = { "prettier -w" } } },
-          lua = { { cmd = { "stylua %s " } } },
-          markdown = {
-            { cmd = { "prettier -w" } },
-            {
-              cmd = { "black" },
-              start_pattern = "^```python$",
-              end_pattern = "^```$",
-              target = "current",
-            },
-          },
         })
 
-        vim.api.nvim_exec(
-          [[
+        vim.cmd([[
           augroup FormatAutogroup
           autocmd!
           autocmd BufWritePost *.html,*.js,*.vue,*.css,*.json,*.svg FormatWrite
           augroup END
-        ]],
-          true
-        )
+        ]])
+        vim.cmd([[
+          augroup FormatAutogroupLua
+          autocmd!
+          autocmd BufWritePost *.lua lua require('stylua-nvim').format_file()
+          augroup END
+        ]])
       end,
     })
   end,
