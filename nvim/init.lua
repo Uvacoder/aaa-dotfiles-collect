@@ -22,7 +22,7 @@ require("packer").startup({
     require("set/telescope").setup(use)
     require("set/stylua").setup(use)
     -- themes
-    require("themes/one-dark").setup(use) -- one-dark|tokyo-dark|rose-pine
+    require("themes/rose-pine").setup(use) -- one-dark|tokyo-dark|rose-pine
     vim.cmd("hi! link IndentBlanklineChar Comment")
   end,
   config = {
