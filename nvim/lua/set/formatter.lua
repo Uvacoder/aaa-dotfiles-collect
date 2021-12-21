@@ -22,6 +22,7 @@ return {
             css = { prettier },
             scss = { prettier },
             json = { prettier },
+            svg = { prettier },
             markdown = { prettier },
             lua = {
               function()
@@ -38,7 +39,7 @@ return {
         vim.cmd([[
           augroup FormatAutogroup
           autocmd!
-          autocmd BufWritePost *.lua,*.html,*.js,*.vue,*.css,*.json,*.ts,*.scss FormatWrite
+          autocmd BufWritePost *.lua,*.html,*.js,*.vue,*.css,*.json,*.ts,*.scss,*svg FormatWrite
           augroup END
         ]])
       end,

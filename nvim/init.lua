@@ -6,7 +6,7 @@ require("packer").startup({
   function(use)
     -- Packages
     require("set/packer").setup(use)
-       require("set/visual-multi").setup(use)
+    require("set/visual-multi").setup(use)
     require("set/auto-pairs").setup(use)
     require("set/tree").setup(use)
     require("set/git-signs").setup(use)
@@ -16,13 +16,12 @@ require("packer").startup({
     require("set/lua-line").setup(use)
     require("set/buffer-line").setup(use)
     require("set/telescope").setup(use)
-    -- require("set/stylua").setup(use)
     require("set/lsp-installer").setup(use)
     require("set/tree-sitter").setup(use)
     require("set/lsp-config").setup(use)
     require("set/cmp").setup(use)
     -- themes
-    require("themes/rose-pine").setup(use) -- one-dark|tokyo-dark|rose-pine
+    require("themes/material").setup(use) -- one-dark|tokyo-dark|rose-pine
     vim.cmd("hi! link IndentBlanklineChar Comment")
   end,
   config = {
