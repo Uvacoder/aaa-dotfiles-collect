@@ -20,12 +20,6 @@ return {
           autocmd BufWritePost *.html,*.js,*.vue,*.css,*.json,*.svg FormatWrite
           augroup END
         ]])
-        vim.cmd([[
-          augroup FormatAutogroupLua
-          autocmd!
-          autocmd BufWritePost *.lua lua require('stylua-nvim').format_file()
-          augroup END
-        ]])
       end,
     })
   end,

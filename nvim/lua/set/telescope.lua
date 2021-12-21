@@ -22,10 +22,11 @@ return {
             },
           },
         })
-        vim.api.nvim_set_keymap("n", "ff", ':lua require("telescope.builtin").find_files({previewer = false})<CR>', { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "fg", ':lua require("telescope.builtin").live_grep()<CR>', { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "<leader><space>", ':lua require("telescope.builtin").buffers()<CR>', { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "fs", ':lua require("telescope.builtin").grep_string()<CR>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<leader><space>", [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "ff", [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "fb", [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "gs", [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "lg", [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
       end,
     })
   end,
