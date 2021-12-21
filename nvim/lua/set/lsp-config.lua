@@ -4,10 +4,18 @@ return {
       "neovim/nvim-lspconfig", -- Collection of configurations for built-in LSP client
 
       requires = {
+        "folke/lsp-colors.nvim",
         "hrsh7th/cmp-nvim-lsp",
       },
 
       config = function()
+        require("lsp-colors").setup({
+          Error = "#db4b4b",
+          Warning = "#e0af68",
+          Information = "#0db9d7",
+          Hint = "#10B981",
+        })
+
         local nvim_lsp = require("lspconfig")
         local on_attach = function(_, bufnr)
           vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
