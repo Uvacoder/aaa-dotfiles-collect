@@ -63,7 +63,6 @@ ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 ln -s ~/.dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
 ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/tmux/default.sh ~/.tmux/style/tmux-powerline/themes/default.sh
-ln -s ~/.dotfiles/lua/stylua.toml ~/stylua.toml
 
 cp ~/.dotfiles/battery/local.battery.plist ~/Library/LaunchAgents/local.battery.plist
 
@@ -79,5 +78,17 @@ tar xzf nvim-macos.tar.gz
 ```
 source .zshrc
 ```
+
+
+````
+install rust, stylua and ripgrep for neovim
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+cargo install stylua
+cargo install ripgrep
+``````
+
+
 
 ### finished!!!

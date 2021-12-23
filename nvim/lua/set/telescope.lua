@@ -22,11 +22,14 @@ return {
             },
           },
         })
-        vim.api.nvim_set_keymap("n", "<leader><space>", [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "ff", [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "fb", [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "gs", [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "lg", [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
+
+        vim.api.nvim_set_keymap("n", "<leader><space>", ":Telescope buffers<cr>", { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "ff", ":Telescope find_files<cr>", { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "fs", ":Telescope grep_string<cr>", { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "fg", ":Telescope live_grep<cr>", { noremap = true, silent = true })
+        -- git navigation
+        vim.api.nvim_set_keymap("n", "<leader>ggc", ":Telescope git_commits<cr>", { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<leader>ggs", ":Telescope git_status<cr>", { noremap = true, silent = true })
       end,
     })
   end,

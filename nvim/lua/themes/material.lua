@@ -25,18 +25,15 @@ return {
             darker = false, -- Enable higher contrast text for darker style
           },
           disable = {
-            background = false, -- Prevent the theme from setting the background (NeoVim then uses your teminal background)
+            background = true, -- Prevent the theme from setting the background (NeoVim then uses your teminal background)
             term_colors = false, -- Prevent the theme from setting terminal colors
             eob_lines = false, -- Hide the end-of-buffer lines
           },
           custom_highlights = {}, -- Overwrite highlights with your own
         })
 
-        vim.g.material_style = "deep ocean"
+        vim.g.material_style = "darker" -- deep ocean, darker, palenight
         vim.cmd([[colorscheme material]])
-
-        vim.api.nvim_set_keymap("n", "<leader>ml", [[<Cmd>lua require('material.functions').change_style('lighter')<CR>]], { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "<leader>md", [[<Cmd>lua require('material.functions').change_style('darker')<CR>]], { noremap = true, silent = true })
       end,
     })
   end,

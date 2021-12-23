@@ -21,7 +21,7 @@ require("packer").startup({
     require("set/lsp-config").setup(use)
     require("set/cmp").setup(use)
     -- themes
-    require("themes/material").setup(use) -- one-dark|tokyo-dark|rose-pine
+    require("themes/tokyo-dark").setup(use) -- material, one-dark, tokyo-dark, rose-pine
     vim.cmd("hi! link IndentBlanklineChar Comment")
   end,
   config = {

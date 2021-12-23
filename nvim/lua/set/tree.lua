@@ -6,11 +6,9 @@ return {
       requires = "kyazdani42/nvim-web-devicons",
 
       config = function()
-        vim.g.nvim_tree_quit_on_open = 1
         vim.g.nvim_tree_indent_markers = 1
         vim.g.nvim_tree_git_hl = 0
-        vim.g.nvim_tree_highlight_opened_files = 3
-        vim.g.nvim_tree_refresh_wait = 500
+        vim.g.nvim_tree_refresh_wait = 300
         vim.g.nvim_tree_window_picker_exclude = {
           ["filetype"] = { "packer", "qf" },
           ["buftype"] = { "terminal" },
@@ -46,6 +44,7 @@ return {
         }
 
         require("nvim-tree").setup({
+          auto_close = true,
           update_focused_file = {
             enable = true,
           },
