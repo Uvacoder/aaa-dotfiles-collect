@@ -7,3 +7,4 @@ nvim/plugin/packer_compiled.vim
 nvim-coc/plugin/packer_compiled.vim
 nvim-default/plugin/packer_compiled.vim
 .DS_Store
+nvim/plugin/packer_compiled.lua

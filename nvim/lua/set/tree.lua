@@ -6,6 +6,7 @@ return {
       requires = "kyazdani42/nvim-web-devicons",
 
       config = function()
+        vim.g.nvim_tree_quit_on_open = 1
         vim.g.nvim_tree_indent_markers = 1
         vim.g.nvim_tree_git_hl = 0
         vim.g.nvim_tree_refresh_wait = 300
@@ -51,6 +52,7 @@ return {
           filters = {
             dotfiles = true,
             custom = {
+              "packer_compiled.lua",
               "store-flag.d.ts",
               "quasar.d.ts",
               "dist",

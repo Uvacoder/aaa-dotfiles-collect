@@ -28,8 +28,8 @@ return {
         vim.api.nvim_set_keymap("n", "fs", ":Telescope grep_string<cr>", { noremap = true, silent = true })
         vim.api.nvim_set_keymap("n", "fg", ":Telescope live_grep<cr>", { noremap = true, silent = true })
         -- git navigation
-        vim.api.nvim_set_keymap("n", "<leader>ggc", ":Telescope git_commits<cr>", { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "<leader>ggs", ":Telescope git_status<cr>", { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<leader>gc", ":Telescope git_commits<cr>", { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<leader>gs", ":Telescope git_status<cr>", { noremap = true, silent = true })
       end,
     })
   end,
