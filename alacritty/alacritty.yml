@@ -23,38 +23,28 @@ draw_bold_text_with_bright_colors: true
 
 colors:
   primary:
-    background: '0x000000'
-    foreground: '0xe0def4'
-  cursor:
-    text: '0x232136'
-    cursor: '0xFFFFFF'
-  vi_mode_cursor:
-    text: '0x191724'
-    cursor: '0xFF7A04'
-  line_indicator:
-    foreground: None
-    background: None
-  selection:
-    text: CellForeground
-    background: '0x312E45'
+    background: "0x000000"
+    foreground: "0xe2e2e3"
+
   normal:
-    black:   '0x817c9c'
-    red:     '0xeb6f92'
-    green:   '0x9ccfd8'
-    yellow:  '0xf6c177'
-    blue:    '0x3e8fb0'
-    magenta: '0xc4a7e7'
-    cyan:    '0xea9a97'
-    white:   '0xe0def4'
+    black: "0x181819"
+    red: "0xfc5d7c"
+    green: "0x9ed072"
+    yellow: "0xe7c664"
+    blue: "0x76cce0"
+    magenta: "0xb39df3"
+    cyan: "0xf39660"
+    white: "0xe2e2e3"
+
   bright:
-    black:   '0x6e6a86'
-    red:     '0xeb6f92'
-    green:   '0x9ccfd8'
-    yellow:  '0xf6c177'
-    blue:    '0x31748f'
-    magenta: '0xc4a7e7'
-    cyan:    '0xebbcba'
-    white:   '0xe0def4'
+    black: "0x7f8490"
+    red: "0xfc5d7c"
+    green: "0x9ed072"
+    yellow: "0xe7c664"
+    blue: "0x76cce0"
+    magenta: "0xb39df3"
+    cyan: "0xf39660"
+    white: "0xe2e2e3"
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
