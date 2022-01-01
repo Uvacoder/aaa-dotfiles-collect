@@ -7,13 +7,17 @@ window:
 
 background_opacity: 1.0
 cursor:
-  style: Beam
+  style:
+    shape: Beam
 
 font:
   normal:
-    family: UbuntuMono Nerd Font Mono
+    family: CamingoCode Nerd Font
+    # family: CaskaydiaCove Nerd Font Mono
+    # family: BlexMono Nerd Font Mono
+    # family: UbuntuMono Nerd Font Mono
     # family: OperatorMono Nerd Font
-  size: 22
+  size: 19
   offset:
     x: 0
     y: 3

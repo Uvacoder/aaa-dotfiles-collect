@@ -22,7 +22,7 @@ require("packer").startup({
     require("set/lsp-config").setup(use)
     require("set/cmp").setup(use)
     -- themes
-    require("themes/rose-pine").setup(use) -- material, oceanic-next, one-dark, tokyo-dark, rose-pine
+    require("themes/one-dark").setup(use) -- material, oceanic-next, one-dark, tokyo-dark, rose-pine
 
     vim.cmd([[hi link IndentBlanklineChar Comment]])
   end,

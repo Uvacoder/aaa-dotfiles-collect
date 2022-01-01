@@ -19,10 +19,10 @@ return {
             separator_style = { "", "" },
           },
           highlights = {
-            buffer_selected = { gui = "bold", guifg = "#FFD14E" },
-            background = { guibg = "#0F1117" },
-            fill = { guibg = "#0F1117" },
-            tab = { guibg = "#0F1117" },
+            buffer_selected = { guifg = "#FFFFFF" },
+            background = { guibg = "#000000" },
+            fill = { guibg = "#000000" },
+            tab = { guibg = "#000000" },
           },
         })
 
