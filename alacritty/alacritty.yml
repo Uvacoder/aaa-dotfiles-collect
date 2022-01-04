@@ -12,15 +12,15 @@ cursor:
 
 font:
   normal:
-    family: CamingoCode Nerd Font
-    # family: CaskaydiaCove Nerd Font Mono
+    # family: CamingoCode Nerd Font
+    family: CaskaydiaCove Nerd Font Mono
     # family: BlexMono Nerd Font Mono
     # family: UbuntuMono Nerd Font Mono
     # family: OperatorMono Nerd Font
   size: 19
   offset:
     x: 0
-    y: 3
+    y: 6
   use_thin_strokes: true
 
 draw_bold_text_with_bright_colors: true
@@ -58,14 +58,15 @@ selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: true
 
-# shell:
-#   program: /bin/zsh
-#   args:
-#     - --login
 shell:
   program: /bin/zsh
   args:
-    - -l
-    - -c
-    - "tmux attach || tmux"
-working_directory: None
+    - --login
+
+#shell:
+#  program: /bin/zsh
+#  args:
+#    - -l
+#    - -c
+#    - "tmux attach || tmux"
+# working_directory: None

@@ -10,6 +10,7 @@ require("packer").startup({
     require("set/visual-multi").setup(use)
     require("set/auto-pairs").setup(use)
     require("set/tree").setup(use)
+    require("set/toggle-term").setup(use)
     require("set/git-signs").setup(use)
     require("set/formatter").setup(use)
     require("set/trouble").setup(use)

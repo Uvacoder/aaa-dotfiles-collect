@@ -26,9 +26,7 @@ echo "$(tput setaf 2)FRIDAY: Installing Homebrew Cask packages.$(tput sgr 0)"
 
 tap_packages=(
   "homebrew/cask"
-  # "homebrew/cask-fonts"
   "homebrew/core"
-  "teamookla/speedtest"
 )
 
 for package in "${tap_packages[@]}"
@@ -44,16 +42,16 @@ brew_packages=(
   "autoconf"
   "git"
   "makedepend"
-  # "luarocks"
   "python3"
-  # "luajit"
-  # "neovim" download no site do neovim
-  # "node@14" download no site do nodejs
+  "neovim"
+  "nodejs"
+  "stylua"
+  "rg"
+  "fd"
   "wget"
   "tmux"
   "alacritty"
   "z"
-  "speedtest --force"
   "microsoft-edge"
 )
 
@@ -64,7 +62,7 @@ do
 done
 echo "$(tput setaf 2)FRIDAY: Homebrew System Package installed.$(tput sgr 0)"
 
-echo "$(tput setaf 2)FRIDAY: Installing Homebrew Cash Apps.$(tput sgr 0)"
+echo "$(tput setaf 2)FRIDAY: Installing Homebrew Cask Apps.$(tput sgr 0)"
 cask_packages=(
   # "sublime-text"
   # "font-hack-nerd-font"
@@ -80,10 +78,10 @@ cask_packages=(
   "the-unarchiver"
   # "cyberduck"
   "dropbox"
-  "postman"
+  # "postman"
   "forklift"
   "notion"
-  "responsively"
+  # "responsively"
   "numi"
   "icab"
 )
@@ -96,20 +94,40 @@ done
 echo "$(tput setaf 2)FRIDAY: Homebrew Cask Apps installed.$(tput sgr 0)"
 
 
-# echo "---------------------------------------------------------"
-# echo "$(tput setaf 2)FRIDAY: Installing Python packages.$(tput sgr 0)"
-#
-# pip3_packages=(
-#   "neovim"
-#   "vim-vint"
-# )
-#
-# for package in "${pip3_packages[@]}"
-# do
-#   echo "$(tput setaf 2)FRIDAY: Installing $package.$(tput sgr 0)"
-#   pip3 install $package
-# done
-# echo "$(tput setaf 2)FRIDAY: Python Packages installed.$(tput sgr 0)"
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)FRIDAY: Installing Python packages.$(tput sgr 0)"
+
+pip3_packages=(
+  "neovim"
+  "vim-vint"
+)
+
+for package in "${pip3_packages[@]}"
+do
+  echo "$(tput setaf 2)FRIDAY: Installing $package.$(tput sgr 0)"
+  pip3 install $package
+done
+echo "$(tput setaf 2)FRIDAY: Python Packages installed.$(tput sgr 0)"
+
+
+
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)FRIDAY: Installing Nodejs Global packages.$(tput sgr 0)"
+
+node_packages=(
+  "neovim"
+  "eslint"
+  "prettier"
+  "typescript"
+  "fantasticon"
+)
+
+for package in "${node_packages[@]}"
+do
+  echo "$(tput setaf 2)FRIDAY: Installing $package.$(tput sgr 0)"
+  sudo npm install -g $package
+done
+echo "$(tput setaf 2)FRIDAY: Nodejs Packages installed.$(tput sgr 0)"
 
 
 
@@ -117,10 +135,10 @@ echo "---------------------------------------------------------"
 echo "$(tput setaf 2)FRIDAY: install old versions.$(tput sgr 0)"
 
 old_packages=(
-  "https://www.maintain.se/downloads/Cocktail12ME.dmg"
-  "https://dl.devmate.com/com.macpaw.CleanMyMac3/CleanMyMac3.dmg"
+  # "https://www.maintain.se/downloads/Cocktail12ME.dmg"
+  # "https://dl.devmate.com/com.macpaw.CleanMyMac3/CleanMyMac3.dmg"
   "https://sipapp.io/updates/v1/sip-1.2.dmg"
-  "https://download.sublimetext.com/Sublime%20Text%20Build%203211.dmg"
+  # "https://download.sublimetext.com/Sublime%20Text%20Build%203211.dmg"
 )
 
 for package in "${old_packages[@]}"

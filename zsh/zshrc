@@ -10,6 +10,10 @@ export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/Users/sldobri/.cargo/bin:$PATH"
+export PATH="/Users/sldobri/.nvim-osx64/bin:$PATH"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:$PATH"
+
 
 
 DISABLE_LS_COLORS="true"
@@ -50,13 +54,13 @@ alias f="open ."
 alias rm="rm -ifr"
 alias cpu="top -o cpu"   # CPU
 alias mem="top -o rsize" # Memory
-alias speed="speedtest"
 
 # Editors
-alias v="~/nvim-osx64/bin/nvim"
+alias v="nvim"
 alias s="subl"
 alias c="code --disable-gpu"
 
+alias wget="ruget"
 # publish vs code
 # alias publish='vsce publish -p m3nr6makgy5qmecy3wmmutlujbbs6om3mxygbhxdi4g6mjk63b5q'
 
@@ -111,11 +115,11 @@ alias cds="cd /Volumes/Code/car-dealership-2020 && clear"
 
 
 # brew
-alias bi="brew install"
-alias bs="brew search"
-alias bu="brew uninstall"
-alias bc="brew cleanup"
-alias bubu="brew update && brew upgrade && brew cleanup && brew doctor"
+# alias bi="brew install"
+# alias bs="brew search"
+# alias bu="brew uninstall"
+# alias bc="brew cleanup"
+# alias bubu="brew update && brew upgrade && brew cleanup && brew doctor"
 
 
 # npm
@@ -130,9 +134,9 @@ alias nrs="npm run start"
 # alias nrsc="npm run start:app"
 alias ni="npm install"
 alias nid="npm install --save-dev"
-alias nig="npm install -g"
+alias nig="sudo npm install -g"
 alias nu="npm uninstall"
-alias nug="npm uninstall -g"
+alias nug="sudo npm uninstall -g"
 alias nls="npm ls -g" # List installed packages
 alias nls="npm ls" # List installed packages
 alias nlp="npm prune" # Remove un-used packages from node_modules folder
@@ -172,13 +176,9 @@ function git-init(){
 }
 
 
-# git remote add origin https://github.com/dobbbri/pscologa_erica_rover_2020.git
-# git remote set-url origin git@github.com:dobbbri/pscologa_erica_rover_2020.git
-
 source $ZSH/oh-my-zsh.sh
 
 # source ~/.zshrc
 
-# alias luamake=/Users/sldobri/.config/nvim/ls/lua-language-server/3rd/luamake/luamake
 
 
