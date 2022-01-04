@@ -6,8 +6,8 @@
 brew install tmux
 
 #install tpm tmux plugins manager
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone https://github.com/erikw/tmux-powerline.git ~/.tmux/style/tmux-powerline
+#git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+#git clone https://github.com/erikw/tmux-powerline.git ~/.tmux/style/tmux-powerline
 
 ```
 
@@ -37,11 +37,11 @@ git clone https://github.com/dobbbri/dotfiles.git ~/.dotfiles
 rm -rf ~/.config
 rm ~/.p10k.zsh
 rm ~/.zshrc
-rm ~/.wgetrc
+#rm ~/.wgetrc
 rm ~/.gitconfig
 rm ~/.global_ignore
 rm ~/.gitignore_global
-rm ~/.tmux/style/tmux-powerline/themes/default.sh
+#rm ~/.tmux/style/tmux-powerline/themes/default.sh
 ```
 
 ### 3 - Make config fold
@@ -53,16 +53,16 @@ mkdir ~/.config
 ### 4 - link files
 
 ```
-ln -s ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
+#ln -s ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 ln -s ~/.dotfiles/zsh/zshrc  ~/.zshrc
 ln -s ~/.dotfiles/nvim ~/.config/nvim
-ln -s ~/.dotfiles/wget/wgetrc  ~/.wgetrc
+#ln -s ~/.dotfiles/wget/wgetrc  ~/.wgetrc
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/global_ignore ~/.global_ignore
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 ln -s ~/.dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
-ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
-ln -s ~/.dotfiles/tmux/default.sh ~/.tmux/style/tmux-powerline/themes/default.sh
+#ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+#ln -s ~/.dotfiles/tmux/default.sh ~/.tmux/style/tmux-powerline/themes/default.sh
 
 cp ~/.dotfiles/battery/local.battery.plist ~/Library/LaunchAgents/local.battery.plist
 
