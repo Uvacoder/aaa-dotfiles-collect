@@ -45,7 +45,8 @@ vim.opt.inccommand = "split" -- incrementally show result of command
 vim.opt.wildignore = "*/.git/*,*/.DS_Store,dist,*.o,*~,package-lock.json"
 vim.opt.list = true
 vim.opt.listchars = "tab:→ ,nbsp:•,trail:•,precedes:«,extends:»"
-vim.opt.fillchars:append({ eob = " ", vert = " " })
+-- vim.opt.fillchars:append({ eob = " ", vert = " " })
+vim.opt.fillchars:append({ eob = " " })
 vim.opt.wildignorecase = true
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")

@@ -49,6 +49,12 @@ vim.api.nvim_set_keymap("v", "<S-K>", ":m '<-2<CR>gv=gv", { noremap = true })
 vim.api.nvim_set_keymap("v", "<TAB>", ">gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<S-TAB>", "<gv", { noremap = true, silent = true })
 
+-- Better navigation
+vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
+
 -- Tab switch buffer
 vim.api.nvim_set_keymap("n", "<TAB>", "<cmd>bnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-TAB>", "<cmd>bprevious<CR>", { noremap = true, silent = true })
