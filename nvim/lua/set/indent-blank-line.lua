@@ -5,7 +5,7 @@ return {
 
       config = function()
         require("indent_blankline").setup({
-          char = "┊",
+          char = "│",
           space_char_blankline = " ",
           show_current_context = true,
           show_current_context_start = false,
