@@ -26,8 +26,8 @@ return {
           use_diagnostic_signs = true,
         })
 
-        vim.api.nvim_set_keymap("n", "tt", "<cmd>LspTroubleToggle<cr>", { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "tf", "<cmd>Trouble quickfix<cr>", { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "tt", "<cmd>TroubleToggle<cr>", { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "tf", "<cmd>TroubleToggle quickfix<cr>", { noremap = true, silent = true })
       end,
     })
   end,
