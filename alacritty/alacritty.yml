@@ -17,13 +17,15 @@ font:
     # family: BlexMono Nerd Font Mono
     # family: UbuntuMono Nerd Font Mono
     # family: OperatorMono Nerd Font
+  italic:
+    family: Cascadia Mono
   size: 19
   offset:
     x: 0
     y: 6
-  use_thin_strokes: true
+  use_thin_strokes: false
 
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
 
 colors:
   cursor:

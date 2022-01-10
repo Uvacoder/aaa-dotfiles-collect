@@ -19,7 +19,7 @@ return {
             separator_style = { "", "" },
           },
           highlights = {
-            buffer_selected = { guifg = "#FFFFFF" },
+            buffer_selected = { gui = "bold" },
             background = { guibg = "#000000" },
             fill = { guibg = "#000000" },
             tab = { guibg = "#000000" },

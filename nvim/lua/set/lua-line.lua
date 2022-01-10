@@ -92,17 +92,6 @@ return {
         --   padding = { left = 1 },
         --   cond = conditions.buffer_not_empty,
         -- })
-
-        ins_left({
-          "filename",
-          cond = conditions.buffer_not_empty,
-          color = { fg = colors.white },
-        })
-
-        ins_left({ "location" })
-
-        ins_left({ "progress", color = { fg = colors.fg } })
-
         ins_left({
           "diagnostics",
           sources = { "nvim_diagnostic" },
@@ -116,6 +105,16 @@ return {
           },
           padding = { left = 1 },
         })
+
+        ins_left({
+          "filename",
+          cond = conditions.buffer_not_empty,
+          color = { fg = colors.white },
+        })
+
+        ins_left({ "location" })
+
+        ins_left({ "progress", color = { fg = colors.fg } })
 
         -- Insert mid section. You can make any number of sections in neovim :)
         -- for lualine it's any number greater then 2
