@@ -11,7 +11,7 @@ return {
         -- Color table for highlights
         -- stylua: ignore
         local colors = {
-          bg       = '#000000', --'#090B10', '#121212',
+          bg       = '#283347', --'#141B24', --'#000000', --'#090B10', '#121212',
           fg       = '#757575',
           blue     = '#0087FF',
           green    = '#00FF5F',
@@ -92,6 +92,7 @@ return {
         --   padding = { left = 1 },
         --   cond = conditions.buffer_not_empty,
         -- })
+
         ins_left({
           "diagnostics",
           sources = { "nvim_diagnostic" },
@@ -103,7 +104,7 @@ return {
             color_info = { fg = colors.blue },
             color_info = { fg = colors.fg },
           },
-          padding = { left = 1 },
+          padding = { left = 1, right = 1 },
         })
 
         ins_left({
