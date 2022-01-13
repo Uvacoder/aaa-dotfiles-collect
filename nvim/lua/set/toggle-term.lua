@@ -9,13 +9,13 @@ return {
           -- size = 34, -- vim.o.columns * 0.5,
           direction = "float",
           float_opts = {
-            border = "shadow",
+            border = "single",
             -- width = 120,
             -- height = 22,
             -- winblend = 3,
             highlights = {
               border = "Normal",
-              -- background = "Normal",
+              background = "Normal",
             },
           },
           open_mapping = [[<c-\>]],
