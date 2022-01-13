@@ -5,15 +5,26 @@ return {
 
       config = function()
         require("toggleterm").setup({
-          direction = "vertical",
-          size = 34, -- vim.o.columns * 0.5,
+          -- direction = "vertical",
+          -- size = 34, -- vim.o.columns * 0.5,
+          direction = "float",
+          float_opts = {
+            border = "shadow",
+            -- width = 120,
+            -- height = 22,
+            -- winblend = 3,
+            highlights = {
+              border = "Normal",
+              -- background = "Normal",
+            },
+          },
           open_mapping = [[<c-\>]],
           hide_numbers = true,
           shade_terminals = true,
           shading_factor = "1",
           start_in_insert = true,
           insert_mappings = true,
-          persist_size = true,
+          persist_size = false,
           close_on_exit = true,
           shell = vim.o.shell,
         })

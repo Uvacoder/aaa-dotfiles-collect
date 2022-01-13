@@ -40,7 +40,8 @@ return {
         -- Enable the following language servers
         -- local servers = { 'volar', 'tailwindcss', 'tsserver' }
         -- local servers = { 'vuels', 'tailwindcss', 'tsserver' }
-        local servers = { "vuels", "tsserver" }
+        -- local servers = { "vuels", "tsserver" }
+        local servers = { "volar", "tsserver" }
         for _, lsp in ipairs(servers) do
           nvim_lsp[lsp].setup({
             on_attach = on_attach,
