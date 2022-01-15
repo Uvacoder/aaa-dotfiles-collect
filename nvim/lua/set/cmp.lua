@@ -8,14 +8,18 @@ return {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
-        "f3fora/cmp-spell",
+        "hrsh7th/cmp-calc",
+        "octaltree/cmp-look",
         "L3MON4D3/LuaSnip", -- Snippets plugin
         "saadparwaiz1/cmp_luasnip",
+        "onsails/lspkind-nvim",
       },
 
       config = function()
         -- Set completeopt to have a better completion experience
         vim.o.completeopt = "menuone,noselect"
+
+        local lspkind = require("lspkind")
 
         -- luasnip setup
         local has_words_before = function()
@@ -63,27 +67,52 @@ return {
               end
             end,
           },
-          sources = cmp.config.sources({
-            { name = "nvim_lsp" },
-            { name = "luasnip" },
-          }, {
-            { name = "buffer" },
-          }),
-        })
-
-        -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-        cmp.setup.cmdline("/", {
           sources = {
+            { name = "nvim_lua" },
+            { name = "nvim_lsp" },
+            { name = "path" },
+            { name = "luasnip" },
             { name = "buffer" },
+            {
+              name = "look",
+              keyword_length = 2,
+              option = { convert_case = true, loud = true },
+            },
+            { name = "calc" },
           },
+
+          snippet = {
+            expand = function(args)
+              luasnip.lsp_expand(args.body)
+            end,
+          },
+
+          formatting = {
+            format = lspkind.cmp_format({
+              with_text = false,
+              menu = {
+                buffer = "[buf]",
+                look = "[look]",
+                luasnip = "[snip]",
+                nvim_lsp = "[LSP]",
+                nvim_lua = "[lua]",
+                path = "[path]",
+                calc = "[calc]",
+              },
+            }),
+          },
+
+          experimental = { native_menu = false, ghost_text = true },
         })
 
-        -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+        cmp.setup.cmdline("/", {
+          sources = cmp.config.sources({ { name = "buffer", keyword_length = 3 } }),
+        })
+
         cmp.setup.cmdline(":", {
           sources = cmp.config.sources({
             { name = "path" },
-          }, {
-            { name = "cmdline" },
+            { name = "cmdline", max_item_count = 20, keyword_length = 3 },
           }),
         })
       end,

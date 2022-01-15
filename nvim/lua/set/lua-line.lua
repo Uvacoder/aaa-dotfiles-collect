@@ -11,7 +11,7 @@ return {
         -- Color table for highlights
         -- stylua: ignore
         local colors = {
-          bg       = '#283347', --'#141B24', --'#000000', --'#090B10', '#121212',
+          bg       = '#030C17', --'#141B24', --'#000000', --'#090B10', '#121212',
           fg       = '#757575',
           blue     = '#0087FF',
           green    = '#00FF5F',
@@ -114,7 +114,6 @@ return {
         })
 
         ins_left({ "location" })
-
         ins_left({ "progress", color = { fg = colors.fg } })
 
         -- Insert mid section. You can make any number of sections in neovim :)
@@ -124,6 +123,8 @@ return {
             return "%="
           end,
         })
+
+        ins_left({ "lsp_progress", color = { fg = colors.fg } })
 
         ins_left({
           -- Lsp server name .
