@@ -9,8 +9,8 @@ vim.cmd(":command! Wqa wqa")
 vim.cmd(":command! W w")
 vim.cmd(":command! Q q")
 
--- vim.api.nvim_exec("autocmd InsertEnter * set cul", "")
--- vim.api.nvim_exec("autocmd InsertLeave * set nocul", "")
+vim.cmd([[autocmd InsertEnter * set cul]])
+vim.cmd([[autocmd InsertLeave * set nocul]])
 
 -- Auto save files when focus is lost
 vim.cmd([[autocmd FocusLost * silent! :wa!]])
@@ -41,3 +41,17 @@ vim.cmd([[
   autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
 ]])
+
+-- Toggle to disable mouse mode and indentlines for easier paste
+ToggleMouse = function()
+  if vim.o.mouse == "a" then
+    vim.o.mouse = "v"
+    print("Mouse disabled")
+  else
+    vim.cmd([[IndentBlanklineEnable]])
+    vim.o.mouse = "a"
+    print("Mouse enabled")
+  end
+end
+
+vim.api.nvim_set_keymap("n", "<leader>bm", "<cmd>lua ToggleMouse()<cr>", { noremap = true })

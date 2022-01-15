@@ -4,7 +4,7 @@ return {
       "EdenEast/nightfox.nvim",
 
       config = function()
-        require("nightfox").load("nightfox") -- nightfox, nordfox, duskfox
+        require("nightfox").load("duskfox") -- nightfox, nordfox, duskfox
       end,
     })
   end,
