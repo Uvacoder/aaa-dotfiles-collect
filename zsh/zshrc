@@ -46,8 +46,9 @@ alias sz="source $HOME/.zshrc"
 
 
 # aliases
-alias ls="ls -la"
-alias lh="ls -lhtr"
+alias ls="ls -aG"
+alias la="ls -laG"
+alias lh="ls -lhtrG"
 alias history="fc -il 1i"
 alias c="clear"
 alias f="open ."
@@ -181,4 +182,4 @@ source $ZSH/oh-my-zsh.sh
 # source ~/.zshrc
 
 
-
+eval "$(starship init zsh)"

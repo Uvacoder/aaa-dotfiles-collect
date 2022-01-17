@@ -6,7 +6,6 @@ vim.g.maplocalleader = " "
 
 vim.opt.spell = false
 vim.opt.spelllang = { "en_us" }
-vim.opt.mouse = "v"
 vim.opt.signcolumn = "yes"
 vim.opt.autoindent = true
 vim.opt.encoding = "UTF-8"

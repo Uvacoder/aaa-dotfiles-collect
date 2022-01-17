@@ -74,7 +74,7 @@ tar xzf nvim-macos.tar.gz
 ```
 
 ### 5 - Load zsh config file
-
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 ```
 source .zshrc
 ```
