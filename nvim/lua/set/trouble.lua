@@ -3,11 +3,11 @@ return {
     use({
       "folke/trouble.nvim",
 
-      -- requires = "kyazdani42/nvim-web-devicons",
+      requires = "kyazdani42/nvim-web-devicons",
 
       config = function()
         require("trouble").setup({
-          icons = false,
+          icons = true,
           position = "bottom",
           height = 10,
           width = 50,
@@ -24,6 +24,14 @@ return {
           auto_preview = true,
           auto_fold = false,
           use_diagnostic_signs = true,
+          signs = {
+            -- icons / text used for a diagnostic
+            error = "",
+            warning = "",
+            information = "",
+            hint = "ﴞ ",
+            other = "﫠",
+          },
         })
 
         vim.api.nvim_set_keymap("n", "tt", "<cmd>TroubleToggle<cr>", { noremap = true, silent = true })

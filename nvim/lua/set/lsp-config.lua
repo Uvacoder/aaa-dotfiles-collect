@@ -8,11 +8,16 @@ return {
       },
 
       config = function()
+        local opts = { noremap = true, silent = true }
+
+        -- Diagnostic keymaps
+        -- vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+        -- vim.api.nvim_set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+        -- vim.api.nvim_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+        -- vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+
         local nvim_lsp = require("lspconfig")
         local on_attach = function(_, bufnr)
-          vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-
-          local opts = { noremap = true, silent = true }
           vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
           vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
           vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
@@ -25,10 +30,6 @@ return {
           vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
           vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
           vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-          vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-          vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-          vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-          vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
           vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>so", [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
           vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
         end
@@ -46,23 +47,35 @@ return {
           nvim_lsp[lsp].setup({
             on_attach = on_attach,
             capabilities = capabilities,
-            flags = {
-              debounce_text_changes = 150,
-            },
+            -- flags = {
+            --   debounce_text_changes = 150,
+            -- },
           })
         end
 
         vim.diagnostic.config({
           virtual_text = {
             source = "always", -- Or "if_many"
+            prefix = "●", -- Could be '●', '▎', 'x'
           },
           float = {
             source = "always", -- Or "if_many"
           },
-          virtual_text = {
-            prefix = "●", -- Could be '●', '▎', 'x'
-          },
         })
+
+        vim.diagnostic.config({
+          virtual_text = true,
+          signs = true,
+          underline = true,
+          update_in_insert = true,
+          severity_sort = false,
+        })
+
+        local signs = { Error = "", Warn = "", Info = "", Hint = "ﴞ" }
+        for type, icon in pairs(signs) do
+          local hl = "DiagnosticSign" .. type
+          vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+        end
       end,
     })
   end,

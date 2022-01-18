@@ -11,7 +11,7 @@ return {
         -- Color table for highlights
         -- stylua: ignore
         local colors = {
-          bg       = '#030C17', --'#141B24', --'#000000', --'#090B10', '#121212',
+          bg       = '#000000', --'#141B24', --'#000000', --'#090B10', '#121212',
           fg       = '#757575',
           blue     = '#0087FF',
           green    = '#00FF5F',
@@ -58,13 +58,13 @@ return {
           },
           inactive_sections = {
             -- these are to remove the defaults
-            lualine_a = {},
-            lualine_b = {},
-            lualine_v = {},
-            lualine_y = {},
-            lualine_z = {},
-            lualine_c = {},
-            lualine_x = {},
+            -- lualine_a = {},
+            -- lualine_b = {},
+            -- lualine_v = {},
+            -- lualine_y = {},
+            -- lualine_z = {},
+            -- lualine_c = {},
+            -- lualine_x = {},
           },
           extensions = { "nvim-tree", "toggleterm" },
         }
@@ -97,7 +97,7 @@ return {
           "diagnostics",
           sources = { "nvim_diagnostic" },
           -- symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' },
-          -- symbols = { error = " ", warn = " ", info = " " },
+          symbols = { error = " ", warn = " ", info = " ", hint = "ﴞ " },
           diagnostics_color = {
             color_error = { fg = colors.red },
             color_warn = { fg = colors.yellow },
@@ -173,7 +173,7 @@ return {
           "diff",
           -- Is it me or the symbol for modified us really weird
           -- symbols = { added = '+', modified = '~', removed = '-' },
-          -- symbols = { added = " ", modified = "柳", removed = " " },
+          symbols = { added = " ", modified = " ", removed = " " },
           diff_color = {
             added = { fg = colors.green },
             modified = { fg = colors.yellow },

@@ -23,7 +23,7 @@ require("packer").startup({
     require("set/lsp-config").setup(use)
     require("set/cmp").setup(use)
     -- themes
-    require("themes/kanagawa").setup(use) -- night-fox, material, oceanic-next, one-dark, tokyo-dark, rose-pine
+    require("themes/kanagawa").setup(use) -- kanagawa, night-fox, material, oceanic-next, one-dark, tokyo-dark, rose-pine
 
     vim.cmd([[hi link IndentBlanklineChar Comment]])
   end,

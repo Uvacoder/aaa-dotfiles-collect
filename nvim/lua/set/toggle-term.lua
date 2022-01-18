@@ -7,17 +7,16 @@ return {
         require("toggleterm").setup({
           -- direction = "vertical",
           -- size = 34, -- vim.o.columns * 0.5,
-          direction = "float",
-          float_opts = {
-            border = "single",
-            -- width = 120,
-            -- height = 22,
-            -- winblend = 3,
-            highlights = {
-              border = "Normal",
-              background = "Normal",
-            },
-          },
+          direction = "horizontal",
+          size = 11,
+          -- direction = "float",
+          -- float_opts = {
+          --   border = "single",
+          --   highlights = {
+          --     border = "Normal",
+          --     background = "Normal",
+          --   },
+          -- },
           open_mapping = [[<c-\>]],
           hide_numbers = true,
           shade_terminals = true,
