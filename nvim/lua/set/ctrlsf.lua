@@ -6,7 +6,7 @@ return {
       config = function()
         vim.g.ctrlsf_case_sensitive = "yes"
         vim.g.trlsf_default_root = "project"
-        vim.g.ctrlsf_fold_result = 1
+        vim.g.ctrlsf_fold_result = 0
         vim.g.ctrlsf_auto_preview = 1
         vim.g.ctrlsf_winsize = "50%"
         vim.g.ctrlsf_search_mode = "async"

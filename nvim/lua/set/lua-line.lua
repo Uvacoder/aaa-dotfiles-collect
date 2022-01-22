@@ -3,7 +3,9 @@ return {
     use({
       "hoob3rt/lualine.nvim",
 
-      requires = { "kyazdani42/nvim-web-devicons", opt = true },
+      requires = {
+        "kyazdani42/nvim-web-devicons",
+      },
 
       config = function()
         local lualine = require("lualine")
@@ -11,7 +13,7 @@ return {
         -- Color table for highlights
         -- stylua: ignore
         local colors = {
-          bg       = '#16161D', -- '#0D1117', --'#141B24', --'#000000', --'#090B10', '#121212',
+          bg       = '#090B10', -- '#0D1117', --'#141B24', --'#000000', --'#090B10', '#121212',
           fg       = '#757575',
           blue     = '#0087FF',
           green    = '#00FF5F',
@@ -102,7 +104,7 @@ return {
             color_error = { fg = colors.red },
             color_warn = { fg = colors.yellow },
             color_info = { fg = colors.blue },
-            color_info = { fg = colors.fg },
+            color_hint = { fg = colors.fg },
           },
           padding = { left = 1, right = 1 },
         })
