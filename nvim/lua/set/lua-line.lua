@@ -14,11 +14,11 @@ return {
         -- stylua: ignore
         local colors = {
           bg       = '#090B10', -- '#0D1117', --'#141B24', --'#000000', --'#090B10', '#121212',
-          fg       = '#757575',
+          fg       = '#6272A4',
           blue     = '#0087FF',
           green    = '#00FF5F',
-          yellow   = '#F6C177',
-          red      = '#D70000',
+          yellow   = '#FBFF00',
+          red      = '#ff0000',
           white    = '#ffffff',
         }
 
