@@ -30,6 +30,8 @@ return {
         vim.api.nvim_set_hl(ns, "DiagnosticSignInfo", { fg = "#0087FF" })
         vim.api.nvim_set_hl(ns, "DiagnosticSignWarn", { fg = "#FBFF00" })
         vim.api.nvim_set_hl(ns, "DiagnosticSignError", { fg = "#FF0000" })
+
+        vim.api.nvim_set_hl(ns, "IndentBlanklineChar", { fg = "#121212" })
       end,
     })
   end,
