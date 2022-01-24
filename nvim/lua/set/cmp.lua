@@ -75,7 +75,7 @@ return {
             { name = "buffer" },
             {
               name = "look",
-              keyword_length = 2,
+              -- keyword_length = 2,
               option = { convert_case = true, loud = true },
             },
             { name = "calc" },
@@ -106,13 +106,13 @@ return {
         })
 
         cmp.setup.cmdline("/", {
-          sources = cmp.config.sources({ { name = "buffer", keyword_length = 3 } }),
+          sources = cmp.config.sources({ { name = "buffer", keyword_length = 1 } }),
         })
 
         cmp.setup.cmdline(":", {
           sources = cmp.config.sources({
             { name = "path" },
-            { name = "cmdline", max_item_count = 20, keyword_length = 3 },
+            { name = "cmdline", max_item_count = 20, keyword_length = 1 },
           }),
         })
       end,
