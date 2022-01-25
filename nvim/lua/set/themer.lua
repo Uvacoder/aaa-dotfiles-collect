@@ -5,7 +5,8 @@ return {
 
       config = function()
         require("themer").setup({
-          colorscheme = "kanagawa",
+          -- colorscheme = "kanagawa",
+          colorscheme = "tokyodark",
           styles = {
             ["function"] = { style = "bold" },
             functionbuiltin = { style = "bold" },
@@ -13,10 +14,22 @@ return {
           },
           remaps = {
             palette = {
-              kanagawa = {
+              tokyodark = {
                 bg = {
                   base = "#000000",
-                  alt = "#2a2a37",
+                  alt = "#181820",
+                },
+                diagnostic = {
+                  hint = "#A400FF",
+                  info = "#0087FF",
+                  warn = "#FBFF00",
+                  error = "#FF0000",
+                },
+                diff = {
+                  add = "#00FF5F",
+                  remove = "#FF0000",
+                  text = "#0087FF",
+                  change = "#FBFF00",
                 },
               },
             },
