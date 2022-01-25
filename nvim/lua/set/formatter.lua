@@ -4,10 +4,11 @@ return {
       "mhartington/formatter.nvim",
 
       config = function()
-        local prettier = function()
+        -- npm install -g @fsouza/prettierd
+        local prettierd = function()
           return {
-            exe = "prettier",
-            args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
+            exe = "prettierd",
+            args = { vim.api.nvim_buf_get_name(0) },
             stdin = true,
           }
         end
@@ -15,15 +16,15 @@ return {
         require("formatter").setup({
           logging = false,
           filetype = {
-            javascript = { prettier },
-            typescript = { prettier },
-            vue = { prettier },
-            html = { prettier },
-            css = { prettier },
-            scss = { prettier },
-            json = { prettier },
-            svg = { prettier },
-            markdown = { prettier },
+            javascript = { prettierd },
+            typescript = { prettierd },
+            vue = { prettierd },
+            html = { prettierd },
+            css = { prettierd },
+            scss = { prettierd },
+            json = { prettierd },
+            svg = { prettierd },
+            markdown = { prettierd },
             lua = {
               function()
                 return {

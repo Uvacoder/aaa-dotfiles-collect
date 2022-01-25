@@ -6,13 +6,20 @@ return {
       config = function()
         require("themer").setup({
           colorscheme = "kanagawa",
-
           styles = {
             ["function"] = { style = "bold" },
             functionbuiltin = { style = "bold" },
-            variable = { style = "NONE" },
-            variableBuiltIn = { style = "NONE" },
             parameter = { style = "italic" },
+          },
+          remaps = {
+            palette = {
+              kanagawa = {
+                bg = {
+                  base = "#000000",
+                  alt = "#2a2a37",
+                },
+              },
+            },
           },
         })
       end,

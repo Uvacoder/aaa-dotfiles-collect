@@ -23,10 +23,10 @@ require("packer").startup({
     require("set/tree-sitter").setup(use)
     require("set/lsp-config").setup(use)
     require("set/cmp").setup(use)
-    -- require("set/themer").setup(use)
+    require("set/themer").setup(use)
     -- themes
     -- kanagawa, dracula, night-fox, material, oceanic-next, one-dark, tokyo-dark, rose-pine
-    require("themes/tokyo-dark").setup(use)
+    -- require("themes/tokyo-dark").setup(use)
   end,
   config = {
     display = {
