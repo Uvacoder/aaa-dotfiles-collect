@@ -11,7 +11,7 @@ return {
           show_current_context_start = false,
         })
 
-        vim.cmd([[highlight IndentBlanklineChar guifg=#121212 gui=nocombine]])
+        vim.cmd([[highlight IndentBlanklineChar guifg=#000000 gui=nocombine]])
       end,
     })
   end,

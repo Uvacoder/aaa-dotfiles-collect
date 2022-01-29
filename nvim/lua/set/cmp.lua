@@ -8,8 +8,8 @@ return {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
-        "hrsh7th/cmp-calc",
-        "octaltree/cmp-look",
+        -- "hrsh7th/cmp-calc",
+        -- "octaltree/cmp-look",
         "L3MON4D3/LuaSnip", -- Snippets plugin
         "saadparwaiz1/cmp_luasnip",
         "onsails/lspkind-nvim",
@@ -71,14 +71,14 @@ return {
             { name = "nvim_lua" },
             { name = "nvim_lsp" },
             { name = "path" },
-            { name = "luasnip" },
+            { name = "luasnip", keyword_length = 1 },
             { name = "buffer" },
-            {
-              name = "look",
-              -- keyword_length = 2,
-              option = { convert_case = true, loud = true },
-            },
-            { name = "calc" },
+            -- {
+            --   name = "look",
+            --   keyword_length = 5,
+            --   option = { convert_case = true, loud = true },
+            -- },
+            -- { name = "calc" },
           },
 
           snippet = {
@@ -92,12 +92,12 @@ return {
               with_text = false,
               menu = {
                 buffer = "[buf]",
-                look = "[look]",
+                -- look = "[look]",
                 luasnip = "[snip]",
                 nvim_lsp = "[LSP]",
                 nvim_lua = "[lua]",
                 path = "[path]",
-                calc = "[calc]",
+                -- calc = "[calc]",
               },
             }),
           },

@@ -9,6 +9,7 @@ return {
         "p00f/nvim-ts-rainbow",
         "windwp/nvim-ts-autotag",
         "nvim-treesitter/nvim-treesitter-textobjects",
+        "RRethy/nvim-treesitter-textsubjects",
         "terrortylor/nvim-comment",
         "JoosepAlviste/nvim-ts-context-commentstring",
         "nvim-treesitter/nvim-treesitter-refactor",
@@ -42,6 +43,15 @@ return {
           context_commentstring = {
             enable = true,
             enable_autocmd = false,
+          },
+          textsubjects = {
+            enable = true,
+            prev_selection = ",", -- (Optional) keymap to select the previous selection
+            keymaps = {
+              ["."] = "textsubjects-smart",
+              [";"] = "textsubjects-container-outer",
+              ["i;"] = "textsubjects-container-inner",
+            },
           },
           incremental_selection = {
             enable = true,

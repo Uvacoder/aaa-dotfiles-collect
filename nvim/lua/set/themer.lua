@@ -4,9 +4,10 @@ return {
       "themercorp/themer.lua",
 
       config = function()
+        local theme = "doom_one" -- dracula, kurai, kanagawa, tokyodark, rose_pine_moon
+
         require("themer").setup({
-          -- colorscheme = "kanagawa",
-          colorscheme = "tokyodark",
+          colorscheme = theme,
           styles = {
             ["function"] = { style = "bold" },
             functionbuiltin = { style = "bold" },
@@ -14,7 +15,7 @@ return {
           },
           remaps = {
             palette = {
-              tokyodark = {
+              [theme] = {
                 bg = {
                   base = "#000000",
                   alt = "#181820",
