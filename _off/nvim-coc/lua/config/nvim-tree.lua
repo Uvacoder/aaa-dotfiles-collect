@@ -45,7 +45,7 @@ vim.g.nvim_tree_show_icons = {
     -- }
 -- }
 
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 local options = {noremap = true, silent = true}
 
 keymap('n', '<C-e>', ':NvimTreeToggle<CR>', options)

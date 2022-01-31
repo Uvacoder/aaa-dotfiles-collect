@@ -25,7 +25,7 @@ function show_docs()
   end
 end
 
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 keymap('i', '<TAB>', 'pumvisible() ? "<C->" : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', { noremap = true, silent = true, expr = true })
 keymap('i', '<S-TAB>', 'pumvisible() ? "<C-P>" : "<C-H>"', { noremap = true, silent = true, expr = true })

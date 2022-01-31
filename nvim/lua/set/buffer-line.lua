@@ -27,8 +27,8 @@ return {
         })
 
         -- delete buffer
-        vim.api.nvim_set_keymap("n", "bl", ":BufferLineCloseLeft<CR>", { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "br", ":BufferLineCloseRight<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "bl", ":BufferLineCloseLeft<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "br", ":BufferLineCloseRight<CR>", { noremap = true, silent = true })
       end,
     })
   end,

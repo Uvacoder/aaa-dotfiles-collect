@@ -54,4 +54,4 @@ ToggleMouse = function()
   end
 end
 
-vim.api.nvim_set_keymap("n", "<leader>bm", "<cmd>lua ToggleMouse()<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>bm", "<cmd>lua ToggleMouse()<cr>", { noremap = true })

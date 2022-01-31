@@ -34,8 +34,8 @@ return {
           },
         })
 
-        vim.api.nvim_set_keymap("n", "tt", "<cmd>TroubleToggle<cr>", { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "tf", "<cmd>TroubleToggle quickfix<cr>", { noremap = true, silent = true })
+        vim.keymap.set("n", "tt", "<cmd>TroubleToggle<cr>", { noremap = true, silent = true })
+        vim.keymap.set("n", "tf", "<cmd>TroubleToggle quickfix<cr>", { noremap = true, silent = true })
       end,
     })
   end,

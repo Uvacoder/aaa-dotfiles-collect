@@ -19,7 +19,7 @@ return {
           maximum_padding = 1,
           maximum_length = 30,
         }
-        vim.api.nvim_set_keymap("n", "bc", ":BufferClose<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "bc", ":BufferClose<CR>", { noremap = true, silent = true })
       end,
     })
   end,

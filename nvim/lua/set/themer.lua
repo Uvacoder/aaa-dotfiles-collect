@@ -4,7 +4,8 @@ return {
       "themercorp/themer.lua",
 
       config = function()
-        local theme = "doom_one" -- dracula, kurai, kanagawa, tokyodark, rose_pine_moon
+        local theme = "rose_pine_moon"
+        -- everforest, doom_one, dracula, kurai, kanagawa, tokyodark, rose_pine_moon
 
         require("themer").setup({
           colorscheme = theme,
