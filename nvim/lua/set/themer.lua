@@ -20,6 +20,7 @@ return {
                 bg = {
                   base = colors.bg,
                   alt = colors.bg_alt,
+                  select = colors.bg_select,
                 },
                 diagnostic = {
                   hint = colors.magenta,
@@ -32,6 +33,18 @@ return {
                   remove = colors.red,
                   text = colors.blue,
                   change = colors.yellow,
+                },
+                git = {
+                  add = colors.green,
+                  change = colors.yellow,
+                  conflict = colors.orange,
+                  delete = colors.red,
+                  ignore = colors.fg,
+                },
+                gitSigns = {
+                  add = colors.green,
+                  change = colors.yellow,
+                  delete = colors.red,
                 },
               },
             },

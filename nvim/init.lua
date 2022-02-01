@@ -16,7 +16,6 @@ require("packer").startup({
     require("set/git-signs").setup(use)
     require("set/formatter").setup(use)
     require("set/trouble").setup(use)
-    require("set/indent-blank-line").setup(use)
     require("set/buffer-line").setup(use)
     require("set/lua-line").setup(use)
     require("set/telescope").setup(use)
@@ -25,6 +24,7 @@ require("packer").startup({
     require("set/lsp-config").setup(use)
     require("set/cmp").setup(use)
     require("set/themer").setup(use)
+    require("set/indent-blank-line").setup(use)
   end,
   config = {
     display = {
