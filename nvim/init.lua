@@ -1,3 +1,4 @@
+require("config")
 require("core/disable")
 require("core/autoload")
 

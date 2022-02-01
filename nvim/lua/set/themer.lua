@@ -4,8 +4,8 @@ return {
       "themercorp/themer.lua",
 
       config = function()
-        local theme = "rose_pine_moon"
-        -- everforest, doom_one, dracula, kurai, kanagawa, tokyodark, rose_pine_moon
+        local theme = vim.g.my_theme
+        local colors = vim.g.my_colors
 
         require("themer").setup({
           colorscheme = theme,
@@ -18,20 +18,20 @@ return {
             palette = {
               [theme] = {
                 bg = {
-                  base = "#000000",
-                  alt = "#181820",
+                  base = colors.bg,
+                  alt = colors.bg_alt,
                 },
                 diagnostic = {
-                  hint = "#A400FF",
-                  info = "#0087FF",
-                  warn = "#FBFF00",
-                  error = "#FF0000",
+                  hint = colors.magenta,
+                  info = colors.blue,
+                  warn = colors.yellow,
+                  error = colors.red,
                 },
                 diff = {
-                  add = "#00FF5F",
-                  remove = "#FF0000",
-                  text = "#0087FF",
-                  change = "#FBFF00",
+                  add = colors.green,
+                  remove = colors.red,
+                  text = colors.blue,
+                  change = colors.yellow,
                 },
               },
             },

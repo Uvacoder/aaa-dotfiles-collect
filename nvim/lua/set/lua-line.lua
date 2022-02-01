@@ -8,19 +8,9 @@ return {
       },
 
       config = function()
-        local lualine = require("lualine")
+        local colors = vim.g.my_colors
 
-        -- Color table for highlights
-        -- stylua: ignore
-        local colors = {
-          bg       = '#090B10', -- '#0D1117', --'#141B24', --'#000000', --'#090B10', '#121212',
-          fg       = '#6272A4',
-          blue     = '#0087FF',
-          green    = '#00FF5F',
-          yellow   = '#FBFF00',
-          red      = '#ff0000',
-          white    = '#ffffff',
-        }
+        local lualine = require("lualine")
 
         local conditions = {
           buffer_not_empty = function()
@@ -39,13 +29,13 @@ return {
         -- Config
         local config = {
           options = {
-            icons_enabled = false,
+            icons_enabled = true,
             -- Disable sections and component separators
             component_separators = "",
             section_separators = "",
             theme = {
-              normal = { c = { fg = colors.fg, bg = colors.bg } },
-              inactive = { c = { fg = colors.fg, bg = colors.bg } },
+              normal = { c = { fg = colors.fg, bg = colors.bg_alt } },
+              inactive = { c = { fg = colors.fg, bg = colors.bg_alt } },
             },
           },
           sections = {
@@ -84,16 +74,17 @@ return {
         ins_left({
           -- mode component
           "mode",
-          color = { fg = colors.fg, bg = colors.bg },
+          color = { fg = colors.fg, bg = colors.bg_alt },
           padding = { left = 1, right = 2 },
         })
 
-        -- ins_left({
-        --   "filetype",
-        --   icon_only = true,
-        --   padding = { left = 1 },
-        --   cond = conditions.buffer_not_empty,
-        -- })
+        ins_left({
+          "filetype",
+          colored = true,
+          icon_only = true,
+          padding = { left = 1 },
+          cond = conditions.buffer_not_empty,
+        })
 
         ins_left({
           "diagnostics",
@@ -111,6 +102,11 @@ return {
 
         ins_left({
           "filename",
+          symbols = {
+            modified = " ", -- Text to show when the file is modified.
+            readonly = " ", -- Text to show when the file is non-modifiable or readonly.
+            unnamed = "[No Name]", -- Text to show for unnamed buffers.
+          },
           cond = conditions.buffer_not_empty,
           color = { fg = colors.white },
         })
