@@ -47,9 +47,7 @@ return {
           nvim_lsp[lsp].setup({
             on_attach = on_attach,
             capabilities = capabilities,
-            -- flags = {
-            --   debounce_text_changes = 150,
-            -- },
+            flags = { debounce_text_changes = 150 },
           })
         end
 

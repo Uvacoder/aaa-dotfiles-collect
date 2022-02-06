@@ -10,8 +10,6 @@ return {
           show_current_context = true,
           show_current_context_start = false,
         })
-
-        vim.cmd([[highlight IndentBlanklineChar guifg=#000000 gui=nocombine]])
       end,
     })
   end,

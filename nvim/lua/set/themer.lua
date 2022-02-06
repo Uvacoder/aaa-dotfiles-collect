@@ -50,6 +50,8 @@ return {
             },
           },
         })
+
+        vim.cmd([[highlight IndentBlanklineChar guifg=#000000 gui=nocombine]])
       end,
     })
   end,

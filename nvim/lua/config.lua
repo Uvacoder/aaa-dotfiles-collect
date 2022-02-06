@@ -1,5 +1,5 @@
--- everforest, doom_one, dracula, kurai, kanagawa, tokyodark, rose_pine_moon
-vim.g.my_theme = "doom_one"
+-- doom-one, tokyodark
+vim.g.my_theme = "themes/doom-one"
 
 -- '#0D1117', '#141B24', '#000000', '#090B10', '#121212',
 vim.g.my_colors = {
