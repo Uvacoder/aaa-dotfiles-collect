@@ -90,6 +90,12 @@ cargo install ripgrep
 cargo install tree-sitter-cli
 cargo install ruget
 
+
+install vscode-codicons for lspkind
+You can obtain the codicons.ttf file by following this link. (required for the icons to show properly.)
+https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf
+downloadand install the font
+
 ``````
 
 

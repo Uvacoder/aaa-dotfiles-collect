@@ -8,10 +8,8 @@ return {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
-        -- "hrsh7th/cmp-calc",
-        -- "octaltree/cmp-look",
-        "L3MON4D3/LuaSnip", -- Snippets plugin
-        "saadparwaiz1/cmp_luasnip",
+        "hrsh7th/cmp-vsnip",
+        "hrsh7th/vim-vsnip",
         "onsails/lspkind-nvim",
       },
 
@@ -22,19 +20,12 @@ return {
         local lspkind = require("lspkind")
 
         -- luasnip setup
-        local has_words_before = function()
-          local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-          return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-        end
-
-        local luasnip = require("luasnip")
-
-        -- nvim-cmp setup
         local cmp = require("cmp")
+        -- Global setup.
         cmp.setup({
           snippet = {
             expand = function(args)
-              require("luasnip").lsp_expand(args.body)
+              vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
             end,
           },
           mapping = {
@@ -67,52 +58,33 @@ return {
               end
             end,
           },
-          sources = {
-            { name = "nvim_lua" },
-            { name = "nvim_lsp" },
-            { name = "path" },
-            { name = "luasnip", keyword_length = 1 },
-            { name = "buffer" },
-            -- {
-            --   name = "look",
-            --   keyword_length = 5,
-            --   option = { convert_case = true, loud = true },
-            -- },
-            -- { name = "calc" },
-          },
 
-          snippet = {
-            expand = function(args)
-              luasnip.lsp_expand(args.body)
-            end,
-          },
+          sources = cmp.config.sources({
+            { name = "nvim_lsp" },
+            { name = "vsnip" }, -- For vsnip users.
+          }, {
+            { name = "buffer" },
+          }),
 
           formatting = {
             format = lspkind.cmp_format({
-              with_text = false,
-              menu = {
-                buffer = "[buf]",
-                -- look = "[look]",
-                luasnip = "[snip]",
-                nvim_lsp = "[LSP]",
-                nvim_lua = "[lua]",
-                path = "[path]",
-                -- calc = "[calc]",
-              },
+              mode = "symbol_text",
+              -- preset = "codicons",
             }),
           },
-
-          experimental = { native_menu = false, ghost_text = true },
         })
-
+        -- `/` cmdline setup.
         cmp.setup.cmdline("/", {
-          sources = cmp.config.sources({ { name = "buffer", keyword_length = 1 } }),
+          sources = {
+            { name = "buffer" },
+          },
         })
-
+        -- `:` cmdline setup.
         cmp.setup.cmdline(":", {
           sources = cmp.config.sources({
             { name = "path" },
-            { name = "cmdline", max_item_count = 20, keyword_length = 1 },
+          }, {
+            { name = "cmdline" },
           }),
         })
       end,

@@ -4,6 +4,7 @@ return {
       "neovim/nvim-lspconfig", -- Collection of configurations for built-in LSP client
 
       requires = {
+        "williamboman/nvim-lsp-installer", -- Install language servers
         "hrsh7th/cmp-nvim-lsp",
       },
 
@@ -34,6 +35,8 @@ return {
           vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
         end
 
+        local lsp_installer_servers = require("nvim-lsp-installer.servers")
+
         -- nvim-cmp supports additional completion capabilities
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
@@ -43,12 +46,24 @@ return {
         -- local servers = { 'vuels', 'tailwindcss', 'tsserver' }
         -- local servers = { "vuels", "tsserver" }
         local servers = { "volar", "tsserver" }
-        for _, lsp in ipairs(servers) do
-          nvim_lsp[lsp].setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-            flags = { debounce_text_changes = 150 },
-          })
+
+        for _, server_name in ipairs(servers) do
+          local server_available, server = lsp_installer_servers.get_server(server_name)
+          if server_available then
+            server:on_ready(function()
+              local opts = {
+                on_attach = on_attach,
+                capabilities = capabilities,
+                flags = { debounce_text_changes = 150 },
+              }
+              server:setup(opts)
+            end)
+            if not server:is_installed() then
+              -- Queue the server to be installed.
+              print("Installing " .. server_name)
+              server:install()
+            end
+          end
         end
 
         vim.diagnostic.config({
