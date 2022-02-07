@@ -73,9 +73,9 @@ return {
 
         ins_left({
           -- battery component
-          "Battery_icon", -- "battery#component", --"Battery_icon"
+          "battery#component",
           color = { fg = colors.green, bg = colors.bg_alt },
-          padding = { left = 1, right = 1 },
+          padding = { left = 1 },
         })
 
         ins_left({
