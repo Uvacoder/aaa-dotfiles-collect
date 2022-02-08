@@ -71,17 +71,18 @@ return {
             source = "always", -- Or "if_many"
             prefix = "●", -- Could be '●', '▎', 'x'
           },
-          float = {
-            source = "always", -- Or "if_many"
-          },
-        })
-
-        vim.diagnostic.config({
-          virtual_text = true,
           signs = true,
           underline = true,
           update_in_insert = true,
           severity_sort = false,
+          float = {
+            focusable = false,
+            style = "minimal",
+            border = "rounded",
+            source = "always",
+            header = "",
+            prefix = "",
+          },
         })
 
         local signs = { Error = "", Warn = "", Info = "", Hint = "ﴞ" }

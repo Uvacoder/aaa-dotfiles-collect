@@ -18,6 +18,7 @@ require("packer").startup({
     require("set/telescope").setup(use)
     require("set/indent-blank-line").setup(use)
     require("set/tree-sitter").setup(use)
+    require("set/refactoring").setup(use)
     require("set/cmp").setup(use)
     require("set/lsp-config").setup(use)
     require(vim.g.my_theme).setup(use)

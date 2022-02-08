@@ -1,4 +1,4 @@
-vim.g.my_theme = "themes/doom-one" -- doom-one, tokyodark
+vim.g.my_theme = "themes/gruvbox-flat" -- doom-one, tokyo-dark, kanagawa, rose-pine, night-fox
 
 vim.g.my_colors = {
   bg = "#000000", -- '#0D1117', '#141B24', '#000000', '#090B10', '#121212',
@@ -15,8 +15,8 @@ vim.g.my_colors = {
 }
 
 require("core/disable")
+require("core/options")
 require("core/autoload")
 require("core/plugins")
-require("core/options")
 require("core/mappings")
 require("core/autocmd")
