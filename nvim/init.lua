@@ -1,22 +1,19 @@
-vim.g.my_theme = "themes/gruvbox-flat" -- doom-one, tokyo-dark, kanagawa, rose-pine, night-fox
-
-vim.g.my_colors = {
-  bg = "#000000", -- '#0D1117', '#141B24', '#000000', '#090B10', '#121212',
-  bg_alt = "#090B10",
-  bg_select = "#23272E",
-  fg = "#6272A4",
-  blue = "#0087FF",
-  green = "#00FF5F",
-  yellow = "#FBFF00",
-  orange = "#FC7039",
-  red = "#ff0000",
-  white = "#ffffff",
-  magenta = "#A400FF",
+local colorschemes = {
+  "tokyo-dark", -- 1
+  "doom-one", -- 2
+  "gruvbox-flat", -- 3
+  "one-dark", -- 4
+  "rose-pine", -- 5
+  "night-fox", -- 6
 }
 
+vim.g.my_theme = "themes/" .. colorschemes[5]
+
+require("core/colors")
 require("core/disable")
 require("core/options")
 require("core/autoload")
 require("core/plugins")
+require("core/fix-colors")
 require("core/mappings")
 require("core/autocmd")

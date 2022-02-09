@@ -9,8 +9,8 @@ vim.cmd(":command! Wqa wqa")
 vim.cmd(":command! W w")
 vim.cmd(":command! Q q")
 
-vim.cmd([[autocmd InsertEnter * set cul]])
-vim.cmd([[autocmd InsertLeave * set nocul]])
+-- vim.cmd([[autocmd InsertEnter * set cul]])
+-- vim.cmd([[autocmd InsertLeave * set nocul]])
 
 -- Auto save files when focus is lost
 vim.cmd([[autocmd FocusLost * silent! :wa!]])

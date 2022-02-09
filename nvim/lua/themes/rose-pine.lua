@@ -7,6 +7,7 @@ return {
         vim.g.rose_pine_variant = "moon" -- 'base', 'dawn', 'moon'
         vim.g.rose_pine_enable_italics = true
         vim.g.rose_pine_disable_background = true
+        vim.g.rose_pine_inactive_background = false
 
         vim.cmd([[colorscheme rose-pine]])
       end,
