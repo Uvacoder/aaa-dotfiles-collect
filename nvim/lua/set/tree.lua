@@ -9,7 +9,7 @@ return {
         vim.g.nvim_tree_quit_on_open = 1
         vim.g.nvim_tree_indent_markers = 1
         vim.g.nvim_tree_git_hl = 0
-        vim.g.nvim_tree_refresh_wait = 300
+        vim.g.nvim_tree_refresh_wait = 250
         vim.g.nvim_tree_window_picker_exclude = {
           ["filetype"] = { "notify", "packer", "qf" },
           ["buftype"] = { "terminal" },
@@ -81,7 +81,7 @@ return {
           },
           view = {
             width = 40,
-            hide_root_folder = true,
+            hide_root_folder = false,
             side = "left",
             auto_resize = false,
             mappings = {
@@ -90,7 +90,7 @@ return {
             },
             number = false,
             relativenumber = false,
-            signcolumn = "yes",
+            signcolumn = "no",
           },
           trash = {
             cmd = "trash",
