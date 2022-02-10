@@ -75,22 +75,14 @@ return {
           -- battery component
           "battery#component",
           color = { fg = colors.green, bg = colors.bg_alt },
-          padding = { left = 1 },
+          padding = { left = 2 },
         })
 
         ins_left({
           -- mode component
           "mode",
           color = { fg = colors.fg, bg = colors.bg_alt },
-          padding = { left = 1, right = 2 },
-        })
-
-        ins_left({
-          "filetype",
-          colored = true,
-          icon_only = true,
-          padding = { left = 1 },
-          cond = conditions.buffer_not_empty,
+          padding = { left = 2 },
         })
 
         ins_left({
@@ -104,7 +96,15 @@ return {
             color_info = { fg = colors.blue },
             color_hint = { fg = colors.fg },
           },
-          padding = { left = 1, right = 1 },
+          padding = { left = 2 },
+        })
+
+        ins_left({
+          "filetype",
+          colored = true,
+          icon_only = true,
+          padding = { left = 1 },
+          cond = conditions.buffer_not_empty,
         })
 
         ins_left({
