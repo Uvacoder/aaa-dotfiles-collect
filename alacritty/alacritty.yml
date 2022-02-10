@@ -6,25 +6,29 @@ window:
   startup_mode: Maximized
 
 background_opacity: 1.0
-cursor:
-  style:
-    shape: Beam
+# cursor:
+#   style:
+#     shape: Beam
 
 font:
   normal:
-    # family: CamingoCode Nerd Font
-    family: CaskaydiaCove Nerd Font Mono
+    # family: Anonymice Nerd Font Mono
+    # family: SauceCodePro Nerd Font Mono
+    # family: FantasqueSansMono Nerd Font Mono
+    # family: GoMono Nerd Font Mono
+    family: CamingoCode Nerd Font
+    # family: CaskaydiaCove Nerd Font Mono
     # family: BlexMono Nerd Font Mono
     # family: UbuntuMono Nerd Font Mono
     # family: OperatorMono Nerd Font
-  italic:
-    family: Cascadia Mono
+  # italic:
+    # family: Cascadia Mono
 
-  size: 19
+  size: 21
 
   offset:
     x: 0
-    y: 10
+    y: 8
 
   use_thin_strokes: true
 
