@@ -103,7 +103,7 @@ return {
           "filetype",
           colored = true,
           icon_only = true,
-          padding = { left = 1 },
+          padding = { left = 2 },
           cond = conditions.buffer_not_empty,
         })
 
