@@ -48,16 +48,7 @@ return {
             lualine_c = {},
             lualine_x = {},
           },
-          inactive_sections = {
-            -- these are to remove the defaults
-            -- lualine_a = {},
-            -- lualine_b = {},
-            -- lualine_v = {},
-            -- lualine_y = {},
-            -- lualine_z = {},
-            -- lualine_c = {},
-            -- lualine_x = {},
-          },
+          inactive_sections = {},
           extensions = { "nvim-tree", "toggleterm" },
         }
 
@@ -154,14 +145,14 @@ return {
         -- Add components to right sections
         ins_right({
           "fileformat",
-          -- icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
+          icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
           padding = { right = 1 },
           color = { fg = colors.fg },
         })
 
         ins_right({
           "o:encoding", -- option component same as &encoding in viml
-          -- icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
+          icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
           -- fmt = string.upper, -- I'm not sure why it's upper case either ;)
           cond = conditions.hide_in_width,
           padding = { right = 2 },
