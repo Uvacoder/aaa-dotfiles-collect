@@ -17,7 +17,7 @@ return {
           --     background = "Normal",
           --   },
           -- },
-          open_mapping = [[<c-\>]],
+          open_mapping = [[<C-\>]],
           hide_numbers = true,
           shade_terminals = true,
           shading_factor = "1",

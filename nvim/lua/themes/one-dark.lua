@@ -1,40 +1,30 @@
 return {
   setup = function(use)
     use({
-      "navarasu/onedark.nvim",
+      "ful1e5/onedark.nvim",
 
       config = function()
         require("onedark").setup({
-          -- Main options --
-          style = "deep", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-          transparent = true, -- Show/hide background
-          term_colors = true, -- Change terminal color as per the selected theme style
-          ending_tildes = false, -- show the end-of-buffer tildes. By default they are hidden
+          function_style = "bold",
+          comment_style = "italic",
+          keyword_style = "NONE",
+          variable_style = "NONE",
+          hide_inactive_statusline = false,
+          dark_sidebar = true,
+          dark_float = true,
+          highlight_linenumber = false,
+          hide_end_of_buffer = true,
+          transparent = false,
+          transparent_sidebar = false,
+          sidebars = { "qf", "vista_kind", "terminal", "packer" },
 
-          -- Change code style ---
-          -- Options are italic, bold, underline, none
-          -- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
-          code_style = {
-            comments = "italic",
-            keywords = "none",
-            functions = "bold",
-            strings = "none",
-            variables = "none",
-          },
-
-          -- Custom Highlights --
-          colors = {}, -- Override default colors
-          highlights = {}, -- Override highlight groups
-
-          -- Plugins Config --
-          diagnostics = {
-            darker = true, -- darker colors for diagnostic
-            undercurl = true, -- use undercurl for diagnostics
-            background = false, -- use background color for virtual text
+          colors = {
+            bg0 = vim.g.my_colors.bg,
+            bg1 = vim.g.my_colors.bg_alt,
+            bg_linenumber = vim.g.my_colors.bg,
+            error = vim.g.my_colors.red,
           },
         })
-
-        require("onedark").load()
       end,
     })
   end,
