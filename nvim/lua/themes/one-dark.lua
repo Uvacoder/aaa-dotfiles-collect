@@ -21,8 +21,8 @@ return {
           colors = {
             bg0 = vim.g.my_colors.bg,
             bg1 = vim.g.my_colors.bg_alt,
-            bg_float = vim.g.my_colors.bg_alt,
-            bg_sidebar = vim.g.my_colors.bg_alt,
+            -- bg_float = vim.g.my_colors.bg_alt,
+            -- bg_sidebar = vim.g.my_colors.bg_alt,
             bg_linenumber = vim.g.my_colors.bg,
             error = vim.g.my_colors.red,
           },

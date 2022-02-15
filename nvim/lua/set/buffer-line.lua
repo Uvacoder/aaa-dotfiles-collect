@@ -19,10 +19,10 @@ return {
             separator_style = { "", "" },
           },
           highlights = {
-            buffer_selected = { gui = "bold" },
-            background = { guibg = "#000000" },
-            fill = { guibg = "#000000" },
-            tab = { guibg = "#000000" },
+            buffer_selected = { gui = "bold", guibg = vim.g.my_colors.bg },
+            background = { guibg = vim.g.my_colors.bg_alt },
+            fill = { guibg = vim.g.my_colors.bg_alt },
+            tab = { guibg = vim.g.my_colors.bg_alt },
           },
         })
 
