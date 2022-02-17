@@ -25,6 +25,9 @@ return {
             -- bg_sidebar = vim.g.my_colors.bg_alt,
             bg_linenumber = vim.g.my_colors.bg,
             error = vim.g.my_colors.red,
+            warning = vim.g.my_colors.yellow,
+            info = vim.g.my_colors.blue,
+            hint = vim.g.my_colors.purple,
           },
         })
       end,
