@@ -27,7 +27,7 @@ return {
             error = vim.g.my_colors.red,
             warning = vim.g.my_colors.yellow,
             info = vim.g.my_colors.blue,
-            hint = vim.g.my_colors.purple,
+            hint = vim.g.my_colors.white,
             git_signs = {
               delete = vim.g.my_colors.red,
               change = vim.g.my_colors.yellow,
