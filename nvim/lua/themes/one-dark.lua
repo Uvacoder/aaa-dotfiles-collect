@@ -28,6 +28,11 @@ return {
             warning = vim.g.my_colors.yellow,
             info = vim.g.my_colors.blue,
             hint = vim.g.my_colors.purple,
+            git_signs = {
+              delete = vim.g.my_colors.red,
+              change = vim.g.my_colors.yellow,
+              add = vim.g.my_colors.green,
+            },
           },
         })
       end,
