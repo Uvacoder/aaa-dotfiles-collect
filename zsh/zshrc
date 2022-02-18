@@ -62,8 +62,6 @@ alias s="subl"
 alias c="code --disable-gpu"
 
 alias wget="ruget"
-# publish vs code
-# alias publish='vsce publish -p m3nr6makgy5qmecy3wmmutlujbbs6om3mxygbhxdi4g6mjk63b5q'
 
 # Busca
 alias psa="ps aux"
@@ -182,4 +180,4 @@ source $ZSH/oh-my-zsh.sh
 # source ~/.zshrc
 
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
