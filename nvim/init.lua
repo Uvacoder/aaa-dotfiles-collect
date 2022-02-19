@@ -7,13 +7,12 @@ local colorschemes = {
   "night-fox", -- 6
 }
 
-vim.g.my_theme = "themes/" .. colorschemes[2]
+vim.g.my_theme = "themes/" .. colorschemes[4]
 
 require("my/colors")
 require("core/disable")
 require("core/options")
 require("core/autoload")
 require("core/plugins")
--- require("my/fix-colors")
 require("core/mappings")
 require("core/autocmd")

@@ -35,6 +35,8 @@ return {
             },
           },
         })
+
+        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my_colors.bg })
       end,
     })
   end,

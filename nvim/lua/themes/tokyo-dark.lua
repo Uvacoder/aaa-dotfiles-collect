@@ -21,9 +21,6 @@ return {
         vim.api.nvim_set_hl(ns, "Normal", { bg = vim.g.my_colors.bg })
         vim.api.nvim_set_hl(ns, "EndOfBuffer", { bg = vim.g.my_colors.bg })
         vim.api.nvim_set_hl(ns, "SignColumn", { bg = vim.g.my_colors.bg })
-        -- vim.api.nvim_set_hl(ns, "VertSplit", { bg = vim.g.my_colors.bg, fg = vim.g.my_colors.bg_select })
-        -- vim.api.nvim_set_hl(ns, "CursorLine", { bg = vim.g.my_colors.bg_alt })
-        -- vim.api.nvim_set_hl(ns, "CursorLineNC", { bg = vim.g.my_colors.bg_alt })
 
         vim.api.nvim_set_hl(ns, "NvimTreeNormal", { bg = vim.g.my_colors.bg_alt })
         vim.api.nvim_set_hl(ns, "NvimTreeEndOfBuffer", { bg = vim.g.my_colors.bg_alt })
