@@ -15,23 +15,25 @@ return {
             enable = false,
             transparency_amount = 10,
           },
-          -- plugins_integrations = {
-          --   neorg = false,
-          --   barbar = false,
-          --   bufferline = true,
-          --   gitgutter = false,
-          --   gitsigns = true,
-          --   telescope = true,
-          --   neogit = false,
-          --   nvim_tree = true,
-          --   dashboard = false,
-          --   startify = false,
-          --   whichkey = false,
-          --   indent_blankline = true,
-          --   vim_illuminate = false,
-          --   lspsaga = false,
-          -- },
+          plugins_integrations = {
+            bufferline = true,
+            gitsigns = true,
+            telescope = true,
+            nvim_tree = true,
+            indent_blankline = true,
+          },
         })
+
+        vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = vim.g.my_colors.green })
+        vim.api.nvim_set_hl(0, "GitSignsChange", { fg = vim.g.my_colors.yellow })
+        vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = vim.g.my_colors.red })
+        vim.api.nvim_set_hl(0, "DiagnosticSignHint", { fg = vim.g.my_colors.purple })
+
+        vim.api.nvim_set_hl(0, "DiagnosticSignInfo", { fg = vim.g.my_colors.blue })
+        vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { fg = vim.g.my_colors.yellow })
+        vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = vim.g.my_colors.red })
+
+        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my_colors.bg })
       end,
     })
   end,

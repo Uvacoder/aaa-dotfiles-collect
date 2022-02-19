@@ -14,8 +14,8 @@ return {
           dark_float = true,
           highlight_linenumber = false,
           hide_end_of_buffer = true,
-          transparent = false,
-          transparent_sidebar = false,
+          transparent = true,
+          transparent_sidebar = true,
           sidebars = { "qf", "vista_kind", "terminal", "packer" },
 
           colors = {
