@@ -4,6 +4,7 @@ return {
       "nvim-telescope/telescope.nvim",
 
       requires = {
+        { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
         { "nvim-lua/popup.nvim", opt = true },
         { "nvim-lua/plenary.nvim", opt = true },
       },
@@ -22,6 +23,8 @@ return {
             },
           },
         })
+
+        require("telescope").load_extension("fzf")
 
         vim.keymap.set("n", "<leader><space>", ":Telescope buffers<cr>", { noremap = true, silent = true })
         vim.keymap.set("n", "ff", ":Telescope find_files<cr>", { noremap = true, silent = true })

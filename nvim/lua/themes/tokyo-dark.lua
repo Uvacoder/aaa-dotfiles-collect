@@ -22,10 +22,8 @@ return {
         vim.api.nvim_set_hl(ns, "EndOfBuffer", { bg = vim.g.my_colors.bg })
         vim.api.nvim_set_hl(ns, "SignColumn", { bg = vim.g.my_colors.bg })
 
-        vim.api.nvim_set_hl(ns, "NvimTreeNormal", { bg = vim.g.my_colors.bg_alt })
-        vim.api.nvim_set_hl(ns, "NvimTreeEndOfBuffer", { bg = vim.g.my_colors.bg_alt })
-        vim.api.nvim_set_hl(ns, "NvimTreeVertSplit", { fg = vim.g.my_colors.bg_alt })
-        vim.api.nvim_set_hl(ns, "NvimTreeCursorLine", { bg = vim.g.my_colors.bg_select, fg = vim.g.my_colors.white })
+        vim.api.nvim_set_hl(ns, "NvimTreeNormal", { bg = vim.g.my_colors.bg })
+        vim.api.nvim_set_hl(ns, "NvimTreeEndOfBuffer", { bg = vim.g.my_colors.bg })
 
         vim.api.nvim_set_hl(ns, "GitSignsAdd", { fg = vim.g.my_colors.green })
         vim.api.nvim_set_hl(ns, "GitSignsChange", { fg = vim.g.my_colors.yellow })

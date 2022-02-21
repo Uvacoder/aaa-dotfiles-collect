@@ -38,7 +38,7 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.completeopt = "menuone,noinsert,noselect,preview"
 vim.opt.shell = "/bin/zsh"
-vim.opt.errorformat = "%A%f:%l:%c:%m,%-G%.%#"
+-- vim.opt.errorformat = "%A%f:%l:%c:%m,%-G%.%#"
 vim.opt.showbreak = "﬌ "
 vim.opt.inccommand = "split" -- incrementally show result of command
 vim.opt.wildignore = "*/.git/*,*/.DS_Store,dist,*.o,*~,package-lock.json"
@@ -54,8 +54,16 @@ vim.opt.foldlevel = 99
 vim.opt.foldmethod = "manual"
 vim.opt.formatoptions = "l"
 vim.opt.shortmess:append("aoOtAIc")
-vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor"
+-- vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor"
 
 if vim.fn.has("termguicolors") == 1 then
   vim.opt.termguicolors = true
 end
+
+-- Error formate
+vim.opt.errorformat = [[
+    %E%f:%l:%c: %trror: %m,%-Z%p^,%+C%.%#
+    %D%*a: Entering directory [`']%f
+    %X%*a: Leaving directory [`']%f
+    %-G%.%#
+]]

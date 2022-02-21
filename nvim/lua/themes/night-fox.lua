@@ -6,7 +6,7 @@ return {
       config = function()
         local nightfox = require("nightfox")
         nightfox.setup({
-          fox = "duskfox", -- nightfox, nordfox, duskfox
+          fox = "nightfox", -- nightfox, nordfox, duskfox
           transparent = true,
           alt_nc = true,
           terminal_colors = true,
@@ -22,7 +22,19 @@ return {
             visual = true,
             search = true,
           },
-          colors = {},
+          colors = {
+            bg = vim.g.my_colors.bg,
+            bg_alt = vim.g.my_colors.bg_alt,
+            error = vim.g.my_colors.red,
+            warning = vim.g.my_colors.yellow,
+            info = vim.g.my_colors.blue,
+            hint = vim.g.my_colors.white,
+            gitSigns = {
+              delete = vim.g.my_colors.red,
+              change = vim.g.my_colors.yellow,
+              add = vim.g.my_colors.green,
+            },
+          },
           hlgroups = {},
         })
 

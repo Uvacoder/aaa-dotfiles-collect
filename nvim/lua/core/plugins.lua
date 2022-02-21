@@ -4,6 +4,7 @@ require("packer").startup({
     -- Packages
     require("set/packer").setup(use)
     require("set/battery").setup(use)
+    require("set/modes").setup(use)
     require("set/colorizer").setup(use)
     require("set/ctrlsf").setup(use)
     require("set/visual-multi").setup(use)
