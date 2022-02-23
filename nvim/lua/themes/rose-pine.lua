@@ -15,6 +15,7 @@ return {
           disable_float_background = false,
           disable_italics = false,
           groups = {
+            bg = vim.g.my_colors.bg,
             error = vim.g.my_colors.red,
             warn = vim.g.my_colors.yellow,
             info = vim.g.my_colors.blue,

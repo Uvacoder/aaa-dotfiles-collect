@@ -64,7 +64,7 @@ return {
 
         ins_left({
           -- battery component
-          "battery#component",
+          "%{Battery_icon()} %{battery#component()}",
           color = { fg = colors.green, bg = colors.bg_alt },
           padding = { left = 2 },
         })

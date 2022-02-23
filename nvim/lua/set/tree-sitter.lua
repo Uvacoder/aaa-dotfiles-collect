@@ -8,11 +8,11 @@ return {
       requires = {
         "p00f/nvim-ts-rainbow",
         "windwp/nvim-ts-autotag",
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        "RRethy/nvim-treesitter-textsubjects",
         "terrortylor/nvim-comment",
         "JoosepAlviste/nvim-ts-context-commentstring",
-        "nvim-treesitter/nvim-treesitter-refactor",
+        -- "nvim-treesitter/nvim-treesitter-textobjects",
+        -- "RRethy/nvim-treesitter-textsubjects",
+        -- "nvim-treesitter/nvim-treesitter-refactor",
       },
 
       config = function()
@@ -21,13 +21,9 @@ return {
             "css",
             "lua",
             "html",
-            -- "bash",
             "vue",
             "javascript",
             "json",
-            -- "graphql",
-            -- "php",
-            -- "ruby",
             "typescript",
             "regex",
             "jsonc",
@@ -35,23 +31,8 @@ return {
           highlight = {
             enable = true, -- false will disable the whole extension
           },
-          rainbow = {
+          indent = {
             enable = true,
-            extended_mode = true,
-            max_file_lines = nil,
-          },
-          context_commentstring = {
-            enable = true,
-            enable_autocmd = false,
-          },
-          textsubjects = {
-            enable = true,
-            prev_selection = ",", -- (Optional) keymap to select the previous selection
-            keymaps = {
-              ["."] = "textsubjects-smart",
-              [";"] = "textsubjects-container-outer",
-              ["i;"] = "textsubjects-container-inner",
-            },
           },
           incremental_selection = {
             enable = true,
@@ -62,65 +43,20 @@ return {
               node_decremental = "grm",
             },
           },
+          -- rainbow
+          rainbow = {
+            enable = true,
+            extended_mode = true,
+            max_file_lines = nil,
+          },
+          -- autotag
           autotag = {
             enable = true,
-            filetypes = { "html", "javascript", "javascriptreact", "typescriptreact", "vue", "xml" },
           },
-          indent = {
+          -- commentstring
+          context_commentstring = {
             enable = true,
-          },
-          textobjects = {
-            select = {
-              enable = true,
-              lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-              keymaps = {
-                -- You can use the capture groups defined in textobjects.scm
-                ["af"] = "@function.outer",
-                ["if"] = "@function.inner",
-                ["ac"] = "@class.outer",
-                ["ic"] = "@class.inner",
-              },
-            },
-            refactor = {
-              highlight_definitions = { enable = true },
-              highlight_current_scope = { enable = true },
-              smart_rename = {
-                enable = true,
-                keymaps = {
-                  smart_rename = "grr",
-                },
-              },
-              navigation = {
-                enable = true,
-                keymaps = {
-                  goto_definition = "gnd",
-                  list_definitions = "gnD",
-                  list_definitions_toc = "gO",
-                  goto_next_usage = "<a-*>",
-                  goto_previous_usage = "<a-#>",
-                },
-              },
-            },
-            move = {
-              enable = true,
-              set_jumps = true, -- whether to set jumps in the jumplist
-              goto_next_start = {
-                ["]m"] = "@function.outer",
-                ["]]"] = "@class.outer",
-              },
-              goto_next_end = {
-                ["]M"] = "@function.outer",
-                ["]["] = "@class.outer",
-              },
-              goto_previous_start = {
-                ["[m"] = "@function.outer",
-                ["[["] = "@class.outer",
-              },
-              goto_previous_end = {
-                ["[M"] = "@function.outer",
-                ["[]"] = "@class.outer",
-              },
-            },
+            enable_autocmd = false,
           },
         })
 
