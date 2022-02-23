@@ -1,5 +1,16 @@
+local colorschemes = {
+  "tokyo-dark", -- 1
+  "doom-one", -- 2
+  "gruvbox-flat", -- 3
+  "one-dark", -- 4
+  "rose-pine", -- 5
+  "night-fox", -- 6
+}
+
+vim.g.my_theme = "themes/" .. colorschemes[1]
+
 vim.g.my_colors = {
-  bg = "#000000", 
+  bg = "#000000",
   bg_alt = "#090B10",
   bg_select = "#23272E",
   fg = "#6272A4",
@@ -11,17 +22,6 @@ vim.g.my_colors = {
   white = "#ffffff",
   purple = "#A400FF",
 }
-
-local colorschemes = {
-  "tokyo-dark", -- 1
-  "doom-one", -- 2
-  "gruvbox-flat", -- 3
-  "one-dark", -- 4
-  "rose-pine", -- 5
-  "night-fox", -- 6
-}
-
-vim.g.my_theme = "themes/" .. colorschemes[5]
 
 require("core/disable")
 require("core/options")

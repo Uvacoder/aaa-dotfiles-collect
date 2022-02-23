@@ -5,7 +5,7 @@ return {
       "tiagovla/tokyodark.nvim",
 
       config = function()
-        vim.g.tokyodark_transparent_background = false
+        vim.g.tokyodark_transparent_background = true
         vim.g.tokyodark_enable_italic_comment = true
         vim.g.tokyodark_enable_italic = false
         vim.g.tokyodark_color_gamma = "1.0"
@@ -17,13 +17,6 @@ return {
         vim.api.nvim_set_hl(ns, "String", { fg = "#f6b667" })
         vim.api.nvim_set_hl(ns, "Character", { fg = "#f6b667" })
         vim.api.nvim_set_hl(ns, "Title", { fg = "#f6b667" })
-
-        vim.api.nvim_set_hl(ns, "Normal", { bg = vim.g.my_colors.bg })
-        vim.api.nvim_set_hl(ns, "EndOfBuffer", { bg = vim.g.my_colors.bg })
-        vim.api.nvim_set_hl(ns, "SignColumn", { bg = vim.g.my_colors.bg })
-
-        vim.api.nvim_set_hl(ns, "NvimTreeNormal", { bg = vim.g.my_colors.bg })
-        vim.api.nvim_set_hl(ns, "NvimTreeEndOfBuffer", { bg = vim.g.my_colors.bg })
 
         vim.api.nvim_set_hl(ns, "GitSignsAdd", { fg = vim.g.my_colors.green })
         vim.api.nvim_set_hl(ns, "GitSignsChange", { fg = vim.g.my_colors.yellow })
