@@ -4,10 +4,27 @@ return {
       "lambdalisue/battery.vim",
 
       config = function()
-        --- let l:battery_icon = { 5: "", 4: "", 3: "", 2: "", 1: ""}
         vim.cmd([[
-          fun! Battery_icon()
-            let l:battery_icon = { 5: "ﯦ", 4: "", 3: "", 2: "", 1: " ﮣ "}
+          fun! Battery_icon_full()
+            let l:battery_icon = { 4: "", 3: "", 2: "", 1: "", 0: "" }
+            let l:backend = battery#backend()
+            let l:nf = float2nr(round(backend.value / 20.0))
+            return printf('%s', get(battery_icon, nf))
+          endfun
+        ]])
+
+        vim.cmd([[
+          fun! Battery_icon_warn()
+            let l:battery_icon = { 4: "", 3: "", 2: "", 1: "", 0: "" }
+            let l:backend = battery#backend()
+            let l:nf = float2nr(round(backend.value / 20.0))
+            return printf('%s', get(battery_icon, nf))
+          endfun
+        ]])
+
+        vim.cmd([[
+          fun! Battery_icon_low()
+            let l:battery_icon = { 4: "", 3: "", 2: "", 1: "", 0: "" }
             let l:backend = battery#backend()
             let l:nf = float2nr(round(backend.value / 20.0))
             return printf('%s', get(battery_icon, nf))

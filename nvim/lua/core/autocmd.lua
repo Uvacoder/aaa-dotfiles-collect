@@ -24,6 +24,14 @@ vim.cmd([[
   augroup end
 ]])
 
+-- parker compile init.lua
+vim.cmd([[
+  augroup Packer
+    autocmd!
+    autocmd BufWritePost init.lua PackerCompile
+  augroup end
+]])
+
 -- TrimWhitespace on save
 vim.cmd([[
   fun! TrimWhitespace()

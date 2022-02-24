@@ -1,3 +1,5 @@
+require("core/options")
+
 local colorschemes = {
   "tokyo-dark", -- 1
   "doom-one", -- 2
@@ -9,27 +11,13 @@ local colorschemes = {
 
 vim.g.my_theme = "themes/" .. colorschemes[1]
 
-vim.g.my_colors = {
-  bg = "#000000",
-  bg_alt = "#090B10",
-  bg_select = "#23272E",
-  fg = "#6272A4",
-  blue = "#0087FF",
-  green = "#00FF5F",
-  yellow = "#FBFF00",
-  orange = "#FC7039",
-  red = "#ff0000",
-  white = "#ffffff",
-  purple = "#A400FF",
-}
+local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  packer_bootstrap = vim.fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+end
 
-require("core/disable")
-require("core/options")
-
-local use = require("packer").use
 require("packer").startup({
   function(use)
-    -- Packages
     require("set/packer").setup(use)
     require("set/battery").setup(use)
     require("set/modes").setup(use)
@@ -47,18 +35,23 @@ require("packer").startup({
     require("set/telescope").setup(use)
     require("set/indent-blank-line").setup(use)
     require("set/tree-sitter").setup(use)
-    require("set/refactoring").setup(use)
     require("set/cmp").setup(use)
     require("set/lsp-config").setup(use)
     require(vim.g.my_theme).setup(use)
+
+    if packer_bootstrap then
+      require("packer").sync()
+    end
   end,
+
   config = {
     display = {
-      open_fn = require("packer.util").float,
+      open_fn = function()
+        return require("packer.util").float({ border = "single" })
+      end,
     },
   },
 })
 
-require("core/autoload")
 require("core/mappings")
 require("core/autocmd")

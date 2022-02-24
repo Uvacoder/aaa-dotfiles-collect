@@ -1,3 +1,24 @@
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_python_provider = 0
+
+vim.g.python3_host_prog = "/usr/local/bin/python3"
+vim.g.node_host_prog = "/usr/local/lib/node_modules/neovim/bin/cli.js"
+
+vim.g.my_colors = {
+  bg = "#000000",
+  bg_alt = "#090B10",
+  bg_select = "#23272E",
+  fg = "#6272A4",
+  blue = "#0087FF",
+  green = "#00FF5F",
+  yellow = "#FBFF00",
+  orange = "#FC7039",
+  red = "#ff0000",
+  white = "#ffffff",
+  purple = "#A400FF",
+}
+
 -------------
 -- options --
 -------------
@@ -67,3 +88,28 @@ vim.opt.errorformat = [[
     %X%*a: Leaving directory [`']%f
     %-G%.%#
 ]]
+
+local disabled_built_ins = {
+  "netrw",
+  "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "gzip",
+  "zip",
+  "zipPlugin",
+  "tar",
+  "tarPlugin",
+  "getscript",
+  "getscriptPlugin",
+  "vimball",
+  "vimballPlugin",
+  "2html_plugin",
+  "logipat",
+  "rrhelper",
+  "spellfile_plugin",
+  "matchit",
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+  vim.g["loaded_" .. plugin] = 1
+end
