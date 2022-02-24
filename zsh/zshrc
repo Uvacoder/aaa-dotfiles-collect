@@ -41,7 +41,8 @@ plugins=(
 
 
 # ZSH
-alias zsh="v $HOME/.zshrc"
+# rename zsh to zshv, because zsh show errors when update
+alias zshv="v $HOME/.zshrc"
 alias sz="source $HOME/.zshrc"
 
 
@@ -176,8 +177,5 @@ function git-init(){
 
 
 source $ZSH/oh-my-zsh.sh
-
-# source ~/.zshrc
-
 
 # eval "$(starship init zsh)"

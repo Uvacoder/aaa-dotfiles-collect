@@ -64,11 +64,17 @@ return {
 
         ins_left({
           -- battery component
-          "%{Battery_icon()} %{battery#component()}",
-          color = { fg = colors.green, bg = colors.bg_alt },
+          "%{Battery_icon()}",
+          color = { fg = colors.red, bg = colors.bg_alt },
           padding = { left = 2 },
         })
 
+        ins_left({
+          -- battery component
+          "%{battery#component()}",
+          color = { fg = colors.green, bg = colors.bg_alt },
+          padding = { left = 1 },
+        })
         ins_left({
           -- mode component
           "mode",

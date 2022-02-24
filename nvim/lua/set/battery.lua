@@ -4,9 +4,10 @@ return {
       "lambdalisue/battery.vim",
 
       config = function()
+        --- let l:battery_icon = { 5: "", 4: "", 3: "", 2: "", 1: ""}
         vim.cmd([[
           fun! Battery_icon()
-            let l:battery_icon = { 5: "", 4: "", 3: "", 2: "", 1: ""}
+            let l:battery_icon = { 5: "ﯦ", 4: "", 3: "", 2: "", 1: " ﮣ "}
             let l:backend = battery#backend()
             let l:nf = float2nr(round(backend.value / 20.0))
             return printf('%s', get(battery_icon, nf))
