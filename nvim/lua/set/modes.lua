@@ -13,6 +13,7 @@ return {
             visual = vim.g.my_colors.purple,
           },
           line_opacity = 0.4,
+          set_cursor = true,
           focus_only = false,
         })
       end,
