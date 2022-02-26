@@ -7,9 +7,10 @@ local colorschemes = {
   "one-dark", -- 4
   "rose-pine", -- 5
   "night-fox", -- 6
+  "cobalt2", --7
 }
 
-vim.g.my_theme = "themes/" .. colorschemes[1]
+vim.g.my_theme = "themes/" .. colorschemes[2]
 
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then

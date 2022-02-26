@@ -6,7 +6,7 @@ return {
       config = function()
         vim.cmd([[
           fun! Battery_icon_full()
-            let l:battery_icon = { 4: "", 3: "", 2: "", 1: "", 0: "" }
+            let l:battery_icon = {6: "", 5: "",  4: "", 3: "", 2: "", 1: "", 0: "" }
             let l:backend = battery#backend()
             let l:nf = float2nr(round(backend.value / 20.0))
             return printf('%s', get(battery_icon, nf))
@@ -15,7 +15,7 @@ return {
 
         vim.cmd([[
           fun! Battery_icon_warn()
-            let l:battery_icon = { 4: "", 3: "", 2: "", 1: "", 0: "" }
+            let l:battery_icon = { 6: "", 5: "", 4: "", 3: "", 2: "", 1: "", 0: "" }
             let l:backend = battery#backend()
             let l:nf = float2nr(round(backend.value / 20.0))
             return printf('%s', get(battery_icon, nf))
@@ -24,7 +24,7 @@ return {
 
         vim.cmd([[
           fun! Battery_icon_low()
-            let l:battery_icon = { 4: "", 3: "", 2: "", 1: "", 0: "" }
+            let l:battery_icon = { 6: "", 5: "", 4: "", 3: "", 2: "", 1: "", 0: "" }
             let l:backend = battery#backend()
             let l:nf = float2nr(round(backend.value / 20.0))
             return printf('%s', get(battery_icon, nf))
