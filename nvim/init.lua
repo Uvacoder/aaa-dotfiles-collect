@@ -20,6 +20,7 @@ end
 require("packer").startup({
   function(use)
     require("set/packer").setup(use)
+    require("set/impatient").setup(use)
     require("set/battery").setup(use)
     require("set/modes").setup(use)
     require("set/colorizer").setup(use)

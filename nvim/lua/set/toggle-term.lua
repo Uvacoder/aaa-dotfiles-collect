@@ -6,18 +6,14 @@ return {
       config = function()
         require("toggleterm").setup({
           -- direction = "vertical",
-          -- size = 34, -- vim.o.columns * 0.5,
+          -- size = vim.o.columns * 0.7,
           --
           -- direction = "horizontal",
           -- size = 11,
           --
           direction = "float",
-          float_opts = {
-            border = "double",
-            highlights = {
-              border = "Normal",
-            },
-          },
+          float_opts = { border = "double" },
+          --
           open_mapping = [[<C-\>]],
           hide_numbers = true,
           shade_terminals = true,

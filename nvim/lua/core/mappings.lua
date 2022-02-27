@@ -40,10 +40,12 @@ vim.keymap.set("n", "rr", ":%s///gcI<Left><Left><Left><Left><Left>", { noremap =
 vim.keymap.set("n", "<Esc><Esc><Esc>", "<cmd>nohlsearch<CR><Esc>", { noremap = true, silent = true })
 
 --Add move line shortcuts
-vim.keymap.set("n", "<S-K>", ":m .-2<CR>==", { noremap = true })
-vim.keymap.set("n", "<S-J>", ":m .+1<CR>==", { noremap = true })
-vim.keymap.set("v", "<S-J>", ":m '>+1<CR>gv=gv", { noremap = true })
-vim.keymap.set("v", "<S-K>", ":m '<-2<CR>gv=gv", { noremap = true })
+vim.api.nvim_set_keymap("n", "<S-j>", ":m .+1<CR>==", { noremap = true })
+vim.api.nvim_set_keymap("n", "<S-k>", ":m .-2<CR>==", { noremap = true })
+vim.api.nvim_set_keymap("i", "<S-j>", "<Esc>:m .+1<CR>==gi", { noremap = true })
+vim.api.nvim_set_keymap("i", "<S-k>", "<Esc>:m .-2<CR>==gi", { noremap = true })
+vim.api.nvim_set_keymap("v", "<S-j>", ":m '>+1<CR>gv=gv", { noremap = true })
+vim.api.nvim_set_keymap("v", "<S-k>", ":m '<-2<CR>gv=gv", { noremap = true })
 
 -- Better indenting
 vim.keymap.set("v", "<TAB>", ">gv", { noremap = true, silent = true })
