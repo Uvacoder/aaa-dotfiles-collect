@@ -1,16 +1,17 @@
 require("core/options")
 
 local colorschemes = {
-  "tokyo-dark", -- 1
+  "cobalt2", --1
   "doom-one", -- 2
   "gruvbox-flat", -- 3
-  "one-dark", -- 4
-  "rose-pine", -- 5
-  "night-fox", -- 6
-  "cobalt2", --7
+  "night-fox", -- 4
+  "one-dark", -- 5
+  "rose-pine", -- 6
+  "tokyo-dark", -- 7
+  "tokyo-night", -- 8
 }
 
-vim.g.my_theme = "themes/" .. colorschemes[2]
+vim.g.my_theme = "themes/" .. colorschemes[8]
 
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -34,6 +35,7 @@ require("packer").startup({
     require("set/trouble").setup(use)
     require("set/buffer-line").setup(use)
     require("set/lua-line").setup(use)
+    require("set/project").setup(use)
     require("set/telescope").setup(use)
     require("set/indent-blank-line").setup(use)
     require("set/tree-sitter").setup(use)

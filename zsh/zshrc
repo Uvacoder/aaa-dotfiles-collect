@@ -62,8 +62,6 @@ alias v="nvim"
 alias s="subl"
 alias c="code --disable-gpu"
 
-alias wget="ruget"
-
 # Busca
 alias psa="ps aux"
 alias psg="ps aux | grep "
