@@ -14,7 +14,7 @@
         <key>RunAtLoad</key>
         <true/>
         <key>StartInterval</key>
-        <integer>60</integer>
+        <integer>120</integer>
         <key>StandardErrorPath</key>
         <string>/tmp/battery.err</string>
         <key>StandardOutPath</key>
