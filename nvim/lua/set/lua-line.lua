@@ -64,27 +64,6 @@ return {
 
         ins_left({
           -- battery component
-          "%{Battery_icon_low()}",
-          color = { fg = colors.red, bg = colors.bg_alt },
-          padding = { left = 2 },
-        })
-
-        ins_left({
-          -- battery component
-          "%{Battery_icon_warn()}",
-          color = { fg = colors.yellow, bg = colors.bg_alt },
-          padding = { left = 0 },
-        })
-
-        ins_left({
-          -- battery component
-          "%{Battery_icon_full()}",
-          color = { fg = colors.green, bg = colors.bg_alt },
-          padding = { left = 0 },
-        })
-
-        ins_left({
-          -- battery component
           "%{battery#component()}",
           color = { fg = colors.fg, bg = colors.bg_alt },
           padding = { left = 1 },

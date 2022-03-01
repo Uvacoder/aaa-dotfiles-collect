@@ -81,6 +81,10 @@ source .zshrc
 
 
 ````
+install macports:
+https://ports.macports.org
+
+
 install rust, stylua and ripgrep for neovim
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
