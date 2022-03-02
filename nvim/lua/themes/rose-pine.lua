@@ -8,14 +8,13 @@ return {
       config = function()
         require("rose-pine").setup({
           ---@usage 'main'|'moon'
-          dark_variant = "main",
+          dark_variant = "moon",
           bold_vert_split = false,
           dim_nc_background = false,
-          disable_background = true,
+          disable_background = false,
           disable_float_background = false,
           disable_italics = false,
           groups = {
-            bg = vim.g.my_colors.bg,
             error = vim.g.my_colors.red,
             warn = vim.g.my_colors.yellow,
             info = vim.g.my_colors.blue,
@@ -29,7 +28,7 @@ return {
 
         vim.cmd([[colorscheme rose-pine]])
 
-        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my_colors.bg })
+        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = "#232136" })
       end,
     })
   end,

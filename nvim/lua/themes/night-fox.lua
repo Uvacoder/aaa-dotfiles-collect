@@ -6,8 +6,8 @@ return {
       config = function()
         local nightfox = require("nightfox")
         nightfox.setup({
-          fox = "nightfox", -- nightfox, nordfox, duskfox
-          transparent = true,
+          fox = "duskfox", -- nightfox, nordfox, duskfox
+          transparent = false,
           alt_nc = true,
           terminal_colors = true,
           styles = {
@@ -23,8 +23,8 @@ return {
             search = true,
           },
           colors = {
-            bg = vim.g.my_colors.bg,
-            bg_alt = vim.g.my_colors.bg_alt,
+            -- bg = vim.g.my_colors.bg,
+            -- bg_alt = vim.g.my_colors.bg_alt,
             error = vim.g.my_colors.red,
             warning = vim.g.my_colors.yellow,
             info = vim.g.my_colors.blue,
@@ -39,6 +39,8 @@ return {
         })
 
         nightfox.load()
+
+        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = "#232136" })
       end,
     })
   end,

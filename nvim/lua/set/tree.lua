@@ -6,14 +6,10 @@ return {
       requires = "kyazdani42/nvim-web-devicons",
 
       config = function()
-        vim.g.nvim_tree_quit_on_open = 1
         vim.g.nvim_tree_indent_markers = 1
         vim.g.nvim_tree_git_hl = 0
         vim.g.nvim_tree_refresh_wait = 250
-        vim.g.nvim_tree_window_picker_exclude = {
-          ["filetype"] = { "notify", "packer", "qf" },
-          ["buftype"] = { "terminal" },
-        }
+        vim.g.nvim_tree_special_files = {}
         vim.g.nvim_tree_show_icons = {
           git = 1,
           folders = 1,
@@ -32,23 +28,42 @@ return {
             deleted = "",
             ignored = "◌",
           },
+          folder = {
+            arrow_open = "",
+            arrow_closed = "",
+            default = "",
+            open = "",
+            empty = "",
+            empty_open = "",
+            symlink = "",
+            symlink_open = "",
+          },
         }
 
         require("nvim-tree").setup({
           disable_netrw = true,
           hijack_netrw = true,
           open_on_setup = false,
+          ignore_buffer_on_setup = false,
           ignore_ft_on_setup = {},
           auto_close = true,
+          auto_reload_on_write = true,
           open_on_tab = false,
           hijack_cursor = false,
           update_cwd = false,
-          update_to_buf_dir = {
+          hijack_unnamed_buffer_when_opening = false,
+          hijack_directories = {
             enable = true,
             auto_open = true,
           },
           diagnostics = {
             enable = false,
+            icons = {
+              hint = "",
+              info = "",
+              warning = "",
+              error = "",
+            },
           },
           update_focused_file = {
             enable = true,
@@ -77,13 +92,14 @@ return {
           git = {
             enable = true,
             ignore = true,
-            timeout = 500,
+            timeout = 300,
           },
           view = {
             width = 40,
+            height = 30,
             hide_root_folder = false,
             side = "left",
-            auto_resize = false,
+            preserve_window_proportins = false,
             mappings = {
               custom_only = false,
               list = {},
@@ -95,6 +111,24 @@ return {
           trash = {
             cmd = "trash",
             require_confirm = true,
+          },
+          actions = {
+            change_dir = {
+              enable = true,
+              global = false,
+            },
+            open_file = {
+              quit_on_open = true,
+              resize_window = false,
+              window_picker = {
+                enable = true,
+                chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+                exclude = {
+                  filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+                  buftype = { "nofile", "terminal", "help" },
+                },
+              },
+            },
           },
         })
 

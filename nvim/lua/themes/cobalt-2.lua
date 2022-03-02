@@ -17,7 +17,7 @@ return {
         vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { fg = vim.g.my_colors.yellow })
         vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = vim.g.my_colors.red })
 
-        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = "#122637" })
+        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = "#193549" })
       end,
     })
   end,

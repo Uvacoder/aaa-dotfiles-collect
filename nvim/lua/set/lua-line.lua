@@ -10,6 +10,29 @@ return {
       config = function()
         local colors = vim.g.my_colors
 
+        local mode_color = {
+          n = colors.fg,
+          i = colors.green,
+          v = colors.blue,
+          [""] = colors.blue,
+          V = colors.blue,
+          c = colors.purple,
+          no = colors.fg,
+          s = colors.orange,
+          S = colors.orange,
+          [""] = colors.orange,
+          ic = colors.yellow,
+          R = colors.red,
+          Rv = colors.red,
+          cv = colors.purple,
+          ce = colors.purple,
+          r = colors.red,
+          rm = colors.red,
+          ["r?"] = colors.white,
+          ["!"] = colors.fg,
+          t = colors.white,
+        }
+
         local lualine = require("lualine")
 
         local conditions = {
@@ -72,7 +95,9 @@ return {
         ins_left({
           -- mode component
           "mode",
-          color = { fg = colors.fg, bg = colors.bg_alt },
+          color = function()
+            return { fg = mode_color[vim.fn.mode()] }
+          end,
           padding = { left = 2 },
         })
 

@@ -1,7 +1,7 @@
 require("core/options")
 
 local colorschemes = {
-  "cobalt2", --1
+  "cobalt-2", --1
   "doom-one", -- 2
   "gruvbox-flat", -- 3
   "night-fox", -- 4
@@ -11,7 +11,7 @@ local colorschemes = {
   "tokyo-night", -- 8
 }
 
-vim.g.my_theme = "themes/" .. colorschemes[8]
+vim.g.my_theme = "themes/" .. colorschemes[4]
 
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
