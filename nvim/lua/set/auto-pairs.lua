@@ -1,11 +1,11 @@
 return {
-  setup = function(use)
-    use({
-      "windwp/nvim-autopairs",
+	setup = function(use)
+		use({
+			"windwp/nvim-autopairs",
 
-      config = function()
-        require("nvim-autopairs").setup({})
-      end,
-    })
-  end,
+			config = function()
+				require("nvim-autopairs").setup({})
+			end,
+		})
+	end,
 }
