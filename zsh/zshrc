@@ -94,7 +94,7 @@ alias ptu="cd /Volumes/Sites/pousada_do_tucunare_2020 && clear"
 alias sen="cd /Volumes/Sites/santos_e_nascimento_2020 && clear"
 
 # Code
-alias ff="cd /Volumes/Code/auton-vite-quasar-firebase && clear"
+alias ee="cd /Volumes/Code/endless-quasar-app && clear"
 alias esh="cd /Volumes/Code/e-shop && clear"
 alias low="cd /Volumes/Code/nuxt-express-auth-lowdb-admin && clear"
 alias cds="cd /Volumes/Code/car-dealership-2020 && clear"
