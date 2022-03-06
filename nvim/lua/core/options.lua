@@ -5,29 +5,7 @@ vim.g.loaded_python_provider = 0
 vim.g.python3_host_prog = "/usr/local/bin/python3"
 vim.g.node_host_prog = "/usr/local/lib/node_modules/neovim/bin/cli.js"
 
-vim.g.my_icons = {
-  hint = "",
-  info = "",
-  warning = "",
-  error = "",
-}
-
-vim.g.my_colors = {
-  bg = "#000000",
-  bg_alt = "#090B10",
-  bg_select = "#23272E",
-  fg = "#6272A4",
-  blue = "#0087FF",
-  green = "#00FF5F",
-  yellow = "#FBFF00",
-  orange = "#FC7039",
-  red = "#ff0000",
-  white = "#ffffff",
-  purple = "#A400FF",
-}
-
--------------
--- options --
+------------- -- options --
 -------------
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

@@ -105,7 +105,8 @@ return {
           "diagnostics",
           sources = { "nvim_diagnostic" },
           -- symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' },
-          symbols = { error = " ", warn = " ", info = " ", hint = "ﴞ " },
+
+          symbols = { error = vim.g.icons.error .." ", vim.g.icons.warning .." ", vim.g.icons.info .. " ", vim.g.icons.hint .. " " },
           diagnostics_color = {
             color_error = { fg = colors.red },
             color_warn = { fg = colors.yellow },
