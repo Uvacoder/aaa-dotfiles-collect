@@ -30,6 +30,7 @@ require("packer").startup({
     require("set/tree-sitter").setup(use)
     require("set/cmp").setup(use)
     require("set/lsp-config").setup(use)
+    require("set/volar").setup(use)
     require("themes/" .. vim.g.my_themes[vim.g.my_theme_selected]).setup(use)
     require("set/modes").setup(use)
     require("set/trouble").setup(use)
