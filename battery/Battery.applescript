@@ -4,7 +4,7 @@ set batteryPower to word 4 of paragraph 1 of (do shell script "pmset -g batt")
 if batteryPower = "Battery" then
 	if batteryPercent > 10 and batteryPercent < 21 then
 
-		display alert "low battery " & batteryPercent
+		display alert "low battery " & batteryPercent & "%."
 
 	else if batteryPercent < 11 then
 
