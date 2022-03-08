@@ -106,7 +106,7 @@ return {
           sources = { "nvim_diagnostic" },
           -- symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' },
 
-          symbols = { error = vim.g.icons.error .." ", vim.g.icons.warning .." ", vim.g.icons.info .. " ", vim.g.icons.hint .. " " },
+          symbols = { error = vim.g.icons.error, warn = vim.g.icons.warning, info = vim.g.icons.info, hint = vim.g.icons.hint },
           diagnostics_color = {
             color_error = { fg = colors.red },
             color_warn = { fg = colors.yellow },
@@ -195,7 +195,7 @@ return {
           "diff",
           -- Is it me or the symbol for modified us really weird
           -- symbols = { added = '+', modified = '~', removed = '-' },
-          symbols = { added = " ", modified = " ", removed = " " },
+          symbols = { added = vim.g.icons.add, modified = vim.g.icons.change, removed = vim.g.icons.delete },
           diff_color = {
             added = { fg = colors.green },
             modified = { fg = colors.yellow },

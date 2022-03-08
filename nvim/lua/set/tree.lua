@@ -6,38 +6,12 @@ return {
       requires = "kyazdani42/nvim-web-devicons",
 
       config = function()
-        vim.g.nvim_tree_indent_markers = 1
-        vim.g.nvim_tree_git_hl = 0
-        vim.g.nvim_tree_refresh_wait = 250
         vim.g.nvim_tree_special_files = {}
-        vim.g.nvim_tree_show_icons = {
-          git = 1,
-          folders = 1,
-          files = 1,
-          folder_arrows = 0,
-        }
+        vim.g.nvim_tree_show_icons = { git = 1, folders = 1, files = 1, folder_arrows = 0 }
         vim.g.nvim_tree_icons = {
           default = " ",
           symlink = " ",
-          git = {
-            unstaged = "",
-            staged = "",
-            unmerged = "",
-            renamed = "",
-            untracked = "",
-            deleted = "",
-            ignored = "◌",
-          },
-          folder = {
-            arrow_open = "",
-            arrow_closed = "",
-            default = "",
-            open = "",
-            empty = "",
-            empty_open = "",
-            symlink = "",
-            symlink_open = "",
-          },
+          git = { unstaged = "", staged = "", unmerged = "", renamed = "", untracked = "", deleted = "", ignored = "◌" },
         }
 
         require("nvim-tree").setup({
@@ -58,12 +32,7 @@ return {
           },
           diagnostics = {
             enable = false,
-            icons = {
-              hint = "",
-              info = "",
-              warning = "",
-              error = "",
-            },
+            icons = { hint = "", info = "", warning = "", error = "" },
           },
           update_focused_file = {
             enable = true,
@@ -76,18 +45,7 @@ return {
           },
           filters = {
             dotfiles = true,
-            custom = {
-              "packer_compiled.lua",
-              "store-flag.d.ts",
-              "quasar.d.ts",
-              "dist",
-              "plugin",
-              "netlify.toml",
-              "jsconfig.json",
-              "package-lock.json",
-              "node_modules",
-              "babel.config.js",
-            },
+            custom = { "packer_compiled.lua", "store-flag.d.ts", "quasar.d.ts", "dist", "plugin", "netlify.toml", "jsconfig.json", "package-lock.json", "node_modules", "babel.config.js" },
           },
           git = {
             enable = true,
@@ -95,8 +53,8 @@ return {
             timeout = 300,
           },
           view = {
-            width = 40,
-            height = 30,
+            -- width = 40,
+            -- height = 30,
             hide_root_folder = false,
             side = "left",
             preserve_window_proportins = false,

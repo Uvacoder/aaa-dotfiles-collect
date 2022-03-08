@@ -38,7 +38,7 @@ return {
             cmd = volar_cmd,
             root_dir = volar_root_dir,
             on_new_config = on_new_config,
-            filetypes = { "vue" },
+            filetypes = { "vue", "javascript", "javascriptreact", "json" },
             -- If you want to ue Volar's Take Over Mode (if you know, you know)
             --filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
             init_options = {
