@@ -9,8 +9,6 @@ return {
       },
 
       config = function()
-        vim.lsp.buf.formatting_sync(nil, 2000)
-
         local opts = { noremap = true, silent = true }
 
         -- Diagnostic keymaps
@@ -38,7 +36,7 @@ return {
           vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 
           if client.resolved_capabilities.document_formatting then
-            vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()")
+            vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 3000)")
           end
         end
 
@@ -93,10 +91,10 @@ return {
         })
 
         local signs = {
-          Error = vim.g.icons.error,
-          Warn = vim.g.icons.warning,
-          Info = vim.g.icons.info,
-          Hint = vim.g.icons.hint,
+          Error = vim.g.my_icons.error,
+          Warn = vim.g.my_icons.warning,
+          Info = vim.g.my_icons.info,
+          Hint = vim.g.my_icons.hint,
         }
 
         for type, icon in pairs(signs) do

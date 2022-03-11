@@ -9,15 +9,16 @@ return {
 
       config = function()
         local colors = vim.g.my_colors
+        local ui_colors = vim.g.my_ui_colors
 
         local mode_color = {
-          n = colors.fg,
+          n = ui_colors.fg,
           i = colors.green,
           v = colors.blue,
           [""] = colors.blue,
           V = colors.blue,
           c = colors.purple,
-          no = colors.fg,
+          no = ui_colors.fg,
           s = colors.orange,
           S = colors.orange,
           [""] = colors.orange,
@@ -29,7 +30,7 @@ return {
           r = colors.red,
           rm = colors.red,
           ["r?"] = colors.white,
-          ["!"] = colors.fg,
+          ["!"] = ui_colors.fg,
           t = colors.white,
         }
 
@@ -57,8 +58,8 @@ return {
             component_separators = "",
             section_separators = "",
             theme = {
-              normal = { c = { fg = colors.fg, bg = colors.bg_alt } },
-              inactive = { c = { fg = colors.fg, bg = colors.bg_alt } },
+              normal = { c = { fg = ui_colors.fg, bg = ui_colors.bg_alt } },
+              inactive = { c = { fg = ui_colors.fg, bg = ui_colors.bg_alt } },
             },
           },
           sections = {
@@ -88,7 +89,7 @@ return {
         ins_left({
           -- battery component
           "%{battery#component()}",
-          color = { fg = colors.fg, bg = colors.bg_alt },
+          color = { fg = ui_colors.fg, bg = ui_colors.bg_alt },
           padding = { left = 1 },
         })
 
@@ -106,7 +107,7 @@ return {
           sources = { "nvim_diagnostic" },
           -- symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' },
 
-          symbols = { error = vim.g.icons.error, warn = vim.g.icons.warning, info = vim.g.icons.info, hint = vim.g.icons.hint },
+          symbols = { error = vim.g.my_icons.error, warn = vim.g.my_icons.warning, info = vim.g.my_icons.info, hint = vim.g.my_icons.hint },
           diagnostics_color = {
             color_error = { fg = colors.red },
             color_warn = { fg = colors.yellow },
@@ -136,7 +137,7 @@ return {
         })
 
         ins_left({ "location" })
-        ins_left({ "progress", color = { fg = colors.fg } })
+        ins_left({ "progress", color = { fg = ui_colors.fg } })
 
         -- Insert mid section. You can make any number of sections in neovim :)
         -- for lualine it's any number greater then 2
@@ -146,7 +147,7 @@ return {
           end,
         })
 
-        ins_left({ "lsp_progress", color = { fg = colors.fg } })
+        ins_left({ "lsp_progress", color = { fg = ui_colors.fg } })
 
         ins_left({
           -- Lsp server name .
@@ -165,7 +166,7 @@ return {
             end
             return msg
           end,
-          color = { fg = colors.fg },
+          color = { fg = ui_colors.fg },
         })
 
         -- Add components to right sections
@@ -173,7 +174,7 @@ return {
           "fileformat",
           icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
           padding = { right = 1 },
-          color = { fg = colors.fg },
+          color = { fg = ui_colors.fg },
         })
 
         ins_right({
@@ -182,7 +183,7 @@ return {
           -- fmt = string.upper, -- I'm not sure why it's upper case either ;)
           cond = conditions.hide_in_width,
           padding = { right = 2 },
-          color = { fg = colors.fg },
+          color = { fg = ui_colors.fg },
         })
 
         ins_right({
@@ -195,7 +196,7 @@ return {
           "diff",
           -- Is it me or the symbol for modified us really weird
           -- symbols = { added = '+', modified = '~', removed = '-' },
-          symbols = { added = vim.g.icons.add, modified = vim.g.icons.change, removed = vim.g.icons.delete },
+          symbols = { added = vim.g.my_icons.add, modified = vim.g.my_icons.change, removed = vim.g.my_icons.delete },
           diff_color = {
             added = { fg = colors.green },
             modified = { fg = colors.yellow },

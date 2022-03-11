@@ -1,3 +1,9 @@
+vim.g.my_ui_colors = {
+  fg = "#6272A4",
+  bg = "#000000",
+  bg_alt = "#090B10",
+}
+
 return {
 
   setup = function(use)
@@ -27,7 +33,7 @@ return {
         vim.api.nvim_set_hl(ns, "DiagnosticSignWarn", { fg = vim.g.my_colors.yellow })
         vim.api.nvim_set_hl(ns, "DiagnosticSignError", { fg = vim.g.my_colors.red })
 
-        vim.api.nvim_set_hl(ns, "IndentBlanklineChar", { fg = vim.g.my_colors.bg })
+        vim.api.nvim_set_hl(ns, "IndentBlanklineChar", { fg = vim.g.my_ui_colors.bg })
       end,
     })
   end,

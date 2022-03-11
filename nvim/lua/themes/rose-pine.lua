@@ -1,3 +1,9 @@
+vim.g.my_ui_colors = {
+  fg = "#6272A4",
+  bg = "#232136",
+  bg_alt = "#2A223C",
+}
+
 return {
   setup = function(use)
     use({
@@ -28,7 +34,7 @@ return {
 
         vim.cmd([[colorscheme rose-pine]])
 
-        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = "#232136" })
+        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my_ui_colors.bg })
       end,
     })
   end,

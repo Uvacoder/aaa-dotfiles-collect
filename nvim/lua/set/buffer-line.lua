@@ -15,14 +15,17 @@ return {
             show_close_icon = false,
             show_buffer_close_icons = false,
             enforce_regular_tabs = true,
-            always_show_bufferline = false,
+            always_show_bufferline = true,
             separator_style = { "", "" },
+            offsets = {
+              { filetype = "NvimTree", text = "File Explorer", highlight = "Directory", text_align = "left" },
+            },
           },
           highlights = {
-            buffer_selected = { gui = "bold", guibg = vim.g.my_colors.bg },
-            background = { guibg = vim.g.my_colors.bg_alt },
-            fill = { guibg = vim.g.my_colors.bg_alt },
-            tab = { guibg = vim.g.my_colors.bg_alt },
+            buffer_selected = { gui = "bold", guibg = vim.g.my_ui_colors.bg },
+            background = { guibg = vim.g.my_ui_colors.bg_alt },
+            fill = { guibg = vim.g.my_ui_colors.bg_alt },
+            tab = { guibg = vim.g.my_ui_colors.bg_alt },
           },
         })
 

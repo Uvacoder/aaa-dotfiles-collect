@@ -25,10 +25,10 @@ return {
           auto_fold = false,
           use_diagnostic_signs = true,
           signs = {
-            error =vim.g.icons.error,
-            warning = vim.g.icons.warning,
-            information = vim.g.icons.info,
-            hint = vim.g.icons.hint,
+            error =vim.g.my_icons.error,
+            warning = vim.g.my_icons.warning,
+            information = vim.g.my_icons.info,
+            hint = vim.g.my_icons.hint,
             other = "﫠",
           },
         })
