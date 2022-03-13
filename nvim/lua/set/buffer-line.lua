@@ -3,18 +3,20 @@ return {
     use({
       "akinsho/nvim-bufferline.lua",
 
-      requires = { "kyazdani42/nvim-web-devicons", opt = true },
+      -- requires = { "kyazdani42/nvim-web-devicons", opt = true },
 
       config = function()
+        local ui_colors = vim.g.my_ui_colors
+
         require("bufferline").setup({
           options = {
-            -- numbers = "buffer_id",
-            max_name_length = 22,
-            tab_size = 22,
+            diagnostics = false,
+            modified_icon = vim.g.my_icons.modified,
+            show_buffer_icons = false,
             indicator_icon = "",
             show_close_icon = false,
             show_buffer_close_icons = false,
-            enforce_regular_tabs = true,
+            enforce_regular_tabs = false,
             always_show_bufferline = true,
             separator_style = { "", "" },
             offsets = {
@@ -22,10 +24,10 @@ return {
             },
           },
           highlights = {
-            buffer_selected = { gui = "bold", guibg = vim.g.my_ui_colors.bg },
-            background = { guibg = vim.g.my_ui_colors.bg_alt },
-            fill = { guibg = vim.g.my_ui_colors.bg_alt },
-            tab = { guibg = vim.g.my_ui_colors.bg_alt },
+            buffer_selected = { gui = "bold" },
+            background = { guibg = ui_colors.bg_alt },
+            fill = { guibg = ui_colors.bg_alt },
+            tab = { guibg = ui_colors.bg },
           },
         })
 

@@ -26,9 +26,9 @@ vim.cmd([[
 
 -- parker compile init.lua
 vim.cmd([[
-  augroup Packer
+  augroup packer_user_config
     autocmd!
-    autocmd BufWritePost init.lua PackerCompile
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
   augroup end
 ]])
 

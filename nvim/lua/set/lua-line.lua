@@ -86,12 +86,12 @@ return {
           table.insert(config.sections.lualine_x, component)
         end
 
-        ins_left({
-          -- battery component
-          "%{battery#component()}",
-          color = { fg = ui_colors.fg, bg = ui_colors.bg_alt },
-          padding = { left = 1 },
-        })
+        -- ins_left({
+        --   -- battery component
+        --   "%{battery#component()}",
+        --   color = { fg = ui_colors.fg, bg = ui_colors.bg_alt },
+        --   padding = { left = 1 },
+        -- })
 
         ins_left({
           -- mode component
@@ -128,7 +128,7 @@ return {
         ins_left({
           "filename",
           symbols = {
-            modified = " ", -- Text to show when the file is modified.
+            modified = " " .. vim.g.my_icons.modified, -- Text to show when the file is modified.
             readonly = " ", -- Text to show when the file is non-modifiable or readonly.
             unnamed = "[No Name]", -- Text to show for unnamed buffers.
           },

@@ -1,7 +1,7 @@
 vim.g.my_ui_colors = {
-  fg = "#6272A4",
+  fg = "#6e6a86",
   bg = "#232136",
-  bg_alt = "#2A223C",
+  bg_alt = "#2a273f",
 }
 
 return {
@@ -13,11 +13,10 @@ return {
 
       config = function()
         require("rose-pine").setup({
-          ---@usage 'main'|'moon'
-          dark_variant = "moon",
+          dark_variant = "moon", -- 'main'|'moon'
           bold_vert_split = false,
           dim_nc_background = false,
-          disable_background = false,
+          disable_background = true,
           disable_float_background = false,
           disable_italics = false,
           groups = {
