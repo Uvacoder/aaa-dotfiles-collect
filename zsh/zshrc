@@ -13,15 +13,13 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/Users/sldobri/.nvim-osx64/bin:$PATH"
 # export PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:$PATH"
 
-
-
 DISABLE_LS_COLORS="true"
 HIST_STAMPS="yyyy-mm-dd"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 ZSH_DISABLE_COMPFIX="true"
-ZSH_THEME="apple"
+ZSH_THEME="refined"
 
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -82,6 +80,7 @@ alias sites="cd /Volumes/sites"
 
 # dotfiles
 alias dot="cd $HOME/.dotfiles"
+alias vv="cd $HOME/.dotfiles/nvim && v"
 
 # Site
 alias sm="cd /Volumes/Sites/site-modelo-2021 && clear"
