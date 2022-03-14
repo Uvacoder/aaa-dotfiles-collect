@@ -19,9 +19,14 @@ return {
 
         local nvim_lsp = require("lspconfig")
 
-        nvim_lsp.volar.setup({
-          filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-        })
+        -- nvim_lsp.volar.setup({
+        --   filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+        --   -- init_options = {
+        --   --   typescript = {
+        --   --     serverPath = "~/.npm/lib/node_modules/typescript/lib/tsserverlib.js",
+        --   --   },
+        --   -- },
+        -- })
 
         local on_attach = function(client, bufnr)
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
@@ -39,12 +44,11 @@ return {
           vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
           vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
           -- vim.keymap.set("n", "<leader>so", require("telescope.builtin").lsp_document_symbols, opts)
-          vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+          -- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 
           if client.resolved_capabilities.document_formatting then
             vim.keymap.set("n", "f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
             vim.cmd("command! Format execute 'lua vim.lsp.buf.formatting()'")
-            vim.cmd("autocmd BufWritePost *.vue,*.js lua vim.lsp.buf.formatting()")
 
             -- vim.cmd([[
             --   augroup lsp_format
@@ -67,7 +71,7 @@ return {
         -- local servers = { 'volar', 'tailwindcss', 'tsserver' }
         -- local servers = { 'vuels', 'tailwindcss', 'tsserver' }
         -- local servers = { "vuels", "tsserver" }
-        local servers = { "volar" }
+        local servers = { "volar", "tsserver" }
 
         for _, server_name in ipairs(servers) do
           local server_available, server = lsp_installer_servers.get_server(server_name)

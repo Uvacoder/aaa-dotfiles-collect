@@ -43,10 +43,10 @@ vim.keymap.set("n", "<Esc><Esc><Esc>", "<cmd>nohlsearch<CR><Esc>", { noremap = t
 --Add move line shortcuts
 vim.api.nvim_set_keymap("n", "<S-j>", ":m .+1<CR>==", { noremap = true })
 vim.api.nvim_set_keymap("n", "<S-k>", ":m .-2<CR>==", { noremap = true })
-vim.api.nvim_set_keymap("i", "<S-j>", "<Esc>:m .+1<CR>==gi", { noremap = true })
-vim.api.nvim_set_keymap("i", "<S-k>", "<Esc>:m .-2<CR>==gi", { noremap = true })
 vim.api.nvim_set_keymap("v", "<S-j>", ":m '>+1<CR>gv=gv", { noremap = true })
 vim.api.nvim_set_keymap("v", "<S-k>", ":m '<-2<CR>gv=gv", { noremap = true })
+-- vim.api.nvim_set_keymap("i", "<S-j>", "<Esc>:m .+1<CR>==gi", { noremap = true })
+-- vim.api.nvim_set_keymap("i", "<S-k>", "<Esc>:m .-2<CR>==gi", { noremap = true })
 
 -- Better indenting
 vim.keymap.set("v", "<TAB>", ">gv", { noremap = true, silent = true })
