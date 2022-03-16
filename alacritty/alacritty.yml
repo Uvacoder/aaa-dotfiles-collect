@@ -30,8 +30,8 @@ colors:
     cursor: '0xffffff'
 
   primary:
-    background: "0x232136"
-    foreground: "0xffffff" #"0x6272A4"
+    background: "0x191724"
+    foreground: "0x6272A4"
 
   normal:
     black: "0x181819"
