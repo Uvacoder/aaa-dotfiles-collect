@@ -17,14 +17,22 @@ vim.g.my_colors = {
 }
 
 vim.g.my_icons = {
-  hint = "",
-  info = "",
-  warning = "",
-  error = "",
-  add = "⏽",
-  change = "⏽",
-  delete = "⏽",
-  modified = ""
+  hint = ">",
+  info = "i",
+  warning = "w",
+  error = "e",
+  add = "+",
+  change = "~",
+  delete = "-",
+  modified = "*",
+  -- hint = "",
+  -- info = "",
+  -- warning = "",
+  -- error = "",
+  -- add = "⏽",
+  -- change = "⏽",
+  -- delete = "⏽",
+  -- modified = ""
 }
 
 -- -----------

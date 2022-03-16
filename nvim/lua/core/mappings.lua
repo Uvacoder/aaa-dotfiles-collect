@@ -20,6 +20,7 @@ vim.keymap.set("n", "-", "<PageUp>", { noremap = true, silent = true })
 
 -- delete buffer
 vim.keymap.set("n", "<C-x>", ":bd<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "x", ":bd<CR>", { noremap = true, silent = true })
 
 -- fold unfold html
 vim.keymap.set("n", "fc", "zfat", { noremap = true, silent = true })
@@ -32,6 +33,8 @@ vim.keymap.set("n", "aa", "ggVG", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-f>", ":Format<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-q>", ":q<CR>", { noremap = true, silent = true })
+
+-- vim.keymap.set("n", "q", ":q<CR>", { noremap = true, silent = true })
 
 -- Packer Sync
 vim.keymap.set("n", "<F5>", ":PackerSync<CR>", { noremap = true, silent = true })

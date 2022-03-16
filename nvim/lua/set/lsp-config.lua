@@ -19,14 +19,14 @@ return {
 
         local nvim_lsp = require("lspconfig")
 
-        -- nvim_lsp.volar.setup({
-        --   filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-        --   -- init_options = {
-        --   --   typescript = {
-        --   --     serverPath = "~/.npm/lib/node_modules/typescript/lib/tsserverlib.js",
-        --   --   },
-        --   -- },
-        -- })
+        nvim_lsp.volar.setup({
+          filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+          init_options = {
+            typescript = {
+              serverPath = "~/.local/share/nvim/lsp_servers/volar/node_modules/typescript/lib/tsserverlib.js",
+            },
+          },
+        })
 
         local on_attach = function(client, bufnr)
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
@@ -44,21 +44,8 @@ return {
           vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
           vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
           -- vim.keymap.set("n", "<leader>so", require("telescope.builtin").lsp_document_symbols, opts)
-          -- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
-
-          if client.resolved_capabilities.document_formatting then
-            vim.keymap.set("n", "f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-            vim.cmd("command! Format execute 'lua vim.lsp.buf.formatting()'")
-
-            -- vim.cmd([[
-            --   augroup lsp_format
-            --     autocmd! * <buffer>
-            --     autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync(nil, 2000)
-            --   augroup END
-            -- ]])
-          elseif client.resolved_capabilities.document_range_formatting then
-            vim.keymap.set("n", "<space>rf", ":lua vim.lsp.buf.range_formatting_sync()<CR>", opts)
-          end
+          vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+          vim.keymap.set("n", "<space>rf", ":lua vim.lsp.buf.range_formatting_sync()<CR>", opts)
         end
 
         local lsp_installer_servers = require("nvim-lsp-installer.servers")
@@ -69,9 +56,7 @@ return {
 
         -- Enable the following language servers
         -- local servers = { 'volar', 'tailwindcss', 'tsserver' }
-        -- local servers = { 'vuels', 'tailwindcss', 'tsserver' }
-        -- local servers = { "vuels", "tsserver" }
-        local servers = { "volar", "tsserver" }
+        local servers = { "volar" }
 
         for _, server_name in ipairs(servers) do
           local server_available, server = lsp_installer_servers.get_server(server_name)
@@ -88,6 +73,7 @@ return {
               -- Queue the server to be installed.
               print("Installing " .. server_name)
               server:install()
+              print("Installed ")
             end
           end
         end
