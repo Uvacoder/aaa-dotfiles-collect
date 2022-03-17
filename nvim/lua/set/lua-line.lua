@@ -99,7 +99,7 @@ return {
           color = function()
             return { fg = mode_color[vim.fn.mode()] }
           end,
-          padding = { left = 2 },
+          padding = { left = 3 },
         })
 
         ins_left({
@@ -117,14 +117,14 @@ return {
           padding = { left = 3 },
         })
 
-        ins_left({
-          "filetype",
-          colored = true,
-          icon_only = true,
-          padding = { left = 2 },
-          cond = conditions.buffer_not_empty,
-        })
-
+        -- ins_left({
+        --   "filetype",
+        --   colored = true,
+        --   icon_only = true,
+        --   padding = { left = 2 },
+        --   cond = conditions.buffer_not_empty,
+        -- })
+        --
         ins_left({
           "filename",
           symbols = {

@@ -17,24 +17,24 @@ vim.g.my_colors = {
 }
 
 vim.g.my_icons = {
-  hint = ">",
-  info = "i",
-  warning = "w",
-  error = "e",
-  add = "+",
-  change = "~",
-  delete = "-",
-  modified = "*",
-  -- hint = "",
-  -- info = "",
-  -- warning = "",
-  -- error = "",
-  -- add = "⏽",
-  -- change = "⏽",
-  -- delete = "⏽",
-  -- modified = ""
+  -- hint = ">",
+  -- info = ">",
+  -- warning = ">",
+  -- error = ">",
+  -- add = "+",
+  -- change = "~",
+  -- delete = "-",
+  -- modified = "*",
+  hint = "",
+  info = "",
+  warning = "",
+  error = "",
+  add = "|",
+  change = "|",
+  delete = "|",
+  modified = "ﰟ",
 }
-
+-- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 -- -----------
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
