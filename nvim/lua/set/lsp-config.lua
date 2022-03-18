@@ -4,51 +4,39 @@ return {
       "neovim/nvim-lspconfig", -- Collection of configurations for built-in LSP client
 
       requires = {
-        "williamboman/nvim-lsp-installer", -- Install language servers
         "hrsh7th/cmp-nvim-lsp",
       },
 
       config = function()
+        local nvim_lsp = require("lspconfig")
         local opts = { noremap = true, silent = true }
 
         -- Diagnostic keymaps
-        -- vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-        -- vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-        -- vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-        -- vim.keymap.set("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-
-        local nvim_lsp = require("lspconfig")
-
-        nvim_lsp.volar.setup({
-          filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-          init_options = {
-            typescript = {
-              serverPath = "~/.local/share/nvim/lsp_servers/volar/node_modules/typescript/lib/tsserverlib.js",
-            },
-          },
-        })
+        vim.api.nvim_set_keymap("n", "<space>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+        vim.api.nvim_set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+        vim.api.nvim_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+        vim.api.nvim_set_keymap("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
         local on_attach = function(client, bufnr)
-          vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-          vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-          vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-          vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
-          vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
-          vim.keymap.set("n", "<leader>wl", function()
-            vim.inspect(vim.lsp.buf.list_workspace_folders())
-          end, opts)
-          vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
-          vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-          vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-          vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-          -- vim.keymap.set("n", "<leader>so", require("telescope.builtin").lsp_document_symbols, opts)
-          vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
-          vim.keymap.set("n", "<space>rf", ":lua vim.lsp.buf.range_formatting_sync()<CR>", opts)
-        end
+          -- Enable completion triggered by <c-x><c-o>
+          vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-        local lsp_installer_servers = require("nvim-lsp-installer.servers")
+          -- See `:help vim.lsp.*` for documentation on any of the below functions
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>rf", ":lua vim.lsp.buf.range_formatting_sync()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-f>", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+        end
 
         -- nvim-cmp supports additional completion capabilities
         local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -56,45 +44,20 @@ return {
 
         -- Enable the following language servers
         -- local servers = { 'volar', 'tailwindcss', 'tsserver' }
-        local servers = { "volar" }
-
-        for _, server_name in ipairs(servers) do
-          local server_available, server = lsp_installer_servers.get_server(server_name)
-          if server_available then
-            server:on_ready(function()
-              local opts = {
-                on_attach = on_attach,
-                capabilities = capabilities,
-                flags = { debounce_text_changes = 150 },
-              }
-              server:setup(opts)
-            end)
-            if not server:is_installed() then
-              -- Queue the server to be installed.
-              print("Installing " .. server_name)
-              server:install()
-              print("Installed ")
-            end
-          end
+        local servers = { "volar", "tsserver" }
+        for _, lsp in pairs(servers) do
+          require("lspconfig")[lsp].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+          })
         end
 
         vim.diagnostic.config({
-          virtual_text = {
-            source = "always", -- Or "if_many"
-            prefix = "●", -- Could be '●', '▎', 'x'
-          },
+          virtual_text = true,
           signs = true,
           underline = true,
           update_in_insert = true,
           severity_sort = false,
-          float = {
-            focusable = false,
-            style = "minimal",
-            border = "rounded",
-            source = "always",
-            header = "",
-            prefix = "",
-          },
         })
 
         local signs = {

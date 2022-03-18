@@ -1,7 +1,7 @@
 vim.g.my_ui_colors = {
-  fg = "#6272A4",
-  bg = "#000000",
-  bg_alt = "#1F2135",
+  fg = "#6e6a86",
+  bg = "#191724",
+  bg_alt = "#1F1D2E",
 }
 
 return {

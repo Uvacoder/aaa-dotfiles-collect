@@ -1,7 +1,7 @@
 require("core/options")
 
 local themes = { "cobalt-2", "doom-one", "one-dark", "rose-pine", "tokyo-dark", "tokyo-night" }
-local theme_selected = themes[4]
+local theme_selected = themes[6]
 
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -27,7 +27,7 @@ require("packer").startup({
     require("set/cmp").setup(use)
     require("set/lsp-config").setup(use)
     require("set/modes").setup(use)
-    require("set/trouble").setup(use)
+    -- require("set/trouble").setup(use)
 
     require("themes/" .. theme_selected).setup(use)
 

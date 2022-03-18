@@ -12,7 +12,7 @@ return {
           -- size = 11,
           --
           direction = "float",
-          float_opts = { border = "double" },
+          float_opts = { border = "single" },
           --
           open_mapping = [[<C-\>]],
           hide_numbers = true,

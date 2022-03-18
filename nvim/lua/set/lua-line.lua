@@ -53,7 +53,8 @@ return {
         -- Config
         local config = {
           options = {
-            icons_enabled = true,
+            globalstatus = false,
+            icons_enabled = false,
             -- Disable sections and component separators
             component_separators = "",
             section_separators = "",
@@ -105,8 +106,6 @@ return {
         ins_left({
           "diagnostics",
           sources = { "nvim_diagnostic" },
-          -- symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' },
-
           symbols = { error = vim.g.my_icons.error, warn = vim.g.my_icons.warning, info = vim.g.my_icons.info, hint = vim.g.my_icons.hint },
           diagnostics_color = {
             color_error = { fg = colors.red },
@@ -128,11 +127,12 @@ return {
         ins_left({
           "filename",
           symbols = {
-            modified = " " .. vim.g.my_icons.modified, -- Text to show when the file is modified.
-            readonly = " ", -- Text to show when the file is non-modifiable or readonly.
+            -- modified = " " .. vim.g.my_icons.modified, -- Text to show when the file is modified.
+            -- readonly = " ", -- Text to show when the file is non-modifiable or readonly.
             unnamed = "[No Name]", -- Text to show for unnamed buffers.
           },
           cond = conditions.buffer_not_empty,
+          padding = { left = 3 },
           color = { fg = colors.white },
         })
 
@@ -172,14 +172,14 @@ return {
         -- Add components to right sections
         ins_right({
           "fileformat",
-          icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
+          icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
           padding = { right = 1 },
           color = { fg = ui_colors.fg },
         })
 
         ins_right({
           "o:encoding", -- option component same as &encoding in viml
-          icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
+          icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
           -- fmt = string.upper, -- I'm not sure why it's upper case either ;)
           cond = conditions.hide_in_width,
           padding = { right = 2 },
@@ -188,7 +188,7 @@ return {
 
         ins_right({
           "branch",
-          icon = "",
+          -- icon = "",
           color = { fg = "#ffffff" },
         })
 
