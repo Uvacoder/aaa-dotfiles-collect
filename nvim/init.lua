@@ -1,7 +1,7 @@
 require("core/options")
 
 local themes = { "cobalt-2", "doom-one", "one-dark", "rose-pine", "tokyo-dark", "tokyo-night", "ever-forest" }
-local theme_selected = themes[7]
+local theme_selected = themes[6]
 
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
