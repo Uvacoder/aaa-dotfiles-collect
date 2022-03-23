@@ -1,34 +1,21 @@
 vim.g.my_ui_colors = {
-  fg = "#6272A4",
-  bg = "#000000",
-  bg_alt = "#090B10",
+  fg = "#6e6a86",
+  bg = "#191724",
+  bg_alt = "#211A2F",
 }
-
 return {
 
   setup = function(use)
     use({
-      "NTBBloodbath/doom-one.nvim",
+      "sainnhe/everforest",
 
       config = function()
-        require("doom-one").setup({
-          cursor_coloring = true,
-          terminal_colors = false,
-          italic_comments = true,
-          enable_treesitter = true,
-          transparent_background = true,
-          pumblend = {
-            enable = false,
-            transparency_amount = 10,
-          },
-          plugins_integrations = {
-            bufferline = true,
-            gitsigns = true,
-            telescope = true,
-            nvim_tree = true,
-            indent_blankline = true,
-          },
-        })
+        vim.g.everforest_background = "hard"
+        vim.g.everforest_better_performance = 1
+        vim.g.everforest_sign_column_background = "none"
+        vim.g.everforest_ui_contrast = "hight"
+        vim.g.everforest_transparent_background = 1
+        vim.cmd("colorscheme everforest")
 
         vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = vim.g.my_colors.green })
         vim.api.nvim_set_hl(0, "GitSignsChange", { fg = vim.g.my_colors.yellow })

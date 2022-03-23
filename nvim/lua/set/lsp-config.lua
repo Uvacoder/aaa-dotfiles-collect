@@ -5,9 +5,12 @@ return {
 
       requires = {
         "hrsh7th/cmp-nvim-lsp",
+        -- "j-hui/fidget.nvim",
       },
 
       config = function()
+        -- require("fidget").setup({ text = { spinner = "dots", commenced = "", completed = "" } })
+
         local nvim_lsp = require("lspconfig")
         local opts = { noremap = true, silent = true }
 
@@ -18,9 +21,11 @@ return {
         vim.api.nvim_set_keymap("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
         local on_attach = function(client, bufnr)
+          -- stop Neovim from asking me which server I want to use for formatting
+          client.resolved_capabilities.document_formatting = false
+          client.resolved_capabilities.document_range_formatting = false
           -- Enable completion triggered by <c-x><c-o>
           vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-
           -- See `:help vim.lsp.*` for documentation on any of the below functions
           vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
           vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
@@ -34,8 +39,8 @@ return {
           vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
           vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
           vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>rf", ":lua vim.lsp.buf.range_formatting_sync()<CR>", opts)
-          vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-f>", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+          -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>rf", ":lua vim.lsp.buf.range_formatting_sync()<CR>", opts)
+          -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-f>", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
         end
 
         -- nvim-cmp supports additional completion capabilities
@@ -53,7 +58,10 @@ return {
         end
 
         vim.diagnostic.config({
-          virtual_text = true,
+          virtual_text = {
+            source = "always", -- Or "if_many"
+            prefix = vim.g.my_icons.hint, -- Could be '●', '▎', 'x'
+          },
           signs = true,
           underline = true,
           update_in_insert = true,
@@ -71,6 +79,9 @@ return {
           local hl = "DiagnosticSign" .. type
           vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
         end
+
+        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+        vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
       end,
     })
   end,

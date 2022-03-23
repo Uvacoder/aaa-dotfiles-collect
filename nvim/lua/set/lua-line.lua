@@ -127,8 +127,8 @@ return {
         ins_left({
           "filename",
           symbols = {
-            -- modified = " " .. vim.g.my_icons.modified, -- Text to show when the file is modified.
-            -- readonly = " ", -- Text to show when the file is non-modifiable or readonly.
+            modified = " " .. vim.g.my_icons.modified, -- Text to show when the file is modified.
+           readonly = " ", -- Text to show when the file is non-modifiable or readonly.
             unnamed = "[No Name]", -- Text to show for unnamed buffers.
           },
           cond = conditions.buffer_not_empty,

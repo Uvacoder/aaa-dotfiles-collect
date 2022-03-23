@@ -6,16 +6,18 @@ return {
       requires = "kyazdani42/nvim-web-devicons",
 
       config = function()
+        vim.g.nvim_tree_indent_markers = 0
         vim.g.nvim_tree_special_files = {}
-        vim.g.nvim_tree_show_icons = { git = 1, folders = 1, files = 1, folder_arrows = 1 }
+        vim.g.nvim_tree_show_icons = { git = 1, folders = 1, files = 0, folder_arrows = 0 }
         vim.g.nvim_tree_icons = {
           default = " ",
           symlink = " ",
-          folder = { arrow_open = "", arrow_closed = "", default = "", open = "", empty = "", empty_open = "", symlink = "", symlink_open = "" },
+          folder = { default = "", open = "" },
           git = { unstaged = "", staged = "", unmerged = "", renamed = "", untracked = "", deleted = "", ignored = "◌" },
         }
 
         require("nvim-tree").setup({
+          hijack_cursor = true,
           disable_netrw = true,
           hijack_netrw = true,
           open_on_setup = false,
@@ -54,8 +56,7 @@ return {
             timeout = 300,
           },
           view = {
-            -- width = 40,
-            -- height = 30,
+            width = 40,
             hide_root_folder = false,
             side = "left",
             preserve_window_proportins = false,
