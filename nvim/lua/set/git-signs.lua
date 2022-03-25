@@ -8,11 +8,11 @@ return {
       config = function()
         require("gitsigns").setup({
           signs = {
-            add = { hl = "GitSignsAdd", text = vim.g.my_icons.add, numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
-            change = { hl = "GitSignsChange", text = vim.g.my_icons.change, numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
-            delete = { hl = "GitSignsDelete", text = vim.g.my_icons.delete, numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-            topdelete = { hl = "GitSignsDelete", text = vim.g.my_icons.delete, numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-            changedelete = { hl = "GitSignsDelete", text = vim.g.my_icons.delete, numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
+            add = { hl = "GitSignsAdd", text = vim.g.my_icons.diff.add, numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
+            change = { hl = "GitSignsChange", text = vim.g.my_icons.diff.change, numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
+            delete = { hl = "GitSignsDelete", text = vim.g.my_icons.diff.delete, numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
+            topdelete = { hl = "GitSignsDelete", text = vim.g.my_icons.diff.delete, numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
+            changedelete = { hl = "GitSignsDelete", text = vim.g.my_icons.diff.delete, numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
           },
         })
       end,

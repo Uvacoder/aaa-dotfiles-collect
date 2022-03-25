@@ -10,8 +10,9 @@ return {
 
         local sources = {
           -- formatting.eslint,
+          -- formatting.prettierd,
+          formatting.prettier,
           formatting.stylua,
-          formatting.prettierd,
         }
 
         null_ls.setup({

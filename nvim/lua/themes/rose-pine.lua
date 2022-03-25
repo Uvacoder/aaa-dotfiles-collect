@@ -1,6 +1,6 @@
 vim.g.my_ui_colors = {
   fg = "#6e6a86",
-  bg = "#1C1525",
+  bg = "#000000",
   bg_alt = "#211A2F",
 }
 
@@ -17,7 +17,7 @@ return {
           bold_vert_split = false,
           dim_nc_background = false,
           disable_background = true,
-          disable_float_background = true,
+          disable_float_background = false,
           disable_italics = false,
           groups = {
             error = vim.g.my_colors.red,

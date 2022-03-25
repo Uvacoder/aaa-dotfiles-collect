@@ -1,3 +1,5 @@
+local get_hex = require("cokeline/utils").get_hex
+
 vim.g.my_ui_colors = {
   fg = "#6272A4",
   bg = "#000000",
@@ -40,6 +42,11 @@ return {
         vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = vim.g.my_colors.red })
 
         vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my_ui_colors.bg })
+
+        vim.cmd(" highlight clear ColorColumn ")
+        vim.cmd(" highlight clear colorcolumn ")
+        vim.cmd(" highlight ColorColumn ctermbg=NONE guibg=#000000 guifg=#000000 ")
+        vim.cmd(" highlight colorcolumn ctermbg=NONE guibg=#000000 guifg=#000000 ")
       end,
     })
   end,

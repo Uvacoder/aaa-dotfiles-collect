@@ -26,13 +26,10 @@ return {
 
         require("telescope").load_extension("fzf")
 
-        vim.keymap.set("n", "<leader><space>", ":Telescope buffers<cr>", { noremap = true, silent = true })
-        vim.keymap.set("n", "F", ":Telescope find_files<cr>", { noremap = true, silent = true })
-        vim.keymap.set("n", "fs", ":Telescope grep_string<cr>", { noremap = true, silent = true })
-        vim.keymap.set("n", "fg", ":Telescope live_grep<cr>", { noremap = true, silent = true })
-        -- git navigation
-        vim.keymap.set("n", "<leader>gc", ":Telescope git_commits<cr>", { noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>gs", ":Telescope git_status<cr>", { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<leader><space>", [[<cmd>lua require('telescope.builtin').buffers({previewer = false})<CR>]], { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<leader>f", [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<leader>sd", [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<leader>sp", [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
       end,
     })
   end,

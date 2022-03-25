@@ -17,24 +17,10 @@ vim.g.my_colors = {
 }
 
 vim.g.my_icons = {
-  -- hint = ">",
-  -- info = ">",
-  -- warning = ">",
-  -- error = ">",
-  -- add = "+",
-  -- change = "~",
-  -- delete = "-",
-  -- modified = "*",
-  hint = "",
-  info = "",
-  warning = "",
-  error = "",
-  add = "|",
-  change = "|",
-  delete = "|",
-  modified = "ﰟ",
+  signs = { Error = " ", Warning = "𥉉", Hint = "ﬤ ", Info = " " },
+  diff = { add = "+", change = "~", delete = "-" },
+  modified = " ﰟ",
 }
--- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 -- -----------
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -78,9 +64,30 @@ vim.opt.showbreak = "﬌ "
 vim.opt.inccommand = "split" -- incrementally show result of command
 vim.opt.wildignore = "*/.git/*,*/.DS_Store,dist,*.o,*~,package-lock.json"
 vim.opt.list = true
-vim.opt.listchars = "tab:→ ,nbsp:•,trail:•,precedes:«,extends:»"
+-- vim.opt.listchars = "tab:→ ,nbsp:•,trail:•,precedes:«,extends:»"
 -- vim.opt.fillchars:append({ eob = " ", vert = " " })
-vim.opt.fillchars:append({ eob = " " })
+-- vim.opt.fillchars:append({ eob = " " })
+vim.opt.listchars = {
+  nbsp = "⦸", -- CIRCLED REVERSE SOLIDUS (U+29B8, UTF-8: E2 A6 B8)
+  extends = "»", -- RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00BB, UTF-8: C2 BB)
+  precedes = "«", -- LEFT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00AB, UTF-8: C2 AB)
+  tab = "  ", -- '▷─' WHITE RIGHT-POINTING TRIANGLE (U+25B7, UTF-8: E2 96 B7) + BOX DRAWINGS HEAVY TRIPLE DASH HORIZONTAL (U+2505, UTF-8: E2 94 85)
+  trail = "•", -- BULLET (U+2022, UTF-8: E2 80 A2)
+  space = " ",
+}
+
+vim.opt.fillchars = {
+  diff = "∙", -- BULLET OPERATOR (U+2219, UTF-8: E2 88 99)
+  eob = " ", -- NO-BREAK SPACE (U+00A0, UTF-8: C2 A0) to suppress ~ at EndOfBuffer
+  fold = "·", -- MIDDLE DOT (U+00B7, UTF-8: C2 B7)
+  vert = "│", -- window border when window splits vertically
+  horiz = "─",
+  horizup = "┴",
+  horizdown = "┬",
+  vertleft = "┤",
+  vertright = "├",
+  verthoriz = "┼",
+}
 vim.opt.wildignorecase = true
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")

@@ -60,7 +60,7 @@ return {
         vim.diagnostic.config({
           virtual_text = {
             source = "always", -- Or "if_many"
-            prefix = vim.g.my_icons.hint, -- Could be '●', '▎', 'x'
+            prefix = "x",
           },
           signs = true,
           underline = true,
@@ -68,14 +68,7 @@ return {
           severity_sort = false,
         })
 
-        local signs = {
-          Error = vim.g.my_icons.error,
-          Warn = vim.g.my_icons.warning,
-          Info = vim.g.my_icons.info,
-          Hint = vim.g.my_icons.hint,
-        }
-
-        for type, icon in pairs(signs) do
+        for type, icon in pairs(vim.g.my_icons.signs) do
           local hl = "DiagnosticSign" .. type
           vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
         end
