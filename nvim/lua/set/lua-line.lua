@@ -38,12 +38,6 @@ return {
             lualine_c = {
               {
                 "diagnostics",
-                symbols = {
-                  error = vim.g.my_icons.signs.error,
-                  warn = vim.g.my_icons.signs.warning,
-                  info = vim.g.my_icons.signs.info,
-                  hint = vim.g.my_icons.signs.hint,
-                },
                 diagnostics_color = {
                   color_error = { fg = vim.g.my_colors.red },
                   color_warn = { fg = vim.g.my_colors.yellow },
@@ -58,11 +52,6 @@ return {
             lualine_y = {
               {
                 "diff",
-                symbols = {
-                  added = vim.g.my_icons.diff.add,
-                  modified = vim.g.my_icons.diff.change,
-                  removed = vim.g.my_icons.diff.delete,
-                },
                 diff_color = {
                   added = { fg = vim.g.my_colors.green },
                   modified = { fg = vim.g.my_colors.yellow },
