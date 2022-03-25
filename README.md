@@ -24,7 +24,6 @@ nvim
 :qa
 ```
 
-
 ### 1 - Clonar github repo
 
 ```
@@ -67,7 +66,7 @@ ln -s ~/.dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
 cp ~/.dotfiles/battery/local.battery.plist ~/Library/LaunchAgents/local.battery.plist
 
 
-sudo npm install -g @volar/vue-language-server typescript typescript-language-server
+sudo npm install -g @volar/vue-language-server typescript typescript-language-server @fsouza/prettierd
 
 
 curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz
@@ -77,13 +76,14 @@ tar xzf nvim-macos.tar.gz
 ```
 
 ### 5 - Load zsh config file
+
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
 ```
 source .zshrc
 ```
 
-
-````
+```
 install macports:
 https://ports.macports.org
 
@@ -103,8 +103,6 @@ You can obtain the codicons.ttf file by following this link. (required for the i
 https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf
 downloadand install the font
 
-``````
-
-
+```
 
 ### finished!!!
