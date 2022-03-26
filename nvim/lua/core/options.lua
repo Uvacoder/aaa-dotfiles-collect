@@ -19,7 +19,7 @@ vim.g.my_colors = {
 vim.g.my_icons = {
   signs = { Error = " ", Warning = "𥉉", Hint = "ﬤ ", Info = " " },
   diff = { add = "│", change = "│", delete = "│" },
-  modified = " ﰟ",
+  modified = " ",
 }
 -- -----------
 vim.g.mapleader = " "

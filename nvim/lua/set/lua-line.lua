@@ -34,8 +34,7 @@ return {
           },
           sections = {
             lualine_a = { "mode" },
-            lualine_b = { { "filename", file_status = true, symbols = { modified = vim.g.my_icons.modified } } },
-            lualine_c = {
+            lualine_b = {
               {
                 "diagnostics",
                 diagnostics_color = {
@@ -45,11 +44,15 @@ return {
                   color_hint = { fg = vim.g.my_colors.white },
                 },
               },
+            },
+            lualine_c = {
+              { "filename", file_status = true, symbols = { modified = vim.g.my_icons.modified } },
               "location",
               "progress",
             },
             lualine_x = { "encoding", "fileformat" },
-            lualine_y = {
+            lualine_y = { "branch" },
+            lualine_z = {
               {
                 "diff",
                 diff_color = {
@@ -59,7 +62,6 @@ return {
                 },
               },
             },
-            lualine_z = { "branch" },
           },
           inactive_sections = {
             lualine_a = {},
