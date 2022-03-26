@@ -14,9 +14,10 @@ font:
   normal:
     family: CaskaydiaCove Nerd Font Mono
     # family: CamingoCode Nerd Font
+    # family: Anonymice Nerd Font Mono
     # family: UbuntuMono Nerd Font Mono
     # family: OperatorMono Nerd Font
-  size: 20
+  size: 21
   offset:
     x: 0
     y: 9
