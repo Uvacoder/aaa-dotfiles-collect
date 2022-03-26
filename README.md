@@ -60,6 +60,7 @@ ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/global_ignore ~/.global_ignore
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 ln -s ~/.dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
+ln -s ~/.dotfiles/kitty/kitty.conf  ~/.config/kitty/kitty.conf
 #ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 #ln -s ~/.dotfiles/tmux/default.sh ~/.tmux/style/tmux-powerline/themes/default.sh
 
