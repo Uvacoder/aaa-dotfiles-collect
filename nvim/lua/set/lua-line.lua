@@ -32,19 +32,20 @@ return {
             always_divide_middle = false,
             globalstatus = true,
           },
+          diff_color = {
+            added = { fg = vim.g.my_colors.green },
+            modified = { fg = vim.g.my_colors.yellow },
+            removed = { fg = vim.g.my_colors.red },
+          },
+          diagnostics_color = {
+            color_error = { fg = vim.g.my_colors.red },
+            color_warn = { fg = vim.g.my_colors.yellow },
+            color_info = { fg = vim.g.my_colors.blue },
+            color_hint = { fg = vim.g.my_colors.white },
+          },
           sections = {
             lualine_a = { "mode" },
-            lualine_b = {
-              {
-                "diagnostics",
-                diagnostics_color = {
-                  color_error = { fg = vim.g.my_colors.red },
-                  color_warn = { fg = vim.g.my_colors.yellow },
-                  color_info = { fg = vim.g.my_colors.blue },
-                  color_hint = { fg = vim.g.my_colors.white },
-                },
-              },
-            },
+            lualine_b = { "diagnostics" },
             lualine_c = {
               { "filename", file_status = true, symbols = { modified = vim.g.my_icons.modified } },
               "location",
@@ -52,16 +53,7 @@ return {
             },
             lualine_x = { "encoding", "fileformat" },
             lualine_y = { "branch" },
-            lualine_z = {
-              {
-                "diff",
-                diff_color = {
-                  added = { fg = vim.g.my_colors.green },
-                  modified = { fg = vim.g.my_colors.yellow },
-                  removed = { fg = vim.g.my_colors.red },
-                },
-              },
-            },
+            lualine_z = { "diff" },
           },
           inactive_sections = {
             lualine_a = {},
