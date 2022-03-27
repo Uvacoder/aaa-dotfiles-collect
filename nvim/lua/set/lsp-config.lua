@@ -1,16 +1,11 @@
 return {
   setup = function(use)
     use({
-      "neovim/nvim-lspconfig", -- Collection of configurations for built-in LSP client
+      "neovim/nvim-lspconfig",
 
-      requires = {
-        "hrsh7th/cmp-nvim-lsp",
-        -- "j-hui/fidget.nvim",
-      },
+      requires = "hrsh7th/cmp-nvim-lsp",
 
       config = function()
-        -- require("fidget").setup({ text = { spinner = "dots", commenced = "", completed = "" } })
-
         local nvim_lsp = require("lspconfig")
         local opts = { noremap = true, silent = true }
 
@@ -24,6 +19,7 @@ return {
           -- stop Neovim from asking me which server I want to use for formatting
           client.resolved_capabilities.document_formatting = false
           client.resolved_capabilities.document_range_formatting = false
+
           -- Enable completion triggered by <c-x><c-o>
           vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
           -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -58,10 +54,7 @@ return {
         end
 
         vim.diagnostic.config({
-          virtual_text = {
-            source = "always", -- Or "if_many"
-            prefix = "x",
-          },
+          virtual_text = { source = "always", prefix = "x" },
           signs = true,
           underline = true,
           update_in_insert = true,
@@ -72,9 +65,6 @@ return {
           local hl = "DiagnosticSign" .. type
           vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
         end
-
-        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-        vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
       end,
     })
   end,

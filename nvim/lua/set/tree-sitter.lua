@@ -10,54 +10,28 @@ return {
         "windwp/nvim-ts-autotag",
         "terrortylor/nvim-comment",
         "JoosepAlviste/nvim-ts-context-commentstring",
-        -- "nvim-treesitter/nvim-treesitter-textobjects",
-        -- "RRethy/nvim-treesitter-textsubjects",
-        -- "nvim-treesitter/nvim-treesitter-refactor",
       },
 
       config = function()
         require("nvim-treesitter.configs").setup({
-          ensure_installed = {
-            "css",
-            "lua",
-            "html",
-            "vue",
-            "javascript",
-            "json",
-            "typescript",
-            "regex",
-            "jsonc",
-          },
-          highlight = {
-            enable = true, -- false will disable the whole extension
-          },
-          indent = {
-            enable = true,
-          },
+          ensure_installed = { "css", "lua", "html", "vue", "javascript", "json", "typescript", "regex" },
+          highlight = { enable = true },
+          indent = { enable = true },
           incremental_selection = {
             enable = true,
             keymaps = {
               init_selection = "gnn",
-              node_incremental = "grn",
+              code_incremental = "grn",
               scope_incremental = "grc",
               node_decremental = "grm",
             },
           },
           -- rainbow
-          rainbow = {
-            enable = true,
-            extended_mode = true,
-            max_file_lines = nil,
-          },
+          rainbow = { enable = true, extended_mode = true, max_file_lines = nil },
           -- autotag
-          autotag = {
-            enable = true,
-          },
+          autotag = { enable = true },
           -- commentstring
-          context_commentstring = {
-            enable = true,
-            enable_autocmd = false,
-          },
+          context_commentstring = { enable = true, enable_autocmd = false },
         })
 
         require("nvim_comment").setup({

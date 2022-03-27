@@ -67,9 +67,7 @@ return {
               end
             end, { "i", "s" }),
           },
-          documentation = {
-            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-          },
+          documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } },
           sources = cmp.config.sources({
             { name = "nvim_lsp" },
             { name = "luasnip" }, -- For luasnip users.
@@ -88,18 +86,10 @@ return {
           },
         })
         -- `/` cmdline setup.
-        cmp.setup.cmdline("/", {
-          sources = {
-            { name = "buffer" },
-          },
-        })
+        cmp.setup.cmdline("/", { sources = { { name = "buffer" } } })
         -- `:` cmdline setup.
         cmp.setup.cmdline(":", {
-          sources = cmp.config.sources({
-            { name = "path" },
-          }, {
-            { name = "cmdline" },
-          }),
+          sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
         })
       end,
     })
