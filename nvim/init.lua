@@ -26,7 +26,7 @@ require("packer").startup({
     require("set/auto-pairs").setup(use)
     require("set/modes").setup(use)
     require("set/tree").setup(use)
-    require("set/toggle-term").setup(use)
+    require("set/f-term").setup(use)
     require("set/git-signs").setup(use)
     require("set/null-ls").setup(use)
     require("set/telescope").setup(use)
@@ -36,7 +36,6 @@ require("packer").startup({
     require("set/lsp-config").setup(use)
 
     require("themes/" .. theme_selected).setup(use)
-
     require("set/lua-line").setup(use)
 
     if packer_bootstrap then

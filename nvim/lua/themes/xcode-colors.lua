@@ -1,7 +1,9 @@
 vim.g.my_ui_colors = {
   fg = "#6e6a86",
-  bg = "#191523", --"#000000",
-  bg_alt = "#211A2F",
+  bg = "#090B10",
+  bg_alt = "#0D1117",
+  -- bg = "#191523",
+  -- bg_alt = "#140D1B",
 }
 
 return {
@@ -19,6 +21,7 @@ return {
 
         vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my_ui_colors.bg })
         vim.api.nvim_set_hl(0, "Normal", { bg = vim.g.my_ui_colors.bg })
+        vim.api.nvim_set_hl(0, "FloatBorder", { bg = vim.g.my_ui_colors.bg })
         vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = vim.g.my_colors.green })
         vim.api.nvim_set_hl(0, "GitSignsChange", { fg = vim.g.my_colors.yellow })
         vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = vim.g.my_colors.red })
