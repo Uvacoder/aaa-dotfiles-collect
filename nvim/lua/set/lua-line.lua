@@ -2,11 +2,7 @@ return {
   setup = function(use)
     use({
       "hoob3rt/lualine.nvim",
-
-      requires = {
-        "kyazdani42/nvim-web-devicons",
-      },
-
+      requires = "kyazdani42/nvim-web-devicons",
       config = function()
         require("lualine").setup({
           options = {

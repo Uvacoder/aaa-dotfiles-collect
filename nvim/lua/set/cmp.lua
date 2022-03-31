@@ -2,7 +2,6 @@ return {
   setup = function(use)
     use({
       "hrsh7th/nvim-cmp", -- Autocompletion plugin
-
       requires = {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
@@ -12,7 +11,6 @@ return {
         "L3MON4D3/LuaSnip", -- Snippets plugin
         "onsails/lspkind-nvim",
       },
-
       config = function()
         local lspkind = require("lspkind")
 

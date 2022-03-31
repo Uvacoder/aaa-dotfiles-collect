@@ -2,9 +2,7 @@ return {
   setup = function(use)
     use({
       "neovim/nvim-lspconfig",
-
       requires = "hrsh7th/cmp-nvim-lsp",
-
       config = function()
         local nvim_lsp = require("lspconfig")
         local opts = { noremap = true, silent = true }

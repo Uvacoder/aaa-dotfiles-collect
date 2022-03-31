@@ -1,9 +1,9 @@
 return {
   setup = function(use)
     use({
-      "windwp/nvim-autopairs",
+      "norcalli/nvim-colorizer.lua",
       config = function()
-        require("nvim-autopairs").setup({})
+        require("colorizer").setup()
       end,
     })
   end,

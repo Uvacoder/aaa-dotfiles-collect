@@ -2,9 +2,7 @@ return {
   setup = function(use)
     use({
       "kyazdani42/nvim-tree.lua",
-
       requires = "kyazdani42/nvim-web-devicons",
-
       config = function()
         vim.g.nvim_tree_indent_markers = 1
         vim.g.nvim_tree_special_files = {}
@@ -15,7 +13,6 @@ return {
           folder = { default = "", open = "" },
           git = { unstaged = "", staged = "", unmerged = "", renamed = "", untracked = "", deleted = "", ignored = "◌" },
         }
-
         require("nvim-tree").setup({
           view = {
             width = 40,

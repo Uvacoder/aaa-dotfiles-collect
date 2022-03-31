@@ -2,13 +2,11 @@ return {
   setup = function(use)
     use({
       "nvim-telescope/telescope.nvim",
-
       requires = {
         { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
         { "nvim-lua/popup.nvim", opt = true },
         { "nvim-lua/plenary.nvim", opt = true },
       },
-
       config = function()
         local actions = require("telescope.actions")
         require("telescope").setup({

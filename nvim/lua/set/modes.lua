@@ -3,7 +3,6 @@ return {
     use({
       "mvllow/modes.nvim",
       event = "BufRead", -- optional lazy loading
-
       config = function()
         require("modes").setup({
           colors = {

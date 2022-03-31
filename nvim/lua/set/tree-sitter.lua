@@ -2,16 +2,13 @@ return {
   setup = function(use)
     use({
       "nvim-treesitter/nvim-treesitter",
-
       run = ":TSUpdate",
-
       requires = {
         "p00f/nvim-ts-rainbow",
         "windwp/nvim-ts-autotag",
         "terrortylor/nvim-comment",
         "JoosepAlviste/nvim-ts-context-commentstring",
       },
-
       config = function()
         require("nvim-treesitter.configs").setup({
           ensure_installed = { "css", "lua", "html", "vue", "javascript", "json", "typescript", "regex" },

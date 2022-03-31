@@ -7,13 +7,13 @@ vim.g.node_host_prog = "/usr/local/lib/node_modules/neovim/bin/cli.js"
 
 -- --------------
 vim.g.my_colors = {
-  blue = "#0087FF",
-  green = "#00FF5F",
-  yellow = "#FBFF00",
-  orange = "#FC7039",
-  red = "#ff0000",
+  blue = "#5482FF",
+  green = "#84b360",
+  yellow = "#d9c97c",
+  orange = "#ffa14f",
+  red = "#ff7ab2",
   white = "#ffffff",
-  purple = "#A400FF",
+  purple = "#b281eb",
 }
 
 vim.g.my_icons = {
