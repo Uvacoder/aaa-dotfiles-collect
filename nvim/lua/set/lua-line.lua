@@ -14,13 +14,8 @@ return {
                 c = { fg = vim.g.my_colors.fg, bg = vim.g.my_ui_colors.bg_alt },
               },
               insert = { a = { fg = vim.g.my_colors.green, bg = vim.g.my_ui_colors.bg_alt, gui = "bold" } },
-              visual = { a = { fg = vim.g.my_colors.purple, bg = vim.g.my_ui_colors.bg_alt, gui = "bold" } },
+              visual = { a = { fg = vim.g.my_colors.yellow, bg = vim.g.my_ui_colors.bg_alt, gui = "bold" } },
               replace = { a = { fg = vim.g.my_colors.red, bg = vim.g.my_ui_colors.bg_alt, gui = "bold" } },
-              inactive = {
-                a = { fg = vim.g.my_colors.fg, bg = vim.g.my_ui_colors.bg_alt, gui = "bold" },
-                b = { fg = vim.g.my_colors.fg, bg = vim.g.my_ui_colors.bg_alt },
-                c = { fg = vim.g.my_colors.fg, bg = vim.g.my_ui_colors.bg_alt },
-              },
             },
             component_separators = { left = "", right = "" },
             section_separators = { left = "", right = "" },
@@ -60,7 +55,7 @@ return {
             lualine_z = {},
           },
           tabline = {},
-          extensions = { "nvim-tree", "toggleterm" },
+          extensions = { "nvim-tree" },
         })
       end,
     })
