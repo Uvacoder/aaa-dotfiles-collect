@@ -20,7 +20,7 @@ ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 ZSH_DISABLE_COMPFIX="true"
-ZSH_THEME="refined"
+ZSH_THEME="avit"  #"refined"
 
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
