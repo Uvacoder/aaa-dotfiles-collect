@@ -95,6 +95,7 @@ alias sen="cd /Volumes/Sites/santos_e_nascimento_2020 && clear"
 
 # Code
 alias es="cd /Volumes/Code/endless-supabase && clear"
+alias esv="es && v"
 alias ee="cd /Volumes/Code/endless-quasar-app && clear"
 alias esh="cd /Volumes/Code/e-shop && clear"
 alias low="cd /Volumes/Code/nuxt-express-auth-lowdb-admin && clear"

@@ -21,6 +21,8 @@ vim.g.my_icons = {
   diff = { add = "│", change = "│", delete = "│" },
   modified = " ",
 }
+
+vim.g.my_border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
 -- -----------
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

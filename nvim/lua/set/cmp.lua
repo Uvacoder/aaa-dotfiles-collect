@@ -65,7 +65,7 @@ return {
               end
             end, { "i", "s" }),
           },
-          documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } },
+          documentation = { border = vim.g.my_border },
           sources = cmp.config.sources({
             { name = "nvim_lsp" },
             { name = "luasnip" }, -- For luasnip users.

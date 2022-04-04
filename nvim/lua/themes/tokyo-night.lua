@@ -1,7 +1,7 @@
 vim.g.my_ui_colors = {
   fg = "#6e6a86",
-  bg = "#191724",
-  bg_alt = "#1F1D2E",
+  bg = "#090B10",
+  bg_alt = "#0D1117",
 }
 
 return {
@@ -16,8 +16,8 @@ return {
         vim.g.tokyonight_italic_keywords = false
         vim.g.tokyonight_italic_functions = false
         vim.g.tokyonight_italic_variables = false
-        vim.g.tokyonight_transparent = false
-        vim.g.tokyonight_transparent_sidebar = false
+        vim.g.tokyonight_transparent = true
+        vim.g.tokyonight_transparent_sidebar = true
         vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer", "NvimTree" }
         vim.g.tokyonight_dark_sidebar = false
         vim.g.tokyonight_dark_float = true

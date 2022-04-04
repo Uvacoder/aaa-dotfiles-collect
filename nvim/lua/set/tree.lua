@@ -32,7 +32,8 @@ return {
           },
         })
 
-        vim.keymap.set("n", ",", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+        local opts = { noremap = true, silent = true }
+        vim.keymap.set("n", ",", ":NvimTreeToggle<CR>", opts)
       end,
     })
   end,

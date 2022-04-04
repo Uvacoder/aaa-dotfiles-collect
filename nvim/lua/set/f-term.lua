@@ -4,12 +4,14 @@ return {
       "numToStr/FTerm.nvim",
       config = function()
         require("FTerm").setup({
-          dimensions = { height = 0.9, width = 0.8 },
+          dimensions = { height = 0.8, width = 0.8 },
           hl = "FloatBorder",
         })
 
-        vim.keymap.set("n", "<C-\\>", '<CMD>lua require("FTerm").toggle()<CR>')
-        vim.keymap.set("t", "<C-\\>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+        local opts = { noremap = true, silent = true }
+        vim.keymap.set("n", ".", '<CMD>lua require("FTerm").toggle()<CR>', opts)
+        vim.keymap.set("t", ".", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
+        vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
       end,
     })
   end,

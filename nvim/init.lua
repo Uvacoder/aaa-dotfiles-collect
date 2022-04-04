@@ -10,7 +10,7 @@ local themes = {
   "sonokai",
   "xcode-colors",
 }
-local theme_selected = themes[9]
+local theme_selected = themes[6]
 
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -35,7 +35,6 @@ require("packer").startup({
     require("set/tree-sitter").setup(use)
     require("set/cmp").setup(use)
     require("set/lsp-config").setup(use)
-
     require("themes/" .. theme_selected).setup(use)
     require("set/lua-line").setup(use)
 

@@ -17,7 +17,9 @@ return {
           -- stop Neovim from asking me which server I want to use for formatting
           client.resolved_capabilities.document_formatting = false
           client.resolved_capabilities.document_range_formatting = false
-
+          --border
+          vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.my_border })
+          vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.my_border })
           -- Enable completion triggered by <c-x><c-o>
           vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
           -- See `:help vim.lsp.*` for documentation on any of the below functions
