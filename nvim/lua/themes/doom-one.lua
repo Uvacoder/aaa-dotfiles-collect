@@ -1,9 +1,7 @@
-local get_hex = require("cokeline/utils").get_hex
-
 vim.g.my_ui_colors = {
-  fg = "#6272A4",
-  bg = "#000000",
-  bg_alt = "#090B10",
+  fg = "#6e6a86",
+  bg = "#090B10",
+  bg_alt = "#0D1117",
 }
 
 return {

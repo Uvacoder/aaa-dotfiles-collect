@@ -2,7 +2,6 @@ require("core/options")
 local themes = {
   "cobalt-2",
   "doom-one",
-  "one-dark",
   "rose-pine",
   "tokyo-dark",
   "tokyo-night",
@@ -10,7 +9,7 @@ local themes = {
   "sonokai",
   "xcode-colors",
 }
-local theme_selected = themes[6]
+local theme_selected = themes[4]
 
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"

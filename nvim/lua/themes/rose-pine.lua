@@ -16,10 +16,15 @@ return {
           dark_variant = "main", -- 'main'|'moon'
           bold_vert_split = false,
           dim_nc_background = false,
-          disable_background = true,
+          disable_background = false,
           disable_float_background = false,
           disable_italics = false,
           groups = {
+            background = vim.g.my_ui_colors.bg,
+            panel = vim.g.my_ui_colors.bg_alt,
+            border = vim.g.my_ui_colors.fg,
+            comment = "muted",
+
             error = vim.g.my_colors.red,
             warn = vim.g.my_colors.yellow,
             info = vim.g.my_colors.blue,
