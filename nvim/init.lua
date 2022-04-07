@@ -3,12 +3,21 @@ local themes = {
   "rose-pine",
   "tokyo-night",
   "xcode-colors",
-  "cobalt-2",
   "doom-one",
-  "ever-forest",
   "sonokai",
+  "cobalt-2",
+  "ever-forest",
 }
-local theme_selected = themes[6]
+local theme_selected = themes[1]
+
+local colors = {
+  { fg = "#6e6a86", bg = "#000000", bg_alt = "#0D1117" }, -- black
+  { fg = "#6e6a86", bg = "#090B10", bg_alt = "#0D1117" }, -- doom-one
+  { fg = "#6272A4", bg = "#193549", bg_alt = "#002B37" }, -- cobalt-2
+  { fg = "#6e6a86", bg = "#191523", bg_alt = "#211A2F" }, -- rose-pine
+  { fg = "#D4C7A9", bg = "#2A3239", bg_alt = "#313D43" }, -- ever-forest
+}
+vim.g.my_ui_colors = colors[1]
 
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"

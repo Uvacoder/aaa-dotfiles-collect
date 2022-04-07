@@ -1,8 +1,3 @@
-vim.g.my_ui_colors = {
-  fg = "#6e6a86",
-  bg = "#191724",
-  bg_alt = "#211A2F",
-}
 return {
 
   setup = function(use)
@@ -12,9 +7,11 @@ return {
       config = function()
         vim.g.everforest_background = "hard"
         vim.g.everforest_better_performance = 1
+        vim.g.everforest_enable_italic = 1
         vim.g.everforest_sign_column_background = "none"
         vim.g.everforest_ui_contrast = "hight"
-        vim.g.everforest_transparent_background = 1
+        vim.g.everforest_transparent_background = 0
+        vim.g.everforest_disable_terminal_colors = 1
         vim.cmd("colorscheme everforest")
 
         vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = vim.g.my_colors.green })

@@ -1,9 +1,3 @@
-vim.g.my_ui_colors = {
-  fg = "#6e6a86",
-  bg = "#090B10",
-  bg_alt = "#0D1117",
-}
-
 return {
 
   setup = function(use)
