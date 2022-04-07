@@ -1,15 +1,14 @@
 require("core/options")
 local themes = {
+  "rose-pine",
+  "tokyo-night",
+  "xcode-colors",
   "cobalt-2",
   "doom-one",
-  "rose-pine",
-  "tokyo-dark",
-  "tokyo-night",
   "ever-forest",
   "sonokai",
-  "xcode-colors",
 }
-local theme_selected = themes[4]
+local theme_selected = themes[6]
 
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -25,11 +24,11 @@ require("packer").startup({
     require("set/visual-multi").setup(use)
     require("set/auto-pairs").setup(use)
     require("set/modes").setup(use)
-    require("set/tree").setup(use)
+    require("set/neo-tree").setup(use)
     require("set/f-term").setup(use)
     require("set/git-signs").setup(use)
     require("set/null-ls").setup(use)
-    require("set/telescope").setup(use)
+    -- require("set/telescope").setup(use)
     require("set/indent-blank-line").setup(use)
     require("set/tree-sitter").setup(use)
     require("set/cmp").setup(use)
