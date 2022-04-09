@@ -1,11 +1,3 @@
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_ruby_provider = 0
-vim.g.loaded_python_provider = 0
-
-vim.g.python3_host_prog = "/usr/local/bin/python3"
-vim.g.node_host_prog = "/usr/local/lib/node_modules/neovim/bin/cli.js"
-
--- --------------
 vim.g.my_colors = {
   blue = "#5482FF",
   green = "#84b360",
@@ -15,15 +7,20 @@ vim.g.my_colors = {
   white = "#ffffff",
   purple = "#b281eb",
 }
-
 vim.g.my_icons = {
   signs = { Error = " ", Warning = "𥉉", Hint = "ﬤ ", Info = " " },
   diff = { add = "│", change = "│", delete = "│" },
   modified = " ",
 }
-
 vim.g.my_border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
--- -----------
+
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_python_provider = 0
+
+vim.g.python3_host_prog = "/usr/local/bin/python3"
+vim.g.node_host_prog = "/usr/local/lib/node_modules/neovim/bin/cli.js"
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 

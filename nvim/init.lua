@@ -1,23 +1,12 @@
 require("core/options")
-local themes = {
-  "rose-pine",
-  "tokyo-night",
-  "xcode-colors",
-  "doom-one",
-  "sonokai",
-  "cobalt-2",
-  "ever-forest",
-}
-local theme_selected = themes[1]
-
 local colors = {
-  { fg = "#6e6a86", bg = "#000000", bg_alt = "#0D1117" }, -- black
-  { fg = "#6e6a86", bg = "#090B10", bg_alt = "#0D1117" }, -- doom-one
-  { fg = "#6272A4", bg = "#193549", bg_alt = "#002B37" }, -- cobalt-2
-  { fg = "#6e6a86", bg = "#191523", bg_alt = "#241E36" }, -- rose-pine
-  { fg = "#D4C7A9", bg = "#2A3239", bg_alt = "#313D43" }, -- ever-forest
+  { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "tokyo-night" },
+  { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "xcode-colors" },
+  { fg = "#8B999C", bg = "#090B10", bg_alt = "#0D1117", theme = "doom-one" },
+  { fg = "#8B999C", bg = "#191523", bg_alt = "#26233a", theme = "rose-pine" },
+  { fg = "#8B999C", bg = "#193549", bg_alt = "#002B37", theme = "cobalt-2" },
 }
-vim.g.my_ui_colors = colors[4]
+vim.g.my_ui_colors = colors[1]
 
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -33,18 +22,16 @@ require("packer").startup({
     require("set/visual-multi").setup(use)
     require("set/auto-pairs").setup(use)
     require("set/modes").setup(use)
-    require("set/neo-git").setup(use)
     require("set/neo-tree").setup(use)
     require("set/f-term").setup(use)
     require("set/git-signs").setup(use)
     require("set/null-ls").setup(use)
-    -- require("set/telescope").setup(use)
     require("set/indent-blank-line").setup(use)
     require("set/tree-sitter").setup(use)
     require("set/cmp").setup(use)
     require("set/lsp-config").setup(use)
-    require("themes/" .. theme_selected).setup(use)
     require("set/lua-line").setup(use)
+    require("themes/" .. vim.g.my_ui_colors.theme).setup(use)
 
     if packer_bootstrap then
       require("packer").sync()
@@ -54,7 +41,7 @@ require("packer").startup({
   config = {
     display = {
       open_fn = function()
-        return require("packer.util").float({ border = "single" })
+        return require("packer.util").float({ border = vim.g.my_border })
       end,
       prompt_border = "single",
     },
