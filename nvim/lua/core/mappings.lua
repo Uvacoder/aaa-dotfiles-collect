@@ -71,5 +71,5 @@ function! PrintVariable()
     execute "normal! o"
     execute "normal! i" . "console.log(\" [DEBUG] " . string_under_cursor ": \", " . string_under_cursor . ")"
 endfunction
-nnoremap <F8> :call PrintVariable()<cr>
+nnoremap <F1> :call PrintVariable()<cr>
 ]])

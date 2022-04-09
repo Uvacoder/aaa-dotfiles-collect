@@ -14,10 +14,10 @@ local colors = {
   { fg = "#6e6a86", bg = "#000000", bg_alt = "#0D1117" }, -- black
   { fg = "#6e6a86", bg = "#090B10", bg_alt = "#0D1117" }, -- doom-one
   { fg = "#6272A4", bg = "#193549", bg_alt = "#002B37" }, -- cobalt-2
-  { fg = "#6e6a86", bg = "#191523", bg_alt = "#211A2F" }, -- rose-pine
+  { fg = "#6e6a86", bg = "#191523", bg_alt = "#241E36" }, -- rose-pine
   { fg = "#D4C7A9", bg = "#2A3239", bg_alt = "#313D43" }, -- ever-forest
 }
-vim.g.my_ui_colors = colors[1]
+vim.g.my_ui_colors = colors[4]
 
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -33,6 +33,7 @@ require("packer").startup({
     require("set/visual-multi").setup(use)
     require("set/auto-pairs").setup(use)
     require("set/modes").setup(use)
+    require("set/neo-git").setup(use)
     require("set/neo-tree").setup(use)
     require("set/f-term").setup(use)
     require("set/git-signs").setup(use)

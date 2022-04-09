@@ -11,7 +11,7 @@ return {
           bold_vert_split = false,
           dim_nc_background = false,
           disable_background = false,
-          disable_float_background = true,
+          disable_float_background = false,
           disable_italics = false,
           groups = {
             background = vim.g.my_ui_colors.bg,
@@ -27,6 +27,10 @@ return {
             git_add = vim.g.my_colors.green,
             git_change = vim.g.my_colors.yellow,
             git_delete = vim.g.my_colors.red,
+          },
+          -- Change specific vim highlight groups
+          highlight_groups = {
+            ColorColumn = { bg = "rose" },
           },
         })
 
