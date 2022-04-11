@@ -8,17 +8,21 @@ extends html, javascript, css
 
 # some html-like snippets
 
-snippet slot
+snippet vslot
 	<slot/>
 
-snippet template
-	<template></template>
+# The following snippets create more complex boilerplate code.
+
+snippet vtemplate
+	<template>
+	    ${0}
+	</template>
 
 # The following snippets create more complex boilerplate code.
 
 snippet vbase
 	<script setup>
-		${0}
+	    ${0}
 	</script>
 
 	<template>
@@ -26,7 +30,6 @@ snippet vbase
 
 		</div>
 	</template>
-
 
 	<style lang="scss" scoped>
 
@@ -37,16 +40,16 @@ snippet vfor
 		{{ $1 }}
 	</div>
 
-snippet vkeep
-	<keep-alive>
-		<component :is="">
-			<p>default</p>
-		</component>
-	</keep-alive>
+snippet vscript
+	<script setup>
+		${0}
+	</script>
 
 snippet vprops
-	${1:propName}: {
-	  type: ${2:Number},
-	  default: ${0}
-	},
+	${1:propName}: { type: ${2:Number}, default: ${0}},
+
+snippet vstyle
+	<style lang="scss" scoped>
+	    ${0}
+	</style>
 

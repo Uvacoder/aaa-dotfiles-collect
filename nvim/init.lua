@@ -17,7 +17,7 @@ end
 require("packer").startup({
   function(use)
     require("set/packer").setup(use)
-    require("set/colorizer").setup(use)
+    -- require("set/colorizer").setup(use)
     require("set/ctrlsf").setup(use)
     require("set/visual-multi").setup(use)
     require("set/auto-pairs").setup(use)
