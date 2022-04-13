@@ -5,7 +5,7 @@ return {
       config = function()
         require("FTerm").setup({
           dimensions = { height = 0.8, width = 0.8 },
-          hl = "FloatBorder",
+          border = vim.g.my_border,
         })
 
         local opts = { noremap = true, silent = true }

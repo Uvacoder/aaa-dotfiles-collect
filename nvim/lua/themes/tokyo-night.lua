@@ -5,15 +5,15 @@ return {
 
       config = function()
         vim.g.tokyonight_style = "storm" -- storm, night
-        vim.g.tokyonight_terminal_colors = false
+        vim.g.tokyonight_terminal_colors = true
         vim.g.tokyonight_italic_comments = true
         vim.g.tokyonight_italic_keywords = false
         vim.g.tokyonight_italic_functions = false
         vim.g.tokyonight_italic_variables = false
-        vim.g.tokyonight_transparent = true
-        vim.g.tokyonight_transparent_sidebar = true
+        vim.g.tokyonight_transparent = false
+        vim.g.tokyonight_transparent_sidebar = false
         vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer", "NvimTree" }
-        vim.g.tokyonight_dark_sidebar = false
+        vim.g.tokyonight_dark_sidebar = true
         vim.g.tokyonight_dark_float = true
         vim.g.tokyonight_hide_inactive_statusline = true
 
