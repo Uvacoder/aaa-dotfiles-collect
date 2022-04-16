@@ -5,10 +5,10 @@ window:
   decorations: None
   startup_mode: Maximized
 
-background_opacity: 1.0
+# background_opacity: 1.0
 cursor:
   style:
-    shape: Beam
+    shape: Block
 
 font:
   normal:

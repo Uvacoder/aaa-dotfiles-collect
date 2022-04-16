@@ -86,7 +86,12 @@ return {
         cmp.setup.cmdline("/", { sources = { { name = "buffer" } } })
         -- `:` cmdline setup.
         cmp.setup.cmdline(":", {
-          sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
+          mapping = cmp.mapping.preset.cmdline(),
+          sources = cmp.config.sources({
+            { name = "path" },
+          }, {
+            { name = "cmdline" },
+          }),
         })
       end,
     })

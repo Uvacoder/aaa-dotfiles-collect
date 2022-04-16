@@ -4,6 +4,9 @@ return {
       "jose-elias-alvarez/null-ls.nvim",
 
       config = function()
+        -- increase timeout to 2 seconds
+        vim.lsp.buf.formatting_sync(nil, 2000)
+
         local null_ls = require("null-ls")
         local formatting = null_ls.builtins.formatting
         null_ls.setup({

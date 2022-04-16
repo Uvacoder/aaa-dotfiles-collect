@@ -1,5 +1,6 @@
 require("core/options")
 local colors = {
+  { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "night-fox" },
   { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "tokyo-night" },
   { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "xcode-colors" },
   { fg = "#8B999C", bg = "#090B10", bg_alt = "#0D1117", theme = "doom-one" },
@@ -13,6 +14,8 @@ local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
 end
+local packer_group = vim.api.nvim_create_augroup("Packer", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePost", { command = "source <afile> | PackerCompile", group = packer_group, pattern = "init.lua" })
 
 require("packer").startup({
   function(use)

@@ -1,0 +1,66 @@
+
+Install tmux on OSX and Basics Commands for Beginners
+
+tmux is a Terminal MUltipleXer.
+Install
+Install tmux via HomeBrew of OSX
+$ brew install tmux
+After downloaded, check the version
+$ tmux -V
+
+Terminology
+First of all, you need to know a few terms before you learn how to use them.
+Prefix: This is the key combination that must be entered before entering the shortcut key. The default prefix for tmux is ctrl + b. If the shortcut is c then you need to type <ctrl + b> + c.
+Session: The largest unit managed by tmux. “attach/detach” to the session. Even if you detach from the session, the session continues to run in the background.
+Window: This is the same tab that exists in the session. You can have multiple windows in one session. You can create and switch windows within a session and switch the entire screen as you move tabs.
+Pane: This is the screen unit existing in the window. You can have multiple panes in a window. If you divide the entire screen vertically by two, two panes are created.
+
+Session
+Start Session
+$ tmux
+
+Start Session with the session name
+$ tmux new -session_name
+$ tmux new-session -session_name
+
+Exit Session
+$ exit
+
+Attach Session
+$ tmux attach -t session_name
+
+Detach Session
+<prefix> + d
+$ tmux kill-session -t2
+
+Session List
+$ tmux ls
+Change Session Numbering
+<prefix> + $
+
+Reset tmux
+Kill the existing sessions
+tmux kill-server
+
+Window
+All windows-related commands & shortcuts must be executed within the session.
+
+Create Window
+<prefix> + C
+
+Change Window Name
+<prefix> + ,
+
+Kill the Current Window
+<prefix> + &
+
+Managing split panes
+Split Vertically (top/bottom)
+<prefix> + "
+
+Split Horizontally (left/right)
+<prefix> + %
+
+Kill the Current Pane
+<prefix> + x
+
