@@ -4,7 +4,7 @@ local colors = {
   { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "tokyo-night" },
   { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "xcode-colors" },
 }
-vim.g.my_ui_colors = colors[3]
+vim.g.my_ui_colors = colors[2]
 
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"

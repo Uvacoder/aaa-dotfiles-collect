@@ -35,6 +35,8 @@ return {
         vim.cmd([[colorscheme tokyonight]])
 
         vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my_ui_colors.bg })
+        vim.cmd([[highlight! link NeoTreeNormal NvimTreeNormal]])
+        vim.cmd([[highlight! link Terminal NvimTreeNormal]])
       end,
     })
   end,
