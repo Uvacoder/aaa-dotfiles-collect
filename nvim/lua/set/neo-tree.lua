@@ -53,7 +53,7 @@ return {
             },
           },
           window = {
-            position = "left",
+            position = "float",
             width = 40,
             mappings = {
               ["<cr>"] = "open",
@@ -137,9 +137,10 @@ return {
           },
         })
 
-        vim.cmd([[nnoremap , :Neotree toggle<cr>]])
-        vim.cmd([[nnoremap . :Neotree buffers<cr>]])
-        vim.cmd([[nnoremap [ :Neotree float git_status<cr>]])
+        local opts = { buffer = bufnr }
+        vim.keymap.set("n", ",", "<CMD>Neotree toggle<CR>", opts)
+        vim.keymap.set("n", ".", "<CMD>Neotree buffers<CR>", opts)
+        vim.keymap.set("n", "[", "<CMD>Neotree float git_status<CR>", opts)
       end,
     })
   end,

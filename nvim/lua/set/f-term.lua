@@ -8,7 +8,7 @@ return {
           border = vim.g.my_border,
         })
 
-        local opts = { noremap = true, silent = true }
+        local opts = { buffer = bufnr }
         vim.keymap.set("n", ";", '<CMD>lua require("FTerm").toggle()<CR>', opts)
         vim.keymap.set("t", ";", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
         vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
