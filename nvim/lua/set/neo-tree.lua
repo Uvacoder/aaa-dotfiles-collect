@@ -139,6 +139,7 @@ return {
 
         vim.cmd([[nnoremap , :Neotree toggle<cr>]])
         vim.cmd([[nnoremap . :Neotree buffers<cr>]])
+        vim.cmd([[nnoremap [ :Neotree float git_status<cr>]])
       end,
     })
   end,

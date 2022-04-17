@@ -3,11 +3,8 @@ local colors = {
   { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "night-fox" },
   { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "tokyo-night" },
   { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "xcode-colors" },
-  { fg = "#8B999C", bg = "#090B10", bg_alt = "#0D1117", theme = "doom-one" },
-  { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "rose-pine" },
-  { fg = "#8B999C", bg = "#193549", bg_alt = "#002B37", theme = "cobalt-2" },
 }
-vim.g.my_ui_colors = colors[5]
+vim.g.my_ui_colors = colors[3]
 
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
