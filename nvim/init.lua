@@ -26,7 +26,7 @@ require("packer").startup({
     require("set/neo-tree").setup(use)
     require("set/f-term").setup(use)
     require("set/git-signs").setup(use)
-    require("set/null-ls").setup(use)
+    require("set/formatter").setup(use)
     require("set/indent-blank-line").setup(use)
     require("set/tree-sitter").setup(use)
     require("set/cmp").setup(use)
