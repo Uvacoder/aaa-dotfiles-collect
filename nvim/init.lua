@@ -7,7 +7,7 @@ local colors = {
   { fg = "#8B999C", bg = "#191523", bg_alt = "#26233a", theme = "rose-pine" },
   { fg = "#8B999C", bg = "#193549", bg_alt = "#002B37", theme = "cobalt-2" },
 }
-vim.g.my_ui_colors = colors[1]
+vim.g.my_ui_colors = colors[5]
 
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"

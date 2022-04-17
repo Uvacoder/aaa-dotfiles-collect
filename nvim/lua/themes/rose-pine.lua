@@ -3,7 +3,7 @@ return {
     use({
       "rose-pine/neovim",
       as = "rose-pine",
-      tag = "v1.*",
+      -- tag = "v1.*",
 
       config = function()
         require("rose-pine").setup({
