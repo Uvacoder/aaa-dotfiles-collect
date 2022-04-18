@@ -59,11 +59,19 @@ return {
         end
 
         vim.diagnostic.config({
-          virtual_text = { source = "always", prefix = "" },
+          virtual_text = { source = "always", prefix = vim.g.my_border.Hint },
           signs = true,
           underline = true,
           update_in_insert = true,
           severity_sort = false,
+          float = {
+            focusable = false,
+            style = "minimal",
+            border = vim.g.my_border,
+            source = "always",
+            header = "",
+            prefix = "",
+          },
         })
 
         for type, icon in pairs(vim.g.my_icons.signs) do

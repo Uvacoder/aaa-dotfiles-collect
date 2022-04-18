@@ -3,7 +3,13 @@ return {
     use({
       "rcarriga/nvim-notify",
       config = function()
-        vim.notify = require("notify")
+        local notify = require("notify")
+        notify.setup({
+          stages = "static",
+          render = "minimal",
+          minimum_width = 10,
+        })
+        vim.notify = notify
       end,
     })
   end,
