@@ -1,10 +1,9 @@
 require("core/options")
 local colors = {
-  { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "night-fox" },
   { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "tokyo-night" },
   { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "xcode-colors" },
 }
-vim.g.my_ui_colors = colors[2]
+vim.g.my_ui_colors = colors[1]
 
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -23,6 +22,7 @@ require("packer").startup({
     require("set/visual-multi").setup(use)
     require("set/auto-pairs").setup(use)
     require("set/modes").setup(use)
+    require("set/numbers").setup(use)
     require("set/neo-tree").setup(use)
     require("set/f-term").setup(use)
     require("set/git-signs").setup(use)

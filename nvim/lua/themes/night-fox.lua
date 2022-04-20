@@ -5,24 +5,6 @@ return {
       "EdenEast/nightfox.nvim",
 
       config = function()
-        local palettes = {
-          bg0 = vim.g.my_ui_colors.bg_alt,
-          bg1 = vim.g.my_ui_colors.bg,
-        }
-        local specs = {
-          diag = {
-            hint = vim.g.my_colors.white,
-            error = vim.g.my_colors.red,
-            warn = vim.g.my_colors.yellow,
-            info = vim.g.my_colors.blue,
-          },
-          git = {
-            add = vim.g.my_colors.green,
-            changed = vim.g.my_colors.yellow,
-            removed = vim.g.my_colors.red,
-          },
-        }
-
         require("nightfox").setup({
           options = {
             -- Compiled file's destination location
@@ -40,14 +22,25 @@ return {
             },
           },
           palettes = {
-            nightfox = palettes,
-            nordfox = palettes,
-            duskfox = palettes,
+            all = {
+              bg0 = vim.g.my_ui_colors.bg_alt,
+              bg1 = vim.g.my_ui_colors.bg,
+            },
           },
           specs = {
-            nightfox = specs,
-            nordfox = specs,
-            duskfox = specs,
+            all = {
+              diag = {
+                hint = vim.g.my_colors.white,
+                error = vim.g.my_colors.red,
+                warn = vim.g.my_colors.yellow,
+                info = vim.g.my_colors.blue,
+              },
+              git = {
+                add = vim.g.my_colors.green,
+                changed = vim.g.my_colors.yellow,
+                removed = vim.g.my_colors.red,
+              },
+            },
           },
           groups = {
             IndentBlanklineChar = { fg = vim.g.my_ui_colors.bg },
