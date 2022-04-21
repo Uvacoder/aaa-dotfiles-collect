@@ -11,6 +11,7 @@ return {
         local opts = { buffer = bufnr }
         vim.keymap.set("n", ";", '<CMD>lua require("FTerm").toggle()<CR>', opts)
         vim.keymap.set("t", ";", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
+        vim.keymap.set("t", "q", '<C-\\><C-n><CMD>lua require("FTerm").exit()<CR>', opts)
         vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
       end,
     })

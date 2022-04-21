@@ -1,5 +1,6 @@
 require("core/options")
 local colors = {
+  { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "rose-pine" },
   { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "tokyo-night" },
   { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "xcode-colors" },
 }
