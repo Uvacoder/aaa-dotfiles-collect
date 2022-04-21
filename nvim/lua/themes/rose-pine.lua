@@ -17,6 +17,7 @@ return {
           groups = {
             background = vim.g.my_ui_colors.bg,
             panel = vim.g.my_ui_colors.bg_alt,
+            border = "highlight_med",
 
             error = vim.g.my_colors.red,
             warn = vim.g.my_colors.yellow,
