@@ -23,7 +23,6 @@ require("packer").startup({
     require("set/visual-multi").setup(use)
     require("set/auto-pairs").setup(use)
     require("set/modes").setup(use)
-    require("set/numbers").setup(use)
     require("set/neo-tree").setup(use)
     require("set/f-term").setup(use)
     require("set/git-signs").setup(use)
@@ -45,7 +44,7 @@ require("packer").startup({
       open_fn = function()
         return require("packer.util").float({ border = vim.g.my_border })
       end,
-      prompt_border = "single",
+      prompt_border = vim.g.my_border,
     },
     git = {
       clone_timeout = 6000, -- seconds

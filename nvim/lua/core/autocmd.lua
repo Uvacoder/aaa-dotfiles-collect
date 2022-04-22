@@ -11,15 +11,15 @@ vim.cmd(":command! Q q")
 
 -- Auto save files when focus is lost
 vim.cmd([[autocmd FocusLost * silent! :wa!]])
--- vim.cmd([[autocmd TermOpen * setlocal signcolumn=no nonumber norelativenumber]])
 
--- vim.cmd([[
---   augroup numbertoggle
---     autocmd!
---     autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
---     autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
---   augroup end
--- ]])
+vim.cmd([[autocmd TermOpen * setlocal signcolumn=no nonumber norelativenumber]])
+vim.cmd([[
+  augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
+  augroup end
+]])
 
 -- TrimWhitespace on save
 vim.cmd([[
