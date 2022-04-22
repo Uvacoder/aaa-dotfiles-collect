@@ -1,15 +1,15 @@
 require("core/options")
+
 local colors = {
   { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "rose-pine" },
   { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "tokyo-night" },
   { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "xcode-colors" },
 }
-vim.g.my_ui_colors = colors[1]
+vim.g.my_ui_colors = colors[2]
 
-local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  packer_bootstrap = vim.fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
 end
 local packer_group = vim.api.nvim_create_augroup("Packer", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", { command = "source <afile> | PackerCompile", group = packer_group, pattern = "init.lua" })
@@ -24,6 +24,7 @@ require("packer").startup({
     require("set/auto-pairs").setup(use)
     require("set/modes").setup(use)
     require("set/neo-tree").setup(use)
+    require("set/lua-line").setup(use)
     require("set/f-term").setup(use)
     require("set/git-signs").setup(use)
     require("set/formatter").setup(use)
@@ -31,7 +32,6 @@ require("packer").startup({
     require("set/tree-sitter").setup(use)
     require("set/cmp").setup(use)
     require("set/lsp-config").setup(use)
-    require("set/lua-line").setup(use)
     require("themes/" .. vim.g.my_ui_colors.theme).setup(use)
 
     if packer_bootstrap then
