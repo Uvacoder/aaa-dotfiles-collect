@@ -9,7 +9,7 @@ vim.g.my_colors = {
 }
 vim.g.my_icons = {
   signs = { Error = " ", Warning = "𥉉", Hint = "ﬤ ", Info = " " },
-  diff = { add = "│", change = "│", delete = "│" },
+  diff = { add = "┃", change = "┃", delete = "┃" },
   modified = " ",
 }
 vim.g.my_border = "rounded" -- { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
