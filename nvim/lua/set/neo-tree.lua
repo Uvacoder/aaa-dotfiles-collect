@@ -24,7 +24,7 @@ return {
             },
           },
           close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
-          popup_border_style = "rounded",
+          popup_border_style = vim.g.my_border,
           enable_git_status = true,
           enable_diagnostics = false,
           default_component_configs = {
@@ -141,6 +141,7 @@ return {
         vim.keymap.set("n", ",", "<CMD>Neotree toggle<CR>", opts)
         vim.keymap.set("n", ".", "<CMD>Neotree buffers<CR>", opts)
         vim.keymap.set("n", "[", "<CMD>Neotree float git_status<CR>", opts)
+        vim.keymap.set("n", "<C-q>", "<CMD>Neotree close<CR>", opts)
       end,
     })
   end,

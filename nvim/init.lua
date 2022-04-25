@@ -1,12 +1,7 @@
 require("core/options")
 
-local colors = {
-  { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "one-dark-pro" },
-  { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "rose-pine" },
-  { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "tokyo-night" },
-  { fg = "#8B999C", bg = "#000000", bg_alt = "#0D1117", theme = "xcode-colors" },
-}
-vim.g.my_ui_colors = colors[1]
+local colors = { "one-dark-pro", "rose-pine", "tokyo-night", "xcode-colors" }
+vim.g.my_ui_colors = { theme = colors[3], bg = "#000000", bg_alt = "#0c0e15", fg = "#5c6370" }
 
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then

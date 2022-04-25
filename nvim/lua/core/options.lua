@@ -12,7 +12,7 @@ vim.g.my_icons = {
   diff = { add = "┃", change = "┃", delete = "┃" },
   modified = " ",
 }
-vim.g.my_border = "rounded" -- { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+vim.g.my_border = "single" -- { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
 
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
