@@ -28,8 +28,14 @@ return {
         -- Global setup.
         cmp.setup({
           window = {
-            completion = cmp.config.window.bordered(),
-            documentation = cmp.config.window.bordered(),
+            documentation = {
+              border = vim.g.my_border,
+              winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
+            },
+            completion = {
+              border = vim.g.my_border,
+              winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
+            },
           },
           snippet = {
             expand = function(args)

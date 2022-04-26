@@ -11,10 +11,10 @@ return {
 
         vim.cmd([[colorscheme xcode]])
 
-        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my_ui_colors.bg })
-        vim.api.nvim_set_hl(0, "Normal", { bg = vim.g.my_ui_colors.bg })
-        vim.api.nvim_set_hl(0, "SignColumn", { bg = vim.g.my_ui_colors.bg })
-        vim.api.nvim_set_hl(0, "FloatBorder", { bg = vim.g.my_ui_colors.bg })
+        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my_ui.bg })
+        vim.api.nvim_set_hl(0, "Normal", { bg = vim.g.my_ui.bg })
+        vim.api.nvim_set_hl(0, "SignColumn", { bg = vim.g.my_ui.bg })
+        vim.api.nvim_set_hl(0, "FloatBorder", { bg = vim.g.my_ui.bg })
 
         vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = vim.g.my_colors.green })
         vim.api.nvim_set_hl(0, "GitSignsChange", { fg = vim.g.my_colors.yellow })

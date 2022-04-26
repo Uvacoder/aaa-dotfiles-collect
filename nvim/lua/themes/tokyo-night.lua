@@ -18,7 +18,7 @@ return {
         vim.g.tokyonight_hide_inactive_statusline = true
 
         vim.g.tokyonight_colors = {
-          bg = vim.g.my_ui_colors.bg,
+          bg = vim.g.my_ui.bg,
           error = vim.g.my_colors.red,
           warning = vim.g.my_colors.yellow,
           info = vim.g.my_colors.blue,
@@ -33,9 +33,12 @@ return {
         -- Load the colorscheme
         vim.cmd([[colorscheme tokyonight]])
 
-        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my_ui_colors.bg })
-        vim.cmd([[highlight! link NeoTreeNormal NvimTreeNormal]])
-        vim.cmd([[highlight! link Terminal NvimTreeNormal]])
+        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my_ui.bg })
+
+        vim.cmd("highlight! link CmpPmenu TelescopeNormal")
+        vim.cmd("highlight! link CmpPmenuBorder TelescopeBorder")
+        vim.cmd("highlight! link NeoTreeNormal NvimTreeNormal")
+        vim.cmd("highlight! link Terminal NvimTreeNormal")
       end,
     })
   end,

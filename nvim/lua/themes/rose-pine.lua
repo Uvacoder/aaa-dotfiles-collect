@@ -15,8 +15,8 @@ return {
           disable_italics = false,
           ---@usage string hex value or named color from rosepinetheme.com/palette
           groups = {
-            background = vim.g.my_ui_colors.bg,
-            panel = vim.g.my_ui_colors.bg_alt,
+            background = vim.g.my_ui.bg,
+            panel = vim.g.my_ui.bg_alt,
             border = "highlight_med",
 
             error = vim.g.my_colors.red,
@@ -26,7 +26,7 @@ return {
           },
           -- Change specific vim highlight groups
           highlight_groups = {
-            IndentBlanklineChar = { fg = vim.g.my_ui_colors.bg },
+            IndentBlanklineChar = { fg = vim.g.my_ui.bg },
             NeoTreeNormal = { link = "NvimTreeNormal" },
           },
         })

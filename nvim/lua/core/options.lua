@@ -1,19 +1,3 @@
-vim.g.my_colors = {
-  blue = "#5482FF",
-  green = "#84b360",
-  yellow = "#d9c97c",
-  orange = "#ffa14f",
-  red = "#ff7ab2",
-  white = "#ffffff",
-  purple = "#b281eb",
-}
-vim.g.my_icons = {
-  signs = { Error = " ", Warning = "𥉉", Hint = "ﬤ ", Info = " " },
-  diff = { add = "┃", change = "┃", delete = "┃" },
-  modified = " ",
-}
-vim.g.my_border = "single" -- { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
-
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_python_provider = 0

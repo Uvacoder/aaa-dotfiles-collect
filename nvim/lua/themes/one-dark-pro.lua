@@ -8,7 +8,7 @@ return {
           theme = "onedark",
           colors = {
             onedark = {
-              bg = vim.g.my_ui_colors.bg,
+              bg = vim.g.my_ui.bg,
               fg = "#93a4c3",
               red = "#f65866",
               orange = "#ee9025",
