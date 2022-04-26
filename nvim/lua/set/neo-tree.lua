@@ -89,12 +89,12 @@ return {
                 "package-lock.json",
                 "node_modules",
                 "babel.config.js",
+                "plugin",
+                "packer_compiled.lua",
               },
               never_show = { -- remains hidden even if visible is toggled to true
                 ".DS_Store",
                 "thumbs.db",
-                "plugin",
-                "packer_compiled.lua",
               },
             },
             follow_current_file = true, -- This will find and focus the file in the active buffer every
