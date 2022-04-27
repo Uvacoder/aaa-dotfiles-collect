@@ -24,7 +24,7 @@ return {
             },
           },
           close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
-          popup_border_style = vim.g.my_border,
+          popup_border_style = vim.g.my.border,
           enable_git_status = true,
           enable_diagnostics = false,
           default_component_configs = {
@@ -35,7 +35,7 @@ return {
               default = "",
             },
             modified = {
-              symbol = vim.g.my_icons.modified,
+              symbol = vim.g.my.icons.modified,
               highlight = "NeoTreeModified",
             },
             name = {

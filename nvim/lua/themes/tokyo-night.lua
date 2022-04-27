@@ -18,23 +18,23 @@ return {
         vim.g.tokyonight_hide_inactive_statusline = true
 
         vim.g.tokyonight_colors = {
-          bg = vim.g.my_ui.bg,
-          error = vim.g.my_colors.red,
-          warning = vim.g.my_colors.yellow,
-          info = vim.g.my_colors.blue,
-          hint = vim.g.my_colors.white,
+          bg = vim.g.my.colors.black,
+          error = vim.g.my.colors.red,
+          warning = vim.g.my.colors.yellow,
+          info = vim.g.my.colors.blue,
+          hint = vim.g.my.colors.white,
           gitSigns = {
-            delete = vim.g.my_colors.red,
-            change = vim.g.my_colors.yellow,
-            add = vim.g.my_colors.green,
+            delete = vim.g.my.colors.red,
+            change = vim.g.my.colors.yellow,
+            add = vim.g.my.colors.green,
           },
         }
 
         -- Load the colorscheme
         vim.cmd([[colorscheme tokyonight]])
 
-        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my_ui.bg })
-        -- vim.api.nvim_set_hl(0, "BufferLineFill", { bg = vim.g.my_ui.bg })
+        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my.colors.black})
+        -- vim.api.nvim_set_hl(0, "BufferLineFill", { bg = vim.g.my.colors.black})
 
         vim.cmd("highlight! link CmpPmenu TelescopeNormal")
         vim.cmd("highlight! link CmpPmenuBorder TelescopeBorder")

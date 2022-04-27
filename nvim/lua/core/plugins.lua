@@ -18,14 +18,14 @@ require("packer").startup({
     require("set/neo-tree").setup(use)
     require("set/lua-line").setup(use)
     require("set/f-term").setup(use)
-    require("set/buffer-line").setup(use)
+    require("set/bar-bar").setup(use)
     require("set/git-signs").setup(use)
     require("set/formatter").setup(use)
     require("set/indent-blank-line").setup(use)
     require("set/tree-sitter").setup(use)
     require("set/cmp").setup(use)
     require("set/lsp-config").setup(use)
-    require("themes/" .. vim.g.my_ui.theme).setup(use)
+    require("themes/" .. vim.g.my.theme).setup(use)
 
     if packer_bootstrap then
       require("packer").sync()
@@ -35,9 +35,9 @@ require("packer").startup({
   config = {
     display = {
       open_fn = function()
-        return require("packer.util").float({ border = vim.g.my_border })
+        return require("packer.util").float({ border = vim.g.my.border })
       end,
-      prompt_border = vim.g.my_border,
+      prompt_border = vim.g.my.border,
     },
     git = {
       clone_timeout = 6000, -- seconds

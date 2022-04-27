@@ -29,11 +29,11 @@ return {
         cmp.setup({
           window = {
             documentation = {
-              border = vim.g.my_border,
+              border = vim.g.my.border,
               winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
             },
             completion = {
-              border = vim.g.my_border,
+              border = vim.g.my.border,
               winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
             },
           },

@@ -1,25 +1,25 @@
 require("core/options")
 
-vim.g.my_icons = {
-  signs = { Error = " ", Warning = "𥉉", Hint = "ﬤ ", Info = " " },
-  diff = { add = "┃", change = "┃", delete = "┃" },
-  modified = "",
-}
-
-local border = { "rounded", "single", "double" }
-vim.g.my_border = border[2]
-
 local themes = { "rose-pine", "tokyo-night" }
-vim.g.my_ui = { theme = themes[2], bg = "#000000", bg_alt = "#0c0e15", fg = "#5c6370" }
+local border = { "rounded", "single", "double" }
 
-vim.g.my_colors = {
-  blue = "#5482FF",
-  green = "#84b360",
-  yellow = "#d9c97c",
-  orange = "#ffa14f",
-  red = "#ff7ab2",
-  white = "#ffffff",
-  purple = "#b281eb",
+vim.g.my = {
+  theme = themes[2],
+  border = border[1],
+  icons = {
+    signs = { Error = "⦸ ", Warning = "𥉉", Hint = "ﬤ ", Info = " " },
+    diff = { add = "┃", change = "┃", delete = "┃" },
+    modified = "",
+  },
+  colors = {
+    blue = "#5482FF",
+    green = "#84b360",
+    yellow = "#d9c97c",
+    red = "#ff7ab2",
+    white = "#ffffff",
+    gray = "#0c0e15",
+    black = "#000000",
+  },
 }
 
 require("core/Plugins")

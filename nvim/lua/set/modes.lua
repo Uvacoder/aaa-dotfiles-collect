@@ -6,10 +6,10 @@ return {
       config = function()
         require("modes").setup({
           colors = {
-            copy = vim.g.my_colors.yellow,
-            delete = vim.g.my_colors.red,
-            insert = vim.g.my_colors.blue,
-            visual = vim.g.my_colors.purple,
+            copy = vim.g.my.colors.yellow,
+            delete = vim.g.my.colors.red,
+            insert = vim.g.my.colors.blue,
+            visual = vim.g.my.colors.purple,
           },
           line_opacity = 0.4,
           set_cursor = true,

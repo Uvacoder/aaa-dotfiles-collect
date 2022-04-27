@@ -19,8 +19,8 @@ return {
           client.resolved_capabilities.document_range_formatting = false
 
           --border
-          vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.my_border })
-          vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.my_border })
+          vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.my.border })
+          vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.my.border })
 
           -- Enable completion triggered by <c-x><c-o>
           vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -59,7 +59,7 @@ return {
         end
 
         vim.diagnostic.config({
-          virtual_text = { source = "always", prefix = vim.g.my_border.Hint },
+          virtual_text = { source = "always", prefix = vim.g.my.border.Hint },
           signs = true,
           underline = true,
           update_in_insert = true,
@@ -67,14 +67,14 @@ return {
           float = {
             focusable = false,
             style = "minimal",
-            border = vim.g.my_border,
+            border = vim.g.my.border,
             source = "always",
             header = "",
             prefix = "",
           },
         })
 
-        for type, icon in pairs(vim.g.my_icons.signs) do
+        for type, icon in pairs(vim.g.my.icons.signs) do
           local hl = "DiagnosticSign" .. type
           vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
         end
