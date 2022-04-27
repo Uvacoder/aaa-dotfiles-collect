@@ -3,7 +3,7 @@ require("core/options")
 vim.g.my_icons = {
   signs = { Error = " ", Warning = "𥉉", Hint = "ﬤ ", Info = " " },
   diff = { add = "┃", change = "┃", delete = "┃" },
-  modified = " ",
+  modified = "",
 }
 
 local border = { "rounded", "single" }

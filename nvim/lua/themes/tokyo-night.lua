@@ -34,11 +34,13 @@ return {
         vim.cmd([[colorscheme tokyonight]])
 
         vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my_ui.bg })
+        vim.api.nvim_set_hl(0, "BufferLineFill", { bg = vim.g.my_ui.bg_alt })
 
         vim.cmd("highlight! link CmpPmenu TelescopeNormal")
         vim.cmd("highlight! link CmpPmenuBorder TelescopeBorder")
         vim.cmd("highlight! link NeoTreeNormal NvimTreeNormal")
-        vim.cmd("highlight! link Terminal NvimTreeNormal")
+        -- vim.cmd("highlight! link Floaterm TelescopeNormal")
+        -- vim.cmd("highlight! link FloatermBorder TelescopeBorder")
       end,
     })
   end,
