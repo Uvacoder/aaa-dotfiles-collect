@@ -6,11 +6,11 @@ vim.g.my_icons = {
   modified = "",
 }
 
-local border = { "rounded", "single" }
+local border = { "rounded", "single", "double" }
 vim.g.my_border = border[2]
 
-local themes = { "one-dark-pro", "rose-pine", "tokyo-night", "xcode-colors" }
-vim.g.my_ui = { theme = themes[3], bg = "#000000", bg_alt = "#0c0e15", fg = "#5c6370" }
+local themes = { "rose-pine", "tokyo-night" }
+vim.g.my_ui = { theme = themes[2], bg = "#000000", bg_alt = "#0c0e15", fg = "#5c6370" }
 
 vim.g.my_colors = {
   blue = "#5482FF",

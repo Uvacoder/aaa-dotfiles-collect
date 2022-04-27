@@ -2,6 +2,7 @@ return {
   setup = function(use)
     use({
       "akinsho/nvim-bufferline.lua",
+      tag = "*",
       requires = { "kyazdani42/nvim-web-devicons", opt = true },
       config = function()
         require("bufferline").setup({
@@ -13,11 +14,6 @@ return {
             show_close_icon = false,
             show_buffer_close_icons = false,
             always_show_bufferline = true,
-            separator_style = { "", "" },
-          },
-          highlights = {
-            buffer_selected = { bg = vim.g.my_ui.bg },
-            fill = { bg = vim.g.my_ui.bg_alt },
           },
         })
       end,

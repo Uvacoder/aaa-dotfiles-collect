@@ -27,7 +27,9 @@ return {
           -- Change specific vim highlight groups
           highlight_groups = {
             IndentBlanklineChar = { fg = vim.g.my_ui.bg },
-            NeoTreeNormal = { link = "NvimTreeNormal" },
+            NeoTreeNormal = { link = "FloatBorder" },
+            CmpPmenu = { link = "FloatBorder" },
+            CmpPmenuBorder = { link = "FloatBorder" },
           },
         })
         vim.cmd("colorscheme rose-pine")
