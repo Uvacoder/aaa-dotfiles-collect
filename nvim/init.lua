@@ -1,5 +1,5 @@
 require("core/options")
-require("core/configs")
+require("core/config")
 require("core/Plugins")
 require("core/mappings")
 require("core/autocmd")

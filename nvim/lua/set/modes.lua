@@ -6,12 +6,14 @@ return {
       config = function()
         require("modes").setup({
           colors = {
-            copy = vim.g.my.colors.yellow,
+            copy = vim.g.my.colors.white,
             delete = vim.g.my.colors.red,
-            insert = vim.g.my.colors.blue,
-            visual = vim.g.my.colors.purple,
+            insert = vim.g.my.colors.green,
+            visual = vim.g.my.colors.yellow,
           },
           line_opacity = 0.4,
+          set_cursorline = false,
+          set_number = false,
           set_cursor = true,
           focus_only = false,
         })

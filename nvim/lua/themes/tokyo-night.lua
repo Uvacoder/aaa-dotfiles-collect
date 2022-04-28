@@ -10,9 +10,9 @@ return {
         vim.g.tokyonight_italic_keywords = false
         vim.g.tokyonight_italic_functions = false
         vim.g.tokyonight_italic_variables = false
-        vim.g.tokyonight_transparent = false
-        vim.g.tokyonight_transparent_sidebar = false
-        vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer", "NvimTree" }
+        vim.g.tokyonight_transparent = true
+        vim.g.tokyonight_transparent_sidebar = true
+        vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer", "NeoTree" }
         vim.g.tokyonight_dark_sidebar = true
         vim.g.tokyonight_dark_float = true
         vim.g.tokyonight_hide_inactive_statusline = true
@@ -33,14 +33,12 @@ return {
         -- Load the colorscheme
         vim.cmd([[colorscheme tokyonight]])
 
-        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my.colors.black})
-        -- vim.api.nvim_set_hl(0, "BufferLineFill", { bg = vim.g.my.colors.black})
+        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my.colors.black })
 
         vim.cmd("highlight! link CmpPmenu TelescopeNormal")
         vim.cmd("highlight! link CmpPmenuBorder TelescopeBorder")
-        vim.cmd("highlight! link NeoTreeNormal NvimTreeNormal")
-        -- vim.cmd("highlight! link Floaterm TelescopeNormal")
-        -- vim.cmd("highlight! link FloatermBorder TelescopeBorder")
+        vim.cmd("highlight! link NeoTreeNormal TelescopeNormal")
+        vim.cmd("highlight! link Terminal TelescopeNormal")
       end,
     })
   end,
