@@ -2,7 +2,7 @@ return {
   setup = function(use)
     use({
       "neovim/nvim-lspconfig",
-      requires = "hrsh7th/cmp-nvim-lsp",
+      requires = { "hrsh7th/cmp-nvim-lsp", "williamboman/nvim-lsp-installer" },
       config = function()
         -- Diagnostic keymaps
         vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
@@ -50,6 +50,11 @@ return {
         -- Enable the following language servers
         -- local servers = { 'volar', 'tailwindcss', 'tsserver' }
         local servers = { "volar", "tsserver" }
+
+        -- Ensure servers are installed
+        require("nvim-lsp-installer").setup({
+          ensure_installed = servers,
+        })
 
         for _, lsp in pairs(servers) do
           require("lspconfig")[lsp].setup({
