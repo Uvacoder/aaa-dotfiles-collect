@@ -1,12 +1,12 @@
-local themes = { "rose-pine", "tokyo-night" }
+local themes = { "rose-pine", "tokyo-night", "one-dark" }
 local border = { "rounded", "single", "double" }
 
 vim.g.my = {
-  theme = themes[2],
+  theme = themes[3],
   border = border[1],
   icons = {
-    signs = { Error = "⦸ ", Warning = "𥉉", Hint = "ﬤ ", Info = " " },
-    diff = { add = "┃", change = "┃", delete = "┃" },
+    signs = { Error = "", Warning = "", Hint = "", Info = "" },
+    diff = { add = "│", change = "│", delete = "│" },
     modified = "",
   },
   colors = {

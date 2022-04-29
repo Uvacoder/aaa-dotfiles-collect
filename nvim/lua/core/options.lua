@@ -79,7 +79,7 @@ vim.opt.foldlevel = 99
 vim.opt.foldmethod = "manual"
 vim.opt.formatoptions = "l"
 vim.opt.shortmess:append("aoOtAIc")
--- vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor"
+vim.opt.guicursor = "n-v-c:ver25-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor"
 
 if vim.fn.has("termguicolors") == 1 then
   vim.opt.termguicolors = true
