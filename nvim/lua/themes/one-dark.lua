@@ -36,7 +36,7 @@ return {
         vim.cmd("highlight! link NeoTreeNormal NormalFloat")
         vim.cmd("highlight! link NeoTreeFloatBorder FloatBorder")
         vim.cmd("highlight! link NeoTreeEndOfBuffer NormalFloat")
-        -- vim.cmd("highlight! link Terminal NeoTreeNormal")
+        vim.cmd("highlight! link NeoTreeCursorLine PmenuSel")
       end,
     })
   end,
