@@ -54,7 +54,7 @@ return {
           },
           window = {
             position = "float",
-            width = 40,
+            width = 20,
             mappings = {
               ["<cr>"] = "open",
               ["S"] = "open_split",

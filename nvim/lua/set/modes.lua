@@ -11,7 +11,7 @@ return {
             insert = vim.g.my.colors.green,
             visual = vim.g.my.colors.yellow,
           },
-          set_cursorline = true,
+          set_cursorline = false,
           line_opacity = 0.10,
           set_number = true,
           set_cursor = true,
