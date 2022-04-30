@@ -11,11 +11,11 @@ return {
             insert = vim.g.my.colors.green,
             visual = vim.g.my.colors.yellow,
           },
-          line_opacity = 0.4,
-          set_cursorline = false,
-          set_number = false,
+          set_cursorline = true,
+          line_opacity = 0.10,
+          set_number = true,
           set_cursor = true,
-          focus_only = false,
+          ignore_filetypes = { "NvimTree", "TelescopePrompt" },
         })
       end,
     })
