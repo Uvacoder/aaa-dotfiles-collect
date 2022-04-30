@@ -31,6 +31,7 @@ return {
 
         vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my.colors.black })
 
+        vim.cmd("highlight! link Terminal NormalFloat")
         vim.cmd("highlight! link CmpPmenu NormalFloat")
         vim.cmd("highlight! link CmpPmenuBorder FloatBorder")
         vim.cmd("highlight! link NeoTreeNormal NormalFloat")

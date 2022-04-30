@@ -19,7 +19,6 @@ require("packer").startup({
     require("set/lua-line").setup(use)
     require("set/f-term").setup(use)
     require("set/coke-line").setup(use)
-    -- require("set/bar-bar").setup(use)
     require("set/git-signs").setup(use)
     require("set/formatter").setup(use)
     require("set/indent-blank-line").setup(use)
