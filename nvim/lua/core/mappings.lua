@@ -32,6 +32,7 @@ vim.keymap.set("n", "aa", "ggVG", { noremap = true, silent = true })
 -- save and close
 vim.keymap.set("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-f>", ":Format<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "ff", ":Format<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-q>", ":q<CR>", { noremap = true, silent = true })
 
 -- vim.keymap.set("n", "q", ":q<CR>", { noremap = true, silent = true })

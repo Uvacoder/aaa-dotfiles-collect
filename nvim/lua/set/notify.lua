@@ -10,6 +10,8 @@ return {
           minimum_width = 10,
         })
         vim.notify = notify
+
+        -- :Notifications
       end,
     })
   end,

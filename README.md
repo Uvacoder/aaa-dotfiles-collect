@@ -67,7 +67,8 @@ ln -s ~/.dotfiles/kitty/kitty.conf  ~/.config/kitty/kitty.conf
 cp ~/.dotfiles/battery/local.battery.plist ~/Library/LaunchAgents/local.battery.plist
 
 
-sudo npm install -g @volar/vue-language-server typescript typescript-language-server @fsouza/prettierd
+# sudo npm install -g @volar/vue-language-server typescript typescript-language-server @fsouza/prettierd eslint_d
+sudo npm install -g @volar/vue-language-server typescript typescript-language-server
 
 
 curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz

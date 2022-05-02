@@ -5,7 +5,7 @@ vim.g.my = {
   theme = themes[3],
   border = border[1],
   icons = {
-    signs = { Error = "", Warning = "", Hint = "", Info = "" },
+    -- signs = { error = " ", warn = " ", hint = " ", info = " " },
     diff = { add = "│", change = "│", delete = "│" },
     modified = "",
   },
