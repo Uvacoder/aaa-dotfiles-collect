@@ -6,10 +6,10 @@ return {
         require("FTerm").setup({
           dimensions = { height = 0.8, width = 0.8 },
           border = vim.g.my.border,
-          hl = "FloatBorder",
+          hl = "NormalFloat",
         })
 
-        local opts = { buffer = bufnr }
+        local opts = { noremap = true, silent = true }
         vim.keymap.set("n", ";", '<CMD>lua require("FTerm").toggle()<CR>', opts)
         vim.keymap.set("t", ";", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
         vim.keymap.set("t", "<C-q>", '<C-\\><C-n><CMD>lua require("FTerm").exit()<CR>', opts)

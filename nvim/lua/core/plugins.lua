@@ -26,7 +26,8 @@ packer.init({
 })
 
 -- Install your plugins here
-return packer.startup(function(use)
+return packer.startup({
+  function(use)
     require("set/packer").setup(use)
     require("set/notify").setup(use)
     require("set/bujo").setup(use)
@@ -41,11 +42,11 @@ return packer.startup(function(use)
     require("set/f-term").setup(use)
     require("set/coke-line").setup(use)
     require("set/git-signs").setup(use)
-    require("set/stylua").setup(use)
     require("set/indent-blank-line").setup(use)
     require("set/tree-sitter").setup(use)
     require("set/cmp").setup(use)
     require("set/lsp-config").setup(use)
+    require("set/null-ls").setup(use)
     require("themes/" .. vim.g.my.theme).setup(use)
 
   -- Automatically set up your configuration after cloning packer.nvim
@@ -53,4 +54,5 @@ return packer.startup(function(use)
     if packer_bootstrap then
       require("packer").sync()
     end
-end)
+  end
+})

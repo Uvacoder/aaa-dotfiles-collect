@@ -20,7 +20,7 @@ return {
       "typescript.tsx",
     },
     root_dir = function(fname)
-      return util.root_pattern("tsconfig.json")(fname) or util.root_pattern("package.json", "jsconfig.json", ".git")(fname)
+      return util.root_pattern("package.json", "jsconfig.json", ".git")(fname)
     end,
   },
   docs = {

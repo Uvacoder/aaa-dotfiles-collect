@@ -137,7 +137,7 @@ return {
           },
         })
 
-        local opts = { buffer = bufnr }
+        local opts = { noremap = true, silent = true }
         vim.keymap.set("n", ",", "<CMD>Neotree toggle<CR>", opts)
         vim.keymap.set("n", ".", "<CMD>Neotree toggle<CR>", opts)
         vim.keymap.set("n", "[", "<CMD>Neotree float git_status<CR>", opts)

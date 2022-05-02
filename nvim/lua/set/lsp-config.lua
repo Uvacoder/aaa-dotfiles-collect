@@ -1,6 +1,6 @@
 return {
   setup = function(use)
-    use({
+  use({
       "neovim/nvim-lspconfig",
       requires = { "hrsh7th/cmp-nvim-lsp" },
       -- requires = { "hrsh7th/cmp-nvim-lsp", "williamboman/nvim-lsp-installer" },
@@ -11,8 +11,11 @@ return {
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
         vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
 
-        local nvim_lsp = require("lspconfig")
         local on_attach = function(client, bufnr)
+          -- disable formatting for LSP clients as this is handled by null-ls
+          -- client.server_capabilities.document_formatting = false
+          -- client.server_capabilities.document_range_formatting = false
+
           local opts = { buffer = bufnr }
 
           --border
@@ -33,7 +36,9 @@ return {
           vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
           vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
-          vim.cmd([[command! Format execute 'lua vim.lsp.buf.format({ async = true })']])
+          -- vim.cmd([[command! Format execute 'lua vim.lsp.buf.format({ async = true })']])
+
+          -- client.supports_method("textDocument/formatting") = false
 
           -- if client.supports_method("textDocument/formatting") then
           -- vim.api.nvim_buf_set_keymap(bufnr, "n", "f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
