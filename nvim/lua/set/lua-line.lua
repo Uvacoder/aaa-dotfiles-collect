@@ -55,7 +55,7 @@ return {
             lualine_z = {},
           },
           tabline = {},
-          extensions = { "nvim-tree" },
+          extensions = { "neo-tree" },
         })
       end,
     })

@@ -20,7 +20,10 @@ return {
             bg0 = "#000000",
             bg1 = "#0c0e15",
           },
-          highlights = {},
+          highlights = {
+            -- FloatBorder = {fg = c.grey, bg = c.bg1},
+            IndentBlanklineChar = { fg = vim.g.my.colors.black },
+          },
           diagnostics = {
             darker = true,
             undercurl = true,
@@ -29,15 +32,15 @@ return {
         })
         require("onedark").load()
 
-        vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = vim.g.my.colors.black })
-
-        vim.cmd("highlight! link Terminal NormalFloat")
-        vim.cmd("highlight! link CmpPmenu NormalFloat")
-        vim.cmd("highlight! link CmpPmenuBorder FloatBorder")
-        vim.cmd("highlight! link NeoTreeNormal NormalFloat")
-        vim.cmd("highlight! link NeoTreeFloatBorder FloatBorder")
-        vim.cmd("highlight! link NeoTreeEndOfBuffer NormalFloat")
-        vim.cmd("highlight! link NeoTreeCursorLine PmenuSel")
+        vim.cmd([[
+          highlight! link FloatBorder NormalFloat
+          highlight! link CmpPmenu NormalFloat
+          highlight! link CmpPmenuBorder FloatBorder
+          highlight! link NeoTreeNormal NormalFloat
+          highlight! link NeoTreeFloatBorder FloatBorder
+          highlight! link NeoTreeEndOfBuffer NormalFloat
+          highlight! link NeoTreeCursorLine PmenuSel
+          ]])
       end,
     })
   end,

@@ -6,7 +6,7 @@ return {
         require("FTerm").setup({
           dimensions = { height = 0.8, width = 0.8 },
           border = vim.g.my.border,
-          hl = "NvimTreeNormal",
+          hl = "FloatBorder",
         })
 
         local opts = { buffer = bufnr }

@@ -78,20 +78,12 @@ vim.opt.foldenable = false
 vim.opt.foldlevel = 99
 vim.opt.foldmethod = "manual"
 vim.opt.formatoptions = "l"
-vim.opt.shortmess:append("aoOtAIc")
-vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor"
+vim.opt.shortmess:append("c")
+-- vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor"
 
 if vim.fn.has("termguicolors") == 1 then
   vim.opt.termguicolors = true
 end
-
--- Error formate
-vim.opt.errorformat = [[
-    %E%f:%l:%c: %trror: %m,%-Z%p^,%+C%.%#
-    %D%*a: Entering directory [`']%f
-    %X%*a: Leaving directory [`']%f
-    %-G%.%#
-]]
 
 local disabled_built_ins = {
   "netrw",
@@ -117,3 +109,6 @@ local disabled_built_ins = {
 for _, plugin in pairs(disabled_built_ins) do
   vim.g["loaded_" .. plugin] = 1
 end
+
+vim.cmd("set whichwrap+=<,>,[,],h,l")
+vim.cmd([[set iskeyword+=-]])
