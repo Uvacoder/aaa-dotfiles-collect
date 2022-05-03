@@ -41,7 +41,7 @@ return {
             },
             {
               text = function(buffer)
-                return buffer.is_modified and vim.g.my.icons.modified or " "
+                return buffer.is_modified and "" or " "
               end,
               fg = function(buffer)
                 return buffer.is_modified and vim.g.my.colors.yellow or nil

@@ -38,7 +38,7 @@ return {
             lualine_a = { "mode" },
             lualine_b = { "diagnostics" },
             lualine_c = {
-              { "filename", file_status = true, symbols = { modified = " " .. vim.g.my.icons.modified } },
+              { "filename", file_status = true, symbols = { modified = " " } },
               "location",
               "progress",
             },

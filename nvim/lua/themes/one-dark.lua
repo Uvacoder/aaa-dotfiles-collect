@@ -6,7 +6,7 @@ return {
         require("onedark").setup({
           style = "deep",
           transparent = false,
-          term_colors = true,
+          term_colors = false,
           ending_tildes = false,
           cmp_itemkind_reverse = false,
           code_style = {
@@ -17,8 +17,8 @@ return {
             variables = "none",
           },
           colors = {
-            bg0 = "#000000",
-            bg1 = "#0c0e15",
+            bg0 = vim.g.my.colors.black,
+            bg1 = vim.g.my.colors.gray,
           },
           highlights = {
             -- FloatBorder = {fg = c.grey, bg = c.bg1},

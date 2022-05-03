@@ -4,11 +4,6 @@ local border = { "rounded", "single", "double" }
 vim.g.my = {
   theme = themes[3],
   border = border[1],
-  icons = {
-    -- signs = { error = " ", warn = " ", hint = " ", info = " " },
-    diff = { add = "│", change = "│", delete = "│" },
-    modified = "",
-  },
   colors = {
     blue = "#5482FF",
     green = "#84b360",

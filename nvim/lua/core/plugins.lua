@@ -2,7 +2,7 @@
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   packer_bootstrap = vim.fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-  print "Installing packer close and reopen Neovim..."
+  print("Installing packer close and reopen Neovim...")
   vim.cmd([[packadd packer.nvim]])
 end
 
@@ -20,9 +20,15 @@ end
 packer.init({
   display = {
     open_fn = function()
-      return require("packer.util").float { border = "rounded" }
+      return require("packer.util").float({ border = vim.g.my.border })
     end,
+    prompt_border = vim.g.my.border,
   },
+  git = {
+    clone_timeout = 6000, -- seconds
+  },
+  auto_clean = true,
+  compile_on_sync = true,
 })
 
 -- Install your plugins here
@@ -49,10 +55,10 @@ return packer.startup({
     require("set/null-ls").setup(use)
     require("themes/" .. vim.g.my.theme).setup(use)
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
     if packer_bootstrap then
       require("packer").sync()
     end
-  end
+  end,
 })

@@ -6,11 +6,11 @@ return {
       config = function()
         require("gitsigns").setup({
           signs = {
-            add = { text = vim.g.my.icons.diff.add },
-            change = { text = vim.g.my.icons.diff.change },
-            delete = { text = vim.g.my.icons.diff.delete },
-            topdelete = { text = vim.g.my.icons.diff.delete },
-            changedelete = { text = vim.g.my.icons.diff.delete },
+            add = { text = "│" },
+            change = { text = "│" },
+            delete = { text = "│" },
+            topdelete = { text = "│" },
+            changedelete = { text = "│" },
           },
         })
       end,

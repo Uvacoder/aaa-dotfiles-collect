@@ -35,7 +35,7 @@ return {
               default = "",
             },
             modified = {
-              symbol = vim.g.my.icons.modified,
+              symbol = "",
               highlight = "NeoTreeModified",
             },
             name = {
@@ -45,10 +45,16 @@ return {
             git_status = {
               symbols = {
                 -- Change type
-                added = "✚",
-                modified = "",
-                deleted = "✖",
-                renamed = "",
+                added = "A", -- "✚",
+                modified = "M", -- "",
+                deleted = "D", -- "✖",
+                renamed = "R", -- "",
+                -- Status type
+                untracked = "U",
+                ignored = "I",
+                unstaged = "",
+                staged = "",
+                conflict = "C",
               },
             },
           },
