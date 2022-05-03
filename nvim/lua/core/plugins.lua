@@ -38,7 +38,7 @@ return packer.startup({
     require("set/notify").setup(use)
     require("set/bujo").setup(use)
     -- require("set/colorizer").setup(use)
-    require("set/trouble").setup(use)
+    -- require("set/trouble").setup(use)
     require("set/ctrlsf").setup(use)
     require("set/visual-multi").setup(use)
     require("set/auto-pairs").setup(use)
@@ -48,11 +48,12 @@ return packer.startup({
     require("set/f-term").setup(use)
     require("set/coke-line").setup(use)
     require("set/git-signs").setup(use)
+    require("set/null-ls").setup(use)
+    require("set/formatter").setup(use)
     require("set/indent-blank-line").setup(use)
     require("set/tree-sitter").setup(use)
     require("set/cmp").setup(use)
     require("set/lsp-config").setup(use)
-    require("set/null-ls").setup(use)
     require("themes/" .. vim.g.my.theme).setup(use)
 
     -- Automatically set up your configuration after cloning packer.nvim

@@ -1,9 +1,8 @@
 return {
   setup = function(use)
-  use({
+    use({
       "neovim/nvim-lspconfig",
-      requires = { "hrsh7th/cmp-nvim-lsp" },
-      -- requires = { "hrsh7th/cmp-nvim-lsp", "williamboman/nvim-lsp-installer" },
+      requires = { "hrsh7th/cmp-nvim-lsp", "williamboman/nvim-lsp-installer" },
       config = function()
         -- Diagnostic keymaps
         vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
@@ -11,12 +10,13 @@ return {
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
         vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
 
+        local nvim_lsp = require("lspconfig")
         local on_attach = function(client, bufnr)
-          -- disable formatting for LSP clients as this is handled by null-ls
-          -- client.server_capabilities.document_formatting = false
-          -- client.server_capabilities.document_range_formatting = false
-
           local opts = { buffer = bufnr }
+
+          -- stop Neovim from asking me which server I want to use for formatting
+          client.server_capabilities.document_formatting = false
+          client.server_capabilities.document_range_formatting = false
 
           --border
           vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.my.border })
@@ -31,19 +31,16 @@ return {
           vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
           vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
           vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+          -- vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
+          -- vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
+          -- vim.keymap.set("n", "<leader>wl", function()
+          --   vim.inspect(vim.lsp.buf.list_workspace_folders())
+          -- end, opts)
           vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
           vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
           vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
           vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-
-          -- vim.cmd([[command! Format execute 'lua vim.lsp.buf.format({ async = true })']])
-
-          -- client.supports_method("textDocument/formatting") = false
-
-          -- if client.supports_method("textDocument/formatting") then
-          -- vim.api.nvim_buf_set_keymap(bufnr, "n", "f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
-          -- vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
-          -- end
+          -- vim.api.nvim_create_user_command("Format", vim.lsp.buf.formatting, {})
         end
 
         -- nvim-cmp supports additional completion capabilities
@@ -53,24 +50,34 @@ return {
         -- Enable the following language servers
         -- local servers = { 'volar', 'tailwindcss', 'tsserver' }
         local servers = { "volar", "tsserver" }
-        -- sudo npm install -g @volar/vue-language-server typescript typescript-language-server
 
         -- Ensure servers are installed
-        -- require("nvim-lsp-installer").setup({
-        --   ensure_installed = servers,
-        -- })
-        --
-        for _, server in pairs(servers) do
-          local opts = {
+        require("nvim-lsp-installer").setup({
+          ensure_installed = servers,
+        })
+
+        for _, lsp in pairs(servers) do
+          require("lspconfig")[lsp].setup({
             on_attach = on_attach,
             capabilities = capabilities,
-          }
-          local has_custom_opts, server_custom_opts = pcall(require, "set.server." .. server)
-          if has_custom_opts then
-            opts = vim.tbl_deep_extend("force", server_custom_opts, opts)
-          end
-          require("lspconfig")[server].setup(opts)
+          })
         end
+
+        vim.diagnostic.config({
+          virtual_text = { source = "always" },
+          signs = true,
+          underline = true,
+          update_in_insert = true,
+          severity_sort = false,
+          float = {
+            focusable = false,
+            style = "minimal",
+            border = vim.g.my.border,
+            source = "always",
+            header = "",
+            prefix = "",
+          },
+        })
       end,
     })
   end,
