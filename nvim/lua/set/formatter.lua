@@ -3,22 +3,6 @@ return {
     use({
       "mhartington/formatter.nvim",
       config = function()
-        -- local prettier = function()
-        --   return {
-        --     exe = "prettier",
-        --     args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
-        --     stdin = true,
-        --   }
-        -- end
-
-        -- local eslint = function()
-        --   return {
-        --     exe = "eslint",
-        --     args = { "--fix", "--no-ignore", "--stdin-filename", vim.api.nvim_buf_get_name(0) },
-        --     stdin = false,
-        --   }
-        -- end
-
         -- npm install -g @fsouza/prettierd
         local prettierd = function()
           return {
@@ -27,15 +11,6 @@ return {
             stdin = true,
           }
         end
-
-        -- npm install -g eslint_d
-        -- local eslint_d = function()
-        --   return {
-        --     exe = "eslint_d",
-        --     args = { "--stdin", "--stdin-filename", vim.api.nvim_buf_get_name(0), "--fix-to-stdout" },
-        --     stdin = true,
-        --   }
-        -- end
 
         local luafmt = function()
           return {

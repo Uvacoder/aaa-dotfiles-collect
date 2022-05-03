@@ -11,7 +11,7 @@ return {
           cmp_itemkind_reverse = false,
           code_style = {
             comments = "italic",
-            keywords = "none",
+            keywords = "italic",
             functions = "bold",
             strings = "none",
             variables = "none",
@@ -21,7 +21,6 @@ return {
             bg1 = vim.g.my.colors.gray,
           },
           highlights = {
-            -- FloatBorder = {fg = c.grey, bg = c.bg1},
             IndentBlanklineChar = { fg = vim.g.my.colors.black },
           },
           diagnostics = {
