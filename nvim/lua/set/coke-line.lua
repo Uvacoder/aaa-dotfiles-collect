@@ -33,16 +33,20 @@ return {
             },
             {
               text = function(buffer)
-                return buffer.filename .. "    "
+                return buffer.filename .. " "
               end,
               style = function(buffer)
                 return buffer.is_focused and "bold" or nil
               end,
             },
-            -- {
-            --   text = "",
-            --   delete_buffer_on_left_click = true,
-            -- },
+            {
+              text = function(buffer)
+                return buffer.is_modified and vim.g.my.icons.modified or " "
+              end,
+              fg = function(buffer)
+                return buffer.is_modified and vim.g.my.colors.yellow or nil
+              end,
+            },
             {
               text = "  ",
             },
