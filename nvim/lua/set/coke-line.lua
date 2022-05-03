@@ -12,7 +12,7 @@ return {
               return buffer.is_focused and get_hex("Normal", "fg") or get_hex("Comment", "fg")
             end,
             bg = function(buffer)
-              return buffer.is_focused and "#000000" or "#0c0e15"
+              return buffer.is_focused and vim.g.my.colors.black or vim.g.my.colors.gray
             end,
           },
 
