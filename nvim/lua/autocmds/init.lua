@@ -6,11 +6,17 @@ vim.cmd([[
 :command! W w
 :command! Q q
 
-fun! TrimWhitespace()
+function! PrintVariable()
+    let string_under_cursor = expand("<cword>")
+    execute "normal! o"
+    execute "normal! i" . "console.log(\" [DEBUG] " . string_under_cursor ": \", " . string_under_cursor . ")"
+endfunction
+
+function! TrimWhitespace()
   let l:save = winsaveview()
   keeppatterns %s/\s\+$//e
   call winrestview(l:save)
-endfun
+endfunction
 
 augroup _general_settings
   autocmd!

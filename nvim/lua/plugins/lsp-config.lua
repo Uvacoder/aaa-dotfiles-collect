@@ -49,7 +49,7 @@ return {
 
         -- Enable the following language servers
         -- local servers = { 'volar', 'tailwindcss', 'tsserver' }
-        local servers = { "eslint", "volar", "tsserver" }
+        local servers = { "cssls", "html", "eslint", "volar", "tsserver" }
 
         -- Ensure servers are installed
         require("nvim-lsp-installer").setup({

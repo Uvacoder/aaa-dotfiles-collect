@@ -110,5 +110,6 @@ for _, plugin in pairs(disabled_built_ins) do
   vim.g["loaded_" .. plugin] = 1
 end
 
+vim.cmd("setlocal formatoptions-=cro")
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])

@@ -1,7 +1,3 @@
---------------
--- mappings --
---------------
-
 --Remap space as leader key
 vim.keymap.set("", "<Space>", "<Nop>", { noremap = true, silent = true })
 vim.g.mapleader = " "
@@ -31,10 +27,7 @@ vim.keymap.set("n", "aa", "ggVG", { noremap = true, silent = true })
 
 -- save and close
 vim.keymap.set("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "ff", ":Format<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-q>", ":q<CR>", { noremap = true, silent = true })
-
--- vim.keymap.set("n", "q", ":q<CR>", { noremap = true, silent = true })
 
 -- Packer Sync
 vim.keymap.set("n", "<F5>", ":PackerSync<CR>", { noremap = true, silent = true })
@@ -48,8 +41,6 @@ vim.api.nvim_set_keymap("n", "<S-j>", ":m .+1<CR>==", { noremap = true })
 vim.api.nvim_set_keymap("n", "<S-k>", ":m .-2<CR>==", { noremap = true })
 vim.api.nvim_set_keymap("v", "<S-j>", ":m '>+1<CR>gv=gv", { noremap = true })
 vim.api.nvim_set_keymap("v", "<S-k>", ":m '<-2<CR>gv=gv", { noremap = true })
--- vim.api.nvim_set_keymap("i", "<S-j>", "<Esc>:m .+1<CR>==gi", { noremap = true })
--- vim.api.nvim_set_keymap("i", "<S-k>", "<Esc>:m .-2<CR>==gi", { noremap = true })
 
 -- Better indenting
 vim.keymap.set("v", "<TAB>", ">gv", { noremap = true, silent = true })
@@ -65,11 +56,5 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 vim.keymap.set("n", "<TAB>", "<cmd>bnext<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<S-TAB>", "<cmd>bprevious<CR>", { noremap = true, silent = true })
 
-vim.cmd([[
-function! PrintVariable()
-    let string_under_cursor = expand("<cword>")
-    execute "normal! o"
-    execute "normal! i" . "console.log(\" [DEBUG] " . string_under_cursor ": \", " . string_under_cursor . ")"
-endfunction
-nnoremap <F1> :call PrintVariable()<cr>
-]])
+-- print console.log(variable)
+vim.keymap.set("n", "<F1>", "<cmd>call PrintVariable<CR>", { noremap = true, silent = true })
