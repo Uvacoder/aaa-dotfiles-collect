@@ -21,7 +21,8 @@ return {
             bg1 = vim.g.my.colors.dark_gray,
           },
           highlights = {
-            NormalFloat = { bg = vim.g.my.colors.gray},
+            NormalFloat = { bg = vim.g.my.colors.gray },
+            FloatBorder = { bg = vim.g.my.colors.gray, fg = vim.g.my.colors.blue },
             IndentBlanklineChar = { fg = vim.g.my.colors.black },
           },
           diagnostics = {
@@ -33,7 +34,6 @@ return {
         require("onedark").load()
 
         vim.cmd([[
-          highlight! link FloatBorder NormalFloat
           highlight! link CmpPmenu NormalFloat
           highlight! link CmpPmenuBorder FloatBorder
           highlight! link NeoTreeNormal NormalFloat
