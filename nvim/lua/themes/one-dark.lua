@@ -18,9 +18,10 @@ return {
           },
           colors = {
             bg0 = vim.g.my.colors.black,
-            bg1 = vim.g.my.colors.gray,
+            bg1 = vim.g.my.colors.dark_gray,
           },
           highlights = {
+            NormalFloat = { bg = vim.g.my.colors.gray},
             IndentBlanklineChar = { fg = vim.g.my.colors.black },
           },
           diagnostics = {

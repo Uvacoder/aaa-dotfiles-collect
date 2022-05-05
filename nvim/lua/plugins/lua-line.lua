@@ -9,13 +9,19 @@ return {
             icons_enabled = false,
             theme = {
               normal = {
-                a = { fg = vim.g.my.colors.blue, bg = vim.g.my.colors.gray, gui = "bold" },
-                b = { fg = vim.g.my.colors.white, bg = vim.g.my.colors.gray, gui = "bold" },
-                c = { fg = vim.g.my.colors.fg, bg = vim.g.my.colors.gray },
+                a = { fg = vim.g.my.colors.blue, bg = vim.g.my.colors.dark_gray, gui = "bold" },
+                b = { fg = vim.g.my.colors.white, bg = vim.g.my.colors.dark_gray, gui = "bold" },
+                c = { fg = vim.g.my.colors.fg, bg = vim.g.my.colors.dark_gray },
               },
-              insert = { a = { fg = vim.g.my.colors.green, bg = vim.g.my.colors.gray, gui = "bold" } },
-              visual = { a = { fg = vim.g.my.colors.yellow, bg = vim.g.my.colors.gray, gui = "bold" } },
-              replace = { a = { fg = vim.g.my.colors.red, bg = vim.g.my.colors.gray, gui = "bold" } },
+              insert = {
+                a = { fg = vim.g.my.colors.green, bg = vim.g.my.colors.dark_gray, gui = "bold" },
+              },
+              visual = {
+                a = { fg = vim.g.my.colors.yellow, bg = vim.g.my.colors.dark_gray, gui = "bold" },
+              },
+              replace = {
+                a = { fg = vim.g.my.colors.red, bg = vim.g.my.colors.dark_gray, gui = "bold" },
+              },
             },
             component_separators = { left = "", right = "" },
             section_separators = { left = "", right = "" },
