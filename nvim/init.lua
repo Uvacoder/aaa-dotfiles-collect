@@ -17,5 +17,5 @@ vim.g.my = {
 
 require("options")
 require("plugins")
-require("mappings")
+require("keymaps")
 require("autocmds")

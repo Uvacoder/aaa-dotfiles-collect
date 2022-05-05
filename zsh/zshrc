@@ -179,7 +179,8 @@ function git-init(){
 
 function nvim-up(){
  rm -rf $HOME/.nvim-osx64/
- curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz
+ # curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz
+ curl -LO https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-macos.tar.gz
  tar xzf nvim-macos.tar.gz
  mv nvim-osx64 $HOME/.nvim-osx64
  rm nvim-macos.tar.gz

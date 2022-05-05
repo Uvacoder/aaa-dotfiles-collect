@@ -5,47 +5,46 @@ return {
       requires = { "hrsh7th/cmp-nvim-lsp", "williamboman/nvim-lsp-installer" },
       config = function()
         -- Diagnostic keymaps
-        vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
-        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-        vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-        vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
+        local opts = { buffer = bufnr }
 
-        local nvim_lsp = require("lspconfig")
+        vim.api.nvim_set_keymap("n", "<space>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+        vim.api.nvim_set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+        vim.api.nvim_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+        vim.api.nvim_set_keymap("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+
         local on_attach = function(client, bufnr)
-          local opts = { buffer = bufnr }
-
           -- stop Neovim from asking me which server I want to use for formatting
-          client.server_capabilities.document_formatting = false
-          client.server_capabilities.document_range_formatting = false
-
-          --border
-          vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.my.border })
-          vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.my.border })
+          -- client.server_capabilities.document_formatting = false
+          -- client.server_capabilities.document_range_formatting = false
 
           -- Enable completion triggered by <c-x><c-o>
           vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
           -- See `:help vim.lsp.*` for documentation on any of the below functions
-          vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-          vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-          vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-          -- vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
-          -- vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
-          -- vim.keymap.set("n", "<leader>wl", function()
-          --   vim.inspect(vim.lsp.buf.list_workspace_folders())
-          -- end, opts)
-          vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
-          vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-          vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-          vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-          -- vim.api.nvim_create_user_command("Format", vim.lsp.buf.formatting, {})
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+          -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
         end
 
         -- nvim-cmp supports additional completion capabilities
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+
+        -- LSP settings (for overriding per client)
+        local handlers = {
+          ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.my.border }),
+          ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.my.border }),
+        }
 
         -- Enable the following language servers
         -- local servers = { 'volar', 'tailwindcss', 'tsserver' }
@@ -56,15 +55,30 @@ return {
           ensure_installed = servers,
         })
 
-        for _, lsp in pairs(servers) do
-          require("lspconfig")[lsp].setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-          })
+        for _, server in pairs(servers) do
+          local options = {}
+          options.on_attach = on_attach
+          options.capabilities = capabilities
+          options.handlers = handlers
+
+          if server.name == "eslint" then
+            options.settings = { format = { enable = false } }
+          end
+          if server.name == "tsserver" then
+            options.settings = { format = { enable = false } }
+          end
+          if server.name == "volar" then
+            options.settings = { format = { enable = false } }
+          end
+
+          require("lspconfig")[server].setup(options)
         end
 
+        -- Show line diagnostics automatically for specific cursor position
+        vim.cmd([[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]])
+
         vim.diagnostic.config({
-          virtual_text = { source = "always" },
+          virtual_text = false, --{ source = "always" },
           signs = true,
           underline = true,
           update_in_insert = true,

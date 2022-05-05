@@ -15,7 +15,16 @@ return {
         local luafmt = function()
           return {
             exe = "stylua",
-            args = { "--quote-style", "AutoPreferDouble", "--column-width", 200, "--indent-width", 2, "--indent-type", "Spaces" },
+            args = {
+              "--quote-style",
+              "AutoPreferDouble",
+              "--column-width",
+              100,
+              "--indent-width",
+              2,
+              "--indent-type",
+              "Spaces",
+            },
             stdin = false,
           }
         end
