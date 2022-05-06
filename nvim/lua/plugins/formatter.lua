@@ -19,7 +19,7 @@ return {
               "--quote-style",
               "AutoPreferDouble",
               "--column-width",
-              100,
+              120,
               "--indent-width",
               2,
               "--indent-type",

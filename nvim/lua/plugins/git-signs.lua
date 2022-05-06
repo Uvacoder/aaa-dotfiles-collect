@@ -14,6 +14,8 @@ return {
           },
         })
       end,
+
+      vim.keymap.set("n", "gt", "<cmd>Gitsigns toggle_current_line_blame<cr>"),
     })
   end,
 }

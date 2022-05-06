@@ -42,7 +42,7 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.completeopt = "menuone,noinsert,noselect,preview"
 vim.opt.shell = "/bin/zsh"
--- vim.opt.errorformat = "%A%f:%l:%c:%m,%-G%.%#"
+vim.opt.errorformat:append("%f|%l col %c|%m")
 vim.opt.showbreak = "﬌ "
 vim.opt.inccommand = "split" -- incrementally show result of command
 vim.opt.wildignore = "*/.git/*,*/.DS_Store,dist,*.o,*~,package-lock.json"
