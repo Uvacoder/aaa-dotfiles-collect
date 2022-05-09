@@ -11,8 +11,8 @@ vim.g.my = {
     red = "#ff7ab2",
     white = "#ffffff",
     gray = "#0c0e15",
-    dark_gray = "#040404",
-    black = "#000000",
+    dark_gray = "#000000",
+    black = "#040404",
   },
 }
 

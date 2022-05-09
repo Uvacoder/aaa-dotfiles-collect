@@ -1,6 +1,6 @@
 return {
   setup = function(use)
-    local bg = vim.g.my.colors.black
+    local bg = vim.g.my.colors.dark_gray
     use({
       "hoob3rt/lualine.nvim",
       requires = "kyazdani42/nvim-web-devicons",
