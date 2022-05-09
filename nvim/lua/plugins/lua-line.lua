@@ -1,10 +1,10 @@
 return {
   setup = function(use)
-    local bg = vim.g.my.colors.dark_gray
     use({
       "hoob3rt/lualine.nvim",
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
+        local bg = vim.g.my.colors.dark_gray
         require("lualine").setup({
           options = {
             icons_enabled = false,
@@ -14,15 +14,9 @@ return {
                 b = { fg = vim.g.my.colors.white, bg = bg, gui = "bold" },
                 c = { fg = vim.g.my.colors.fg, bg = bg },
               },
-              insert = {
-                a = { fg = vim.g.my.colors.green, bg = vim.g.my.colors.dark_gray, gui = "bold" },
-              },
-              visual = {
-                a = { fg = vim.g.my.colors.yellow, bg = vim.g.my.colors.dark_gray, gui = "bold" },
-              },
-              replace = {
-                a = { fg = vim.g.my.colors.red, bg = vim.g.my.colors.dark_gray, gui = "bold" },
-              },
+              insert = { a = { fg = vim.g.my.colors.green, bg = bg, gui = "bold" } },
+              visual = { a = { fg = vim.g.my.colors.yellow, bg = bg, gui = "bold" } },
+              replace = { a = { fg = vim.g.my.colors.red, bg = bg, gui = "bold" } },
             },
             component_separators = { left = "", right = "" },
             section_separators = { left = "", right = "" },
