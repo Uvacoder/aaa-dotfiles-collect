@@ -85,7 +85,7 @@ return {
           virtual_text = { source = "always" },
           signs = true,
           underline = true,
-          update_in_insert = true,
+          update_in_insert = false,
           severity_sort = false,
           float = {
             focusable = false,
