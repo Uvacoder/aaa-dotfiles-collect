@@ -3,7 +3,7 @@ node_modules
 dist
 dist-ssr
 *.local
-nvim/plugin/packer_compiled.vim
+nvim/plugin
 nvim-coc/plugin/packer_compiled.vim
 nvim-default/plugin/packer_compiled.vim
 .DS_Store
