@@ -5,10 +5,10 @@ env:
 
 window:
   decorations: None  # Full, None
-  startup_mode: SimpleFullscreen  # SimpleFullscreen, Windowed, Maximized
+  startup_mode: Windowed  # SimpleFullscreen, Windowed, Maximized
   dimensions:
     columns: 105
-    lines: 23
+    lines: 22
   padding:
     x: 0 # 100
     y: 0
@@ -20,15 +20,15 @@ cursor:
 
 font:
   normal:
-    family: CaskaydiaCove Nerd Font Mono
-    # family: CamingoCode Nerd Font
+    # family: CaskaydiaCove Nerd Font Mono
+    family: CamingoCode Nerd Font
     # family: Anonymice Nerd Font Mono
     # family: Monoid Nerd Font Mono
     # family: OperatorMono Nerd Font
     # family: UbuntuMono Nerd Font Mono
     # family: Iosevka Nerd Font Mono
-  italic:
-    family: Cascadia Mono
+  # italic:
+  #   family: Cascadia Mono
   size: 20
   offset:
     x: 0

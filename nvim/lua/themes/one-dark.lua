@@ -17,13 +17,13 @@ return {
             variables = "none",
           },
           colors = {
-            bg0 = vim.g.my.colors.black,
-            bg1 = vim.g.my.colors.dark_gray,
+            bg1 = vim.g.my.colors.black,
+            bg0 = vim.g.my.colors.dark_gray,
           },
           highlights = {
-            NormalFloat = { bg = vim.g.my.colors.gray },
-            FloatBorder = { bg = vim.g.my.colors.gray, fg = vim.g.my.colors.blue },
-            IndentBlanklineChar = { fg = vim.g.my.colors.black },
+            NormalFloat = { bg = vim.g.my.colors.black },
+            FloatBorder = { bg = vim.g.my.colors.black, fg = vim.g.my.colors.blue },
+            IndentBlanklineChar = { fg = vim.g.my.colors.dark_gray },
           },
           diagnostics = {
             darker = true,

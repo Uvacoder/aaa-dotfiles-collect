@@ -1,5 +1,6 @@
 return {
   setup = function(use)
+    local bg = vim.g.my.colors.black
     use({
       "hoob3rt/lualine.nvim",
       requires = "kyazdani42/nvim-web-devicons",
@@ -9,9 +10,9 @@ return {
             icons_enabled = false,
             theme = {
               normal = {
-                a = { fg = vim.g.my.colors.blue, bg = vim.g.my.colors.dark_gray, gui = "bold" },
-                b = { fg = vim.g.my.colors.white, bg = vim.g.my.colors.dark_gray, gui = "bold" },
-                c = { fg = vim.g.my.colors.fg, bg = vim.g.my.colors.dark_gray },
+                a = { fg = vim.g.my.colors.blue, bg = bg, gui = "bold" },
+                b = { fg = vim.g.my.colors.white, bg = bg, gui = "bold" },
+                c = { fg = vim.g.my.colors.fg, bg = bg },
               },
               insert = {
                 a = { fg = vim.g.my.colors.green, bg = vim.g.my.colors.dark_gray, gui = "bold" },
