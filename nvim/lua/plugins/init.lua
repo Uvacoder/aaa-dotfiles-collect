@@ -1,15 +1,13 @@
-local packer_bootstrap = false
+local is_bootstrap = false
 
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
   -- Automatically install packer
   local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
-
   -- remove the dir before cloning
   vim.fn.delete(packer_path, "rf")
-
   print("Cloning packer..")
-  packer_bootstrap = vim.fn.system({
+  is_bootstrap = vim.fn.system({
     "git",
     "clone",
     "--depth",
@@ -19,7 +17,6 @@ if not status_ok then
   })
 
   vim.cmd([[packadd packer.nvim]])
-
   status_ok, packer = pcall(require, "packer")
   if status_ok then
     print("Packer cloned successfully.")
@@ -48,7 +45,7 @@ packer.init({
 
 -- Install your plugins here
 local use = require("packer").use
-return packer.startup({
+packer.startup({
   function(use)
     require("plugins.packer").setup(use)
     require("plugins.notify").setup(use)
@@ -72,8 +69,20 @@ return packer.startup({
     require("themes/" .. vim.g.my.theme).setup(use)
 
     -- Automatically set up your configuration after cloning packer.nvim
-    if packer_bootstrap then
+    if is_bootstrap then
       require("packer").sync()
     end
-  end,
+  end
 })
+
+-- You'll need to restart nvim, and then it will work
+if is_bootstrap then
+  print '=================================='
+  print '    Plugins are being installed'
+  print '    Wait until Packer completes,'
+  print '       then restart nvim'
+  print '=================================='
+  return
+end
+
+return
