@@ -12,7 +12,7 @@ vim.g.my = {
     white = "#ffffff",
     gray = "#0c0e15",
     dark_gray = "#000000",
-    black = "#040404",
+    black = "#0D1117",
   },
 }
 

@@ -3,54 +3,45 @@ return {
     use({
       "mhartington/formatter.nvim",
       config = function()
-        -- npm install -g @fsouza/prettierd
-        local prettierd = function()
-          return {
-            exe = "prettierd",
-            args = { vim.api.nvim_buf_get_name(0) },
-            stdin = true,
-          }
-        end
-
-        local luafmt = function()
-          return {
-            exe = "stylua",
-            args = {
-              "--quote-style",
-              "AutoPreferDouble",
-              "--column-width",
-              120,
-              "--indent-width",
-              2,
-              "--indent-type",
-              "Spaces",
-            },
-            stdin = false,
-          }
-        end
-
+        local util = require("formatter.util")
         require("formatter").setup({
-          logging = false,
           filetype = {
-            javascript = { prettierd },
-            typescript = { prettierd },
-            vue = { prettierd },
-            html = { prettierd },
-            css = { prettierd },
-            scss = { prettierd },
-            json = { prettierd },
-            svg = { prettierd },
-            markdown = { prettierd },
-            lua = { luafmt },
+            javascript = {
+              require("formatter.filetypes.javascript").prettierd,
+            },
+            vue = {
+              require("formatter.filetypes.javascript").prettierd,
+            },
+            lua = {
+              function()
+                return {
+                  exe = "stylua",
+                  args = {
+                    "--quote-style",
+                    "AutoPreferDouble",
+                    "--column-width",
+                    120,
+                    "--indent-width",
+                    2,
+                    "--indent-type",
+                    "Spaces",
+                  },
+                  stdin = false,
+                }
+              end,
+            },
           },
         })
-
-        vim.cmd([[
-          augroup FormatAutogroup
-          autocmd!
-          autocmd BufWritePost *.lua,*.html,*.js,*.vue,*.css,*.json,*.ts,*.scss,*svg FormatWrite
-          augroup END
-        ]])
+        -- Manual Format command
+        local opts = { noremap = true, silent = true }
+        vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>Format<cr>", opts)
+        -- Format and write after save asynchronously
+        local formatter_augroup = vim.api.nvim_create_augroup("formatter", { clear = true })
+        vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+          pattern = "*",
+          command = "silent! FormatWrite",
+          group = formatter_augroup,
+        })
       end,
     })
   end,
