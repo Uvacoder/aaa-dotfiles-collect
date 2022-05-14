@@ -60,4 +60,11 @@ vim.keymap.set("n", "<TAB>", "<cmd>bnext<CR>", { noremap = true, silent = true }
 vim.keymap.set("n", "<S-TAB>", "<cmd>bprevious<CR>", { noremap = true, silent = true })
 
 -- print console.log(variable)
-vim.keymap.set("n", "<F1>", "<cmd>call PrintVariable<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<F1>", "<cmd>call PrintVariable()<CR>", { noremap = true, silent = true })
+vim.cmd([[
+function! PrintVariable()
+  let string_under_cursor = expand("<cword>")
+  execute "normal! o"
+  execute "normal! i" . "console.log(\" [DEBUG] " . string_under_cursor ": \", " . string_under_cursor . ")"
+endfunction
+]])
