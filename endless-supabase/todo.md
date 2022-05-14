@@ -1,3 +1,6 @@
 # endless-supabase todo
 
--[] corrigir product upload
+-[]
+-[x] corrigir product upload
+----------------------------------------
+spc-t open  |  spc-a add  |  spc-c check
