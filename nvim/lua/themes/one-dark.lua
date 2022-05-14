@@ -37,6 +37,7 @@ return {
           highlight! link CmpPmenu NormalFloat
           highlight! link CmpPmenuBorder FloatBorder
           highlight! link NeoTreeNormal NormalFloat
+          highlight! link NeoTreeNormalNC NormalFloat
           highlight! link NeoTreeFloatBorder FloatBorder
           highlight! link NeoTreeEndOfBuffer NormalFloat
           highlight! link NeoTreeCursorLine PmenuSel
