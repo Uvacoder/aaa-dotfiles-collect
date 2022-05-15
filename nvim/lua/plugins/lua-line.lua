@@ -4,7 +4,7 @@ return {
       "hoob3rt/lualine.nvim",
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
-        local bg = vim.g.my.colors.dark_gray
+        local bg = vim.g.my.colors.statusline
         require("lualine").setup({
           options = {
             icons_enabled = false,
