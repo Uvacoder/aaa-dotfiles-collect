@@ -2,11 +2,11 @@ local packer_bootstrap = false
 
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-  -- Automatically install packer
   local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
-
-  -- remove the dir before cloning
   vim.fn.delete(packer_path, "rf")
+
+  local plugin_path = vim.fn.stdpath("config") .. "/plugin/packer_compiled.lua"
+  vim.fn.delete(plugin_path, "rf")
 
   print("Cloning packer..")
   packer_bootstrap = vim.fn.system({
