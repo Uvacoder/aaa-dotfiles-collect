@@ -3,8 +3,8 @@ return {
     use({
       "vuciv/vim-bujo",
       config = function()
-        vim.g["bujo#todo_file_path"] = tostring(os.getenv("HOME")) .. "/.dotfiles"
-        vim.g["bujo#window_width"] = 45
+        vim.g["bujo#todo_file_path"] = tostring(os.getenv("HOME")) .. "/.dotfiles/todo"
+        vim.g["bujo#window_width"] = 55
 
         local opts = { noremap = true, silent = true }
         vim.keymap.set("n", "<Leader>t", "<CMD>Todo<CR>", opts)

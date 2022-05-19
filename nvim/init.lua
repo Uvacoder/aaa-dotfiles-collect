@@ -1,5 +1,5 @@
 vim.g.my = {
-  theme = "one-dark",
+  theme = "tokyo-night", --"one-dark",
   border = "rounded", -- "rounded", "single", "double"
   colors = {
     blue = "#52A0FF",

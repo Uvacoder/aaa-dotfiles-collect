@@ -6,12 +6,12 @@ return {
         local util = require("formatter.util")
         require("formatter").setup({
           filetype = {
-            javascript = {
-              require("formatter.filetypes.javascript").prettierd,
-            },
-            vue = {
-              require("formatter.filetypes.javascript").prettierd,
-            },
+            -- javascript = {
+            --   require("formatter.filetypes.javascript").prettierd,
+            -- },
+            -- vue = {
+            --   require("formatter.filetypes.javascript").prettierd,
+            -- },
             lua = {
               function()
                 return {
@@ -38,7 +38,7 @@ return {
         -- Format and write after save asynchronously
         local formatter_augroup = vim.api.nvim_create_augroup("formatter", { clear = true })
         vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-          pattern = "*",
+          pattern = "*.lua",
           command = "silent! FormatWrite",
           group = formatter_augroup,
         })

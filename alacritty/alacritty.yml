@@ -7,8 +7,8 @@ window:
   decorations: None  # Full, None
   startup_mode: Windowed  # SimpleFullscreen, Windowed, Maximized
   dimensions:
-    columns: 105
-    lines: 22
+    columns: 85
+    lines: 24
   padding:
     x: 0 # 100
     y: 0
@@ -25,11 +25,11 @@ font:
     # family: Anonymice Nerd Font Mono
     # family: Monoid Nerd Font Mono
     # family: OperatorMono Nerd Font
-    # family: UbuntuMono Nerd Font Mono
+    family: UbuntuMono Nerd Font Mono
     # family: Iosevka Nerd Font Mono
   # italic:
   #   family: Cascadia Mono
-  size: 20
+  size: 23
   offset:
     x: 0
     y: 9

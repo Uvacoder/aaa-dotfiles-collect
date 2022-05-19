@@ -1,3 +1,14 @@
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  pattern = "*.js",
+  command = "silent! EslintFixAll",
+  group = formatter_augroup,
+})
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  pattern = "*.vue",
+  command = "silent! EslintFixAll",
+  group = formatter_augroup,
+})
+
 vim.cmd([[
 :command! WQ wq
 :command! WQ wq
