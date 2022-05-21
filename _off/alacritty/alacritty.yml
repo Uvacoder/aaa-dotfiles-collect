@@ -1,5 +1,3 @@
-live_config_reload: true
-
 env:
   TERM: xterm-256color
 
@@ -7,11 +5,13 @@ window:
   decorations: None  # Full, None
   startup_mode: Windowed  # SimpleFullscreen, Windowed, Maximized
   dimensions:
-    columns: 85
+    columns: 116
     lines: 24
   padding:
     x: 0 # 100
     y: 0
+#                                                                             80                 100                 120
+#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789
 
 # background_opacity: 1.0
 cursor:
@@ -19,24 +19,30 @@ cursor:
     shape: Block
 
 font:
-  normal:
-    # family: CaskaydiaCove Nerd Font Mono
-    family: CamingoCode Nerd Font
-    # family: Anonymice Nerd Font Mono
-    # family: Monoid Nerd Font Mono
-    # family: OperatorMono Nerd Font
-    family: UbuntuMono Nerd Font Mono
-    # family: Iosevka Nerd Font Mono
+  # normal:
+  #   family: CaskaydiaCove Nerd Font Mono
   # italic:
   #   family: Cascadia Mono
-  size: 23
+  # size: 20
+
+  normal:
+    family: CamingoCode Nerd Font
+  size: 20
+
+  # normal:
+  #   family: OperatorMono Nerd Font
+  # size: 22
+
+  # normal:
+  #   family: UbuntuMono Nerd Font Mono
+  # size: 23
+
   offset:
     x: 0
     y: 9
   use_thin_strokes: true
-#                                                                             80                 100                 120
-#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789
 draw_bold_text_with_bright_colors: true
+
 
 colors:
   primary:
@@ -95,3 +101,6 @@ shell:
 #    - -c
 #    - "tmux attach || tmux"
 # working_directory: None
+
+live_config_reload: true
+
