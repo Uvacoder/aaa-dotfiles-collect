@@ -32,14 +32,23 @@ return {
             },
           },
         })
+
         -- Manual Format command
         local opts = { noremap = true, silent = true }
         vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>Format<cr>", opts)
+
         -- Format and write after save asynchronously
         local formatter_augroup = vim.api.nvim_create_augroup("formatter", { clear = true })
         vim.api.nvim_create_autocmd({ "BufWritePost" }, {
           pattern = "*.lua",
           command = "silent! FormatWrite",
+          group = formatter_augroup,
+        })
+
+        -- Eslint Fix All
+        vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+          pattern = "*",
+          command = "silent! EslintFixAll",
           group = formatter_augroup,
         })
       end,
