@@ -8,7 +8,7 @@ return {
           local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
           local clients = vim.lsp.get_active_clients()
           if next(clients) == nil then
-            return ""
+            return ""
           end
           local names = {}
           for _, client in ipairs(clients) do
@@ -17,7 +17,7 @@ return {
               table.insert(names, client.name)
             end
           end
-          return " " .. table.concat(names, " ")
+          return " " .. table.concat(names, " ")
         end
 
         local bg = vim.g.my.colors.statusline
@@ -60,9 +60,9 @@ return {
               "location",
               "progress",
             },
-            lualine_x = { LSPActive, "encoding", "fileformat" },
+            lualine_x = { "encoding", "fileformat" },
             lualine_y = { "branch" },
-            lualine_z = { "diff" },
+            lualine_z = { "diff", LSPActive },
           },
           inactive_sections = {
             lualine_a = {},
