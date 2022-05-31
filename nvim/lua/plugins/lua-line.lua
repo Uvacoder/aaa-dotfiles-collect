@@ -4,7 +4,24 @@ return {
       "hoob3rt/lualine.nvim",
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
+        local LSPActive = function()
+          local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+          local clients = vim.lsp.get_active_clients()
+          if next(clients) == nil then
+            return ""
+          end
+          local names = {}
+          for _, client in ipairs(clients) do
+            local filetypes = client.config.filetypes
+            if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+              table.insert(names, client.name)
+            end
+          end
+          return " " .. table.concat(names, " ")
+        end
+
         local bg = vim.g.my.colors.statusline
+
         require("lualine").setup({
           options = {
             icons_enabled = false,
@@ -43,7 +60,7 @@ return {
               "location",
               "progress",
             },
-            lualine_x = { "encoding", "fileformat" },
+            lualine_x = { LSPActive, "encoding", "fileformat" },
             lualine_y = { "branch" },
             lualine_z = { "diff" },
           },
