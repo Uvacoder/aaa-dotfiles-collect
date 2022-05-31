@@ -26,14 +26,8 @@ return {
         -- Global setup.
         cmp.setup({
           window = {
-            documentation = {
-              border = vim.g.my.border,
-              winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
-            },
-            completion = {
-              border = vim.g.my.border,
-              winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
-            },
+            documentation = { border = vim.g.my.border },
+            completion = { border = vim.g.my.border },
           },
           snippet = {
             expand = function(args)
@@ -87,9 +81,7 @@ return {
             }),
           },
         })
-        -- `/` cmdline setup.
-        cmp.setup.cmdline("/", { sources = { { name = "buffer" } } })
-        -- `:` cmdline setup.
+        -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
         cmp.setup.cmdline(":", {
           mapping = cmp.mapping.preset.cmdline(),
           sources = cmp.config.sources({
