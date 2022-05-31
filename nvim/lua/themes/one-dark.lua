@@ -21,6 +21,7 @@ return {
             bg1 = vim.g.my.colors.statusline,
           },
           highlights = {
+            Pmenu = { bg = vim.g.my.colors.float },
             NormalFloat = { bg = vim.g.my.colors.float },
             FloatBorder = { bg = vim.g.my.colors.float, fg = vim.g.my.colors.white },
             IndentBlanklineChar = { fg = vim.g.my.colors.bg },
