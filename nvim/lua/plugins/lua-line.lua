@@ -4,6 +4,13 @@ return {
       "hoob3rt/lualine.nvim",
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
+        local fileModified = function()
+          if vim.bo.modified then
+            return ""
+          end
+          return " "
+        end
+
         local LSPActive = function()
           local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
           local clients = vim.lsp.get_active_clients()
@@ -17,7 +24,7 @@ return {
               table.insert(names, client.name)
             end
           end
-          return " " .. table.concat(names, " ")
+          return table.concat(names, " ")
         end
 
         local bg = vim.g.my.colors.statusline
@@ -25,6 +32,11 @@ return {
         require("lualine").setup({
           options = {
             icons_enabled = false,
+            component_separators = { left = "", right = "" },
+            section_separators = { left = "", right = "" },
+            disabled_filetypes = {},
+            always_divide_middle = false,
+            globalstatus = true,
             theme = {
               normal = {
                 a = { fg = vim.g.my.colors.blue, bg = bg, gui = "bold" },
@@ -35,11 +47,6 @@ return {
               visual = { a = { fg = vim.g.my.colors.yellow, bg = bg, gui = "bold" } },
               replace = { a = { fg = vim.g.my.colors.red, bg = bg, gui = "bold" } },
             },
-            component_separators = { left = "", right = "" },
-            section_separators = { left = "", right = "" },
-            disabled_filetypes = {},
-            always_divide_middle = false,
-            globalstatus = true,
           },
           diff_color = {
             added = { fg = vim.g.my.colors.green },
@@ -54,15 +61,15 @@ return {
           },
           sections = {
             lualine_a = { "mode" },
-            lualine_b = { "diagnostics" },
-            lualine_c = {
-              { "filename", file_status = true, symbols = { modified = " " } },
-              "location",
-              "progress",
+            lualine_b = {
+              "diagnostics",
+              { "filename", file_status = false },
+              { fileModified, color = { fg = vim.g.my.colors.yellow } },
             },
+            lualine_c = { "location", "progress" },
             lualine_x = { "encoding", "fileformat" },
-            lualine_y = { "branch" },
-            lualine_z = { "diff", LSPActive },
+            lualine_y = { LSPActive },
+            lualine_z = { "branch", "diff" },
           },
           inactive_sections = {
             lualine_a = {},
