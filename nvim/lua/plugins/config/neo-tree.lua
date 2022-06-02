@@ -13,6 +13,8 @@ return {
       },
 
       config = function()
+        local map = require("core.utils").map
+
         require("neo-tree").setup({
           event_handlers = {
             {
@@ -140,12 +142,11 @@ return {
           },
         })
 
-        local opts = { noremap = true, silent = true }
-        vim.keymap.set("n", ",", "<CMD>Neotree toggle<CR>", opts)
-        vim.keymap.set("n", ".", "<CMD>Neotree toggle<CR>", opts)
-        vim.keymap.set("n", "[", "<CMD>Neotree float git_status<CR>", opts)
-        vim.keymap.set("n", "]", "<CMD>Neotree buffers<CR>", opts)
-        vim.keymap.set("n", "<C-q>", "<CMD>Neotree close<CR>", opts)
+        map("n", ",", "<CMD>Neotree toggle<CR>")
+        map("n", ".", "<CMD>Neotree toggle<CR>")
+        map("n", "[", "<CMD>Neotree float git_status<CR>")
+        map("n", "]", "<CMD>Neotree buffers<CR>")
+        map("n", "<C-q>", "<CMD>Neotree close<CR>")
       end,
     })
   end,

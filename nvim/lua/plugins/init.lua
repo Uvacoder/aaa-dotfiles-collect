@@ -1,78 +1,38 @@
-local packer_bootstrap = false
+local initialized, result = pcall(require, "plugins.init-parker")
 
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
-  vim.fn.delete(packer_path, "rf")
-
-  local plugin_path = vim.fn.stdpath("config") .. "/plugin/packer_compiled.lua"
-  vim.fn.delete(plugin_path, "rf")
-
-  print("Cloning packer..")
-  packer_bootstrap = vim.fn.system({
-    "git",
-    "clone",
-    "--depth",
-    "20",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  })
-
-  vim.cmd([[packadd packer.nvim]])
-
-  status_ok, packer = pcall(require, "packer")
-  if status_ok then
-    print("Packer cloned successfully.")
-  else
-    error("Couldn't clone packer !\nPacker path: " .. packer_path .. "\n" .. packer)
-  end
+if not initialized then
+  return false
 end
 
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  return
-end
-
--- Have packer use a popup window
-packer.init({
-  display = {
-    open_fn = function()
-      return require("packer.util").float({ border = vim.g.my.border })
-    end,
-    prompt_border = vim.g.my.border,
-  },
-  auto_clean = true,
-  compile_on_sync = true,
-})
+local packer = result.packer
+local use = packer.use
 
 -- Install your plugins here
-local use = require("packer").use
 return packer.startup({
   function(use)
-    require("plugins.packer").setup(use)
-    require("plugins.notify").setup(use)
-    require("plugins.bujo").setup(use)
-    -- require("plugins.colorizer").setup(use)
-    -- require("plugins.trouble").setup(use)
-    require("plugins.ctrlsf").setup(use)
-    require("plugins.visual-multi").setup(use)
-    require("plugins.auto-pairs").setup(use)
-    require("plugins.modes").setup(use)
-    require("plugins.neo-tree").setup(use)
-    require("plugins.lua-line").setup(use)
-    require("plugins.f-term").setup(use)
-    require("plugins.coke-line").setup(use)
-    require("plugins.git-signs").setup(use)
-    require("plugins.formatter").setup(use)
-    require("plugins.indent-blank-line").setup(use)
-    require("plugins.tree-sitter").setup(use)
-    require("plugins.cmp").setup(use)
-    require("plugins.lsp-config").setup(use)
+    require("plugins.config.packer").setup(use)
+    require("plugins.config.notify").setup(use)
+    require("plugins.config.bujo").setup(use)
+    -- require("plugins.config.colorizer").setup(use)
+    -- require("plugins.config.trouble").setup(use)
+    require("plugins.config.ctrlsf").setup(use)
+    require("plugins.config.visual-multi").setup(use)
+    require("plugins.config.auto-pairs").setup(use)
+    require("plugins.config.modes").setup(use)
+    require("plugins.config.neo-tree").setup(use)
+    require("plugins.config.lua-line").setup(use)
+    require("plugins.config.f-term").setup(use)
+    require("plugins.config.coke-line").setup(use)
+    require("plugins.config.git-signs").setup(use)
+    require("plugins.config.formatter").setup(use)
+    require("plugins.config.indent-blank-line").setup(use)
+    require("plugins.config.tree-sitter").setup(use)
+    require("plugins.config.cmp").setup(use)
+    require("plugins.config.lsp").setup(use)
     require("themes/" .. vim.g.my.theme).setup(use)
 
     -- Automatically set up your configuration after cloning packer.nvim
-    if packer_bootstrap then
+    if result.first_install then
       require("packer").sync()
     end
   end,

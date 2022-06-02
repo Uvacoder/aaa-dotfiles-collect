@@ -4,6 +4,8 @@ return {
       "folke/trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
+        local map = require("core.utils").map
+
         require("trouble").setup({
           position = "bottom",
           height = 4,
@@ -24,7 +26,7 @@ return {
           use_diagnostic_signs = true,
         })
 
-        vim.api.nvim_set_keymap("n", "tt", "<cmd>Trouble<cr>", { silent = true, noremap = true })
+        map("n", "tt", "<cmd>Trouble<cr>")
       end,
     })
   end,
