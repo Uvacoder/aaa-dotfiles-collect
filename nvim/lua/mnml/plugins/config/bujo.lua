@@ -3,7 +3,7 @@ return {
     use({
       "vuciv/vim-bujo",
       config = function()
-        local map = require("core.utils").map
+        local map = require("mnml.utils").map
 
         vim.g["bujo#todo_file_path"] = tostring(os.getenv("HOME")) .. "/.dotfiles/todo"
         vim.g["bujo#window_width"] = 55

@@ -4,7 +4,7 @@ return {
       "folke/trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
-        local map = require("core.utils").map
+        local map = require("mnml.utils").map
 
         require("trouble").setup({
           position = "bottom",

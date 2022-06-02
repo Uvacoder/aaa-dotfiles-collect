@@ -6,8 +6,8 @@ return {
       requires = { "hrsh7th/cmp-nvim-lsp", "williamboman/nvim-lsp-installer" },
 
       config = function()
-        local buf_map = require("core.utils").buf_map
-        local map = require("core.utils").map
+        local buf_map = require("mnml.utils").buf_map
+        local map = require("mnml.utils").map
 
         -- Diagnostic keymaps
         map("n", "<space>e", "<cmd>lua vim.diagnostic.open_float()<CR>")

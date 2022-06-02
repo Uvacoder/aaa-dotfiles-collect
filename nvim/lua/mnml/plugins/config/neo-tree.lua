@@ -13,7 +13,7 @@ return {
       },
 
       config = function()
-        local map = require("core.utils").map
+        local map = require("mnml.utils").map
 
         require("neo-tree").setup({
           event_handlers = {
