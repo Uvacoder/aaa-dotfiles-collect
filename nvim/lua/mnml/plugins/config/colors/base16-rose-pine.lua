@@ -9,10 +9,10 @@ require("base16-colorscheme").setup({
   base07 = "#c5c3ce",
   base08 = "#e2e1e7",
   base09 = "#eb6f92",
-  base0A = "#f6c177",
+  base0A = "#ea9d34",
   base0B = "#ea9a97",
   base0C = "#31748f",
-  base0D = "#9ccfd8",
+  base0D = "#56949f",
   base0E = "#c4a7e7",
-  base0F = "#e5e5e5",
+  base0F = "#b9b9bc",
 })

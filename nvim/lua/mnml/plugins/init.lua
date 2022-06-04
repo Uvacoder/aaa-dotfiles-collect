@@ -10,6 +10,8 @@ local use = packer.use
 return packer.startup({
   function(use)
     require("mnml.plugins.config.packer").setup(use)
+    require("mnml.plugins.config.neotree").setup(use)
+    require("mnml.plugins.config.lualine").setup(use)
     require("mnml.plugins.config.colors").setup(use)
     require("mnml.plugins.config.notify").setup(use)
     require("mnml.plugins.config.bujo").setup(use)
@@ -19,8 +21,6 @@ return packer.startup({
     require("mnml.plugins.config.visualmulti").setup(use)
     require("mnml.plugins.config.autopairs").setup(use)
     require("mnml.plugins.config.modes").setup(use)
-    require("mnml.plugins.config.neotree").setup(use)
-    require("mnml.plugins.config.lualine").setup(use)
     require("mnml.plugins.config.fterm").setup(use)
     require("mnml.plugins.config.cokeline").setup(use)
     require("mnml.plugins.config.gitsigns").setup(use)
