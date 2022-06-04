@@ -8,6 +8,7 @@ return {
       config = function()
         local buf_map = require("mnml.utils").buf_map
         local map = require("mnml.utils").map
+        local lsp_servers = require("mnml.config").lsp_servers
 
         -- Diagnostic keymaps
         map("n", "<space>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
@@ -50,22 +51,12 @@ return {
           ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.my.border }),
         }
 
-        -- Enable the following language servers
-        local servers = {
-          -- "tailwindcss"
-          "cssls",
-          "html",
-          "eslint",
-          "volar",
-          "tsserver",
-        }
-
         -- Ensure servers are installed
         require("nvim-lsp-installer").setup({
-          ensure_installed = servers,
+          ensure_installed = lsp_servers,
         })
 
-        for _, server in pairs(servers) do
+        for _, server in pairs(lsp_servers) do
           local options = {}
           options.on_attach = on_attach
           options.capabilities = capabilities
@@ -75,11 +66,8 @@ return {
             options.on_attach.resolved_capabilities.document_formatting = false
             options.settings = { format = { enable = false } }
           end
-          if server.name == "tsserver" then
-            options.on_attach.resolved_capabilities.document_formatting = false
-            options.settings = { format = { enable = false } }
-          end
-          if server.name == "volar" then
+
+          if server.name == "tsserver" or server.name == "volar" then
             options.on_attach.resolved_capabilities.document_formatting = false
             options.settings = { format = { enable = false } }
           end
@@ -91,7 +79,7 @@ return {
         -- vim.cmd([[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]])
 
         vim.diagnostic.config({
-          virtual_text = { source = "always" },
+          virtual_text = false,
           signs = true,
           underline = true,
           update_in_insert = false,

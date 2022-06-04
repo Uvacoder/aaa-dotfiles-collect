@@ -4,6 +4,9 @@ return {
       "hoob3rt/lualine.nvim",
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
+        local get_hl = require("mnml.utils").get_hl
+        local bg = get_hl("TabLineFill", "bg#")
+
         local fileModified = function()
           if vim.bo.modified then
             return ""
@@ -26,8 +29,6 @@ return {
           end
           return table.concat(names, " ")
         end
-
-        local bg = vim.g.my.colors.statusline
 
         require("lualine").setup({
           options = {

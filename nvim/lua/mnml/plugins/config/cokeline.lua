@@ -9,10 +9,10 @@ return {
         require("cokeline").setup({
           default_hl = {
             fg = function(buffer)
-              return buffer.is_focused and get_hex("Normal", "fg") or get_hex("Comment", "fg")
+              return buffer.is_focused and "#ffffff" or get_hex("Comment", "fg")
             end,
             bg = function(buffer)
-              return buffer.is_focused and vim.g.my.colors.bg or vim.g.my.colors.statusline
+              return buffer.is_focused and get_hex("Normal", "bg") or get_hex("Tabline", "bg")
             end,
           },
 

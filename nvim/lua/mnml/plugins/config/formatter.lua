@@ -44,13 +44,6 @@ return {
           command = "silent! FormatWrite",
           group = formatter_augroup,
         })
-
-        -- Eslint Fix All
-        vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-          pattern = "*",
-          command = "silent! EslintFixAll",
-          group = formatter_augroup,
-        })
       end,
     })
   end,

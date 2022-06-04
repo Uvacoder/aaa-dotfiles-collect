@@ -5,7 +5,7 @@ window:
   decorations: None  # Full, None
   startup_mode: Windowed  # SimpleFullscreen, Windowed, Maximized
   dimensions:
-    columns: 116
+    columns: 86
     lines: 24
   padding:
     x: 0 # 100
@@ -19,27 +19,36 @@ cursor:
     shape: Block
 
 font:
-  # normal:
-  #   family: CaskaydiaCove Nerd Font Mono
-  # italic:
-  #   family: Cascadia Mono
-  # size: 20
-
   normal:
-    family: CamingoCode Nerd Font
-  size: 20
+    family: CaskaydiaCove Nerd Font Mono
+  italic:
+    family: Cascadia Mono
+  size: 19
+  offset:
+    x: 0
+    y: 10
+
+  # normal:
+  #   family: CamingoCode Nerd Font
+  # size: 20
+  # offset:
+  #   x: 0
+  #   y: 8
 
   # normal:
   #   family: OperatorMono Nerd Font
   # size: 22
+  # offset:
+  #   x: 0
+  #   y: 8
 
   # normal:
   #   family: UbuntuMono Nerd Font Mono
   # size: 23
+  # offset:
+  #   x: 0
+  #   y: 8
 
-  offset:
-    x: 0
-    y: 9
   use_thin_strokes: true
 draw_bold_text_with_bright_colors: true
 

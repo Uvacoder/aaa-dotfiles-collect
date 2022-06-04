@@ -28,14 +28,25 @@ M.treesitter_langs = {
   "regex",
 }
 
+M.treesitter_autotags = {
+  "html",
+  "javascript",
+  "typescript",
+  "vue",
+  "jsx",
+  -- "javascriptreact",
+  -- "typescriptreact",
+  -- "tsx",
+}
+
 -- Add Lsp servers
-M.lsp_add = {
-  -- "tailwindcss"
+M.lsp_servers = {
   "cssls",
   "html",
   "eslint",
   "volar",
   "tsserver",
+  -- "tailwindcss"
 }
 
 return M

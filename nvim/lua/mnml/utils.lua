@@ -1,15 +1,19 @@
 local M = {}
 
-M.hi_bg = function(group, color)
-  vim.cmd("highlight! " .. group .. " guibg=" .. color)
+M.hl_bg = function(group, color)
+  vim.cmd("highlight " .. group .. " guibg=" .. color)
 end
 
-M.hi_fg = function(group, color)
+M.hl_fg = function(group, color)
   vim.cmd("highlight! " .. group .. " guifg=" .. color)
 end
 
-M.hi_link = function(group_a, group_b)
+M.hl_link = function(group_a, group_b)
   vim.cmd("highlight! link " .. group_a .. " " .. group_b)
+end
+
+M.get_hl = function(group, attr) -- get_hl("Normal", "bg#")
+  return vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID(group)), attr)
 end
 
 M.map = function(mode, lhs, rhs, opts)

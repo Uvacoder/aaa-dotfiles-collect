@@ -1,3 +1,11 @@
+-- Eslint Fix All
+local eslint_group = vim.api.nvim_create_augroup("EslintFixAll", { clear = true })
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  pattern = "*",
+  command = "silent! EslintFixAll",
+  group = eslint_group,
+})
+
 -- Highlight on yank
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {

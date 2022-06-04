@@ -10,8 +10,11 @@ return {
         "JoosepAlviste/nvim-ts-context-commentstring",
       },
       config = function()
+        local treesitter_langs = require("mnml.config").treesitter_langs
+        local treesitter_autotags = require("mnml.config").treesitter_autotags
+
         require("nvim-treesitter.configs").setup({
-          ensure_installed = { "css", "lua", "html", "vue", "javascript", "json", "typescript", "regex" },
+          ensure_installed = treesitter_langs,
           highlight = { enable = true, additional_vim_regex_highlighting = false },
           indent = { enable = true },
           incremental_selection = {
@@ -28,7 +31,7 @@ return {
           -- autotag
           autotag = {
             enable = true,
-            filetypes = { "html", "javascript", "typescript", "javascriptreact", "typescriptreact", "vue", "tsx", "jsx" },
+            filetypes = treesitter_autotags,
           },
           -- commentstring
           context_commentstring = { enable = true, enable_autocmd = false },
