@@ -1,11 +1,3 @@
--- Eslint Fix All
-local eslint_group = vim.api.nvim_create_augroup("EslintFixAll", { clear = true })
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  pattern = "*",
-  command = "silent! EslintFixAll",
-  group = eslint_group,
-})
-
 -- Highlight on yank
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -32,6 +24,7 @@ endfunction
 
 augroup _general_settings
   autocmd!
+  autocmd BufWritePre *.vue,*.jsx,*.js,*.tsx,*.ts EslintFixAll
   autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
   autocmd BufWinEnter * :set formatoptions-=cro
   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif

@@ -6,6 +6,7 @@ return {
       requires = {
         "p00f/nvim-ts-rainbow",
         "windwp/nvim-ts-autotag",
+        'm-demare/hlargs.nvim',
         "terrortylor/nvim-comment",
         "JoosepAlviste/nvim-ts-context-commentstring",
       },
@@ -36,6 +37,8 @@ return {
           -- commentstring
           context_commentstring = { enable = true, enable_autocmd = false },
         })
+
+        require('hlargs').setup()
 
         require("nvim_comment").setup({
           hook = function()

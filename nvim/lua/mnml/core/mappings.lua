@@ -27,7 +27,7 @@ map("n", "=", "<PageDown>")
 map("n", "-", "<PageUp>")
 
 -- delete buffer
-map("n", "<C-x>", ":bd<CR>")
+-- map("n", "<C-x>", ":bd<CR>")
 -- map("n", "x", ":bd<CR>")
 
 -- fold unfold html
@@ -38,11 +38,8 @@ map("n", "fo", "zo")
 map("n", "aa", "ggVG")
 
 -- save and close
-map("n", "<C-s>", ":w<CR>")
+-- map("n", "<C-s>", ":w<CR>")
 map("n", "<C-q>", ":q<CR>")
-
--- Packer Sync
-map("n", "<F5>", ":PackerSync<CR>")
 
 -- search and replace
 map("n", "rr", ":%s///gcI<Left><Left><Left><Left><Left>", { expr = false, silent = false })

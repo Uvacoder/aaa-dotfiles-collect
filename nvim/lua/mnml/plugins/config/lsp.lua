@@ -59,7 +59,6 @@ return {
         for _, server in pairs(lsp_servers) do
           local options = {}
           options.on_attach = on_attach
-          options.capabilities = capabilities
           options.handlers = handlers
 
           if server.name == "eslint" then
@@ -69,6 +68,7 @@ return {
 
           if server.name == "tsserver" or server.name == "volar" then
             options.on_attach.resolved_capabilities.document_formatting = false
+            options.capabilities = capabilities
             options.settings = { format = { enable = false } }
           end
 
