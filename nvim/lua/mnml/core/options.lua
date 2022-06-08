@@ -5,123 +5,59 @@ vim.g.loaded_python_provider = 0
 vim.g.python3_host_prog = "/usr/local/bin/python3"
 vim.g.node_host_prog = "/usr/local/lib/node_modules/neovim/bin/cli.js"
 
+-- map Leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
---Set highlight on search
-vim.o.hlsearch = false
-
---Make line numbers default
-vim.wo.number = true
-vim.wo.relativenumber = true
-vim.wo.numberwidth = 3
-
---Enable mouse mode
-vim.o.mouse = 'a'
-vim.opt.clipboard = "unnamedplus"
-
---Enable break indent
-vim.o.breakindent = false
-
---Save undo history
-vim.opt.undofile = true
-
---Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
---Decrease update time
-vim.o.updatetime = 250
-vim.wo.signcolumn = 'yes'
-
---Set colorscheme
-vim.o.termguicolors = true
-
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menu,menuone,noselect'
-
-vim.opt.shell = "/bin/zsh"
-
-vim.opt.fillchars = {
-  diff = "∙", -- BULLET OPERATOR (U+2219, UTF-8: E2 88 99)
-  eob = " ", -- NO-BREAK SPACE to suppress ~ at EndOfBuffer
+local options = {
+  backup = false,                          -- creates a backup file
+  mouse = "a",                             -- allow the mouse to be used in neovim
+  clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
+  cmdheight = 1,                           -- more space in the neovim command line for displaying messages
+  completeopt = { "menu", "menuone", "noselect" }, -- mostly just for cmp
+  conceallevel = 0,                        -- so that `` is visible in markdown files
+  fileencoding = "utf-8",                  -- the encoding written to a file
+  hlsearch = false,                         -- highlight all matches on previous search pattern
+  ignorecase = true,                       -- ignore case in search patterns
+  pumheight = 10,                          -- pop up menu height
+  showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
+  smartcase = true,                        -- smart case
+  smartindent = true,                      -- make indenting smarter again
+  splitbelow = true,                       -- force all horizontal splits to go below current window
+  splitright = true,                       -- force all vertical splits to go to the right of current window
+  swapfile = false,                        -- creates a swapfile
+  undofile = true,                         -- enable persistent undo
+  updatetime = 100,                        -- faster completion (4000ms default)
+  writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+  expandtab = true,                        -- convert tabs to spaces
+  shiftwidth = 2,                          -- the number of spaces inserted for each indentation
+  tabstop = 2,                             -- insert 2 spaces for a tab
+  cursorline = false,                       -- highlight the current line
+  number = true,                           -- set numbered lines
+  relativenumber = false,                  -- set relative numbered lines
+  numberwidth = 3,                         -- set number column width to 2 {default 4}
+  signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
+  wrap = false,                            -- display lines as one long line
+  scrolloff = 8,                           -- is one of my fav
+  sidescrolloff = 8,
+	shell = "/bin/zsh",
+  fillchars = {
+    diff = "∙", -- BULLET OPERATOR (U+2219, UTF-8: E2 88 99)
+    eob = " ", -- NO-BREAK SPACE (U+00A0, UTF-8: C2 A0) to suppress ~ at EndOfBuffer
+    fold = "·", -- MIDDLE DOT (U+00B7, UTF-8: C2 B7)
+    vert = "│", -- window border when window splits vertically
+  }
 }
 
--- vim.opt.signcolumn = "yes"
--- vim.opt.autoindent = true
--- vim.opt.encoding = "UTF-8"
--- vim.opt.background = "dark"
--- vim.opt.compatible = false
--- vim.opt.cmdheight = 1
--- vim.opt.conceallevel = 0 -- So that I can see `` in markdown files
--- vim.opt.hidden = true
--- vim.opt.updatetime = 100
--- vim.opt.showcmd = false
--- vim.opt.showmode = false
--- vim.opt.cursorline = false
--- vim.opt.number = true
--- vim.opt.relativenumber = true
--- vim.opt.numberwidth = 3
--- vim.opt.wrap = false
--- vim.opt.expandtab = true
--- vim.opt.joinspaces = false
--- vim.opt.shiftwidth = 2
--- vim.opt.softtabstop = 2
--- vim.opt.clipboard = "unnamedplus"
--- vim.opt.hlsearch = true
--- vim.opt.incsearch = true
--- vim.opt.ignorecase = true
--- vim.opt.smartcase = true
--- vim.opt.autoread = true
--- vim.opt.autowrite = true
--- vim.opt.swapfile = false
--- vim.opt.backup = false
--- vim.opt.writebackup = false
--- vim.opt.completeopt = "menuone,noinsert,noselect,preview"
--- vim.opt.shell = "/bin/zsh"
--- vim.opt.errorformat:append("%f|%l col %c|%m")
--- vim.opt.showbreak = "﬌ "
--- vim.opt.inccommand = "split" -- incrementally show result of command
--- vim.opt.wildignore = "*/.git/*,*/.DS_Store,dist,*.o,*~,package-lock.json"
--- vim.opt.list = true
--- -- vim.opt.listchars = "tab:→ ,nbsp:•,trail:•,precedes:«,extends:»"
--- -- vim.opt.fillchars:append({ eob = " ", vert = " " })
--- -- vim.opt.fillchars:append({ eob = " " })
--- vim.opt.listchars = {
---   nbsp = "⦸", -- CIRCLED REVERSE SOLIDUS (U+29B8, UTF-8: E2 A6 B8)
---   extends = "»", -- RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00BB, UTF-8: C2 BB)
---   precedes = "«", -- LEFT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00AB, UTF-8: C2 AB)
---   tab = "  ", -- '▷─' WHITE RIGHT-POINTING TRIANGLE (U+25B7, UTF-8: E2 96 B7) + BOX DRAWINGS HEAVY TRIPLE DASH HORIZONTAL (U+2505, UTF-8: E2 94 85)
---   trail = "•", -- BULLET (U+2022, UTF-8: E2 80 A2)
---   space = " ",
--- }
---
--- vim.opt.fillchars = {
---   diff = "∙", -- BULLET OPERATOR (U+2219, UTF-8: E2 88 99)
---   eob = " ", -- NO-BREAK SPACE (U+00A0, UTF-8: C2 A0) to suppress ~ at EndOfBuffer
---   fold = "·", -- MIDDLE DOT (U+00B7, UTF-8: C2 B7)
---   vert = "│", -- window border when window splits vertically
---   horiz = "─",
---   horizup = "┴",
---   horizdown = "┬",
---   vertleft = "┤",
---   vertright = "├",
---   verthoriz = "┼",
--- }
---
--- vim.opt.wildignorecase = true
--- vim.opt.undofile = true
--- vim.opt.undodir = vim.fn.expand(vim.fn.stdpath("data") .. "/undodir//")
--- vim.opt.foldenable = false
--- vim.opt.foldlevel = 99
--- vim.opt.foldmethod = "manual"
--- vim.opt.formatoptions = "l"
--- vim.opt.shortmess:append("c")
--- -- vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor"
+for k, v in pairs(options) do
+  vim.opt[k] = v
+end
 
--- if vim.fn.has("termguicolors") == 1 then
---   vim.opt.termguicolors = true
--- end
+vim.opt.shortmess:append "c"
+
+if vim.fn.has("termguicolors") == 1 then
+  vim.opt.termguicolors = true             -- set term gui colors (most terminals support this)
+end
 
 local disabled_built_ins = {
   "netrw",
@@ -147,7 +83,3 @@ local disabled_built_ins = {
 for _, plugin in pairs(disabled_built_ins) do
   vim.g["loaded_" .. plugin] = 1
 end
-
--- vim.cmd("setlocal formatoptions-=cro")
--- vim.cmd("set whichwrap+=<,>,[,],h,l")
--- vim.cmd([[set iskeyword+=-]])

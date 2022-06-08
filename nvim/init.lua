@@ -22,9 +22,9 @@ end
 
 local modules = {
   "mnml.core.options",
+  "mnml.plugins",
   "mnml.core.mappings",
   "mnml.core.autocmds",
-  "mnml.plugins",
 }
 
 for _, module in ipairs(modules) do
