@@ -66,7 +66,7 @@ map("n", "<TAB>", "<cmd>bnext<CR>")
 map("n", "<S-TAB>", "<cmd>bprevious<CR>")
 
 -- print console.log(variable)
-map("n", "<F1>", "<cmd>call PrintVariable()<CR>")
+map("n", "<C-l>", "<cmd>call PrintVariable()<CR>")
 
 vim.cmd([[
 function! PrintVariable()
