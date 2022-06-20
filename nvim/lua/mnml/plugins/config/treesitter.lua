@@ -5,14 +5,12 @@ return {
       run = ":TSUpdate",
       requires = {
         "p00f/nvim-ts-rainbow",
-        "windwp/nvim-ts-autotag",
         'm-demare/hlargs.nvim',
         "terrortylor/nvim-comment",
         "JoosepAlviste/nvim-ts-context-commentstring",
       },
       config = function()
         local treesitter_langs = require("mnml.config").treesitter_langs
-        local treesitter_autotags = require("mnml.config").treesitter_autotags
 
         require("nvim-treesitter.configs").setup({
           ensure_installed = treesitter_langs,
@@ -29,11 +27,6 @@ return {
           },
           -- rainbow
           rainbow = { enable = true, extended_mode = true, max_file_lines = nil },
-          -- autotag
-          autotag = {
-            enable = true,
-            filetypes = treesitter_autotags,
-          },
           -- commentstring
           context_commentstring = { enable = true, enable_autocmd = false },
         })

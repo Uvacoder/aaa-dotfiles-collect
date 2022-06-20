@@ -31,8 +31,8 @@ map("n", "-", "<PageUp>")
 -- map("n", "x", ":bd<CR>")
 
 -- fold unfold html
-map("n", "fc", "zfat")
-map("n", "fo", "zo")
+map("n", "fc", "<cmd>foldclose<cr>")
+map("n", "fo", "<cmd>foldopen<cr>")
 
 -- select all
 map("n", "aa", "ggVG")

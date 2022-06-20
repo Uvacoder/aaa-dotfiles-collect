@@ -74,7 +74,7 @@ return {
         })
 
         map("n", ",", "<CMD>Neotree toggle<CR>")
-        map("n", ".", "<CMD>Neotree toggle<CR>")
+        -- map("n", ".", "<CMD>Neotree toggle<CR>")
         map("n", "[", "<CMD>Neotree float git_status<CR>")
         map("n", "]", "<CMD>Neotree buffers<CR>")
         map("n", "<C-q>", "<CMD>Neotree close<CR>")

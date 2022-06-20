@@ -1,7 +1,7 @@
 require("base16-colorscheme").setup({
-  base00 = vim.g.my.colors.bg, --"#282c34",
-  base01 = vim.g.my.colors.statusline, --"#353b45",
-  base02 = vim.g.my.colors.float, --"#3e4451",
+  base00 = "#08080D",
+  base01 = "#000000",
+  base02 = "#161926",
   base03 = "#545862",
   base04 = "#565c64",
   base05 = "#abb2bf",
