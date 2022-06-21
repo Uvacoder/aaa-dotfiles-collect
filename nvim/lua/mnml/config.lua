@@ -25,16 +25,16 @@ M.treesitter_langs = {
   -- "regex",
 }
 
-M.treesitter_autotags = {
-  "html",
-  "javascript",
-  "typescript",
-  "vue",
-  "jsx",
-  "javascriptreact",
-  "typescriptreact",
-  "tsx",
-}
+-- M.treesitter_autotags = {
+--   "html",
+--   "javascript",
+--   "typescript",
+--   "vue",
+--   "jsx",
+--   "javascriptreact",
+--   "typescriptreact",
+--   "tsx",
+-- }
 
 -- Add Lsp servers
 M.lsp_servers = {

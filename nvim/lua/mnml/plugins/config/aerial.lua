@@ -1,13 +1,13 @@
 return {
   setup = function(use)
     use({
-      'stevearc/aerial.nvim',
+      "stevearc/aerial.nvim",
       config = function()
         local map = require("mnml.utils").map
 
-        require('aerial').setup({
+        require("aerial").setup({
           default_direction = "float",
-          backends = {'lsp'},
+          backends = { "lsp" },
           filter_kind = false,
           close_on_select = true,
           show_guides = true,
@@ -27,7 +27,7 @@ return {
           },
         })
 
-        map('n', '.', '<cmd>AerialToggle<cr>')
+        map("n", ".", "<cmd>AerialToggle<cr>")
       end,
     })
   end,

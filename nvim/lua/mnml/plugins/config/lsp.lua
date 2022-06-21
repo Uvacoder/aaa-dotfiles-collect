@@ -6,7 +6,7 @@ return {
       requires = {
         "stevearc/aerial.nvim",
         "hrsh7th/cmp-nvim-lsp",
-        "williamboman/nvim-lsp-installer"
+        "williamboman/nvim-lsp-installer",
       },
 
       config = function()

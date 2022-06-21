@@ -1,0 +1,18 @@
+require("base16-colorscheme").setup({
+  base00 = "#000000",
+  base01 = "#06060a",
+  base02 = "#0b0c13",
+  base03 = "#565f89",
+  base04 = "#a9b1d6",
+  base05 = "#c0caf5",
+  base06 = "#ffe000",
+  base07 = "#ffffff",
+  base08 = "#ff6600",
+  base09 = "#ffe000",
+  base0A = "#ff007c",
+  base0B = "#84b360",
+  base0C = "#00A9A7",
+  base0D = "#52A0FF",
+  base0E = "#845af2",
+  base0F = "#565f89",
+})
