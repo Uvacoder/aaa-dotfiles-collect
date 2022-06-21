@@ -2,13 +2,24 @@ local hl_bg = require("mnml.utils").hl_bg
 local hl_link = require("mnml.utils").hl_link
 local get_hl = require("mnml.utils").get_hl
 
-local bg = get_hl("StatusLine", "bg#")
+-- local bg = get_hl("StatusLine", "bg#")
+--
+-- hl_link("Pmenu", "StatusLine")
+-- hl_link("PmenuBorder", "StatusLine")
+-- hl_link("NormalFloat", "StatusLine")
+-- hl_link("FloatBorder", "StatusLine")
+-- hl_link("NeoTreeFloatBorder", "StatusLine")
+-- hl_link("NeoTreeCursorLine", "PmenuSel")
 
-hl_link("Pmenu", "StatusLine")
-hl_link("PmenuBorder", "StatusLine")
-hl_link("NormalFloat", "StatusLine")
-hl_link("FloatBorder", "StatusLine")
-hl_link("NeoTreeFloatBorder", "StatusLine")
+local bg = get_hl("Normal", "bg#")
+
+hl_link("Tabline", "Normal")
+hl_link("Statusline", "Normal")
+hl_link("Pmenu", "Normal")
+hl_link("PmenuBorder", "Normal")
+hl_link("NormalFloat", "Normal")
+hl_link("FloatBorder", "Normal")
+hl_link("NeoTreeFloatBorder", "Normal")
 hl_link("NeoTreeCursorLine", "PmenuSel")
 
 hl_bg("NeoTreeNormal", bg)

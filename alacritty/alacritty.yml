@@ -8,8 +8,8 @@ window:
     columns: 106
     lines: 24
   padding:
-    x: 0 # 100
-    y: 0
+    x: 1 # 100
+    y: 1
 #                                                                             80                 100                 120
 #123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789
 
@@ -55,7 +55,7 @@ draw_bold_text_with_bright_colors: true
 
 colors:
   primary:
-    background: "0x030303"
+    background: "0x000000"
     foreground: "0xe0def4"
   cursor:
     text: "0x000000"
