@@ -4,7 +4,6 @@ return {
       "neovim/nvim-lspconfig",
 
       requires = {
-        "stevearc/aerial.nvim",
         "hrsh7th/cmp-nvim-lsp",
         "williamboman/nvim-lsp-installer",
       },
@@ -21,7 +20,6 @@ return {
         map("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 
         local on_attach = function(client, bufnr)
-          require("aerial").on_attach(client, bufnr)
           -- stop Neovim from asking me which server I want to use for formatting
           -- client.server_capabilities.document_formatting = false
           -- client.server_capabilities.document_range_formatting = false

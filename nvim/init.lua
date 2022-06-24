@@ -2,10 +2,10 @@ vim.g.my = {
   theme = "onedark",
   border = "rounded", -- "rounded", "single", "double"
   colors = {
-    blue = "#52A0FF",
-    green = "#84b360",
-    yellow = "#d9c97c",
-    red = "#ff7ab2",
+    blue = "#00AAFF",
+    green = "#95EC30",
+    yellow = "#FFC600",
+    red = "#FF0069",
     white = "#cbd5e1",
   },
 }

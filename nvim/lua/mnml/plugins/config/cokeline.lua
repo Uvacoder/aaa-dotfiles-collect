@@ -15,12 +15,12 @@ return {
         require("cokeline").setup({
           default_hl = {
             fg = function(buffer)
-              return  buffer.is_focused and "#ffffff" and "bold" or comments_fg
+              return (buffer.diagnostics.errors ~= 0 and errors_fg )
+              or (buffer.diagnostics.warnings ~= 0 and warnings_fgv)
+              or buffer.is_focused and "#ffffff" and "bold" or comments_fg
             end,
             bg = function(buffer)
-              return (buffer.diagnostics.errors ~= 0 and errors_fg)
-              or (buffer.diagnostics.warnings ~= 0 and warnings_fg)
-              or normal_bg
+              return normal_bg
               -- return buffer.is_focused and normal_bg or tabline_bg
             end,
           },
@@ -53,7 +53,7 @@ return {
                 return buffer.is_modified and "" or " "
               end,
               fg = function(buffer)
-                return buffer.is_modified and vim.g.my.colors.yellow or nil
+                return buffer.is_modified and vim.g.my.colors.green or nil
               end,
             },
             {
