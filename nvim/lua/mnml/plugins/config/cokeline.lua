@@ -15,12 +15,12 @@ return {
         require("cokeline").setup({
           default_hl = {
             fg = function(buffer)
-              return (buffer.diagnostics.errors ~= 0 and errors_fg)
-              or (buffer.diagnostics.warnings ~= 0 and warnings_fg)
-              or buffer.is_focused and "#ffffff" and "bold" or comments_fg
+              return  buffer.is_focused and "#ffffff" and "bold" or comments_fg
             end,
             bg = function(buffer)
-              return normal_bg
+              return (buffer.diagnostics.errors ~= 0 and errors_fg)
+              or (buffer.diagnostics.warnings ~= 0 and warnings_fg)
+              or normal_bg
               -- return buffer.is_focused and normal_bg or tabline_bg
             end,
           },

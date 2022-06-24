@@ -8,8 +8,8 @@ window:
     columns: 106
     lines: 24
   padding:
-    x: 1 # 100
-    y: 1
+    x: 0 # 100
+    y: 0
 #                                                                             80                 100                 120
 #123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789#123456789
 
@@ -19,14 +19,21 @@ cursor:
     shape: Block
 
 font:
-  normal:
-    family: CaskaydiaCove Nerd Font Mono
-  italic:
-    family: Cascadia Mono
-  size: 19
-  offset:
-    x: 0
-    y: 10
+  # normal:
+  #   family: CaskaydiaCove Nerd Font Mono
+  # italic:
+  #   family: Cascadia Mono
+  # size: 19
+  # offset:
+  #   x: 0
+  #   y: 10
+
+  # normal:
+  #   family: MesloLGL Nerd Font Mono
+  # size: 19
+  # offset:
+  #   x: 0
+  #   y: 8
 
   # normal:
   #   family: CamingoCode Nerd Font
@@ -35,12 +42,12 @@ font:
   #   x: 0
   #   y: 8
 
-  # normal:
-  #   family: OperatorMono Nerd Font
-  # size: 22
-  # offset:
-  #   x: 0
-  #   y: 8
+  normal:
+    family: OperatorMono Nerd Font
+  size: 19
+  offset:
+    x: 0
+    y: 9
 
   # normal:
   #   family: UbuntuMono Nerd Font Mono

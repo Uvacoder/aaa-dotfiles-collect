@@ -10,7 +10,7 @@ local use = packer.use
 return packer.startup({
   function(use)
     require("mnml.plugins.config.packer").setup(use)
-    require("mnml.plugins.config.colorizer").setup(use)
+    -- require("mnml.plugins.config.colorizer").setup(use)
     -- require("mnml.plugins.config.formatter").setup(use)
     -- require("mnml.plugins.config.bujo").setup(use)
     -- require("mnml.plugins.config.trouble").setup(use)
