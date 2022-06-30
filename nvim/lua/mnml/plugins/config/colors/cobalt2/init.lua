@@ -14,7 +14,14 @@ return {
         hl_bg("LineNr", "#0C1923")
         hl_bg("NormalFloat", "#0C1923")
         hl_fg("FloatBorder", "#00AAFF")
+        hl_fg("NeoTreeFloatBorder", "#00AAFF")
+        hl_bg("NeoTreeFloatTitle", "#0C1923")
+        hl_fg("NeoTreeCursorLine", "#000000")
+        hl_bg("NeoTreeCursorLine", "#FFC600")
         hl_bg("PMenu", "#0C1923")
+        hl_fg("PMenu", "#00AAFF")
+        hl_bg("WildMenu", "#0C1923")
+        hl_fg("WildMenu", "#00AAFF")
       end,
     })
   end,

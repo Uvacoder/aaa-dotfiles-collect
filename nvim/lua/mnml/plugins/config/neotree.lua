@@ -50,6 +50,13 @@ return {
           },
           window = {
             position = "float",
+            popup = { -- settings that apply to float position only
+              size = {
+                height = "80%",
+                width = "35%",
+              },
+              position = "50%", -- 50% means center it
+            },
           },
           filesystem = {
             filtered_items = {
