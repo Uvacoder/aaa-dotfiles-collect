@@ -11,7 +11,7 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/lib/node_modules:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="/Users/sldobri/.nvim-osx64/bin:$PATH"
+export PATH="/Users/sldobri/.nvim-macos/bin:$PATH"
 export PATH="/Users/sldobri/.local/share/nvim/lsp_servers:$PATH"
 
 
@@ -178,11 +178,11 @@ function git-init(){
 }
 
 function nvim-up(){
- rm -rf $HOME/.nvim-osx64/
+ rm -rf $HOME/.nvim-macos/
  # curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz
- curl -LO https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-macos.tar.gz
+ curl -LO https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-macos.tar.gz
  tar xzf nvim-macos.tar.gz
- mv nvim-osx64 $HOME/.nvim-osx64
+ mv nvim-macos $HOME/.nvim-macos
  rm nvim-macos.tar.gz
  v
 }
