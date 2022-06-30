@@ -11,7 +11,7 @@ vim.g.maplocalleader = " "
 
 local options = {
   backup = false, --        creates a backup file
-  mouse = "a", --           allow the mouse to be used in neovim
+  mouse = "r", --           allow the mouse to be used in neovim
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
   laststatus = 0,--         remove statusline
   cmdheight = 1, --         more space in the neovim command line for displaying messages
