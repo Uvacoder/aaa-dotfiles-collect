@@ -27,8 +27,8 @@ map("n", "=", "<PageDown>")
 map("n", "-", "<PageUp>")
 
 -- delete buffer
--- map("n", "<C-x>", ":bd<CR>")
--- map("n", "x", ":bd<CR>")
+map("n", "<C-x>", ":bd<CR>")
+map("n", "bd", ":bd<CR>")
 
 -- fold unfold html
 map("n", "fc", "<cmd>foldclose<cr>")

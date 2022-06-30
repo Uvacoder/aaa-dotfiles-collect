@@ -18,8 +18,8 @@ return {
               return buffer.is_focused and normal_fg and "bold" or comments_fg
             end,
             bg = function(buffer)
-              return (buffer.diagnostics.errors ~= 0 and errors_bg )
-              or (buffer.diagnostics.warnings ~= 0 and warnings_bg )
+              return (buffer.diagnostics.warnings ~= 0 and warnings_bg )
+              or (buffer.diagnostics.errors ~= 0 and errors_bg )
               or normal_bg
               -- return buffer.is_focused and normal_bg or tabline_bg
             end,
