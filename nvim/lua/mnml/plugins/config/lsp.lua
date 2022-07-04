@@ -65,8 +65,8 @@ return {
           options.handlers = handlers
 
           if server.name == "eslint" then
-            options.on_attach.resolved_capabilities.document_formatting = false
-            options.settings = { format = { enable = false } }
+            options.on_attach.resolved_capabilities.document_formatting = true
+            options.settings = { format = { enable = true } }
           end
 
           if server.name == "tsserver" or server.name == "volar" then
@@ -80,20 +80,28 @@ return {
 
         -- Show line diagnostics automatically for specific cursor position
         -- vim.cmd([[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]])
-
-        vim.diagnostic.config({
-          virtual_text = false,
-          signs = true,
-          underline = true,
-          update_in_insert = false,
-          severity_sort = false,
+        local diagnostic = vim.diagnostic
+        diagnostic.config({
+          -- virtual_text = false,
+          -- virtual_lines = { prefix = "" },
+          virtual_text = {
+            prefix = "",
+            spacing = 2,
+          },
+          signs = false,
           float = {
-            focusable = false,
-            style = "minimal",
             border = vim.g.my.border,
-            source = "always",
             header = "",
             prefix = "",
+            format = function(diagnostic)
+              return string.format(
+                " %s %s\n%s",
+                diagnostic.source,
+                diagnostic.user_data.lsp.code,
+                diagnostic.message
+              )
+              -- return dump(diagnostic)
+            end,
           },
         })
       end,
