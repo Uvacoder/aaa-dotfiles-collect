@@ -2,14 +2,14 @@ return {
   setup = function(use)
     use({
       "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
+      -- requires = "kyazdani42/nvim-web-devicons",
       config = function()
         local map = require("mnml.utils").map
 
         require("trouble").setup({
           position = "bottom",
-          height = 4,
-          width = 50,
+          height = 5,
+          width = 100,
           icons = false,
           mode = "workspace_diagnostics",
           group = true,
@@ -19,7 +19,7 @@ return {
             cancel = "<esc>",
             refresh = "r",
           },
-          auto_open = true,
+          auto_open = false,
           auto_close = true,
           auto_preview = true,
           auto_jump = { "lsp_definitions" },

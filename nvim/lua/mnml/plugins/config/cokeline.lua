@@ -7,22 +7,22 @@ return {
       config = function()
         local get_hex = require("cokeline/utils").get_hex
         local comments_fg = get_hex('Comment', 'fg')
-        local normal_bg = get_hex("Normal", "bg")
+        local normal_bg =  get_hex("Normal", "bg")
         local tabline_bg = get_hex("Tabline", "bg")
-        local normal_fg = vim.g.my.colors.white
-        -- local errors_bg = vim.g.my.colors.yellow
-        -- local warnings_bg = vim.g.my.colors.yellow
+
+        local errors_fg = vim.g.my.colors.yellow
+        local warnings_fg = vim.g.my.colors.yellow
 
         require("cokeline").setup({
           default_hl = {
             fg = function(buffer)
-              return buffer.is_focused and normal_fg and "bold" or comments_fg
+              return (buffer.diagnostics.warnings ~= 0 and warnings_fgv)
+              or (buffer.diagnostics.errors ~= 0 and errors_fg )
+              or buffer.is_focused and "#ffffff" and "bold" or comments_fg
             end,
             bg = function(buffer)
-              -- return (buffer.diagnostics.warnings ~= 0 and warnings_bg )
-              -- or (buffer.diagnostics.errors ~= 0 and errors_bg )
-              -- or normal_bg
-              return buffer.is_focused and normal_bg or tabline_bg
+              return normal_bg
+              -- return buffer.is_focused and normal_bg or tabline_bg
             end,
           },
 
