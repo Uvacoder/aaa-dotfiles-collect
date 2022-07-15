@@ -55,7 +55,7 @@ mkdir ~/.config
 #ln -s ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 ln -s ~/.dotfiles/zsh/zshrc  ~/.zshrc
 ln -s ~/.dotfiles/nvim ~/.config/nvim
-#ln -s ~/.dotfiles/wget/wgetrc  ~/.wgetrc
+ln -s ~/.dotfiles/wget/wgetrc  ~/.wgetrc
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/global_ignore ~/.global_ignore
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global

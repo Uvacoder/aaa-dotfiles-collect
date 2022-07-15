@@ -8,24 +8,27 @@ return {
         local hl_fg = require("mnml.utils").hl_fg
 
         require('colorbuddy').colorscheme('cobalt2')
+        local bg_color = "#0c1923" -- default
+        -- local bg_color = "#101116"
+        local border_color = "#00AAFF"
 
-        hl_bg("SpecialKey", "#0C1923")
-        hl_bg("Normal", "#0C1923")
-        hl_bg("NormalNC", "#0C1923")
-        hl_bg("TabLine", "#0C1923")
-        hl_bg("TabLineFill", "#0C1923")
-        hl_bg("TabLineSel", "#0C1923")
-        hl_bg("LineNr", "#0C1923")
-        hl_bg("NormalFloat", "#0C1923")
-        hl_fg("FloatBorder", "#00AAFF")
-        hl_fg("NeoTreeFloatBorder", "#00AAFF")
-        hl_bg("NeoTreeFloatTitle", "#0C1923")
+        hl_bg("SpecialKey", bg_color)
+        hl_bg("Normal", bg_color)
+        hl_bg("NormalNC", bg_color)
+        hl_bg("TabLine", bg_color)
+        hl_bg("TabLineFill", bg_color)
+        hl_bg("TabLineSel", bg_color)
+        hl_bg("LineNr", bg_color)
+        hl_bg("NormalFloat", bg_color)
+        hl_fg("FloatBorder", border_color)
+        hl_fg("NeoTreeFloatBorder", border_color)
+        hl_bg("NeoTreeFloatTitle", bg_color)
+        hl_bg("PMenu", bg_color)
+        hl_fg("PMenu", border_color)
+        hl_bg("WildMenu", bg_color)
+        hl_fg("WildMenu", border_color)
         hl_fg("NeoTreeCursorLine", "#000000")
         hl_bg("NeoTreeCursorLine", "#FFC600")
-        hl_bg("PMenu", "#0C1923")
-        hl_fg("PMenu", "#00AAFF")
-        hl_bg("WildMenu", "#0C1923")
-        hl_fg("WildMenu", "#00AAFF")
       end,
     })
   end,

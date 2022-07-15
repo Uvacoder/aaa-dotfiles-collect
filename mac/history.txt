@@ -1,0 +1,29 @@
+
+   sudo port install neovim
+   sudo port install nodejs16
+   sudo port install npm8
+   sudo port install stylua
+   sudo port install wget
+   sudo port install alacritty
+
+   sudo port select --set python python310
+   pip3 install neovim
+   pip3 install vim-vint
+     
+   defaults write com.apple.TextEdit RichText -int 0
+   chflags nohidden ~/Library
+   defaults write com.apple.finder QuitMenuItem -bool true
+   defaults write com.apple.finder ShowStatusBar -bool true
+   killall Finder
+   sudo systemsetup -setrestartfreeze on
+   sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0 && sudo killall -HUP blued
+   sudo nvram SystemAudioVolume=" "
+   sudo nvram BootAudio=%00
+   defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES
+   defaults write com.apple.dock persistent-apps -array
+   defaults write com.apple.dock autohide-delay -float 0
+   defaults write com.apple.dock autohide-time-modifier -float 0
+   killall Dock
+   
+   43  history
+   44  history > history.txt

@@ -15,6 +15,7 @@ rm ~/.wgetrc
 rm ~/.gitconfig
 rm ~/.global_ignore
 rm ~/.gitignore_global
+rm ~/.alacritty.yml
 rm ~/.tmux/style/tmux-powerline/themes/default.sh
 
 echo "$(tput setaf 2)FRIDAY: link dotfiles.$(tput sgr 0)"
@@ -24,6 +25,7 @@ ln -s ~/.dotfiles/wget/wgetrc  ~/.wgetrc
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/global_ignore ~/.global_ignore
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
+ln -s ~/.dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
 
 echo "$(tput setaf 2)FRIDAY: add nvim link.$(tput sgr 0)"
 

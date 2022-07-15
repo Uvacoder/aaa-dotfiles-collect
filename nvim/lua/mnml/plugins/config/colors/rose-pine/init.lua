@@ -1,3 +1,4 @@
+-- https://github.com/rose-pine/neovim
 return {
   setup = function(use)
     use({
@@ -5,12 +6,14 @@ return {
         as = 'rose-pine',
         tag = 'v1.*',
         config = function()
-          local bgColor = '#12111B'
+          -- local bgColor = '#12111B'
+          local bgColor = "#0D1117" -- "#101116" -- "#14151c" -- "#1b1c25" -- "#0f0f0f" --- "#0c1923"
 
           require('rose-pine').setup({
-            dark_variant = 'moon', -- main | moon
+            dark_variant = 'main', -- main | moon
             groups = {
 		          background = bgColor,
+              surface = '#000000'
             },
             highlight_groups = {
               TabLineFill = { bg = bgColor },

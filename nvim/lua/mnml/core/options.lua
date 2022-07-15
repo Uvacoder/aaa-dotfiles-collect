@@ -2,14 +2,15 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_python_provider = 0
 
-vim.g.python3_host_prog = "/usr/local/bin/python3"
-vim.g.node_host_prog = "/usr/local/lib/node_modules/neovim/bin/cli.js"
+vim.g.python3_host_prog = "/opt/local/bin/python"
+vim.g.node_host_prog = "/opt/local/lib/node_modules/neovim/bin/cli.js"
 
 -- map Leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 local options = {
+  guifont = "OperatorMono Nerd Font:h18",
   backup = false, --        creates a backup file
   mouse = "r", --           allow the mouse to be used in neovim
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
