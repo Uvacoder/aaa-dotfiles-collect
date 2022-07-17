@@ -10,8 +10,8 @@ return {
         local normal_bg =  get_hex("Normal", "bg")
         local tabline_bg = get_hex("Tabline", "bg")
 
-        local errors_fg = vim.g.my.colors.yellow
-        local warnings_fg = vim.g.my.colors.yellow
+        local errors_fg = vim.g.mnml.ui.colors.warning
+        local warnings_fg = vim.g.mnml.ui.colors.warning
 
         require("cokeline").setup({
           default_hl = {
@@ -54,7 +54,7 @@ return {
                 return buffer.is_modified and "" or " "
               end,
               fg = function(buffer)
-                return buffer.is_modified and vim.g.my.colors.green or nil
+                return buffer.is_modified and vim.g.mnml.ui.colors.success or nil
               end,
             },
             {

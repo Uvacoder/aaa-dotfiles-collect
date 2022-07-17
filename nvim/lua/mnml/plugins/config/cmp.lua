@@ -26,8 +26,8 @@ return {
         -- Global setup.
         cmp.setup({
           window = {
-            documentation = { border = vim.g.my.border },
-            completion = { border = vim.g.my.border },
+            documentation = { border = vim.g.mnml.ui.border },
+            completion = { border = vim.g.mnml.ui.border },
           },
           snippet = {
             expand = function(args)

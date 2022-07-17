@@ -31,9 +31,9 @@ end
 packer.init({
   display = {
     open_fn = function()
-      return require("packer.util").float({ border = vim.g.my.border })
+      return require("packer.util").float({ border = vim.g.mnml.ui.border })
     end,
-    prompt_border = vim.g.my.border,
+    prompt_border = vim.g.mnml.ui.border,
   },
   auto_clean = true,
   compile_on_sync = true,

@@ -7,12 +7,12 @@ return {
 
         require("FTerm").setup({
           dimensions = { height = 0.8, width = 0.8 },
-          border = vim.g.my.border,
+          border = vim.g.mnml.ui.border,
           hl = "NormalFloat",
         })
 
-        map("n", ";", '<CMD>lua require("FTerm").toggle()<CR>')
-        map("t", ";", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+        map("n", ".", '<CMD>lua require("FTerm").toggle()<CR>')
+        map("t", ".", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
         map("t", "<C-q>", '<C-\\><C-n><CMD>lua require("FTerm").exit()<CR>')
         map("t", "<esc>", [[<C-\><C-n>]])
       end,

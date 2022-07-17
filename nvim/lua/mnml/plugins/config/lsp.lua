@@ -11,7 +11,6 @@ return {
       config = function()
         local buf_map = require("mnml.utils").buf_map
         local map = require("mnml.utils").map
-        local lsp_servers = require("mnml.config").lsp_servers
 
         -- Diagnostic keymaps
         map("n", "<space>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
@@ -50,16 +49,16 @@ return {
 
         -- LSP settings (for overriding per client)
         local handlers = {
-          ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.my.border }),
-          ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.my.border }),
+          ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.mnml.ui.border }),
+          ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.mnml.ui.border }),
         }
 
         -- Ensure servers are installed
         require("nvim-lsp-installer").setup({
-          ensure_installed = lsp_servers,
+          ensure_installed = vim.g.mnml.lsp.servers,
         })
 
-        for _, server in pairs(lsp_servers) do
+        for _, server in pairs(vim.g.mnml.lsp.servers) do
           local options = {}
           options.on_attach = on_attach
           options.handlers = handlers
@@ -90,7 +89,7 @@ return {
           },
           signs = false,
           float = {
-            border = vim.g.my.border,
+            border = vim.g.mnml.ui.border,
             header = "",
             prefix = "",
             format = function(diagnostic)

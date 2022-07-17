@@ -6,9 +6,9 @@ return {
       config = function()
         -- stylua: ignore
         local colors = {
-          fg_file  = "#FFC600",
-          bg  = '#0D1117',
-          fg  = '#c6c6c6',
+          fg_file  = vim.g.mnml.ui.colors.warning,
+          bg  = vim.g.mnml.ui.colors.bg,
+          fg  = vim.g.mnml.ui.colors.info,
         }
 
         local minimal_theme = {

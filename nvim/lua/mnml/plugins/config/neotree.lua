@@ -18,7 +18,7 @@ return {
 
         require("neo-tree").setup({
           close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
-          popup_border_style = vim.g.my.border,
+          popup_border_style = vim.g.mnml.ui.border,
           enable_git_status = true,
           enable_diagnostics = false,
           default_component_configs = {
@@ -55,7 +55,10 @@ return {
                 height = "80%",
                 width = "40%",
               },
-              position = "50%", -- 50% means center it
+              position = {
+                row = "1",
+                col = "50%",
+              },
             },
           },
           filesystem = {

@@ -9,8 +9,8 @@ return {
 
         require('colorbuddy').colorscheme('cobalt2')
         -- local bg_color = "#0c1923" -- default
-        local bg_color = "#0D1117"
-        local border_color = "#00AAFF"
+        local bg_color = vim.g.mnml.ui.colors.bg
+        local border_color = vim.g.mnml.ui.colors.info
 
         hl_bg("SpecialKey", bg_color)
         hl_bg("Normal", bg_color)
@@ -28,7 +28,7 @@ return {
         hl_bg("WildMenu", bg_color)
         hl_fg("WildMenu", border_color)
         hl_fg("NeoTreeCursorLine", "#000000")
-        hl_bg("NeoTreeCursorLine", "#FFC600")
+        hl_bg("NeoTreeCursorLine", vim.g.mnml.ui.colors.warning)
       end,
     })
   end,

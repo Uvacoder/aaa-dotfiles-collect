@@ -10,10 +10,8 @@ return {
         "JoosepAlviste/nvim-ts-context-commentstring",
       },
       config = function()
-        local treesitter_langs = require("mnml.config").treesitter_langs
-
         require("nvim-treesitter.configs").setup({
-          ensure_installed = treesitter_langs,
+          ensure_installed = vim.g.mnml.treesitter.langs,
           highlight = { enable = true, additional_vim_regex_highlighting = false },
           indent = { enable = true },
           incremental_selection = {
