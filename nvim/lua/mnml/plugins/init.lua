@@ -10,7 +10,8 @@ local use = packer.use
 return packer.startup({
   function(use)
     require("mnml.plugins.config.packer").setup(use)
-		require("mnml.plugins.config.cokeline").setup(use)
+		-- require("mnml.plugins.config.cokeline").setup(use)
+    require("mnml.plugins.config.lualine").setup(use)
     require("mnml.plugins.config.autopairs").setup(use)
     require("mnml.plugins.config.treesitter").setup(use)
     require("mnml.plugins.config.cmp").setup(use)
@@ -20,7 +21,6 @@ return packer.startup({
     require("mnml.plugins.config.notify").setup(use)
     require("mnml.plugins.config.ctrlsf").setup(use)
     require("mnml.plugins.config.visualmulti").setup(use)
-    -- require("mnml.plugins.config.colors.rose-pine").setup(use)
     require("mnml.plugins.config.colors.cobalt2").setup(use)
 
     -- Automatically set up your configuration after cloning packer.nvim

@@ -1,6 +1,6 @@
 vim.g.my = {
   theme = "onedark",
-  border = "rounded", -- "rounded", "single", "double"
+  border = "single", -- "rounded", "single", "double"
   colors = {
     blue = "#00AAFF",
     green = "#95EC30",

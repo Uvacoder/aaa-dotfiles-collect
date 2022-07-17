@@ -8,8 +8,8 @@ return {
         local hl_fg = require("mnml.utils").hl_fg
 
         require('colorbuddy').colorscheme('cobalt2')
-        local bg_color = "#0c1923" -- default
-        -- local bg_color = "#101116"
+        -- local bg_color = "#0c1923" -- default
+        local bg_color = "#0D1117"
         local border_color = "#00AAFF"
 
         hl_bg("SpecialKey", bg_color)
