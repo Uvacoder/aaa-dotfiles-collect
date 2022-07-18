@@ -10,7 +10,7 @@ local use = packer.use
 return packer.startup({
   function(use)
     require("mnml.plugins.config.packer").setup(use)
-		-- require("mnml.plugins.config.cokeline").setup(use)
+		require("mnml.plugins.config.cokeline").setup(use)
     require("mnml.plugins.config.lualine").setup(use)
     require("mnml.plugins.config.autopairs").setup(use)
     require("mnml.plugins.config.treesitter").setup(use)
