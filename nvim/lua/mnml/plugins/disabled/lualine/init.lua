@@ -27,7 +27,7 @@ return {
             lualine_b = {
               "diagnostics",
               { "filename", file_status = false },
-              { file_modified, color = { fg = vim.g.my.colors.yellow } },
+              { file_modified, color = { fg = vim.g.mnml.ui.colors.warning } },
             },
             lualine_c = { "location", "progress" },
             lualine_x = { "encoding", "fileformat" },

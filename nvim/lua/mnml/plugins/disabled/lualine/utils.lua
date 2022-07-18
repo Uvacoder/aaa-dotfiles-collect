@@ -25,18 +25,18 @@ end
 
 M.diff_color = function()
   return {
-    added = { fg = vim.g.my.colors.green },
-    modified = { fg = vim.g.my.colors.yellow },
-    removed = { fg = vim.g.my.colors.red }
+    added = { fg = vim.g.mnml.ui.colors.success },
+    modified = { fg = vim.g.mnml.ui.colors.warning },
+    removed = { fg = vim.g.mnml.ui.colors.error }
   }
 end
 
 M.diagnostics_color = function()
   return {
-    color_error = { fg = vim.g.my.colors.red },
-    color_warn = { fg = vim.g.my.colors.yellow },
-    color_info = { fg = vim.g.my.colors.blue },
-    color_hint = { fg = vim.g.my.colors.white },
+    color_error = { fg = vim.g.mnml.ui.colors.error },
+    color_warn = { fg = vim.g.mnml.ui.colors.warning },
+    color_info = { fg = vim.g.mnml.ui.colors.info },
+    color_hint = { fg = vim.g.mnml.ui.colors.white },
   }
 end
 

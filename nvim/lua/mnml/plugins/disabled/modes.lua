@@ -6,10 +6,10 @@ return {
       config = function()
         require("modes").setup({
           colors = {
-            copy = vim.g.my.colors.white,
-            delete = vim.g.my.colors.red,
-            insert = vim.g.my.colors.green,
-            visual = vim.g.my.colors.yellow,
+            copy = vim.g.mnml.ui.colors.white,
+            delete = vim.g.mnml.ui.colors.error,
+            insert = vim.g.mnml.ui.colors.success,
+            visual = vim.g.mnml.ui.colors.warning,
           },
           set_cursorline = false,
           line_opacity = 0.25,
