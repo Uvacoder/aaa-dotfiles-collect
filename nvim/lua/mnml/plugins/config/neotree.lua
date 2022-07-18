@@ -52,8 +52,8 @@ return {
             position = "float",
             popup = { -- settings that apply to float position only
               size = {
-                height = "80%",
-                width = "40%",
+                height = "75%",
+                width = "45%",
               },
               position = {
                 row = "1",
