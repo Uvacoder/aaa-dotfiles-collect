@@ -4,11 +4,13 @@ return {
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true },
       config = function()
+        local get_hl = require("mnml.utils").get_hl
+
         -- stylua: ignore
         local colors = {
           fg_file  = "#ffffff",
-          bg  = vim.g.mnml.ui.colors.bg,
-          fg  = vim.g.mnml.ui.colors.info,
+          bg  = get_hl("Normal", "bg#"),
+          fg  = get_hl("Comment", "fg#"),
         }
 
         local minimal_theme = {

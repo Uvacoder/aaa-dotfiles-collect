@@ -6,7 +6,7 @@ return {
         local map = require("mnml.utils").map
 
         require("FTerm").setup({
-          dimensions = { height = 0.8, width = 0.8 },
+          dimensions = { height = 0.9, width = 0.8 },
           border = vim.g.mnml.ui.border,
           hl = "NormalFloat",
         })
