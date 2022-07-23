@@ -12,7 +12,7 @@ vim.g.mnml = {
   },
   lsp = {
     servers = {
-      "cssls",
+      -- "cssls",
       "volar",
       "tsserver",
       "eslint",

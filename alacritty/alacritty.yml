@@ -40,7 +40,7 @@ font:
   size: 19
   offset:
     x: 0
-    y: 11
+    y: 7
 
   # normal:
   #   family: OperatorMono Nerd Font
