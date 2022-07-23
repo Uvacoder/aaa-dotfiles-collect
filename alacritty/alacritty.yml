@@ -35,19 +35,19 @@ font:
   #   x: 0
   #   y: 8
 
-  # normal:
-  #   family: CamingoCode Nerd Font
-  # size: 20
-  # offset:
-  #   x: 0
-  #   y: 8
-
   normal:
-    family: OperatorMono Nerd Font
+    family: CamingoCode Nerd Font
   size: 19
   offset:
     x: 0
-    y: 9
+    y: 11
+
+  # normal:
+  #   family: OperatorMono Nerd Font
+  # size: 19
+  # offset:
+  #   x: 0
+  #   y: 9
 
   # normal:
   #   family: UbuntuMono Nerd Font Mono

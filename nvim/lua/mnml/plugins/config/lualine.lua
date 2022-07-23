@@ -40,8 +40,8 @@ return {
           sections = {
             lualine_a = {{ 'mode', right_padding = 2 }},
             lualine_b = { 'diagnostics', 'filename' },
-            lualine_c = { 'location' },
-            lualine_x = { 'progress', 'filetype', 'fileformat' },
+            lualine_c = { 'location', 'progress' },
+            lualine_x = { 'filetype', 'fileformat' },
             lualine_y = { },
             lualine_z = {{ 'branch', 'diff', left_padding = 2 }},
           },
