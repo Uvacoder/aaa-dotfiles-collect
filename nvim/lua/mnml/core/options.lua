@@ -6,6 +6,7 @@ vim.g.python3_host_prog = "/opt/local/bin/python"
 vim.g.node_host_prog = "/opt/local/lib/node_modules/neovim/bin/cli.js"
 
 local options = {
+  background = "dark",
   backup = false, --        creates a backup file
   mouse = "r", --           allow the mouse to be used in neovim
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
