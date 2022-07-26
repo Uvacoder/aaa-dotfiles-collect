@@ -1,5 +1,6 @@
 vim.g.mnml = {
   ui = {
+    theme = "cobalt2", -- "dracula"
     border = "single", -- "rounded", "single", "double"
     colors = {
       info = "#0088FF",
@@ -12,10 +13,10 @@ vim.g.mnml = {
   },
   lsp = {
     servers = {
-      -- "cssls",
       "volar",
       "tsserver",
       "eslint",
+      -- "cssls",
       -- "html",
       -- "tailwindcss"
     }
@@ -33,12 +34,12 @@ vim.g.mnml = {
     autotags = {
       "html",
       "javascript",
-      "typescript",
+      -- "typescript",
       "vue",
       "jsx",
       "javascriptreact",
-      "typescriptreact",
-      "tsx",
+      -- "typescriptreact",
+      -- "tsx",
     }
   }
 }

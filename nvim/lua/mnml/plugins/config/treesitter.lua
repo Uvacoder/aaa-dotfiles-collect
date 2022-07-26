@@ -6,6 +6,7 @@ return {
       requires = {
         "p00f/nvim-ts-rainbow",
         'm-demare/hlargs.nvim',
+        'windwp/nvim-ts-autotag',
         "terrortylor/nvim-comment",
         "JoosepAlviste/nvim-ts-context-commentstring",
       },
@@ -28,9 +29,13 @@ return {
           -- commentstring
           context_commentstring = { enable = true, enable_autocmd = false },
         })
-
+        -- hlargs
         require('hlargs').setup()
-
+        -- autotag
+        require('nvim-ts-autotag').setup({
+          filetypes = vim.g.mnml.treesitter.autotag
+        })
+        -- comment
         require("nvim_comment").setup({
           hook = function()
             if vim.api.nvim_buf_get_option(0, "filetype") == "vue" then
