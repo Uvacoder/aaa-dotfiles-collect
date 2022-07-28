@@ -16,12 +16,13 @@ return packer.startup({
     require("mnml.plugins.config.treesitter").setup(use)
     require("mnml.plugins.config.cmp").setup(use)
     require("mnml.plugins.config.lsp").setup(use)
+    require("mnml.plugins.config.signify").setup(use)
     require("mnml.plugins.config.neotree").setup(use)
     require("mnml.plugins.config.fterm").setup(use)
     require("mnml.plugins.config.notify").setup(use)
     require("mnml.plugins.config.ctrlsf").setup(use)
     require("mnml.plugins.config.visualmulti").setup(use)
-    require("mnml.plugins.config.colors.gruvbox").setup(use)
+    require("mnml.plugins.config.colors.cobalt2").setup(use)
     -- require("mnml.plugins.config.colors." . vim.g.mnml.ui.theme).setup(use)
 
     -- Automatically set up your configuration after cloning packer.nvim
