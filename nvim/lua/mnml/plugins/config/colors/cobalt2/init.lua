@@ -1,3 +1,4 @@
+-- https://github.com/lalitmee/cobalt2.nvim
 return {
   setup = function(use)
     use({

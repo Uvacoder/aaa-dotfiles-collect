@@ -7,12 +7,15 @@ return {
         require("one_monokai").setup({
           transparent = false,
           colors = {
-            bg = "#0D1117"
+            bg = "#000000"
           },
           themes = function(colors)
             return {
               TablineFill = { bg = colors.bg },
               NeoTreeCursorLine = { bg = colors.pink, fg = colors.bg },
+              Pmenu = {fg = colors.green},
+              FloatBorder = {fg = colors.green},
+              NeoTreeFloatTitle = {fg = colors.green},
             }
           end,
         })
