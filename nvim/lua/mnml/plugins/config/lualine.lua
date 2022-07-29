@@ -8,7 +8,6 @@ return {
 
         -- stylua: ignore
         local colors = {
-          fg_file  = "#ffffff",
           bg  = get_hl("Normal", "bg#"),
           fg  = get_hl("Comment", "fg#"),
         }
@@ -16,7 +15,7 @@ return {
         local minimal_theme = {
           normal = {
             a = { fg = colors.fg, bg = colors.bg },
-            b = { fg = colors.fg_file, bg = colors.bg },
+            b = { fg = colors.fg, bg = colors.bg },
             c = { fg = colors.fg, bg = colors.bg },
           },
           insert = { a = { fg = colors.fg, bg = colors.bg }},
@@ -39,11 +38,11 @@ return {
           },
           sections = {
             lualine_a = {{ 'mode', right_padding = 2 }},
-            lualine_b = { 'diagnostics', 'filename' },
-            lualine_c = { 'location', 'progress' },
-            lualine_x = { 'filetype', 'fileformat' },
-            lualine_y = { },
-            lualine_z = {{ 'branch', 'diff', left_padding = 2 }},
+            lualine_b = { 'location', 'progress'},
+            lualine_c = { 'diagnostics' },
+            lualine_x = { 'fileformat'  },
+            lualine_y = { 'diff' },
+            lualine_z = {{ 'branch', left_padding = 2 }},
           },
           inactive_sections = {
             lualine_a = {},
