@@ -5,19 +5,18 @@ return {
       "noib3/nvim-cokeline",
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
-        local get_hex = require("cokeline/utils").get_hex
-        local comments_fg = get_hex('Comment', 'fg')
-        local normal_bg =  get_hex("Normal", "bg")
-        local tabline_bg = get_hex("Tabline", "bg")
-
         local get_hex = require('cokeline/utils').get_hex
         local mappings = require('cokeline/mappings')
+
+        local normal_bg =  get_hex("Normal", "bg")
         local comments_fg = get_hex('Comment', 'fg')
+
+        local white_fg = '#ffffff'
         local green_fg = vim.g.mnml.ui.colors.success
-        local errors_fg = get_hex('DiagnosticError', 'fg')
-        local warnings_fg = get_hex('DiagnosticWarn', 'fg')
-        local infos_fg = get_hex('DiagnosticInfo', 'fg')
-        local hints_fg = get_hex('DiagnosticHint', 'fg')
+        local errors_fg = vim.g.mnml.ui.colors.error
+        local warnings_fg = vim.g.mnml.ui.colors.warn
+        local infos_fg = vim.g.mnml.ui.colors.info
+        local hints_fg = vim.g.mnml.ui.colors.hint
 
         local components = {
           space = {
@@ -87,7 +86,6 @@ return {
                 ((buffer.is_focused and buffer.diagnostics.errors ~= 0)
                   and 'bold,underline')
                 or (buffer.is_focused and 'bold')
-                or (buffer.diagnostics.errors ~= 0 and 'underline')
                 or nil
             end,
             truncation = {
@@ -99,10 +97,10 @@ return {
           diagnostics = {
             text = function(buffer)
               return
-                (buffer.diagnostics.errors ~= 0 and '  ' .. buffer.diagnostics.errors)
-                or (buffer.diagnostics.warnings ~= 0 and '  ' .. buffer.diagnostics.warnings)
-                or (buffer.diagnostics.infos ~= 0 and '  ' .. buffer.diagnostics.infos)
-                or (buffer.diagnostics.hints ~= 0 and ' ' .. buffer.diagnostics.hints)
+                (buffer.diagnostics.errors ~= 0 and '  ' .. buffer.diagnostics.errors)
+                or (buffer.diagnostics.warnings ~= 0 and '  ' .. buffer.diagnostics.warnings)
+                or (buffer.diagnostics.infos ~= 0 and ' ﲉ ' .. buffer.diagnostics.infos)
+                or (buffer.diagnostics.hints ~= 0 and '  ' .. buffer.diagnostics.hints)
                 or ''
             end,
             fg = function(buffer)

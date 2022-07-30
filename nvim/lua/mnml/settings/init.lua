@@ -7,6 +7,7 @@ vim.g.mnml = {
       success = "#95EC30",
       warning = "#FFC600",
       error = "#FF0069",
+      hint = "#A400FF",
       fg = "#cbd5e1",
       bg  = '#0D1117'
     },

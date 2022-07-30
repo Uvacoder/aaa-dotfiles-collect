@@ -13,9 +13,9 @@ return {
             return {
               TablineFill = { bg = colors.bg },
               NeoTreeCursorLine = { bg = colors.pink, fg = colors.bg },
-              Pmenu = {fg = colors.orange},
-              FloatBorder = {fg = colors.orange},
-              NeoTreeFloatTitle = {fg = colors.orange},
+              Pmenu = {fg = colors.yellow},
+              FloatBorder = {fg = colors.yellow},
+              NeoTreeFloatTitle = {fg = colors.yellow},
             }
           end,
         })
