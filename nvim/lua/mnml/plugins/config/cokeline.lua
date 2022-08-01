@@ -38,22 +38,10 @@ return {
 
           devicon = {
             text = function(buffer)
-              return
-                (mappings.is_picking_focus() or mappings.is_picking_close())
-                  and buffer.pick_letter .. ' '
-                   or buffer.devicon.icon
+              return buffer.devicon.icon
             end,
             fg = function(buffer)
-              return
-                (mappings.is_picking_focus() and DiagnosticWarn)
-                or (mappings.is_picking_close() and DiagnosticError)
-                or buffer.devicon.color
-            end,
-            style = function(_)
-              return
-                (mappings.is_picking_focus() or mappings.is_picking_close())
-                and 'italic,bold'
-                 or nil
+              return buffer.devicon.color
             end,
             truncation = { priority = 1 }
           },
@@ -82,11 +70,7 @@ return {
               return buffer.filename
             end,
             style = function(buffer)
-              return
-                ((buffer.is_focused and buffer.diagnostics.errors ~= 0)
-                  and 'bold,underline')
-                or (buffer.is_focused and 'bold')
-                or nil
+              return (buffer.is_focused and 'bold') or nil
             end,
             truncation = {
               priority = 2,
@@ -121,7 +105,6 @@ return {
             fg = function(buffer)
               return buffer.is_modified and green_fg or nil
             end,
-            delete_buffer_on_left_click = true,
             truncation = { priority = 1 },
           },
         }
@@ -130,8 +113,6 @@ return {
           show_if_buffers_are_at_least = 1,
 
           buffers = {
-            -- filter_valid = function(buffer) return buffer.type ~= 'terminal' end,
-            -- filter_visible = function(buffer) return buffer.type ~= 'terminal' end,
             new_buffers_position = 'next',
           },
 
@@ -141,10 +122,7 @@ return {
 
           default_hl = {
             fg = function(buffer)
-              return
-                buffer.is_focused
-                and '#FFFFFF'
-                 or comments_fg
+              return buffer.is_focused and '#FFFFFF' or comments_fg
             end,
             bg = normal_bg,
           },
@@ -168,8 +146,7 @@ return {
         local map = vim.api.nvim_set_keymap
 
         for i = 1,9 do
-          map('n', ('<Leader>%s'):format(i), ('<Plug>(cokeline-switch-%s)'):format(i), { silent = true })
-          map('n', ('<F%s>'):format(i),      ('<Plug>(cokeline-focus-%s)'):format(i),  { silent = true })
+          map('n', ('<Leader>%s'):format(i), ('<Plug>(cokeline-focus-%s)'):format(i), { silent = true })
         end
 
       end,

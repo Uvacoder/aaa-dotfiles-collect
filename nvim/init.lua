@@ -3,7 +3,7 @@ if vim.fn.has("nvim-0.7") == 0 then
 end
 
 local modules = {
-  "mnml.settings",
+  "mnml.setup",
   "mnml.core.options",
   "mnml.plugins",
   "mnml.core.mappings",
