@@ -29,13 +29,6 @@ return {
             truncation = { priority = 1 },
           },
 
-          separator = {
-            text = function(buffer)
-              return buffer.index ~= 1 and ' ' or ' '
-            end,
-            truncation = { priority = 1 }
-          },
-
           devicon = {
             text = function(buffer)
               return buffer.devicon.icon
@@ -111,25 +104,19 @@ return {
 
         require('cokeline').setup({
           show_if_buffers_are_at_least = 1,
-
           buffers = {
             new_buffers_position = 'next',
           },
-
           rendering = {
             max_buffer_width = 30,
           },
-
           default_hl = {
             fg = function(buffer)
               return buffer.is_focused and '#FFFFFF' or comments_fg
             end,
             bg = normal_bg,
           },
-
           components = {
-            components.space,
-            components.separator,
             components.space,
             components.index,
             components.unique_prefix,

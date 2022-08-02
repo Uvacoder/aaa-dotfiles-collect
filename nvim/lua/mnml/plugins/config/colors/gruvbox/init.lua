@@ -7,7 +7,7 @@ return {
 
         -- local bg_color = "#1D2021" -- default
         local bg_color = "#0B1015" -- vim.g.mnml.ui.colors.bg
-        local bg_popup = "#15191B"
+        local bg_popup = "#0B1015"
 
         require("gruvbox").setup({
           undercurl = true,
@@ -31,7 +31,7 @@ return {
             NeoTreeFloatTitle = {bg = bg_popup},
             NeoTreeNormal = {bg = bg_popup},
             NeoTreeNormalNC = {bg = bg_popup},
-            -- NeoTreeCursorLine = {bg = '#83A598'},
+            NeoTreeCursorLine = {bg = '#83A598', fg = bg_popup},
           }
         })
 

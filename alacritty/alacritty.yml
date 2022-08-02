@@ -5,7 +5,7 @@ window:
   decorations: None  # Full, None
   startup_mode: Windowed  # SimpleFullscreen, Windowed, Maximized
   dimensions:
-    columns: 106
+    columns: 107
     lines: 24
   padding:
     x: 0 # 100

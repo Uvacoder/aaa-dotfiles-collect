@@ -15,32 +15,22 @@ return {
         -- Diagnostic keymaps
         map("n", "<space>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
         map("n", "<space>d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
-        -- map("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
         map("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 
         local on_attach = function(client, bufnr)
-          -- stop Neovim from asking me which server I want to use for formatting
-          -- client.server_capabilities.document_formatting = false
-          -- client.server_capabilities.document_range_formatting = false
-
           -- Enable completion triggered by <c-x><c-o>
           vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
           -- See `:help vim.lsp.*` for documentation on any of the below functions
           buf_map(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
           buf_map(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-
           buf_map(bufnr, "n", "kk", "<cmd>lua vim.lsp.buf.hover()<CR>")
           buf_map(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
           buf_map(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-          -- buf_map(bufnr, "n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>")
-          -- buf_map(bufnr, "n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>")
-          -- buf_map(bufnr, "n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
           buf_map(bufnr, "n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
           buf_map(bufnr, "n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
           buf_map(bufnr, "n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
           buf_map(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
-          -- buf_map(bufnr, "n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
         end
 
         -- nvim-cmp supports additional completion capabilities
@@ -77,12 +67,8 @@ return {
           require("lspconfig")[server].setup(options)
         end
 
-        -- Show line diagnostics automatically for specific cursor position
-        -- vim.cmd([[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]])
         local diagnostic = vim.diagnostic
         diagnostic.config({
-          -- virtual_text = false,
-          -- virtual_lines = { prefix = "" },
           virtual_text = {
             prefix = "",
             spacing = 2,
@@ -99,7 +85,6 @@ return {
                 diagnostic.user_data.lsp.code,
                 diagnostic.message
               )
-              -- return dump(diagnostic)
             end,
           },
         })

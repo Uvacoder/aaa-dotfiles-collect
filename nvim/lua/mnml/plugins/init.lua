@@ -22,7 +22,7 @@ return packer.startup({
     require("mnml.plugins.config.notify").setup(use)
     require("mnml.plugins.config.ctrlsf").setup(use)
     require("mnml.plugins.config.visualmulti").setup(use)
-    require("mnml.plugins.config.colors.onemonokai").setup(use)
+    require("mnml.plugins.config.colors.gruvbox").setup(use)
     -- require("mnml.plugins.config.colors." . vim.g.mnml.ui.theme).setup(use)
 
     -- Automatically set up your configuration after cloning packer.nvim

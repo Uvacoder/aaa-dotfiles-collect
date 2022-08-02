@@ -17,6 +17,11 @@ return {
         local map = require("mnml.utils").map
 
         require("neo-tree").setup({
+          sources = {
+            "filesystem",
+            "buffers",
+            "git_status",
+          },
           close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
           popup_border_style = vim.g.mnml.ui.border,
           enable_git_status = true,
@@ -30,7 +35,7 @@ return {
             },
             modified = {
               symbol = "",
-              highlight = "NeoTreeModified",
+              -- highlight = "NeoTreeModified",
             },
             git_status = {
               symbols = {
@@ -83,9 +88,9 @@ return {
           },
         })
 
-        map("n", ",", "<CMD>Neotree toggle<CR>")
-        map("n", "[", "<CMD>Neotree float git_status<CR>")
-        map("n", "]", "<CMD>Neotree buffers<CR>")
+        map("n", "N", "<CMD>Neotree toggle<CR>")
+        map("n", "G", "<CMD>Neotree float git_status toggle<CR>")
+        map("n", "B", "<CMD>Neotree buffers toggle<CR>")
         map("n", "<C-q>", "<CMD>Neotree close<CR>")
       end,
     })

@@ -9,6 +9,9 @@ sudo port install stylua
 sudo port install wget
 sudo port install alacritty
 sudo port install ripgrep
+sudo port install go
+sudo port install rust
+sudo port install cargo
 
 # configure
 sudo npm -g install neovim @quasar/cli
