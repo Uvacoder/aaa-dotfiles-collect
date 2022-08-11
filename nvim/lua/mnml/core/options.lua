@@ -49,7 +49,6 @@ local options = {
     diff = "∙", --           BULLET OPERATOR (U+2219, UTF-8: E2 88 99)
     eob = " ", --            NO-BREAK SPACE (U+00A0, UTF-8: C2 A0) to suppress ~ at EndOfBuffer
     fold = "·", --           MIDDLE DOT (U+00B7, UTF-8: C2 B7)
-    vert = "│", --           window border when window splits vertically
   },
 }
 

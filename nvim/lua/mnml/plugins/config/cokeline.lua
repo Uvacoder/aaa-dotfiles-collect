@@ -10,6 +10,7 @@ return {
 
         local normal_bg =  get_hex("Normal", "bg")
         local comments_fg = get_hex('Comment', 'fg')
+        local line_nr_fg = '#8A8A8A' -- get_hex('LineNr', 'fg')
 
         local white_fg = '#ffffff'
         local green_fg = vim.g.mnml.ui.colors.success
@@ -24,24 +25,22 @@ return {
             truncation = { priority = 1 }
           },
 
-          two_spaces = {
-            text = '  ',
-            truncation = { priority = 1 },
-          },
-
           devicon = {
             text = function(buffer)
               return buffer.devicon.icon
             end,
             fg = function(buffer)
-              return buffer.devicon.color
+              return buffer.is_focused and buffer.devicon.color or comments_fg
             end,
             truncation = { priority = 1 }
           },
 
           index = {
             text = function(buffer)
-              return buffer.index .. ': '
+              return buffer.index .. ':'
+            end,
+            fg = function(buffer)
+              return buffer.is_focused and line_nr_fg or comments_fg
             end,
             truncation = { priority = 1 }
           },
@@ -50,8 +49,7 @@ return {
             text = function(buffer)
               return buffer.unique_prefix
             end,
-            fg = comments_fg,
-            style = 'italic',
+            fg = line_nr_fg,
             truncation = {
               priority = 3,
               direction = 'left',
@@ -74,10 +72,10 @@ return {
           diagnostics = {
             text = function(buffer)
               return
-                (buffer.diagnostics.errors ~= 0 and '  ' .. buffer.diagnostics.errors)
-                or (buffer.diagnostics.warnings ~= 0 and '  ' .. buffer.diagnostics.warnings)
-                or (buffer.diagnostics.infos ~= 0 and ' ﲉ ' .. buffer.diagnostics.infos)
-                or (buffer.diagnostics.hints ~= 0 and '  ' .. buffer.diagnostics.hints)
+                (buffer.diagnostics.errors ~= 0 and ' ' .. buffer.diagnostics.errors)
+                or (buffer.diagnostics.warnings ~= 0 and ' ' .. buffer.diagnostics.warnings)
+                or (buffer.diagnostics.infos ~= 0 and ' ﲉ' .. buffer.diagnostics.infos)
+                or (buffer.diagnostics.hints ~= 0 and ' ' .. buffer.diagnostics.hints)
                 or ''
             end,
             fg = function(buffer)
@@ -93,7 +91,7 @@ return {
 
           close_or_unsaved = {
             text = function(buffer)
-              return buffer.is_modified and "" or ''
+              return buffer.is_modified and " ﱣ" or ''
             end,
             fg = function(buffer)
               return buffer.is_modified and green_fg or nil
@@ -112,20 +110,18 @@ return {
           },
           default_hl = {
             fg = function(buffer)
-              return buffer.is_focused and '#FFFFFF' or comments_fg
+              return buffer.is_focused and white_fg or comments_fg
             end,
             bg = normal_bg,
           },
           components = {
             components.space,
+            components.devicon,
             components.index,
             components.unique_prefix,
-            components.devicon,
-            components.space,
             components.filename,
-            components.diagnostics,
-            components.two_spaces,
             components.close_or_unsaved,
+            components.diagnostics,
             components.space,
           },
         })

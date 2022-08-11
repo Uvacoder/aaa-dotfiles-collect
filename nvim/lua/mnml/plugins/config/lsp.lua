@@ -13,8 +13,8 @@ return {
         local map = require("mnml.utils").map
 
         -- Diagnostic keymaps
-        map("n", "<space>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
-        map("n", "<space>d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
+        map("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
+        map("n", "<leader>d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
         map("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 
         local on_attach = function(client, bufnr)
@@ -27,9 +27,9 @@ return {
           buf_map(bufnr, "n", "kk", "<cmd>lua vim.lsp.buf.hover()<CR>")
           buf_map(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
           buf_map(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-          buf_map(bufnr, "n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
-          buf_map(bufnr, "n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
-          buf_map(bufnr, "n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+          buf_map(bufnr, "n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
+          buf_map(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
+          buf_map(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
           buf_map(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
         end
 

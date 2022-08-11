@@ -23,7 +23,11 @@ ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 ZSH_DISABLE_COMPFIX="true"
-ZSH_THEME="avit"  #"refined"
+ZSH_THEME=""  #"avit"  #"refined"
+
+fpath+=($HOME/.oh-my-zsh/plugins/pure)
+autoload -U promptinit; promptinit
+prompt pure
 
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -87,6 +91,9 @@ alias sites="cd /Volumes/sites"
 alias dot="cd $HOME/.dotfiles"
 alias dotv="dot && v"
 alias vv="cd $HOME/.dotfiles/nvim && v"
+
+alias tk="cd /Volumes/Code/tokyodark.nvim && clear"
+alias tkv="cd /Volumes/Code/tokyodark.nvim && v"
 
 # Site
 alias sm="cd /Volumes/Sites/site-modelo-2021 && clear"

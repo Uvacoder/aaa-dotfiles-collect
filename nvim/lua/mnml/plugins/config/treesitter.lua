@@ -4,8 +4,8 @@ return {
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate",
       requires = {
-        "p00f/nvim-ts-rainbow",
-        'm-demare/hlargs.nvim',
+        -- "p00f/nvim-ts-rainbow",
+        -- 'm-demare/hlargs.nvim',
         'windwp/nvim-ts-autotag',
         "terrortylor/nvim-comment",
         "JoosepAlviste/nvim-ts-context-commentstring",
@@ -25,12 +25,12 @@ return {
             },
           },
           -- rainbow
-          rainbow = { enable = true, extended_mode = true, max_file_lines = nil },
+          -- rainbow = { enable = true, extended_mode = true, max_file_lines = nil },
           -- commentstring
           context_commentstring = { enable = true, enable_autocmd = false },
         })
         -- hlargs
-        require('hlargs').setup()
+        -- require('hlargs').setup()
         -- autotag
         require('nvim-ts-autotag').setup({
           filetypes = vim.g.mnml.treesitter.autotag

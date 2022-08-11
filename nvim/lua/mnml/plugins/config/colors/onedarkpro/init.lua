@@ -16,7 +16,7 @@ return {
           },
           colors = {
             onedark_vivid = {
-              bg = "#0D1117"
+             bg = vim.g.mnml.ui.colors.bg
             },
           }
         })

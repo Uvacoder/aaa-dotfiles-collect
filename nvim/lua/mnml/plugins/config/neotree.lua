@@ -58,7 +58,7 @@ return {
             popup = { -- settings that apply to float position only
               size = {
                 height = "75%",
-                width = "40%",
+                width = "42%",
               },
               position = {
                 row = "1",
@@ -88,9 +88,9 @@ return {
           },
         })
 
-        map("n", "N", "<CMD>Neotree toggle<CR>")
-        map("n", "G", "<CMD>Neotree float git_status toggle<CR>")
-        map("n", "B", "<CMD>Neotree buffers toggle<CR>")
+        map("n", ",", "<CMD>Neotree toggle<CR>")
+        map("n", "[", "<CMD>Neotree float git_status toggle<CR>")
+        map("n", "]", "<CMD>Neotree buffers toggle<CR>")
         map("n", "<C-q>", "<CMD>Neotree close<CR>")
       end,
     })

@@ -11,8 +11,8 @@ return {
           hl = "NormalFloat",
         })
 
-        map("n", "T", '<CMD>lua require("FTerm").toggle()<CR>')
-        map("t", "T", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+        map("n", ".", '<CMD>lua require("FTerm").toggle()<CR>')
+        map("t", ".", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
         map("t", "<C-q>", '<C-\\><C-n><CMD>lua require("FTerm").exit()<CR>')
         map("t", "<esc>", [[<C-\><C-n>]])
       end,

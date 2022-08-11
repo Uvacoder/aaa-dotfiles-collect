@@ -9,7 +9,7 @@ vim.g.mnml = {
       error = "#FF0069",
       hint = "#A400FF",
       fg = "#cbd5e1",
-      bg  = '#0D1117'
+      bg  = '#080910'
     },
   },
   lsp = {

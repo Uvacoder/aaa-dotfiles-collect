@@ -6,16 +6,14 @@ return {
       config = function()
         require("one_monokai").setup({
           transparent = false,
-          colors = {
-            bg = "#000000"
-          },
+          colors = { bg = vim.g.mnml.ui.colors.bg },
           themes = function(colors)
             return {
               TablineFill = { bg = colors.bg },
               NeoTreeCursorLine = { bg = colors.pink, fg = colors.bg },
-              Pmenu = {fg = colors.yellow},
-              FloatBorder = {fg = colors.yellow},
-              NeoTreeFloatTitle = {fg = colors.yellow},
+              Pmenu = {fg = colors.green},
+              FloatBorder = {fg = colors.green},
+              NeoTreeFloatTitle = {fg = colors.green},
             }
           end,
         })
