@@ -9,7 +9,7 @@ return {
         local mappings = require('cokeline/mappings')
 
         local normal_bg =  get_hex("Normal", "bg")
-        local comments_fg = get_hex('Comment', 'fg')
+        local comments_fg = '#8A8A8A' -- get_hex('Comment', 'fg')
         local line_nr_fg = '#8A8A8A' -- get_hex('LineNr', 'fg')
 
         local white_fg = '#ffffff'
@@ -50,6 +50,9 @@ return {
               return buffer.unique_prefix
             end,
             fg = line_nr_fg,
+            style = function(buffer)
+              return (buffer.is_focused and 'bold') or nil
+            end,
             truncation = {
               priority = 3,
               direction = 'left',
