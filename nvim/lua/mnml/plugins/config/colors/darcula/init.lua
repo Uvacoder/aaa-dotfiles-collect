@@ -10,8 +10,7 @@ return {
         local hl_link = require("mnml.utils").hl_link
         local hl_bg = require("mnml.utils").hl_bg
         local hl_fg = require("mnml.utils").hl_fg
-        -- local bg_color = "#0C0B0A" -- "#171417" -- vim.g.mnml.ui.colors.bg
-        local bg_color = vim.g.mnml.ui.colors.bg
+        local bg_color = '#1E1E1E' -- "#202020" -- vim.g.mnml.ui.colors.bg
 
         hl_bg('Normal', bg_color)
         hl_bg('NormalNC', bg_color)
