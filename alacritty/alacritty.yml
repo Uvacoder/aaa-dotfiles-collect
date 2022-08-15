@@ -64,7 +64,7 @@ draw_bold_text_with_bright_colors: true
 # Colors (tokyodark)
 colors:
   bright:
-    black: '#212234'
+    black: '#95c561' #'#212234'
     blue: '#7199ee'
     cyan: '#38a89d'
     green: '#95c561'
@@ -85,7 +85,7 @@ colors:
     white: '#a0a8cd'
     yellow: '#d7a65f'
   primary:
-    background: '#11121d'
+    background: '#151516'
     foreground: '#a0a8cd'
   selection:
     background: '#11121d'
