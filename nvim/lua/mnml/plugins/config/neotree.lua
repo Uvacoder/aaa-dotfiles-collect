@@ -1,4 +1,3 @@
--- Unless you are still migrating, remove the deprecated commands from v1.x
 -- https://github.com/nvim-neo-tree/neo-tree.nvim
 return {
   setup = function(use)
@@ -12,20 +11,25 @@ return {
       },
 
       config = function()
+        -- Unless you are still migrating, remove the deprecated commands from v1.x
         vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+
+        -- If you want icons for diagnostic errors, you'll need to define them somewhere:
+        vim.fn.sign_define("DiagnosticSignError",
+          {text = " ", texthl = "DiagnosticSignError"})
+        vim.fn.sign_define("DiagnosticSignWarn",
+          {text = " ", texthl = "DiagnosticSignWarn"})
+        vim.fn.sign_define("DiagnosticSignInfo",
+          {text = "ﲉ ", texthl = "DiagnosticSignInfo"})
+        vim.fn.sign_define("DiagnosticSignHint",
+          {text = " ", texthl = "DiagnosticSignHint"})
 
         local map = require("mnml.utils").map
 
         require("neo-tree").setup({
-          sources = {
-            "filesystem",
-            "buffers",
-            "git_status",
-          },
-          close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
           popup_border_style = vim.g.mnml.ui.border,
           enable_git_status = true,
-          enable_diagnostics = false,
+          enable_diagnostics = true,
           default_component_configs = {
             icon = {
               folder_closed = "",
@@ -88,9 +92,9 @@ return {
           },
         })
 
-        map("n", ",", "<CMD>Neotree toggle<CR>")
+        map("n", ",", "<CMD>Neotree float filesystem toggle<CR>")
         map("n", "[", "<CMD>Neotree float git_status toggle<CR>")
-        map("n", "]", "<CMD>Neotree buffers toggle<CR>")
+        map("n", "]", "<CMD>Neotree float buffers toggle<CR>")
         map("n", "<C-q>", "<CMD>Neotree close<CR>")
       end,
     })
