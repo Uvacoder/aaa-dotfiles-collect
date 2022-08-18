@@ -1,6 +1,6 @@
 vim.g.mnml = {
   ui = {
-    theme = "cobalt2", -- "dracula"
+    -- theme = "cobalt2", -- "dracula"
     border = "single", -- "rounded", "single", "double"
     colors = {
       info = "#0088FF",

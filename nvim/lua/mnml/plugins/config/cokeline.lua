@@ -9,6 +9,7 @@ return {
         local mappings = require('cokeline/mappings')
 
         local normal_bg =  get_hex("Normal", "bg")
+        local tabline_bg =  get_hex("TablineFill", "bg")
         local comments_fg =  get_hex('Comment', 'fg')
         local line_nr_fg =  get_hex('LineNr', 'fg')
 
@@ -117,7 +118,9 @@ return {
             fg = function(buffer)
               return buffer.is_focused and white_fg or comments_fg
             end,
-            bg = normal_bg,
+            bg = function(buffer)
+              return buffer.is_focused and normal_bg or tabline_bg
+            end,
           },
           components = {
             components.space,
