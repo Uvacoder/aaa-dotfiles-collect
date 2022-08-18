@@ -10,7 +10,7 @@ local options = {
   autoread = true,
   autowrite = true,
   backup = false, --        creates a backup file
-  mouse = "r", --           allow the mouse to be used in neovim
+  mouse = "a", --           allow the mouse to be used in neovim
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
   laststatus = 0,--         remove statusline
   cmdheight = 1, --         more space in the neovim command line for displaying messages
@@ -62,27 +62,35 @@ if vim.fn.has("termguicolors") == 1 then
   vim.opt.termguicolors = true -- set term gui colors (most terminals support this)
 end
 
-local disabled_built_ins = {
+local default_plugins = {
+  "2html_plugin",
+  "getscript",
+  "getscriptPlugin",
+  "gzip",
+  "logipat",
   "netrw",
   "netrwPlugin",
   "netrwSettings",
   "netrwFileHandlers",
-  "gzip",
-  "zip",
-  "zipPlugin",
+  "matchit",
   "tar",
   "tarPlugin",
-  "getscript",
-  "getscriptPlugin",
-  "vimball",
-  "vimballPlugin",
-  "2html_plugin",
-  "logipat",
   "rrhelper",
   "spellfile_plugin",
-  "matchit",
+  "vimball",
+  "vimballPlugin",
+  "zip",
+  "zipPlugin",
+  "tutor",
+  "rplugin",
+  "syntax",
+  "synmenu",
+  "optwin",
+  "compiler",
+  "bugreport",
+  "ftplugin",
 }
 
-for _, plugin in pairs(disabled_built_ins) do
-  vim.g["loaded_" .. plugin] = 1
+for _, plugin in pairs(default_plugins) do
+ vim. g["loaded_" .. plugin] = 1
 end

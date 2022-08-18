@@ -57,19 +57,28 @@ return {
               },
             },
           },
-          window = {
-            position = "float",
-            popup = { -- settings that apply to float position only
-              size = {
-                height = "75%",
-                width = "42%",
-              },
-              position = {
-                row = "1",
-                col = "50%",
-              },
+          event_handlers = {
+            {
+              event = "file_opened",
+              handler = function(file_path)
+                --auto close
+                require("neo-tree").close_all()
+              end
             },
           },
+          -- window = {
+          --   position = "float",
+          --   popup = { -- settings that apply to float position only
+          --     size = {
+          --       height = "75%",
+          --       width = "42%",
+          --     },
+          --     position = {
+          --       row = "1",
+          --       col = "50%",
+          --     },
+          --   },
+          -- },
           filesystem = {
             filtered_items = {
               visible = false, -- when true, they will just be displayed differently than normal items
@@ -84,17 +93,21 @@ return {
                 "plugin",
                 "packer_compiled.lua",
               },
-              never_show = { -- remains hidden even if visible is toggled to true
-                ".DS_Store",
-                "thumbs.db",
+              always_show = { -- remains visible even if other settings would normally hide it
+                ".gitignored",
               },
+              never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
+                ".DS_Store",
+                "thumbs.db"
+              },
+              follow_current_file = true,
             },
           },
         })
 
-        map("n", ",", "<CMD>Neotree float filesystem toggle<CR>")
-        map("n", "[", "<CMD>Neotree float git_status toggle<CR>")
-        map("n", "]", "<CMD>Neotree float buffers toggle<CR>")
+        map("n", ",", "<CMD>Neotree toggle<CR>")
+        map("n", "[", "<CMD>Neotree git_status toggle<CR>")
+        map("n", "]", "<CMD>Neotree buffers toggle<CR>")
         map("n", "<C-q>", "<CMD>Neotree close<CR>")
       end,
     })
