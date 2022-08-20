@@ -66,19 +66,19 @@ return {
               end
             },
           },
-          -- window = {
-          --   position = "float",
-          --   popup = { -- settings that apply to float position only
-          --     size = {
-          --       height = "75%",
-          --       width = "42%",
-          --     },
-          --     position = {
-          --       row = "1",
-          --       col = "50%",
-          --     },
-          --   },
-          -- },
+          window = {
+            position = "float",
+            popup = { -- settings that apply to float position only
+              size = {
+                height = "75%",
+                width = "42%",
+              },
+              position = {
+                row = "1",
+                col = "50%",
+              },
+            },
+          },
           filesystem = {
             filtered_items = {
               visible = false, -- when true, they will just be displayed differently than normal items

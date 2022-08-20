@@ -25,6 +25,7 @@ vim.g.mnml = {
   treesitter= {
     langs = {
       "css",
+      "scss",
       "lua",
       "html",
       "vue",
