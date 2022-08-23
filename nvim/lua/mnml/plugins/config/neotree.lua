@@ -74,7 +74,7 @@ return {
                 width = "42%",
               },
               position = {
-                row = "1",
+                row = "2",
                 col = "50%",
               },
             },

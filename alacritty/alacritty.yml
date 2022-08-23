@@ -85,7 +85,7 @@ colors:
     white: '#a0a8cd'
     yellow: '#d7a65f'
   primary:
-    background: '#151516'
+    background: '#000000'
     foreground: '#a0a8cd'
   selection:
     background: '#11121d'

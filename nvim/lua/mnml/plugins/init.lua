@@ -22,7 +22,7 @@ return packer.startup({
     require("mnml.plugins.config.ctrlsf").setup(use)
     require("mnml.plugins.config.visualmulti").setup(use)
     -- require("mnml.plugins.config.colorizer").setup(use)
-    require("mnml.plugins.config.colors.darcula").setup(use)
+    require("mnml.plugins.config.colors.onedark").setup(use)
 
     -- Automatically set up your configuration after cloning packer.nvim
     if result.first_install then
