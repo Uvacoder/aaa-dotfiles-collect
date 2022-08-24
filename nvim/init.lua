@@ -1,13 +1,12 @@
 if vim.fn.has("nvim-0.7") == 0 then
-  error("Need Neovim v0.7+ in order to run MNML!")
+  error("Need Neovim v0.7+ in order to run!")
 end
 
 local modules = {
-  "mnml.setup",
-  "mnml.core.options",
-  "mnml.plugins",
-  "mnml.core.mappings",
-  "mnml.core.autocmds",
+  "core.options",
+  "plugins",
+  "core.mappings",
+  "core.autocmds",
 }
 
 for _, module in ipairs(modules) do
