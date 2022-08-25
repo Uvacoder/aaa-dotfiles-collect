@@ -15,6 +15,7 @@ local options = {
   mouse = "a", --           allow the mouse to be used in neovim
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
   laststatus = 0,--         remove statusline
+  cmdheight = 0,
   cmdheight = 1, --         more space in the neovim command line for displaying messages
   completeopt = { "menu", "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0, --       so that `` is visible in markdown files
@@ -47,6 +48,9 @@ local options = {
   foldlevel = 20, --         feel free to decrease the value
   foldenable = true,
   foldmethod = "indent",
+  pumheight = 15,
+  helpheight = 12,
+  previewheight = 12,
   listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂',
   fillchars = {
     diff = "∙", --           BULLET OPERATOR (U+2219, UTF-8: E2 88 99)
@@ -54,13 +58,12 @@ local options = {
     fold = "·", --           MIDDLE DOT (U+00B7, UTF-8: C2 B7)
     vert = "│",
   },
+  shortmess = 'aoOTIcF'
 }
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
-
-vim.opt.shortmess:append("c")
 
 if vim.fn.has("termguicolors") == 1 then
   vim.opt.termguicolors = true -- set term gui colors (most terminals support this)
@@ -96,5 +99,5 @@ local default_plugins = {
 }
 
 for _, plugin in pairs(default_plugins) do
- vim. g["loaded_" .. plugin] = 1
+ vim.g["loaded_" .. plugin] = 1
 end
