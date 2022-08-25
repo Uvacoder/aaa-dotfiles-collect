@@ -83,8 +83,8 @@ alias where="which"
 # moving
 alias ..="cd .."
 alias home="cd $HOME/"
-alias code="cd /Volumes/code"
-alias sites="cd /Volumes/sites"
+alias codes="cd /Volumes/data/Codes"
+alias sites="cd /Volumes/data/Sites"
 
 
 # dotfiles
@@ -92,35 +92,28 @@ alias dot="cd $HOME/.dotfiles"
 alias dotv="dot && v"
 alias vv="cd $HOME/.dotfiles/nvim && v"
 
-alias tk="cd /Volumes/Code/tokyodark.nvim && clear"
-alias tkv="cd /Volumes/Code/tokyodark.nvim && v"
+# Code
+alias es="cd /Volumes/data/Codes/endless-supabase && clear"
+alias esv="es && v"
 
 # Site
-alias sm="cd /Volumes/Sites/site-modelo-2021 && clear"
-alias mp="cd /Volumes/Sites/my-project && clear"
-alias anp="cd /Volumes/Sites/agua_nova_piscinas && clear"
-alias r3c="cd /Volumes/Sites/rancho_tres_coracoes_2019 && clear"
-alias ptu="cd /Volumes/Sites/pousada_do_tucunare_2020 && clear"
-alias q1s="cd /Volumes/Sites/quero1site_2020 && clear"
-# alias sca="cd /Volumes/Sites/shopping_da_carne_2021 && clear"
-# alias sen="cd /Volumes/Sites/santos_e_nascimento_2020 && clear"
-
-# Code
-alias es="cd /Volumes/Code/endless-supabase && clear"
-alias esv="es && v"
-# alias ee="cd /Volumes/Code/endless-quasar-app && clear"
-# alias esh="cd /Volumes/Code/e-shop && clear"
-# alias low="cd /Volumes/Code/nuxt-express-auth-lowdb-admin && clear"
-# alias cds="cd /Volumes/Code/car-dealership-2020 && clear"
+alias sm="cd /Volumes/data/Sites/site-modelo-2021 && clear"
+alias mp="cd /Volumes/data/Sites/my-project && clear"
+alias anp="cd /Volumes/data/Sites/agua_nova_piscinas && clear"
+alias r3c="cd /Volumes/data/Sites/rancho_tres_coracoes_2019 && clear"
+alias ptu="cd /Volumes/data/Sites/pousada_do_tucunare_2020 && clear"
+alias q1s="cd /Volumes/data/Sites/quero1site_2020 && clear"
+# alias sca="cd /Volumes/data/Sites/shopping_da_carne_2021 && clear"
+# alias sen="cd /Volumes/data/Sites/santos_e_nascimento_2020 && clear"
 
 # old
 
-# alias fag="cd /Volumes/Sites/filmAgora_2020 && clear"
-# alias dmo="cd /Volumes/Sites/dular_moveis_2020 && clear"
-# alias cor="cd /Volumes/Sites/colchoes_oriental_2020 && clear"
-# alias per="cd /Volumes/Sites/psicologa_erica_rover_2020 && clear"
-# alias avp="cd /Volumes/Sites/arte_visual_propag_2021 && clear"
-# alias zzz="cd /Volumes/Sites/blog && clear"
+# alias fag="cd /Volumes/data/Sites/filmAgora_2020 && clear"
+# alias dmo="cd /Volumes/data/Sites/dular_moveis_2020 && clear"
+# alias cor="cd /Volumes/data/Sites/colchoes_oriental_2020 && clear"
+# alias per="cd /Volumes/data/Sites/psicologa_erica_rover_2020 && clear"
+# alias avp="cd /Volumes/data/Sites/arte_visual_propag_2021 && clear"
+# alias zzz="cd /Volumes/data/Sites/blog && clear"
 # alias cda="cd /Volumes/WS/car-dealership-api-2020 && clear"
 # alias cdd="cd /Volumes/WS/car-dealership-adm-2020 && clear"
 
