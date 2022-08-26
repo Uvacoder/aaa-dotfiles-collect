@@ -6,9 +6,9 @@ return {
       config = function()
         vim.cmd('colorscheme darcula-solid')
 
-        local hl_link = require("core.utils").hl_link
-        local hl_bg = require("core.utils").hl_bg
-        local hl_fg = require("core.utils").hl_fg
+        local hl_link = require("utils").hl_link
+        local hl_bg = require("utils").hl_bg
+        local hl_fg = require("utils").hl_fg
         local bg_color = '#151516' -- '#1E1E1E' -- "#202020"
 
         hl_bg('Normal', bg_color)

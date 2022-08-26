@@ -1,4 +1,4 @@
-local map = require("core.utils").map
+local map = require("utils").map
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",

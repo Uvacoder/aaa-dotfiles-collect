@@ -9,8 +9,8 @@ return {
       },
 
       config = function()
-        local buf_map = require("core.utils").buf_map
-        local map = require("core.utils").map
+        local buf_map = require("utils").buf_map
+        local map = require("utils").map
 
         -- Diagnostic keymaps
         map("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")

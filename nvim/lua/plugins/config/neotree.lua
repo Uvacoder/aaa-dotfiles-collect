@@ -24,7 +24,7 @@ return {
         vim.fn.sign_define("DiagnosticSignHint",
           {text = " ", texthl = "DiagnosticSignHint"})
 
-        local map = require("core.utils").map
+        local map = require("utils").map
 
         require("neo-tree").setup({
           popup_border_style = vim.g.border_style,

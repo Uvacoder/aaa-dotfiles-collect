@@ -3,7 +3,7 @@ return {
     use({
       "numToStr/FTerm.nvim",
       config = function()
-        local map = require("core.utils").map
+        local map = require("utils").map
 
         require("FTerm").setup({
           dimensions = { height = 0.9, width = 0.8 },

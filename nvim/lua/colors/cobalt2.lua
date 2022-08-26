@@ -5,8 +5,8 @@ return {
       'lalitmee/cobalt2.nvim',
       requires = 'tjdevries/colorbuddy.nvim',
       config = function()
-        local hl_bg = require("core.utils").hl_bg
-        local hl_fg = require("core.utils").hl_fg
+        local hl_bg = require("utils").hl_bg
+        local hl_fg = require("utils").hl_fg
 
         require('colorbuddy').colorscheme('cobalt2')
         -- local bg_color = "#0c1923" -- default
