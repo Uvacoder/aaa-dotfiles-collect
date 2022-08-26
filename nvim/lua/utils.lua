@@ -1,19 +1,19 @@
 local M = {}
 
 M.hl_bg = function(group, color)
-  vim.cmd("highlight " .. group .. " guibg=" .. color)
+  vim.cmd('highlight ' .. group .. ' guibg=' .. color)
 end
 
 M.hl_fg = function(group, color)
-  vim.cmd("highlight! " .. group .. " guifg=" .. color)
+  vim.cmd('highlight! ' .. group .. ' guifg=' .. color)
 end
 
 M.hl_fg_bg = function(group, color_fg, color_bg)
-  vim.cmd("highlight! " .. group .. " guifg=" .. color_fg .. " guibg=" .. color_bg)
+  vim.cmd('highlight! ' .. group .. ' guifg=' .. color_fg .. ' guibg=' .. color_bg)
 end
 
 M.hl_link = function(group_a, group_b)
-  vim.cmd("highlight! link " .. group_a .. " " .. group_b)
+  vim.cmd('highlight! link ' .. group_a .. ' ' .. group_b)
 end
 
 M.get_hl = function(group, attr) -- get_hl("Normal", "bg#")
@@ -37,7 +37,7 @@ M.buf_map = function(bufnr, mode, lhs, rhs, opts)
 end
 
 M.merge = function(...)
-  return vim.tbl_deep_extend("force", ...)
+  return vim.tbl_deep_extend('force', ...)
 end
 
 return M

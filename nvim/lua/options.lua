@@ -2,24 +2,24 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_python_provider = 0
 
-vim.g.python3_host_prog = "/opt/local/bin/python3"
-vim.g.node_host_prog = "/opt/local/lib/node_modules/neovim/bin/cli.js"
+vim.g.python3_host_prog = '/opt/local/bin/python3'
+vim.g.node_host_prog = '/opt/local/lib/node_modules/neovim/bin/cli.js'
 
-vim.g.border_style = "rounded" -- "rounded", "single", "double"
+vim.g.border_style = 'rounded' -- "rounded", "single", "double"
 
 local options = {
-  background = "dark",
+  background = 'dark',
   autoread = true,
   autowrite = true,
   backup = false, --        creates a backup file
-  mouse = "a", --           allow the mouse to be used in neovim
-  clipboard = "unnamedplus", -- allows neovim to access the system clipboard
-  laststatus = 0,--         remove statusline
+  mouse = 'a', --           allow the mouse to be used in neovim
+  clipboard = 'unnamedplus', -- allows neovim to access the system clipboard
+  laststatus = 0, --         remove statusline
   cmdheight = 0,
   cmdheight = 1, --         more space in the neovim command line for displaying messages
-  completeopt = { "menu", "menuone", "noselect" }, -- mostly just for cmp
+  completeopt = { 'menu', 'menuone', 'noselect' }, -- mostly just for cmp
   conceallevel = 0, --       so that `` is visible in markdown files
-  fileencoding = "utf-8", -- the encoding written to a file
+  fileencoding = 'utf-8', -- the encoding written to a file
   hlsearch = false, --       highlight all matches on previous search pattern
   ignorecase = true, --      ignore case in search patterns
   pumheight = 10, --         pop up menu height
@@ -39,65 +39,65 @@ local options = {
   number = true, --          set numbered lines
   relativenumber = false, -- set relative numbered lines
   numberwidth = 3, --        set number column width to 2 {default 4}
-  signcolumn = "yes", --     always show the sign column, otherwise it would shift the text each time
+  signcolumn = 'yes', --     always show the sign column, otherwise it would shift the text each time
   wrap = false, --           display lines as one long line
   scrolloff = 8, --          is one of my fav
   sidescrolloff = 8,
-  shell = "/bin/zsh",
-  foldcolumn = "0",
+  shell = '/bin/zsh',
+  foldcolumn = '0',
   foldlevel = 20, --         feel free to decrease the value
   foldenable = true,
-  foldmethod = "indent",
+  foldmethod = 'indent',
   pumheight = 15,
   helpheight = 12,
   previewheight = 12,
   listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂',
   fillchars = {
-    diff = "∙", --           BULLET OPERATOR (U+2219, UTF-8: E2 88 99)
-    eob = " ", --            NO-BREAK SPACE (U+00A0, UTF-8: C2 A0) to suppress ~ at EndOfBuffer
-    fold = "·", --           MIDDLE DOT (U+00B7, UTF-8: C2 B7)
-    vert = "│",
+    diff = '∙', --           BULLET OPERATOR (U+2219, UTF-8: E2 88 99)
+    eob = ' ', --            NO-BREAK SPACE (U+00A0, UTF-8: C2 A0) to suppress ~ at EndOfBuffer
+    fold = '·', --           MIDDLE DOT (U+00B7, UTF-8: C2 B7)
+    vert = '│',
   },
-  shortmess = 'aoOTIcF'
+  shortmess = 'aoOTIcF',
 }
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-if vim.fn.has("termguicolors") == 1 then
+if vim.fn.has('termguicolors') == 1 then
   vim.opt.termguicolors = true -- set term gui colors (most terminals support this)
 end
 
 local default_plugins = {
-  "2html_plugin",
-  "getscript",
-  "getscriptPlugin",
-  "gzip",
-  "logipat",
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "matchit",
-  "tar",
-  "tarPlugin",
-  "rrhelper",
-  "spellfile_plugin",
-  "vimball",
-  "vimballPlugin",
-  "zip",
-  "zipPlugin",
-  "tutor",
-  "rplugin",
-  "syntax",
-  "synmenu",
-  "optwin",
-  "compiler",
-  "bugreport",
-  "ftplugin",
+  '2html_plugin',
+  'getscript',
+  'getscriptPlugin',
+  'gzip',
+  'logipat',
+  'netrw',
+  'netrwPlugin',
+  'netrwSettings',
+  'netrwFileHandlers',
+  'matchit',
+  'tar',
+  'tarPlugin',
+  'rrhelper',
+  'spellfile_plugin',
+  'vimball',
+  'vimballPlugin',
+  'zip',
+  'zipPlugin',
+  'tutor',
+  'rplugin',
+  'syntax',
+  'synmenu',
+  'optwin',
+  'compiler',
+  'bugreport',
+  'ftplugin',
 }
 
 for _, plugin in pairs(default_plugins) do
- vim.g["loaded_" .. plugin] = 1
+  vim.g['loaded_' .. plugin] = 1
 end

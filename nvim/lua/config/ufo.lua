@@ -1,8 +1,8 @@
 return {
   setup = function(use)
     use({
-      "kevinhwang91/nvim-ufo",
-      requires = "kevinhwang91/promise-async",
+      'kevinhwang91/nvim-ufo',
+      requires = 'kevinhwang91/promise-async',
       config = function()
         -- vim.wo.foldcolumn = '0'
         -- vim.wo.foldlevel = 20 -- feel free to decrease the value
@@ -16,7 +16,7 @@ return {
 
         local handler = function(virtText, lnum, endLnum, width, truncate)
           local newVirtText = {}
-          local suffix = ("  %d "):format(endLnum - lnum)
+          local suffix = ('  %d '):format(endLnum - lnum)
           local sufWidth = vim.fn.strdisplaywidth(suffix)
           local targetWidth = width - sufWidth
           local curWidth = 0
@@ -32,18 +32,18 @@ return {
               chunkWidth = vim.fn.strdisplaywidth(chunkText)
               -- str width returned from truncate() may less than 2nd argument, need padding
               if curWidth + chunkWidth < targetWidth then
-                suffix = suffix .. (" "):rep(targetWidth - curWidth - chunkWidth)
+                suffix = suffix .. (' '):rep(targetWidth - curWidth - chunkWidth)
               end
               break
             end
             curWidth = curWidth + chunkWidth
           end
-          table.insert(newVirtText, { suffix, "MoreMsg" })
+          table.insert(newVirtText, { suffix, 'MoreMsg' })
           return newVirtText
         end
 
         -- global handler
-        require("ufo").setup({
+        require('ufo').setup({
           fold_virt_text_handler = handler,
         })
       end,

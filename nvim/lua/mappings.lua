@@ -1,4 +1,4 @@
-local map = require("utils").map
+local map = require('utils').map
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -8,65 +8,65 @@ local map = require("utils").map
 --   command_mode = "c",
 
 --Remap space as leader key
-map("", "<Space>", "<Nop>")
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+map('', '<Space>', '<Nop>')
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- -- Open the current file in the default program
-map("n", "<leader>x", ":!open %<cr><cr>", { expr = true })
+map('n', '<leader>x', ':!open %<cr><cr>', { expr = true })
 
 --Remap for dealing with word wrap
-map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
-map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
+map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
+map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 
 -- Y yank until the end of line  (note: this is now a default on master)
-map("n", "Y", "y$")
+map('n', 'Y', 'y$')
 
 -- buffers navigation
-map("n", "=", "<PageDown>")
-map("n", "-", "<PageUp>")
+map('n', '=', '<PageDown>')
+map('n', '-', '<PageUp>')
 
 -- delete buffer
-map("n", "<C-x>", ":bd<CR>")
-map("n", "bd", ":bd<CR>")
+map('n', '<C-x>', ':bd<CR>')
+map('n', 'bd', ':bd<CR>')
 
 -- fold unfold html
-map("n", "fc", "<cmd>foldclose<cr>")
-map("n", "fo", "<cmd>foldopen<cr>")
+map('n', 'fc', '<cmd>foldclose<cr>')
+map('n', 'fo', '<cmd>foldopen<cr>')
 
 -- select all
-map("n", "aa", "ggVG")
+map('n', 'aa', 'ggVG')
 
 -- save and close
 -- map("n", "<C-s>", ":w<CR>")
-map("n", "<C-q>", ":q<CR>")
+map('n', '<C-q>', ':q<CR>')
 
 -- search and replace
-map("n", "rr", ":%s///gcI<Left><Left><Left><Left><Left>", { expr = false, silent = false })
-map("n", "<Esc><Esc><Esc>", "<cmd>nohlsearch<CR><Esc>")
+map('n', 'rr', ':%s///gcI<Left><Left><Left><Left><Left>', { expr = false, silent = false })
+map('n', '<Esc><Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
 
 --Add move line shortcuts
-map("n", "<S-j>", ":m .+1<CR>==")
-map("n", "<S-k>", ":m .-2<CR>==")
-map("v", "<S-j>", ":m '>+1<CR>gv=gv")
-map("v", "<S-k>", ":m '<-2<CR>gv=gv")
+map('n', '<S-j>', ':m .+1<CR>==')
+map('n', '<S-k>', ':m .-2<CR>==')
+map('v', '<S-j>', ":m '>+1<CR>gv=gv")
+map('v', '<S-k>', ":m '<-2<CR>gv=gv")
 
 -- Better indenting
-map("v", "<TAB>", ">gv")
-map("v", "<S-TAB>", "<gv")
+map('v', '<TAB>', '>gv')
+map('v', '<S-TAB>', '<gv')
 
 -- Better navigation
-map("n", "<C-j>", "<C-w>j")
-map("n", "<C-k>", "<C-w>k")
-map("n", "<C-h>", "<C-w>h")
-map("n", "<C-l>", "<C-w>l")
+map('n', '<C-j>', '<C-w>j')
+map('n', '<C-k>', '<C-w>k')
+map('n', '<C-h>', '<C-w>h')
+map('n', '<C-l>', '<C-w>l')
 
 -- Tab switch buffer
-map("n", "<TAB>", "<cmd>bnext<CR>")
-map("n", "<S-TAB>", "<cmd>bprevious<CR>")
+map('n', '<TAB>', '<cmd>bnext<CR>')
+map('n', '<S-TAB>', '<cmd>bprevious<CR>')
 
 -- print console.log(variable)
-map("n", "<C-l>", "<cmd>call PrintVariable()<CR>")
+map('n', '<C-l>', '<cmd>call PrintVariable()<CR>')
 
 vim.cmd([[
 function! PrintVariable()
