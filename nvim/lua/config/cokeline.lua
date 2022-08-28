@@ -136,7 +136,12 @@ return {
         local map = vim.api.nvim_set_keymap
 
         for i = 1, 9 do
-          map('n', ('<Leader>%s'):format(i), ('<Plug>(cokeline-focus-%s)'):format(i), { silent = true })
+          map(
+            'n',
+            ('<Leader>%s'):format(i),
+            ('<Plug>(cokeline-focus-%s)'):format(i),
+            { silent = true }
+          )
         end
       end,
     })

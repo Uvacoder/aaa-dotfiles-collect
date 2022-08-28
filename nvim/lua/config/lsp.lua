@@ -90,9 +90,8 @@ return {
 
         vim.lsp.handlers['textDocument/signatureHelp'] =
           vim.lsp.with(vim.lsp.handlers.signature_help, {
-             border = vim.g.border_style,
+            border = vim.g.border_style,
           })
-
       end,
     })
   end,
