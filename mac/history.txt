@@ -7,7 +7,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/plug
 # git clone  https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting
 # git clone  --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/themes/powerlevel10k
 
-
 # dowbload and install macport
 https://github.com/macports/macports-base/releases/download/v2.7.2/MacPorts-2.7.2-10.14-Mojave.pkg
 
@@ -24,7 +23,7 @@ sudo port install rust
 sudo port install cargo
 
 # configure
-sudo npm -g install neovim @quasar/cli
+sudo npm -g install neovim @quasar/cli tree-sitter-cli
 
 sudo port select --set python python310
 
@@ -32,10 +31,8 @@ curl https://bootstrap.pypa.io/get-pip.py | sudo python3
 
 python3 -m pip install neovim vim-vint
 
-
 # battery alert
 cp ~/.dotfiles/battery/local.battery.plist ~/Library/LaunchAgents/local.battery.plist
-
 
 # remove spindump and tailspind
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.spindump.plist
@@ -44,9 +41,5 @@ sudo mv /System/Library/LaunchDaemons/com.apple.spindump.plist /System/Library/L
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.tailspind.plist
 sudo mv /System/Library/LaunchDaemons/com.apple.tailspind.plist /System/Library/LaunchDaemons/com.apple.tailspind.plist.bak
 
-
 # cleat icon cache
 sudo rm -rfv /Library/Caches/com.apple.iconservices.store; sudo find /private/var/folders/ \( -name com.apple.dock.iconcache -or -name com.apple.iconservices \) -exec rm -rfv {} \; ; sleep 3;sudo touch /Applications/* ; killall Dock; killall Finder
-
-
-

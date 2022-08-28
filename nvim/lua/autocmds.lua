@@ -1,11 +1,19 @@
--- Highlight on yank
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_augroup('AutoUpdatePlugins', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = 'plugins.lua',
+  command = 'source <afile> | PackerSync',
+  group = 'AutoUpdatePlugins',
+})
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = 'plugins.lua',
+  command = 'source <afile> | PackerCompile',
+  group = 'AutoUpdatePlugins',
+})
+
+vim.api.nvim_create_augroup('Highlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = '*',
+  command = "silent! lua vim.highlight.on_yank() {higroup='IncSearch', timeout=400}",
+  group = 'Highlight',
 })
 
 vim.cmd([[

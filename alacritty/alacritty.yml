@@ -8,8 +8,8 @@ window:
     columns: 107
     lines: 24
   padding:
-    x: 0 # 100
-    y: 0
+    x: 2 # 100
+    y: 2
 
   dynamic_padding: true
 #                                                                             80                 100                 120
@@ -116,4 +116,3 @@ shell:
 # working_directory: None
 
 live_config_reload: true
-

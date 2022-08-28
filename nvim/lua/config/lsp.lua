@@ -19,6 +19,9 @@ return {
         map('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>')
 
         local on_attach = function(client, bufnr)
+          client.resolved_capabilities.document_formatting = false
+          client.resolved_capabilities.document_range_formatting = false
+
           -- Enable completion triggered by <c-x><c-o>
           vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -38,12 +41,7 @@ return {
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-        -- LSP settings (for overriding per client)
-        local handlers = {
-          ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.border_style }),
-          ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.hover, { border = vim.g.border_style }),
-        }
-
+        -- Manson
         require('mason').setup({
           ui = {
             check_outdated_packages_on_open = true,
@@ -52,7 +50,6 @@ return {
         })
 
         require('mason-lspconfig').setup({
-          automatic_installation = true,
           ensure_installed = {
             'volar',
             'tsserver',
@@ -62,58 +59,40 @@ return {
             -- "html",
             -- "tailwindcss"
           },
+          automatic_installation = true,
         })
 
-        local servers = {
-          'volar',
-          'tsserver',
-          'eslint',
-          -- "stylua",
-          -- "cssls",
-          -- "html",
-          -- "tailwindcss"
-        }
+        -- config language server
+        require('lspconfig').eslint.setup({})
 
-        for _, server in pairs(servers) do
-          local options = {}
-          options.on_attach = on_attach
-          options.handlers = handlers
+        require('lspconfig').tsserver.setup({
+          on_attach = on_attach,
+          capabilities = capabilities,
+        })
 
-          if server.name == 'eslint' then
-            options.on_attach.resolved_capabilities.document_formatting = true
-            options.settings = { format = { enable = true } }
-          end
-
-          if server.name == 'tsserver' or server.name == 'volar' then
-            options.on_attach.resolved_capabilities.document_formatting = false
-            options.capabilities = capabilities
-            options.settings = { format = { enable = false } }
-          end
-
-          require('lspconfig')[server].setup(options)
-        end
-
-        local diagnostic = vim.diagnostic
-        diagnostic.config({
-          virtual_text = {
-            prefix = '',
-            spacing = 2,
-          },
-          signs = false,
-          float = {
-            border = vim.g.border_style,
-            header = '',
-            prefix = '',
-            format = function(diagnostic)
-              return string.format(
-                ' %s\n%s\n%s',
-                diagnostic.source,
-                diagnostic.user_data.lsp.code,
-                diagnostic.message
-              )
-            end,
+        require('lspconfig').volar.setup({
+          on_attach = on_attach,
+          capabilities = capabilities,
+          filetypes = {
+            'typescript',
+            'javascript',
+            'javascriptreact',
+            'typescriptreact',
+            'vue',
+            'json',
           },
         })
+
+        -- LSP settings (for overriding per client)
+        vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+          border = vim.g.border_style,
+        })
+
+        vim.lsp.handlers['textDocument/signatureHelp'] =
+          vim.lsp.with(vim.lsp.handlers.signature_help, {
+             border = vim.g.border_style,
+          })
+
       end,
     })
   end,
