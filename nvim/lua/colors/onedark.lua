@@ -31,8 +31,8 @@ return {
             -- NeoTreeNormal = {bg="#21283b"},
             -- NeoTreeNormalNC = {bg="#21283b"},
             -- NeoTreeEndOfBuffer = {bg="#21283b"},
-            NeoTreeWinSeparator = { bg = bg_color },
-            NeoTreeCursorLine = { bg = '#54B0FD', fg = bg_color },
+            -- NeoTreeWinSeparator = { bg = bg_color },
+            -- NeoTreeCursorLine = { bg = '#54B0FD', fg = bg_color },
           }, -- Override highlight groups
           diagnostics = {
             darker = true, -- darker colors for diagnostic

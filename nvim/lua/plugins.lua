@@ -18,6 +18,7 @@ local function load_plugins()
       require('config.notify').setup(use)
       require('config.ctrlsf').setup(use)
       require('config.visualmulti').setup(use)
+
       require('colors.onedark').setup(use)
 
       if parcker_bootstrap then

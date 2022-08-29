@@ -7,9 +7,7 @@ return {
           config_file = 'stylua.toml',
         })
 
-        local map = require('utils').map
-
-        map('n', '<leader>f', "<cmd>lua require('stylua-nvim').format_file()<CR>")
+        vim.cmd([[ command! FormatLua execute 'lua require("stylua-nvim").format_file()' ]])
       end,
     })
   end,

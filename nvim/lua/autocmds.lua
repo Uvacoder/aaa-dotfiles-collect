@@ -16,6 +16,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = 'Highlight',
 })
 
+-- auto-wrap comments, don't auto insert comment on o/O and enter
+vim.api.nvim_create_autocmd("FileType", {
+  command = "set formatoptions-=cro",
+})
+
 vim.cmd([[
 :command! WQ wq
 :command! WQ wq
@@ -26,7 +31,9 @@ vim.cmd([[
 
 augroup _general_settings
   autocmd!
+  autocmd FileType scss setlocal formatprg=prettier\ --parser\ typescript
   autocmd BufWritePre *.vue,*.jsx,*.js,*.tsx,*.ts EslintFixAll
+  autocmd BufWritePre *.lua FormatLua
   autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
   autocmd BufWinEnter * :set formatoptions-=cro
   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
