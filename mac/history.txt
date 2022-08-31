@@ -11,7 +11,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/plug
 https://github.com/macports/macports-base/releases/download/v2.7.2/MacPorts-2.7.2-10.14-Mojave.pkg
 
 # install port
-sudo port install neovim
 sudo port install nodejs16
 sudo port install npm8
 sudo port install stylua
@@ -21,11 +20,12 @@ sudo port install ripgrep
 sudo port install go
 sudo port install rust
 sudo port install cargo
+sudo port install neovim
 
 # configure
 sudo npm -g install neovim @quasar/cli tree-sitter-cli
 
-sudo port select --set python python310
+sudo port select --set python3 python310
 
 curl https://bootstrap.pypa.io/get-pip.py | sudo python3
 
@@ -40,6 +40,31 @@ sudo mv /System/Library/LaunchDaemons/com.apple.spindump.plist /System/Library/L
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.tailspind.plist
 sudo mv /System/Library/LaunchDaemons/com.apple.tailspind.plist /System/Library/LaunchDaemons/com.apple.tailspind.plist.bak
+
+# Use Plain Text Mode as Default
+defaults write com.apple.TextEdit RichText -int 0
+# Unhide User Library Folder
+chflags nohidden ~/Library
+# Show "Quit Finder" Menu Item
+defaults write com.apple.finder QuitMenuItem -bool true
+# Show Status Bar
+defaults write com.apple.finder ShowStatusBar -bool true
+killall Finder
+# Automatic Restart on System Freeze
+sudo systemsetup -setrestartfreeze on
+# Disable Bluetooth
+sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0 && \
+sudo killall -HUP blued
+# Disable Sound Effects on Boot
+sudo nvram SystemAudioVolume=" "
+sudo nvram BootAudio=%00
+# Disable AirDrop
+defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES
+# remove all icons from dock
+defaults write com.apple.dock persistent-apps -array
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0
+killall Dock
 
 # cleat icon cache
 sudo rm -rfv /Library/Caches/com.apple.iconservices.store; sudo find /private/var/folders/ \( -name com.apple.dock.iconcache -or -name com.apple.iconservices \) -exec rm -rfv {} \; ; sleep 3;sudo touch /Applications/* ; killall Dock; killall Finder
