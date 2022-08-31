@@ -32,10 +32,10 @@ return {
 
         require('lspconfig').eslint.setup({})
 
-        require('lspconfig').tsserver.setup({
-          on_attach = on_attach,
-          capabilities = capabilities,
-        })
+        -- require('lspconfig').tsserver.setup({
+        --   on_attach = on_attach,
+        --   capabilities = capabilities,
+        -- })
 
         require('lspconfig').volar.setup({
           on_attach = on_attach,
