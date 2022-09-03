@@ -31,7 +31,6 @@ vim.cmd([[
 
 augroup _general_settings
   autocmd!
-  autocmd FileType scss setlocal formatprg=prettier\ --parser\ typescript
   autocmd BufWritePre *.vue,*.jsx,*.js,*.tsx,*.ts EslintFixAll
   autocmd BufWritePre *.lua FormatLua
   autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>

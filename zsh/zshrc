@@ -35,7 +35,6 @@ source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 
-
 plugins=(
   z
   git
@@ -44,12 +43,10 @@ plugins=(
   zsh-autosuggestions
 )
 
-
 # ZSH
 # rename zsh to zshv, because zsh show errors when update
 alias zshv="v $HOME/.zshrc"
 alias sz="source $HOME/.zshrc"
-
 
 # aliases
 alias ls="ls -aG"
@@ -74,7 +71,6 @@ alias psg="ps aux | grep "
 # remove the ‘application downloaded from the internet’ error message
 alias xatcr="xattr -cr "
 
-
 # download videos from webpage
 alias ydl="youtube-dl"
 
@@ -86,15 +82,16 @@ alias home="cd $HOME/"
 alias codes="cd /Volumes/data/Codes"
 alias sites="cd /Volumes/data/Sites"
 
-
 # dotfiles
 alias dot="cd $HOME/.dotfiles"
 alias dotv="dot && v"
 alias vv="cd $HOME/.dotfiles/nvim && v"
 
 # Code
-alias es="cd /Volumes/data/Codes/endless-supabase && clear"
-alias esv="es && v"
+alias qs="cd /Volumes/data/Codes/quasar-supabase && clear"
+alias qsv="qs && v"
+alias ac="cd /Volumes/data/Codes/astro-crash-course && clear"
+alias acv="ac && v"
 
 # Site
 alias sm="cd /Volumes/data/Sites/site-modelo-2021 && clear"
@@ -117,14 +114,12 @@ alias q1s="cd /Volumes/data/Sites/quero1site_2020 && clear"
 # alias cda="cd /Volumes/WS/car-dealership-api-2020 && clear"
 # alias cdd="cd /Volumes/WS/car-dealership-adm-2020 && clear"
 
-
 # brew
 # alias bi="brew install"
 # alias bs="brew search"
 # alias bu="brew uninstall"
 # alias bc="brew cleanup"
 # alias bubu="brew update && brew upgrade && brew cleanup && brew doctor"
-
 
 # npm
 alias nr="npm run"
@@ -148,7 +143,6 @@ alias nup="npm update" # Update all packages listed in package.json
 alias nrdup="npm dedupe" # Remove duplicate packages from node_modules
 alias nclean="npm cache clean -f" # Clean npm cache
 
-
 # Git
 alias gaa="git add ."
 alias gs="git status --short"
@@ -160,7 +154,6 @@ alias gnah="git reset --hard && git clean -df"
 alias gaac="rm -rf dist && git add . && git commit -m"
 alias gaacz="rm -rf dist && git add . && git cz"
 alias gsync="git pull && git push"
-
 
 function mk-cd(){
   mkdir "$*"
