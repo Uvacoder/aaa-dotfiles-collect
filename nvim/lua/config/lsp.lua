@@ -69,6 +69,14 @@ return {
             'vue',
             'json',
           },
+          handlers = {
+            ['client/registerCapability'] = function(_, _, _, _)
+              return {
+                result = nil,
+                error = nil,
+              }
+            end,
+          },
         })
 
         -- LSP settings (for overriding per client)

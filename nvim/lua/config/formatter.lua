@@ -74,9 +74,9 @@ return {
             vue = { prettier, eslint },
             javascript = { prettier, eslint },
             typescript = { prettier, eslint },
+            astro = { prettier, eslint },
             json = { prettier },
             scss = { prettier },
-            astro = { prettier },
             lua = { luastyle },
           },
         })
@@ -84,7 +84,7 @@ return {
         local map = require('utils').map
 
         map('n', 'ff', '<CMD>Format<CR>')
-        map('n', 'ww', '<CMD>FormatWrite<CR>')
+        map('n', 'zz', '<CMD>FormatWrite<CR>')
       end,
     })
   end,
