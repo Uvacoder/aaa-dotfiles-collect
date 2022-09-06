@@ -1,5 +1,5 @@
 if vim.fn.has('nvim-0.7') == 0 then
-   error('Need Neovim v0.7+ in order to run!')
+  error('Need Neovim v0.7+ in order to run!')
 end
 
 local modules = { 'settings', 'options', 'plugins', 'mappings', 'autocmds' }

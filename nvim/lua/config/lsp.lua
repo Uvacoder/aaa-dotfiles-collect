@@ -10,16 +10,13 @@ return {
 
       config = function()
         local map = require('utils').map
-
         -- Diagnostic keymaps
         map('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>')
         map('n', '<leader>d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
         map('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>')
 
-       -- local on_attach = require("config.lsp.common").on_attach
-        local buf_map = require('utils').buf_map
-
         local on_attach = function(client, bufnr)
+          local buf_map = require('utils').buf_map
           -- stable
           client.resolved_capabilities.document_formatting = false
           client.resolved_capabilities.document_range_formatting = false
@@ -54,9 +51,6 @@ return {
           },
         })
 
-        -- npm i -g vscode-langservers-extracted
-        require('lspconfig').eslint.setup({})
-
         -- npm install -g @astrojs/language-server
         require('lspconfig').astro.setup({
           on_attach = on_attach,
@@ -73,21 +67,9 @@ return {
             'javascriptreact',
             'typescriptreact',
             'vue',
-            'json'
+            'json',
           },
         })
-
-        -- npm install -g @tailwindcss/language-server
-        -- local root_pattern = require("lspconfig").util.root_pattern
-        -- require("lspconfig").tailwindcss.setup({
-        --   root_dir = root_pattern(
-        --     "tailwind.config.js",
-        --     "tailwind.config.ts",
-        --     "postcss.config.js",
-        --     "postcss.config.ts",
-        --     "tailwind.config.cjs"
-        --   ),
-        -- })
 
         -- LSP settings (for overriding per client)
         vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
@@ -107,14 +89,14 @@ return {
             border = vim.g.border_style,
             header = '',
             prefix = '',
-              format = function(diagnostic)
-                return string.format(
-                  ' %s\n%s\n%s',
-                  diagnostic.source,
-                  diagnostic.user_data.lsp.code,
-                  diagnostic.message
-                )
-              end,
+            format = function(diagnostic)
+              return string.format(
+                ' %s\n%s\n%s',
+                diagnostic.source,
+                diagnostic.user_data.lsp.code,
+                diagnostic.message
+              )
+            end,
           },
         })
 
@@ -125,7 +107,6 @@ return {
           local hl = 'DiagnosticSign' .. type
           vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
         end
-
       end,
     })
   end,

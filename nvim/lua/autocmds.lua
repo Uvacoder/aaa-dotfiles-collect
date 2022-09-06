@@ -1,11 +1,6 @@
 vim.api.nvim_create_augroup('AutoUpdatePlugins', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = 'plugins.lua',
-  command = 'source <afile> | PackerSync',
-  group = 'AutoUpdatePlugins',
-})
-vim.api.nvim_create_autocmd('BufWritePost', {
-  pattern = 'plugins.lua',
   command = 'source <afile> | PackerCompile',
   group = 'AutoUpdatePlugins',
 })
@@ -17,9 +12,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- auto-wrap comments, don't auto insert comment on o/O and enter
-vim.api.nvim_create_autocmd("FileType", {
-  command = "set formatoptions-=cro",
+vim.api.nvim_create_autocmd('FileType', {
+  command = 'set formatoptions-=cro',
 })
+
+-- autocmd BufWritePre *.vue,*.jsx,*.js,*.tsx,*.ts EslintFixAll
+-- autocmd BufWritePre *.lua FormatLua
+-- autocmd BufWritePost * FormatWrite
 
 vim.cmd([[
 :command! WQ wq
@@ -31,8 +30,6 @@ vim.cmd([[
 
 augroup _general_settings
   autocmd!
-  autocmd BufWritePre *.vue,*.jsx,*.js,*.tsx,*.ts EslintFixAll
-  autocmd BufWritePre *.lua FormatLua
   autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
   autocmd BufWinEnter * :set formatoptions-=cro
   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
