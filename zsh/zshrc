@@ -93,6 +93,8 @@ alias ac="cd /Volumes/data/Codes/astro-crash-course && clear"
 alias acv="ac && v"
 
 # Site
+alias lpc="cd /Volumes/data/Sites/lis_pet_care_2022 && clear"
+alias lpcv="lpc && v"
 alias sm="cd /Volumes/data/Sites/site-modelo-2021 && clear"
 alias mp="cd /Volumes/data/Sites/my-project && clear"
 alias anp="cd /Volumes/data/Sites/agua_nova_piscinas && clear"

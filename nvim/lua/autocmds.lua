@@ -1,3 +1,5 @@
+vim.cmd [[au! BufRead,BufNewFile *.astro set filetype=astro]]
+
 vim.api.nvim_create_augroup('AutoUpdatePlugins', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = 'plugins.lua',
@@ -11,12 +13,24 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = 'Highlight',
 })
 
+-- local format = vim.api.nvim_create_augroup('format', { clear = true })
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+--   command = 'EslintFixAll',
+--   pattern = '*.ts,*.tsx,*.js,*.jsx,*.vue,*.astro',
+--   group = format,
+-- })
+--
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+--   callback = vim.lsp.buf.formatting,
+--   pattern = '*.astro',
+--   group = format,
+-- })
+
 -- auto-wrap comments, don't auto insert comment on o/O and enter
 vim.api.nvim_create_autocmd('FileType', {
   command = 'set formatoptions-=cro',
 })
 
--- autocmd BufWritePre *.vue,*.jsx,*.js,*.tsx,*.ts EslintFixAll
 -- autocmd BufWritePre *.lua FormatLua
 -- autocmd BufWritePost * FormatWrite
 
@@ -27,6 +41,12 @@ vim.cmd([[
 :command! Wqa wqa
 :command! W w
 :command! Q q
+
+augroup neovim_terminal
+  autocmd!
+  autocmd TermOpen * startinsert
+  autocmd TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
+augroup end
 
 augroup _general_settings
   autocmd!

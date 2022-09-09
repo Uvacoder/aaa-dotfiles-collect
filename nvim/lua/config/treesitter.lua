@@ -42,8 +42,9 @@ return {
             'vue',
             'jsx',
             'javascriptreact',
-            -- "typescriptreact",
-            -- "tsx",
+            "typescriptreact",
+            "tsx",
+            'markdown',
           },
         })
         -- comment

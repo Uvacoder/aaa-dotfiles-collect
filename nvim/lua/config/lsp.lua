@@ -18,7 +18,7 @@ return {
         local on_attach = function(client, bufnr)
           local buf_map = require('utils').buf_map
           -- stable
-          client.resolved_capabilities.document_formatting = false
+          client.resolved_capabilities.document_formatting = true
           client.resolved_capabilities.document_range_formatting = false
           -- nightly
           -- client.server_capabilities.documentFormattingProvider = false
@@ -51,10 +51,20 @@ return {
           },
         })
 
+        local handlers = {
+          ['client/registerCapability'] = function(_, _, _, _)
+            return {
+              result = nil,
+              error = nil,
+            }
+          end,
+        }
+
         -- npm install -g @astrojs/language-server
         require('lspconfig').astro.setup({
           on_attach = on_attach,
           capabilities = capabilities,
+          handlers = handlers
         })
 
         -- npm install -g @volar/vue-language-server
@@ -69,14 +79,7 @@ return {
             'vue',
             'json',
           },
-          handlers = {
-            ['client/registerCapability'] = function(_, _, _, _)
-              return {
-                result = nil,
-                error = nil,
-              }
-            end,
-          },
+          handlers = handlers
         })
 
         -- LSP settings (for overriding per client)

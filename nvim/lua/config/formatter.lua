@@ -35,7 +35,7 @@ return {
           return {
             exe = 'eslint',
             args = {
-              '--fix',
+              '--fix-dry-run',
               '--stdin',
               '--stdin-filename',
               vim.fn.shellescape(vim.api.nvim_buf_get_name(0)),
@@ -67,24 +67,25 @@ return {
 
         require('formatter').setup({
           logging = false,
-          ['*'] = {
-            require('formatter.filetypes.any').remove_trailing_whitespace,
-          },
           filetype = {
+            -- ['*'] = {
+            --   require('formatter.filetypes.any').remove_trailing_whitespace,
+            -- },
             vue = { prettier, eslint },
             javascript = { prettier, eslint },
             typescript = { prettier, eslint },
-            astro = { prettier, eslint },
+            astro = { prettier },
             json = { prettier },
             scss = { prettier },
+            html = { prettier },
             lua = { luastyle },
           },
         })
 
         local map = require('utils').map
 
-        map('n', 'ff', '<CMD>Format<CR>')
-        map('n', 'zz', '<CMD>FormatWrite<CR>')
+        map('n', '<leader>f', '<CMD>Format<CR>')
+        map('n', '<leader>w', '<CMD>FormatWrite<CR>')
       end,
     })
   end,

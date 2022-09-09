@@ -28,14 +28,15 @@ map('n', '-', '<PageUp>')
 
 -- delete buffer
 map('n', '<C-x>', ':bd<CR>')
-map('n', 'bd', ':bd<CR>')
+map('n', '<leader>t', ':terminal<CR>')
+map('n', '<leader>tc', ':bd!<CR>')
 
 -- fold unfold html
-map('n', 'fc', '<cmd>foldclose<cr>')
-map('n', 'fo', '<cmd>foldopen<cr>')
+map('n', '<leader>fc', '<cmd>foldclose<cr>')
+map('n', '<leader>fo', '<cmd>foldopen<cr>')
 
 -- select all
-map('n', 'aa', 'ggVG')
+map('n', '<leader>aa', 'ggVG')
 
 -- save and close
 -- map("n", "<C-s>", ":w<CR>")
