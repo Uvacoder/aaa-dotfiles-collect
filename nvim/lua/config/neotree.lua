@@ -13,7 +13,7 @@ return {
       config = function()
         -- Unless you are still migrating, remove the deprecated commands from v1.x
         vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-        
+
         local map = require('utils').map
 
         require('neo-tree').setup({
@@ -47,15 +47,15 @@ return {
             },
           },
           window = {
-            position = "float",
+            position = 'float',
             popup = { -- settings that apply to float position only
               size = {
-                height = "18",
-                width = "45",
+                height = '18',
+                width = '45',
               },
               position = {
-                row = "2",
-                col = "50%",
+                row = '2',
+                col = '50%',
               },
             },
           },
@@ -87,7 +87,7 @@ return {
 
         map('n', ',', '<CMD>Neotree toggle<CR>')
         map('n', '.', '<CMD>Neotree buffers toggle<CR>')
-        map('n', '[', '<CMD>Neotree git_status toggle<CR>')
+        map('n', ';', '<CMD>Neotree git_status toggle<CR>')
         map('n', '<C-q>', '<CMD>Neotree close<CR>')
       end,
     })
