@@ -39,6 +39,18 @@ return {
           end,
         }
 
+        require('lspconfig').eslint.setup({
+          handlers = handlers,
+          filetypes = {
+            'typescript',
+            'javascript',
+            'javascriptreact',
+            'typescriptreact',
+            'vue',
+            'astro',
+          },
+        })
+
         -- npm install -g @astrojs/language-server
         require('lspconfig').astro.setup({
           on_attach = on_attach,
