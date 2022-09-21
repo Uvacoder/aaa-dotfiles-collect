@@ -28,8 +28,8 @@ map('n', '-', '<PageUp>')
 
 -- delete buffer
 map('n', '<C-x>', ':bd<CR>')
-map('n', '<leader>t', ':terminal<CR>')
-map('n', '<leader>tc', ':bd!<CR>')
+-- map('n', '<leader>t', ':terminal<CR>')
+-- map('n', '<leader>tc', ':bd!<CR>')
 
 -- fold unfold html
 map('n', '<leader>fc', '<cmd>foldclose<cr>')

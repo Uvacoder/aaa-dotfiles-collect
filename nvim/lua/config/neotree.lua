@@ -86,8 +86,8 @@ return {
         })
 
         map('n', ',', '<CMD>Neotree toggle<CR>')
-        map('n', '.', '<CMD>Neotree buffers toggle<CR>')
-        map('n', ';', '<CMD>Neotree git_status toggle<CR>')
+        map('n', '<Leader>,', '<CMD>Neotree buffers toggle<CR>')
+        map('n', '<Leader>.', '<CMD>Neotree git_status toggle<CR>')
         map('n', '<C-q>', '<CMD>Neotree close<CR>')
       end,
     })
