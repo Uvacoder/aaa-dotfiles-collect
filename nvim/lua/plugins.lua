@@ -22,7 +22,7 @@ local function load_plugins()
       require('config.visualmulti').setup(use)
       require('config.astro').setup(use)
 
-      require('colors.tokyodark').setup(use)
+      require('colors.gruvbox').setup(use)
 
       if parcker_bootstrap then
         require('packer').sync()

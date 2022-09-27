@@ -5,8 +5,8 @@ return {
       'ellisonleao/gruvbox.nvim',
       config = function()
         -- local bg_color = "#1D2021" -- default
-        local bg_color = '#0B1015'
-        local bg_popup = '#0B1015'
+        local bg_color = '#121014'
+        local bg_popup = '#121014'
 
         require('gruvbox').setup({
           undercurl = true,
