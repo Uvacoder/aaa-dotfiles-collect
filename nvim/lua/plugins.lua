@@ -8,6 +8,7 @@ local function load_plugins()
       require('config.stylua').setup(use)
       require('config.cokeline').setup(use)
       require('config.terminal').setup(use)
+      require('config.openingh').setup(use)
       require('config.autopairs').setup(use)
       require('config.kommentary').setup(use)
       require('config.treesitter').setup(use)
@@ -22,7 +23,7 @@ local function load_plugins()
       require('config.visualmulti').setup(use)
       require('config.astro').setup(use)
 
-      require('colors.gruvbox').setup(use)
+      require('colors.tokyodark').setup(use)
 
       if parcker_bootstrap then
         require('packer').sync()
