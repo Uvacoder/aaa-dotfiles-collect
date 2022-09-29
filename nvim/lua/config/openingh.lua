@@ -1,7 +1,7 @@
 return {
   setup = function(use)
     use({
-      'almo7aya/openingh.nvim',
+      'Almo7aya/openingh.nvim',
       config = function()
         local map = require('utils').map
 
