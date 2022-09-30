@@ -28,11 +28,12 @@ return {
             DiffAdd = { fg = '#95EC30', bg = bg_color },
             DiffChange = { fg = '#FFC600', bg = bg_color },
             DiffDelete = { fg = '#FF0069', bg = bg_color },
-            NeoTreeNormal = {bg="#21283b"},
-            NeoTreeNormalNC = {bg="#21283b"},
-            NeoTreeEndOfBuffer = {bg="#21283b"},
+            NeoTreeNormal = { bg = '#21283b' },
+            NeoTreeNormalNC = { bg = '#21283b' },
+            NeoTreeEndOfBuffer = { bg = '#21283b' },
             NeoTreeWinSeparator = { bg = bg_color },
             NeoTreeCursorLine = { bg = '#54B0FD', fg = bg_color },
+            Floaterm = { bg = '#21283b' },
           }, -- Override highlight groups
           diagnostics = {
             darker = true, -- darker colors for diagnostic
