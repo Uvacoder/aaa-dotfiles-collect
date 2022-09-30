@@ -13,6 +13,8 @@ return {
             Pmenu = { bg = bg_color },
             LineNr = { bg = bg_color },
             SignColumn = { bg = bg_color },
+            Floaterm = { bg = bg_color },
+            FloatermBorder = { bg = bg_color },
           },
         })
       end,
