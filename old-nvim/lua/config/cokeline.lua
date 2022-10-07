@@ -74,25 +74,25 @@ return {
             },
           },
 
-          diagnostics = {
-            text = function(buffer)
-              return
-                (buffer.diagnostics.errors ~= 0 and ' ' .. buffer.diagnostics.errors)
-                  or (buffer.diagnostics.warnings ~= 0 and ' ' .. buffer.diagnostics.warnings)
-                  or (buffer.diagnostics.infos ~= 0 and ' ﲉ' .. buffer.diagnostics.infos)
-                  or (buffer.diagnostics.hints ~= 0 and ' ' .. buffer.diagnostics.hints)
-                  or ''
-            end,
-            fg = function(buffer)
-              return
-                (buffer.diagnostics.errors ~= 0 and errors_fg)
-                  or (buffer.diagnostics.warnings ~= 0 and warnings_fg)
-                  or (buffer.diagnostics.infos ~= 0 and infos_fg)
-                  or (buffer.diagnostics.hints ~= 0 and hints_fg)
-                  or nil
-            end,
-            truncation = { priority = 1 },
-          },
+          -- diagnostics = {
+          --   text = function(buffer)
+          --     return
+          --       (buffer.diagnostics.errors ~= 0 and ' ' .. buffer.diagnostics.errors)
+          --         or (buffer.diagnostics.warnings ~= 0 and ' ' .. buffer.diagnostics.warnings)
+          --         or (buffer.diagnostics.infos ~= 0 and ' ﲉ' .. buffer.diagnostics.infos)
+          --         or (buffer.diagnostics.hints ~= 0 and ' ' .. buffer.diagnostics.hints)
+          --         or ''
+          --   end,
+          --   fg = function(buffer)
+          --     return
+          --       (buffer.diagnostics.errors ~= 0 and errors_fg)
+          --         or (buffer.diagnostics.warnings ~= 0 and warnings_fg)
+          --         or (buffer.diagnostics.infos ~= 0 and infos_fg)
+          --         or (buffer.diagnostics.hints ~= 0 and hints_fg)
+          --         or nil
+          --   end,
+          --   truncation = { priority = 1 },
+          -- },
 
           close_or_unsaved = {
             text = function(buffer)
@@ -115,7 +115,11 @@ return {
           },
           default_hl = {
             fg = function(buffer)
-              return buffer.is_focused and white_fg or comments_fg
+              return (buffer.diagnostics.hints ~= 0 and hints_fg)
+                or (buffer.diagnostics.infos ~= 0 and infos_fg)
+                or (buffer.diagnostics.warnings ~= 0 and warnings_fg)
+                or (buffer.diagnostics.errors ~= 0 and errors_fg)
+                or (buffer.is_focused and white_fg)
             end,
             bg = function(buffer)
               return buffer.is_focused and normal_bg or tabline_bg
@@ -128,7 +132,7 @@ return {
             components.unique_prefix,
             components.filename,
             components.close_or_unsaved,
-            components.diagnostics,
+            -- components.diagnostics,
             components.space,
           },
         })

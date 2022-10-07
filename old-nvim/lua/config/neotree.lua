@@ -19,6 +19,7 @@ return {
         require('neo-tree').setup({
           popup_border_style = vim.g.border_style,
           enable_git_status = true,
+          enable_diagnostics = false,
           default_component_configs = {
             icon = {
               folder_closed = '',

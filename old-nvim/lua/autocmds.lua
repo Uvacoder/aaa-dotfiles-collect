@@ -1,3 +1,25 @@
+vim.api.nvim_create_autocmd('CursorHold', {
+  buffer = bufnr,
+  callback = function()
+    local opts = {
+      focusable = false,
+      close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
+      border = 'rounded',
+      source = 'always',
+      prefix = ' ',
+      scope = 'cursor',
+    }
+    vim.diagnostic.open_float(nil, opts)
+  end,
+})
+
+-- Fixes Autocomment
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+  callback = function()
+    vim.cmd "set formatoptions-=cro"
+  end,
+})
+
 vim.api.nvim_create_augroup('AutoUpdatePlugins', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = 'plugins.lua',
@@ -14,7 +36,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 local format = vim.api.nvim_create_augroup('format', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePre', {
   command = 'EslintFixAll',
-  pattern = '*.ts,*.tsx,*.js,*.jsx,*.vue,*.astro',
+  pattern = '*.ts,*.tsx,*.js,*.jsx,*.vue,*.astro,*.mjs',
   group = format,
 })
 vim.api.nvim_create_autocmd('BufWritePre', {

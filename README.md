@@ -71,7 +71,7 @@ cp ~/.dotfiles/battery/local.battery.plist ~/Library/LaunchAgents/local.battery.
 sudo npm install -g @volar/vue-language-server typescript typescript-language-server
 
 
-curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz
+curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim-macos.tar.gz
 tar xzf nvim-macos.tar.gz
 ./nvim-osx64/bin/nvim
 
