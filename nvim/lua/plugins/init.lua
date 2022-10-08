@@ -50,8 +50,9 @@ local function load_plugins()
 			})
 
 			use({
-				"noib3/nvim-cokeline",
-				config = "require('plugins.cokeline')",
+				"akinsho/bufferline.nvim",
+				tag = "v2.*",
+				config = "require('plugins.bufferline')",
 			})
 
 			use({
@@ -157,10 +158,10 @@ end
 load_plugins()
 
 --[[ use({ ]]
---[[ 	"akinsho/bufferline.nvim", ]]
---[[ 	tag = "v2.*", ]]
---[[ 	config = "require('plugins.bufferline')", ]]
+--[[ 	"noib3/nvim-cokeline", ]]
+--[[ 	config = "require('plugins.cokeline')", ]]
 --[[ }) ]]
+--[[]]
 
 --[[ use({ ]]
 --[[ 	"nvim-lualine/lualine.nvim", ]]

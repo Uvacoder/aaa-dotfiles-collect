@@ -5,15 +5,15 @@ end
 
 theme.setup({
 	style = "storm",
-	styles = {
-		sidebars = "dark",
-		floats = "dark",
-		keywords = { italic = false },
-	},
 	on_colors = function(colors)
-		colors.bg_dark = "#000000"
 		colors.bg = "#080910"
+	end,
+	on_highlights = function(hl, c)
+		hl.NeoTreeFloatBorder = {
+			bg = c.bg_dark,
+			fg = c.fg_dark,
+		}
 	end,
 })
 
-vim.cmd("colorscheme tokyonight-storm")
+vim.cmd("colorscheme tokyonight")

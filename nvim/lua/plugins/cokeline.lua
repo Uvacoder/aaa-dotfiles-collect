@@ -35,10 +35,6 @@ local components = {
 		text = function(buffer)
 			return buffer.index .. ":"
 		end,
-		fg = function(buffer)
-			return buffer.is_focused and line_nr_fg or comments_fg
-		end,
-		truncation = { priority = 1 },
 	},
 
 	unique_prefix = {
@@ -89,6 +85,7 @@ nckln.setup({
 		end,
 	},
 	components = {
+		components.space,
 		components.space,
 		components.devicon,
 		components.index,
