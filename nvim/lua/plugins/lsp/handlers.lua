@@ -13,9 +13,7 @@ M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 M.setup = function()
 	local config = {
 		virtual_text = false, -- disable virtual text
-		signs = {
-			active = signs, -- show signs
-		},
+		signs = { active = signs },
 		update_in_insert = true,
 		underline = true,
 		severity_sort = true,

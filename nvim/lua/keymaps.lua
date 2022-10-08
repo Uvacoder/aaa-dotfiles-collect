@@ -79,6 +79,7 @@ keymap("v", "<S-TAB>", "<gv", opts)
 
 -- Neo-tree
 keymap("n", ",", "<CMD>Neotree toggle<CR>", opts)
+keymap("n", "<C-e>", "<CMD>Neotree toggle<CR>", opts)
 keymap("n", "<C-g>", "<CMD>Neotree git_status toggle<CR>", opts)
 keymap("n", "<C-b>", "<CMD>Neotree buffers toggle<CR>", opts)
 keymap("n", "<C-q>", "<CMD>Neotree close<CR>", opts)
@@ -86,3 +87,8 @@ keymap("n", "<C-q>", "<CMD>Neotree close<CR>", opts)
 -- open in Github
 keymap("n", "<Leader>gr", ":OpenInGHRepo <CR>", opts)
 keymap("n", "<Leader>gf", ":OpenInGHFile <CR>", opts)
+
+-- cokeline
+for i = 1, 9 do
+	keymap("n", ("<Leader>%s"):format(i), ("<Plug>(cokeline-focus-%s)"):format(i), opts)
+end

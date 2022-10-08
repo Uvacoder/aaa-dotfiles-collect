@@ -1,16 +1,16 @@
 -- https://github.com/noib3/nvim-cokeline
-local status_ok, nckln = pcall(require, "nvim-cokeline")
+local status_ok, nckln = pcall(require, "cokeline")
 if not status_ok then
 	return
 end
 
 local get_hex = require("cokeline/utils").get_hex
-local mappings = require("cokeline/mappings")
 
 local normal_bg = get_hex("Normal", "bg")
 local tabline_bg = get_hex("TablineFill", "bg")
 local comments_fg = get_hex("Comment", "fg")
 local line_nr_fg = get_hex("LineNr", "fg")
+
 local white_fg = "#ffffff"
 local green_fg = "#95EC30"
 local errors_fg = "#FF0069"
@@ -72,7 +72,7 @@ local components = {
 	},
 }
 
-require("cokeline").setup({
+nckln.setup({
 	show_if_buffers_are_at_least = 1,
 	buffers = { new_buffers_position = "next" },
 	rendering = { max_buffer_width = 30 },
@@ -98,10 +98,3 @@ require("cokeline").setup({
 		components.space,
 	},
 })
-
-local keymap = vim.api.nvim_set_keymap
-local opts = { silent = true }
-
-for i = 1, 9 do
-	keymap("n", ("<Leader>%s"):format(i), ("<Plug>(cokeline-focus-%s)"):format(i), opts)
-end

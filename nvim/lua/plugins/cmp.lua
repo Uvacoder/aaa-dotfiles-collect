@@ -75,10 +75,7 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end, {
-			"i",
-			"s",
-		}),
+		end, { "i", "s" }),
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
@@ -87,10 +84,7 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end, {
-			"i",
-			"s",
-		}),
+		end, { "i", "s" }),
 	}),
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
@@ -114,15 +108,10 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "path" },
 	},
-	confirm_opts = {
-		behavior = cmp.ConfirmBehavior.Replace,
-		select = false,
-	},
+	confirm_opts = { behavior = cmp.ConfirmBehavior.Replace, select = false },
 	window = {
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
 	},
-	experimental = {
-		ghost_text = true,
-	},
+	experimental = { ghost_text = true },
 })

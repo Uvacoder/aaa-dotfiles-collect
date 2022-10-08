@@ -6,6 +6,8 @@ end
 theme.setup({
 	style = "storm",
 	styles = {
+		sidebars = "dark",
+		floats = "dark",
 		keywords = { italic = false },
 	},
 	on_colors = function(colors)
@@ -14,4 +16,4 @@ theme.setup({
 	end,
 })
 
-vim.cmd("colorscheme tokyonight")
+vim.cmd("colorscheme tokyonight-storm")

@@ -6,7 +6,7 @@ return {
 			"javascriptreact",
 			"typescriptreact",
 			"vue",
-			"json",
+			"astro",
 		},
 	},
 }

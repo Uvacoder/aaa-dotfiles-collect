@@ -20,11 +20,6 @@ local function load_plugins()
 				config = "require('plugins.colorizer')",
 			})
 
-			--[[ use({ ]]
-			--[[ 	"nvim-lualine/lualine.nvim", ]]
-			--[[ 	config = "require('plugins.lualine')", ]]
-			--[[ }) ]]
-
 			use({
 				"windwp/nvim-ts-autotag",
 				config = "require('plugins.autotag')",
@@ -36,12 +31,6 @@ local function load_plugins()
 			})
 
 			use({
-				"numToStr/Comment.nvim",
-				requires = "JoosepAlviste/nvim-ts-context-commentstring",
-				config = "require('plugins.comment')",
-			})
-
-			use({
 				"dyng/ctrlsf.vim",
 				config = "require('plugins.ctrlsf')",
 			})
@@ -50,35 +39,30 @@ local function load_plugins()
 				"rcarriga/nvim-notify",
 				config = "require('plugins.notify')",
 			})
-
 			use({
-				"nvim-neo-tree/neo-tree.nvim",
-				branch = "v2.x",
-				requires = {
-					"MunifTanjim/nui.nvim",
-				},
-				config = "require('plugins.neo-tree')",
+				"lukas-reineke/indent-blankline.nvim",
+				config = "require('plugins.indentline')",
 			})
 
-			--[[ use({ ]]
-			--[[ 	"kyazdani42/nvim-tree.lua", ]]
-			--[[ 	config = "require('plugins.nvim-tree')", ]]
-			--[[ }) ]]
-
-			--[[ use({  ]]
-			--[[   "noib3/nvim-cokeline"  ]]
-			--[[  config = "require('plugins.cokeline')" ]]
-			--[[ }) ]]
+			use({
+				"folke/tokyonight.nvim",
+				config = "require('plugins.colorscheme')",
+			})
 
 			use({
-				"akinsho/bufferline.nvim",
-				tag = "v2.*",
-				config = "require('plugins.bufferline')",
+				"noib3/nvim-cokeline",
+				config = "require('plugins.cokeline')",
 			})
 
 			use({
 				"akinsho/toggleterm.nvim",
 				config = "require('plugins.toggleterm')",
+			})
+
+			use({
+				"numToStr/Comment.nvim",
+				requires = "JoosepAlviste/nvim-ts-context-commentstring",
+				config = "require('plugins.comment')",
 			})
 
 			use({
@@ -88,13 +72,16 @@ local function load_plugins()
 			})
 
 			use({
-				"lukas-reineke/indent-blankline.nvim",
-				config = "require('plugins.indentline')",
+				"nvim-treesitter/nvim-treesitter",
+				run = ":TSUpdate",
+				config = "require('plugins.treesitter')",
 			})
 
 			use({
-				"folke/tokyonight.nvim",
-				config = "require('plugins.colorscheme')",
+				"nvim-neo-tree/neo-tree.nvim",
+				branch = "v2.x",
+				requires = "MunifTanjim/nui.nvim",
+				config = "require('plugins.neo-tree')",
 			})
 
 			use({
@@ -112,18 +99,13 @@ local function load_plugins()
 			})
 
 			use({
-				"neovim/nvim-lspconfig",
+				"williamboman/mason.nvim",
 				requires = {
-					"williamboman/nvim-lsp-installer",
+					"williamboman/mason-lspconfig.nvim",
+					"neovim/nvim-lspconfig",
 					"jose-elias-alvarez/null-ls.nvim",
 				},
 				config = "require('plugins.lsp')",
-			})
-
-			use({
-				"nvim-treesitter/nvim-treesitter",
-				run = ":TSUpdate",
-				config = "require('plugins.treesitter')",
 			})
 
 			-- Automatically set up your configuration after cloning packer.nvim
@@ -173,3 +155,28 @@ if fn.isdirectory(install_path) == 0 then
 end
 
 load_plugins()
+
+--[[ use({ ]]
+--[[ 	"akinsho/bufferline.nvim", ]]
+--[[ 	tag = "v2.*", ]]
+--[[ 	config = "require('plugins.bufferline')", ]]
+--[[ }) ]]
+
+--[[ use({ ]]
+--[[ 	"nvim-lualine/lualine.nvim", ]]
+--[[ 	config = "require('plugins.lualine')", ]]
+--[[ }) ]]
+
+--[[ use({ ]]
+--[[ 	"kyazdani42/nvim-tree.lua", ]]
+--[[ 	config = "require('plugins.nvim-tree')", ]]
+--[[ }) ]]
+
+--[[ use({ ]]
+--[[ 	"neovim/nvim-lspconfig", ]]
+--[[ 	requires = { ]]
+--[[ 		"williamboman/nvim-lsp-installer", ]]
+--[[     "jose-elias-alvarez/null-ls.nvim", ]]
+--[[ 	}, ]]
+--[[ 	config = "require('plugins.lsp')", ]]
+--[[ }) ]]
