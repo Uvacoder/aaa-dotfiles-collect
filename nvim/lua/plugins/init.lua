@@ -50,6 +50,12 @@ local function load_plugins()
 			})
 
 			use({
+				"mvllow/modes.nvim",
+				tag = "v0.2.0",
+				config = "require('plugins.modes')",
+			})
+
+			use({
 				"akinsho/bufferline.nvim",
 				tag = "v2.*",
 				config = "require('plugins.bufferline')",
