@@ -87,6 +87,6 @@ keymap("n", "<Leader>gr", ":OpenInGHRepo <CR>", opts)
 keymap("n", "<Leader>gf", ":OpenInGHFile <CR>", opts)
 
 -- cokeline
-for i = 1, 9 do
-	keymap("n", ("<Leader>%s"):format(i), ("<Plug>(cokeline-focus-%s)"):format(i), opts)
-end
+--[[ for i = 1, 9 do ]]
+--[[ 	keymap("n", ("<Leader>%s"):format(i), ("<Plug>(cokeline-focus-%s)"):format(i), opts) ]]
+--[[ end ]]

@@ -11,8 +11,9 @@ theme.setup({
 	end,
 	on_highlights = function(hl, c)
 		hl.NeoTreeFloatBorder = { bg = c.bg_dark, fg = c.fg_dark }
-		hl.CursorLineNr = { bg = "#000000" }
-		hl.CursorLine = { bg = "#000000" }
+    hl.CursorLine = { bg = c.bg }
+		hl.CursorLineNr = { bg = c.bg }
+		hl.MsgArea = { bg = c.bg_statusline }
 	end,
 })
 

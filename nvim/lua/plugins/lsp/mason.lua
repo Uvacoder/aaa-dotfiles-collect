@@ -1,56 +1,48 @@
-local status_ok, msn = pcall(require, "mason")
+local status_ok, lspconfig = pcall(require, "lspconfig")
 if not status_ok then
 	return
 end
 
-local msnl_status_ok, msn_lspcnfg = pcall(require, "mason-lspconfig")
-if not msnl_status_ok then
-	return
-end
+local servers = {
+	"astro",
+	"tsserver",
+	"volar",
+	"tailwindcss",
+	"eslint",
+}
 
-local lspcnfg_status_ok, lspcnfg = pcall(require, "lspconfig")
-if not lspcnfg_status_ok then
-	return
-end
-
-msn.setup({
+require("mason").setup({
 	ui = {
-		check_outdated_packages_on_open = true,
 		border = vim.g.border_style,
+		icons = {
+			package_installed = "◍",
+			package_pending = "◍",
+			package_uninstalled = "◍",
+		},
 	},
+	log_level = vim.log.levels.INFO,
+	max_concurrent_installers = 4,
 })
 
-msn_lspcnfg.setup({
-	ensure_installed = {
-		"astro",
-		"tsserver",
-		"volar",
-		"tailwindcss",
-    --[[ "eslint", ]]
-	},
+require("mason-lspconfig").setup({
+	ensure_installed = servers,
 	automatic_installation = true,
 })
 
 local opts = {}
 
-msn_lspcnfg.setup_handlers({
-	-- The first entry (withou-language-servert a key) will be the default handler
-	-- and will be called for each installed server that doesn't have
-	-- a dedicated handler.
-	function(server_name) -- default handler (optional)
-		opts = {
-			on_attach = require("plugins.lsp.handlers").on_attach,
-			capabilities = require("plugins.lsp.handlers").capabilities,
-		}
+for _, server in pairs(servers) do
+	opts = {
+		on_attach = require("plugins.lsp.handlers").on_attach,
+		capabilities = require("plugins.lsp.handlers").capabilities,
+	}
 
-		if server == "tailwindcss" then
-			opts = vim.tbl_deep_extend("force", require("plugins.lsp.settings.tailwindcss"), opts)
-		end
+	server = vim.split(server, "@")[1]
 
-		if server == "volar" then
-			opts = vim.tbl_deep_extend("force", require("plugins.lsp.settings.volar"), opts)
-		end
+	local require_ok, conf_opts = pcall(require, "plugins.lsp.settings." .. server)
+	if require_ok then
+		opts = vim.tbl_deep_extend("force", conf_opts, opts)
+	end
 
-		lspcnfg[server_name].setup(opts)
-	end,
-})
+	lspconfig[server].setup(opts)
+end

@@ -1,3 +1,10 @@
+local format = vim.api.nvim_create_augroup("format", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePre", {
+	command = "EslintFixAll",
+	pattern = "*.ts,*.tsx,*.js,*.jsx,*.vue,*.astro,*.mjs",
+	group = format,
+})
+
 vim.api.nvim_create_autocmd("CursorHold", {
 	buffer = bufnr,
 	callback = function()
@@ -69,10 +76,10 @@ vim.cmd([[
     execute "normal! i" . "console.log(' [DEBUG] " . string_under_cursor ": ', " . string_under_cursor . ");"
   endfunction
 
-  highlight! DiagnosticLineNrError guibg=#51202A guifg=#FF0000 gui=bold
-  highlight! DiagnosticLineNrWarn guibg=#51412A guifg=#FFA500 gui=bold
-  highlight! DiagnosticLineNrInfo guibg=#1E535D guifg=#00FFFF gui=bold
-  highlight! DiagnosticLineNrHint guibg=#1E205D guifg=#0000FF gui=bold
+  highlight! DiagnosticLineNrError guifg=#FF0000 gui=bold
+  highlight! DiagnosticLineNrWarn guifg=#FFA500 gui=bold
+  highlight! DiagnosticLineNrInfo guifg=#00FFFF gui=bold
+  highlight! DiagnosticLineNrHint guifg=#0000FF gui=bold
 
   sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
   sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn

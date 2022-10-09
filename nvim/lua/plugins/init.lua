@@ -15,6 +15,8 @@ local function load_plugins()
 
 			use({ "mg979/vim-visual-multi" })
 
+			use({ "MunifTanjim/nui.nvim" })
+
 			use({
 				"norcalli/nvim-colorizer.lua",
 				config = "require('plugins.colorizer')",
@@ -87,7 +89,6 @@ local function load_plugins()
 			use({
 				"nvim-neo-tree/neo-tree.nvim",
 				branch = "v2.x",
-				requires = "MunifTanjim/nui.nvim",
 				config = "require('plugins.neo-tree')",
 			})
 
@@ -106,10 +107,10 @@ local function load_plugins()
 			})
 
 			use({
-				"williamboman/mason.nvim",
+				"neovim/nvim-lspconfig",
 				requires = {
+					"williamboman/mason.nvim",
 					"williamboman/mason-lspconfig.nvim",
-					"neovim/nvim-lspconfig",
 					"jose-elias-alvarez/null-ls.nvim",
 				},
 				config = "require('plugins.lsp')",
@@ -162,28 +163,3 @@ if fn.isdirectory(install_path) == 0 then
 end
 
 load_plugins()
-
---[[ use({ ]]
---[[ 	"noib3/nvim-cokeline", ]]
---[[ 	config = "require('plugins.cokeline')", ]]
---[[ }) ]]
---[[]]
-
---[[ use({ ]]
---[[ 	"nvim-lualine/lualine.nvim", ]]
---[[ 	config = "require('plugins.lualine')", ]]
---[[ }) ]]
-
---[[ use({ ]]
---[[ 	"kyazdani42/nvim-tree.lua", ]]
---[[ 	config = "require('plugins.nvim-tree')", ]]
---[[ }) ]]
-
---[[ use({ ]]
---[[ 	"neovim/nvim-lspconfig", ]]
---[[ 	requires = { ]]
---[[ 		"williamboman/nvim-lsp-installer", ]]
---[[     "jose-elias-alvarez/null-ls.nvim", ]]
---[[ 	}, ]]
---[[ 	config = "require('plugins.lsp')", ]]
---[[ }) ]]
