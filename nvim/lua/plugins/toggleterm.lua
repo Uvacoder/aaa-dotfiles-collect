@@ -1,56 +1,46 @@
-local status_ok, toggleterm = pcall(require, "toggleterm")
-if not status_ok then
-	return
-end
+return {
+  setup = function(use)
+    use({
+      'akinsho/toggleterm.nvim',
+      config = function()
+        require('toggleterm').setup({
+          size = 18,
+          open_mapping = [[<c-t>]],
+          hide_numbers = true,
+          shade_terminals = true,
+          shading_factor = 2,
+          start_in_insert = true,
+          insert_mappings = true,
+          persist_size = true,
+          direction = 'float',
+          close_on_exit = true,
+          shell = vim.o.shell,
+          highlights = {
+            Normal = { link = 'Normal' },
+            NormalFloat = { link = 'TelescopeNormal' },
+            FloatBorder = { link = 'TelescopeBorder' },
+          },
+          float_opts = {
+            border = vim.g.border_style,
+            highlights = {
+              border = 'NeoTreeNormal',
+              background = 'NeoTreeNormal',
+            },
+          },
+        })
 
-toggleterm.setup({
-	size = 20,
-	open_mapping = [[<c-t>]],
-	hide_numbers = true,
-	shade_terminals = true,
-	shading_factor = 2,
-	start_in_insert = true,
-	insert_mappings = true,
-	persist_size = true,
-	direction = "float",
-	close_on_exit = true,
-	shell = vim.o.shell,
-	highlights = {
-		-- highlights which map to a highlight group name and a table of it's values
-		-- NOTE: this is only a subset of values, any group placed here will be set for the terminal window split
-		Normal = {
-			link = "Normal",
-		},
-		NormalFloat = {
-			link = "TelescopeNormal",
-		},
-		FloatBorder = {
-			link = "TelescopeBorder",
-		},
-	},
-	float_opts = {
-		border = vim.g.border_style,
-		highlights = {
-			border = "NeoTreeNormal",
-			background = "NeoTreeNormal",
-		},
-	},
-})
+        function _G.set_terminal_keymaps()
+          local keymap = vim.api.nvim_buf_set_keymap
+          local opts = { noremap = true, silent = true }
+          keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+          keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
+          keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
+          keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
+          keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
+        end
 
-function _G.set_terminal_keymaps()
-	local opts = { noremap = true }
-	vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
-end
-
-vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
-
-local Terminal = require("toggleterm.terminal").Terminal
-local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
-
-function _LAZYGIT_TOGGLE()
-	lazygit:toggle()
-end
+        vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+      end,
+    })
+  end,
+}

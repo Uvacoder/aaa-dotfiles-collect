@@ -1,165 +1,67 @@
-local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-
--- Install your plugins here
 local function load_plugins()
-	require("packer").startup({
-		function(use)
-			use({ "wbthomason/packer.nvim" })
+  require('packer').startup({
+    function(use)
+      require('colors.tokyonight').setup(use)
 
-			use({ "nvim-lua/plenary.nvim" })
+      require('plugins.packer').setup(use)
+      require('plugins.colorizer').setup(use)
+      require('plugins.modes').setup(use)
+      require('plugins.stylua').setup(use)
+      require('plugins.cokeline').setup(use)
+      require('plugins.toggleterm').setup(use)
+      require('plugins.openingh').setup(use)
+      require('plugins.autopairs').setup(use)
+      require('plugins.kommentary').setup(use)
+      require('plugins.treesitter').setup(use)
+      require('plugins.autotag').setup(use)
+      require('plugins.cmp').setup(use)
+      require('plugins.lsp').setup(use)
+      require('plugins.neotree').setup(use)
+      require('plugins.notify').setup(use)
+      require('plugins.ctrlsf').setup(use)
+      require('plugins.visualmulti').setup(use)
 
-			use({ "kyazdani42/nvim-web-devicons" })
+      if parcker_bootstrap then
+        require('packer').sync()
+      end
+    end,
 
-			use({ "Almo7aya/openingh.nvim" })
-
-			use({ "mg979/vim-visual-multi" })
-
-			use({ "MunifTanjim/nui.nvim" })
-
-			use({
-				"norcalli/nvim-colorizer.lua",
-				config = "require('plugins.colorizer')",
-			})
-
-			use({
-				"windwp/nvim-ts-autotag",
-				config = "require('plugins.autotag')",
-			})
-
-			use({
-				"windwp/nvim-autopairs",
-				config = "require('plugins.autopairs')",
-			})
-
-			use({
-				"dyng/ctrlsf.vim",
-				config = "require('plugins.ctrlsf')",
-			})
-
-			use({
-				"rcarriga/nvim-notify",
-				config = "require('plugins.notify')",
-			})
-			use({
-				"lukas-reineke/indent-blankline.nvim",
-				config = "require('plugins.indentline')",
-			})
-
-			use({
-				"folke/tokyonight.nvim",
-				config = "require('plugins.colorscheme')",
-			})
-
-			use({
-				"mvllow/modes.nvim",
-				tag = "v0.2.0",
-				config = "require('plugins.modes')",
-			})
-
-			use({
-				"akinsho/bufferline.nvim",
-				tag = "v2.*",
-				config = "require('plugins.bufferline')",
-			})
-
-			use({
-				"akinsho/toggleterm.nvim",
-				config = "require('plugins.toggleterm')",
-			})
-
-			use({
-				"numToStr/Comment.nvim",
-				requires = "JoosepAlviste/nvim-ts-context-commentstring",
-				config = "require('plugins.comment')",
-			})
-
-			use({
-				"kevinhwang91/nvim-ufo",
-				requires = "kevinhwang91/promise-async",
-				config = "require('plugins.ufo')",
-			})
-
-			use({
-				"nvim-treesitter/nvim-treesitter",
-				run = ":TSUpdate",
-				config = "require('plugins.treesitter')",
-			})
-
-			use({
-				"nvim-neo-tree/neo-tree.nvim",
-				branch = "v2.x",
-				config = "require('plugins.neo-tree')",
-			})
-
-			use({
-				"hrsh7th/nvim-cmp",
-				requires = {
-					"hrsh7th/cmp-buffer",
-					"hrsh7th/cmp-path",
-					"saadparwaiz1/cmp_luasnip",
-					"hrsh7th/cmp-nvim-lsp",
-					"hrsh7th/cmp-nvim-lua",
-					"L3MON4D3/LuaSnip",
-					"rafamadriz/friendly-snippets",
-				},
-				config = "require('plugins.cmp')",
-			})
-
-			use({
-				"neovim/nvim-lspconfig",
-				requires = {
-					"williamboman/mason.nvim",
-					"williamboman/mason-lspconfig.nvim",
-					"jose-elias-alvarez/null-ls.nvim",
-				},
-				config = "require('plugins.lsp')",
-			})
-
-			-- Automatically set up your configuration after cloning packer.nvim
-			-- Put this at the end after all plugins
-			if parcker_bootstrap then
-				require("packer").sync()
-			end
-		end,
-
-		-- Have packer use a popup window
-		config = {
-			display = {
-				open_fn = function()
-					return require("packer.util").float({ border = vim.g.border_style })
-				end,
-				prompt_border = vim.g.border_style,
-			},
-			auto_clean = true,
-			compile_on_sync = true,
-		},
-	})
+    config = {
+      display = {
+        open_fn = function()
+          return require('packer.util').float({ border = vim.g.border_style })
+        end,
+        prompt_border = vim.g.border_style,
+      },
+      auto_clean = true,
+      compile_on_sync = true,
+    },
+  })
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost init.lua source <afile> | PackerSync
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
   augroup end
 ]])
 
--- Automatically install packer
-if fn.isdirectory(install_path) == 0 then
-	local plugin_path = fn.stdpath("config") .. "/plugin/packer_compiled.lua"
-	fn.delete(plugin_path, "rf")
+local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
-	parcker_bootstrap = fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"20",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
+if vim.fn.isdirectory(install_path) == 0 then
+  vim.fn.delete(vim.fn.stdpath('config') .. '/plugin/packer_compiled.lua', 'rf')
 
-	vim.cmd([[packadd packer.nvim]])
+  parcker_bootstrap = vim.fn.system({
+    'git',
+    'clone',
+    '--depth',
+    '20',
+    'https://github.com/wbthomason/packer.nvim',
+    install_path,
+  })
+
+  vim.cmd([[packadd packer.nvim]])
 end
 
 load_plugins()
