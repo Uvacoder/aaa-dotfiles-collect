@@ -1,3 +1,7 @@
+-- Undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
+
 -- Use 'q' to quit from common plugins
 vim.api.nvim_create_autocmd({ 'FileType' }, {
   pattern = { 'terminal', 'qf', 'help', 'man', 'lspinfo', 'spectre_panel', 'lir' },

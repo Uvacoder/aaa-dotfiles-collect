@@ -11,7 +11,7 @@ return {
             insert = '#0088FF',
             visual = '#A400FF',
           },
-          line_opacity = 0.25,
+          line_opacity = 0.35,
           set_cursor = true,
           set_cursorline = true,
           set_number = false,

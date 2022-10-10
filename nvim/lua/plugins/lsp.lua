@@ -16,6 +16,8 @@ return {
 
         -- Use an on_attach function to only map the following keys after the language server attaches to the current buffer
         local on_attach = function(client, bufnr)
+          client.server_capabilities.document_formatting = false
+
           -- Enable completion triggered by <c-x><c-o>
           vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
           -- Mappings.
@@ -34,14 +36,17 @@ return {
           vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
           vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
           vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-          vim.keymap.set('n', '<space>f', function()
-            vim.lsp.buf.format({ async = true })
-          end, bufopts)
         end
 
         -- nvim-cmp supports additional completion capabilities
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+        local handlers = {
+          ['client/registerCapability'] = function(_, _, _, _)
+            return { result = nil, error = nil }
+          end,
+        }
 
         require('mason').setup({
           ui = {
@@ -52,10 +57,12 @@ return {
 
         require('mason-lspconfig').setup({
           automatic_installation = true,
-          ensure_installed = { 'eslint', 'volar', 'astro', 'tailwindcss', 'stylua' },
+          -- ensure_installed = { 'eslint', 'tsserver', 'volar', 'astro', 'tailwindcss', 'stylua' },
+          ensure_installed = { 'eslint', 'astro', 'tailwindcss', 'stylua' },
         })
 
         require('lspconfig').eslint.setup({
+          handlers = handlers,
           filetypes = {
             'typescript',
             'javascript',
@@ -69,11 +76,26 @@ return {
         require('lspconfig').astro.setup({
           on_attach = on_attach,
           capabilities = capabilities,
+          handlers = handlers,
         })
+
+        -- require('lspconfig').tsserver.setup({
+        --   on_attach = on_attach,
+        --   capabilities = capabilities,
+        --   -- handlers = handlers,
+        --   filetypes = {
+        --     'typescript',
+        --     'javascript',
+        --     'javascriptreact',
+        --     'typescriptreact',
+        --     'astro',
+        --   },
+        -- })
 
         require('lspconfig').volar.setup({
           on_attach = on_attach,
           capabilities = capabilities,
+          handlers = handlers,
           filetypes = {
             'typescript',
             'javascript',
@@ -84,39 +106,25 @@ return {
           },
         })
 
-        require('lspconfig').volar.setup({
-          on_attach = on_attach,
-          capabilities = capabilities,
-          filetypes = {
-            'typescript',
-            'javascript',
-            'javascriptreact',
-            'typescriptreact',
-            'vue',
-            'json',
-          },
-        })
-
-        require('lspconfig').tailwindcss.setup({
-          on_attach = on_attach,
-          capabilities = capabilities,
-          filetypes = {
-            'astro',
-            'astro-markdown',
-            'html',
-            'css',
-            'less',
-            'postcss',
-            'sass',
-            'scss',
-            'stylus',
-            'javascript',
-            'javascriptreact',
-            'typescript',
-            'typescriptreact',
-            'vue',
-          },
-        })
+        -- local root_pattern = require('lspconfig').util.root_pattern
+        -- require('lspconfig').tailwindcss.setup({
+        --   handlers = handlers,
+        --   root_dir = root_pattern(
+        --     'tailwind.config.js',
+        --     'tailwind.config.ts',
+        --     'postcss.config.js',
+        --     'postcss.config.ts',
+        --     'tailwind.config.cjs'
+        --   ),
+        --   filetypes = {
+        --     'astro',
+        --     'astro-markdown',
+        --     'html',
+        --     'css',
+        --     'postcss',
+        --     'vue',
+        --   },
+        -- })
 
         vim.diagnostic.config({
           virtual_text = false, -- disable virtual text

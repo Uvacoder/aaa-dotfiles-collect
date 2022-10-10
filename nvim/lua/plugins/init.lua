@@ -5,21 +5,22 @@ local function load_plugins()
 
       require('plugins.packer').setup(use)
       require('plugins.colorizer').setup(use)
+      require('plugins.indentline').setup(use)
       require('plugins.modes').setup(use)
       require('plugins.stylua').setup(use)
       require('plugins.cokeline').setup(use)
       require('plugins.toggleterm').setup(use)
       require('plugins.openingh').setup(use)
       require('plugins.autopairs').setup(use)
+      require('plugins.neotree').setup(use)
+      require('plugins.notify').setup(use)
+      require('plugins.ctrlsf').setup(use)
+      require('plugins.visualmulti').setup(use)
       require('plugins.kommentary').setup(use)
       require('plugins.treesitter').setup(use)
       require('plugins.autotag').setup(use)
       require('plugins.cmp').setup(use)
       require('plugins.lsp').setup(use)
-      require('plugins.neotree').setup(use)
-      require('plugins.notify').setup(use)
-      require('plugins.ctrlsf').setup(use)
-      require('plugins.visualmulti').setup(use)
 
       if parcker_bootstrap then
         require('packer').sync()
@@ -43,7 +44,7 @@ end
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    autocmd BufWritePost init.lua source <afile> | PackerSync
   augroup end
 ]])
 
