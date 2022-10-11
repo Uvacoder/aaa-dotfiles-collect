@@ -47,7 +47,6 @@ return {
             return { result = nil, error = nil }
           end,
         }
-
         require('mason').setup({
           ui = {
             check_outdated_packages_on_open = true,
@@ -58,11 +57,15 @@ return {
         require('mason-lspconfig').setup({
           automatic_installation = true,
           -- ensure_installed = { 'eslint', 'tsserver', 'volar', 'astro', 'tailwindcss', 'stylua' },
-          ensure_installed = { 'eslint', 'astro', 'tailwindcss', 'stylua' },
+          ensure_installed = { 'eslint', 'astro', 'tsserver', 'stylua' },
         })
 
         require('lspconfig').eslint.setup({
-          handlers = handlers,
+          handlers = {
+            ['window/showMessageRequest'] = function(_, result, params)
+              return result
+            end,
+          },
           filetypes = {
             'typescript',
             'javascript',
@@ -79,32 +82,31 @@ return {
           handlers = handlers,
         })
 
-        -- require('lspconfig').tsserver.setup({
-        --   on_attach = on_attach,
-        --   capabilities = capabilities,
-        --   -- handlers = handlers,
-        --   filetypes = {
-        --     'typescript',
-        --     'javascript',
-        --     'javascriptreact',
-        --     'typescriptreact',
-        --     'astro',
-        --   },
-        -- })
-
-        require('lspconfig').volar.setup({
+        require('lspconfig').tsserver.setup({
           on_attach = on_attach,
           capabilities = capabilities,
-          handlers = handlers,
+          -- handlers = handlers,
           filetypes = {
             'typescript',
             'javascript',
             'javascriptreact',
             'typescriptreact',
-            'vue',
-            'json',
           },
         })
+
+        -- require('lspconfig').volar.setup({
+        --   on_attach = on_attach,
+        --   capabilities = capabilities,
+        --   handlers = handlers,
+        --   filetypes = {
+        --     'typescript',
+        --     'javascript',
+        --     'javascriptreact',
+        --     'typescriptreact',
+        --     'vue',
+        --     'json',
+        --   },
+        -- })
 
         -- local root_pattern = require('lspconfig').util.root_pattern
         -- require('lspconfig').tailwindcss.setup({

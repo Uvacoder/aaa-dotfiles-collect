@@ -9,11 +9,11 @@ return {
         local mappings = require('cokeline/mappings')
 
         local normal_bg = get_hex('Normal', 'bg')
-        local tabline_bg = get_hex('TablineFill', 'bg')
-        local comments_fg = get_hex('Comment', 'fg')
+        local tabline_bg = get_hex('Normal', 'bg')
+        local comments_fg = get_hex('LineNr', 'fg')
         local line_nr_fg = get_hex('LineNr', 'fg')
         local white_fg = '#ffffff'
-        local green_fg = '#95EC30'
+        local green_fg = '#10B981'
         local errors_fg = '#FF0000'
         local warnings_fg = '#FFC600'
         local infos_fg = '#0088FF'
@@ -120,6 +120,7 @@ return {
                 or (buffer.diagnostics.warnings ~= 0 and warnings_fg)
                 or (buffer.diagnostics.errors ~= 0 and errors_fg)
                 or (buffer.is_focused and white_fg)
+                or comments_fg
             end,
             bg = function(buffer)
               return buffer.is_focused and normal_bg or tabline_bg
