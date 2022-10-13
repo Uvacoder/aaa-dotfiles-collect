@@ -20,7 +20,7 @@ return {
         'L3MON4D3/LuaSnip',
         'rafamadriz/friendly-snippets',
         -- pictograms
-        'onsails/lspkind.nvim'
+        'onsails/lspkind.nvim',
       },
       config = function()
         require('mason.settings').set({ ui = { border = 'rounded' } })
@@ -32,7 +32,7 @@ return {
         lsp.setup()
 
         vim.diagnostic.config({ virtual_text = false, signs = false, update_in_insert = true })
-        
+
         local cmp = require('cmp')
         local lspkind = require('lspkind')
         local cmp_config = lsp.defaults.cmp_config({
@@ -40,15 +40,15 @@ return {
             documentation = { border = vim.g.border_style },
             completion = { border = vim.g.border_style },
           },
-          experimental = { ghost_text = true }, 
+          experimental = { ghost_text = true },
           formatting = {
             fields = { 'kind', 'abbr', 'menu' },
-            format = lspkind.cmp_format({ mode = 'symbol' })
+            format = lspkind.cmp_format({ mode = 'symbol' }),
           },
         })
         cmp.setup.cmdline(':', {
           mapping = cmp.mapping.preset.cmdline(),
-          sources = cmp.config.sources({{ name = 'path' }}, {{ name = 'cmdline' }}),
+          sources = cmp.config.sources({ { name = 'path' } }, { { name = 'cmdline' } }),
         })
         cmp.setup(cmp_config)
       end,
