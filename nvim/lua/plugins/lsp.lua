@@ -66,14 +66,6 @@ return {
               return result
             end,
           },
-          filetypes = {
-            'typescript',
-            'javascript',
-            'javascriptreact',
-            'typescriptreact',
-            'vue',
-            'astro',
-          },
         })
 
         require('lspconfig').astro.setup({
@@ -85,13 +77,6 @@ return {
         require('lspconfig').tsserver.setup({
           on_attach = on_attach,
           capabilities = capabilities,
-          -- handlers = handlers,
-          filetypes = {
-            'typescript',
-            'javascript',
-            'javascriptreact',
-            'typescriptreact',
-          },
         })
 
         -- require('lspconfig').volar.setup({
