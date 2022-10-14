@@ -24,14 +24,18 @@ return {
       },
       config = function()
         require('mason.settings').set({ ui = { border = 'rounded' } })
-        require('luasnip/loaders/from_vscode').lazy_load()
+        -- require('luasnip/loaders/from_vscode').lazy_load()
 
         local lsp = require('lsp-zero')
         lsp.preset('recommended')
+        lsp.set_preferences({
+          suggest_lsp_servers = false,
+          sign_icons = { error = '', warn = '', hint = '', info = '' },
+        })
         lsp.ensure_installed({ 'eslint', 'astro', 'volar' })
         lsp.setup()
 
-        vim.diagnostic.config({ virtual_text = false, signs = false, update_in_insert = true })
+        vim.diagnostic.config({ virtual_text = false, signs = true, update_in_insert = true })
 
         local cmp = require('cmp')
         local lspkind = require('lspkind')
@@ -39,6 +43,27 @@ return {
           window = {
             documentation = { border = vim.g.border_style },
             completion = { border = vim.g.border_style },
+          },
+          mapping = {
+            ['<CR>'] = cmp.mapping.confirm({behavior = cmp.ConfirmBehavior.Replace, select = true }),
+            ['<Tab>'] = cmp.mapping(function(fallback)
+              if cmp.visible() then
+                cmp.select_next_item()
+              elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+              else
+                fallback()
+              end
+            end, { 'i', 's' }),
+            ['<S-Tab>'] = cmp.mapping(function(fallback)
+              if cmp.visible() then
+                cmp.select_prev_item()
+              elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
+              else
+                fallback()
+              end
+            end, { 'i', 's' }),
           },
           experimental = { ghost_text = true },
           formatting = {
@@ -48,7 +73,7 @@ return {
         })
         cmp.setup.cmdline(':', {
           mapping = cmp.mapping.preset.cmdline(),
-          sources = cmp.config.sources({ { name = 'path' } }, { { name = 'cmdline' } }),
+          sources = cmp.config.sources({{ name = 'path' }}, {{ name = 'cmdline' }}),
         })
         cmp.setup(cmp_config)
       end,

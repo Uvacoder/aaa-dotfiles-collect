@@ -2,9 +2,8 @@ local function load_plugins()
   require('packer').startup({
     function(use)
       require('plugins.packer').setup(use)
-      -- require('plugins.old.stylua').setup(use)
       require('colors.tokyonight').setup(use)
-
+      -- require('plugins.old.styluaFmt').setup(use)
       require('plugins.colorizer').setup(use)
       require('plugins.indentline').setup(use)
       require('plugins.modes').setup(use)

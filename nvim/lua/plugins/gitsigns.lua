@@ -45,6 +45,11 @@ return {
             col = 1,
           },
         })
+
+        local keymap = vim.keymap.set
+        local opts = { silent = true }
+
+        keymap('n', '<Leader>gd', require('gitsigns').diffthis, opts)
       end,
     })
   end,

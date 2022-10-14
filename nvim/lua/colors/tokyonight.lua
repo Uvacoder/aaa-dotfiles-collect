@@ -11,7 +11,6 @@ return {
           end,
           on_highlights = function(hl, c)
             hl.NeoTreeFloatBorder = { bg = c.bg_dark, fg = c.fg_dark }
-            hl.TablineFill = { bg = c.bg }
           end,
         })
         vim.cmd("colorscheme tokyonight")
