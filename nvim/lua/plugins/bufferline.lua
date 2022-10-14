@@ -11,8 +11,7 @@ return {
             show_close_icon = false,
             show_buffer_close_icons = false,
             separator_style = { ' ', ' ' },
-            indicator = { icon = '▎', style = 'icon' },
-            -- indicator = { icon = '▎', style = 'none' },
+            indicator = { icon = '▎', style = 'none' }, -- style = 'icon'
             diagnostics = 'nvim_lsp',
           },
         })
