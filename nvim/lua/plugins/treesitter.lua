@@ -6,7 +6,6 @@ return {
       config = function()
         require('nvim-treesitter.configs').setup({
           ensure_installed = {
-            'astro',
             'css',
             'scss',
             'lua',
@@ -15,8 +14,9 @@ return {
             'javascript',
             'json',
             'typescript',
+            'astro',
           },
-          highlight = { enable = true, additional_vim_regex_highlighting = false },
+          highlight = { enable = true, additional_vim_regex_highlighting = true },
           indent = { enable = true },
           -- Configure kommentary with nvim-ts-context-commentstring
           context_commentstring = { enable = true, enable_autocmd = false },
