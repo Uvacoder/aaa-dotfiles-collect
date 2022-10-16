@@ -2,7 +2,9 @@ require('options.builtins')
 require('options.providers')
 
 local opt = vim.opt
-
+opt.title = true
+opt.lazyredraw = true
+opt.titlestring = '%f %m'
 opt.background = 'dark'
 opt.autoread = true
 opt.autowrite = true
