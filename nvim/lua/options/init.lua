@@ -42,8 +42,11 @@ opt.foldlevel = 20
 opt.foldenable = true
 opt.foldmethod = 'indent'
 opt.numberwidth = 4
-opt.wrap = true
+opt.linebreak = true
+opt.whichwrap = 'h,l,<,>,[,],~'
+opt.breakindentopt = 'shift:2,min:20'
 opt.textwidth=100
+opt.colorcolumn = '100'
 opt.showbreak = '  ↳ '
 opt.signcolumn = "yes:1"
 opt.scrolloff = 8
@@ -55,24 +58,10 @@ opt.signcolumn = 'yes'
 opt.visualbell = true
 opt.errorbells = false
 opt.list = true
-opt.listchars = {
-  tab = '→ ',
-  nbsp = '◇',
-  extends = '»',
-  precedes = '«',
-  trail = '·',
-}
-opt.fillchars = {
-  diff = '∙',
-  eob = ' ',
-  fold = '·',
-  vert = '│',
-  foldopen = '▾',
-  foldsep = '│',
-  foldclose = '▸',
-}
-opt.shortmess = 'a'
-opt.whichwrap:append('<,>,[,],h,l')
+opt.listchars = 'tab:»·,nbsp:+,trail:·,extends:→,precedes:←'
+opt.fillchars = 'diff:∙,eob: ,fold:·,vert:│,foldopen:▾,foldsep:│,foldclose:▸'
+opt.shortmess = 'aoOTIcF'
+opt.whichwrap = 'h,l,<,>,[,],~'
 opt.iskeyword:append('.')
 
 if vim.fn.has('termguicolors') == 1 then

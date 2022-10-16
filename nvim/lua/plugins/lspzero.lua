@@ -30,14 +30,24 @@ return {
         lsp.preset('recommended')
         lsp.set_preferences({
           suggest_lsp_servers = false,
-          sign_icons = { error = '', warn = '', hint = '', info = '' },
+          sign_icons = { error = '', warn = '', hint = '', info = '' },
         })
         lsp.ensure_installed({ 'eslint', 'astro', 'volar' })
         lsp.setup()
 
-        vim.diagnostic.config({ virtual_text = false, signs = true, update_in_insert = true })
+        vim.diagnostic.config(
+        { virtual_text = false, signs = true, update_in_insert = true }
+        )
+
+        local has_words_before = function()
+          local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+          return col ~= 0
+            and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s')
+              == nil
+        end
 
         local cmp = require('cmp')
+        local luasnip = require('luasnip')
         local lspkind = require('lspkind')
         local cmp_config = lsp.defaults.cmp_config({
           window = {
@@ -45,12 +55,17 @@ return {
             completion = { border = vim.g.border_style },
           },
           mapping = {
-            ['<CR>'] = cmp.mapping.confirm({behavior = cmp.ConfirmBehavior.Replace, select = true }),
+            ['<CR>'] = cmp.mapping.confirm({
+              behavior = cmp.ConfirmBehavior.Replace,
+              select = true,
+            }),
             ['<Tab>'] = cmp.mapping(function(fallback)
               if cmp.visible() then
                 cmp.select_next_item()
               elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
+              -- elseif has_words_before then
+              --   cmp.complete()
               else
                 fallback()
               end
