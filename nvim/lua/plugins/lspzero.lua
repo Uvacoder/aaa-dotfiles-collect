@@ -31,6 +31,14 @@ return {
           sign_icons = { error = '', warn = '', hint = '', info = '' },
         })
         lsp.ensure_installed({ 'eslint', 'astro', 'volar' })
+        local handlers = {
+          ['client/registerCapability'] = function(_, _, _, _)
+            return { result = nil, error = nil } 
+          end,
+        }
+        lsp.configure("eslint", { handlers = handlers })
+        lsp.configure("astro", { handlers = handlers })
+        lsp.configure("volar", { handlers = handlers })
         lsp.setup()
 
         vim.diagnostic.config({ update_in_insert = true })
