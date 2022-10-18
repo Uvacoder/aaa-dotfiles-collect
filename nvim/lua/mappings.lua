@@ -14,6 +14,9 @@ local opts = { silent = true }
 keymap('', '<Space>', '<Nop>', opts)
 vim.g.mapleader = ' '
 
+keymap('n', '<C-f>', '<cmd>EslintFixAll<cr>', opts)
+keymap('n', '<S-f>', '<cmd>EslintFixAll<cr>', opts)
+
 -- Resize with arrows
 keymap('n', '<C-Up>', ':resize -2<CR>', opts)
 keymap('n', '<C-Down>', ':resize +2<CR>', opts)
@@ -45,6 +48,7 @@ keymap('n', '<leader>fo', '<cmd>foldopen<cr>', opts)
 keymap('n', '<leader>sa', 'ggVG', opts)
 
 -- save and close
+keymap('n', '<C-w>', ':w<CR>', opts)
 keymap('n', '<C-s>', ':w<CR>', opts)
 keymap('n', '<C-q>', ':q<CR>', opts)
 

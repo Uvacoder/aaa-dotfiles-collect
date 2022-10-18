@@ -58,6 +58,13 @@ return {
               end
             end, { 'i', 's' }),
           },
+          sources = {
+            { name = 'nvim_lsp' },
+            { name = 'nvim_lua' },
+            { name = 'luasnip' },
+            { name = 'buffer' },
+            { name = 'path' },
+          },
           experimental = { ghost_text = true },
           formatting = {
             fields = { 'kind', 'abbr', 'menu' },

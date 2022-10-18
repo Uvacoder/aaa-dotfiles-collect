@@ -29,12 +29,9 @@ autocmd('CursorHold', {
   buffer = bufnr,
   callback = function()
     vim.diagnostic.open_float(nil, {
-      focusable = true,
+      focusable = false,
       close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
       border = vim.g.border_style,
-      source = 'always',
-      prefix = ' ',
-      scope = 'cursor',
     })
   end,
 }) 
@@ -53,12 +50,12 @@ autocmd({ 'TextYankPost' }, {
   end,
 })
   
-local formatgrp = vim.api.nvim_create_augroup('format', { clear = true })
-autocmd('BufWritePre', {
-  command = 'EslintFixAll',
-  pattern = '*.ts,*.tsx,*.js,*.jsx,*.vue,*.astro,*.mjs',
-  group = formatgrp,
-})
+-- local formatgrp = vim.api.nvim_create_augroup('format', { clear = true })
+-- autocmd('BufWritePre', {
+--   command = 'EslintFixAll',
+--   pattern = '*.ts,*.tsx,*.js,*.jsx,*.vue,*.astro,*.mjs,*.cjs',
+--   group = formatgrp,
+-- })
   
 -- autocmd("BufWritePre", {
 --   callback = function()

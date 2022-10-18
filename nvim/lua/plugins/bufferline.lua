@@ -3,7 +3,7 @@ return {
   setup = function(use)
     use({
       'akinsho/bufferline.nvim',
-      tag = 'v2.*',
+      tag = 'v3.*',
       requires = 'kyazdani42/nvim-web-devicons',
       config = function()
         require('bufferline').setup({
@@ -13,6 +13,7 @@ return {
             separator_style = { ' ', ' ' },
             indicator = { icon = '▎', style = 'none' }, -- style = 'icon'
             diagnostics = 'nvim_lsp',
+            -- highlights = { fill = { bg = { attribute = "fg", highlight = "Pmenu" }}}
           },
         })
       end,

@@ -94,6 +94,8 @@ alias ac="cd /Volumes/data/codes/astro-crash-course && clear"
 alias acv="ac && v"
 
 # Site
+alias aw="cd /Volumes/data/sites/astro_wind && clear"
+alias awv="aw && v"
 alias pc="cd /Volumes/data/sites/pet_care_2022 && clear"
 alias pcv="pc && v"
 alias sm="cd /Volumes/data/sites/site-modelo-2021 && clear"

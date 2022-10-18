@@ -2,7 +2,7 @@ local function load_plugins()
   require('packer').startup({
     function(use)
       require('plugins.packer').setup(use)
-      require('colors.tokyonight').setup(use)
+      require('colors.onedark').setup(use)
       -- require('plugins.old.styluaFmt').setup(use)
       require('plugins.colorizer').setup(use)
       require('plugins.indentline').setup(use)
