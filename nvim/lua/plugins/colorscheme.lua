@@ -5,7 +5,7 @@ return {
       'folke/tokyonight.nvim',
       config = function()
         require('tokyonight').setup({
-          style = "storm",
+          style = "night",
           sidebars = { "qf", "help", "terminal", "parker" },
           on_colors = function(colors)
             colors.bg = "#000000"
