@@ -15,11 +15,11 @@ return {
           direction = 'float',
           close_on_exit = true,
           shell = vim.o.shell,
-          highlights = {
-            Normal = { link = 'Normal' },
-            NormalFloat = { link = 'TelescopeNormal' },
-            FloatBorder = { link = 'TelescopeBorder' },
-          },
+          -- highlights = {
+          --   Normal = { link = 'Normal' },
+          --   NormalFloat = { link = 'TelescopeNormal' },
+          --   FloatBorder = { link = 'TelescopeBorder' },
+          -- },
           float_opts = {
             border = vim.g.border_style,
             highlights = {
