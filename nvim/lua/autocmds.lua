@@ -10,16 +10,7 @@ autocmd({ 'FileType' }, {
     ]])
   end,
 }) 
-  
--- Set wrap and spell in markdown and gitcommit
-autocmd({ 'FileType' }, {
-  pattern = { 'gitcommit', 'markdown' },
-  callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.spell = true
-  end,
-}) 
-  
+    
 autocmd('BufRead', {
   pattern = '*.astro',
   command = 'set filetype=astro',
@@ -29,9 +20,7 @@ autocmd('CursorHold', {
   buffer = bufnr,
   callback = function()
     vim.diagnostic.open_float(nil, {
-      focusable = false,
-      close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
-      border = vim.g.border_style,
+      close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' }
     })
   end,
 }) 
@@ -49,21 +38,6 @@ autocmd({ 'TextYankPost' }, {
     vim.highlight.on_yank({ higroup = 'Visual', timeout = 200 })
   end,
 })
-  
--- local formatgrp = vim.api.nvim_create_augroup('format', { clear = true })
--- autocmd('BufWritePre', {
---   command = 'EslintFixAll',
---   pattern = '*.ts,*.tsx,*.js,*.jsx,*.vue,*.astro,*.mjs,*.cjs',
---   group = formatgrp,
--- })
-  
--- autocmd("BufWritePre", {
---   callback = function()
---     require("stylua-nvim").format_file()
---   end,
---   pattern = "*.lua",
---   group = formatgrp,
--- })
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
