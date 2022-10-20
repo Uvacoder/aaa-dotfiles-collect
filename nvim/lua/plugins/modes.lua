@@ -7,7 +7,7 @@ return {
         require('modes').setup({
           colors = {
             copy = '#FFC600',
-            delete = '#FF0000',
+            delete = '#ff007c',
             insert = '#0088FF',
             visual = '#A400FF',
           },

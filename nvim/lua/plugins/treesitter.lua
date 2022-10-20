@@ -16,7 +16,7 @@ return {
             'typescript',
             'astro',
           },
-          highlight = { enable = true, additional_vim_regex_highlighting = true },
+          highlight = { enable = true },
           indent = { enable = true },
           -- Configure kommentary with nvim-ts-context-commentstring
           context_commentstring = { enable = true, enable_autocmd = false },

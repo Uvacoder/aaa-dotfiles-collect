@@ -4,7 +4,6 @@ return {
       'akinsho/toggleterm.nvim',
       config = function()
         require('toggleterm').setup({
-          size = 18,
           open_mapping = [[<c-t>]],
           hide_numbers = true,
           shade_terminals = true,
@@ -15,17 +14,15 @@ return {
           direction = 'float',
           close_on_exit = true,
           shell = vim.o.shell,
-          -- highlights = {
-          --   Normal = { link = 'Normal' },
-          --   NormalFloat = { link = 'TelescopeNormal' },
-          --   FloatBorder = { link = 'TelescopeBorder' },
-          -- },
+          highlights = {
+            Normal = { link = 'Normal' },
+            NormalFloat = { link = 'Normal' },
+            FloatBorder = { link = 'FloatBorder' },
+          },
           float_opts = {
+            height = 16,
+            width = 80,
             border = vim.g.border_style,
-            highlights = {
-              border = 'NeoTreeNormal',
-              background = 'NeoTreeNormal',
-            },
           },
         })
 
