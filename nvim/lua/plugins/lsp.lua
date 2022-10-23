@@ -29,25 +29,49 @@ return {
         lsp.set_preferences({
           suggest_lsp_servers = false,
           -- sign_icons = { error = '', warn = '', hint = '', info = '' },
-          -- sign_icons = { error = '●', warn = '●', hint = '●', info = '●' },
           sign_icons = { error = '▶', warn = '▶', hint = '▶', info = '▶' },
         })
         lsp.ensure_installed({ 'eslint', 'astro', 'volar' })
-        local handlers = {
-          ['client/registerCapability'] = function(_, _, _, _)
-            return { result = nil, error = nil } 
-          end,
-        }
-        lsp.configure("eslint", { handlers = handlers })
-        lsp.configure("astro", { handlers = handlers })
-        lsp.configure("volar", { handlers = handlers })
+        -- local handlers = {
+        --   ['client/registerCapability'] = function(_, _, _, _)
+        --     return { result = nil, error = nil } 
+        --   end,
+        -- }
+        -- lsp.configure("eslint", { handlers = handlers })
+
         lsp.setup()
 
         vim.diagnostic.config({ update_in_insert = true })
 
+        local kind_icons = {
+          Text = "",
+          Method = "",
+          Function = "",
+          Constructor = "",
+          Field = "",
+          Variable = "",
+          Class = "",
+          Interface = "",
+          Module = "",
+          Property = "",
+          Unit = "",
+          Value = "",
+          Enum = "",
+          Keyword = "",
+          Snippet = "",
+          Color = "",
+          File = "",
+          Reference = "",
+          Folder = "",
+          EnumMember = "",
+          Constant = "",
+          Struct = "",
+          Event = "",
+          Operator = "",
+          TypeParameter = "",
+        }
         local cmp = require('cmp')
         local luasnip = require('luasnip')
-        local lspkind = require('lspkind')
         local cmp_config = lsp.defaults.cmp_config({
           window = {
             documentation = { border = vim.g.border_style },
@@ -78,7 +102,18 @@ return {
           experimental = { ghost_text = true },
           formatting = {
             fields = { 'kind', 'abbr', 'menu' },
-            format = lspkind.cmp_format({ mode = 'symbol' }),
+            format = function(entry, vim_item)
+              vim_item.kind = kind_icons[vim_item.kind]
+              vim_item.menu = ({
+                nvim_lsp = "",
+                nvim_lua = "",
+                luasnip = "",
+                buffer = "",
+                path = "",
+                emoji = "",
+              })[entry.source.name]
+            return vim_item
+            end,
           },
         })
         cmp.setup.cmdline({ '/', '?' }, {

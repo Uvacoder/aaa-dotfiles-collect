@@ -6,16 +6,16 @@ keymap('', '<Space>', '<Nop>', opts)
 vim.g.mapleader = ' '
 
 -- fix and format
-keymap('n', '<C-f>', '<cmd>EslintFixAll<cr>', opts)
+keymap('n', '<C-f>', ':EslintFixAll<cr>', opts)
 
 -- Resize with arrows
-keymap('n', '<C-Up>', '<cmd>resize -2<CR>', opts)
-keymap('n', '<C-Down>', '<cmd>resize +2<CR>', opts)
-keymap('n', '<C-Left>', '<cmd>vertical resize -2<CR>', opts)
-keymap('n', '<C-Right>', '<cmd>vertical resize +2<CR>', opts)
+keymap('n', '<C-Up>', ':resize -2<CR>', opts)
+keymap('n', '<C-Down>', ':resize +2<CR>', opts)
+keymap('n', '<C-Left>', ':vertical resize -2<CR>', opts)
+keymap('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 
 -- Open the current file in the default program
-keymap('n', '<leader>x', '<cmd>!open %<cr><cr>', { expr = true })
+keymap('n', '<leader>x', ':!open %<cr><cr>', { expr = true })
 
 --Rekeymap for dealing with word wrap
 keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
@@ -26,28 +26,28 @@ keymap('n', '=', '<PageDown>', opts)
 keymap('n', '-', '<PageUp>', opts)
 
 -- delete buffer
-keymap('n', '<C-x>', '<cmd>bd<CR>', opts)
+keymap('n', '<C-x>', ':bd<CR>', opts)
 
 -- fold unfold html
-keymap('n', '<leader>fc', '<cmd>foldclose<cr>', opts)
-keymap('n', '<leader>fo', '<cmd>foldopen<cr>', opts)
+keymap('n', '<leader>fc', ':foldclose<cr>', opts)
+keymap('n', '<leader>fo', ':foldopen<cr>', opts)
 
 -- select all
 keymap('n', '<leader>sa', 'ggVG', opts)
 
 -- save and close
-keymap('n', '<C-w>', '<cmd>w<CR>', opts)
-keymap('n', '<C-q>', '<cmd>q<CR>', opts)
+keymap('n', '<C-w>', ':w<CR>', opts)
+keymap('n', '<C-q>', ':q<CR>', opts)
 
 -- search and replace
-keymap('n', 'rr', '<cmd>%s///gcI<Left><Left><Left><Left><Left>', { expr = false, silent = false })
-keymap('n', '<Esc><Esc><Esc>', '<cmd>nohlsearch<CR><Esc>', opts)
+keymap('n', 'rr', ':%s///gcI<Left><Left><Left><Left><Left>', { expr = false, silent = false })
+keymap('n', '<Esc><Esc><Esc>', ':nohlsearch<CR><Esc>', opts)
 
 --Add move line shortcuts
-keymap('n', '<S-j>', '<cmd>m .+1<CR>==', opts)
-keymap('n', '<S-k>', '<cmd>m .-2<CR>==', opts)
-keymap('v', '<S-j>', "<cmd>m '>+1<CR>gv=gv", opts)
-keymap('v', '<S-k>', "<cmd>m '<-2<CR>gv=gv", opts)
+keymap('n', '<S-j>', ':m .+1<CR>==', opts)
+keymap('n', '<S-k>', ':m .-2<CR>==', opts)
+keymap('v', '<S-j>', ":m '>+1<CR>gv=gv", opts)
+keymap('v', '<S-k>', ":m '<-2<CR>gv=gv", opts)
 
 -- Better indenting
 keymap('v', '<TAB>', '>gv', opts)
@@ -60,8 +60,8 @@ keymap('n', '<C-h>', '<C-w>h', opts)
 keymap('n', '<C-l>', '<C-w>l', opts)
 
 -- Tab switch buffer
-keymap('n', '<TAB>', '<cmd>bnext<CR>', opts)
-keymap('n', '<S-TAB>', '<cmd>bprevious<CR>', opts)
+keymap('n', '<TAB>', ':bnext<CR>', opts)
+keymap('n', '<S-TAB>', ':bprevious<CR>', opts)
 
 -- print console.log(variable)
-keymap('n', '<C-l>', '<cmd>call printLogVariable()<CR>', opts)
+keymap('n', '<C-l>', ':call printLogVariable()<CR>', opts)
