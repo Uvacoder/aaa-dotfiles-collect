@@ -52,7 +52,6 @@ mkdir ~/.config
 ### 4 - link files
 
 ```
-#ln -s ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 ln -s ~/.dotfiles/zsh/zshrc  ~/.zshrc
 ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/wget/wgetrc  ~/.wgetrc
@@ -60,7 +59,10 @@ ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/global_ignore ~/.global_ignore
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 ln -s ~/.dotfiles/alacritty/alacritty.yml ~/.alacritty.yml
-ln -s ~/.dotfiles/kitty/kitty.conf  ~/.config/kitty/kitty.conf
+ln -s ~/.dotfiles/kitty  ~/.config/kitty
+
+#ln -s ~/.dotfiles/kitty  ~/.config/kitty/kitty.conf
+#ln -s ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 #ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 #ln -s ~/.dotfiles/tmux/default.sh ~/.tmux/style/tmux-powerline/themes/default.sh
 
