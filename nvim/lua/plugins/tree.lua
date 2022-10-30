@@ -45,8 +45,8 @@ return {
           window = {
             position = 'float',
             popup = { -- settings that apply to float position only
-              size = { height = '16', width = '45' },
-              position = { row = '1', col = '50%' },
+              size = { height = '18', width = '45' },
+              position = "50%", -- 50% means center it
             },
           },
           filesystem = {

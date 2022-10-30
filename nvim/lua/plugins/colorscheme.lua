@@ -4,11 +4,14 @@ return {
     use({
       'folke/tokyonight.nvim',
       config = function()
+        local bg = "#191125"
+        local border = "#8B00E5"
         require('tokyonight').setup({
           style = "night",
           sidebars = { "qf", "help", "terminal", "parker" },
           on_colors = function(c)
-            c.bg = "#080910"
+            c.bg = bg 
+            c.border_highlight = border
             c.bg_statusline = "#080910"
             c.none = "NONE"
             c.bg_dark = "#1f2335"

@@ -12,8 +12,8 @@ return {
             names = false, -- "Name" codes like Blue or blue
             RRGGBBAA = true, -- #RRGGBBAA hex codes
             AARRGGBB = true, -- 0xAARRGGBB hex codes
-            rgb_fn = false, -- CSS rgb() and rgba() functions
-            hsl_fn = false, -- CSS hsl() and hsla() functions
+            rgb_fn = true, -- CSS rgb() and rgba() functions
+            hsl_fn = true, -- CSS hsl() and hsla() functions
             mode = 'background', -- Set the display mode.
             tailwind = true, -- Enable tailwind colors
             sass = { enable = false, parsers = { css } }, -- Enable sass colors
