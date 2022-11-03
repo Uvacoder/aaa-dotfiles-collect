@@ -5,10 +5,10 @@ window:
   decorations: None  # Full, None
   startup_mode: Windowed  # SimpleFullscreen, Windowed, Maximized
   dimensions:
-    columns: 107
+    columns: 106
     lines: 24
   padding:
-    x: 1 # 100
+    x: 1
     y: 1
 
   dynamic_padding: true
@@ -56,7 +56,7 @@ font:
   #   x: 0
   #   y: 8
 
-use_thin_strokes: false
+use_thin_strokes: true
 draw_bold_text_with_bright_colors: true
 
 # Colors (tokyodark)

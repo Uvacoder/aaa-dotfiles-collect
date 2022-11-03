@@ -4,15 +4,15 @@ return {
     use({
       'folke/tokyonight.nvim',
       config = function()
-        local bg = "#191125"
-        local border = "#8B00E5"
+        local bg = "#191125" -- "#080910"
+        local border = '#E6752E' -- "#8B00E5"
         require('tokyonight').setup({
           style = "night",
           sidebars = { "qf", "help", "terminal", "parker" },
           on_colors = function(c)
             c.bg = bg 
             c.border_highlight = border
-            c.bg_statusline = "#080910"
+            c.bg_statusline = bg 
             c.none = "NONE"
             c.bg_dark = "#1f2335"
             c.bg_highlight = "#292e42"
@@ -42,9 +42,13 @@ return {
             c.teal = "#1abc9c"
             c.red = "#f7768e"
             c.red1 = "#db4b4b"
-            c.git = { change = "#6183bb", add = "#449dab", delete = "#914c54" }
+            c.git = { 
+              add = "#1abc9c",
+              change = "#FFC600",
+              delete = "#ff007c",
+            }
             c.gitSigns = {
-              add = "#9ece6a",
+              add = "#1abc9c",
               change = "#FFC600",
               delete = "#ff007c",
             }
