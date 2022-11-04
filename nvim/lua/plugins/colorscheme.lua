@@ -7,7 +7,7 @@ return {
         local bg = "#191125" -- "#080910"
         local border = '#E6752E' -- "#8B00E5"
         require('tokyonight').setup({
-          style = "night",
+          style = "moon",
           sidebars = { "qf", "help", "terminal", "parker" },
           on_colors = function(c)
             c.bg = bg 
@@ -42,21 +42,15 @@ return {
             c.teal = "#1abc9c"
             c.red = "#f7768e"
             c.red1 = "#db4b4b"
-            c.git = { 
-              add = "#1abc9c",
-              change = "#FFC600",
-              delete = "#ff007c",
-            }
-            c.gitSigns = {
-              add = "#1abc9c",
-              change = "#FFC600",
-              delete = "#ff007c",
-            }
+            c.git = { add = "#1abc9c", change = "#FFC600", delete = "#ff007c"}
+            c.gitSigns = { add = "#1abc9c", change = "#FFC600", delete = "#ff007c"}
           end,
           on_highlights = function(hl, c)
             hl.CursorLine = { bg = c.bg_highlight }
             hl.CursorLineNr = { bg = c.bg_highlight }
             hl.TabLineFill = { bg = c.bg }
+            hl.TabLine = { bg = c.bg }
+            hl.StatusLine = { bg = c.bg }
             hl.NeoTreeNormal = { bg = c.bg }
             hl.NeoTreeNormalNC= { bg = c.bg }
             hl.NeoTreeFloatBorder = { bg = c.bg, fg = c.border_highlight }
@@ -66,7 +60,7 @@ return {
             hl.PmenuSel = { bg = c.bg_highlight }
           end,
         })
-        vim.cmd("colorscheme tokyonight")
+        vim.cmd("colorscheme tokyonight-moon")
       end,
     })
   end,

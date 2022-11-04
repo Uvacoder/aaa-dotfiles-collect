@@ -15,7 +15,7 @@ export PATH="$HOME/.rvm/bin:$PATH"
 export PATH="/opt/local/bin:$PATH"
 export PATH="/opt/local/sbin:$PATH"
 export PATH="/Users/sldobri/Library/Python/3.10/bin:$PATH"
-export PATH="/Users/sldobri/nvim-macos/bin:$PATH"
+# export PATH="/Users/sldobri/nvim-macos/bin:$PATH"
 
 DISABLE_LS_COLORS="true"
 HIST_STAMPS="yyyy-mm-dd"
