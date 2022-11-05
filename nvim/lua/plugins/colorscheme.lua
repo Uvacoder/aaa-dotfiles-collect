@@ -4,18 +4,19 @@ return {
     use({
       'folke/tokyonight.nvim',
       config = function()
-        local bg = "#191125" -- "#080910"
-        local border = '#E6752E' -- "#8B00E5"
+        local bg = "#0D0914" -- "#191125" -- "#080910"
+        local border = '#db4b4b' -- "#8B00E5"
+        local cursor_line = "#08060D" --"#150E1F"
         require('tokyonight').setup({
-          style = "moon",
+          style = "night",
           sidebars = { "qf", "help", "terminal", "parker" },
           on_colors = function(c)
             c.bg = bg 
-            c.border_highlight = border
             c.bg_statusline = bg 
+            c.border_highlight = border
             c.none = "NONE"
             c.bg_dark = "#1f2335"
-            c.bg_highlight = "#292e42"
+            c.bg_highlight = "#db4b4b" --"#292e42"
             c.terminal_black = "#414868"
             c.fg = "#c0caf5"
             c.fg_dark = "#a9b1d6"
@@ -46,11 +47,8 @@ return {
             c.gitSigns = { add = "#1abc9c", change = "#FFC600", delete = "#ff007c"}
           end,
           on_highlights = function(hl, c)
-            hl.CursorLine = { bg = c.bg_highlight }
-            hl.CursorLineNr = { bg = c.bg_highlight }
-            hl.TabLineFill = { bg = c.bg }
-            hl.TabLine = { bg = c.bg }
-            hl.StatusLine = { bg = c.bg }
+            hl.CursorLine = { bg = cursor_line }
+            hl.CursorLineNr = { bg = cursor_line }
             hl.NeoTreeNormal = { bg = c.bg }
             hl.NeoTreeNormalNC= { bg = c.bg }
             hl.NeoTreeFloatBorder = { bg = c.bg, fg = c.border_highlight }
@@ -60,7 +58,7 @@ return {
             hl.PmenuSel = { bg = c.bg_highlight }
           end,
         })
-        vim.cmd("colorscheme tokyonight-moon")
+        vim.cmd("colorscheme tokyonight-night")
       end,
     })
   end,
