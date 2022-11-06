@@ -88,6 +88,8 @@ alias dotv="dot && v"
 alias vv="cd $HOME/.dotfiles/nvim && v"
 
 # Code
+alias ff="cd /Volumes/data/codes/far-force && clear"
+alias ffv="ff && v"
 alias qs="cd /Volumes/data/codes/quasar-supabase && clear"
 alias qsv="qs && v"
 alias ac="cd /Volumes/data/codes/astro-crash-course && clear"
