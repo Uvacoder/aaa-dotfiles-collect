@@ -44,6 +44,15 @@ vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 vim.cmd([[
+:command! WQ wq
+:command! WQ wq
+:command! Wq wq
+:command! Wqa wqa
+:command! W w
+:command! Q q
+]])
+
+vim.cmd([[
 function! s:printLogVariable()
   let string_under_cursor = expand("<cword>")
   execute "normal! o"
@@ -52,13 +61,6 @@ endfunction
 ]])
  
 vim.cmd([[
-:command! WQ wq
-:command! WQ wq
-:command! Wq wq
-:command! Wqa wqa
-:command! W w
-:command! Q q
-
 augroup _general_settings
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif

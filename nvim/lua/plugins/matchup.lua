@@ -3,10 +3,11 @@ return {
   setup = function(use)
     use({
       'andymass/vim-matchup',
+      requires = 'nvim-treesitter/nvim-treesitter',
       config = function()
         vim.g.loaded_matchit = 1
-        vim.g.matchup_transmute_enabled = 1
-        vim.g.matchup_matchparen_deferred = 1
+        -- vim.g.matchup_transmute_enabled = 1
+        -- vim.g.matchup_matchparen_deferred = 1
         vim.g.matchup_matchparen_offscreen = { method = 'popup' }
         vim.g.matchup_matchparen_enabled = 1
         vim.g.matchup_matchpref = {

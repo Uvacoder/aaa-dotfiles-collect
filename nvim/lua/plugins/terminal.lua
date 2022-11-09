@@ -16,7 +16,7 @@ return {
           shell = vim.o.shell,
           highlights = {
             Normal = { link = 'Normal' },
-            NormalFloat = { link = 'Normal' },
+            NormalFloat = { link = 'NormalFloat' },
             FloatBorder = { link = 'FloatBorder' },
           },
           float_opts = {

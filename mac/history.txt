@@ -7,12 +7,16 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/plug
 # git clone  https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting
 # git clone  --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/themes/powerlevel10k
 
+rm ~/.zshrc
+ln -s ~/.dotfiles/zsh/zshrc  ~/.zshrc
+
+
 # dowbload and install macport
 https://github.com/macports/macports-base/releases/download/v2.7.2/MacPorts-2.7.2-10.14-Mojave.pkg
 
 # install port
-sudo port install nodejs16
-sudo port install npm8
+# sudo port install nodejs16
+# sudo port install npm8
 sudo port install stylua
 sudo port install wget
 sudo port install alacritty
@@ -31,8 +35,13 @@ curl https://bootstrap.pypa.io/get-pip.py | sudo python3
 
 python3 -m pip install neovim vim-vint
 
+
+mkdir ~/.config
+ln -s ~/.dotfiles/nvim ~/.config/nvim
+
+
 # battery alert
-cp ~/.dotfiles/battery/local.battery.plist ~/Library/LaunchAgents/local.battery.plist
+# cp ~/.dotfiles/battery/local.battery.plist ~/Library/LaunchAgents/local.battery.plist
 
 # remove spindump and tailspind
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.spindump.plist

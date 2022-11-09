@@ -2,14 +2,14 @@ env:
   TERM: xterm-256color
 
 window:
-  decorations: None  # Full, None
+  decorations: Full  # Full, None
   startup_mode: Windowed  # SimpleFullscreen, Windowed, Maximized
   dimensions:
     columns: 105
-    lines: 24
+    lines: 22
   padding:
-    x: 1
-    y: 1
+    x: 0
+    y: 0
 
   dynamic_padding: true
 #                                                                             80                 100                 120
@@ -22,11 +22,18 @@ cursor:
 
 font:
   normal:
-    family: CaskaydiaCove Nerd Font Mono
-  size: 20
+    family: CaskaydiaCove Nerd Font
+  size: 21
   offset:
-    x: 0
-    y: 9
+    x: -1
+    y: 8
+
+  # normal:
+  #   family: JetBrainsMono Nerd Font
+  # size: 20
+  # offset:
+  #   x: -1
+  #   y: 9
 
   # normal:
   #   family: MonoLisa Nerd Font Mono
@@ -50,7 +57,7 @@ font:
   #   y: 9
 
   # normal:
-  #   family: UbuntuMono Nerd Font Mono
+  #   family: Iosevka Nerd Font
   # size: 23
   # offset:
   #   x: 0

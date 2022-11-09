@@ -2,7 +2,10 @@ return {
   setup = function(use)
     use({
       'b3nj5m1n/kommentary',
-      requires = { 'JoosepAlviste/nvim-ts-context-commentstring' },
+      requires = {
+        'nvim-treesitter/nvim-treesitter', 
+        'JoosepAlviste/nvim-ts-context-commentstring' 
+      },
       config = function()
         require('kommentary.config').configure_language('default', {
           prefer_single_line_comments = true,
