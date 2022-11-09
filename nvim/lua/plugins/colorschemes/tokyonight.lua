@@ -5,7 +5,7 @@ return {
       'folke/tokyonight.nvim',
       config = function()
         local bg = "#0D0914" -- "#191125" -- "#080910"
-        local border = '#0db9d7'
+        local border = "#1abc9c" --"#0db9d7"
         local cursor_line = "#08060D" --"#150E1F"
         require('tokyonight').setup({
           style = "night",

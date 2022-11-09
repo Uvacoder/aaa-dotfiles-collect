@@ -20,12 +20,12 @@ return {
           enable_diagnostics = false,
           default_component_configs = {
             icon = {
-              folder_closed = '',
-              folder_open = '',
+              folder_closed = '',
+              folder_open = '',
               folder_empty = 'ﰊ',
               default = '',
             },
-            modified = { symbol = '' },
+            modified = { symbol = '' },
             git_status = {
               symbols = {
                 -- Change type
