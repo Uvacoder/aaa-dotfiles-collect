@@ -17,38 +17,40 @@ cursor:
     shape: Block
 
 font:
-  # normal:
-  #   family: CaskaydiaCove Nerd Font
-  # size: 21
-  # offset:
-  #   x: -1
-  #   y: 8
-
-  # light:
-  #   family: JetBrainsMono Nerd Font
-  # normal:
-  #   family: JetBrainsMono Nerd Font
-  # size: 19
-  # offset:
-  #   x: 0
-  #   y: 10
-
-  # normal:
-  #   family: MonoLisa Nerd Font Mono
-  # size: 20
-  # offset:
-  #   x: -1
-  #   y: 10
-
   normal:
     family: CamingoCode Nerd Font
   size: 21
   offset:
     x: 0
     y: 5
+  glyph_offset:
+   x: 0
+   y: 0
 
-use_thin_strokes: true
-draw_bold_text_with_bright_colors: true
+  # normal:
+  #   family: CaskaydiaCove Nerd Font
+  # size: 20
+  # offset:
+  #   x: 0
+  #   y: 6
+
+  # normal:
+  #   family: JetBrainsMono Nerd Font
+  # size: 20
+  # offset:
+  #   x: -1
+  #   y: 6
+
+  # normal:
+  #   family: MonoLisa Nerd Font Mono
+  # size: 20
+  # offset:
+
+
+# font.use_thin_strokes config field; to use thin strokes on macOS, set
+# $ defaults write -g AppleFontSmoothing -int 0
+
+draw_bold_text_with_bright_colors: false
 
 # Colors (tokyodark)
 colors:

@@ -15,16 +15,19 @@ ln -s ~/.dotfiles/zsh/zshrc  ~/.zshrc
 https://github.com/macports/macports-base/releases/download/v2.7.2/MacPorts-2.7.2-10.14-Mojave.pkg
 
 # install port
-# sudo port install nodejs16
-# sudo port install npm8
 sudo port install stylua
 sudo port install wget
-sudo port install alacritty
 sudo port install ripgrep
 sudo port install go
 sudo port install rust
 sudo port install cargo
 sudo port install neovim
+# sudo port install nodejs16
+# sudo port install npm8
+# sudo port install alacritty
+
+# font.use_thin_strokes config field; to use thin strokes on macOS, set
+defaults write -g AppleFontSmoothing -int 0
 
 # configure
 sudo npm -g install neovim @quasar/cli tree-sitter-cli
