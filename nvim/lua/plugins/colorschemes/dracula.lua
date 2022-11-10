@@ -2,9 +2,9 @@
 return {
   setup = function(use)
     use({
-      'Mofiqul/dracula.nvim',
+      "Mofiqul/dracula.nvim",
       config = function()
-      local dracula = require("dracula")
+        local dracula = require("dracula")
         dracula.setup({
           colors = {
             bg = "#15171C",
@@ -31,11 +31,11 @@ return {
             nontext = "#3B4048",
           },
           overrides = {
-            NeoTreeFloatBorder = { link = "Pmenu" }, 
-            NeoTreeNormal = { link = "Pmenu" }, 
-            NeoTreeNormalNC = { link = "Pmenu" }, 
+            NeoTreeFloatBorder = { link = "Pmenu" },
+            NeoTreeNormal = { link = "Pmenu" },
+            NeoTreeNormalNC = { link = "Pmenu" },
             NormalFloat = { bg = dracula.colors().menu },
-            FloatBorder = { fg = dracula.colors().white ,  bg = dracula.colors().menu },
+            FloatBorder = { fg = dracula.colors().white, bg = dracula.colors().menu },
           },
         })
         vim.cmd("colorscheme dracula")

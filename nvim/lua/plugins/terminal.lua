@@ -1,9 +1,9 @@
 return {
   setup = function(use)
     use({
-      'akinsho/toggleterm.nvim',
+      "akinsho/toggleterm.nvim",
       config = function()
-        require('toggleterm').setup({
+        require("toggleterm").setup({
           open_mapping = [[<c-t>]],
           hide_numbers = true,
           shade_terminals = true,
@@ -11,13 +11,13 @@ return {
           start_in_insert = true,
           insert_mappings = true,
           persist_size = true,
-          direction = 'float',
+          direction = "float",
           close_on_exit = true,
           shell = vim.o.shell,
           highlights = {
-            Normal = { link = 'Normal' },
-            NormalFloat = { link = 'NormalFloat' },
-            FloatBorder = { link = 'FloatBorder' },
+            Normal = { link = "Normal" },
+            NormalFloat = { link = "NormalFloat" },
+            FloatBorder = { link = "FloatBorder" },
           },
           float_opts = {
             height = 16,
@@ -29,14 +29,14 @@ return {
         function _G.set_terminal_keymaps()
           local keymap = vim.api.nvim_buf_set_keymap
           local opts = { noremap = true, silent = true }
-          keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
-          keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
-          keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
-          keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
-          keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
+          keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
+          keymap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
+          keymap(0, "t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
+          keymap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
+          keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
         end
 
-        vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+        vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
       end,
     })
   end,

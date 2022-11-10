@@ -1,41 +1,48 @@
 local autocmd = vim.api.nvim_create_autocmd
- 
+
+local format = vim.api.nvim_create_augroup("format", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePre", {
+  command = "FormatLua",
+  pattern = "*.lua",
+  group = format,
+})
+
 -- Use 'q' to quit from common plugins
-autocmd({ 'FileType' }, {
-  pattern = { 'terminal', 'qf', 'help', 'man', 'lspinfo', 'spectre_panel', 'lir' },
+autocmd({ "FileType" }, {
+  pattern = { "terminal", "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
   callback = function()
     vim.cmd([[
       nnoremap <silent> <buffer> q :close<CR>
       set nobuflisted
     ]])
   end,
-}) 
-    
-autocmd('BufRead', {
-  pattern = '*.astro',
-  command = 'set filetype=astro',
-}) 
-  
-autocmd('CursorHold', {
+})
+
+autocmd("BufRead", {
+  pattern = "*.astro",
+  command = "set filetype=astro",
+})
+
+autocmd("CursorHold", {
   buffer = bufnr,
   callback = function()
     vim.diagnostic.open_float(nil, {
-      close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' }
+      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
     })
   end,
-}) 
-  
+})
+
 -- Fixes Autocomment
-autocmd({ 'BufWinEnter' }, {
+autocmd({ "BufWinEnter" }, {
   callback = function()
-    vim.cmd('set formatoptions-=cro')
+    vim.cmd("set formatoptions-=cro")
   end,
 })
-  
+
 -- Highlight Yanked Text
-autocmd({ 'TextYankPost' }, {
+autocmd({ "TextYankPost" }, {
   callback = function()
-    vim.highlight.on_yank({ higroup = 'Visual', timeout = 200 })
+    vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
   end,
 })
 
@@ -59,7 +66,7 @@ function! s:printLogVariable()
   execute "normal! i" . "console.log(' [DEBUG] " . string_under_cursor ": ', " . string_under_cursor . ");"
 endfunction
 ]])
- 
+
 vim.cmd([[
 augroup _general_settings
   autocmd!

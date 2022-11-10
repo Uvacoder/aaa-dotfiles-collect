@@ -1,21 +1,21 @@
 return {
   setup = function(use)
     use({
-      'nvim-treesitter/nvim-treesitter',
+      "nvim-treesitter/nvim-treesitter",
       -- requires = { 'p00f/nvim-ts-rainbow'},
-      run = ':TSUpdate',
+      run = ":TSUpdate",
       config = function()
-        require('nvim-treesitter.configs').setup({
+        require("nvim-treesitter.configs").setup({
           ensure_installed = {
-            'css',
-            'scss',
-            'lua',
-            'html',
-            'vue',
-            'javascript',
-            'json',
-            'typescript',
-            'astro',
+            "css",
+            "scss",
+            "lua",
+            "html",
+            "vue",
+            "javascript",
+            "json",
+            "typescript",
+            "astro",
           },
           highlight = { enable = true },
           indent = { enable = true },
