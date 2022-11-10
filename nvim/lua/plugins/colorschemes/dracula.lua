@@ -32,10 +32,11 @@ return {
           },
           overrides = {
             NeoTreeFloatBorder = { link = "Pmenu" }, 
-            NeoTreeNormal = { bg = dracula.colors().menu },
+            NeoTreeNormal = { link = "Pmenu" }, 
+            -- NeoTreeNormal = { bg = dracula.colors().menu },
             NeoTreeNormalNC = { bg = dracula.colors().menu },
-            FloatBorder = { fg = dracula.colors().white ,  bg = dracula.colors().menu },
             NormalFloat = { bg = dracula.colors().menu },
+            FloatBorder = { fg = dracula.colors().white ,  bg = dracula.colors().menu },
             rainbowcol6 = { fg = dracula.colors().white },
           },
         })
