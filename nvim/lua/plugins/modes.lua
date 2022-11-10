@@ -14,7 +14,7 @@ return {
           line_opacity = 0.35,
           set_cursor = true,
           set_cursorline = true,
-          set_number = true,
+          set_number = false,
           -- ignore_filetypes = { 'Neo-tree', 'NvimTree', 'TelescopePrompt' },
         })
       end,
