@@ -1,4 +1,4 @@
--- https://github.com/windwp/nvim-autopairs
+-- https://github.com/Mofiqul/dracula.nvim
 return {
   setup = function(use)
     use({
@@ -36,7 +36,6 @@ return {
             NeoTreeNormalNC = { link = "Pmenu" }, 
             NormalFloat = { bg = dracula.colors().menu },
             FloatBorder = { fg = dracula.colors().white ,  bg = dracula.colors().menu },
-            rainbowcol6 = { fg = dracula.colors().white },
           },
         })
         vim.cmd("colorscheme dracula")

@@ -13,7 +13,6 @@ return {
             separator_style = { ' ', ' ' },
             indicator = { icon = '▎', style = 'none' }, -- style = 'icon'
             diagnostics = 'nvim_lsp',
-            -- highlights = { fill = { bg = { attribute = "fg", highlight = "Pmenu" }}}
           },
         })
       end,
