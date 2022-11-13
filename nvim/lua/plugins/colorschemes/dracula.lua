@@ -25,17 +25,18 @@ return {
             bright_magenta = "#FF92DF",
             bright_cyan = "#A4FFFF",
             bright_white = "#FFFFFF",
-            menu = "#313131",
+            menu = "#000000",
             visual = "#3E4452",
             gutter_fg = "#4B5263",
             nontext = "#3B4048",
           },
           overrides = {
+            Pmenu = { fg = dracula.colors().white, bg = dracula.colors().menu },
             NeoTreeFloatBorder = { link = "Pmenu" },
             NeoTreeNormal = { link = "Pmenu" },
             NeoTreeNormalNC = { link = "Pmenu" },
-            NormalFloat = { bg = dracula.colors().menu },
-            FloatBorder = { fg = dracula.colors().white, bg = dracula.colors().menu },
+            NormalFloat = { link = "Pmenu" },
+            FloatBorder = { link = "Pmenu" },
           },
         })
         vim.cmd("colorscheme dracula")

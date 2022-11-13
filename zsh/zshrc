@@ -17,6 +17,7 @@ export PATH="/opt/local/sbin:$PATH"
 export PATH="/Users/sldobri/Library/Python/3.10/bin:$PATH"
 # export PATH="/Users/sldobri/nvim-macos/bin:$PATH"
 
+HDF5_USE_FILE_LOCKING="FALSE"
 DISABLE_LS_COLORS="true"
 HIST_STAMPS="yyyy-mm-dd"
 ENABLE_CORRECTION="false"

@@ -22,6 +22,7 @@ sudo port install go
 sudo port install rust
 sudo port install cargo
 sudo port install neovim
+sudo port install vips
 # sudo port install nodejs16
 # sudo port install npm8
 # sudo port install alacritty

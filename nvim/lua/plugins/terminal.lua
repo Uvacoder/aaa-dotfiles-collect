@@ -15,9 +15,9 @@ return {
           close_on_exit = true,
           shell = vim.o.shell,
           highlights = {
-            Normal = { link = "Normal" },
-            NormalFloat = { link = "NormalFloat" },
-            FloatBorder = { link = "FloatBorder" },
+            Normal = { link = "Pmenu" },
+            -- NormalFloat = { link = "NormalFloat" },
+            -- FloatBorder = { link = "FloatBorder" },
           },
           float_opts = {
             height = 16,
