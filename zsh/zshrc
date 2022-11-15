@@ -2,8 +2,8 @@ export ZSH="/Users/sldobri/.oh-my-zsh"
 export ZSH_CUSTOM="$ZSH/custom"
 export EDITOR="nvim"
 export LANG="en_US.UTF-8"
-export NEOVIM_BIN="/opt/local/bin/nvim"
-export DEFAULT_FONT="Operator Mono:h22"
+# export NEOVIM_BIN="/opt/local/bin/nvim"
+# export DEFAULT_FONT="Operator Mono:h22"
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
 
@@ -15,7 +15,7 @@ export PATH="$HOME/.rvm/bin:$PATH"
 export PATH="/opt/local/bin:$PATH"
 export PATH="/opt/local/sbin:$PATH"
 export PATH="/Users/sldobri/Library/Python/3.10/bin:$PATH"
-# export PATH="/Users/sldobri/nvim-macos/bin:$PATH"
+export PATH="/Users/sldobri/.nvim-macos/bin:$PATH"
 
 HDF5_USE_FILE_LOCKING="FALSE"
 DISABLE_LS_COLORS="true"
@@ -177,8 +177,7 @@ function git-init(){
 
 function nvim-up(){
  rm -rf $HOME/.nvim-macos/
- # curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz
- curl -LO https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-macos.tar.gz
+ curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim-macos.tar.gz
  tar xzf nvim-macos.tar.gz
  mv nvim-macos $HOME/.nvim-macos
  rm nvim-macos.tar.gz
