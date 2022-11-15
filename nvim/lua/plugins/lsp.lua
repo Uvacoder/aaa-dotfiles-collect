@@ -28,8 +28,12 @@ return {
         lsp.preset("recommended")
         lsp.set_preferences({
           suggest_lsp_servers = false,
-          sign_icons = { error = "", warn = "", hint = "", info = "" },
-          -- sign_icons = { error = '▶', warn = '▶', hint = '▶', info = '▶' },
+          sign_icons = {
+            error = vim.g.diagnostics_sign.error,
+            warn = vim.g.diagnostics_sign.warn,
+            info = vim.g.diagnostics_sign.info,
+            hint = vim.g.diagnostics_sign.hint,
+          },
         })
         lsp.ensure_installed({ "eslint", "astro", "volar" })
         -- local handlers = {

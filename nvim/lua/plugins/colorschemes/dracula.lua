@@ -7,7 +7,7 @@ return {
         local dracula = require("dracula")
         dracula.setup({
           colors = {
-            bg = "#15171C",
+            bg = "#0D1117",
             fg = "#F8F8F2",
             selection = "#44475A",
             comment = "#6272A4",

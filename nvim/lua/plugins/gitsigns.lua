@@ -8,31 +8,31 @@ return {
           signs = {
             add = {
               hl = "GitSignsAdd",
-              text = "▎",
+              text = vim.g.git_signs.basic,
               numhl = "GitSignsAddNr",
               linehl = "GitSignsAddLn",
             },
             change = {
               hl = "GitSignsChange",
-              text = "▎",
+              text = vim.g.git_signs.basic,
               numhl = "GitSignsChangeNr",
               linehl = "GitSignsChangeLn",
             },
             delete = {
               hl = "GitSignsDelete",
-              text = "▎",
+              text = vim.g.git_signs.basic,
               numhl = "GitSignsDeleteNr",
               linehl = "GitSignsDeleteLn",
             },
             topdelete = {
               hl = "GitSignsDelete",
-              text = "▎",
+              text = vim.g.git_signs.basic,
               numhl = "GitSignsDeleteNr",
               linehl = "GitSignsDeleteLn",
             },
             changedelete = {
               hl = "GitSignsChange",
-              text = "▎",
+              text = vim.g.git_signs.basic,
               numhl = "GitSignsChangeNr",
               linehl = "GitSignsChangeLn",
             },
