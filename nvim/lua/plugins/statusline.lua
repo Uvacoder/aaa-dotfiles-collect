@@ -1,80 +1,49 @@
--- https://github.com/windwp/nvim-autopairs
+-- https://github.com/nvim-lualine/lualine.nvim
 return {
   setup = function(use)
     use({
       "nvim-lualine/lualine.nvim",
-      requires = { "kyazdani42/nvim-web-devicons", opt = true },
       config = function()
-        local hide_in_width = function()
-          return vim.fn.winwidth(0) > 80
+        local filetype = { "filetype", icons_enabled = false }
+
+        local location = {}
+
+        local diff = { "diff", colored = false }
+
+        local d = { "diagnostics", sections = { "error", "warn" } }
+
+        local lsp_active = function()
+          local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+          if vim.tbl_count(vim.lsp.buf_get_clients()) == 0 then
+            return ""
+          end
+          local names = {}
+          for _, client in ipairs(vim.lsp.get_active_clients()) do
+            local filetypes = client.config.filetypes
+            if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+              table.insert(names, client.name)
+            end
+          end
+          return "  " .. table.concat(names, ",")
         end
-
-        local diagnostics = {
-          "diagnostics",
-          sources = { "nvim_diagnostic" },
-          symbols = {
-            error = vim.g.diagnostics_sign.error,
-            warn = vim.g.diagnostics_sign.warn,
-            info = vim.g.diagnostics_sign.info,
-            hint = vim.g.diagnostics_sign.hint,
-          },
-          update_in_insert = true,
-        }
-
-        local diff = {
-          "diff",
-          symbols = {
-            added = vim.g.git_signs.added,
-            modified = vim.g.git_signs.modified,
-            removed = vim.g.git_signs.removed,
-          }, -- changes diff symbols
-          cond = hide_in_width,
-        }
-
-        local filetype = {
-          "filetype",
-          icons_enabled = false,
-          icon = nil,
-        }
-
-        local branch = {
-          "branch",
-          icons_enabled = true,
-          icon = "",
-        }
-
-        local location = {
-          "location",
-          padding = 0,
-        }
 
         require("lualine").setup({
           options = {
+            globalstatus = true,
             icons_enabled = true,
             theme = "iceberg_dark",
             component_separators = { left = "", right = "" },
-            section_separators = { left = "", right = "" },
-            disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
+            section_separators = { left = " ", right = " " },
             always_divide_middle = false,
           },
           sections = {
             lualine_a = {},
             lualine_b = {},
-            lualine_c = { branch, diff, diagnostics },
-            lualine_x = { location, "filetype", "encoding", "fileformat" },
+            lualine_c = { "branch", diff, diagnostics },
+            lualine_x = { filetype, "encoding", "location", lsp_active },
             lualine_y = {},
             lualine_z = {},
           },
-          inactive_sections = {
-            lualine_a = {},
-            lualine_b = {},
-            lualine_c = { "filename" },
-            lualine_x = { "location" },
-            lualine_y = {},
-            lualine_z = {},
-          },
-          tabline = {},
-          extensions = {},
         })
       end,
     })

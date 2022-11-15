@@ -19,7 +19,7 @@ opt.ignorecase = true
 opt.lazyredraw = true
 opt.showmode = false
 opt.showtabline = 0
-opt.laststatus = 1
+opt.laststatus = 3
 opt.cmdheight = 1
 opt.smartcase = true
 opt.smartindent = true
@@ -51,7 +51,7 @@ opt.wrap = true
 opt.linebreak = true
 opt.breakindentopt = "shift:2,min:20"
 opt.textwidth = 100
-opt.showbreak = "  ↳ "
+opt.showbreak = " ↳  "
 opt.colorcolumn = "101"
 opt.signcolumn = "yes:1"
 -- opt.scrolloff = 8
@@ -72,3 +72,5 @@ opt.iskeyword:append(".")
 if vim.fn.has("termguicolors") == 1 then
   opt.termguicolors = true -- set term gui colors (most terminals support this)
 end
+
+vim.cmd([[ let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0 ]])
