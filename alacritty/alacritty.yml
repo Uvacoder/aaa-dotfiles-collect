@@ -3,7 +3,7 @@ env:
 
 window:
   decorations: Buttonless  # Full, None, Transparent, Buttonless
-  startup_mode: Windowed  # SimpleFullscreen, Windowed, Maximized
+  startup_mode: SimpleFullscreen  # SimpleFullscreen, Windowed, Maximized
   dimensions:
     columns: 105
     lines: 25
