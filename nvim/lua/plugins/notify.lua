@@ -5,7 +5,6 @@ return {
       config = function()
         local notify = require("notify")
         notify.setup({
-          top_down = false,
           stages = "static",
           render = "minimal",
         })

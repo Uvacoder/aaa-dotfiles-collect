@@ -7,10 +7,13 @@ return {
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
         require("bufferline").setup({
+          highlights = {
+            buffer_selected = { bold = false, italic = false },
+          },
           options = {
             show_close_icon = false,
             show_buffer_close_icons = false,
-            separator_style = { " ", " " },
+            separator_style = { "", "" },
             indicator = { icon = "▎", style = "none" }, -- style = 'icon'
             diagnostics = "nvim_lsp",
           },
